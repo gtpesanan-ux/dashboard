@@ -389,6 +389,352 @@ html[data-theme="dark"] .site-header{background:rgba(7,8,9,.90)}
   .service-list,.incident-state,.history-list{box-shadow:none}
 }
 
+
+/* ===== DIRAC UI/UX refinement layer ===== */
+body{
+  letter-spacing:-.004em;
+}
+.site-header{
+  transition:background-color .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.site-header.scrolled{
+  box-shadow:0 10px 30px rgba(15,23,42,.055);
+}
+html[data-theme="dark"] .site-header.scrolled{
+  box-shadow:0 12px 34px rgba(0,0,0,.28);
+}
+.brand-logo-tile{
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.brand:hover .brand-logo-tile{
+  transform:translateY(-1px);
+  box-shadow:0 10px 24px rgba(15,23,42,.11),inset 0 0 0 1px rgba(255,255,255,.45);
+}
+.brand-logo{transform:scale(1.25)}
+.primary-nav a{position:relative}
+.primary-nav a::after{
+  content:"";
+  position:absolute;
+  left:13px;
+  right:13px;
+  bottom:5px;
+  height:2px;
+  border-radius:999px;
+  background:var(--brand);
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .2s ease;
+}
+.primary-nav a.active::after{transform:scaleX(1)}
+.primary-nav a.active{color:var(--text)}
+
+.mobile-menu{
+  display:block;
+  max-height:0;
+  opacity:0;
+  visibility:hidden;
+  overflow:hidden;
+  pointer-events:none;
+  border-top-color:transparent;
+  transform:translateY(-5px);
+  transition:max-height .26s ease,opacity .2s ease,transform .2s ease,visibility 0s linear .26s,border-color .2s ease;
+}
+.mobile-menu.open{
+  display:block;
+  max-height:280px;
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  border-top-color:var(--line);
+  transform:translateY(0);
+  transition:max-height .28s ease,opacity .22s ease,transform .22s ease,visibility 0s;
+}
+.mobile-menu-inner a{transition:background-color .18s ease,color .18s ease,transform .18s ease}
+.mobile-menu-inner a:active{transform:scale(.99)}
+
+.hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:66px 0 48px;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  width:720px;
+  height:520px;
+  top:-310px;
+  left:50%;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(36,77,184,.085) 0%,rgba(22,138,69,.025) 36%,transparent 70%);
+  pointer-events:none;
+}
+html[data-theme="dark"] .hero::before{
+  background:radial-gradient(circle,rgba(126,162,255,.10) 0%,rgba(67,201,121,.035) 38%,transparent 72%);
+}
+.overall-status{
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.overall-status:hover{
+  transform:translateY(-1px);
+  border-color:rgba(22,138,69,.28);
+  box-shadow:0 8px 24px rgba(15,23,42,.055);
+}
+.status-symbol{position:relative}
+.overall-status .status-symbol::after{
+  content:"";
+  position:absolute;
+  inset:-5px;
+  border:1px solid currentColor;
+  border-radius:50%;
+  color:var(--ok);
+  opacity:.16;
+  animation:statusHalo 2.8s ease-out infinite;
+}
+@keyframes statusHalo{
+  0%,35%{transform:scale(.72);opacity:.2}
+  72%,100%{transform:scale(1.5);opacity:0}
+}
+.hero h1{text-wrap:balance}
+.hero-copy{text-wrap:pretty}
+
+.status-summary{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  max-width:760px;
+  margin-top:30px;
+}
+.summary-card{
+  min-width:0;
+  padding:16px 17px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:color-mix(in srgb,var(--surface) 92%,transparent);
+  box-shadow:0 6px 20px rgba(15,23,42,.035);
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.summary-card:hover{
+  transform:translateY(-2px);
+  border-color:var(--line-strong);
+  box-shadow:0 12px 28px rgba(15,23,42,.065);
+}
+.summary-card strong{
+  display:block;
+  color:var(--text);
+  font-size:20px;
+  line-height:1.05;
+  font-weight:790;
+  letter-spacing:-.035em;
+}
+.summary-card span{
+  display:block;
+  margin-top:6px;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:620;
+  line-height:1.35;
+}
+
+.section{position:relative}
+.section-head h2{text-wrap:balance}
+.status-tools{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:9px;
+}
+.status-legend{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  flex-wrap:wrap;
+  gap:8px 12px;
+  color:var(--faint);
+  font-size:9.5px;
+  font-weight:620;
+}
+.legend-item{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.legend-swatch{
+  width:9px;
+  height:9px;
+  border-radius:3px;
+  border:1px solid transparent;
+  background:var(--ok);
+}
+.legend-swatch.degraded{background:var(--warn)}
+.legend-swatch.partial{border-color:var(--warn);background:repeating-linear-gradient(135deg,var(--warn) 0 2px,transparent 2px 4px)}
+.legend-swatch.unknown{border:1px dashed var(--faint);background:transparent}
+
+.service-list{transition:border-color .2s ease,box-shadow .2s ease}
+.service-row{position:relative}
+.service-row::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:14px;
+  bottom:14px;
+  width:3px;
+  border-radius:0 999px 999px 0;
+  background:var(--brand);
+  opacity:0;
+  transform:scaleY(.4);
+  transition:opacity .18s ease,transform .18s ease;
+}
+.service-row:hover::before{opacity:.62;transform:scaleY(1)}
+.service-copy h3{transition:color .18s ease}
+.service-row:hover .service-copy h3{color:var(--brand)}
+.uptime-day{
+  transform-origin:center bottom;
+  transition:transform .16s ease,filter .16s ease,opacity .16s ease;
+}
+.uptime-day:hover{
+  transform:translateY(-2px) scaleY(1.12);
+  filter:saturate(1.12) brightness(1.03);
+  z-index:2;
+}
+.uptime-track:hover .uptime-day:not(:hover){opacity:.72}
+.service-status{
+  padding:6px 9px;
+  margin-right:-9px;
+  border-radius:999px;
+  transition:background-color .18s ease;
+}
+.service-row:hover .service-status{background:var(--ok-soft)}
+
+.incident-state,.history-list{
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.incident-state:hover,.history-list:hover{
+  transform:translateY(-1px);
+  border-color:var(--line-strong);
+  box-shadow:0 16px 38px rgba(15,23,42,.07);
+}
+html[data-theme="dark"] .incident-state:hover,
+html[data-theme="dark"] .history-list:hover{box-shadow:0 16px 38px rgba(0,0,0,.30)}
+.incident-icon{transition:transform .22s ease,background-color .22s ease}
+.incident-state:hover .incident-icon{transform:scale(1.045)}
+
+.footer-logo{transform:scale(1.22)}
+.site-footer{position:relative;overflow:hidden}
+.site-footer::before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:260px;
+  right:-180px;
+  top:-170px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(36,77,184,.05),transparent 70%);
+  pointer-events:none;
+}
+html[data-theme="dark"] .site-footer::before{background:radial-gradient(circle,rgba(126,162,255,.06),transparent 70%)}
+.footer-grid,.footer-bottom{position:relative;z-index:1}
+
+.back-to-top{
+  position:fixed;
+  z-index:45;
+  right:20px;
+  bottom:max(18px,calc(env(safe-area-inset-bottom) + 14px));
+  width:44px;
+  height:44px;
+  display:grid;
+  place-items:center;
+  padding:0;
+  border:1px solid var(--line-strong);
+  border-radius:14px;
+  background:color-mix(in srgb,var(--surface) 94%,transparent);
+  color:var(--text);
+  box-shadow:0 12px 30px rgba(15,23,42,.12);
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+  cursor:pointer;
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transform:translateY(10px) scale(.96);
+  transition:opacity .2s ease,visibility .2s ease,transform .2s ease,background-color .18s ease;
+}
+.back-to-top.visible{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateY(0) scale(1);
+}
+.back-to-top:hover{background:var(--surface-2);transform:translateY(-2px)}
+.back-to-top:active{transform:translateY(0) scale(.97)}
+
+@keyframes heroEnter{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:none}
+}
+@media(prefers-reduced-motion:no-preference){
+  .hero .overall-status{animation:heroEnter .42s cubic-bezier(.2,.7,.2,1) both}
+  .hero h1{animation:heroEnter .5s .05s cubic-bezier(.2,.7,.2,1) both}
+  .hero-copy{animation:heroEnter .5s .10s cubic-bezier(.2,.7,.2,1) both}
+  .snapshot{animation:heroEnter .5s .15s cubic-bezier(.2,.7,.2,1) both}
+  .summary-card:nth-child(1){animation:heroEnter .48s .20s cubic-bezier(.2,.7,.2,1) both}
+  .summary-card:nth-child(2){animation:heroEnter .48s .25s cubic-bezier(.2,.7,.2,1) both}
+  .summary-card:nth-child(3){animation:heroEnter .48s .30s cubic-bezier(.2,.7,.2,1) both}
+}
+
+html[data-theme="dark"] .summary-card{box-shadow:0 8px 24px rgba(0,0,0,.16)}
+
+@media(max-width:900px){
+  .status-tools{align-items:flex-start}
+  .status-legend{justify-content:flex-start}
+}
+
+@media(max-width:640px){
+  .brand-logo{transform:scale(1.28)}
+  .hero{padding:40px 0 34px}
+  .hero::before{width:520px;height:420px;top:-275px}
+  .status-summary{gap:8px;margin-top:24px}
+  .summary-card{padding:13px 11px;border-radius:13px}
+  .summary-card strong{font-size:17px}
+  .summary-card span{margin-top:5px;font-size:9.5px}
+  .status-tools{width:100%;gap:10px}
+  .status-legend{display:grid;grid-template-columns:repeat(2,max-content);gap:7px 14px;font-size:9px}
+  .service-list{
+    display:grid;
+    gap:10px;
+    overflow:visible;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    box-shadow:none;
+  }
+  .service-row{
+    border:1px solid var(--line)!important;
+    border-radius:16px;
+    background:var(--surface);
+    box-shadow:0 7px 22px rgba(15,23,42,.035);
+  }
+  .service-row:hover{background:var(--surface)}
+  .service-row::before{top:12px;bottom:12px;border-radius:999px;left:-1px}
+  .service-status{margin-right:-6px;padding:5px 6px}
+  html[data-theme="dark"] .service-row{box-shadow:0 8px 24px rgba(0,0,0,.14)}
+  .incident-state:hover,.history-list:hover{transform:none}
+  .footer-logo{transform:scale(1.24)}
+  .back-to-top{right:14px;width:42px;height:42px;border-radius:13px}
+}
+
+@media(max-width:350px){
+  .status-summary{grid-template-columns:1fr 1fr}
+  .summary-card:first-child{grid-column:1/-1}
+  .summary-card:first-child{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .summary-card:first-child span{margin-top:0;text-align:right}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .overall-status .status-symbol::after{animation:none!important}
+  .uptime-day,.back-to-top,.mobile-menu,.brand-logo-tile{transition:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -404,7 +750,7 @@ html[data-theme="dark"] .site-header{background:rgba(7,8,9,.90)}
     <div class="header-actions">
       <a class="support-link" href="mailto:support@diracgroup.store">Support</a>
       <button class="theme-button" id="themeButton" type="button" aria-label="Toggle light and dark theme">◐</button>
-      <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
     </div>
   </div>
   <div class="mobile-menu" id="mobileMenu"><div class="container mobile-menu-inner">
@@ -417,10 +763,15 @@ html[data-theme="dark"] .site-header{background:rgba(7,8,9,.90)}
     <h1>All systems operational</h1>
     <p class="hero-copy">All customer-facing DIRAC services in this status snapshot are operating normally.</p>
     <div class="snapshot">Status snapshot generated <span id="generatedAt">—</span></div>
+    <div class="status-summary" aria-label="Status overview">
+      <div class="summary-card"><strong id="summaryServices">9/9</strong><span>Services operational</span></div>
+      <div class="summary-card"><strong id="summaryUptime">99.97%</strong><span>Average 30-day uptime</span></div>
+      <div class="summary-card"><strong id="summaryIncidents">0</strong><span>Active incidents</span></div>
+    </div>
   </div></section>
 
   <section class="section" id="status"><div class="container">
-    <div class="section-head"><div><h2>System status</h2><p>30-day availability for the services customers depend on.</p></div><div class="section-meta">9 services monitored</div></div>
+    <div class="section-head"><div><h2>System status</h2><p>30-day availability for the services customers depend on.</p></div><div class="status-tools"><div class="section-meta">9 services monitored</div><div class="status-legend" aria-label="Availability legend"><span class="legend-item"><span class="legend-swatch"></span>Operational</span><span class="legend-item"><span class="legend-swatch degraded"></span>Degraded</span><span class="legend-item"><span class="legend-swatch partial"></span>Partial</span><span class="legend-item"><span class="legend-swatch unknown"></span>Unknown</span></div></div></div>
     <div class="service-list">
       <article class="service-row"><div class="service-copy"><h3>Website</h3><p>Public website and customer entry point</p></div><div class="uptime"><div class="uptime-track"><span class="uptime-day" role="img" aria-label="Day 1: operational"></span><span class="uptime-day" role="img" aria-label="Day 2: operational"></span><span class="uptime-day" role="img" aria-label="Day 3: operational"></span><span class="uptime-day" role="img" aria-label="Day 4: operational"></span><span class="uptime-day" role="img" aria-label="Day 5: operational"></span><span class="uptime-day" role="img" aria-label="Day 6: operational"></span><span class="uptime-day" role="img" aria-label="Day 7: operational"></span><span class="uptime-day" role="img" aria-label="Day 8: operational"></span><span class="uptime-day" role="img" aria-label="Day 9: operational"></span><span class="uptime-day" role="img" aria-label="Day 10: operational"></span><span class="uptime-day" role="img" aria-label="Day 11: operational"></span><span class="uptime-day" role="img" aria-label="Day 12: operational"></span><span class="uptime-day" role="img" aria-label="Day 13: operational"></span><span class="uptime-day" role="img" aria-label="Day 14: operational"></span><span class="uptime-day" role="img" aria-label="Day 15: operational"></span><span class="uptime-day" role="img" aria-label="Day 16: operational"></span><span class="uptime-day" role="img" aria-label="Day 17: operational"></span><span class="uptime-day" role="img" aria-label="Day 18: operational"></span><span class="uptime-day" role="img" aria-label="Day 19: operational"></span><span class="uptime-day" role="img" aria-label="Day 20: operational"></span><span class="uptime-day" role="img" aria-label="Day 21: operational"></span><span class="uptime-day" role="img" aria-label="Day 22: operational"></span><span class="uptime-day" role="img" aria-label="Day 23: operational"></span><span class="uptime-day" role="img" aria-label="Day 24: operational"></span><span class="uptime-day" role="img" aria-label="Day 25: operational"></span><span class="uptime-day" role="img" aria-label="Day 26: operational"></span><span class="uptime-day" role="img" aria-label="Day 27: operational"></span><span class="uptime-day" role="img" aria-label="Day 28: operational"></span><span class="uptime-day" role="img" aria-label="Day 29: operational"></span><span class="uptime-day" role="img" aria-label="Day 30: operational"></span></div><div class="uptime-caption"><span>30 days ago</span><span>99.99% uptime</span><span>Today</span></div></div><div class="service-status"><span class="status-symbol"></span><span>Operational</span></div></article>
       <article class="service-row"><div class="service-copy"><h3>Authentication</h3><p>Registration, login, passkey and MFA</p></div><div class="uptime"><div class="uptime-track"><span class="uptime-day" role="img" aria-label="Day 1: operational"></span><span class="uptime-day" role="img" aria-label="Day 2: operational"></span><span class="uptime-day" role="img" aria-label="Day 3: operational"></span><span class="uptime-day" role="img" aria-label="Day 4: operational"></span><span class="uptime-day" role="img" aria-label="Day 5: operational"></span><span class="uptime-day" role="img" aria-label="Day 6: operational"></span><span class="uptime-day" role="img" aria-label="Day 7: operational"></span><span class="uptime-day" role="img" aria-label="Day 8: operational"></span><span class="uptime-day" role="img" aria-label="Day 9: operational"></span><span class="uptime-day" role="img" aria-label="Day 10: operational"></span><span class="uptime-day" role="img" aria-label="Day 11: operational"></span><span class="uptime-day" role="img" aria-label="Day 12: operational"></span><span class="uptime-day" role="img" aria-label="Day 13: operational"></span><span class="uptime-day" role="img" aria-label="Day 14: operational"></span><span class="uptime-day" role="img" aria-label="Day 15: operational"></span><span class="uptime-day" role="img" aria-label="Day 16: operational"></span><span class="uptime-day" role="img" aria-label="Day 17: operational"></span><span class="uptime-day" role="img" aria-label="Day 18: operational"></span><span class="uptime-day" role="img" aria-label="Day 19: operational"></span><span class="uptime-day" role="img" aria-label="Day 20: operational"></span><span class="uptime-day uptime-degraded" role="img" aria-label="Day 21: degraded"></span><span class="uptime-day" role="img" aria-label="Day 22: operational"></span><span class="uptime-day" role="img" aria-label="Day 23: operational"></span><span class="uptime-day" role="img" aria-label="Day 24: operational"></span><span class="uptime-day" role="img" aria-label="Day 25: operational"></span><span class="uptime-day" role="img" aria-label="Day 26: operational"></span><span class="uptime-day" role="img" aria-label="Day 27: operational"></span><span class="uptime-day" role="img" aria-label="Day 28: operational"></span><span class="uptime-day" role="img" aria-label="Day 29: operational"></span><span class="uptime-day" role="img" aria-label="Day 30: operational"></span></div><div class="uptime-caption"><span>30 days ago</span><span>99.99% uptime</span><span>Today</span></div></div><div class="service-status"><span class="status-symbol"></span><span>Operational</span></div></article>
@@ -452,10 +803,13 @@ html[data-theme="dark"] .site-header{background:rgba(7,8,9,.90)}
   </div>
   <div class="footer-bottom"><div>© <span id="year">2026</span> DIRAC Group. All rights reserved.</div><a href="#top">Back to top ↑</a></div>
 </div></footer>
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">↑</button>
 <script>
 (()=>{
 'use strict';
 const q=(s,r=document)=>r.querySelector(s),qa=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 function setupLogoFallback(){
   qa('.brand-logo,.footer-logo').forEach(img=>{
     const tile=img.closest('.brand-logo-tile,.footer-logo-tile');
@@ -463,17 +817,98 @@ function setupLogoFallback(){
     const sync=()=>tile.classList.toggle('logo-missing',!img.complete||img.naturalWidth===0);
     img.addEventListener('load',sync,{once:true});
     img.addEventListener('error',()=>tile.classList.add('logo-missing'),{once:true});
-    if(img.complete) sync();
+    if(img.complete)sync();
   });
 }
 setupLogoFallback();
-function setTheme(t){document.documentElement.dataset.theme=t;q('#themeButton').textContent=t==='dark'?'☼︎':'◐';q('meta[name="theme-color"]').setAttribute('content',t==='dark'?'#070809':'#f6f7f9');try{localStorage.setItem('dirac-status-theme',t)}catch(_){}}
-let saved='';try{saved=localStorage.getItem('dirac-status-theme')||''}catch(_){}const preferDark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches;setTheme(saved||(preferDark?'dark':'light'));
+
+function setTheme(t){
+  document.documentElement.dataset.theme=t;
+  const b=q('#themeButton');
+  b.textContent=t==='dark'?'☼︎':'◐';
+  b.setAttribute('aria-label',t==='dark'?'Switch to light theme':'Switch to dark theme');
+  b.setAttribute('title',t==='dark'?'Light theme':'Dark theme');
+  q('meta[name="theme-color"]').setAttribute('content',t==='dark'?'#070809':'#f6f7f9');
+  try{localStorage.setItem('dirac-status-theme',t)}catch(_){}
+}
+let saved='';
+try{saved=localStorage.getItem('dirac-status-theme')||''}catch(_){}
+const preferDark=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches;
+setTheme(saved||(preferDark?'dark':'light'));
 q('#themeButton').addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
-q('#menuButton').addEventListener('click',()=>{const m=q('#mobileMenu');const open=m.classList.toggle('open');q('#menuButton').textContent=open?'×':'☰';q('#menuButton').setAttribute('aria-expanded',String(open));});
-qa('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>{q('#mobileMenu').classList.remove('open');q('#menuButton').textContent='☰';q('#menuButton').setAttribute('aria-expanded','false');}));
-q('#generatedAt').textContent=new Intl.DateTimeFormat('id-ID',{dateStyle:'medium',timeStyle:'short'}).format(new Date());q('#year').textContent=String(new Date().getFullYear());
-if('IntersectionObserver' in window){const links=qa('.primary-nav a'),secs=qa('main section[id]');const o=new IntersectionObserver(es=>{const a=es.filter(e=>e.isIntersecting).sort((x,y)=>y.intersectionRatio-x.intersectionRatio)[0];if(!a)return;links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+a.target.id));},{rootMargin:'-25% 0px -65% 0px',threshold:[.05,.25]});secs.forEach(s=>o.observe(s));}
+
+const menuButton=q('#menuButton'),mobileMenu=q('#mobileMenu');
+function setMenu(open){
+  mobileMenu.classList.toggle('open',open);
+  menuButton.textContent=open?'×':'☰';
+  menuButton.setAttribute('aria-expanded',String(open));
+  menuButton.setAttribute('aria-label',open?'Close menu':'Open menu');
+}
+menuButton.addEventListener('click',()=>setMenu(!mobileMenu.classList.contains('open')));
+qa('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mobileMenu.classList.contains('open')){setMenu(false);menuButton.focus();}});
+document.addEventListener('click',e=>{if(mobileMenu.classList.contains('open')&&!mobileMenu.contains(e.target)&&!menuButton.contains(e.target))setMenu(false);});
+window.addEventListener('resize',()=>{if(window.innerWidth>900&&mobileMenu.classList.contains('open'))setMenu(false);},{passive:true});
+
+const now=new Date();
+q('#generatedAt').textContent=new Intl.DateTimeFormat('id-ID',{dateStyle:'medium',timeStyle:'short'}).format(now);
+q('#year').textContent=String(now.getFullYear());
+
+function setupUptimeDetails(){
+  const fmt=new Intl.DateTimeFormat('id-ID',{day:'2-digit',month:'short'});
+  qa('.uptime-track').forEach(track=>{
+    qa('.uptime-day',track).forEach((day,i)=>{
+      const date=new Date(now);
+      date.setHours(12,0,0,0);
+      date.setDate(now.getDate()-(29-i));
+      const raw=day.getAttribute('aria-label')||'';
+      const state=(raw.split(':')[1]||'operational').trim();
+      const label=state.charAt(0).toUpperCase()+state.slice(1);
+      day.title=`${fmt.format(date)} — ${label}`;
+      day.style.setProperty('--bar-delay',`${Math.min(i*7,160)}ms`);
+    });
+  });
+}
+setupUptimeDetails();
+
+function syncSummary(){
+  const statuses=qa('.service-status').map(x=>x.textContent.trim().toLowerCase());
+  const total=statuses.length;
+  const operational=statuses.filter(x=>x.includes('operational')).length;
+  const values=qa('.uptime-caption span:nth-child(2)').map(x=>parseFloat(x.textContent)).filter(Number.isFinite);
+  const avg=values.length?values.reduce((a,b)=>a+b,0)/values.length:0;
+  q('#summaryServices').textContent=`${operational}/${total}`;
+  q('#summaryUptime').textContent=values.length?`${avg.toFixed(2)}%`:'—';
+  const hasIncident=!/no active incidents/i.test(q('.incident-state strong')?.textContent||'');
+  q('#summaryIncidents').textContent=hasIncident?'1+':'0';
+}
+syncSummary();
+
+const header=q('.site-header'),backTop=q('#backToTop');
+function onScroll(){
+  const y=window.scrollY||document.documentElement.scrollTop;
+  header.classList.toggle('scrolled',y>8);
+  backTop.classList.toggle('visible',y>520);
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+onScroll();
+backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:reduceMotion?'auto':'smooth'}));
+
+const links=qa('.primary-nav a'),secs=qa('main section[id]');
+if('IntersectionObserver' in window){
+  const navObserver=new IntersectionObserver(es=>{
+    const active=es.filter(e=>e.isIntersecting).sort((x,y)=>y.intersectionRatio-x.intersectionRatio)[0];
+    if(!active)return;
+    links.forEach(l=>{
+      const on=l.getAttribute('href')==='#'+active.target.id;
+      l.classList.toggle('active',on);
+      if(on)l.setAttribute('aria-current','location');else l.removeAttribute('aria-current');
+    });
+  },{rootMargin:'-24% 0px -66% 0px',threshold:[.05,.2,.4]});
+  secs.forEach(s=>navObserver.observe(s));
+}
+
+
 })();
 </script>
 </body></html>
