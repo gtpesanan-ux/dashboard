@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="DIRAC Status — operational status and service availability.">
-<meta name="application-name" content="DIRAC Status">
+<meta name="description" content="Dirac Group Status — operational status and service availability.">
+<meta name="application-name" content="Dirac Group Status">
 <meta name="theme-color" content="#f6f7f9">
 <meta name="robots" content="index,follow">
 <meta name="referrer" content="no-referrer">
 <meta name="dirac-status-endpoint" content="/status.json">
 <meta name="dirac-status-generated-at" content="2026-08-23T10:59:53Z">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
-<title>DIRAC Status</title>
+<title>Dirac Group Status</title>
 <link rel="icon" type="image/webp" href="umroh.webp">
 <style>
 :root{
@@ -393,7 +393,7 @@ html[data-theme="dark"] .site-header{background:rgba(7,8,9,.90)}
 }
 
 
-/* ===== DIRAC UI/UX refinement layer ===== */
+/* ===== Dirac Group UI/UX refinement layer ===== */
 body{
   letter-spacing:-.004em;
 }
@@ -877,14 +877,58 @@ html[data-theme="dark"] .uptime-popover{box-shadow:0 18px 50px rgba(0,0,0,.46)}
   .service-details,.uptime-popover,.toast{transition:none!important}
 }
 
+
+/* ===== Dirac Group production refinement ===== */
+.brand-name strong{font-size:15px;font-weight:760;letter-spacing:-.018em;text-transform:none}
+.brand-name small{margin-top:4px;color:var(--faint);font-size:9px;font-weight:640;letter-spacing:.01em;text-transform:none}
+.footer-brand strong{font-weight:760;letter-spacing:-.012em;text-transform:none}
+.footer-column h2,.detail-metric span,.popover-date,.incident-badge{letter-spacing:0;text-transform:none}
+.hero{padding-top:58px}
+.hero h1{max-width:760px;font-size:clamp(38px,5.4vw,58px);font-weight:750;line-height:1.04;letter-spacing:-.045em}
+.hero-copy{max-width:690px;margin-top:14px;font-size:15px;line-height:1.65}
+.snapshot{margin-top:14px}
+.status-summary{display:flex;max-width:720px;gap:0;margin-top:22px;padding:13px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.summary-card{display:flex;align-items:baseline;gap:6px;min-width:0;padding:0 20px;border:0;border-right:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.summary-card:first-child{padding-left:0}.summary-card:last-child{border-right:0}.summary-card:hover{transform:none;border-color:var(--line);box-shadow:none}
+.summary-card strong{font-size:17px;font-weight:770;letter-spacing:-.025em}.summary-card span{margin-top:0;font-size:10.5px;font-weight:620;white-space:nowrap}
+.runtime-panel{max-width:720px;margin-top:12px;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+.runtime-state{gap:8px}.runtime-state strong{font-size:10.5px}.runtime-state span:not(.runtime-dot){font-size:9.5px}.runtime-actions{gap:8px}
+.refresh-button{min-height:32px;border-radius:9px}.refresh-countdown{font-size:9px}
+.section-head h2{font-size:28px;letter-spacing:-.032em}
+.service-group-label{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:11px 24px;border-bottom:1px solid var(--line);background:var(--surface-2);color:var(--faint)}
+.service-group-label strong{color:var(--text-2);font-size:11px;font-weight:750;letter-spacing:-.008em}.service-group-label span{font-size:9.5px;font-weight:560;text-align:right}
+.service-group-label[hidden]{display:none!important}
+.service-row.tap-expand{cursor:pointer}.service-row.tap-expand .uptime,.service-row.tap-expand .service-details{cursor:default}
+.data-changed{animation:dataChanged .62s cubic-bezier(.2,.7,.2,1)}
+@keyframes dataChanged{0%{background:transparent}28%{background:color-mix(in srgb,var(--brand) 12%,transparent);box-shadow:0 0 0 4px color-mix(in srgb,var(--brand) 7%,transparent)}100%{background:transparent;box-shadow:none}}
+.incident-meta{margin-top:4px;color:var(--faint);font-size:9.5px;font-weight:620}
+.incident-timeline{position:relative;margin-top:15px;padding:2px 0 0 16px;border-left:1px solid var(--line)}
+.incident-update{position:relative;padding:0 0 14px 10px}.incident-update:last-child{padding-bottom:0}.incident-update::before{content:"";position:absolute;left:-20px;top:5px;width:7px;height:7px;border-radius:50%;background:var(--surface);border:2px solid var(--brand)}
+.incident-update span{display:block;color:var(--text-2);font-size:9.5px;font-weight:720}.incident-update p{margin:3px 0 0!important;font-size:11px!important}
+.history-duration{display:block;margin-top:4px;color:var(--muted);font-size:9px;font-weight:650}
+.maintenance-time span{display:block;margin-top:4px}.maintenance-title-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.maintenance-badge{display:inline-flex;align-items:center;min-height:23px;padding:0 8px;border:1px solid var(--line);border-radius:999px;background:var(--surface-2);color:var(--muted);font-size:8.5px;font-weight:700;white-space:nowrap}
+.maintenance-impact{color:var(--text-2)!important;font-size:11px!important;font-weight:620}
+@media(max-width:640px){
+  .brand-name strong{font-size:14px}.brand-name small{font-size:8.5px}
+  .hero{padding-top:36px}.hero h1{font-size:clamp(34px,10vw,42px)}.hero-copy{font-size:13px;line-height:1.6}
+  .status-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;margin-top:20px;padding:12px 0}
+  .summary-card{display:block;padding:0 9px}.summary-card:first-child{padding-left:0}.summary-card strong{font-size:15px}.summary-card span{display:block;margin-top:3px;font-size:8.7px;white-space:normal;line-height:1.25}
+  .runtime-panel{align-items:center;flex-direction:row;gap:8px}.runtime-actions{width:auto;margin-left:auto}.refresh-countdown{display:none}
+  .section-head h2{font-size:24px}
+  .service-group-label{margin-top:6px;padding:14px 3px 5px;border:0;background:transparent}.service-group-label strong{font-size:11.5px}.service-group-label span{display:none}
+  .service-row.tap-expand:active{transform:scale(.997)}
+  .incident-card-head,.maintenance-title-row{align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){.data-changed{animation:none!important}}
 </style>
 </head>
 <body>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="#top" aria-label="DIRAC Status home">
-      <span class="brand-logo-tile"><img class="brand-logo" src="umroh.webp" alt="DIRAC"><span class="logo-fallback" aria-hidden="true">D</span></span>
-      <span class="brand-name"><strong>DIRAC</strong><small>STATUS</small></span>
+    <a class="brand" href="#top" aria-label="Dirac Group Status home">
+      <span class="brand-logo-tile"><img class="brand-logo" src="umroh.webp" alt="Dirac Group"><span class="logo-fallback" aria-hidden="true">D</span></span>
+      <span class="brand-name"><strong>Dirac Group</strong><small>System status</small></span>
     </a>
     <nav class="primary-nav" aria-label="Primary navigation">
       <a href="#status">Status</a><a href="#incidents">Incidents</a><a href="#maintenance">Maintenance</a><a href="#history">History</a>
@@ -906,7 +950,7 @@ html[data-theme="dark"] .uptime-popover{box-shadow:0 18px 50px rgba(0,0,0,.46)}
   <section class="hero"><div class="container">
     <div class="overall-status"><span class="status-symbol"></span><span>Operational</span></div>
     <h1>All systems operational</h1>
-    <p class="hero-copy">All customer-facing DIRAC services in this status snapshot are operating normally.</p>
+    <p class="hero-copy">Real-time operational status for Dirac Group services and infrastructure.</p>
     <div class="snapshot snapshot-line">Status data generated <span id="generatedAt">—</span><span class="data-source-badge" id="dataSourceBadge">Snapshot</span></div>
     <div class="status-summary" aria-label="Status overview">
       <div class="summary-card"><strong id="summaryServices">9/9</strong><span>Services operational</span></div>
@@ -964,11 +1008,11 @@ html[data-theme="dark"] .uptime-popover{box-shadow:0 18px 50px rgba(0,0,0,.46)}
 </main>
 <footer class="site-footer"><div class="container">
   <div class="footer-grid">
-    <section class="footer-main"><div class="footer-brand"><span class="footer-logo-tile"><img class="footer-logo" src="umroh.webp" alt="DIRAC"><span class="logo-fallback" aria-hidden="true">D</span></span><div><strong>DIRAC Status</strong><span>Platform health &amp; service availability</span></div></div><p class="footer-about">Public operational status for DIRAC customer-facing systems and supporting services.</p></section>
+    <section class="footer-main"><div class="footer-brand"><span class="footer-logo-tile"><img class="footer-logo" src="umroh.webp" alt="Dirac Group"><span class="logo-fallback" aria-hidden="true">D</span></span><div><strong>Dirac Group</strong><span>System status &amp; service availability</span></div></div><p class="footer-about">Public operational status for Dirac Group services, infrastructure and supporting systems.</p></section>
     <nav class="footer-column"><h2>System</h2><div class="footer-links"><a href="#status">System status</a><a href="#incidents">Active incidents</a><a href="#maintenance">Maintenance</a><a href="#history">Incident history</a></div></nav>
     <section class="footer-column"><h2>Contact</h2><div class="contact-list"><div class="contact-item"><strong>Support</strong><a href="mailto:support@diracgroup.store">support@diracgroup.store</a></div><div class="contact-item"><strong>Founder</strong><a href="mailto:founder@diracgroup.store">founder@diracgroup.store</a></div><div class="contact-item"><strong>WhatsApp / Phone</strong><a href="tel:+6287892523968">+62 878-9252-3968</a></div></div></section>
   </div>
-  <div class="footer-bottom"><div>© <span id="year">2026</span> DIRAC Group. All rights reserved.</div><a href="#top">Back to top ↑</a></div>
+  <div class="footer-bottom"><div>© <span id="year">2026</span> Dirac Group. All rights reserved.</div><a href="#top">Back to top ↑</a></div>
 </div></footer>
 <div class="uptime-popover" id="uptimePopover" role="dialog" aria-modal="false" aria-hidden="true">
   <button class="popover-close" id="popoverClose" type="button" aria-label="Close availability detail">×</button>
@@ -1114,8 +1158,9 @@ const normalizeStatus=v=>{
   return 'unknown';
 };
 const slug=v=>String(v||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
-const fmtDate=d=>new Intl.DateTimeFormat('en-US',{day:'numeric',month:'short',year:'numeric'}).format(d);
-const fmtDateTime=d=>new Intl.DateTimeFormat('en-US',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}).format(d);
+const fmtDate=d=>new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'Asia/Jakarta'}).format(d);
+const fmtDateTime=d=>`${new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Jakarta'}).format(d)} WIB`;
+const titleCase=v=>String(v||'').toLowerCase().replace(/(^|[\s_-])([a-z])/g,(m,p,c)=>p+c.toUpperCase());
 const relativeTime=d=>{
   if(!(d instanceof Date)||Number.isNaN(d.getTime()))return 'Unknown';
   const sec=Math.max(0,Math.round((Date.now()-d.getTime())/1000));
@@ -1126,6 +1171,28 @@ const relativeTime=d=>{
 };
 function announce(text){const el=$('#statusAnnouncer');if(el){el.textContent='';requestAnimationFrame(()=>el.textContent=text)}}
 function toast(text){const el=$('#statusToast');if(!el)return;clearTimeout(toastTimer);el.textContent=text;el.classList.add('show');toastTimer=setTimeout(()=>el.classList.remove('show'),2600)}
+function setLiveText(el,text){if(!el)return;const next=String(text);if(el.textContent===next)return;el.textContent=next;el.classList.remove('data-changed');void el.offsetWidth;el.classList.add('data-changed');setTimeout(()=>el.classList.remove('data-changed'),650)}
+
+const serviceGroups=[
+  {id:'core-platform',label:'Core platform',description:'Identity, access and account experience',services:['website','authentication','customer-dashboard','account-recovery']},
+  {id:'commerce-services',label:'Commerce & services',description:'Domains, payments and order processing',services:['domain-services','payments','orders']},
+  {id:'communication-intelligence',label:'Communication & intelligence',description:'Notifications and AI-assisted services',services:['email-notifications','ai-services']}
+];
+function organizeServiceGroups(){
+  const list=$('.service-list');if(!list||$('.service-group-label',list))return;
+  const rows=$$('.service-row',list),bySlug=new Map(rows.map(r=>[slug($('.service-copy h3',r)?.textContent),r]));
+  const used=new Set();
+  serviceGroups.forEach(group=>{
+    const groupRows=group.services.map(id=>bySlug.get(id)).filter(Boolean);if(!groupRows.length)return;
+    const label=document.createElement('div');label.className='service-group-label';label.dataset.groupLabel=group.id;
+    const strong=document.createElement('strong');strong.textContent=group.label;const span=document.createElement('span');span.textContent=group.description;label.append(strong,span);list.append(label);
+    groupRows.forEach(row=>{row.dataset.group=group.id;list.append(row);used.add(row)});
+  });
+  rows.filter(r=>!used.has(r)).forEach(row=>list.append(row));
+}
+function syncGroupVisibility(){
+  $$('.service-group-label').forEach(label=>{const id=label.dataset.groupLabel;const rows=$$(`.service-row[data-group="${id}"]`);label.hidden=!rows.some(r=>!r.hidden)});
+}
 
 function enhanceServices(){
   $$('.service-row').forEach((row,index)=>{
@@ -1148,8 +1215,10 @@ function enhanceServices(){
       row.append(detail);
       const toggle=()=>{const open=!row.classList.contains('expanded');row.classList.toggle('expanded',open);button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',`${open?'Hide':'Show'} details for ${name}`)};
       button.addEventListener('click',e=>{e.stopPropagation();toggle()});
-      $('.service-copy',row)?.addEventListener('click',toggle);
+      $('.service-copy',row)?.addEventListener('click',e=>{e.stopPropagation();toggle()});
       $('.service-copy',row)?.style.setProperty('cursor','pointer');
+      row.classList.add('tap-expand');
+      row.addEventListener('click',e=>{if(e.target.closest('.uptime-day,.service-expand-button,.service-details,button,a'))return;toggle()});
     }
   });
 }
@@ -1176,7 +1245,8 @@ function showDayPopover(day){
   if(activeDay)activeDay.setAttribute('aria-expanded','false');activeDay=day;day.setAttribute('aria-expanded','true');
   const d=new Date(day.dataset.date||Date.now());const st=normalizeStatus(day.dataset.state);
   $('#popoverDate').textContent=fmtDate(d);$('#popoverStatus').textContent=statusNames[st];
-  $('#popoverNote').textContent=st==='operational'?'No service-impacting event recorded for this day.':'Availability state recorded for this day.';
+  const details=[];if(day.dataset.incident)details.push(day.dataset.incident);if(day.dataset.duration)details.push(`Duration: ${day.dataset.duration} min`);if(day.dataset.note)details.push(day.dataset.note);
+  $('#popoverNote').textContent=details.length?details.join(' · '):(st==='operational'?'No service-impacting event recorded for this day.':'No incident detail was published for this availability state.');
   pop.classList.add('open');pop.setAttribute('aria-hidden','false');
   const r=day.getBoundingClientRect(), w=Math.min(220,window.innerWidth-28), h=104;
   let left=Math.max(14,Math.min(window.innerWidth-w-14,r.left+r.width/2-w/2));
@@ -1194,46 +1264,68 @@ function updateFilterCounts(){
   const rows=$$('.service-row');const operational=rows.filter(r=>r.dataset.status==='operational').length;const issues=rows.length-operational;
   $('#countAll').textContent=String(rows.length);$('#countOperational').textContent=String(operational);$('#countIssues').textContent=String(issues);
 }
+function applyServiceFilter(filter){
+  $$('.service-row').forEach(row=>{const show=filter==='all'||(filter==='operational'&&row.dataset.status==='operational')||(filter==='issues'&&row.dataset.status!=='operational');row.hidden=!show});
+  syncGroupVisibility();
+}
 function setupFilters(){
   $$('.filter-button').forEach(btn=>btn.addEventListener('click',()=>{
     const filter=btn.dataset.filter;$$('.filter-button').forEach(b=>{const on=b===btn;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});
-    $$('.service-row').forEach(row=>{const show=filter==='all'||(filter==='operational'&&row.dataset.status==='operational')||(filter==='issues'&&row.dataset.status!=='operational');row.hidden=!show});
-    announce(`Showing ${$$('.service-row:not([hidden])').length} services`);
+    applyServiceFilter(filter);announce(`Showing ${$$('.service-row:not([hidden])').length} services`);
   }));
+  syncGroupVisibility();
 }
 
 function updateServiceRow(row,service){
   if(!row||!service)return;
   const state=normalizeStatus(service.status);row.dataset.status=state;
   const statusWrap=$('.service-status',row);const text=statusWrap?Array.from(statusWrap.childNodes).find(n=>n.nodeType===Node.ELEMENT_NODE&&n.tagName==='SPAN'&&!n.classList.contains('status-symbol')&&!n.closest('.service-expand-button')):null;
-  const spans=statusWrap?$$(':scope > span',statusWrap):[];if(spans[1])spans[1].textContent=statusNames[state];
-  const uptime=Number(service.uptime30d);if(Number.isFinite(uptime)){const el=$('.uptime-caption span:nth-child(2)',row);if(el)el.textContent=`${uptime.toFixed(2)}% uptime`;const d=$('[data-detail-uptime]',row);if(d)d.textContent=`${uptime.toFixed(2)}%`}
-  const ds=$('[data-detail-status]',row);if(ds)ds.textContent=statusNames[state];
-  const dl=$('[data-detail-latency]',row);if(dl)dl.textContent=Number.isFinite(Number(service.latencyMs))?`${Math.round(Number(service.latencyMs))} ms`:'Not published';
+  const spans=statusWrap?$$(':scope > span',statusWrap):[];if(spans[1])setLiveText(spans[1],statusNames[state]);
+  const uptime=Number(service.uptime30d);if(Number.isFinite(uptime)){const el=$('.uptime-caption span:nth-child(2)',row);if(el)setLiveText(el,`${uptime.toFixed(2)}% uptime`);const d=$('[data-detail-uptime]',row);if(d)setLiveText(d,`${uptime.toFixed(2)}%`)}
+  const ds=$('[data-detail-status]',row);if(ds)setLiveText(ds,statusNames[state]);
+  const dl=$('[data-detail-latency]',row);if(dl)setLiveText(dl,Number.isFinite(Number(service.latencyMs))?`${Math.round(Number(service.latencyMs))} ms`:'Not published');
   const du=$('[data-detail-updated]',row);if(du)du.textContent=payloadGeneratedAt?relativeTime(payloadGeneratedAt):'Unknown';
   if(Array.isArray(service.days)&&service.days.length){
     const days=$$('.uptime-day',row);const src=service.days.slice(-days.length);
-    days.forEach((day,i)=>{const st=normalizeStatus(src[i]?.status??src[i]);day.classList.remove('uptime-degraded','uptime-partial','uptime-unknown','uptime-outage');if(st==='degraded')day.classList.add('uptime-degraded');if(st==='partial')day.classList.add('uptime-partial');if(st==='unknown')day.classList.add('uptime-unknown');if(st==='outage')day.classList.add('uptime-outage');day.dataset.state=st;if(src[i]&&typeof src[i]==='object'&&src[i].date)day.dataset.date=src[i].date});
+    days.forEach((day,i)=>{const source=src[i],st=normalizeStatus(source?.status??source);day.classList.remove('uptime-degraded','uptime-partial','uptime-unknown','uptime-outage');if(st==='degraded')day.classList.add('uptime-degraded');if(st==='partial')day.classList.add('uptime-partial');if(st==='unknown')day.classList.add('uptime-unknown');if(st==='outage')day.classList.add('uptime-outage');day.dataset.state=st;delete day.dataset.duration;delete day.dataset.incident;delete day.dataset.note;if(source&&typeof source==='object'){if(source.date)day.dataset.date=source.date;if(Number.isFinite(Number(source.durationMinutes)))day.dataset.duration=String(Math.round(Number(source.durationMinutes)));if(source.incidentTitle||source.incident)day.dataset.incident=String(source.incidentTitle||source.incident);if(source.note||source.message)day.dataset.note=String(source.note||source.message)}});
   }
 }
 
 function renderIncidents(items){
   const host=$('#incidentList');if(!host)return;const list=Array.isArray(items)?items:[];
   if(!list.length){host.innerHTML='<div class="incident-state"><div class="incident-icon">✓</div><div><strong>No active incidents</strong><p>There are no service-impacting incidents in the latest available status data.</p></div></div>';return}
-  const wrapper=document.createElement('div');wrapper.className='history-list';
-  list.forEach(item=>{const card=document.createElement('article');card.className='incident-card';const title=String(item.title||'Service incident');const status=String(item.status||'Investigating');const msg=String(item.message||item.summary||'An incident is currently being investigated.');card.innerHTML=`<div class="incident-card-head"><div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(msg)}</p></div><span class="incident-badge">${escapeHtml(status)}</span></div>`;wrapper.append(card)});
+  const wrapper=document.createElement('div');wrapper.className='history-list incident-list';
+  list.forEach(item=>{
+    const card=document.createElement('article');card.className='incident-card';
+    const title=String(item.title||'Service incident'),status=titleCase(item.status||'Investigating'),msg=String(item.message||item.summary||'An incident is currently being investigated.');
+    const started=item.startedAt||item.createdAt,when=started?new Date(started):null,comps=Array.isArray(item.components)?item.components:[],updates=Array.isArray(item.updates)?item.updates:[];
+    const meta=when&&!Number.isNaN(when.getTime())?`<div class="incident-meta">Started ${escapeHtml(fmtDateTime(when))}</div>`:'';
+    const chips=comps.length?`<div class="maintenance-components">${comps.map(c=>`<span class="component-chip">${escapeHtml(c)}</span>`).join('')}</div>`:'';
+    const timeline=updates.length?`<div class="incident-timeline">${updates.map(u=>{const at=u.at||u.createdAt||u.timestamp;const d=at?new Date(at):null;const time=d&&!Number.isNaN(d.getTime())?fmtDateTime(d):'';return `<div class="incident-update"><span>${escapeHtml(titleCase(u.status||'Update'))}${time?` · ${escapeHtml(time)}`:''}</span><p>${escapeHtml(u.message||u.summary||'')}</p></div>`}).join('')}</div>`:'';
+    card.innerHTML=`<div class="incident-card-head"><div><h3>${escapeHtml(title)}</h3>${meta}<p>${escapeHtml(msg)}</p>${chips}</div><span class="incident-badge">${escapeHtml(status)}</span></div>${timeline}`;wrapper.append(card);
+  });
   host.replaceChildren(wrapper);
 }
 function renderHistory(items){
   const host=$('#historyList');if(!host)return;const list=Array.isArray(items)?items:[];
   if(!list.length){host.innerHTML='<article class="history-row"><div class="history-date">Latest data</div><div><h3>No incidents reported</h3><p>No historical incident records are included in the latest available status data.</p></div></article>';return}
   host.innerHTML='';
-  list.forEach(item=>{const row=document.createElement('article');row.className='history-row';const when=item.resolvedAt||item.endedAt||item.startedAt||item.createdAt;const d=when?new Date(when):null;const dateText=d&&!Number.isNaN(d.getTime())?fmtDate(d):'Incident';const title=String(item.title||'Resolved incident');const msg=String(item.message||item.summary||item.status||'Resolved');row.innerHTML=`<div class="history-date">${escapeHtml(dateText)}</div><div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(msg)}</p></div>`;host.append(row)});
+  list.forEach(item=>{
+    const row=document.createElement('article');row.className='history-row';const start=item.startedAt||item.createdAt,end=item.resolvedAt||item.endedAt;const when=end||start;const d=when?new Date(when):null;const dateText=d&&!Number.isNaN(d.getTime())?fmtDateTime(d):'Incident';
+    const title=String(item.title||'Resolved incident'),msg=String(item.message||item.summary||item.status||'Resolved'),comps=Array.isArray(item.components)?item.components:[];
+    let duration='';if(start&&end){const a=new Date(start),b=new Date(end);if(!Number.isNaN(a.getTime())&&!Number.isNaN(b.getTime())&&b>=a){const mins=Math.round((b-a)/60000);duration=`<span class="history-duration">Duration ${escapeHtml(mins<60?`${mins} min`:`${Math.floor(mins/60)}h ${mins%60}m`)}</span>`}}
+    const chips=comps.length?`<div class="maintenance-components">${comps.map(c=>`<span class="component-chip">${escapeHtml(c)}</span>`).join('')}</div>`:'';
+    row.innerHTML=`<div class="history-date">${escapeHtml(dateText)}${duration}</div><div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(msg)}</p>${chips}</div>`;host.append(row);
+  });
 }
 function renderMaintenance(items){
   const host=$('#maintenanceList');if(!host)return;const list=Array.isArray(items)?items:[];$('#maintenanceMeta').textContent=`${list.length} scheduled`;
   if(!list.length){host.innerHTML='<div class="maintenance-empty"><div class="maintenance-icon" aria-hidden="true">✓</div><div><strong>No maintenance scheduled</strong><p>There is no planned maintenance in the latest available status data.</p></div></div>';return}
-  host.innerHTML='';list.forEach(item=>{const card=document.createElement('article');card.className='maintenance-card';const start=item.startsAt?new Date(item.startsAt):null;const when=start&&!Number.isNaN(start.getTime())?fmtDateTime(start):'Time to be announced';const comps=Array.isArray(item.components)?item.components:[];card.innerHTML=`<div class="maintenance-time">${escapeHtml(when)}</div><div><strong>${escapeHtml(item.title||'Scheduled maintenance')}</strong><p>${escapeHtml(item.message||item.summary||'Planned maintenance window.')}</p>${comps.length?`<div class="maintenance-components">${comps.map(c=>`<span class="component-chip">${escapeHtml(c)}</span>`).join('')}</div>`:''}</div>`;host.append(card)});
+  host.innerHTML='';list.forEach(item=>{
+    const card=document.createElement('article');card.className='maintenance-card';const start=item.startsAt?new Date(item.startsAt):null,end=item.endsAt?new Date(item.endsAt):null;const when=start&&!Number.isNaN(start.getTime())?fmtDateTime(start):'Time to be announced';const comps=Array.isArray(item.components)?item.components:[];const state=titleCase(item.status||'Scheduled');
+    const endText=end&&!Number.isNaN(end.getTime())?`<span>Ends ${escapeHtml(fmtDateTime(end))}</span>`:'';const impact=item.impact?`<p class="maintenance-impact">Expected impact: ${escapeHtml(item.impact)}</p>`:'';
+    card.innerHTML=`<div class="maintenance-time">${escapeHtml(when)}${endText}</div><div><div class="maintenance-title-row"><strong>${escapeHtml(item.title||'Scheduled maintenance')}</strong><span class="maintenance-badge">${escapeHtml(state)}</span></div><p>${escapeHtml(item.message||item.summary||'Planned maintenance window.')}</p>${impact}${comps.length?`<div class="maintenance-components">${comps.map(c=>`<span class="component-chip">${escapeHtml(c)}</span>`).join('')}</div>`:''}</div>`;host.append(card)
+  });
 }
 function escapeHtml(v){return String(v??'').replace(/[&<>'"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]))}
 
@@ -1243,7 +1335,7 @@ function applyPayload(data,mode='live'){
   sourceMode=mode;
   const byId=new Map(data.services.map(x=>[slug(x.id||x.name),x]));
   $$('.service-row').forEach(row=>{const service=byId.get(row.dataset.serviceId)||byId.get(slug($('.service-copy h3',row)?.textContent));if(service)updateServiceRow(row,service)});
-  renderIncidents(data.incidents);renderMaintenance(data.maintenance);renderHistory(data.incidentHistory);decorateUptimeDays(payloadGeneratedAt||new Date());updateFilterCounts();syncAllSummary();updateGeneratedText();updateFreshnessUI();
+  renderIncidents(data.incidents);renderMaintenance(data.maintenance);renderHistory(data.incidentHistory);decorateUptimeDays(payloadGeneratedAt||new Date());updateFilterCounts();const activeFilter=$('.filter-button.active')?.dataset.filter||'all';applyServiceFilter(activeFilter);syncAllSummary();updateGeneratedText();updateFreshnessUI();
   try{localStorage.setItem(cacheKey,JSON.stringify({savedAt:Date.now(),data}))}catch(_){ }
 }
 
@@ -1256,22 +1348,22 @@ function freshestState(){
 function updateFreshnessUI(){
   const state=freshestState();const runtime=$('#runtimePanel'),badge=$('#dataSourceBadge');if(runtime)runtime.dataset.state=state;
   if(badge){badge.className='data-source-badge';if(state==='live'&&sourceMode==='live'){badge.classList.add('live');badge.textContent='Live feed'}else if(state==='delayed'){badge.classList.add('delayed');badge.textContent='Data delayed'}else{badge.classList.add('snapshot');badge.textContent=sourceMode==='cache'?'Cached data':'Snapshot'}}
-  const label=$('#runtimeLabel');if(label){label.textContent=state==='offline'?'Offline — last known data':state==='delayed'?'Monitoring data delayed':state==='live'&&sourceMode==='live'?'Monitoring feed connected':sourceMode==='cache'?'Cached status data':'Embedded status snapshot'}
+  const label=$('#runtimeLabel');if(label){label.textContent=state==='offline'?'Offline':state==='delayed'?'Data delayed':state==='live'&&sourceMode==='live'?'Live':sourceMode==='cache'?'Cached data':'Snapshot'}
   syncOverall(state);
 }
 function syncAllSummary(){
-  const rows=$$('.service-row');const operational=rows.filter(r=>r.dataset.status==='operational').length;$('#summaryServices').textContent=`${operational}/${rows.length}`;
-  const uptimes=rows.map(r=>parseFloat($('.uptime-caption span:nth-child(2)',r)?.textContent||'')).filter(Number.isFinite);$('#summaryUptime').textContent=uptimes.length?`${(uptimes.reduce((a,b)=>a+b,0)/uptimes.length).toFixed(2)}%`:'—';
-  const active=$$('.incident-card').length;$('#summaryIncidents').textContent=String(active);
+  const rows=$$('.service-row');const operational=rows.filter(r=>r.dataset.status==='operational').length;setLiveText($('#summaryServices'),`${operational}/${rows.length}`);
+  const uptimes=rows.map(r=>parseFloat($('.uptime-caption span:nth-child(2)',r)?.textContent||'')).filter(Number.isFinite);setLiveText($('#summaryUptime'),uptimes.length?`${(uptimes.reduce((a,b)=>a+b,0)/uptimes.length).toFixed(2)}%`:'—');
+  const active=$$('.incident-card').length;setLiveText($('#summaryIncidents'),String(active));
   updateFilterCounts();
 }
 function syncOverall(freshness=freshestState()){
   const states=$$('.service-row').map(r=>r.dataset.status);const badge=$('.overall-status'),badgeText=$('.overall-status span:last-child'),h=$('.hero h1'),copy=$('.hero-copy');
-  let state='operational',title='All systems operational',text='All customer-facing DIRAC services in the latest available status data are operating normally.';
-  if(states.includes('outage')){state='outage';title='Service disruption';text='One or more customer-facing DIRAC services are currently reporting a major outage.'}
-  else if(states.includes('partial')){state='partial';title='Partial service outage';text='One or more customer-facing DIRAC services are currently reporting a partial outage.'}
-  else if(states.includes('degraded')){state='degraded';title='Degraded performance';text='One or more customer-facing DIRAC services are currently reporting degraded performance.'}
-  else if(states.includes('unknown')){state='unknown';title='Some status data unavailable';text='Current status could not be confirmed for one or more DIRAC services.'}
+  let state='operational',title='All systems operational',text='All monitored Dirac Group services are operating normally in the latest available status data.';
+  if(states.includes('outage')){state='outage';title='Service disruption';text='One or more Dirac Group services are currently reporting a major outage.'}
+  else if(states.includes('partial')){state='partial';title='Partial service outage';text='One or more Dirac Group services are currently reporting a partial outage.'}
+  else if(states.includes('degraded')){state='degraded';title='Degraded performance';text='One or more Dirac Group services are currently reporting degraded performance.'}
+  else if(states.includes('unknown')){state='unknown';title='Some status data unavailable';text='Current status could not be confirmed for one or more Dirac Group services.'}
   if(freshness==='delayed'){state='delayed';title='Status data delayed';text=`Showing the last known service state${payloadGeneratedAt?` from ${fmtDateTime(payloadGeneratedAt)}`:''}. Current availability has not been freshly confirmed.`}
   if(freshness==='offline'){state='unknown';title='Offline — last known status';text='Your device is offline. Showing the most recent status data already available on this page.'}
   badge.dataset.state=state;if(badgeText)badgeText.textContent=state==='operational'?'Operational':state==='delayed'?'Data delayed':statusNames[state]||'Status unavailable';if(h)h.textContent=title;if(copy)copy.textContent=text;
@@ -1294,7 +1386,7 @@ function loadCacheIfNewer(){
   try{const raw=localStorage.getItem(cacheKey);if(!raw)return;const parsed=JSON.parse(raw);const cachedDate=parsed?.data?.generatedAt?new Date(parsed.data.generatedAt):null;if(cachedDate&&!Number.isNaN(cachedDate.getTime())&&(!payloadGeneratedAt||cachedDate>payloadGeneratedAt))applyPayload(parsed.data,'cache')}catch(_){ }
 }
 function updateRuntimeTime(){
-  const checked=$('#lastChecked');if(checked)checked.textContent=lastCheckedAt?`Checked ${relativeTime(lastCheckedAt)}`:'Not checked yet';
+  const checked=$('#lastChecked');if(checked)checked.textContent=lastCheckedAt?`Updated ${relativeTime(lastCheckedAt)}`:'Waiting for first update';
   const count=$('#refreshCountdown');if(count){const sec=Math.max(0,Math.ceil((nextRefreshAt-Date.now())/1000));count.textContent=navigator.onLine?`Auto refresh in ${sec}s`:'Auto refresh paused while offline'}
   $$('[data-detail-updated]').forEach(el=>el.textContent=payloadGeneratedAt?relativeTime(payloadGeneratedAt):'Unknown');updateFreshnessUI();
 }
@@ -1302,7 +1394,7 @@ function startRuntimeClock(){clearInterval(refreshTimer);refreshTimer=setInterva
 function updateNetwork(){const banner=$('#networkBanner');if(!banner)return;banner.hidden=navigator.onLine;if(!navigator.onLine)$('#networkMessage').textContent='You are offline — showing the last available status data.';updateFreshnessUI()}
 
 function initialize(){
-  enhanceServices();decorateUptimeDays(payloadGeneratedAt||new Date());bindUptimePopover();setupFilters();loadCacheIfNewer();updateGeneratedText();syncAllSummary();updateNetwork();updateFreshnessUI();
+  organizeServiceGroups();enhanceServices();decorateUptimeDays(payloadGeneratedAt||new Date());bindUptimePopover();setupFilters();loadCacheIfNewer();updateGeneratedText();syncAllSummary();updateNetwork();updateFreshnessUI();
   $('#refreshButton')?.addEventListener('click',()=>fetchStatus(true));window.addEventListener('online',()=>{updateNetwork();nextRefreshAt=Date.now()+1500;toast('Back online — checking status feed.');setTimeout(()=>fetchStatus(false),900)});window.addEventListener('offline',()=>{updateNetwork();toast('Offline — showing last known status data.')});
   lastCheckedAt=new Date();updateRuntimeTime();startRuntimeClock();fetchStatus(false);
   setInterval(updateFreshnessUI,30000);
