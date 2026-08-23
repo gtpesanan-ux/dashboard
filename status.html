@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id" data-theme="light">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -8,7 +8,9 @@
 <meta name="theme-color" content="#f6f7f9">
 <meta name="robots" content="index,follow">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="dirac-status-endpoint" content="/status.json">
+<meta name="dirac-status-generated-at" content="2026-08-23T10:59:53Z">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
 <title>DIRAC Status</title>
 <link rel="icon" type="image/webp" href="umroh.webp">
 <style>
@@ -243,6 +245,7 @@ html[data-theme="dark"] .site-header{background:rgba(7,8,9,.90)}
 .uptime-track{display:grid;grid-template-columns:repeat(30,minmax(0,1fr));gap:3px;height:26px}
 .uptime-day{min-width:0;border-radius:4px;border:1px solid transparent;background:var(--ok)}
 .uptime-degraded{background:var(--warn)}
+.uptime-outage{background:var(--danger)}
 .uptime-partial{border-color:var(--warn);background:repeating-linear-gradient(135deg,var(--warn) 0 3px,transparent 3px 6px)}
 .uptime-unknown{border:1px dashed var(--faint);background:transparent}
 .uptime-caption{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;color:var(--faint);font-size:10px;line-height:1.2}
@@ -735,6 +738,145 @@ html[data-theme="dark"] .summary-card{box-shadow:0 8px 24px rgba(0,0,0,.16)}
   .uptime-day,.back-to-top,.mobile-menu,.brand-logo-tile{transition:none!important}
 }
 
+
+
+/* ===== Live-status realism + interaction layer ===== */
+:root{
+  --danger:#c23c3c;
+  --danger-soft:rgba(194,60,60,.10);
+  --unknown:#77808d;
+  --unknown-soft:rgba(119,128,141,.10);
+}
+html[data-theme="dark"]{
+  --danger:#ff7474;
+  --danger-soft:rgba(255,116,116,.12);
+  --unknown:#9ba4b1;
+  --unknown-soft:rgba(155,164,177,.12);
+}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.network-banner{position:sticky;top:calc(var(--header) + env(safe-area-inset-top));z-index:46;border-bottom:1px solid rgba(184,121,18,.24);background:#fff8e8;color:#6f4b0d}
+html[data-theme="dark"] .network-banner{background:#1b160d;color:#f2c66f;border-color:rgba(225,163,63,.26)}
+.network-banner[hidden]{display:none}
+.network-banner-inner{min-height:38px;display:flex;align-items:center;gap:9px;font-size:11.5px;font-weight:650}
+.network-icon{width:18px;height:18px;display:grid;place-items:center;border:1px solid currentColor;border-radius:50%;font-size:11px;font-weight:850}
+.snapshot-line{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px}
+.data-source-badge{display:inline-flex;align-items:center;min-height:22px;padding:0 8px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--muted);font-size:9px;font-weight:760;letter-spacing:.015em}
+.data-source-badge.live{border-color:rgba(22,138,69,.25);background:var(--ok-soft);color:var(--ok)}
+.data-source-badge.delayed{border-color:rgba(184,121,18,.28);background:rgba(184,121,18,.09);color:var(--warn)}
+.data-source-badge.snapshot{color:var(--faint)}
+.runtime-panel{max-width:760px;margin-top:14px;padding:11px 12px 11px 14px;display:flex;align-items:center;justify-content:space-between;gap:18px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--surface) 94%,transparent);box-shadow:0 6px 20px rgba(15,23,42,.03)}
+.runtime-state{display:flex;align-items:center;gap:10px;min-width:0}
+.runtime-state>div{display:grid;min-width:0}
+.runtime-state strong{font-size:11px;font-weight:750;line-height:1.3}
+.runtime-state span:not(.runtime-dot){margin-top:2px;color:var(--faint);font-size:9.5px;line-height:1.3}
+.runtime-dot{width:8px;height:8px;flex:none;border-radius:50%;background:var(--unknown);box-shadow:0 0 0 3px var(--unknown-soft)}
+.runtime-panel[data-state="live"] .runtime-dot{background:var(--ok);box-shadow:0 0 0 3px var(--ok-soft)}
+.runtime-panel[data-state="delayed"] .runtime-dot{background:var(--warn);box-shadow:0 0 0 3px rgba(184,121,18,.10)}
+.runtime-panel[data-state="offline"] .runtime-dot,.runtime-panel[data-state="error"] .runtime-dot{background:var(--danger);box-shadow:0 0 0 3px var(--danger-soft)}
+.runtime-actions{display:flex;align-items:center;gap:10px;flex:none}
+.refresh-countdown{color:var(--faint);font-size:9.5px;font-weight:600;white-space:nowrap}
+.refresh-button{min-height:34px;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:0 10px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);color:var(--text);font-size:10.5px;font-weight:720;cursor:pointer;transition:background-color .18s ease,border-color .18s ease,transform .18s ease}
+.refresh-button:hover{background:var(--surface-2);border-color:var(--faint)}
+.refresh-button:active{transform:scale(.98)}
+.refresh-button[disabled]{opacity:.62;cursor:wait}
+.refresh-icon{display:inline-block;font-size:15px;line-height:1;transform-origin:center}
+.refresh-button.loading .refresh-icon{animation:refreshSpin .75s linear infinite}
+@keyframes refreshSpin{to{transform:rotate(360deg)}}
+.service-filter{display:flex;align-items:center;gap:6px;margin:-6px 0 14px;overflow-x:auto;scrollbar-width:none}
+.service-filter::-webkit-scrollbar{display:none}
+.filter-button{min-height:34px;display:inline-flex;align-items:center;gap:7px;padding:0 11px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--muted);font-size:10.5px;font-weight:680;white-space:nowrap;cursor:pointer;transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease}
+.filter-button span{min-width:18px;height:18px;display:grid;place-items:center;padding:0 4px;border-radius:999px;background:var(--surface-2);color:var(--faint);font-size:8.5px;font-weight:760}
+.filter-button:hover{color:var(--text);border-color:var(--line-strong)}
+.filter-button:active{transform:scale(.98)}
+.filter-button.active{background:var(--text);border-color:var(--text);color:var(--bg)}
+.filter-button.active span{background:color-mix(in srgb,var(--bg) 16%,transparent);color:inherit}
+.service-row[hidden]{display:none!important}
+.service-status{gap:6px}
+.service-expand-button{width:26px;height:26px;display:grid;place-items:center;margin-left:2px;padding:0;border:0;border-radius:8px;background:transparent;color:var(--muted);cursor:pointer;transition:background-color .18s ease,color .18s ease,transform .2s ease}
+.service-expand-button:hover{background:var(--surface-2);color:var(--text)}
+.service-expand-button svg{width:14px;height:14px;transition:transform .22s ease}
+.service-row.expanded .service-expand-button svg{transform:rotate(180deg)}
+.service-details{grid-column:1/-1;display:grid;grid-template-rows:0fr;opacity:0;margin-top:-8px;overflow:hidden;transition:grid-template-rows .25s ease,opacity .2s ease,margin-top .25s ease}
+.service-details-inner{min-height:0;overflow:hidden}
+.service-row.expanded .service-details{grid-template-rows:1fr;opacity:1;margin-top:4px}
+.detail-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding-top:15px;border-top:1px solid var(--line)}
+.detail-metric{min-width:0;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2)}
+.detail-metric span{display:block;color:var(--faint);font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.detail-metric strong{display:block;margin-top:5px;color:var(--text);font-size:11.5px;font-weight:760;overflow-wrap:anywhere}
+.detail-note{margin:10px 2px 0;color:var(--faint);font-size:9.5px;line-height:1.5}
+.service-row[data-status="degraded"] .status-symbol{background:var(--warn);box-shadow:0 0 0 3px rgba(184,121,18,.10)}
+.service-row[data-status="partial"] .status-symbol,.service-row[data-status="outage"] .status-symbol{background:var(--danger);box-shadow:0 0 0 3px var(--danger-soft)}
+.service-row[data-status="unknown"] .status-symbol{background:var(--unknown);box-shadow:0 0 0 3px var(--unknown-soft)}
+.service-row[data-status="degraded"] .service-status{color:var(--warn)}
+.service-row[data-status="partial"] .service-status,.service-row[data-status="outage"] .service-status{color:var(--danger)}
+.service-row[data-status="unknown"] .service-status{color:var(--unknown)}
+.uptime-day{cursor:pointer}
+.uptime-day:focus-visible{outline:2px solid var(--brand);outline-offset:2px;transform:translateY(-2px) scaleY(1.08)}
+.uptime-popover{position:fixed;z-index:100;width:min(220px,calc(100vw - 28px));padding:13px 36px 13px 14px;border:1px solid var(--line-strong);border-radius:13px;background:var(--surface);box-shadow:0 18px 50px rgba(15,23,42,.18);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(4px) scale(.98);transition:opacity .16s ease,transform .16s ease,visibility .16s ease}
+html[data-theme="dark"] .uptime-popover{box-shadow:0 18px 50px rgba(0,0,0,.46)}
+.uptime-popover.open{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.popover-close{position:absolute;top:7px;right:7px;width:26px;height:26px;display:grid;place-items:center;padding:0;border:0;border-radius:8px;background:transparent;color:var(--faint);font-size:17px;cursor:pointer}
+.popover-close:hover{background:var(--surface-2);color:var(--text)}
+.popover-date{display:block;color:var(--faint);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.075em}
+.uptime-popover strong{display:block;margin-top:3px;font-size:13px;font-weight:780}
+.popover-note{display:block;margin-top:4px;color:var(--muted);font-size:9.5px;line-height:1.4}
+.maintenance-list{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--surface);box-shadow:var(--shadow)}
+.maintenance-empty{display:flex;align-items:center;gap:16px;padding:22px 24px}
+.maintenance-icon{width:42px;height:42px;display:grid;place-items:center;flex:0 0 42px;border:1px solid rgba(22,138,69,.28);border-radius:50%;background:var(--ok-soft);color:var(--ok);font-size:17px;font-weight:850}
+.maintenance-empty strong,.maintenance-card strong{display:block;font-size:14px;font-weight:760}
+.maintenance-empty p,.maintenance-card p{margin:5px 0 0;color:var(--muted);font-size:13px;line-height:1.55}
+.maintenance-card{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:20px 22px;border-bottom:1px solid var(--line)}
+.maintenance-card:last-child{border-bottom:0}
+.maintenance-time{color:var(--faint);font-size:10.5px;font-weight:650}
+.maintenance-components{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+.component-chip{display:inline-flex;align-items:center;min-height:22px;padding:0 7px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:8.5px;font-weight:650}
+.incident-card{padding:20px 22px;border-bottom:1px solid var(--line)}
+.incident-card:last-child{border-bottom:0}
+.incident-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.incident-card h3{margin:0;font-size:14px;font-weight:780}
+.incident-card p{margin:6px 0 0;color:var(--muted);font-size:12.5px;line-height:1.55}
+.incident-badge{display:inline-flex;align-items:center;min-height:24px;padding:0 8px;border-radius:999px;background:var(--warn);color:#fff;font-size:8.5px;font-weight:780;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+.toast{position:fixed;z-index:110;left:50%;bottom:max(22px,calc(env(safe-area-inset-bottom) + 18px));max-width:min(380px,calc(100vw - 32px));padding:10px 13px;border:1px solid var(--line-strong);border-radius:12px;background:color-mix(in srgb,var(--surface) 96%,transparent);color:var(--text);box-shadow:0 14px 38px rgba(15,23,42,.16);font-size:10.5px;font-weight:680;opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,10px) scale(.98);transition:opacity .2s ease,transform .2s ease,visibility .2s ease;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.toast.show{opacity:1;visibility:visible;transform:translate(-50%,0) scale(1)}
+.overall-status[data-state="delayed"] .status-symbol{background:var(--warn);box-shadow:0 0 0 3px rgba(184,121,18,.10)}
+.overall-status[data-state="degraded"] .status-symbol{background:var(--warn);box-shadow:0 0 0 3px rgba(184,121,18,.10)}
+.overall-status[data-state="partial"] .status-symbol,.overall-status[data-state="outage"] .status-symbol{background:var(--danger);box-shadow:0 0 0 3px var(--danger-soft)}
+.overall-status[data-state="unknown"] .status-symbol{background:var(--unknown);box-shadow:0 0 0 3px var(--unknown-soft)}
+.overall-status[data-state="delayed"]{color:var(--warn);border-color:rgba(184,121,18,.24)}
+.overall-status[data-state="degraded"]{color:var(--warn);border-color:rgba(184,121,18,.24)}
+.overall-status[data-state="partial"],.overall-status[data-state="outage"]{color:var(--danger);border-color:color-mix(in srgb,var(--danger) 28%,var(--line))}
+.overall-status[data-state="unknown"]{color:var(--unknown);border-color:color-mix(in srgb,var(--unknown) 28%,var(--line))}
+@media(max-width:900px){.primary-nav a{padding-inline:9px;font-size:11px}}
+@media(max-width:640px){
+  .network-banner{top:calc(var(--header) + env(safe-area-inset-top))}
+  .network-banner-inner{min-height:36px;font-size:10.5px}
+  .runtime-panel{align-items:flex-start;flex-direction:column;gap:10px;padding:12px 13px}
+  .runtime-actions{width:100%;justify-content:space-between}
+  .refresh-countdown{font-size:9px}
+  .refresh-button{min-height:32px}
+  .service-filter{margin-top:-4px;margin-bottom:12px}
+  .filter-button{min-height:32px;font-size:10px}
+  .service-status{padding-right:3px}
+  .service-expand-button{width:25px;height:25px}
+  .detail-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding-top:13px}
+  .detail-metric{padding:10px}
+  .maintenance-list{border-radius:16px}
+  .maintenance-empty{align-items:flex-start;gap:13px;padding:18px 16px}
+  .maintenance-icon{width:38px;height:38px;flex-basis:38px;font-size:16px}
+  .maintenance-empty strong{font-size:13.5px}.maintenance-empty p{font-size:12.5px}
+  .maintenance-card{grid-template-columns:1fr;gap:7px;padding:18px 16px}
+  .incident-card{padding:18px 16px}
+  .uptime-popover{width:min(210px,calc(100vw - 28px))}
+}
+@media(max-width:390px){
+  .refresh-countdown{max-width:150px;white-space:normal;line-height:1.3}
+  .detail-grid{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .refresh-button.loading .refresh-icon{animation:none!important}
+  .service-details,.uptime-popover,.toast{transition:none!important}
+}
+
 </style>
 </head>
 <body>
@@ -745,7 +887,7 @@ html[data-theme="dark"] .summary-card{box-shadow:0 8px 24px rgba(0,0,0,.16)}
       <span class="brand-name"><strong>DIRAC</strong><small>STATUS</small></span>
     </a>
     <nav class="primary-nav" aria-label="Primary navigation">
-      <a href="#status">Status</a><a href="#incidents">Incidents</a><a href="#history">History</a>
+      <a href="#status">Status</a><a href="#incidents">Incidents</a><a href="#maintenance">Maintenance</a><a href="#history">History</a>
     </nav>
     <div class="header-actions">
       <a class="support-link" href="mailto:support@diracgroup.store">Support</a>
@@ -754,24 +896,42 @@ html[data-theme="dark"] .summary-card{box-shadow:0 8px 24px rgba(0,0,0,.16)}
     </div>
   </div>
   <div class="mobile-menu" id="mobileMenu"><div class="container mobile-menu-inner">
-    <a href="#status">System status</a><a href="#incidents">Active incidents</a><a href="#history">Incident history</a><a href="mailto:support@diracgroup.store">support@diracgroup.store</a>
+    <a href="#status">System status</a><a href="#incidents">Active incidents</a><a href="#maintenance">Maintenance</a><a href="#history">Incident history</a><a href="mailto:support@diracgroup.store">support@diracgroup.store</a>
   </div></div>
 </header>
+<div class="network-banner" id="networkBanner" role="status" aria-live="polite" hidden>
+  <div class="container network-banner-inner"><span class="network-icon" aria-hidden="true">!</span><span id="networkMessage">You are offline — showing the last available status data.</span></div>
+</div>
 <main id="top">
   <section class="hero"><div class="container">
     <div class="overall-status"><span class="status-symbol"></span><span>Operational</span></div>
     <h1>All systems operational</h1>
     <p class="hero-copy">All customer-facing DIRAC services in this status snapshot are operating normally.</p>
-    <div class="snapshot">Status snapshot generated <span id="generatedAt">—</span></div>
+    <div class="snapshot snapshot-line">Status data generated <span id="generatedAt">—</span><span class="data-source-badge" id="dataSourceBadge">Snapshot</span></div>
     <div class="status-summary" aria-label="Status overview">
       <div class="summary-card"><strong id="summaryServices">9/9</strong><span>Services operational</span></div>
       <div class="summary-card"><strong id="summaryUptime">99.97%</strong><span>Average 30-day uptime</span></div>
       <div class="summary-card"><strong id="summaryIncidents">0</strong><span>Active incidents</span></div>
     </div>
+    <div class="runtime-panel" id="runtimePanel" aria-label="Status refresh controls">
+      <div class="runtime-state">
+        <span class="runtime-dot" id="runtimeDot" aria-hidden="true"></span>
+        <div><strong id="runtimeLabel">Checking status data…</strong><span id="lastChecked">Not checked yet</span></div>
+      </div>
+      <div class="runtime-actions">
+        <span class="refresh-countdown" id="refreshCountdown">Auto refresh in 60s</span>
+        <button class="refresh-button" id="refreshButton" type="button" aria-label="Refresh status data"><span class="refresh-icon" aria-hidden="true">↻</span><span>Refresh</span></button>
+      </div>
+    </div>
   </div></section>
 
   <section class="section" id="status"><div class="container">
     <div class="section-head"><div><h2>System status</h2><p>30-day availability for the services customers depend on.</p></div><div class="status-tools"><div class="section-meta">9 services monitored</div><div class="status-legend" aria-label="Availability legend"><span class="legend-item"><span class="legend-swatch"></span>Operational</span><span class="legend-item"><span class="legend-swatch degraded"></span>Degraded</span><span class="legend-item"><span class="legend-swatch partial"></span>Partial</span><span class="legend-item"><span class="legend-swatch unknown"></span>Unknown</span></div></div></div>
+    <div class="service-filter" role="group" aria-label="Filter services">
+      <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All <span id="countAll">9</span></button>
+      <button class="filter-button" type="button" data-filter="operational" aria-pressed="false">Operational <span id="countOperational">9</span></button>
+      <button class="filter-button" type="button" data-filter="issues" aria-pressed="false">Issues <span id="countIssues">0</span></button>
+    </div>
     <div class="service-list">
       <article class="service-row"><div class="service-copy"><h3>Website</h3><p>Public website and customer entry point</p></div><div class="uptime"><div class="uptime-track"><span class="uptime-day" role="img" aria-label="Day 1: operational"></span><span class="uptime-day" role="img" aria-label="Day 2: operational"></span><span class="uptime-day" role="img" aria-label="Day 3: operational"></span><span class="uptime-day" role="img" aria-label="Day 4: operational"></span><span class="uptime-day" role="img" aria-label="Day 5: operational"></span><span class="uptime-day" role="img" aria-label="Day 6: operational"></span><span class="uptime-day" role="img" aria-label="Day 7: operational"></span><span class="uptime-day" role="img" aria-label="Day 8: operational"></span><span class="uptime-day" role="img" aria-label="Day 9: operational"></span><span class="uptime-day" role="img" aria-label="Day 10: operational"></span><span class="uptime-day" role="img" aria-label="Day 11: operational"></span><span class="uptime-day" role="img" aria-label="Day 12: operational"></span><span class="uptime-day" role="img" aria-label="Day 13: operational"></span><span class="uptime-day" role="img" aria-label="Day 14: operational"></span><span class="uptime-day" role="img" aria-label="Day 15: operational"></span><span class="uptime-day" role="img" aria-label="Day 16: operational"></span><span class="uptime-day" role="img" aria-label="Day 17: operational"></span><span class="uptime-day" role="img" aria-label="Day 18: operational"></span><span class="uptime-day" role="img" aria-label="Day 19: operational"></span><span class="uptime-day" role="img" aria-label="Day 20: operational"></span><span class="uptime-day" role="img" aria-label="Day 21: operational"></span><span class="uptime-day" role="img" aria-label="Day 22: operational"></span><span class="uptime-day" role="img" aria-label="Day 23: operational"></span><span class="uptime-day" role="img" aria-label="Day 24: operational"></span><span class="uptime-day" role="img" aria-label="Day 25: operational"></span><span class="uptime-day" role="img" aria-label="Day 26: operational"></span><span class="uptime-day" role="img" aria-label="Day 27: operational"></span><span class="uptime-day" role="img" aria-label="Day 28: operational"></span><span class="uptime-day" role="img" aria-label="Day 29: operational"></span><span class="uptime-day" role="img" aria-label="Day 30: operational"></span></div><div class="uptime-caption"><span>30 days ago</span><span>99.99% uptime</span><span>Today</span></div></div><div class="service-status"><span class="status-symbol"></span><span>Operational</span></div></article>
       <article class="service-row"><div class="service-copy"><h3>Authentication</h3><p>Registration, login, passkey and MFA</p></div><div class="uptime"><div class="uptime-track"><span class="uptime-day" role="img" aria-label="Day 1: operational"></span><span class="uptime-day" role="img" aria-label="Day 2: operational"></span><span class="uptime-day" role="img" aria-label="Day 3: operational"></span><span class="uptime-day" role="img" aria-label="Day 4: operational"></span><span class="uptime-day" role="img" aria-label="Day 5: operational"></span><span class="uptime-day" role="img" aria-label="Day 6: operational"></span><span class="uptime-day" role="img" aria-label="Day 7: operational"></span><span class="uptime-day" role="img" aria-label="Day 8: operational"></span><span class="uptime-day" role="img" aria-label="Day 9: operational"></span><span class="uptime-day" role="img" aria-label="Day 10: operational"></span><span class="uptime-day" role="img" aria-label="Day 11: operational"></span><span class="uptime-day" role="img" aria-label="Day 12: operational"></span><span class="uptime-day" role="img" aria-label="Day 13: operational"></span><span class="uptime-day" role="img" aria-label="Day 14: operational"></span><span class="uptime-day" role="img" aria-label="Day 15: operational"></span><span class="uptime-day" role="img" aria-label="Day 16: operational"></span><span class="uptime-day" role="img" aria-label="Day 17: operational"></span><span class="uptime-day" role="img" aria-label="Day 18: operational"></span><span class="uptime-day" role="img" aria-label="Day 19: operational"></span><span class="uptime-day" role="img" aria-label="Day 20: operational"></span><span class="uptime-day uptime-degraded" role="img" aria-label="Day 21: degraded"></span><span class="uptime-day" role="img" aria-label="Day 22: operational"></span><span class="uptime-day" role="img" aria-label="Day 23: operational"></span><span class="uptime-day" role="img" aria-label="Day 24: operational"></span><span class="uptime-day" role="img" aria-label="Day 25: operational"></span><span class="uptime-day" role="img" aria-label="Day 26: operational"></span><span class="uptime-day" role="img" aria-label="Day 27: operational"></span><span class="uptime-day" role="img" aria-label="Day 28: operational"></span><span class="uptime-day" role="img" aria-label="Day 29: operational"></span><span class="uptime-day" role="img" aria-label="Day 30: operational"></span></div><div class="uptime-caption"><span>30 days ago</span><span>99.99% uptime</span><span>Today</span></div></div><div class="service-status"><span class="status-symbol"></span><span>Operational</span></div></article>
@@ -787,22 +947,37 @@ html[data-theme="dark"] .summary-card{box-shadow:0 8px 24px rgba(0,0,0,.16)}
 
   <section class="section" id="incidents"><div class="container">
     <div class="section-head"><div><h2>Active incidents</h2><p>Current service-impacting events.</p></div></div>
-    <div class="incident-state"><div class="incident-icon">✓</div><div><strong>No active incidents</strong><p>There are no service-impacting incidents in the current status snapshot.</p></div></div>
+    <div id="incidentList"><div class="incident-state"><div class="incident-icon">✓</div><div><strong>No active incidents</strong><p>There are no service-impacting incidents in the latest available status data.</p></div></div></div>
+  </div></section>
+
+  <section class="section" id="maintenance"><div class="container">
+    <div class="section-head"><div><h2>Scheduled maintenance</h2><p>Planned work that may affect customer-facing services.</p></div><div class="section-meta" id="maintenanceMeta">0 scheduled</div></div>
+    <div class="maintenance-list" id="maintenanceList">
+      <div class="maintenance-empty"><div class="maintenance-icon" aria-hidden="true">✓</div><div><strong>No maintenance scheduled</strong><p>There is no planned maintenance in the latest available status data.</p></div></div>
+    </div>
   </div></section>
 
   <section class="section" id="history"><div class="container">
     <div class="section-head"><div><h2>Incident history</h2><p>Recent service-impacting events.</p></div></div>
-    <div class="history-list"><article class="history-row"><div class="history-date">Current snapshot</div><div><h3>No incidents reported</h3><p>No historical incident records are included in the current status snapshot.</p></div></article></div>
+    <div class="history-list" id="historyList"><article class="history-row"><div class="history-date">Latest data</div><div><h3>No incidents reported</h3><p>No historical incident records are included in the latest available status data.</p></div></article></div>
   </div></section>
 </main>
 <footer class="site-footer"><div class="container">
   <div class="footer-grid">
     <section class="footer-main"><div class="footer-brand"><span class="footer-logo-tile"><img class="footer-logo" src="umroh.webp" alt="DIRAC"><span class="logo-fallback" aria-hidden="true">D</span></span><div><strong>DIRAC Status</strong><span>Platform health &amp; service availability</span></div></div><p class="footer-about">Public operational status for DIRAC customer-facing systems and supporting services.</p></section>
-    <nav class="footer-column"><h2>System</h2><div class="footer-links"><a href="#status">System status</a><a href="#incidents">Active incidents</a><a href="#history">Incident history</a></div></nav>
+    <nav class="footer-column"><h2>System</h2><div class="footer-links"><a href="#status">System status</a><a href="#incidents">Active incidents</a><a href="#maintenance">Maintenance</a><a href="#history">Incident history</a></div></nav>
     <section class="footer-column"><h2>Contact</h2><div class="contact-list"><div class="contact-item"><strong>Support</strong><a href="mailto:support@diracgroup.store">support@diracgroup.store</a></div><div class="contact-item"><strong>Founder</strong><a href="mailto:founder@diracgroup.store">founder@diracgroup.store</a></div><div class="contact-item"><strong>WhatsApp / Phone</strong><a href="tel:+6287892523968">+62 878-9252-3968</a></div></div></section>
   </div>
   <div class="footer-bottom"><div>© <span id="year">2026</span> DIRAC Group. All rights reserved.</div><a href="#top">Back to top ↑</a></div>
 </div></footer>
+<div class="uptime-popover" id="uptimePopover" role="dialog" aria-modal="false" aria-hidden="true">
+  <button class="popover-close" id="popoverClose" type="button" aria-label="Close availability detail">×</button>
+  <span class="popover-date" id="popoverDate">—</span>
+  <strong id="popoverStatus">—</strong>
+  <span class="popover-note" id="popoverNote">Daily availability status</span>
+</div>
+<div class="toast" id="statusToast" role="status" aria-live="polite" aria-atomic="true"></div>
+<div class="sr-only" id="statusAnnouncer" aria-live="polite" aria-atomic="true"></div>
 <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">↑</button>
 <script>
 (()=>{
@@ -851,7 +1026,7 @@ document.addEventListener('click',e=>{if(mobileMenu.classList.contains('open')&&
 window.addEventListener('resize',()=>{if(window.innerWidth>900&&mobileMenu.classList.contains('open'))setMenu(false);},{passive:true});
 
 const now=new Date();
-q('#generatedAt').textContent=new Intl.DateTimeFormat('id-ID',{dateStyle:'medium',timeStyle:'short'}).format(now);
+q('#generatedAt').textContent='—';
 q('#year').textContent=String(now.getFullYear());
 
 function setupUptimeDetails(){
@@ -911,4 +1086,229 @@ if('IntersectionObserver' in window){
 
 })();
 </script>
+
+<script>
+(()=>{
+'use strict';
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+const endpoint=document.querySelector('meta[name="dirac-status-endpoint"]')?.content?.trim()||'';
+const embeddedGenerated=document.querySelector('meta[name="dirac-status-generated-at"]')?.content||'';
+const refreshEvery=60000;
+const freshnessLimit=5*60*1000;
+const cacheKey='dirac-public-status-cache-v2';
+let payloadGeneratedAt=embeddedGenerated?new Date(embeddedGenerated):null;
+let lastCheckedAt=null;
+let nextRefreshAt=Date.now()+refreshEvery;
+let refreshTimer=null;
+let activeDay=null;
+let toastTimer=null;
+let sourceMode='snapshot';
+
+const statusNames={operational:'Operational',degraded:'Degraded',partial:'Partial outage',outage:'Major outage',unknown:'Unknown'};
+const normalizeStatus=v=>{
+  const x=String(v||'unknown').toLowerCase().trim().replace(/[ _]+/g,'-');
+  if(['operational','ok','healthy','up'].includes(x))return 'operational';
+  if(['degraded','degraded-performance','warning'].includes(x))return 'degraded';
+  if(['partial','partial-outage'].includes(x))return 'partial';
+  if(['outage','major-outage','down','critical'].includes(x))return 'outage';
+  return 'unknown';
+};
+const slug=v=>String(v||'').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+const fmtDate=d=>new Intl.DateTimeFormat('en-US',{day:'numeric',month:'short',year:'numeric'}).format(d);
+const fmtDateTime=d=>new Intl.DateTimeFormat('en-US',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}).format(d);
+const relativeTime=d=>{
+  if(!(d instanceof Date)||Number.isNaN(d.getTime()))return 'Unknown';
+  const sec=Math.max(0,Math.round((Date.now()-d.getTime())/1000));
+  if(sec<8)return 'just now'; if(sec<60)return `${sec}s ago`;
+  const min=Math.floor(sec/60); if(min<60)return `${min}m ago`;
+  const hr=Math.floor(min/60); if(hr<24)return `${hr}h ago`;
+  return fmtDate(d);
+};
+function announce(text){const el=$('#statusAnnouncer');if(el){el.textContent='';requestAnimationFrame(()=>el.textContent=text)}}
+function toast(text){const el=$('#statusToast');if(!el)return;clearTimeout(toastTimer);el.textContent=text;el.classList.add('show');toastTimer=setTimeout(()=>el.classList.remove('show'),2600)}
+
+function enhanceServices(){
+  $$('.service-row').forEach((row,index)=>{
+    const name=$('.service-copy h3',row)?.textContent.trim()||`Service ${index+1}`;
+    const id=slug(name)||`service-${index+1}`;
+    row.dataset.serviceId=id;
+    const statusWrap=$('.service-status',row);
+    const initial=normalizeStatus(statusWrap?.textContent);
+    row.dataset.status=initial;
+    const uptimeText=$('.uptime-caption span:nth-child(2)',row)?.textContent.trim()||'—';
+    if(statusWrap&&!$('.service-expand-button',statusWrap)){
+      const button=document.createElement('button');
+      button.type='button';button.className='service-expand-button';button.setAttribute('aria-expanded','false');
+      button.setAttribute('aria-label',`Show details for ${name}`);
+      const detailId=`service-detail-${id}`;button.setAttribute('aria-controls',detailId);
+      button.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      statusWrap.append(button);
+      const detail=document.createElement('div');detail.className='service-details';detail.id=detailId;
+      detail.innerHTML=`<div class="service-details-inner"><div class="detail-grid"><div class="detail-metric"><span>Current status</span><strong data-detail-status>${statusNames[initial]}</strong></div><div class="detail-metric"><span>30-day uptime</span><strong data-detail-uptime>${uptimeText}</strong></div><div class="detail-metric"><span>Response time</span><strong data-detail-latency>Not published</strong></div><div class="detail-metric"><span>Data updated</span><strong data-detail-updated>—</strong></div></div><p class="detail-note">Tap any daily availability block for its date and state. Response time appears only when supplied by the monitoring feed.</p></div>`;
+      row.append(detail);
+      const toggle=()=>{const open=!row.classList.contains('expanded');row.classList.toggle('expanded',open);button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',`${open?'Hide':'Show'} details for ${name}`)};
+      button.addEventListener('click',e=>{e.stopPropagation();toggle()});
+      $('.service-copy',row)?.addEventListener('click',toggle);
+      $('.service-copy',row)?.style.setProperty('cursor','pointer');
+    }
+  });
+}
+
+function decorateUptimeDays(baseDate=payloadGeneratedAt||new Date()){
+  const dateBase=new Date(baseDate); if(Number.isNaN(dateBase.getTime()))dateBase.setTime(Date.now());
+  dateBase.setHours(12,0,0,0);
+  $$('.uptime-track').forEach(track=>{
+    $$('.uptime-day',track).forEach((day,i)=>{
+      const d=new Date(dateBase); d.setDate(dateBase.getDate()-(29-i));
+      let st='operational';
+      if(day.classList.contains('uptime-degraded'))st='degraded';
+      else if(day.classList.contains('uptime-partial'))st='partial';
+      else if(day.classList.contains('uptime-unknown'))st='unknown';
+      else if(day.classList.contains('uptime-outage'))st='outage';
+      day.dataset.date=d.toISOString();day.dataset.state=st;day.tabIndex=0;day.setAttribute('role','button');day.setAttribute('aria-haspopup','dialog');
+      day.setAttribute('aria-label',`${fmtDate(d)}: ${statusNames[st]}`);day.title=`${fmtDate(d)} — ${statusNames[st]}`;
+    });
+  });
+}
+
+function showDayPopover(day){
+  const pop=$('#uptimePopover');if(!pop||!day)return;
+  if(activeDay)activeDay.setAttribute('aria-expanded','false');activeDay=day;day.setAttribute('aria-expanded','true');
+  const d=new Date(day.dataset.date||Date.now());const st=normalizeStatus(day.dataset.state);
+  $('#popoverDate').textContent=fmtDate(d);$('#popoverStatus').textContent=statusNames[st];
+  $('#popoverNote').textContent=st==='operational'?'No service-impacting event recorded for this day.':'Availability state recorded for this day.';
+  pop.classList.add('open');pop.setAttribute('aria-hidden','false');
+  const r=day.getBoundingClientRect(), w=Math.min(220,window.innerWidth-28), h=104;
+  let left=Math.max(14,Math.min(window.innerWidth-w-14,r.left+r.width/2-w/2));
+  let top=r.top-h-10;if(top<14)top=Math.min(window.innerHeight-h-14,r.bottom+10);
+  pop.style.left=`${left}px`;pop.style.top=`${top}px`;
+}
+function closePopover(){const pop=$('#uptimePopover');if(!pop)return;pop.classList.remove('open');pop.setAttribute('aria-hidden','true');if(activeDay){activeDay.setAttribute('aria-expanded','false');activeDay=null}}
+function bindUptimePopover(){
+  document.addEventListener('click',e=>{const day=e.target.closest('.uptime-day');if(day){e.stopPropagation();showDayPopover(day);return}if(!e.target.closest('#uptimePopover'))closePopover()});
+  document.addEventListener('keydown',e=>{const day=e.target.closest?.('.uptime-day');if(day&&(e.key==='Enter'||e.key===' ')){e.preventDefault();showDayPopover(day)}if(e.key==='Escape')closePopover()});
+  $('#popoverClose')?.addEventListener('click',closePopover);window.addEventListener('scroll',closePopover,{passive:true});window.addEventListener('resize',closePopover,{passive:true});
+}
+
+function updateFilterCounts(){
+  const rows=$$('.service-row');const operational=rows.filter(r=>r.dataset.status==='operational').length;const issues=rows.length-operational;
+  $('#countAll').textContent=String(rows.length);$('#countOperational').textContent=String(operational);$('#countIssues').textContent=String(issues);
+}
+function setupFilters(){
+  $$('.filter-button').forEach(btn=>btn.addEventListener('click',()=>{
+    const filter=btn.dataset.filter;$$('.filter-button').forEach(b=>{const on=b===btn;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});
+    $$('.service-row').forEach(row=>{const show=filter==='all'||(filter==='operational'&&row.dataset.status==='operational')||(filter==='issues'&&row.dataset.status!=='operational');row.hidden=!show});
+    announce(`Showing ${$$('.service-row:not([hidden])').length} services`);
+  }));
+}
+
+function updateServiceRow(row,service){
+  if(!row||!service)return;
+  const state=normalizeStatus(service.status);row.dataset.status=state;
+  const statusWrap=$('.service-status',row);const text=statusWrap?Array.from(statusWrap.childNodes).find(n=>n.nodeType===Node.ELEMENT_NODE&&n.tagName==='SPAN'&&!n.classList.contains('status-symbol')&&!n.closest('.service-expand-button')):null;
+  const spans=statusWrap?$$(':scope > span',statusWrap):[];if(spans[1])spans[1].textContent=statusNames[state];
+  const uptime=Number(service.uptime30d);if(Number.isFinite(uptime)){const el=$('.uptime-caption span:nth-child(2)',row);if(el)el.textContent=`${uptime.toFixed(2)}% uptime`;const d=$('[data-detail-uptime]',row);if(d)d.textContent=`${uptime.toFixed(2)}%`}
+  const ds=$('[data-detail-status]',row);if(ds)ds.textContent=statusNames[state];
+  const dl=$('[data-detail-latency]',row);if(dl)dl.textContent=Number.isFinite(Number(service.latencyMs))?`${Math.round(Number(service.latencyMs))} ms`:'Not published';
+  const du=$('[data-detail-updated]',row);if(du)du.textContent=payloadGeneratedAt?relativeTime(payloadGeneratedAt):'Unknown';
+  if(Array.isArray(service.days)&&service.days.length){
+    const days=$$('.uptime-day',row);const src=service.days.slice(-days.length);
+    days.forEach((day,i)=>{const st=normalizeStatus(src[i]?.status??src[i]);day.classList.remove('uptime-degraded','uptime-partial','uptime-unknown','uptime-outage');if(st==='degraded')day.classList.add('uptime-degraded');if(st==='partial')day.classList.add('uptime-partial');if(st==='unknown')day.classList.add('uptime-unknown');if(st==='outage')day.classList.add('uptime-outage');day.dataset.state=st;if(src[i]&&typeof src[i]==='object'&&src[i].date)day.dataset.date=src[i].date});
+  }
+}
+
+function renderIncidents(items){
+  const host=$('#incidentList');if(!host)return;const list=Array.isArray(items)?items:[];
+  if(!list.length){host.innerHTML='<div class="incident-state"><div class="incident-icon">✓</div><div><strong>No active incidents</strong><p>There are no service-impacting incidents in the latest available status data.</p></div></div>';return}
+  const wrapper=document.createElement('div');wrapper.className='history-list';
+  list.forEach(item=>{const card=document.createElement('article');card.className='incident-card';const title=String(item.title||'Service incident');const status=String(item.status||'Investigating');const msg=String(item.message||item.summary||'An incident is currently being investigated.');card.innerHTML=`<div class="incident-card-head"><div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(msg)}</p></div><span class="incident-badge">${escapeHtml(status)}</span></div>`;wrapper.append(card)});
+  host.replaceChildren(wrapper);
+}
+function renderHistory(items){
+  const host=$('#historyList');if(!host)return;const list=Array.isArray(items)?items:[];
+  if(!list.length){host.innerHTML='<article class="history-row"><div class="history-date">Latest data</div><div><h3>No incidents reported</h3><p>No historical incident records are included in the latest available status data.</p></div></article>';return}
+  host.innerHTML='';
+  list.forEach(item=>{const row=document.createElement('article');row.className='history-row';const when=item.resolvedAt||item.endedAt||item.startedAt||item.createdAt;const d=when?new Date(when):null;const dateText=d&&!Number.isNaN(d.getTime())?fmtDate(d):'Incident';const title=String(item.title||'Resolved incident');const msg=String(item.message||item.summary||item.status||'Resolved');row.innerHTML=`<div class="history-date">${escapeHtml(dateText)}</div><div><h3>${escapeHtml(title)}</h3><p>${escapeHtml(msg)}</p></div>`;host.append(row)});
+}
+function renderMaintenance(items){
+  const host=$('#maintenanceList');if(!host)return;const list=Array.isArray(items)?items:[];$('#maintenanceMeta').textContent=`${list.length} scheduled`;
+  if(!list.length){host.innerHTML='<div class="maintenance-empty"><div class="maintenance-icon" aria-hidden="true">✓</div><div><strong>No maintenance scheduled</strong><p>There is no planned maintenance in the latest available status data.</p></div></div>';return}
+  host.innerHTML='';list.forEach(item=>{const card=document.createElement('article');card.className='maintenance-card';const start=item.startsAt?new Date(item.startsAt):null;const when=start&&!Number.isNaN(start.getTime())?fmtDateTime(start):'Time to be announced';const comps=Array.isArray(item.components)?item.components:[];card.innerHTML=`<div class="maintenance-time">${escapeHtml(when)}</div><div><strong>${escapeHtml(item.title||'Scheduled maintenance')}</strong><p>${escapeHtml(item.message||item.summary||'Planned maintenance window.')}</p>${comps.length?`<div class="maintenance-components">${comps.map(c=>`<span class="component-chip">${escapeHtml(c)}</span>`).join('')}</div>`:''}</div>`;host.append(card)});
+}
+function escapeHtml(v){return String(v??'').replace(/[&<>'"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]))}
+
+function applyPayload(data,mode='live'){
+  if(!data||!Array.isArray(data.services))throw new Error('Invalid status payload');
+  const gen=data.generatedAt?new Date(data.generatedAt):null;if(gen&&!Number.isNaN(gen.getTime()))payloadGeneratedAt=gen;
+  sourceMode=mode;
+  const byId=new Map(data.services.map(x=>[slug(x.id||x.name),x]));
+  $$('.service-row').forEach(row=>{const service=byId.get(row.dataset.serviceId)||byId.get(slug($('.service-copy h3',row)?.textContent));if(service)updateServiceRow(row,service)});
+  renderIncidents(data.incidents);renderMaintenance(data.maintenance);renderHistory(data.incidentHistory);decorateUptimeDays(payloadGeneratedAt||new Date());updateFilterCounts();syncAllSummary();updateGeneratedText();updateFreshnessUI();
+  try{localStorage.setItem(cacheKey,JSON.stringify({savedAt:Date.now(),data}))}catch(_){ }
+}
+
+function updateGeneratedText(){const el=$('#generatedAt');if(!el)return;el.textContent=payloadGeneratedAt&&!Number.isNaN(payloadGeneratedAt.getTime())?fmtDateTime(payloadGeneratedAt):'unknown'}
+function freshestState(){
+  if(!navigator.onLine)return 'offline';
+  if(!payloadGeneratedAt||Number.isNaN(payloadGeneratedAt.getTime()))return 'unknown';
+  return Date.now()-payloadGeneratedAt.getTime()<=freshnessLimit?'live':'delayed';
+}
+function updateFreshnessUI(){
+  const state=freshestState();const runtime=$('#runtimePanel'),badge=$('#dataSourceBadge');if(runtime)runtime.dataset.state=state;
+  if(badge){badge.className='data-source-badge';if(state==='live'&&sourceMode==='live'){badge.classList.add('live');badge.textContent='Live feed'}else if(state==='delayed'){badge.classList.add('delayed');badge.textContent='Data delayed'}else{badge.classList.add('snapshot');badge.textContent=sourceMode==='cache'?'Cached data':'Snapshot'}}
+  const label=$('#runtimeLabel');if(label){label.textContent=state==='offline'?'Offline — last known data':state==='delayed'?'Monitoring data delayed':state==='live'&&sourceMode==='live'?'Monitoring feed connected':sourceMode==='cache'?'Cached status data':'Embedded status snapshot'}
+  syncOverall(state);
+}
+function syncAllSummary(){
+  const rows=$$('.service-row');const operational=rows.filter(r=>r.dataset.status==='operational').length;$('#summaryServices').textContent=`${operational}/${rows.length}`;
+  const uptimes=rows.map(r=>parseFloat($('.uptime-caption span:nth-child(2)',r)?.textContent||'')).filter(Number.isFinite);$('#summaryUptime').textContent=uptimes.length?`${(uptimes.reduce((a,b)=>a+b,0)/uptimes.length).toFixed(2)}%`:'—';
+  const active=$$('.incident-card').length;$('#summaryIncidents').textContent=String(active);
+  updateFilterCounts();
+}
+function syncOverall(freshness=freshestState()){
+  const states=$$('.service-row').map(r=>r.dataset.status);const badge=$('.overall-status'),badgeText=$('.overall-status span:last-child'),h=$('.hero h1'),copy=$('.hero-copy');
+  let state='operational',title='All systems operational',text='All customer-facing DIRAC services in the latest available status data are operating normally.';
+  if(states.includes('outage')){state='outage';title='Service disruption';text='One or more customer-facing DIRAC services are currently reporting a major outage.'}
+  else if(states.includes('partial')){state='partial';title='Partial service outage';text='One or more customer-facing DIRAC services are currently reporting a partial outage.'}
+  else if(states.includes('degraded')){state='degraded';title='Degraded performance';text='One or more customer-facing DIRAC services are currently reporting degraded performance.'}
+  else if(states.includes('unknown')){state='unknown';title='Some status data unavailable';text='Current status could not be confirmed for one or more DIRAC services.'}
+  if(freshness==='delayed'){state='delayed';title='Status data delayed';text=`Showing the last known service state${payloadGeneratedAt?` from ${fmtDateTime(payloadGeneratedAt)}`:''}. Current availability has not been freshly confirmed.`}
+  if(freshness==='offline'){state='unknown';title='Offline — last known status';text='Your device is offline. Showing the most recent status data already available on this page.'}
+  badge.dataset.state=state;if(badgeText)badgeText.textContent=state==='operational'?'Operational':state==='delayed'?'Data delayed':statusNames[state]||'Status unavailable';if(h)h.textContent=title;if(copy)copy.textContent=text;
+}
+
+async function fetchStatus(manual=false){
+  if(!endpoint){sourceMode='snapshot';updateFreshnessUI();return false}
+  if(!navigator.onLine){updateNetwork();updateFreshnessUI();if(manual)toast('Offline — cannot refresh status data.');return false}
+  const btn=$('#refreshButton');btn?.classList.add('loading');if(btn)btn.disabled=true;
+  const ctrl=new AbortController();const timeout=setTimeout(()=>ctrl.abort(),7000);
+  try{
+    const res=await fetch(endpoint,{cache:'no-store',credentials:'same-origin',headers:{Accept:'application/json'},signal:ctrl.signal});
+    if(!res.ok)throw new Error(`HTTP ${res.status}`);
+    const data=await res.json();lastCheckedAt=new Date();applyPayload(data,'live');sourceMode='live';nextRefreshAt=Date.now()+refreshEvery;updateRuntimeTime();if(manual)toast('Status data refreshed.');announce('Status data updated');return true;
+  }catch(err){
+    lastCheckedAt=new Date();sourceMode='snapshot';updateRuntimeTime();updateFreshnessUI();if(manual)toast('Live feed unavailable — showing the latest available snapshot.');return false;
+  }finally{clearTimeout(timeout);btn?.classList.remove('loading');if(btn)btn.disabled=false}
+}
+function loadCacheIfNewer(){
+  try{const raw=localStorage.getItem(cacheKey);if(!raw)return;const parsed=JSON.parse(raw);const cachedDate=parsed?.data?.generatedAt?new Date(parsed.data.generatedAt):null;if(cachedDate&&!Number.isNaN(cachedDate.getTime())&&(!payloadGeneratedAt||cachedDate>payloadGeneratedAt))applyPayload(parsed.data,'cache')}catch(_){ }
+}
+function updateRuntimeTime(){
+  const checked=$('#lastChecked');if(checked)checked.textContent=lastCheckedAt?`Checked ${relativeTime(lastCheckedAt)}`:'Not checked yet';
+  const count=$('#refreshCountdown');if(count){const sec=Math.max(0,Math.ceil((nextRefreshAt-Date.now())/1000));count.textContent=navigator.onLine?`Auto refresh in ${sec}s`:'Auto refresh paused while offline'}
+  $$('[data-detail-updated]').forEach(el=>el.textContent=payloadGeneratedAt?relativeTime(payloadGeneratedAt):'Unknown');updateFreshnessUI();
+}
+function startRuntimeClock(){clearInterval(refreshTimer);refreshTimer=setInterval(()=>{updateRuntimeTime();if(Date.now()>=nextRefreshAt){nextRefreshAt=Date.now()+refreshEvery;fetchStatus(false)}},1000)}
+function updateNetwork(){const banner=$('#networkBanner');if(!banner)return;banner.hidden=navigator.onLine;if(!navigator.onLine)$('#networkMessage').textContent='You are offline — showing the last available status data.';updateFreshnessUI()}
+
+function initialize(){
+  enhanceServices();decorateUptimeDays(payloadGeneratedAt||new Date());bindUptimePopover();setupFilters();loadCacheIfNewer();updateGeneratedText();syncAllSummary();updateNetwork();updateFreshnessUI();
+  $('#refreshButton')?.addEventListener('click',()=>fetchStatus(true));window.addEventListener('online',()=>{updateNetwork();nextRefreshAt=Date.now()+1500;toast('Back online — checking status feed.');setTimeout(()=>fetchStatus(false),900)});window.addEventListener('offline',()=>{updateNetwork();toast('Offline — showing last known status data.')});
+  lastCheckedAt=new Date();updateRuntimeTime();startRuntimeClock();fetchStatus(false);
+  setInterval(updateFreshnessUI,30000);
+}
+initialize();
+})();
+</script>
+
 </body></html>

@@ -1,0 +1,890 @@
+{
+  "generatedAt": "2026-08-23T10:59:53Z",
+  "services": [
+    {
+      "id": "website",
+      "name": "Website",
+      "status": "operational",
+      "uptime30d": 99.99,
+      "days": [
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        }
+      ]
+    },
+    {
+      "id": "authentication",
+      "name": "Authentication",
+      "status": "operational",
+      "uptime30d": 99.99,
+      "days": [
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "degraded"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        }
+      ]
+    },
+    {
+      "id": "customer-dashboard",
+      "name": "Customer Dashboard",
+      "status": "operational",
+      "uptime30d": 99.98,
+      "days": [
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "degraded"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        }
+      ]
+    },
+    {
+      "id": "domain-services",
+      "name": "Domain Services",
+      "status": "operational",
+      "uptime30d": 99.96,
+      "days": [
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "degraded"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "partial"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        }
+      ]
+    },
+    {
+      "id": "payments",
+      "name": "Payments",
+      "status": "operational",
+      "uptime30d": 99.99,
+      "days": [
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "Orders",
+      "status": "operational",
+      "uptime30d": 99.98,
+      "days": [
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "degraded"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        }
+      ]
+    },
+    {
+      "id": "email-notifications",
+      "name": "Email & Notifications",
+      "status": "operational",
+      "uptime30d": 99.95,
+      "days": [
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "degraded"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        }
+      ]
+    },
+    {
+      "id": "account-recovery",
+      "name": "Account Recovery",
+      "status": "operational",
+      "uptime30d": 99.99,
+      "days": [
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        }
+      ]
+    },
+    {
+      "id": "ai-services",
+      "name": "AI Services",
+      "status": "operational",
+      "uptime30d": 99.93,
+      "days": [
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "unknown"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "degraded"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        },
+        {
+          "status": "operational"
+        }
+      ]
+    }
+  ],
+  "incidents": [],
+  "maintenance": [],
+  "incidentHistory": []
+}
