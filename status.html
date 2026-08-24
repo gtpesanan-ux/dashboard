@@ -28,6 +28,8 @@
   --brand:#244db8;
   --ok:#168a45;
   --ok-soft:rgba(22,138,69,.10);
+  --uptime-ok:#2f8f55;
+  --uptime-warn:#b9892f;
   --warn:#b87912;
   --header:80px;
   --content:1080px;
@@ -48,6 +50,8 @@ html[data-theme="dark"]{
   --brand:#7ea2ff;
   --ok:#43c979;
   --ok-soft:rgba(67,201,121,.11);
+  --uptime-ok:#49b974;
+  --uptime-warn:#c89b43;
   --warn:#e1a33f;
   --shadow:0 16px 40px rgba(0,0,0,.24);
 }
@@ -243,7 +247,7 @@ html[data-theme="dark"] .site-header{background:rgba(7,8,9,.90)}
 .service-copy p{margin:6px 0 0;color:var(--muted);font-size:12.5px;line-height:1.45}
 .uptime{min-width:0}
 .uptime-track{display:grid;grid-template-columns:repeat(30,minmax(0,1fr));gap:3px;height:26px}
-.uptime-day{min-width:0;border-radius:4px;border:1px solid transparent;background:var(--ok)}
+.uptime-day{min-width:0;border-radius:5px;border:1px solid rgba(255,255,255,.08);background:var(--uptime-ok);box-shadow:inset 0 0 0 1px rgba(0,0,0,.025)}
 .uptime-degraded{background:var(--warn)}
 .uptime-outage{background:var(--danger)}
 .uptime-partial{border-color:var(--warn);background:repeating-linear-gradient(135deg,var(--warn) 0 3px,transparent 3px 6px)}
@@ -596,11 +600,11 @@ html[data-theme="dark"] .hero::before{
   transition:transform .16s ease,filter .16s ease,opacity .16s ease;
 }
 .uptime-day:hover{
-  transform:translateY(-2px) scaleY(1.12);
+  transform:translateY(-1px) scaleY(1.045);
   filter:saturate(1.12) brightness(1.03);
   z-index:2;
 }
-.uptime-track:hover .uptime-day:not(:hover){opacity:.72}
+.uptime-track:hover .uptime-day:not(:hover){opacity:.90}
 .service-status{
   padding:6px 9px;
   margin-right:-9px;
@@ -812,8 +816,8 @@ html[data-theme="dark"] .network-banner{background:#1b160d;color:#f2c66f;border-
 .service-row[data-status="unknown"] .service-status{color:var(--unknown)}
 .uptime-day{cursor:pointer}
 .uptime-day:focus-visible{outline:2px solid var(--brand);outline-offset:2px;transform:translateY(-2px) scaleY(1.08)}
-.uptime-popover{position:fixed;z-index:100;width:min(220px,calc(100vw - 28px));padding:13px 36px 13px 14px;border:1px solid var(--line-strong);border-radius:13px;background:var(--surface);box-shadow:0 18px 50px rgba(15,23,42,.18);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(4px) scale(.98);transition:opacity .16s ease,transform .16s ease,visibility .16s ease}
-html[data-theme="dark"] .uptime-popover{box-shadow:0 18px 50px rgba(0,0,0,.46)}
+.uptime-popover{position:fixed;z-index:100;width:min(220px,calc(100vw - 28px));padding:13px 36px 13px 14px;border:1px solid var(--line-strong);border-radius:14px;background:color-mix(in srgb,var(--surface) 97%,transparent);box-shadow:0 14px 36px rgba(15,23,42,.14);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(4px) scale(.98);transition:opacity .16s ease,transform .16s ease,visibility .16s ease}
+html[data-theme="dark"] .uptime-popover{box-shadow:0 14px 38px rgba(0,0,0,.38)}
 .uptime-popover.open{opacity:1;visibility:visible;pointer-events:auto;transform:none}
 .popover-close{position:absolute;top:7px;right:7px;width:26px;height:26px;display:grid;place-items:center;padding:0;border:0;border-radius:8px;background:transparent;color:var(--faint);font-size:17px;cursor:pointer}
 .popover-close:hover{background:var(--surface-2);color:var(--text)}
@@ -889,11 +893,11 @@ button,a,.service-row,.uptime-day{
   -webkit-tap-highlight-color:transparent;
 }
 .uptime-track{
-  --scrub-lift-max:3.6;
-  --scrub-scale-y:1.095;
-  --scrub-scale-x:1.018;
-  --scrub-active-opacity:.96;
-  --scrub-rest-opacity:.84;
+  --scrub-lift-max:2.8;
+  --scrub-scale-y:1.065;
+  --scrub-scale-x:1.006;
+  --scrub-active-opacity:1;
+  --scrub-rest-opacity:.92;
 
   position:relative;
   touch-action:pan-y;
@@ -930,12 +934,12 @@ button,a,.service-row,.uptime-day{
 }
 .uptime-track:not(.is-scrubbing) .uptime-day.scrub-active,
 .uptime-track:not(.is-scrubbing) .uptime-day[aria-expanded="true"]{
-  transform:translate3d(0,-2px,0) scaleY(1.08) scaleX(1.012);
-  box-shadow:0 0 0 1px rgba(255,255,255,.08),0 4px 10px rgba(15,23,42,.10);
+  transform:translate3d(0,-1.5px,0) scaleY(1.055) scaleX(1.006);
+  box-shadow:0 0 0 1px rgba(255,255,255,.10),0 3px 8px rgba(15,23,42,.08);
 }
 html[data-theme="dark"] .uptime-track:not(.is-scrubbing) .uptime-day.scrub-active,
 html[data-theme="dark"] .uptime-track:not(.is-scrubbing) .uptime-day[aria-expanded="true"]{
-  box-shadow:0 0 0 1px rgba(255,255,255,.05),0 4px 12px rgba(0,0,0,.34);
+  box-shadow:0 0 0 1px rgba(255,255,255,.06),0 3px 10px rgba(0,0,0,.28);
 }
 .uptime-popover{
   left:0!important;
@@ -957,7 +961,7 @@ html[data-theme="dark"] .uptime-track:not(.is-scrubbing) .uptime-day[aria-expand
 @media(max-width:640px){
   .uptime-track:not(.is-scrubbing) .uptime-day.scrub-active,
   .uptime-track:not(.is-scrubbing) .uptime-day[aria-expanded="true"]{
-    transform:translate3d(0,-3px,0) scaleY(1.1) scaleX(1.015);
+    transform:translate3d(0,-2px,0) scaleY(1.065) scaleX(1.007);
   }
 }
 @media(prefers-reduced-motion:reduce){
@@ -1382,16 +1386,16 @@ function scrubInfoFromX(geometry,clientX){
   };
 }
 function applyScrubWave(track,continuousIndex,affected){
-  const days=$$('.uptime-day',track),radius=2.1;
+  const days=$$('.uptime-day',track),radius=1.85;
   const from=Math.max(0,Math.floor(continuousIndex-radius));
   const to=Math.min(days.length-1,Math.ceil(continuousIndex+radius));
   const next=new Set();
   const style=getComputedStyle(track);
-  const liftMax=parseFloat(style.getPropertyValue('--scrub-lift-max'))||3.6;
-  const scaleYMax=parseFloat(style.getPropertyValue('--scrub-scale-y'))||1.095;
-  const scaleXMax=parseFloat(style.getPropertyValue('--scrub-scale-x'))||1.018;
-  const activeOpacity=parseFloat(style.getPropertyValue('--scrub-active-opacity'))||.96;
-  const restOpacity=parseFloat(style.getPropertyValue('--scrub-rest-opacity'))||.84;
+  const liftMax=parseFloat(style.getPropertyValue('--scrub-lift-max'))||2.8;
+  const scaleYMax=parseFloat(style.getPropertyValue('--scrub-scale-y'))||1.065;
+  const scaleXMax=parseFloat(style.getPropertyValue('--scrub-scale-x'))||1.006;
+  const activeOpacity=parseFloat(style.getPropertyValue('--scrub-active-opacity'))||1;
+  const restOpacity=parseFloat(style.getPropertyValue('--scrub-rest-opacity'))||.92;
   for(let i=from;i<=to;i++){
     const day=days[i],dist=Math.abs(i-continuousIndex);
     if(dist>=radius)continue;
