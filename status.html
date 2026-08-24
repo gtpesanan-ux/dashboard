@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="description" content="Dirac Group Status — operational status and service availability.">
 <meta name="application-name" content="Dirac Group Status">
 <meta name="theme-color" content="#f6f7f9">
@@ -878,6 +878,58 @@ html[data-theme="dark"] .uptime-popover{box-shadow:0 18px 50px rgba(0,0,0,.46)}
 }
 
 
+
+/* ===== Mobile interaction: zoom lock + uptime scrub ===== */
+html,body{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  touch-action:pan-x pan-y;
+}
+button,a,.service-row,.uptime-day{
+  -webkit-tap-highlight-color:transparent;
+}
+.uptime-track{
+  position:relative;
+  touch-action:pan-y;
+  overscroll-behavior-x:contain;
+  -webkit-user-select:none;
+  user-select:none;
+  -webkit-touch-callout:none;
+}
+.uptime-day{
+  position:relative;
+  transform-origin:center bottom;
+  transition:transform .14s cubic-bezier(.2,.75,.25,1),opacity .14s ease,box-shadow .14s ease,filter .14s ease;
+  will-change:transform;
+}
+.uptime-track.is-scrubbing .uptime-day:not(.scrub-active){
+  opacity:.58;
+}
+.uptime-day.scrub-active,
+.uptime-day[aria-expanded="true"]{
+  z-index:2;
+  opacity:1!important;
+  transform:translateY(-4px) scaleY(1.14) scaleX(1.04);
+  box-shadow:0 5px 14px rgba(15,23,42,.16);
+  filter:saturate(1.08);
+}
+html[data-theme="dark"] .uptime-day.scrub-active,
+html[data-theme="dark"] .uptime-day[aria-expanded="true"]{
+  box-shadow:0 5px 16px rgba(0,0,0,.46);
+}
+.uptime-popover{
+  transition:opacity .16s ease,transform .16s ease,visibility .16s ease,left .08s ease-out,top .08s ease-out;
+}
+@media(max-width:640px){
+  .uptime-day.scrub-active,
+  .uptime-day[aria-expanded="true"]{
+    transform:translateY(-5px) scaleY(1.18) scaleX(1.05);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .uptime-day,.uptime-popover{transition:none!important}
+}
+
 /* ===== Dirac Group production refinement ===== */
 .brand-name strong{font-size:15px;font-weight:760;letter-spacing:-.018em;text-transform:none}
 .brand-name small{margin-top:4px;color:var(--faint);font-size:9px;font-weight:640;letter-spacing:.01em;text-transform:none}
@@ -1211,7 +1263,7 @@ function enhanceServices(){
       button.innerHTML='<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 7.5 10 12l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
       statusWrap.append(button);
       const detail=document.createElement('div');detail.className='service-details';detail.id=detailId;
-      detail.innerHTML=`<div class="service-details-inner"><div class="detail-grid"><div class="detail-metric"><span>Current status</span><strong data-detail-status>${statusNames[initial]}</strong></div><div class="detail-metric"><span>30-day uptime</span><strong data-detail-uptime>${uptimeText}</strong></div><div class="detail-metric"><span>Response time</span><strong data-detail-latency>Not published</strong></div><div class="detail-metric"><span>Data updated</span><strong data-detail-updated>—</strong></div></div><p class="detail-note">Tap any daily availability block for its date and state. Response time appears only when supplied by the monitoring feed.</p></div>`;
+      detail.innerHTML=`<div class="service-details-inner"><div class="detail-grid"><div class="detail-metric"><span>Current status</span><strong data-detail-status>${statusNames[initial]}</strong></div><div class="detail-metric"><span>30-day uptime</span><strong data-detail-uptime>${uptimeText}</strong></div><div class="detail-metric"><span>Response time</span><strong data-detail-latency>Not published</strong></div><div class="detail-metric"><span>Data updated</span><strong data-detail-updated>—</strong></div></div><p class="detail-note">Tap a daily availability block, or slide across the 30-day bars, to inspect each date and state. Response time appears only when supplied by the monitoring feed.</p></div>`;
       row.append(detail);
       const toggle=()=>{const open=!row.classList.contains('expanded');row.classList.toggle('expanded',open);button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',`${open?'Hide':'Show'} details for ${name}`)};
       button.addEventListener('click',e=>{e.stopPropagation();toggle()});
@@ -1242,7 +1294,8 @@ function decorateUptimeDays(baseDate=payloadGeneratedAt||new Date()){
 
 function showDayPopover(day){
   const pop=$('#uptimePopover');if(!pop||!day)return;
-  if(activeDay)activeDay.setAttribute('aria-expanded','false');activeDay=day;day.setAttribute('aria-expanded','true');
+  if(activeDay&&activeDay!==day){activeDay.setAttribute('aria-expanded','false');activeDay.classList.remove('scrub-active')}
+  activeDay=day;day.setAttribute('aria-expanded','true');day.classList.add('scrub-active');
   const d=new Date(day.dataset.date||Date.now());const st=normalizeStatus(day.dataset.state);
   $('#popoverDate').textContent=fmtDate(d);$('#popoverStatus').textContent=statusNames[st];
   const details=[];if(day.dataset.incident)details.push(day.dataset.incident);if(day.dataset.duration)details.push(`Duration: ${day.dataset.duration} min`);if(day.dataset.note)details.push(day.dataset.note);
@@ -1253,11 +1306,78 @@ function showDayPopover(day){
   let top=r.top-h-10;if(top<14)top=Math.min(window.innerHeight-h-14,r.bottom+10);
   pop.style.left=`${left}px`;pop.style.top=`${top}px`;
 }
-function closePopover(){const pop=$('#uptimePopover');if(!pop)return;pop.classList.remove('open');pop.setAttribute('aria-hidden','true');if(activeDay){activeDay.setAttribute('aria-expanded','false');activeDay=null}}
+function closePopover(){
+  const pop=$('#uptimePopover');if(!pop)return;
+  pop.classList.remove('open');pop.setAttribute('aria-hidden','true');
+  $$('.uptime-track.is-scrubbing').forEach(track=>track.classList.remove('is-scrubbing'));
+  $$('.uptime-day.scrub-active').forEach(day=>day.classList.remove('scrub-active'));
+  if(activeDay){activeDay.setAttribute('aria-expanded','false');activeDay=null}
+}
+
+function dayFromScrubPosition(track,clientX){
+  const days=$$('.uptime-day',track);if(!days.length)return null;
+  const rect=track.getBoundingClientRect();
+  const x=Math.max(rect.left,Math.min(rect.right-.01,clientX));
+  const ratio=(x-rect.left)/Math.max(1,rect.width);
+  const index=Math.max(0,Math.min(days.length-1,Math.floor(ratio*days.length)));
+  return days[index];
+}
+
+function bindUptimeScrub(){
+  $$('.uptime-track').forEach(track=>{
+    let pointerId=null,startX=0,startY=0,scrubbing=false,lastDay=null;
+    const finish=(e,cancelled=false)=>{
+      if(pointerId===null)return;
+      const finishedPointerId=pointerId;
+      pointerId=null;
+      if(scrubbing){
+        track.classList.remove('is-scrubbing');
+        if(lastDay&&!cancelled)showDayPopover(lastDay);
+        track.dataset.justScrubbed='1';
+        window.setTimeout(()=>{delete track.dataset.justScrubbed},260);
+      }
+      try{if(track.hasPointerCapture?.(finishedPointerId))track.releasePointerCapture(finishedPointerId)}catch(_){}
+      scrubbing=false;lastDay=null;
+    };
+    track.addEventListener('pointerdown',e=>{
+      if(!e.isPrimary||e.button>0)return;
+      pointerId=e.pointerId;startX=e.clientX;startY=e.clientY;scrubbing=false;lastDay=null;
+    });
+    track.addEventListener('pointermove',e=>{
+      if(pointerId!==e.pointerId)return;
+      const dx=e.clientX-startX,dy=e.clientY-startY;
+      if(!scrubbing){
+        if(Math.abs(dx)<7)return;
+        if(Math.abs(dx)<=Math.abs(dy)*1.05)return;
+        scrubbing=true;track.classList.add('is-scrubbing');
+        try{track.setPointerCapture?.(pointerId)}catch(_){}
+      }
+      if(e.cancelable)e.preventDefault();
+      const day=dayFromScrubPosition(track,e.clientX);
+      if(day&&day!==lastDay){
+        lastDay=day;
+        showDayPopover(day);
+      }
+    },{passive:false});
+    track.addEventListener('pointerup',e=>finish(e,false));
+    track.addEventListener('pointercancel',e=>finish(e,true));
+    track.addEventListener('lostpointercapture',e=>{if(pointerId===e.pointerId)finish(e,false)});
+  });
+}
+
 function bindUptimePopover(){
-  document.addEventListener('click',e=>{const day=e.target.closest('.uptime-day');if(day){e.stopPropagation();showDayPopover(day);return}if(!e.target.closest('#uptimePopover'))closePopover()});
+  document.addEventListener('click',e=>{
+    const day=e.target.closest('.uptime-day');
+    if(day){
+      const track=day.closest('.uptime-track');
+      if(track?.dataset.justScrubbed)return;
+      e.stopPropagation();showDayPopover(day);return
+    }
+    if(!e.target.closest('#uptimePopover'))closePopover()
+  });
   document.addEventListener('keydown',e=>{const day=e.target.closest?.('.uptime-day');if(day&&(e.key==='Enter'||e.key===' ')){e.preventDefault();showDayPopover(day)}if(e.key==='Escape')closePopover()});
   $('#popoverClose')?.addEventListener('click',closePopover);window.addEventListener('scroll',closePopover,{passive:true});window.addEventListener('resize',closePopover,{passive:true});
+  bindUptimeScrub();
 }
 
 function updateFilterCounts(){
@@ -1400,6 +1520,16 @@ function initialize(){
   setInterval(updateFreshnessUI,30000);
 }
 initialize();
+})();
+</script>
+
+
+<script>
+(()=>{
+'use strict';
+/* Prevent accidental Safari pinch/double-tap zoom while preserving normal page scrolling. */
+['gesturestart','gesturechange','gestureend'].forEach(type=>document.addEventListener(type,e=>e.preventDefault(),{passive:false}));
+document.addEventListener('dblclick',e=>e.preventDefault(),{passive:false});
 })();
 </script>
 
