@@ -889,6 +889,12 @@ button,a,.service-row,.uptime-day{
   -webkit-tap-highlight-color:transparent;
 }
 .uptime-track{
+  --scrub-lift-max:3.6;
+  --scrub-scale-y:1.095;
+  --scrub-scale-x:1.018;
+  --scrub-active-opacity:.96;
+  --scrub-rest-opacity:.84;
+
   position:relative;
   touch-action:pan-y;
   overscroll-behavior-x:contain;
@@ -909,10 +915,10 @@ button,a,.service-row,.uptime-day{
 }
 .uptime-track.is-scrubbing .uptime-day{
   transition:none!important;
-  opacity:.68;
+  opacity:var(--scrub-rest-opacity);
 }
 .uptime-track.is-scrubbing .uptime-day.scrub-near{
-  opacity:1;
+  opacity:var(--scrub-active-opacity);
 }
 .uptime-track.is-settling .uptime-day{
   transition:transform .17s cubic-bezier(.2,.8,.2,1),opacity .15s ease,box-shadow .17s ease!important;
@@ -924,12 +930,12 @@ button,a,.service-row,.uptime-day{
 }
 .uptime-track:not(.is-scrubbing) .uptime-day.scrub-active,
 .uptime-track:not(.is-scrubbing) .uptime-day[aria-expanded="true"]{
-  transform:translate3d(0,-4px,0) scaleY(1.14) scaleX(1.035);
-  box-shadow:0 5px 14px rgba(15,23,42,.14);
+  transform:translate3d(0,-2px,0) scaleY(1.08) scaleX(1.012);
+  box-shadow:0 0 0 1px rgba(255,255,255,.08),0 4px 10px rgba(15,23,42,.10);
 }
 html[data-theme="dark"] .uptime-track:not(.is-scrubbing) .uptime-day.scrub-active,
 html[data-theme="dark"] .uptime-track:not(.is-scrubbing) .uptime-day[aria-expanded="true"]{
-  box-shadow:0 5px 16px rgba(0,0,0,.42);
+  box-shadow:0 0 0 1px rgba(255,255,255,.05),0 4px 12px rgba(0,0,0,.34);
 }
 .uptime-popover{
   left:0!important;
@@ -951,7 +957,7 @@ html[data-theme="dark"] .uptime-track:not(.is-scrubbing) .uptime-day[aria-expand
 @media(max-width:640px){
   .uptime-track:not(.is-scrubbing) .uptime-day.scrub-active,
   .uptime-track:not(.is-scrubbing) .uptime-day[aria-expanded="true"]{
-    transform:translate3d(0,-5px,0) scaleY(1.18) scaleX(1.045);
+    transform:translate3d(0,-3px,0) scaleY(1.1) scaleX(1.015);
   }
 }
 @media(prefers-reduced-motion:reduce){
@@ -1376,22 +1382,28 @@ function scrubInfoFromX(geometry,clientX){
   };
 }
 function applyScrubWave(track,continuousIndex,affected){
-  const days=$$('.uptime-day',track),radius=2.35;
+  const days=$$('.uptime-day',track),radius=2.1;
   const from=Math.max(0,Math.floor(continuousIndex-radius));
   const to=Math.min(days.length-1,Math.ceil(continuousIndex+radius));
   const next=new Set();
+  const style=getComputedStyle(track);
+  const liftMax=parseFloat(style.getPropertyValue('--scrub-lift-max'))||3.6;
+  const scaleYMax=parseFloat(style.getPropertyValue('--scrub-scale-y'))||1.095;
+  const scaleXMax=parseFloat(style.getPropertyValue('--scrub-scale-x'))||1.018;
+  const activeOpacity=parseFloat(style.getPropertyValue('--scrub-active-opacity'))||.96;
+  const restOpacity=parseFloat(style.getPropertyValue('--scrub-rest-opacity'))||.84;
   for(let i=from;i<=to;i++){
     const day=days[i],dist=Math.abs(i-continuousIndex);
     if(dist>=radius)continue;
     const raw=1-dist/radius;
     const eased=.5-.5*Math.cos(Math.PI*raw);
-    const lift=6.2*eased;
-    const sy=1+.205*eased;
-    const sx=1+.038*eased;
+    const lift=liftMax*eased;
+    const sy=1+((scaleYMax-1)*eased);
+    const sx=1+((scaleXMax-1)*eased);
     day.classList.add('scrub-near');
     day.style.transform=`translate3d(0,${-lift.toFixed(2)}px,0) scaleX(${sx.toFixed(4)}) scaleY(${sy.toFixed(4)})`;
-    day.style.opacity=String((.76+.24*eased).toFixed(3));
-    day.style.zIndex=String(2+Math.round(eased*4));
+    day.style.opacity=String((restOpacity+((activeOpacity-restOpacity)*eased)).toFixed(3));
+    day.style.zIndex=String(2+Math.round(eased*2));
     next.add(day);
   }
   affected.forEach(day=>{
