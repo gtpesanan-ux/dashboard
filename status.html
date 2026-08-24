@@ -879,7 +879,7 @@ html[data-theme="dark"] .uptime-popover{box-shadow:0 18px 50px rgba(0,0,0,.46)}
 
 
 
-/* ===== Mobile interaction: zoom lock + uptime scrub ===== */
+/* ===== Mobile interaction: zoom lock + fluid uptime scrub ===== */
 html,body{
   -webkit-text-size-adjust:100%;
   text-size-adjust:100%;
@@ -895,21 +895,27 @@ button,a,.service-row,.uptime-day{
   -webkit-user-select:none;
   user-select:none;
   -webkit-touch-callout:none;
+  contain:layout paint;
 }
 .uptime-day{
   position:relative;
   transform-origin:center bottom;
-  transition:transform .14s cubic-bezier(.2,.75,.25,1),opacity .14s ease,box-shadow .14s ease,filter .14s ease;
-  will-change:transform;
+  transition:transform .22s cubic-bezier(.22,1,.36,1),opacity .18s ease,box-shadow .18s ease,filter .18s ease;
+  will-change:transform,opacity;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
 }
-.uptime-track.is-scrubbing .uptime-day:not(.scrub-active){
-  opacity:.58;
+.uptime-track.is-scrubbing .uptime-day{
+  transition:none!important;
+}
+.uptime-track.is-settling .uptime-day{
+  transition:transform .28s cubic-bezier(.22,1,.36,1),opacity .22s ease,box-shadow .22s ease,filter .22s ease!important;
 }
 .uptime-day.scrub-active,
 .uptime-day[aria-expanded="true"]{
-  z-index:2;
+  z-index:4;
   opacity:1!important;
-  transform:translateY(-4px) scaleY(1.14) scaleX(1.04);
+  transform:translate3d(0,-4px,0) scaleY(1.14) scaleX(1.04);
   box-shadow:0 5px 14px rgba(15,23,42,.16);
   filter:saturate(1.08);
 }
@@ -918,12 +924,26 @@ html[data-theme="dark"] .uptime-day[aria-expanded="true"]{
   box-shadow:0 5px 16px rgba(0,0,0,.46);
 }
 .uptime-popover{
-  transition:opacity .16s ease,transform .16s ease,visibility .16s ease,left .08s ease-out,top .08s ease-out;
+  left:0!important;
+  top:0!important;
+  --popover-x:0px;
+  --popover-y:0px;
+  transform:translate3d(var(--popover-x),calc(var(--popover-y) + 4px),0) scale(.985);
+  will-change:transform,opacity;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  transition:opacity .14s ease,transform .18s cubic-bezier(.22,1,.36,1),visibility .14s ease;
+}
+.uptime-popover.open{
+  transform:translate3d(var(--popover-x),var(--popover-y),0) scale(1);
+}
+.uptime-popover.scrubbing{
+  transition:opacity .12s ease,visibility .12s ease!important;
 }
 @media(max-width:640px){
   .uptime-day.scrub-active,
   .uptime-day[aria-expanded="true"]{
-    transform:translateY(-5px) scaleY(1.18) scaleX(1.05);
+    transform:translate3d(0,-5px,0) scaleY(1.18) scaleX(1.05);
   }
 }
 @media(prefers-reduced-motion:reduce){
@@ -1292,72 +1312,108 @@ function decorateUptimeDays(baseDate=payloadGeneratedAt||new Date()){
   });
 }
 
-function showDayPopover(day){
-  const pop=$('#uptimePopover');if(!pop||!day)return;
+function updateDayPopoverContent(day){
+  if(!day)return;
   if(activeDay&&activeDay!==day){activeDay.setAttribute('aria-expanded','false');activeDay.classList.remove('scrub-active')}
   activeDay=day;day.setAttribute('aria-expanded','true');day.classList.add('scrub-active');
   const d=new Date(day.dataset.date||Date.now());const st=normalizeStatus(day.dataset.state);
   $('#popoverDate').textContent=fmtDate(d);$('#popoverStatus').textContent=statusNames[st];
   const details=[];if(day.dataset.incident)details.push(day.dataset.incident);if(day.dataset.duration)details.push(`Duration: ${day.dataset.duration} min`);if(day.dataset.note)details.push(day.dataset.note);
   $('#popoverNote').textContent=details.length?details.join(' · '):(st==='operational'?'No service-impacting event recorded for this day.':'No incident detail was published for this availability state.');
-  pop.classList.add('open');pop.setAttribute('aria-hidden','false');
-  const r=day.getBoundingClientRect(), w=Math.min(220,window.innerWidth-28), h=104;
-  let left=Math.max(14,Math.min(window.innerWidth-w-14,r.left+r.width/2-w/2));
+}
+function positionDayPopover(day,anchorX=null,track=null){
+  const pop=$('#uptimePopover');if(!pop||!day)return;
+  const r=(track||day).getBoundingClientRect(),w=Math.min(220,window.innerWidth-28),h=104;
+  const centerX=anchorX==null?(day.getBoundingClientRect().left+day.getBoundingClientRect().width/2):anchorX;
+  const left=Math.max(14,Math.min(window.innerWidth-w-14,centerX-w/2));
   let top=r.top-h-10;if(top<14)top=Math.min(window.innerHeight-h-14,r.bottom+10);
-  pop.style.left=`${left}px`;pop.style.top=`${top}px`;
+  pop.style.setProperty('--popover-x',`${left}px`);pop.style.setProperty('--popover-y',`${top}px`);
+}
+function showDayPopover(day,anchorX=null,track=null,scrubbing=false){
+  const pop=$('#uptimePopover');if(!pop||!day)return;
+  updateDayPopoverContent(day);positionDayPopover(day,anchorX,track);
+  pop.classList.toggle('scrubbing',!!scrubbing);pop.classList.add('open');pop.setAttribute('aria-hidden','false');
+}
+function clearScrubWave(track){
+  if(!track)return;
+  $$('.uptime-day',track).forEach(day=>{
+    day.style.removeProperty('transform');day.style.removeProperty('opacity');day.style.removeProperty('filter');day.style.removeProperty('z-index');day.style.removeProperty('box-shadow');
+  });
+}
+function applyScrubWave(track,continuousIndex){
+  const days=$$('.uptime-day',track);const maxInfluence=2.45;
+  days.forEach((day,i)=>{
+    const dist=Math.abs(i-continuousIndex);const influence=Math.max(0,1-dist/maxInfluence);
+    if(influence<=0){
+      day.style.transform='translate3d(0,0,0) scale(1)';day.style.opacity='.55';day.style.filter='saturate(.92)';day.style.zIndex='1';day.style.boxShadow='none';return;
+    }
+    const eased=influence*influence*(3-2*influence);
+    const lift=5.4*eased;const sy=1+.18*eased;const sx=1+.045*eased;
+    day.style.transform=`translate3d(0,${-lift.toFixed(2)}px,0) scaleX(${sx.toFixed(4)}) scaleY(${sy.toFixed(4)})`;
+    day.style.opacity=String((.55+.45*eased).toFixed(3));day.style.filter=`saturate(${(0.92+0.18*eased).toFixed(3)})`;day.style.zIndex=String(2+Math.round(eased*4));
+    day.style.boxShadow=eased>.72?'0 5px 14px rgba(15,23,42,.14)':'none';
+  });
 }
 function closePopover(){
   const pop=$('#uptimePopover');if(!pop)return;
-  pop.classList.remove('open');pop.setAttribute('aria-hidden','true');
-  $$('.uptime-track.is-scrubbing').forEach(track=>track.classList.remove('is-scrubbing'));
+  pop.classList.remove('open','scrubbing');pop.setAttribute('aria-hidden','true');
+  $$('.uptime-track.is-scrubbing,.uptime-track.is-settling').forEach(track=>{track.classList.remove('is-scrubbing','is-settling');clearScrubWave(track)});
   $$('.uptime-day.scrub-active').forEach(day=>day.classList.remove('scrub-active'));
   if(activeDay){activeDay.setAttribute('aria-expanded','false');activeDay=null}
 }
-
-function dayFromScrubPosition(track,clientX){
-  const days=$$('.uptime-day',track);if(!days.length)return null;
-  const rect=track.getBoundingClientRect();
-  const x=Math.max(rect.left,Math.min(rect.right-.01,clientX));
-  const ratio=(x-rect.left)/Math.max(1,rect.width);
-  const index=Math.max(0,Math.min(days.length-1,Math.floor(ratio*days.length)));
-  return days[index];
+function scrubIndexFromX(track,clientX){
+  const days=$$('.uptime-day',track);if(!days.length)return {days,index:0,continuous:0};
+  const first=days[0].getBoundingClientRect(),last=days[days.length-1].getBoundingClientRect();
+  const minX=first.left+first.width/2,maxX=last.left+last.width/2;
+  const x=Math.max(minX,Math.min(maxX,clientX));
+  const ratio=(x-minX)/Math.max(1,maxX-minX);const continuous=ratio*(days.length-1);
+  return {days,index:Math.max(0,Math.min(days.length-1,Math.round(continuous))),continuous,x};
 }
-
 function bindUptimeScrub(){
   $$('.uptime-track').forEach(track=>{
-    let pointerId=null,startX=0,startY=0,scrubbing=false,lastDay=null;
+    let pointerId=null,startX=0,startY=0,scrubbing=false,lastDay=null,raf=0,pendingX=0,lastRenderedX=0;
+    const render=()=>{
+      raf=0;if(!scrubbing)return;
+      const info=scrubIndexFromX(track,pendingX);lastRenderedX=info.x;
+      applyScrubWave(track,info.continuous);
+      const day=info.days[info.index];
+      if(day&&day!==lastDay){lastDay=day;updateDayPopoverContent(day)}
+      if(day){
+        const pop=$('#uptimePopover');if(pop){pop.classList.add('open','scrubbing');pop.setAttribute('aria-hidden','false')}
+        positionDayPopover(day,info.x,track);
+      }
+    };
+    const queueRender=x=>{pendingX=x;if(!raf)raf=requestAnimationFrame(render)};
     const finish=(e,cancelled=false)=>{
       if(pointerId===null)return;
-      const finishedPointerId=pointerId;
-      pointerId=null;
+      const finishedPointerId=pointerId;pointerId=null;
+      if(raf){cancelAnimationFrame(raf);raf=0;if(scrubbing)render()}
       if(scrubbing){
-        track.classList.remove('is-scrubbing');
-        if(lastDay&&!cancelled)showDayPopover(lastDay);
-        track.dataset.justScrubbed='1';
-        window.setTimeout(()=>{delete track.dataset.justScrubbed},260);
+        track.classList.remove('is-scrubbing');track.classList.add('is-settling');
+        clearScrubWave(track);
+        const pop=$('#uptimePopover');pop?.classList.remove('scrubbing');
+        if(lastDay&&!cancelled)showDayPopover(lastDay,lastRenderedX||null,track,false);
+        window.setTimeout(()=>track.classList.remove('is-settling'),300);
+        track.dataset.justScrubbed='1';window.setTimeout(()=>{delete track.dataset.justScrubbed},320);
       }
-      try{if(track.hasPointerCapture?.(finishedPointerId))track.releasePointerCapture(finishedPointerId)}catch(_){}
-      scrubbing=false;lastDay=null;
+      try{if(track.hasPointerCapture?.(finishedPointerId))track.releasePointerCapture(finishedPointerId)}catch(_){ }
+      scrubbing=false;lastDay=null;lastRenderedX=0;
     };
     track.addEventListener('pointerdown',e=>{
       if(!e.isPrimary||e.button>0)return;
-      pointerId=e.pointerId;startX=e.clientX;startY=e.clientY;scrubbing=false;lastDay=null;
+      pointerId=e.pointerId;startX=e.clientX;startY=e.clientY;pendingX=e.clientX;scrubbing=false;lastDay=null;lastRenderedX=0;
     });
     track.addEventListener('pointermove',e=>{
       if(pointerId!==e.pointerId)return;
-      const dx=e.clientX-startX,dy=e.clientY-startY;
+      const coalesced=e.getCoalescedEvents?.();const latest=coalesced&&coalesced.length?coalesced[coalesced.length-1]:e;
+      const dx=latest.clientX-startX,dy=latest.clientY-startY;
       if(!scrubbing){
-        if(Math.abs(dx)<7)return;
-        if(Math.abs(dx)<=Math.abs(dy)*1.05)return;
-        scrubbing=true;track.classList.add('is-scrubbing');
-        try{track.setPointerCapture?.(pointerId)}catch(_){}
+        if(Math.abs(dx)<4)return;
+        if(Math.abs(dx)<=Math.abs(dy)*1.08)return;
+        scrubbing=true;track.classList.remove('is-settling');track.classList.add('is-scrubbing');
+        try{track.setPointerCapture?.(pointerId)}catch(_){ }
       }
-      if(e.cancelable)e.preventDefault();
-      const day=dayFromScrubPosition(track,e.clientX);
-      if(day&&day!==lastDay){
-        lastDay=day;
-        showDayPopover(day);
-      }
+      if(e.cancelable)e.preventDefault();queueRender(latest.clientX);
     },{passive:false});
     track.addEventListener('pointerup',e=>finish(e,false));
     track.addEventListener('pointercancel',e=>finish(e,true));
