@@ -571,8 +571,190 @@ html:not(.faq-ready) .faq-q{cursor:default}
   .menu-toggle{width:44px;height:44px;flex:0 0 44px}
 }
 </style>
+<!-- DIRAC CANONICAL BRAND + MOTION SYSTEM -->
+<style id="dirac-canonical-system">
+/*
+  One shared visual contract across every Dirac branch.
+  Motion patterns are native-JS adaptations of the only approved sources:
+  - React Bits Animated Content: https://reactbits.dev/animations/animated-content
+  - React Bits Split Text: https://reactbits.dev/text-animations/split-text
+  - React Bits Magnet: https://reactbits.dev/animations/magnet
+  - React Bits Tilted Card: https://reactbits.dev/components/tilted-card
+  - React Bits Target Cursor: https://reactbits.dev/animations/target-cursor
+  - React Bits Animated List: https://reactbits.dev/components/animated-list
+  - 21st.dev Interactive Hover Button: https://21st.dev/@dillionverma/components/interactive-hover-button
+  - 21st.dev Animated Beam: https://21st.dev/@dillionverma/components/animated-beam
+  Functional state motion (browser, lookup, transaction, instruments) reflects UI state.
+*/
+:root{
+  --dirac-blue:#155ee8;
+  --dirac-ink:#102246;
+  --dirac-muted:#53657a;
+  --dirac-line:#dce6f3;
+  --dirac-white:#fff;
+  --dirac-ease:cubic-bezier(.22,1,.36,1);
+  --dirac-fast:300ms;
+  --dirac-ui:450ms;
+  --dirac-reveal:650ms;
+  --dirac-hero:900ms;
+  --dirac-shell:min(calc(100% - clamp(40px,10vw,128px)),1200px);
+  --dirac-header:80px;
+}
+html,body,main,main>section,footer{background:#fff!important}
+body main>section{background-image:none!important}
+#progress,.progress{background:#155ee8!important}
+
+/* Canonical brand lockup: identical mark, spacing and hierarchy everywhere. */
+:where(.brand,.footer-brand.brand){display:inline-flex!important;align-items:center!important;gap:10px!important;min-width:0!important;min-height:44px;text-decoration:none}
+:where(.brand>.brand-mark,.brand>img,.footer-brand.brand>img){box-sizing:border-box!important;width:40px!important;height:40px!important;min-width:40px!important;flex:0 0 40px!important;border:1px solid var(--dirac-line)!important;border-radius:12px!important;background:#fff!important;box-shadow:0 6px 18px rgba(25,72,139,.07)!important;overflow:hidden!important}
+:where(.brand>img,.footer-brand.brand>img){padding:4px!important;object-fit:contain!important}
+.brand>.brand-mark{position:relative!important;display:grid!important;place-items:center!important}
+.brand>.brand-mark:after{display:none!important}
+.brand>.brand-mark>img{position:static!important;inset:auto!important;width:100%!important;height:100%!important;padding:4px!important;object-fit:contain!important;background:#fff!important}
+:where(.brand-copy,.brand>span:last-child,.footer-brand.brand>div){display:grid!important;gap:4px!important;min-width:0!important;line-height:1!important}
+:where(.brand,.footer-brand.brand) strong{display:block!important;margin:0!important;color:var(--dirac-ink)!important;font-size:.84rem!important;font-weight:800!important;line-height:1!important;letter-spacing:.12em!important;white-space:nowrap!important}
+:where(.brand,.footer-brand.brand) small{display:block!important;margin:0!important;max-width:none!important;color:var(--dirac-muted)!important;font-size:.69rem!important;font-weight:600!important;line-height:1.2!important;letter-spacing:.01em!important;text-transform:none!important;white-space:nowrap!important}
+.brand .brand-copy strong,.brand>span:last-child strong,.footer-brand.brand .brand-copy strong,.footer-brand.brand>div strong{font-size:.82rem!important;letter-spacing:.12em!important}
+.brand .brand-copy small,.brand>span:last-child small,.footer-brand.brand .brand-copy small,.footer-brand.brand>div small{font-size:.65rem!important;letter-spacing:.01em!important;text-transform:none!important}
+:where(.brand,.footer-brand.brand) small:after{content:none!important}
+:where(.brand>.brand-mark>img,.brand>img,.footer-brand.brand>img){transition:transform var(--dirac-ui) var(--dirac-ease)}
+:where(.brand,.footer-brand.brand):hover .brand-mark>img,:where(.brand,.footer-brand.brand):hover>img{transform:scale(1.035) rotate(-1deg)}
+
+/* Canonical sticky header and navigation rhythm. */
+:where(.site-header,header#siteHeader,header#header){z-index:900!important;height:calc(var(--dirac-header) + env(safe-area-inset-top))!important;padding-top:env(safe-area-inset-top)!important;background:#fff!important;border-bottom:1px solid transparent!important;backdrop-filter:none!important;transition:height var(--dirac-ui) var(--dirac-ease),border-color var(--dirac-fast),box-shadow var(--dirac-ui) var(--dirac-ease)!important}
+:where(.site-header,header#siteHeader,header#header).scrolled{height:calc(68px + env(safe-area-inset-top))!important;background:#fff!important;border-bottom-color:var(--dirac-line)!important;box-shadow:0 12px 36px rgba(25,72,139,.08)!important;backdrop-filter:blur(8px)!important}
+:where(.header-row,.nav-shell,.header-inner){width:var(--dirac-shell)!important;height:100%!important;margin-inline:auto!important;padding-block:0!important;display:flex!important;align-items:center!important;gap:20px!important}
+:where(.desktop-nav,.nav-links){margin-left:auto!important;align-items:center!important;gap:clamp(10px,1.2vw,20px)!important}
+:where(.desktop-nav,.nav-links)>a:not(.btn):not(.button){position:relative;display:flex;align-items:center;min-height:44px;color:var(--dirac-ink);font-size:.79rem!important;font-weight:700!important;text-decoration:none}
+:where(.desktop-nav,.nav-links)>a:not(.btn):not(.button):after{content:""!important;position:absolute!important;left:0!important;right:auto!important;bottom:5px!important;width:100%!important;height:1px!important;background:var(--dirac-blue)!important;transform:scaleX(0)!important;transform-origin:right!important;transition:transform var(--dirac-fast) var(--dirac-ease)!important}
+:where(.desktop-nav,.nav-links)>a:not(.btn):not(.button):hover:after,:where(.desktop-nav,.nav-links)>a.active:after,:where(.desktop-nav,.nav-links)>a[aria-current="location"]:after{transform:scaleX(1)!important;transform-origin:left!important}
+.header-branch{display:flex;align-items:center;min-height:44px;margin:0!important;padding-left:14px!important;border-left:1px solid var(--dirac-line)!important;color:var(--dirac-blue)!important;font-size:.72rem!important;font-weight:800!important;line-height:1.1!important;letter-spacing:.1em!important;white-space:nowrap!important}
+.menu-toggle{position:relative!important;width:48px!important;height:48px!important;min-width:48px!important;margin-left:auto!important;padding:0!important;border:1px solid var(--dirac-line)!important;border-radius:12px!important;background:#fff!important;box-shadow:none!important}
+.menu-toggle span{display:none!important}
+.menu-toggle:before,.menu-toggle:after{content:"";position:absolute;left:13px;width:20px;height:2px;border-radius:2px;background:var(--dirac-ink);transition:transform var(--dirac-ui) var(--dirac-ease),top var(--dirac-ui) var(--dirac-ease)}
+.menu-toggle:before{top:19px}.menu-toggle:after{top:27px}
+.menu-toggle[aria-expanded="true"]:before{top:23px;transform:rotate(45deg)}
+.menu-toggle[aria-expanded="true"]:after{top:23px;transform:rotate(-45deg)}
+
+/* 21st.dev-inspired tactile buttons plus React Bits Magnet variables. */
+:where(.btn,.button){--mag-x:0px;--mag-y:0px;--mag-lift:0px;min-height:48px;border-radius:12px!important;transition:transform var(--dirac-fast) var(--dirac-ease),box-shadow var(--dirac-ui) var(--dirac-ease),background-color var(--dirac-fast),border-color var(--dirac-fast),color var(--dirac-fast)!important}
+:where(.magnetic,[data-magnetic]){transform:translate3d(var(--mag-x),calc(var(--mag-y) + var(--mag-lift)),0)!important;will-change:transform}
+:where(.magnetic,[data-magnetic]):hover{--mag-lift:-2px}
+:where(.magnetic,[data-magnetic]):active{--mag-lift:1px;transition-duration:90ms!important}
+:where(.btn,.button)>span[aria-hidden="true"]{transition:transform var(--dirac-fast) var(--dirac-ease)}
+:where(.btn,.button):hover>span[aria-hidden="true"]{transform:translate3d(3px,-2px,0)}
+.wa-float{transition:transform var(--dirac-ui) var(--dirac-ease),box-shadow var(--dirac-ui) var(--dirac-ease)!important}
+.wa-float:hover{transform:translateY(-3px)!important}
+
+/* React Bits Animated Content + Split Text choreography. */
+html.dirac-motion .dirac-reveal{--reveal-x:0px;--reveal-y:28px;--reveal-scale:1;opacity:0!important;clip-path:inset(0 0 10% 0);transform:translate3d(var(--reveal-x),var(--reveal-y),0) scale(var(--reveal-scale))!important;transition:opacity var(--dirac-reveal) var(--dirac-ease),transform var(--dirac-reveal) var(--dirac-ease),clip-path var(--dirac-hero) var(--dirac-ease)!important;transition-delay:var(--motion-delay,0ms)!important;will-change:transform,opacity,clip-path}
+html.dirac-motion .dirac-reveal--left{--reveal-x:-24px;--reveal-y:0px}
+html.dirac-motion .dirac-reveal--right{--reveal-x:24px;--reveal-y:0px}
+html.dirac-motion .dirac-reveal--scale{--reveal-y:12px;--reveal-scale:.975}
+html.dirac-motion .dirac-reveal--clip{--reveal-y:18px;clip-path:inset(0 0 22% 0)}
+html.dirac-motion .dirac-reveal.dirac-in{opacity:1!important;clip-path:inset(0 0 0 0);transform:translate3d(0,0,0) scale(1)!important;will-change:auto}
+.dirac-word{display:inline-block;will-change:transform,opacity}
+html.dirac-motion h1 .dirac-word{opacity:0;transform:translate3d(0,1.05em,0) rotate(1.5deg);transition:opacity var(--dirac-hero) var(--dirac-ease),transform var(--dirac-hero) var(--dirac-ease);transition-delay:calc(90ms + var(--word-index)*34ms)}
+html.dirac-motion h1.dirac-title-ready .dirac-word{opacity:1;transform:translate3d(0,0,0) rotate(0)}
+@keyframes diracListIn{from{opacity:0;transform:translate3d(0,14px,0) scale(.985)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
+.dirac-list-enter{animation:diracListIn var(--dirac-reveal) var(--dirac-ease) both!important;animation-delay:var(--list-delay,0ms)!important}
+
+/* React Bits Tilted Card adaptation; transforms only on fine pointers. */
+.dirac-tilt{--tilt-x:0deg;--tilt-y:0deg;transform:perspective(1400px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) translateZ(0)!important;transform-style:preserve-3d;transition:transform var(--dirac-reveal) var(--dirac-ease),box-shadow var(--dirac-ui) var(--dirac-ease)!important;will-change:transform}
+.dirac-tilt.is-tilting{transition-duration:120ms!important}
+html.dirac-motion .dirac-reveal.dirac-tilt:not(.dirac-in){transform:perspective(1400px) translate3d(var(--reveal-x),var(--reveal-y),0) scale(var(--reveal-scale)) rotateX(var(--tilt-x)) rotateY(var(--tilt-y))!important}
+html.dirac-motion .dirac-reveal.dirac-tilt.dirac-in{transform:perspective(1400px) translate3d(0,0,0) scale(1) rotateX(var(--tilt-x)) rotateY(var(--tilt-y))!important}
+
+/* Small Target Cursor overlay keeps the native cursor fully usable. */
+.dirac-cursor{position:fixed;z-index:9998;left:0;top:0;width:15px;height:15px;border:1px solid rgba(21,94,232,.7);border-radius:50%;opacity:0;pointer-events:none;transform:translate3d(-30px,-30px,0);transition:width var(--dirac-fast) var(--dirac-ease),height var(--dirac-fast) var(--dirac-ease),margin var(--dirac-fast) var(--dirac-ease),opacity var(--dirac-fast);will-change:transform}
+.dirac-cursor.is-visible{opacity:.72}
+.dirac-cursor.is-target{width:25px;height:25px;margin:-5px 0 0 -5px;border-color:var(--dirac-blue);opacity:.9}
+
+/* Canonical animated accordion: no display:none snap. */
+:where(.faq-a,.faq-answer)[data-dirac-panel]{display:grid!important;grid-template-rows:0fr!important;overflow:hidden!important;opacity:.55;visibility:visible!important;transition:grid-template-rows var(--dirac-ui) var(--dirac-ease),opacity var(--dirac-fast) var(--dirac-ease)!important}
+:where(.faq-a,.faq-answer)[data-dirac-panel]>*{min-height:0;overflow:hidden}
+.faq-item.open :where(.faq-a,.faq-answer)[data-dirac-panel]{grid-template-rows:1fr!important;opacity:1}
+:where(.faq-q,.faq-question){transition:color var(--dirac-fast),padding-left var(--dirac-ui) var(--dirac-ease)!important}
+.faq-item.open :where(.faq-q,.faq-question){color:var(--dirac-blue);padding-left:6px}
+
+/* Page-specific state transitions using the same motion grammar. */
+.browser .virtual-cursor{transition:transform var(--dirac-reveal) var(--dirac-ease),opacity var(--dirac-fast)!important}
+.browser.cursor-guided .virtual-cursor{opacity:1!important}
+.ext-grid{transition:grid-template-columns var(--dirac-reveal) var(--dirac-ease)!important}
+.ext-card{min-width:0!important;transition:background-color var(--dirac-ui),transform var(--dirac-ui) var(--dirac-ease),box-shadow var(--dirac-ui) var(--dirac-ease)!important}
+.ext-name{writing-mode:horizontal-tb!important;transform:none!important;transition:color var(--dirac-fast),transform var(--dirac-ui) var(--dirac-ease)!important}
+.ext-detail{display:block!important;transition:opacity var(--dirac-ui) var(--dirac-ease),transform var(--dirac-ui) var(--dirac-ease)!important}
+.life-line:after{transform:scaleX(0);transform-origin:left;transition:transform var(--dirac-hero) var(--dirac-ease)!important}
+.lifecycle.dirac-in .life-line:after{transform:scaleX(1)}
+@keyframes diracBeam{to{stroke-dashoffset:-76}}
+@keyframes diracPulse{0%,100%{opacity:.34;transform:scale(.86)}50%{opacity:1;transform:scale(1.08)}}
+.dns-path{animation:diracBeam 3.2s linear infinite!important}
+.dns-pulse{animation:diracPulse 2.4s var(--dirac-ease) infinite!important}
+.category-tab{transition:transform var(--dirac-ui) var(--dirac-ease),box-shadow var(--dirac-ui) var(--dirac-ease),background-color var(--dirac-fast),border-color var(--dirac-fast)!important}
+@keyframes diracStateIn{from{opacity:0;transform:translate3d(14px,0,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+.phone-view.active,.category-canvas.dirac-switch,.need-result.dirac-switch{animation:diracStateIn var(--dirac-ui) var(--dirac-ease) both!important}
+.phone-glow{display:none!important}
+.phone-stage .receipt{right:0!important;z-index:3!important}
+.phone-screen{background:#fff!important}
+.step-dots .active{background:var(--dirac-blue)!important}
+h1 .soft{background:none!important;color:var(--dirac-blue)!important;-webkit-text-fill-color:currentColor!important}
+.product-panels{display:grid!important}
+.product-panel{grid-area:1/1!important;display:grid!important;opacity:0;visibility:hidden;pointer-events:none;transform:translate3d(18px,0,0) scale(.99);transition:opacity var(--dirac-ui) var(--dirac-ease),transform var(--dirac-reveal) var(--dirac-ease),visibility 0s linear var(--dirac-ui)!important}
+.product-panel.active{opacity:1;visibility:visible;pointer-events:auto;transform:translate3d(0,0,0) scale(1);transition-delay:0s!important}
+#ovenPath{transition:d var(--dirac-reveal) var(--dirac-ease),stroke-dashoffset var(--dirac-reveal) var(--dirac-ease)!important}
+.need-result h3,.need-result p,.need-result .result-tags{transition:opacity var(--dirac-fast),transform var(--dirac-ui) var(--dirac-ease)!important}
+.config{overflow:visible!important}
+
+@media(min-width:1025px) and (max-width:1220px){
+  :where(.header-row,.nav-shell,.header-inner){gap:10px!important}
+  .header-branch{display:none!important}
+  :where(.desktop-nav,.nav-links){gap:7px!important}
+  :where(.desktop-nav,.nav-links)>a:not(.btn):not(.button){font-size:.7rem!important}
+  :where(.desktop-nav,.nav-links) :where(.btn,.button){padding-inline:12px!important;font-size:.72rem!important}
+}
+@media(max-width:1024px){
+  html.dirac-ready :where(.desktop-nav,.nav-links){display:none!important}
+  html.dirac-ready .menu-toggle{display:grid!important;place-items:center!important}
+  html.dirac-ready :where(.nav-panel,.mobile-panel,.nav-links){position:fixed!important;z-index:880!important;inset:0!important;display:grid!important;align-content:start!important;gap:0!important;margin:0!important;padding:calc(var(--dirac-header) + env(safe-area-inset-top) + 26px) max(20px,5vw) max(28px,env(safe-area-inset-bottom))!important;background:#fff!important;border:0!important;opacity:0!important;visibility:hidden!important;clip-path:inset(0 0 100% 0)!important;transform:translate3d(0,-12px,0)!important;overflow-y:auto!important;transition:clip-path var(--dirac-reveal) var(--dirac-ease),transform var(--dirac-reveal) var(--dirac-ease),opacity var(--dirac-fast),visibility 0s linear var(--dirac-reveal)!important}
+  html.dirac-ready :where(.nav-panel,.mobile-panel,.nav-links).open{opacity:1!important;visibility:visible!important;clip-path:inset(0)!important;transform:translate3d(0,0,0)!important;transition-delay:0s!important}
+  html.dirac-ready :where(.nav-panel,.mobile-panel,.nav-links)>a{min-height:54px!important;border-bottom:1px solid var(--dirac-line)!important;border-radius:0!important;opacity:0;transform:translate3d(0,16px,0);transition:opacity var(--dirac-ui) var(--dirac-ease),transform var(--dirac-ui) var(--dirac-ease),color var(--dirac-fast)!important;transition-delay:0s!important}
+  html.dirac-ready :where(.nav-panel,.mobile-panel,.nav-links).open>a{opacity:1;transform:translate3d(0,0,0);transition-delay:calc(var(--menu-index,0)*55ms + 90ms)!important}
+  :where(.header-row,.nav-shell,.header-inner){gap:12px!important}
+}
+@media(max-width:700px){
+  :root{--dirac-header:76px}
+  :where(.site-header,header#siteHeader,header#header),:where(.site-header,header#siteHeader,header#header).scrolled{height:calc(var(--dirac-header) + env(safe-area-inset-top))!important}
+  :where(.header-row,.nav-shell,.header-inner){width:min(calc(100% - 32px),1200px)!important;display:flex!important;padding:0!important}
+  :where(.site-header,header#siteHeader,header#header) .header-branch{display:none!important}
+  :where(.site-header,header#siteHeader,header#header) .brand{flex:1!important;max-width:none!important}
+  :where(.site-header,header#siteHeader,header#header) :where(.brand>.brand-mark,.brand>img){width:40px!important;height:40px!important;min-width:40px!important;flex-basis:40px!important}
+  :where(.site-header,header#siteHeader,header#header) .brand strong{font-size:.78rem!important}
+  :where(.site-header,header#siteHeader,header#header) .brand small{font-size:.62rem!important;white-space:nowrap!important}
+  .phone-stage{display:grid!important;grid-template-columns:1fr!important;justify-items:center!important;gap:18px!important;margin-bottom:0!important;padding-inline:0!important}
+  .phone-stage .receipt{position:relative!important;inset:auto!important;grid-row:2;width:min(100%,330px)!important;max-width:330px!important;margin:0!important;opacity:0;transform:translate3d(0,-16px,0) rotate(-1deg)!important}
+  .phone-stage.receipt-out .receipt{opacity:1;transform:translate3d(0,0,0) rotate(1deg)!important}
+  .ext-grid{grid-template-columns:1fr!important}
+  .product-panel,.product-panel.active{grid-template-columns:1fr!important}
+}
+@media(max-width:430px){
+  html.dirac-motion .dirac-reveal--left,html.dirac-motion .dirac-reveal--right{--reveal-x:0px;--reveal-y:20px}
+  .page-web h1,.page-domain h1{max-width:100%!important;font-size:clamp(2.5rem,13.5vw,3.375rem)!important}
+  .page-topup .hero-grid{grid-template-columns:minmax(0,1fr)!important}
+  .page-topup .hero-grid>*{min-width:0!important}
+  .page-topup h1{max-width:100%!important;font-size:clamp(2.5rem,11.5vw,2.9rem)!important;letter-spacing:-.055em!important}
+  .page-topup .phone-stage,.page-topup .phone{width:100%!important;max-width:374px!important}
+}
+@media(pointer:coarse),(hover:none){.dirac-cursor{display:none!important}.dirac-tilt{transform:none!important}}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  html.dirac-motion .dirac-reveal,html.dirac-motion .dirac-reveal.dirac-in,h1 .dirac-word{opacity:1!important;clip-path:none!important;transform:none!important}
+  :where(.magnetic,[data-magnetic]),.dirac-tilt{transform:none!important}
+  .dirac-cursor,.virtual-cursor{display:none!important}
+  .dns-path,.dns-pulse{animation:none!important}
+}
+</style>
 </head>
-<body>
+<body class="page-web">
 <!-- NAVIGATION -->
 <a class="skip" href="#main">Lewati ke konten utama</a>
 <div id="progress" aria-hidden="true">
@@ -1493,6 +1675,436 @@ html:not(.faq-ready) .faq-q{cursor:default}
   });
   addEventListener('resize', updateScroll);
   updateScroll();
+})();
+</script>
+<!-- DIRAC CANONICAL INTERACTION CONTROLLER -->
+<script id="dirac-canonical-controller">
+(() => {
+  'use strict';
+
+  const root = document.documentElement;
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = matchMedia('(pointer: fine) and (hover: hover)').matches;
+  root.classList.add('dirac-ready');
+
+  /* Robust copy adapter keeps every standalone file useful on file://. */
+  const nativeClipboardWrite = navigator.clipboard && typeof navigator.clipboard.writeText === 'function'
+    ? navigator.clipboard.writeText.bind(navigator.clipboard)
+    : null;
+  function fallbackCopy(text) {
+    return new Promise((resolve, reject) => {
+      const field = document.createElement('textarea');
+      field.value = String(text);
+      field.readOnly = true;
+      field.setAttribute('aria-hidden', 'true');
+      Object.assign(field.style, {
+        position: 'fixed',
+        inset: '0 auto auto -9999px',
+        opacity: '0'
+      });
+      document.body.appendChild(field);
+      field.select();
+      field.setSelectionRange(0, field.value.length);
+      try {
+        if (!document.execCommand('copy')) throw new Error('copy command rejected');
+        resolve();
+      } catch (error) {
+        reject(error);
+      } finally {
+        field.remove();
+      }
+    });
+  }
+  async function robustCopy(text) {
+    if (nativeClipboardWrite) {
+      try {
+        await nativeClipboardWrite(String(text));
+        return;
+      } catch (error) {
+        /* Local files often reject Clipboard API; use the synchronous fallback. */
+      }
+    }
+    await fallbackCopy(text);
+  }
+  try {
+    Object.defineProperty(navigator, 'clipboard', {
+      configurable: true,
+      value: { writeText: robustCopy }
+    });
+  } catch (error) {
+    window.diracCopyText = robustCopy;
+  }
+
+  /* React Bits Split Text adaptation: words retain one accessible H1 label. */
+  const heading = document.querySelector('h1');
+  if (heading && !heading.dataset.diracSplit) {
+    const accessibleTitle = heading.textContent.replace(/\s+/g, ' ').trim();
+    const walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        return node.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      }
+    });
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+    let wordIndex = 0;
+    textNodes.forEach(node => {
+      const fragment = document.createDocumentFragment();
+      node.nodeValue.split(/(\s+)/).forEach(part => {
+        if (!part) return;
+        if (/^\s+$/.test(part)) {
+          fragment.appendChild(document.createTextNode(part));
+          return;
+        }
+        const word = document.createElement('span');
+        word.className = 'dirac-word';
+        word.setAttribute('aria-hidden', 'true');
+        word.style.setProperty('--word-index', String(wordIndex++));
+        word.textContent = part;
+        fragment.appendChild(word);
+      });
+      node.replaceWith(fragment);
+    });
+    heading.dataset.diracSplit = 'true';
+    heading.setAttribute('aria-label', accessibleTitle);
+  }
+
+  /* One Animated Content observer, with restrained variants and sibling stagger. */
+  const baseReveal = [...document.querySelectorAll('[data-reveal],.reveal')];
+  const extraReveal = [...document.querySelectorAll([
+    '.section-head', '.service-row', '.service-item', '.step', '.trust-line',
+    '.status-stage', '.category-tab', '.product-tab', '.need-button', '.metric',
+    '.faq-item', '.life-step', '.principle', '.lifecycle'
+  ].join(','))].filter(element => !element.parentElement?.closest('[data-reveal],.reveal'));
+  const revealTargets = [...new Set([...baseReveal, ...extraReveal])];
+  const parentCounts = new Map();
+  revealTargets.forEach((element, index) => {
+    element.classList.add('dirac-reveal');
+    const parent = element.parentElement;
+    const siblingIndex = parentCounts.get(parent) || 0;
+    parentCounts.set(parent, siblingIndex + 1);
+    const isRepeated = element.matches('.service-row,.service-item,.step,.trust-line,.status-stage,.category-tab,.product-tab,.need-button,.metric,.faq-item,.life-step,.principle');
+    element.style.setProperty('--motion-delay', `${isRepeated ? Math.min(siblingIndex * 55, 275) : 0}ms`);
+    if (element.matches('.section-head,.order-heading,.fit-heading,.compare-heading,.brief-heading,.hero-copy,.faq-copy')) {
+      element.classList.add('dirac-reveal--clip');
+    } else if (element.matches('.hero-visual,.search-stage,.phone-stage,.bench,.category-canvas,.config-grid')) {
+      element.classList.add('dirac-reveal--scale');
+    } else if (isRepeated && index % 3 === 1) {
+      element.classList.add('dirac-reveal--left');
+    } else if (isRepeated && index % 3 === 2) {
+      element.classList.add('dirac-reveal--right');
+    }
+  });
+  if (!reducedMotion) {
+    root.classList.add('dirac-motion');
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('dirac-in');
+          revealObserver.unobserve(entry.target);
+        });
+      }, { threshold: .11, rootMargin: '0px 0px -36px' });
+      revealTargets.forEach(element => revealObserver.observe(element));
+    } else {
+      revealTargets.forEach(element => element.classList.add('dirac-in'));
+    }
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      if (heading) heading.classList.add('dirac-title-ready');
+    }));
+  } else {
+    revealTargets.forEach(element => element.classList.add('dirac-in'));
+    if (heading) heading.classList.add('dirac-title-ready');
+  }
+
+  /* React Bits Animated List adaptation for interaction-created rows. */
+  const dynamicListSelector = '.result,.shortlist-chip,.recommend-list>li,.feed-item';
+  function animateAddedItems(node) {
+    if (reducedMotion || !(node instanceof Element)) return;
+    const items = [node, ...node.querySelectorAll(dynamicListSelector)].filter(item => item.matches(dynamicListSelector));
+    items.forEach((item, index) => {
+      item.classList.remove('dirac-list-enter');
+      item.style.setProperty('--list-delay', `${Math.min(index * 65, 260)}ms`);
+      requestAnimationFrame(() => item.classList.add('dirac-list-enter'));
+    });
+  }
+  if ('MutationObserver' in window) {
+    const listObserver = new MutationObserver(records => records.forEach(record => {
+      record.addedNodes.forEach(animateAddedItems);
+    }));
+    listObserver.observe(document.body, { childList: true, subtree: true });
+  }
+
+  /* React Bits Magnet adaptation; maximum displacement is deliberately 4px. */
+  if (finePointer && !reducedMotion) {
+    document.querySelectorAll('.magnetic,[data-magnetic]').forEach(element => {
+      let magnetFrame = 0;
+      let nextX = 0;
+      let nextY = 0;
+      element.addEventListener('pointermove', event => {
+        const rect = element.getBoundingClientRect();
+        nextX = Math.max(-4, Math.min(4, (event.clientX - rect.left - rect.width / 2) * .09));
+        nextY = Math.max(-4, Math.min(4, (event.clientY - rect.top - rect.height / 2) * .09));
+        if (magnetFrame) return;
+        magnetFrame = requestAnimationFrame(() => {
+          element.style.setProperty('--mag-x', `${nextX.toFixed(2)}px`);
+          element.style.setProperty('--mag-y', `${nextY.toFixed(2)}px`);
+          magnetFrame = 0;
+        });
+      });
+      element.addEventListener('pointerleave', () => {
+        element.style.setProperty('--mag-x', '0px');
+        element.style.setProperty('--mag-y', '0px');
+      });
+    });
+
+    /* React Bits Tilted Card adaptation on each branch's hero instrument. */
+    document.querySelectorAll('.hero-visual,.search-stage,.phone,.bench').forEach(surface => {
+      surface.classList.add('dirac-tilt');
+      let tiltFrame = 0;
+      let tiltX = 0;
+      let tiltY = 0;
+      surface.addEventListener('pointermove', event => {
+        const rect = surface.getBoundingClientRect();
+        tiltY = ((event.clientX - rect.left) / rect.width - .5) * 4.2;
+        tiltX = -((event.clientY - rect.top) / rect.height - .5) * 3.4;
+        surface.classList.add('is-tilting');
+        if (tiltFrame) return;
+        tiltFrame = requestAnimationFrame(() => {
+          surface.style.setProperty('--tilt-x', `${tiltX.toFixed(2)}deg`);
+          surface.style.setProperty('--tilt-y', `${tiltY.toFixed(2)}deg`);
+          tiltFrame = 0;
+        });
+      });
+      surface.addEventListener('pointerleave', () => {
+        surface.classList.remove('is-tilting');
+        surface.style.setProperty('--tilt-x', '0deg');
+        surface.style.setProperty('--tilt-y', '0deg');
+      });
+    });
+
+    /* React Bits Target Cursor adaptation; native cursor remains visible. */
+    const cursor = document.createElement('span');
+    cursor.className = 'dirac-cursor';
+    cursor.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(cursor);
+    let cursorFrame = 0;
+    let cursorX = -30;
+    let cursorY = -30;
+    addEventListener('pointermove', event => {
+      cursorX = event.clientX - 7.5;
+      cursorY = event.clientY - 7.5;
+      cursor.classList.add('is-visible');
+      cursor.classList.toggle('is-target', Boolean(event.target.closest('a,button,input,select,textarea,[role="button"],[role="tab"]')));
+      if (cursorFrame) return;
+      cursorFrame = requestAnimationFrame(() => {
+        cursor.style.transform = `translate3d(${cursorX}px,${cursorY}px,0)`;
+        cursorFrame = 0;
+      });
+    }, { passive: true });
+    addEventListener('mouseout', event => {
+      if (!event.relatedTarget) cursor.classList.remove('is-visible', 'is-target');
+    });
+  }
+
+  /* Menu link stagger is shared even though legacy menu class names differ. */
+  document.querySelectorAll('.nav-panel,.mobile-panel,.nav-links').forEach(panel => {
+    [...panel.children].filter(child => child.matches('a,button')).forEach((item, index) => {
+      item.style.setProperty('--menu-index', String(index));
+    });
+  });
+
+  /* Canonical FAQ controller avoids hidden/display snapping while retaining ARIA. */
+  const faqButtons = [...document.querySelectorAll('.faq-q,.faq-question')];
+  function setFaq(button, expanded) {
+    const item = button.closest('.faq-item');
+    const answer = document.getElementById(button.getAttribute('aria-controls'));
+    if (!item || !answer) return;
+    answer.hidden = false;
+    answer.dataset.diracPanel = '';
+    item.classList.toggle('open', expanded);
+    button.setAttribute('aria-expanded', String(expanded));
+    answer.setAttribute('aria-hidden', String(!expanded));
+    answer.toggleAttribute('inert', !expanded);
+  }
+  faqButtons.forEach(button => {
+    const expanded = button.getAttribute('aria-expanded') === 'true' || button.closest('.faq-item')?.classList.contains('open');
+    setFaq(button, Boolean(expanded));
+  });
+  document.addEventListener('click', event => {
+    const button = event.target.closest('.faq-q,.faq-question');
+    if (!button) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const willOpen = button.getAttribute('aria-expanded') !== 'true';
+    faqButtons.forEach(item => setFaq(item, item === button && willOpen));
+  }, true);
+
+  /* One rAF scroll loop adds progress, header state and active navigation everywhere. */
+  const progress = document.getElementById('progress') || [...document.body.children].find(element => element.classList?.contains('progress'));
+  const header = document.querySelector('.site-header,header#siteHeader,header#header');
+  const sections = [...document.querySelectorAll('main section[id]')];
+  const sectionLinks = [...document.querySelectorAll('.desktop-nav a[href^="#"],.nav-links a[href^="#"]')];
+  let scrollFrame = 0;
+  function renderScrollState() {
+    const maximum = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    if (progress) progress.style.transform = `scaleX(${Math.min(1, scrollY / maximum)})`;
+    if (header) header.classList.toggle('scrolled', scrollY > 18);
+    let current = sections[0]?.id || '';
+    sections.forEach(section => {
+      if (section.getBoundingClientRect().top <= innerHeight * .38) current = section.id;
+    });
+    sectionLinks.forEach(link => {
+      const active = link.getAttribute('href') === `#${current}`;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    scrollFrame = 0;
+  }
+  function requestScrollRender() {
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(renderScrollState);
+  }
+  addEventListener('scroll', requestScrollRender, { passive: true });
+  addEventListener('resize', requestScrollRender);
+  renderScrollState();
+
+  /* Website hero: guided functional sequence with cursor, build and device states. */
+  const browser = document.getElementById('browser');
+  if (browser && !reducedMotion) {
+    const virtualCursor = browser.querySelector('.virtual-cursor');
+    const tourTargets = [
+      document.querySelector('[data-console="design"]'),
+      document.querySelector('[data-device="tablet"]'),
+      document.querySelector('[data-console="build"]'),
+      document.querySelector('[data-device="mobile"]'),
+      document.querySelector('[data-console="qa"]'),
+      document.querySelector('[data-device="desktop"]'),
+      document.querySelector('[data-console="plan"]')
+    ].filter(Boolean);
+    let tourIndex = 0;
+    let tourTimer = 0;
+    let tourVisible = true;
+    let pauseUntil = 0;
+    function scheduleTour(delay = 1900) {
+      clearTimeout(tourTimer);
+      if (!tourVisible || document.hidden) return;
+      tourTimer = setTimeout(runTourStep, delay);
+    }
+    function runTourStep() {
+      if (Date.now() < pauseUntil) {
+        scheduleTour(Math.max(800, pauseUntil - Date.now()));
+        return;
+      }
+      const target = tourTargets[tourIndex++ % tourTargets.length];
+      const targetInsideBrowser = browser.contains(target);
+      if (targetInsideBrowser && virtualCursor) {
+        const browserRect = browser.getBoundingClientRect();
+        const targetRect = target.getBoundingClientRect();
+        const x = targetRect.left - browserRect.left + targetRect.width / 2;
+        const y = targetRect.top - browserRect.top + targetRect.height / 2;
+        browser.classList.add('cursor-guided');
+        virtualCursor.style.transform = `translate3d(${x}px,${y}px,0)`;
+        setTimeout(() => {
+          if (Date.now() >= pauseUntil) target.click();
+          browser.classList.remove('cursor-guided');
+          scheduleTour(1650);
+        }, 560);
+      } else {
+        target.click();
+        scheduleTour(1900);
+      }
+    }
+    const pauseTour = () => {
+      pauseUntil = Date.now() + 12000;
+      browser.classList.remove('cursor-guided');
+      scheduleTour(12000);
+    };
+    document.querySelector('.hero-visual')?.addEventListener('pointerdown', pauseTour, { passive: true });
+    document.querySelector('.hero-visual')?.addEventListener('keydown', pauseTour);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(entries => {
+        tourVisible = entries[0]?.isIntersecting ?? false;
+        if (tourVisible) scheduleTour(1100);
+        else clearTimeout(tourTimer);
+      }, { threshold: .3 }).observe(browser);
+    } else {
+      scheduleTour(1100);
+    }
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) clearTimeout(tourTimer);
+      else scheduleTour(1200);
+    });
+  }
+
+  /* Domain explorer: actual grid interpolation and state-linked lifecycle beam. */
+  const extensionGrid = document.querySelector('.ext-grid');
+  if (extensionGrid) {
+    const cards = [...extensionGrid.querySelectorAll('.ext-card')];
+    function updateExtensionColumns() {
+      if (innerWidth <= 700) {
+        extensionGrid.style.removeProperty('grid-template-columns');
+        return;
+      }
+      extensionGrid.style.gridTemplateColumns = cards.map(card => card.classList.contains('active') ? '2.15fr' : '.82fr').join(' ');
+    }
+    cards.forEach(card => card.addEventListener('click', () => requestAnimationFrame(updateExtensionColumns)));
+    addEventListener('resize', updateExtensionColumns);
+    updateExtensionColumns();
+  }
+
+  /* Top Up category content uses a sourced state-enter transition. */
+  const categoryCanvas = document.getElementById('categoryCanvas');
+  document.querySelectorAll('.category-tab').forEach(tab => tab.addEventListener('click', () => {
+    if (!categoryCanvas || reducedMotion) return;
+    categoryCanvas.classList.remove('dirac-switch');
+    requestAnimationFrame(() => categoryCanvas.classList.add('dirac-switch'));
+    setTimeout(() => categoryCanvas.classList.remove('dirac-switch'), 520);
+  }));
+
+  /* Laboratory product panels remain in one grid so opacity/transform can interpolate. */
+  const productTabs = [...document.querySelectorAll('.product-tab')];
+  const productPanels = [...document.querySelectorAll('.product-panel')];
+  function setProductTab(tab, focus = false) {
+    productTabs.forEach(item => {
+      const selected = item === tab;
+      item.setAttribute('aria-selected', String(selected));
+      item.tabIndex = selected ? 0 : -1;
+    });
+    productPanels.forEach(panel => {
+      const selected = panel.id === tab.getAttribute('aria-controls');
+      panel.hidden = false;
+      panel.classList.toggle('active', selected);
+      panel.setAttribute('aria-hidden', String(!selected));
+      panel.toggleAttribute('inert', !selected);
+    });
+    if (focus) tab.focus();
+  }
+  if (productTabs.length && productPanels.length) {
+    setProductTab(productTabs.find(tab => tab.getAttribute('aria-selected') === 'true') || productTabs[0]);
+    document.addEventListener('click', event => {
+      const tab = event.target.closest('.product-tab');
+      if (!tab) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      setProductTab(tab);
+    }, true);
+    document.addEventListener('keydown', event => {
+      const tab = event.target.closest('.product-tab');
+      if (!tab || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      const index = productTabs.indexOf(tab);
+      const next = event.key === 'Home' ? 0 : event.key === 'End' ? productTabs.length - 1 : event.key === 'ArrowRight' ? (index + 1) % productTabs.length : (index - 1 + productTabs.length) % productTabs.length;
+      setProductTab(productTabs[next], true);
+    }, true);
+  }
+  const needResult = document.getElementById('needResult');
+  document.querySelectorAll('.need-button').forEach(button => button.addEventListener('click', () => {
+    if (!needResult || reducedMotion) return;
+    needResult.classList.remove('dirac-switch');
+    requestAnimationFrame(() => needResult.classList.add('dirac-switch'));
+    setTimeout(() => needResult.classList.remove('dirac-switch'), 520);
+  }));
 })();
 </script>
 </body>
