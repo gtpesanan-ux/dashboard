@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://digdaya-inovasi-nusantara.art0ihsan.chatgpt.site/sitemap.xml
