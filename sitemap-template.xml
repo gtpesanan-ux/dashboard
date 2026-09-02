@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace {{ORIGIN}} once the permanent production domain is chosen, then rename this file to sitemap.xml and add its absolute URL to robots.txt. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ORIGIN}}/berita-brief-website.html</loc></url>
+  <url><loc>{{ORIGIN}}/berita-checklist-domain.html</loc></url>
+  <url><loc>{{ORIGIN}}/berita-detail.html</loc></url>
+  <url><loc>{{ORIGIN}}/berita-panduan-parfum.html</loc></url>
+  <url><loc>{{ORIGIN}}/berita.html</loc></url>
+  <url><loc>{{ORIGIN}}/</loc></url>
+  <url><loc>{{ORIGIN}}/jasa-pembuatan-website.html</loc></url>
+  <url><loc>{{ORIGIN}}/jual-beli-domain.html</loc></url>
+  <url><loc>{{ORIGIN}}/keamanan.html</loc></url>
+  <url><loc>{{ORIGIN}}/kebijakan-privasi.html</loc></url>
+  <url><loc>{{ORIGIN}}/kebijakan-transaksi.html</loc></url>
+  <url><loc>{{ORIGIN}}/kemitraan.html</loc></url>
+  <url><loc>{{ORIGIN}}/kontak.html</loc></url>
+  <url><loc>{{ORIGIN}}/layanan.html</loc></url>
+  <url><loc>{{ORIGIN}}/parfum-designer.html</loc></url>
+  <url><loc>{{ORIGIN}}/parfum-lokal.html</loc></url>
+  <url><loc>{{ORIGIN}}/parfum-niche.html</loc></url>
+  <url><loc>{{ORIGIN}}/parfum-timur-tengah.html</loc></url>
+  <url><loc>{{ORIGIN}}/pengaduan.html</loc></url>
+  <url><loc>{{ORIGIN}}/syarat-ketentuan.html</loc></url>
+  <url><loc>{{ORIGIN}}/tentang-kami.html</loc></url>
+  <url><loc>{{ORIGIN}}/top-up-game.html</loc></url>
+</urlset>
