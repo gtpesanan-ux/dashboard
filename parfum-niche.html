@@ -2387,7 +2387,34 @@ html:not(.js) .faq details[open] summary::after {
   }
 }
 
-  </style>
+  
+
+/* ---------- Quick WhatsApp contact v5 ---------- */
+.mobile-dock{display:none!important}
+.quick-contact{position:fixed;z-index:96;right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));display:grid;justify-items:end;gap:.7rem;pointer-events:none}
+.quick-contact .wa-float{position:static!important;display:grid!important;width:3.7rem;height:3.7rem;padding:0;border:3px solid rgba(255,255,255,.94);border-radius:50%;background:#128c4a;color:#fff;box-shadow:0 16px 38px rgba(3,26,18,.28);cursor:pointer;pointer-events:auto;transition:transform .22s ease,box-shadow .22s ease,background .22s ease}
+.quick-contact .wa-float:hover{transform:translateY(-3px) scale(1.035);box-shadow:0 20px 46px rgba(3,26,18,.34);background:#0e7c40}
+.quick-contact .wa-float[aria-expanded="true"]{transform:rotate(-4deg) scale(1.03)}
+.wa-brand-mark{width:2rem;height:2rem;display:block;margin:auto}
+.quick-contact-panel{width:min(22rem,calc(100vw - 1.2rem));padding:.7rem;border:1px solid rgba(8,47,91,.14);border-radius:1.15rem;background:rgba(255,255,255,.97);box-shadow:0 24px 65px rgba(5,29,52,.24);backdrop-filter:blur(18px) saturate(145%);pointer-events:auto;transform-origin:bottom right}
+.quick-contact-panel[hidden]{display:none!important}
+.quick-contact-panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.55rem .55rem .7rem}
+.quick-contact-panel-head strong{display:block;color:var(--navy);font-size:.9rem}
+.quick-contact-panel-head small{display:block;margin-top:.15rem;color:var(--ink-soft);font-size:.72rem;line-height:1.45}
+.quick-contact-options{display:grid;gap:.5rem}
+.quick-contact-option{width:100%;min-height:4.25rem;display:grid;grid-template-columns:2.65rem 1fr auto;align-items:center;gap:.75rem;padding:.72rem;border:1px solid rgba(8,47,91,.12);border-radius:.9rem;background:#fff;color:var(--ink);text-align:left;text-decoration:none;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.quick-contact-option[href]:hover{transform:translateY(-2px);border-color:rgba(8,47,91,.26);box-shadow:0 10px 26px rgba(8,47,91,.1)}
+.quick-contact-option[aria-disabled="true"]{opacity:.58;cursor:not-allowed;background:#f4f4f2}
+.quick-contact-badge{width:2.45rem;height:2.45rem;display:grid;place-items:center;border-radius:.75rem;background:#e9f7ef;color:#0c7a3d;font-size:.72rem;font-weight:900;letter-spacing:.03em}
+.quick-contact-badge.email{background:#eef3fb;color:var(--navy)}
+.quick-contact-copy strong{display:block;color:var(--navy);font-size:.82rem}.quick-contact-copy small{display:block;margin-top:.13rem;color:var(--ink-soft);font-size:.7rem;overflow-wrap:anywhere}.quick-contact-chevron{color:#6d7c84;font-weight:800}
+.footer-contact-us{margin-top:2rem;padding:1.5rem 0 1.7rem;border-top:1px solid rgba(255,255,255,.13);border-bottom:1px solid rgba(255,255,255,.13);display:grid;grid-template-columns:minmax(13rem,.7fr) 1fr;gap:1.5rem;align-items:center}
+.footer-contact-us .footer-title{margin-bottom:.35rem}.footer-contact-us p{margin:0;color:rgba(255,255,255,.65);font-size:.78rem}.social-contact-list{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.55rem}.social-contact{width:2.8rem;height:2.8rem;display:grid;place-items:center;border:1px solid rgba(255,255,255,.2);border-radius:.82rem;background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-size:.78rem;font-weight:900;line-height:1;transition:transform .2s ease,background .2s ease,border-color .2s ease}.social-contact[href]:hover,.social-contact[type="button"]:hover{transform:translateY(-2px);background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35)}.social-contact[aria-disabled="true"]{opacity:.38;cursor:not-allowed}.social-contact svg{width:1.25rem;height:1.25rem}.social-contact .brand-text{font-size:.72rem;font-weight:900;letter-spacing:-.02em}.social-contact[type="button"]{font-family:inherit;cursor:pointer}.footer-contact-note{display:block;margin-top:.55rem;color:rgba(255,255,255,.48);font-size:.68rem}
+@media(max-width:760px){.quick-contact{right:max(.75rem,env(safe-area-inset-right));bottom:max(.8rem,env(safe-area-inset-bottom))}.quick-contact .wa-float{width:3.55rem;height:3.55rem}.site-footer{padding-bottom:calc(5.2rem + max(1rem,env(safe-area-inset-bottom)))!important}.toast-region{bottom:calc(5rem + max(1rem,env(safe-area-inset-bottom)))!important}.footer-contact-us{grid-template-columns:1fr}.social-contact-list{justify-content:flex-start}.quick-contact-panel{width:min(21.5rem,calc(100vw - 1.5rem))}}
+@media(prefers-reduced-motion:reduce){.quick-contact .wa-float,.quick-contact-option,.social-contact{transition:none!important}.quick-contact .wa-float:hover,.quick-contact-option[href]:hover,.social-contact[href]:hover{transform:none!important}}
+@media print{.quick-contact,.footer-contact-us{display:none!important}}
+
+</style>
   <link rel="canonical" href="https://digdaya-inovasi-nusantara.art0ihsan.chatgpt.site/parfum-niche.html">
   <meta property="og:locale" content="id_ID">
   <meta property="og:type" content="website">
@@ -2854,7 +2881,20 @@ figcaption{letter-spacing:.01em}
       <div><p class="footer-title">Perusahaan</p><nav class="footer-links" aria-label="Perusahaan di footer"><a href="tentang-kami.html">Tentang Kami</a><a href="kemitraan.html">Kemitraan</a><a href="berita.html">Berita &amp; Wawasan</a><a href="kontak.html">Kontak</a><a href="pengaduan.html">Pengaduan</a></nav></div>
       <div><p class="footer-title">Informasi</p><nav class="footer-links" aria-label="Informasi di footer"><a href="kebijakan-privasi.html">Kebijakan Privasi</a><a href="syarat-ketentuan.html">Syarat &amp; Ketentuan</a><a href="kebijakan-transaksi.html">Kebijakan Transaksi</a><a href="keamanan.html">Keamanan</a><a href="#top">Kembali ke atas</a></nav></div>
     </div>
-    <div class="shell footer-bottom"><span>© PT Digdaya Inovasi Nusantara.</span><span>WhatsApp: 0878-9252-3968</span></div>
+    
+    <div class="shell footer-contact-us" aria-label="Contact Us PT Digdaya Inovasi Nusantara">
+      <div><p class="footer-title">Contact Us</p><p>WhatsApp utama, dua nomor backup, email, dan LinkedIn aktif. Kanal sosial lain tetap disiapkan dan baru diarahkan setelah URL resminya diberikan.</p><span class="footer-contact-note">WA Utama: 0878-9252-3968 · Backup 1: +62 882-0092-57589 · Backup 2: +62 889-9192-6199 · Email: companydirac@gmail.com</span></div>
+      <div class="social-contact-list" aria-label="Kanal kontak dan sosial">
+        <span class="social-contact" aria-disabled="true" title="Instagram belum dikonfigurasi" aria-label="Instagram belum dikonfigurasi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="15" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.1" cy="6.9" r="1" fill="currentColor"/></svg></span>
+        <a class="social-contact" href="https://www.linkedin.com/in/achmad-zaenuddin-7285ba433" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Buka profil LinkedIn"><span class="brand-text">in</span></a>
+        <span class="social-contact" aria-disabled="true" title="Threads belum dikonfigurasi" aria-label="Threads belum dikonfigurasi"><span class="brand-text">@</span></span>
+        <button class="social-contact" type="button" data-contact-open aria-label="Buka pilihan WhatsApp"><svg class="wa-brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="11.5" r="8.1" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7.2 19.2 8 16.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M9.1 7.5c.35-.38.8-.35 1.08.05l.8 1.16c.2.3.18.68-.05.95l-.55.65c-.15.18-.13.43.02.62.74.9 1.54 1.69 2.43 2.42.19.15.45.16.63.01l.67-.55c.27-.22.66-.24.95-.03l1.13.82c.39.28.42.74.04 1.08l-.66.59c-.56.5-1.35.64-2.04.36a10.7 10.7 0 0 1-5.2-3.66 10.5 10.5 0 0 1-1.45-2.57c-.27-.7-.12-1.48.39-2.03l.61-.65Z" fill="currentColor"/></svg></button>
+        <span class="social-contact" aria-disabled="true" title="Telegram belum dikonfigurasi" aria-label="Telegram belum dikonfigurasi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3.5 11.1 16.4-6.4-3 14.6-5.1-4-2.9 2.7.4-4.3 7.8-6.5-9.7 5.1-3.9-1.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        <a class="social-contact" href="mailto:companydirac@gmail.com" aria-label="Kirim email ke companydirac@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m5 7 7 5.2L19 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <span class="social-contact" aria-disabled="true" title="Facebook belum dikonfigurasi" aria-label="Facebook belum dikonfigurasi"><span class="brand-text">f</span></span>
+      </div>
+    </div>
+    <div class="shell footer-bottom"><span>© PT Digdaya Inovasi Nusantara.</span><span>WA Utama: 0878-9252-3968 · Backup 1: +62 882-0092-57589 · Backup 2: +62 889-9192-6199 · Email: companydirac@gmail.com</span></div>
   </footer>
   <dialog class="ui-dialog" id="inquiry-dialog" data-inquiry-dialog aria-labelledby="inquiry-title">
     <div class="dialog-head"><div><p class="kicker">Formulir konsultasi</p><h2 id="inquiry-title">Ceritakan kebutuhan Anda.</h2></div><button class="icon-button" type="button" data-close-inquiry data-close-dialog aria-label="Tutup formulir"><svg class="icon-svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-close"></use></svg></button></div>
@@ -2880,8 +2920,20 @@ figcaption{letter-spacing:.01em}
   </dialog>
   <dialog class="ui-dialog image-viewer" id="image-viewer" aria-labelledby="viewer-title"><div class="dialog-head"><h2 id="viewer-title">Pratinjau gambar</h2><button class="icon-button" type="button" data-close-dialog aria-label="Tutup pratinjau"><svg class="icon-svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-close"></use></svg></button></div><div class="dialog-body"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" width="1200" height="630" alt="Pratinjau visual Digdaya" loading="lazy" decoding="async"><p class="fine" data-viewer-caption></p></div></dialog>
   <div class="toast-region" aria-live="polite" aria-atomic="true"></div>
-  <nav class="mobile-dock" aria-label="Aksi cepat"><a href="layanan.html"><svg class="icon-svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-layers"></use></svg><span>Layanan</span></a><a class="mobile-dock-contact" href="kontak.html"><svg class="icon-svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-message"></use></svg><span>Hubungi</span></a></nav>
-  <a class="wa-float" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." target="_blank" rel="noopener noreferrer" aria-label="Hubungi melalui WhatsApp"><svg class="icon-svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-message"></use></svg></a>
+
+  <div class="quick-contact" data-quick-contact>
+    <div class="quick-contact-panel" id="quick-contact-panel" data-quick-contact-panel hidden>
+      <div class="quick-contact-panel-head"><span><strong>Hubungi Digdaya</strong><small>Pilih kanal yang ingin digunakan.</small></span><button class="icon-button" type="button" data-contact-close aria-label="Tutup pilihan kontak"><svg class="icon-svg" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-close"></use></svg></button></div>
+      <div class="quick-contact-options">
+        <a class="quick-contact-option" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." target="_blank" rel="noopener noreferrer"><span class="quick-contact-badge">WA</span><span class="quick-contact-copy"><strong>WhatsApp Utama</strong><small>0878-9252-3968</small></span><span class="quick-contact-chevron" aria-hidden="true">↗</span></a>
+        <a class="quick-contact-option" href="https://wa.me/62882009257589?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." target="_blank" rel="noopener noreferrer"><span class="quick-contact-badge">WA</span><span class="quick-contact-copy"><strong>WhatsApp Backup 1</strong><small>+62 882-0092-57589</small></span><span class="quick-contact-chevron" aria-hidden="true">↗</span></a>
+        <a class="quick-contact-option" href="https://wa.me/6288991926199?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." target="_blank" rel="noopener noreferrer"><span class="quick-contact-badge">WA</span><span class="quick-contact-copy"><strong>WhatsApp Backup 2</strong><small>+62 889-9192-6199</small></span><span class="quick-contact-chevron" aria-hidden="true">↗</span></a>
+        <a class="quick-contact-option" href="mailto:companydirac@gmail.com?subject=Konsultasi%20PT%20Digdaya%20Inovasi%20Nusantara"><span class="quick-contact-badge email">@</span><span class="quick-contact-copy"><strong>Email</strong><small>companydirac@gmail.com</small></span><span class="quick-contact-chevron" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <button class="wa-float" type="button" data-contact-toggle aria-expanded="false" aria-controls="quick-contact-panel" aria-label="Buka pilihan WhatsApp dan email"><svg class="wa-brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="11.5" r="8.1" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7.2 19.2 8 16.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M9.1 7.5c.35-.38.8-.35 1.08.05l.8 1.16c.2.3.18.68-.05.95l-.55.65c-.15.18-.13.43.02.62.74.9 1.54 1.69 2.43 2.42.19.15.45.16.63.01l.67-.55c.27-.22.66-.24.95-.03l1.13.82c.39.28.42.74.04 1.08l-.66.59c-.56.5-1.35.64-2.04.36a10.7 10.7 0 0 1-5.2-3.66 10.5 10.5 0 0 1-1.45-2.57c-.27-.7-.12-1.48.39-2.03l.61-.65Z" fill="currentColor"/></svg></button>
+  </div>
+
   <script data-digdaya-runtime="site">
 (() => {
   "use strict";
@@ -2955,7 +3007,7 @@ figcaption{letter-spacing:.01em}
     if (!header || !menuButton || !navigation) return;
     const menuIcon = qs(".menu-icon", menuButton);
     const closeIcon = qs(".close-icon", menuButton);
-    const inertTargets = [qs(".skip-link"), qs(".brand", header), qs(".breadcrumb"), qs("main"), qs(".site-footer"), qs(".mobile-dock"), qs(".wa-float")];
+    const inertTargets = [qs(".skip-link"), qs(".brand", header), qs(".breadcrumb"), qs("main"), qs(".site-footer"), qs(".wa-float")];
     const groups = qsa(".nav-group", navigation);
 
     const closeGroup = (group, restoreFocus = false) => {
@@ -3071,15 +3123,10 @@ figcaption{letter-spacing:.01em}
   const initScrollUI = () => {
     const header = qs(".site-header");
     const progress = qs(".reading-progress");
-    const hero = qs(".hero");
     let queued = false;
     const update = () => {
       queued = false;
       header?.classList.toggle("is-scrolled", window.scrollY > 10);
-      const dockThreshold = hero
-        ? Math.min(420, Math.max(180, hero.offsetHeight * .42))
-        : 240;
-      document.body.classList.toggle("dock-visible", mobileMedia.matches && window.scrollY > dockThreshold);
       if (!progress) return;
       const scrollable = document.documentElement.scrollHeight - window.innerHeight;
       const ratio = scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
@@ -5211,5 +5258,23 @@ figcaption{letter-spacing:.01em}
   initVideo();
   initScrollers();
 })();</script>
+
+  <script data-digdaya-runtime="contact-news-v5">
+(() => {
+  "use strict";
+  const qs=(s,r=document)=>r.querySelector(s);
+  const qsa=(s,r=document)=>[...r.querySelectorAll(s)];
+  const wrap=qs('[data-quick-contact]');
+  if(wrap){
+    const toggle=qs('[data-contact-toggle]',wrap), panel=qs('[data-quick-contact-panel]',wrap), close=qs('[data-contact-close]',wrap);
+    const setOpen=(open,{focus=false}={})=>{ if(!toggle||!panel)return; toggle.setAttribute('aria-expanded',String(open)); panel.hidden=!open; if(open&&focus){ const f=qs('a[href],button:not([disabled])',panel); f?.focus(); } };
+    toggle?.addEventListener('click',()=>setOpen(toggle.getAttribute('aria-expanded')!=='true',{focus:true}));
+    close?.addEventListener('click',()=>{setOpen(false);toggle?.focus()});
+    qsa('[data-contact-open]').forEach(b=>b.addEventListener('click',()=>setOpen(true,{focus:true})));
+    document.addEventListener('pointerdown',e=>{if(!wrap.contains(e.target))setOpen(false)});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&toggle?.getAttribute('aria-expanded')==='true'){setOpen(false);toggle.focus()}});
+  }
+})();
+</script>
 </body>
 </html>
