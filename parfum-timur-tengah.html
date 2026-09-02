@@ -2592,8 +2592,143 @@ figcaption{letter-spacing:.01em}
  .dig-hero-alt-media img,.card,.editorial-media img,.mosaic img,.dig-campaign img,.dig-scent-item img,.dig-hero-panel{transition:none!important;animation:none!important;transform:none!important}
 }</style>
   <!-- digdaya-premium-v3 -->
+  <style data-digdaya-revision="v7">
+/* ===== REV7: precision mobile/header, corporate footer, internal newsroom ===== */
+.site-header{
+  background:#fbf9f4!important;
+  border-bottom:1px solid rgba(8,47,91,.12)!important;
+  box-shadow:0 8px 28px rgba(8,47,91,.055);
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+.header-inner>.brand{min-width:0;max-width:100%}
+.header-inner>.brand img{flex:0 0 auto}
+.header-inner .brand-copy{min-width:0;overflow:visible}
+.header-inner .brand-copy strong{display:block;line-height:1.16;text-wrap:balance}
+
+body[data-page-style="legal"] .hero-copy,
+body[data-page-style="editorial"] .hero-copy{margin-left:clamp(1rem,5vw,4.6rem);margin-right:auto}
+body[data-page-style="utility"] .hero-copy{margin-left:auto;margin-right:auto}
+body[data-page-style="corporate"] .hero-copy{margin-left:auto;margin-right:clamp(1rem,5vw,4.6rem)}
+.hero-copy{background:rgba(251,248,242,.965);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+
+.footer-contact-us{
+  display:grid;
+  grid-template-columns:minmax(0,1.18fr) minmax(260px,.82fr);
+  gap:clamp(1.5rem,4vw,4rem);
+  align-items:end;
+  padding:2.2rem 0;
+  border-top:1px solid rgba(255,255,255,.13);
+}
+.footer-contact-copy{max-width:48rem}
+.footer-contact-copy .footer-title{margin-bottom:.55rem}
+.footer-contact-copy h3{margin:0;color:#fff;font-family:var(--font-display);font-size:clamp(1.8rem,3.2vw,2.7rem);font-weight:600;line-height:1.08}
+.footer-contact-copy>p{max-width:58ch;margin:.85rem 0 0;color:rgba(255,255,255,.72)}
+.footer-contact-channels{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.15rem}
+.footer-contact-channel{display:inline-flex;align-items:center;gap:.45rem;min-height:2.45rem;padding:.55rem .72rem;border:1px solid rgba(255,255,255,.16);border-radius:.72rem;background:rgba(255,255,255,.035);color:rgba(255,255,255,.88);font-size:.72rem;font-weight:700;text-decoration:none;transition:border-color .2s ease,background .2s ease,transform .2s ease}
+.footer-contact-channel:hover{border-color:rgba(229,196,124,.58);background:rgba(255,255,255,.07);transform:translateY(-1px);color:#fff}
+.footer-contact-channel small{color:rgba(255,255,255,.58);font-weight:600}
+.social-contact-list{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.55rem}
+.social-contact{display:grid;width:3.25rem;height:3.25rem;place-items:center;border:1px solid rgba(255,255,255,.17);border-radius:.85rem;background:rgba(255,255,255,.035);color:#fff;text-decoration:none;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.social-contact svg{width:1.35rem;height:1.35rem}
+.social-contact:hover:not([aria-disabled="true"]),button.social-contact:hover{transform:translateY(-2px);border-color:rgba(229,196,124,.62);background:rgba(255,255,255,.08)}
+.social-contact[aria-disabled="true"]{opacity:.34;cursor:not-allowed}
+.footer-bottom{align-items:center}
+.footer-bottom span:last-child{max-width:54ch;text-align:right}
+
+/* Internal live newsroom: no remote article navigation, no remote thumbnails. */
+.live-news-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:1rem!important}
+.live-news-card{border-radius:1rem!important;box-shadow:0 12px 34px rgba(8,47,91,.075)!important}
+.live-news-card:nth-child(7n+1){grid-column:span 2;display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,1.1fr)}
+.live-news-card:nth-child(7n+1) .live-news-visual{aspect-ratio:auto;min-height:100%}
+.live-news-visual{position:relative;isolation:isolate;background:#dbe2e6!important}
+.live-news-visual img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.02)}
+.live-news-visual::before{content:"DIN NEWS / " attr(data-seq);position:absolute;z-index:2;top:.72rem;left:.72rem;padding:.34rem .48rem;border-radius:.42rem;background:rgba(4,28,52,.82);color:#fff;font-size:.59rem;font-weight:800;letter-spacing:.1em;backdrop-filter:blur(8px)}
+.live-news-visual::after{content:attr(data-category)!important;right:.7rem!important;bottom:.7rem!important;background:rgba(255,255,255,.91)!important;color:#082f5b!important;border:1px solid rgba(255,255,255,.45);font-size:.6rem!important;letter-spacing:.08em!important}
+.live-news-card-body{display:flex;flex-direction:column}
+.live-news-card-body>a{width:fit-content;margin-top:auto!important}
+.live-news-source span{color:#6d7b82}
+.live-news-card h3{font-size:clamp(1.2rem,2vw,1.55rem);line-height:1.28}
+.live-news-card:nth-child(7n+1) h3{font-size:clamp(1.5rem,2.7vw,2.2rem)}
+.live-news-card-body p{color:#5c6c74}
+
+/* Internal article detail template. */
+.news-detail{padding:clamp(2rem,5vw,4rem) 0 clamp(5rem,9vw,8rem)}
+.news-detail-shell{display:grid;grid-template-columns:minmax(0,1.22fr) minmax(280px,.58fr);gap:clamp(1.5rem,5vw,4.5rem);align-items:start}
+.news-detail-main{min-width:0}
+.news-detail-meta{display:flex;flex-wrap:wrap;gap:.5rem .9rem;align-items:center;margin-bottom:1.2rem;color:#62747c;font-size:.78rem;font-weight:700}
+.news-detail-meta b{color:var(--gold);letter-spacing:.11em;text-transform:uppercase}
+.news-detail-title{max-width:18ch;margin:0;font-family:var(--font-display);font-size:clamp(2.5rem,6vw,5.8rem);font-weight:500;line-height:.98;letter-spacing:-.035em;color:var(--navy)}
+.news-detail-summary{margin-top:2rem;padding:clamp(1.25rem,3vw,2rem);border-left:3px solid var(--gold);background:#fff;box-shadow:var(--shadow-soft)}
+.news-detail-summary h2{font-size:1.35rem;margin-bottom:.75rem}
+.news-detail-summary p{margin:0;color:#435861;font-size:1.05rem;line-height:1.85}
+.news-detail-summary p[data-empty="true"]{color:#6d7b82;font-style:italic}
+.news-detail-integrity{margin-top:1rem;padding:1rem 1.1rem;border:1px solid var(--line);border-radius:.85rem;background:#f6f1e8;color:#52656e;font-size:.84rem}
+.news-detail-integrity strong{color:var(--navy)}
+.news-detail-side{position:sticky;top:7rem}
+.news-detail-visual{position:relative;overflow:hidden;aspect-ratio:4/5;border-radius:1.2rem;background:#dbe2e6;box-shadow:var(--shadow-soft)}
+.news-detail-visual img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.02)}
+.news-detail-visual::after{content:"DIN NEWSROOM";position:absolute;right:.85rem;bottom:.85rem;padding:.42rem .58rem;border-radius:.5rem;background:rgba(5,31,57,.82);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.12em}
+.news-detail-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
+
+@media(max-width:1040px){
+  .header-inner{min-height:5.65rem!important;padding:.6rem 0;display:grid!important;grid-template-columns:minmax(0,1fr) auto;gap:.75rem;align-items:center}
+  .header-inner>.brand{max-width:calc(100vw - 5.2rem);gap:.62rem}
+  .header-inner>.brand img{width:2.9rem;height:2.9rem}
+  .header-inner .brand-copy strong{font-size:clamp(.7rem,2.25vw,.86rem);letter-spacing:.04em}
+  .header-inner .brand-copy small{font-size:.53rem;letter-spacing:.09em}
+  .menu-button{width:3.2rem;height:3.2rem;flex:0 0 3.2rem}
+  .js .main-nav{top:5.6rem!important}
+  html:not(.js) .main-nav{grid-column:1/-1}
+}
+
+@media(max-width:760px){
+  html{scroll-padding-top:6.1rem!important}
+  .site-header{background:#fbf9f4!important}
+  .header-inner{min-height:5.45rem!important;padding:.7rem 0}
+  .header-inner>.brand{max-width:calc(100vw - 4.9rem)}
+  .header-inner>.brand img{width:2.75rem!important;height:2.75rem!important;border-radius:.7rem}
+  .header-inner .brand-copy strong{max-width:none!important;font-size:clamp(.68rem,3.05vw,.82rem)!important;line-height:1.18!important;letter-spacing:.025em!important}
+  .header-inner .brand-copy small{display:none!important}
+  .menu-button{width:3.15rem;height:3.15rem;border-radius:.9rem}
+  .breadcrumb{background:#fff;position:relative;z-index:5}
+  .hero{padding:.85rem 0 clamp(3.2rem,8vw,4.6rem)!important}
+  .hero-frame{display:grid!important;grid-template-columns:1fr!important;align-items:stretch!important;min-height:0!important;overflow:visible!important;padding:0!important;gap:.78rem;background:transparent!important;box-shadow:none!important;border-radius:0!important}
+  .hero-frame::after{display:none!important}
+  .hero-picture{position:relative!important;inset:auto!important;z-index:0!important;height:clamp(245px,62vw,350px)!important;border-radius:1.15rem!important;overflow:hidden!important;background:#dbe1df}
+  .hero-picture::after{background:linear-gradient(180deg,transparent 52%,rgba(4,26,49,.22))!important}
+  .hero-picture img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;border-radius:inherit}
+  .dig-hero-alt-media{top:0!important;right:0!important;bottom:auto!important;left:0!important;height:clamp(245px,62vw,350px)!important;border-radius:1.15rem!important;z-index:1!important}
+  .hero-copy{position:relative!important;z-index:3!important;width:100%!important;margin:0!important;padding:1.35rem!important;border:1px solid rgba(8,47,91,.13)!important;border-radius:1.15rem!important;background:#fff!important;box-shadow:0 12px 34px rgba(8,47,91,.085)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  .hero-copy h1{font-size:clamp(2.45rem,11vw,4.1rem)!important;line-height:.95!important}
+  .hero-copy .lede{font-size:1rem;line-height:1.72}
+  .hero-index{display:flex!important}
+  .dig-hero-console{position:relative!important;right:auto!important;bottom:auto!important;width:100%!important;margin:0!important;border-radius:1.05rem!important}
+  .footer-contact-us{grid-template-columns:1fr;align-items:start;padding:1.8rem 0}
+  .social-contact-list{justify-content:flex-start}
+  .footer-contact-channel{font-size:.7rem}
+  .footer-bottom{display:grid;grid-template-columns:1fr;gap:.55rem}
+  .footer-bottom span:last-child{max-width:none;text-align:left}
+  .live-news-grid{grid-template-columns:1fr!important}
+  .live-news-card:nth-child(7n+1){grid-column:auto;display:flex;grid-template-columns:none}
+  .live-news-card:nth-child(7n+1) .live-news-visual{aspect-ratio:16/10;min-height:0}
+  .news-detail-shell{grid-template-columns:1fr}
+  .news-detail-side{position:static;order:-1}
+  .news-detail-visual{aspect-ratio:16/9}
+  .news-detail-title{font-size:clamp(2.35rem,11vw,4rem);max-width:none}
+}
+
+@media(max-width:390px){
+  .header-inner>.brand{gap:.5rem;max-width:calc(100vw - 4.55rem)}
+  .header-inner>.brand img{width:2.5rem!important;height:2.5rem!important}
+  .header-inner .brand-copy strong{font-size:clamp(.62rem,3vw,.72rem)!important;letter-spacing:.015em!important}
+  .menu-button{width:3rem;height:3rem}
+  .hero-copy{padding:1.15rem!important}
+  .hero-copy h1{font-size:clamp(2.15rem,10.7vw,3.2rem)!important}
+}
+</style>
 </head>
-<body id="top">
+<body id="top" data-page-style="service">
   <svg class="icon-sprite" aria-hidden="true" focusable="false">
   <!--
     Digdaya corporate icon system.
@@ -2856,7 +2991,7 @@ figcaption{letter-spacing:.01em}
   </div>
 </section>
 
-    <section class="section paper"><div class="shell editorial-split"><figure class="editorial-media reveal" data-motion="media" data-lightbox><img src="assets/og-parfum.jpg" width="1200" height="630" alt="Visual editorial parfum Timur Tengah" loading="lazy" decoding="async"><figcaption>Visual kategori untuk orientasi; bukan foto produk atau jaminan ketersediaan.</figcaption></figure><div class="editorial-copy reveal" data-motion="slide-right"><p class="kicker">Menentukan intensitas</p><h2>Kekuatan aroma perlu dibaca bersama ruang dan waktu.</h2><p>Aroma yang terasa indah pada satu konteks belum tentu cocok pada konteks lain. Perhatikan suhu, ventilasi, durasi, kedekatan sosial, dan jumlah aplikasi.</p><ul class="feature-list"><li><span>RUANG</span><div><strong>Terbuka atau tertutup</strong><br><span class="fine">Lingkungan membantu menentukan intensitas yang terasa nyaman.</span></div></li><li><span>WAKTU</span><div><strong>Singkat atau sepanjang hari</strong><br><span class="fine">Durasi kegiatan mengubah kebutuhan performa.</span></div></li><li><span>JARAK</span><div><strong>Personal atau sosial</strong><br><span class="fine">Pertimbangkan pengalaman Anda dan orang sekitar.</span></div></li></ul></div></div></section>
+    <section class="section paper"><div class="shell editorial-split"><figure class="editorial-media reveal" data-motion="media" data-lightbox><img src="assets/parfum-niche-editorial.webp" width="1672" height="941" alt="Botol parfum, resin, dan material aroma bernuansa hangat" loading="lazy" decoding="async"><figcaption>Botol, resin, dan material aroma digunakan sebagai konteks eksplorasi; ketersediaan produk dikonfirmasi sebelum transaksi.</figcaption></figure><div class="editorial-copy reveal" data-motion="slide-right"><p class="kicker">Menentukan intensitas</p><h2>Kekuatan aroma perlu dibaca bersama ruang dan waktu.</h2><p>Aroma yang terasa indah pada satu konteks belum tentu cocok pada konteks lain. Perhatikan suhu, ventilasi, durasi, kedekatan sosial, dan jumlah aplikasi.</p><ul class="feature-list"><li><span>RUANG</span><div><strong>Terbuka atau tertutup</strong><br><span class="fine">Lingkungan membantu menentukan intensitas yang terasa nyaman.</span></div></li><li><span>WAKTU</span><div><strong>Singkat atau sepanjang hari</strong><br><span class="fine">Durasi kegiatan mengubah kebutuhan performa.</span></div></li><li><span>JARAK</span><div><strong>Personal atau sosial</strong><br><span class="fine">Pertimbangkan pengalaman Anda dan orang sekitar.</span></div></li></ul></div></div></section>
     <section class="section soft"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Alur pemilihan</p><h2>Brief singkat dapat mencegah pilihan yang terlalu umum.</h2></div><p class="lede">Sampaikan arah yang dicari, sisi yang dihindari, konteks, serta intensitas yang nyaman.</p></div><div class="process"><article><h3>Pilih arah</h3><p>Tentukan woody, amber, musk, rempah, floral, atau perpaduannya.</p></article><article><h3>Atur intensitas</h3><p>Jelaskan apakah Anda mencari kesan dekat, sedang, atau lebih tegas.</p></article><article><h3>Beri konteks</h3><p>Sebutkan cuaca, momen, dan lingkungan pemakaian.</p></article><article><h3>Konfirmasi</h3><p>Periksa rincian pilihan serta ketersediaan sebelum transaksi.</p></article></div></div></section>
     <section class="section"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Pertanyaan umum</p><h2>Jawaban ringkas sebelum berkonsultasi.</h2></div></div><div class="faq"><details class="reveal"><summary>Apakah parfum Timur Tengah selalu sangat kuat?</summary><p>Tidak. Karakter dan intensitas berbeda menurut komposisi, konsentrasi, cara pemakaian, serta kondisi lingkungan.</p></details><details class="reveal"><summary>Apakah oud selalu terasa gelap?</summary><p>Tidak selalu. Oud dapat ditempatkan dalam komposisi woody, floral, fruity, amber, atau fresh dengan hasil yang sangat berbeda.</p></details><details class="reveal"><summary>Informasi apa yang sebaiknya saya kirim?</summary><p>Kirim kesan aroma yang dicari, konteks pemakaian, tingkat intensitas yang nyaman, dan sisi yang ingin dihindari.</p></details></div></div></section>
     
@@ -2869,7 +3004,7 @@ figcaption{letter-spacing:.01em}
   <footer class="site-footer">
     <div class="shell dig-footer-manifesto" aria-label="Pernyataan PT Digdaya Inovasi Nusantara">
       <small>PT Digdaya Inovasi Nusantara</small>
-      <strong>Membangun pengalaman usaha yang jelas, relevan, dan terhubung.</strong>
+      <strong>Kepercayaan dibangun melalui layanan yang jelas, komunikasi yang bertanggung jawab, dan pengalaman yang konsisten.</strong>
     </div>
     <div class="shell footer-main">
       <div class="footer-brand">
@@ -2882,19 +3017,29 @@ figcaption{letter-spacing:.01em}
       <div><p class="footer-title">Informasi</p><nav class="footer-links" aria-label="Informasi di footer"><a href="kebijakan-privasi.html">Kebijakan Privasi</a><a href="syarat-ketentuan.html">Syarat &amp; Ketentuan</a><a href="kebijakan-transaksi.html">Kebijakan Transaksi</a><a href="keamanan.html">Keamanan</a><a href="#top">Kembali ke atas</a></nav></div>
     </div>
     
-    <div class="shell footer-contact-us" aria-label="Contact Us PT Digdaya Inovasi Nusantara">
-      <div><p class="footer-title">Contact Us</p><p>WhatsApp utama, dua nomor backup, email, dan LinkedIn aktif. Kanal sosial lain tetap disiapkan dan baru diarahkan setelah URL resminya diberikan.</p><span class="footer-contact-note">WA Utama: 0878-9252-3968 · Backup 1: +62 882-0092-57589 · Backup 2: +62 889-9192-6199 · Email: companydirac@gmail.com</span></div>
+    <div class="shell footer-contact-us" aria-label="Hubungi PT Digdaya Inovasi Nusantara">
+      <div class="footer-contact-copy">
+        <p class="footer-title">Hubungi Kami</p>
+        <h3>Saluran resmi PT Digdaya Inovasi Nusantara.</h3>
+        <p>Untuk konsultasi layanan, kemitraan, informasi transaksi, atau dukungan pelanggan, silakan gunakan kanal resmi yang tercantum di bawah ini.</p>
+        <div class="footer-contact-channels" aria-label="Kontak resmi">
+          <a class="footer-contact-channel" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." target="_blank" rel="noopener noreferrer"><span>WhatsApp Utama</span><small>0878-9252-3968</small></a>
+          <a class="footer-contact-channel" href="https://wa.me/62882009257589?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." target="_blank" rel="noopener noreferrer"><span>Backup 1</span><small>+62 882-0092-57589</small></a>
+          <a class="footer-contact-channel" href="https://wa.me/6288991926199?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." target="_blank" rel="noopener noreferrer"><span>Backup 2</span><small>+62 889-9192-6199</small></a>
+          <a class="footer-contact-channel" href="mailto:companydirac@gmail.com"><span>Email</span><small>companydirac@gmail.com</small></a>
+        </div>
+      </div>
       <div class="social-contact-list" aria-label="Kanal kontak dan sosial">
-        <span class="social-contact" aria-disabled="true" title="Instagram belum dikonfigurasi" aria-label="Instagram belum dikonfigurasi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="15" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.1" cy="6.9" r="1" fill="currentColor"/></svg></span>
+        <span class="social-contact" aria-disabled="true" title="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="15" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.1" cy="6.9" r="1" fill="currentColor"/></svg></span>
         <a class="social-contact" href="https://www.linkedin.com/in/achmad-zaenuddin-7285ba433" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="Buka profil LinkedIn"><span class="brand-text">in</span></a>
-        <span class="social-contact" aria-disabled="true" title="Threads belum dikonfigurasi" aria-label="Threads belum dikonfigurasi"><span class="brand-text">@</span></span>
+        <span class="social-contact" aria-disabled="true" title="Threads" aria-label="Threads"><span class="brand-text">@</span></span>
         <button class="social-contact" type="button" data-contact-open aria-label="Buka pilihan WhatsApp"><svg class="wa-brand-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="11.5" r="8.1" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7.2 19.2 8 16.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M9.1 7.5c.35-.38.8-.35 1.08.05l.8 1.16c.2.3.18.68-.05.95l-.55.65c-.15.18-.13.43.02.62.74.9 1.54 1.69 2.43 2.42.19.15.45.16.63.01l.67-.55c.27-.22.66-.24.95-.03l1.13.82c.39.28.42.74.04 1.08l-.66.59c-.56.5-1.35.64-2.04.36a10.7 10.7 0 0 1-5.2-3.66 10.5 10.5 0 0 1-1.45-2.57c-.27-.7-.12-1.48.39-2.03l.61-.65Z" fill="currentColor"/></svg></button>
-        <span class="social-contact" aria-disabled="true" title="Telegram belum dikonfigurasi" aria-label="Telegram belum dikonfigurasi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3.5 11.1 16.4-6.4-3 14.6-5.1-4-2.9 2.7.4-4.3 7.8-6.5-9.7 5.1-3.9-1.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
-        <a class="social-contact" href="mailto:companydirac@gmail.com" aria-label="Kirim email ke companydirac@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m5 7 7 5.2L19 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <span class="social-contact" aria-disabled="true" title="Facebook belum dikonfigurasi" aria-label="Facebook belum dikonfigurasi"><span class="brand-text">f</span></span>
+        <span class="social-contact" aria-disabled="true" title="Telegram" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3.5 11.1 16.4-6.4-3 14.6-5.1-4-2.9 2.7.4-4.3 7.8-6.5-9.7 5.1-3.9-1.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+        <a class="social-contact" href="mailto:companydirac@gmail.com" title="Email" aria-label="Kirim email ke companydirac@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m5 7 7 5.2L19 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <span class="social-contact" aria-disabled="true" title="Facebook" aria-label="Facebook"><span class="brand-text">f</span></span>
       </div>
     </div>
-    <div class="shell footer-bottom"><span>© PT Digdaya Inovasi Nusantara.</span><span>WA Utama: 0878-9252-3968 · Backup 1: +62 882-0092-57589 · Backup 2: +62 889-9192-6199 · Email: companydirac@gmail.com</span></div>
+    <div class="shell footer-bottom"><span>© 2026 PT Digdaya Inovasi Nusantara. Seluruh hak dilindungi.</span><span>Komunikasi resmi dan informasi layanan hanya melalui kanal yang tercantum pada website ini.</span></div>
   </footer>
   <dialog class="ui-dialog" id="inquiry-dialog" data-inquiry-dialog aria-labelledby="inquiry-title">
     <div class="dialog-head"><div><p class="kicker">Formulir konsultasi</p><h2 id="inquiry-title">Ceritakan kebutuhan Anda.</h2></div><button class="icon-button" type="button" data-close-inquiry data-close-dialog aria-label="Tutup formulir"><svg class="icon-svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#icon-close"></use></svg></button></div>
