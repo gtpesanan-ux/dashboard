@@ -1,0 +1,15 @@
+SEO DEPLOYMENT GUIDE — PT Digdaya Inovasi Nusantara
+
+Canonical origin used in this build: https://panel.diracgroup.store
+
+After deployment:
+1. Pastikan seluruh halaman menghasilkan HTTP 200, kecuali 404.html yang harus benar-benar berstatus 404.
+2. Buka https://panel.diracgroup.store/robots.txt dan https://panel.diracgroup.store/sitemap.xml.
+3. Tambahkan properti https://panel.diracgroup.store/ di Google Search Console.
+4. Kirim sitemap: https://panel.diracgroup.store/sitemap.xml.
+5. Gunakan URL Inspection untuk halaman prioritas: /cara-mendirikan-pt.html, /pt-perorangan.html, /perbedaan-pt-dan-cv.html, /cara-membuat-nib-oss.html, /jasa-pembuatan-website.html.
+6. Pantau Performance berdasarkan query, CTR, posisi rata-rata, halaman, dan negara. Jangan mengganti copy hanya karena impresi rendah dalam beberapa hari; indexing dan evaluasi ranking memerlukan waktu.
+7. Jangan membeli backlink, membuat doorway pages, keyword stuffing, hidden text, cloaking, atau ribuan halaman tipis. Praktik tersebut dapat menurunkan ranking atau menyebabkan tindakan spam.
+8. Bangun otoritas secara nyata: publikasi konten orisinal, sumber resmi, studi kasus yang dapat diverifikasi, penyebutan brand, dan backlink editorial relevan dari situs yang benar-benar berkualitas.
+
+Catatan: Tidak ada metode yang dapat menjamin posisi #1 Google. Build ini memaksimalkan faktor on-page dan technical SEO yang dapat dikendalikan dari file website.

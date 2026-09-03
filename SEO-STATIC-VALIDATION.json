@@ -1,0 +1,347 @@
+{
+  "html_count": 37,
+  "indexable_count": 35,
+  "dashboard_exists": false,
+  "baseline_missing_count": 0,
+  "asset_counts": {
+    "batch1": 67,
+    "batch2": 68
+  },
+  "errors": [],
+  "warnings": [],
+  "pages": {
+    "404.html": {
+      "title": "Halaman Tidak Ditemukan | Digdaya",
+      "title_len": 33,
+      "desc_len": 109,
+      "canonical": "",
+      "robots": "noindex,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 0
+    },
+    "berita-brief-website.html": {
+      "title": "Cara Membuat Brief Website yang Efektif: Checklist Lengkap | Digdaya",
+      "title_len": 68,
+      "desc_len": 143,
+      "canonical": "https://panel.diracgroup.store/berita-brief-website.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "berita-checklist-domain.html": {
+      "title": "Cara Memilih Nama Domain: Checklist Nama Domain yang Tepat | Digdaya",
+      "title_len": 68,
+      "desc_len": 154,
+      "canonical": "https://panel.diracgroup.store/berita-checklist-domain.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "berita-detail.html": {
+      "title": "Ringkasan Berita | PT Digdaya Inovasi Nusantara",
+      "title_len": 47,
+      "desc_len": 86,
+      "canonical": "berita-detail.html",
+      "robots": "noindex,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "berita-panduan-parfum.html": {
+      "title": "Cara Memilih Parfum: Susun Preferensi Aroma yang Jelas | Digdaya",
+      "title_len": 64,
+      "desc_len": 158,
+      "canonical": "https://panel.diracgroup.store/berita-panduan-parfum.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "berita.html": {
+      "title": "Artikel Bisnis, Website, Domain & Fragrance | Wawasan Digdaya",
+      "title_len": 61,
+      "desc_len": 144,
+      "canonical": "https://panel.diracgroup.store/berita.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "cara-membuat-nib-oss.html": {
+      "title": "Cara Membuat NIB di OSS 2026: Syarat, Langkah & Perizinan | Digdaya",
+      "title_len": 67,
+      "desc_len": 162,
+      "canonical": "https://panel.diracgroup.store/cara-membuat-nib-oss.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    },
+    "cara-mendirikan-cv.html": {
+      "title": "Cara Mendirikan CV 2026: Syarat, Akta, AHU, NIB & OSS | Digdaya",
+      "title_len": 63,
+      "desc_len": 144,
+      "canonical": "https://panel.diracgroup.store/cara-mendirikan-cv.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    },
+    "cara-mendirikan-pt.html": {
+      "title": "Cara Membuat PT di Indonesia 2026: Syarat, Biaya, AHU, NIB & OSS | Digdaya",
+      "title_len": 74,
+      "desc_len": 148,
+      "canonical": "https://panel.diracgroup.store/cara-mendirikan-pt.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    },
+    "case-study-digdaya.html": {
+      "title": "Case Study Website Digdaya: UX, Responsive, Security & Performance",
+      "title_len": 66,
+      "desc_len": 167,
+      "canonical": "https://panel.diracgroup.store/case-study-digdaya.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    },
+    "domain-discovery.html": {
+      "title": "Cara Memilih Nama Domain yang Tepat | Domain Discovery Digdaya",
+      "title_len": 62,
+      "desc_len": 151,
+      "canonical": "https://panel.diracgroup.store/domain-discovery.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    },
+    "faq.html": {
+      "title": "FAQ Digdaya: Website, Domain, Parfum, Top Up & Keamanan",
+      "title_len": 55,
+      "desc_len": 156,
+      "canonical": "https://panel.diracgroup.store/faq.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    },
+    "index.html": {
+      "title": "PT Digdaya Inovasi Nusantara | Jasa Website, Domain, Parfum & Top Up",
+      "title_len": 68,
+      "desc_len": 168,
+      "canonical": "https://panel.diracgroup.store/",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "jasa-pembuatan-website.html": {
+      "title": "Jasa Pembuatan Website Profesional & Pengembangan Website | Digdaya",
+      "title_len": 67,
+      "desc_len": 174,
+      "canonical": "https://panel.diracgroup.store/jasa-pembuatan-website.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "jual-beli-domain.html": {
+      "title": "Jual Beli Domain & Konsultasi Nama Domain | Digdaya",
+      "title_len": 51,
+      "desc_len": 162,
+      "canonical": "https://panel.diracgroup.store/jual-beli-domain.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "keamanan.html": {
+      "title": "Keamanan Transaksi & Anti-Penipuan | Digdaya",
+      "title_len": 44,
+      "desc_len": 166,
+      "canonical": "https://panel.diracgroup.store/keamanan.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "kebijakan-privasi.html": {
+      "title": "Kebijakan Privasi | PT Digdaya Inovasi Nusantara",
+      "title_len": 48,
+      "desc_len": 161,
+      "canonical": "https://panel.diracgroup.store/kebijakan-privasi.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "kebijakan-transaksi.html": {
+      "title": "Kebijakan Transaksi, Pembayaran & Refund | Digdaya",
+      "title_len": 50,
+      "desc_len": 155,
+      "canonical": "https://panel.diracgroup.store/kebijakan-transaksi.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "kemitraan.html": {
+      "title": "Kemitraan Usaha, Reseller & Kolaborasi Digital | Digdaya",
+      "title_len": 56,
+      "desc_len": 155,
+      "canonical": "https://panel.diracgroup.store/kemitraan.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "kontak.html": {
+      "title": "Kontak PT Digdaya Inovasi Nusantara | WhatsApp & Email",
+      "title_len": 54,
+      "desc_len": 154,
+      "canonical": "https://panel.diracgroup.store/kontak.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "layanan.html": {
+      "title": "Jasa Website, Domain, Parfum & Top Up Game | PT Digdaya Inovasi Nusantara",
+      "title_len": 73,
+      "desc_len": 154,
+      "canonical": "https://panel.diracgroup.store/layanan.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "parfum-designer.html": {
+      "title": "Parfum Designer | Konsultasi Aroma & Pilihan Digdaya",
+      "title_len": 52,
+      "desc_len": 163,
+      "canonical": "https://panel.diracgroup.store/parfum-designer.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "parfum-lokal.html": {
+      "title": "Parfum Lokal Indonesia | Konsultasi & Pilihan Aroma Digdaya",
+      "title_len": 59,
+      "desc_len": 165,
+      "canonical": "https://panel.diracgroup.store/parfum-lokal.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "parfum-niche.html": {
+      "title": "Parfum Niche | Konsultasi Aroma & Pilihan Niche Digdaya",
+      "title_len": 55,
+      "desc_len": 167,
+      "canonical": "https://panel.diracgroup.store/parfum-niche.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "parfum-timur-tengah.html": {
+      "title": "Parfum Timur Tengah: Oud, Amber & Musk | Digdaya Fragrance",
+      "title_len": 58,
+      "desc_len": 142,
+      "canonical": "https://panel.diracgroup.store/parfum-timur-tengah.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "pengaduan.html": {
+      "title": "Pengaduan Pelanggan PT Digdaya Inovasi Nusantara",
+      "title_len": 48,
+      "desc_len": 159,
+      "canonical": "https://panel.diracgroup.store/pengaduan.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "pengetahuan.html": {
+      "title": "Pusat Pengetahuan Usaha: PT, CV, NIB, OSS, Domain & Website | Digdaya",
+      "title_len": 69,
+      "desc_len": 152,
+      "canonical": "https://panel.diracgroup.store/pengetahuan.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    },
+    "perbedaan-pt-dan-cv.html": {
+      "title": "Perbedaan PT dan CV 2026: Status Hukum, Struktur & Tanggung Jawab | Digdaya",
+      "title_len": 75,
+      "desc_len": 162,
+      "canonical": "https://panel.diracgroup.store/perbedaan-pt-dan-cv.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    },
+    "portfolio.html": {
+      "title": "Portfolio Website & Digital Digdaya | Internal Case Study",
+      "title_len": 57,
+      "desc_len": 160,
+      "canonical": "https://panel.diracgroup.store/portfolio.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    },
+    "pt-perorangan.html": {
+      "title": "PT Perorangan 2026: Syarat, Cara Daftar, NIB & Perbedaannya | Digdaya",
+      "title_len": 69,
+      "desc_len": 163,
+      "canonical": "https://panel.diracgroup.store/pt-perorangan.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    },
+    "scent-finder.html": {
+      "title": "Cara Memilih Parfum Sesuai Selera | Scent Finder Digdaya",
+      "title_len": 56,
+      "desc_len": 164,
+      "canonical": "https://panel.diracgroup.store/scent-finder.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    },
+    "syarat-ketentuan.html": {
+      "title": "Syarat dan Ketentuan | PT Digdaya Inovasi Nusantara",
+      "title_len": 51,
+      "desc_len": 157,
+      "canonical": "https://panel.diracgroup.store/syarat-ketentuan.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "tentang-kami.html": {
+      "title": "Tentang PT Digdaya Inovasi Nusantara | Profil Perusahaan",
+      "title_len": 56,
+      "desc_len": 153,
+      "canonical": "https://panel.diracgroup.store/tentang-kami.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "top-up-game.html": {
+      "title": "Top Up Game: Panduan Data ID, Server & Keamanan Transaksi | Digdaya",
+      "title_len": 67,
+      "desc_len": 153,
+      "canonical": "https://panel.diracgroup.store/top-up-game.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 2
+    },
+    "trust-center.html": {
+      "title": "Trust Center Digdaya | Verifikasi Kanal, Pembayaran & Keamanan",
+      "title_len": 62,
+      "desc_len": 165,
+      "canonical": "https://panel.diracgroup.store/trust-center.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    },
+    "website-audit.html": {
+      "title": "Audit Website & Website Health Check: SEO, UX, Mobile, Performance | Digdaya",
+      "title_len": 76,
+      "desc_len": 168,
+      "canonical": "https://panel.diracgroup.store/website-audit.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    },
+    "website-maintenance.html": {
+      "title": "Jasa Maintenance Website & Website Care | Digdaya",
+      "title_len": 49,
+      "desc_len": 167,
+      "canonical": "https://panel.diracgroup.store/website-maintenance.html",
+      "robots": "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1",
+      "h1": 1,
+      "jsonld": 1
+    }
+  }
+}

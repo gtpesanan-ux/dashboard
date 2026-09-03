@@ -1,0 +1,92 @@
+{
+  "cara-mendirikan-pt.html": {
+    "primary": "cara membuat PT / cara mendirikan PT",
+    "secondary": [
+      "syarat mendirikan PT",
+      "biaya mendirikan PT",
+      "cara bikin PT",
+      "cara membangun PT",
+      "AHU PT",
+      "NIB PT",
+      "OSS PT"
+    ]
+  },
+  "pt-perorangan.html": {
+    "primary": "PT Perorangan",
+    "secondary": [
+      "cara daftar PT Perorangan",
+      "syarat PT Perorangan",
+      "PT satu orang",
+      "NIB PT Perorangan"
+    ]
+  },
+  "perbedaan-pt-dan-cv.html": {
+    "primary": "perbedaan PT dan CV",
+    "secondary": [
+      "PT vs CV",
+      "lebih baik PT atau CV",
+      "status hukum PT dan CV"
+    ]
+  },
+  "cara-mendirikan-cv.html": {
+    "primary": "cara mendirikan CV",
+    "secondary": [
+      "cara membuat CV",
+      "syarat CV",
+      "pendaftaran CV AHU",
+      "NIB CV"
+    ]
+  },
+  "cara-membuat-nib-oss.html": {
+    "primary": "cara membuat NIB",
+    "secondary": [
+      "cara daftar NIB OSS",
+      "NIB OSS 2026",
+      "cara membuat NIB online",
+      "KBLI OSS"
+    ]
+  },
+  "jasa-pembuatan-website.html": {
+    "primary": "jasa pembuatan website",
+    "secondary": [
+      "jasa website profesional",
+      "website company profile",
+      "pengembangan website",
+      "landing page"
+    ]
+  },
+  "jual-beli-domain.html": {
+    "primary": "jual beli domain",
+    "secondary": [
+      "beli domain",
+      "jual domain",
+      "konsultasi nama domain",
+      "transfer domain"
+    ]
+  },
+  "domain-discovery.html": {
+    "primary": "cara memilih nama domain",
+    "secondary": [
+      "nama domain yang bagus",
+      "domain untuk bisnis",
+      "cek nama domain"
+    ]
+  },
+  "website-audit.html": {
+    "primary": "audit website",
+    "secondary": [
+      "website health check",
+      "cek SEO website",
+      "audit UX website",
+      "audit responsive website"
+    ]
+  },
+  "website-maintenance.html": {
+    "primary": "jasa maintenance website",
+    "secondary": [
+      "website care",
+      "pemeliharaan website",
+      "update website"
+    ]
+  }
+}

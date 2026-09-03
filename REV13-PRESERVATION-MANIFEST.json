@@ -1,0 +1,67 @@
+{
+  "build": "REV13_CONTENT_SERVICE_KNOWLEDGE_POLISH",
+  "baseline": "latest PT.zip (REV11 GitHub 2 asset batches package)",
+  "existing_html_before": 23,
+  "html_after": 34,
+  "new_html": [
+    "cara-mendirikan-cv.html",
+    "cara-mendirikan-pt.html",
+    "case-study-digdaya.html",
+    "domain-discovery.html",
+    "faq.html",
+    "pengetahuan.html",
+    "portfolio.html",
+    "scent-finder.html",
+    "trust-center.html",
+    "website-audit.html",
+    "website-maintenance.html"
+  ],
+  "preservation_policy": "PRESERVATION-FIRST / ZERO-DELETION / ZERO-REGRESSION",
+  "dashboard_html_created": false,
+  "global_changes": [
+    "footer social icon alignment",
+    "restrained editorial text motion",
+    "professional copy refinements",
+    "navigation discoverability for new additive pages"
+  ],
+  "additive_services": [
+    "Website Health Check",
+    "Website Care",
+    "Domain Discovery",
+    "Dedicated Scent Finder"
+  ],
+  "additive_information": [
+    "Pusat Pengetahuan",
+    "Cara Mendirikan PT",
+    "Cara Mendaftarkan CV",
+    "FAQ",
+    "Trust Center",
+    "Portfolio",
+    "Internal Case Study"
+  ],
+  "baseline_hashes": {
+    "404.html": "a533af48cb1af00a229a40fc38ea159d740282d2c9aec743dd3fe9b23f3dc231",
+    "berita-brief-website.html": "8897857be281117631408a0fdb2825a181e067e16eb65f338d85e864a2e2e68e",
+    "berita-checklist-domain.html": "268671261ae2dd45fd6d3548c2ecfcf3e9feec5c28b374dc08c5239090b981e2",
+    "berita-detail.html": "1c6821dc2f277e63bb856ae78d39170383f65e12267f79148cc2ce97a2a6c69f",
+    "berita-panduan-parfum.html": "ba6ddd208ef1d09b82f5a043b224dd14889c2ae0d6b95cb9842726f035982c36",
+    "berita.html": "6790bb7f165f22e13a976636a7f7289483d29ff958f00fa2cf5f2a541ac62a39",
+    "index.html": "7e0e96f25dc19250af7ed1692318cb98d9036a24f4d5f796ec07b0189ee126f4",
+    "jasa-pembuatan-website.html": "f6f291a24ed98b196a28036e2304c36824072e3ea734738f03382d10645660e0",
+    "jual-beli-domain.html": "dea9f97a0ea2188d8d7ccff8e4795de2ec279c5e59e4763f928252c3ef3cc21c",
+    "keamanan.html": "4b67c92d278c5827a60f461517e9097296f9a57d5feea6f93c1b6cbf82493cbc",
+    "kebijakan-privasi.html": "14f4911d5ec0c07720e7d52959a9f03986054f6b85d8f3404066c86096c964fb",
+    "kebijakan-transaksi.html": "58b122b85496e893907e8ec84a9092dfdd30b330159a252e2868e116e64d187e",
+    "kemitraan.html": "54239401d447e0326134b5431ca73d84eb83756f4d2aee1169887689e6b723bf",
+    "kontak.html": "0727d56086c3bb90d7e5f90af90d8d9806c57197f660505223f78873dc8f4360",
+    "layanan.html": "373a20f1a568c4b4f91b822dcdceb1e78c85b4895e71d63d689a05a549dabd56",
+    "parfum-designer.html": "2f1d53acc5dfafedf44a4fca6358e0eea33c8c5e4bd6dd6f678838f6cb0807c6",
+    "parfum-lokal.html": "40ae137696346741b70bd38a9e5f4595ddc221ba01fde9025121cb8597da7494",
+    "parfum-niche.html": "0da9074c9c9825c336a31ab5c3a5651cc9621719ad499d35747950e9e11ec38c",
+    "parfum-timur-tengah.html": "5ea0883994b0ab7073cc1dc68dbc63e2047914c187ca643c2665bc43a20d2a9e",
+    "pengaduan.html": "e1239df736ab7890880fc9917439dce23e5df3bd48b0bfd9ed5e821f3ad72e98",
+    "syarat-ketentuan.html": "a38fb691b3637a0d01e7073a1b1a24866374d649333090d8551883d32b82f77a",
+    "tentang-kami.html": "6c60edeeb65be5ddb771349ce1bba011950d18eb540810371d07f0d4445d9fe9",
+    "top-up-game.html": "426b215509feb961dfa1084be00d13afadf2f03dc764874b32507593e428345b"
+  }
+}
