@@ -1,0 +1,2 @@
+[hidden]{display:none!important}
+.hero-frame::before,.hero-frame::after,.card::before,.card::after,.live-news-visual::before,.live-news-visual::after{pointer-events:none!important}
