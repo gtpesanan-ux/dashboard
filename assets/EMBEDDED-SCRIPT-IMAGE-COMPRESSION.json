@@ -1,0 +1,584 @@
+{
+  "images": [
+    {
+      "hash": "64e0310241060dfe5513862113fa3f7864798e27d11f9646500aa9b2b694cee4",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 32412,
+      "new": 29576,
+      "saved": 2836,
+      "ssim": 0.9935613136046546,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "fec649d85ff4be4d6269fa3490b16168ca496de46462d283329523fab53d0a4c",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 32756,
+      "new": 30026,
+      "saved": 2730,
+      "ssim": 0.9927964199120612,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "1ee5249bf5430b8f6e506f816dd41a3020ef1fa81a15991a44ea808144c4d950",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 29928,
+      "new": 27398,
+      "saved": 2530,
+      "ssim": 0.9930843962957626,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "1e2adca9943422dcbe06e78d1985bbd577299185e590c09992e7beb84eef07c1",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 28276,
+      "new": 25846,
+      "saved": 2430,
+      "ssim": 0.9919193203933026,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "f2908b14b8bbe4d32fb2bc2e03c4fbfb99568f75954a148adf45fc7d584ebe3c",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 33082,
+      "new": 29836,
+      "saved": 3246,
+      "ssim": 0.9930719490761095,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "ca396d1bee6354142e5ae342f55ad51f157084a39f766ad7984b4eb95cd7b9f2",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 31310,
+      "new": 28724,
+      "saved": 2586,
+      "ssim": 0.9926143280444041,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "7ea83e0b48ea9f35d955658ef5bec2be8d195450fc6f041c6cadf37dadee7e32",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 48820,
+      "new": 44450,
+      "saved": 4370,
+      "ssim": 0.9926068118282768,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "4c24ad362b2d71e178f2c27d460127b14896ce4a806c53638bec4876fc46fa79",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 29126,
+      "new": 26220,
+      "saved": 2906,
+      "ssim": 0.9922425341277801,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "9109222dc92ebd2bff89f8622c1f46b4a3726ed957ae01035f61604885098c8d",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 36874,
+      "new": 33650,
+      "saved": 3224,
+      "ssim": 0.9920145721155816,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "f6a34ed86a56443267132090f50795d72b3fc949d7fcf04a7243d94c314b1214",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 29760,
+      "new": 27170,
+      "saved": 2590,
+      "ssim": 0.9919661941304637,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "d889712ca525660100cae4644809633ab5aa0705248126b5c9ee755ec2527a37",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 32992,
+      "new": 30564,
+      "saved": 2428,
+      "ssim": 0.9932408859855755,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "9117eb152f63aefabe7369cb5ae6eed7b14846b21a9cdc43106d7cb34a99154e",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 25590,
+      "new": 23376,
+      "saved": 2214,
+      "ssim": 0.9915209041712616,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "096b5a693708b67119e453f8aa86c0bed78c51e973fe3626688931f328398b04",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 30154,
+      "new": 27332,
+      "saved": 2822,
+      "ssim": 0.9920188102037398,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "c10e4fb118ec712ac17641f6e8f6f4fefb67b840abfc5854f88212a5671c08ae",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 47152,
+      "new": 43622,
+      "saved": 3530,
+      "ssim": 0.9925565646293051,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "18b6f33098b1f20b55630976d002df91ab920e1825a4d2dd61e4d86d6063ce71",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 31870,
+      "new": 28990,
+      "saved": 2880,
+      "ssim": 0.9929666995992713,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "95aa6b31bcfd4c741ebe20372fb62d0cadd9e99b2f5818b5707398de4e8cb527",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 35034,
+      "new": 32026,
+      "saved": 3008,
+      "ssim": 0.9933693684038564,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "3cea03e47c226830b3727c42d8f67b430b9260629a43a9f2d6da48ddbaa8c01b",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 30396,
+      "new": 27470,
+      "saved": 2926,
+      "ssim": 0.9921757727186205,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "145537c50c1d8328deb036b6007ec6406dcff741d3aa01b17f266758cebfae9a",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 32606,
+      "new": 29244,
+      "saved": 3362,
+      "ssim": 0.9915387194639755,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "4ea3a34bee8b675aa93f515b1705d791ddf177874329ef93a8f3df0ad3361694",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 32002,
+      "new": 29292,
+      "saved": 2710,
+      "ssim": 0.9934961872841925,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "5613f7034658612e3ae8abfbcb606f88fae4c3eec39e8cb99b8a9f764619d467",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 35318,
+      "new": 32294,
+      "saved": 3024,
+      "ssim": 0.9923995072203026,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "3ef25841f1c4e65e6ae9bb64712ff54a51aa86df737fea2ed7dc8a41070db892",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 30170,
+      "new": 27270,
+      "saved": 2900,
+      "ssim": 0.9919008699408735,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "46bdd25065bc71a510489321cbb941c3313ec4b45427b4fcabb6d1644d3213c0",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 28938,
+      "new": 26518,
+      "saved": 2420,
+      "ssim": 0.9930481101753764,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "220f70b7d60c56f7c86c3687b43334f2985f1c918fc52a4fb21d830f0193ce7a",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 44018,
+      "new": 40352,
+      "saved": 3666,
+      "ssim": 0.9937353095613557,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "cc480b1e736d84f07d5a119c36248056ce505a4dabe39fc5f45464ec8d711da4",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 25896,
+      "new": 23606,
+      "saved": 2290,
+      "ssim": 0.9921827180827124,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "9a9327b28e083d8d6b641fe926ccbe90277b2bac794c6ce123c6b5cf8c6ea170",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 35202,
+      "new": 32286,
+      "saved": 2916,
+      "ssim": 0.9922073584710565,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "fbeeb007d896a710f05503393b99b6ad66a4d79a95c49638d46fcf507eaf0e1d",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 34980,
+      "new": 32234,
+      "saved": 2746,
+      "ssim": 0.9933009244642936,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "a6846743e23ffa5a0ab1618d23c044facbf488a0b78113fbf495f76873e7ad06",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 38880,
+      "new": 35830,
+      "saved": 3050,
+      "ssim": 0.9933048652660118,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "e54829372282777ea8b9264cba7f6c6cdc09a02991a63445a363f0c877605737",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 37316,
+      "new": 34340,
+      "saved": 2976,
+      "ssim": 0.9913162327309101,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "3aabd4147fca1fdda6ce157bea64bf451422d1cfc9144ba4634045bdc1d34257",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 31008,
+      "new": 27942,
+      "saved": 3066,
+      "ssim": 0.9921157786479068,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "278f9ea31fd470a90be28d262281c98b2681f3d0e8bdcca5e86e6c419a4f8a87",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 45520,
+      "new": 41060,
+      "saved": 4460,
+      "ssim": 0.9921142136391397,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "85ac2a5732496456db8ac7fd5d5c242c4bc60c497fd30e2678e5ee3f41ed44b2",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 31914,
+      "new": 29418,
+      "saved": 2496,
+      "ssim": 0.9934066009167607,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "227215d0919dd51e0fabb913b832083d0099721803c3f9b07b70d0806a009760",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 35598,
+      "new": 32298,
+      "saved": 3300,
+      "ssim": 0.9928370468733482,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "e7787929c52ff4a6b44131b9210f4d24e8116e474b4645d5a65a64196c1d05d7",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 34280,
+      "new": 31204,
+      "saved": 3076,
+      "ssim": 0.9928802494606244,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "df8d03529b1ffd04fdb5a1fe45398fd58bbd5526b5e5123b1723e0bade7ebb6f",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 52050,
+      "new": 46680,
+      "saved": 5370,
+      "ssim": 0.9924230928321853,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "a73f9e703733444c0d6c4412057bb48123465ef6a2f4cf6528d6d7165b2e4d61",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 34242,
+      "new": 30906,
+      "saved": 3336,
+      "ssim": 0.991916720215663,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "cf3abf8e280b5aea1ebea81e0bc1eaa7625343de4e7373c0ab67e868e1565f3e",
+      "mime": "webp",
+      "dims": [
+        1200,
+        675
+      ],
+      "refs": 2,
+      "old": 48348,
+      "new": 43460,
+      "saved": 4888,
+      "ssim": 0.9923194949760028,
+      "quality": 48,
+      "critical": false
+    },
+    {
+      "hash": "0e38518bbd8849ac93d53a5b318d9e94a4c2934881bde8dfbb01f5fe613b82b3",
+      "mime": "webp",
+      "dims": [
+        512,
+        512
+      ],
+      "refs": 3,
+      "old": 10858,
+      "new": 10858,
+      "saved": 0,
+      "ssim": 1.0,
+      "quality": null,
+      "critical": true
+    }
+  ],
+  "changed_html": [
+    "berita.html",
+    "berita-detail.html"
+  ],
+  "csp": [
+    {
+      "kind": "_headers",
+      "script_exact": true,
+      "style_exact": true,
+      "script_count": 74,
+      "style_count": 13,
+      "computed_script_count": 74,
+      "computed_style_count": 13
+    },
+    {
+      "kind": ".htaccess",
+      "script_exact": true,
+      "style_exact": true,
+      "script_count": 74,
+      "style_count": 13,
+      "computed_script_count": 74,
+      "computed_style_count": 13
+    }
+  ],
+  "jsonld_errors": []
+}

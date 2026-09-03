@@ -1,0 +1,27 @@
+KOMPRESI GAMBAR FINAL — PRESERVATION-FIRST / ZERO-DELETION / ZERO-REGRESSION
+
+- Baseline: PT.zip terakhir.
+- Fokus perubahan: kompresi gambar saja + sinkronisasi hash CSP yang wajib karena payload gambar embedded berubah.
+- Dimensi pixel: 100% dipertahankan; tidak ada downscale.
+- Gambar revisi eksternal: 100 file, ukuran 4,812,432 -> 3,418,366 byte (hemat 28.97%).
+- Logo CV Multi Usaha Mandiri: optimasi lossless 167,022 -> 99,124 byte; pixel identik.
+- HTML self-contained: 49,970,763 -> 42,834,531 byte; penghematan payload gambar 7,136,232 byte.
+- Critical logo/diagram lossy compression: 0.
+- Minimum SSIM seluruh kompresi lossy: 0.985350.
+- 119/119 raster eksternal decode PASS.
+- 450/450 embedded image reference decode PASS.
+- Dimension regression: 0.
+- JavaScript inline syntax: 342/342 PASS.
+- JSON-LD error: 0.
+- CSP _headers/.htaccess: exact hash match PASS.
+- Browser visual validation: 111/111 PASS (37 HTML x 3 viewport: 390, 768, 1440).
+- Horizontal overflow: 0.
+- Broken image pada browser visual test: 0.
+- Broken asset/link/fragment baru: 0.
+- Duplicate-ID regression: 0 (existing baseline state dipertahankan, tidak diperburuk).
+- dashboard.html: TIDAK ADA.
+- Missing logical website files: 0.
+- Extra logical website files: 0.
+- ZIP baseline: 34,092,893 byte.
+- ZIP final sementara: 30,687,040 byte (~9.99% lebih kecil).
+- ZIP CRC final wajib PASS setelah packaging terakhir.
