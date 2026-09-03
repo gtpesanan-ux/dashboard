@@ -1,0 +1,31 @@
+{
+  "revision": "PT6-ultra-revision-2026-09-03",
+  "news_existing": 46,
+  "news_added_trend_briefs": 1000,
+  "news_total": 1046,
+  "trend_basis": "Google Trends Indonesia snapshot, 24h trend signals; trend briefs are explicitly non-verified editorial context.",
+  "new_assets": [
+    "assets/runtime-site.js",
+    "assets/runtime-widgets.js",
+    "assets/runtime-premium.js",
+    "assets/runtime-contact.js",
+    "assets/runtime-hardening.js",
+    "assets/news-data.js",
+    "assets/newsroom-runtime.js",
+    "assets/news-detail-runtime.js",
+    "assets/newsroom-enhance.css",
+    "assets/runtime-hardening.css"
+  ],
+  "interaction_fix": "berita.html now loads the common navigation/widgets/dialog/contact runtimes that were missing; all pages also load a defensive hardening fallback.",
+  "static_articles_expanded": [
+    "berita-panduan-parfum.html",
+    "berita-checklist-domain.html",
+    "berita-brief-website.html"
+  ],
+  "trend_seed_queries": 25,
+  "trend_briefs_per_seed": 40,
+  "trend_snapshot": "2026-09-03",
+  "integrity_note": "1.000 tambahan diberi label Pantauan Tren; bukan 1.000 laporan kejadian terverifikasi. 46 entri lama tetap berstatus berita aktual.",
+  "validation_report": "VALIDATION-REPORT.txt",
+  "validation_status": "PASS — static validator 0 issue; runtime browser 23/23 pages, 0 failure."
+}

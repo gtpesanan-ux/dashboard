@@ -1,0 +1,70 @@
+PT DIGDAYA INOVASI NUSANTARA — REVISION & VALIDATION REPORT
+Tanggal revisi: 2026-09-03 (Asia/Jakarta)
+
+1. RUANG LINGKUP AUDIT
+- Arsip asli: 98 file.
+- Seluruh file asli dibaca sebagai byte dan dihitung SHA-256 sebelum/selama audit.
+- 23 halaman HTML dianalisis untuk struktur, navigasi, tombol, dialog, form, asset, script, style, dan CSP.
+- 67 gambar diverifikasi decode-integrity.
+- 2 video MP4 diverifikasi dengan ffprobe.
+
+2. AKAR MASALAH INTERAKSI
+- berita.html tidak memuat runtime umum navigation/widgets/dialog/contact yang dimuat oleh 22 halaman HTML lainnya.
+- Runtime umum lama juga memiliki initialisasi berantai; satu kegagalan awal berpotensi menghentikan initialisasi kontrol berikutnya.
+- Perbaikan: runtime umum ditambahkan ke berita.html, dibuat runtime hardening fallback pada seluruh 23 halaman, dan setiap fallback hanya bekerja bila handler utama tidak mengubah state.
+- CSS hardening dipisah sebagai asset eksternal agar kompatibel dengan CSP ketat.
+
+3. PERBAIKAN NEWSROOM
+- Berita aktual yang dipertahankan: 46.
+- Pantauan Tren baru: 1.000.
+- Total data newsroom: 1.046 item, 1.046 ID unik.
+- Basis Pantauan Tren: 25 kueri tren publik × 40 sudut editorial; snapshot Indonesia 2026-09-03.
+- Pantauan Tren diberi label eksplisit sebagai non-verified editorial context, bukan laporan kejadian yang otomatis terverifikasi.
+- Setiap item memiliki: judul, tanggal, kategori, sumber/provenance, ringkasan, konteks, dampak, viral score, viral tier, alasan potensi viral, dan poin yang perlu dipantau.
+- Placeholder ringkasan lama tersisa: 0.
+- Kategori data newsroom: 15.
+- Halaman berita memiliki filter Jenis, Kategori, pencarian, sort Potensi Viral/Terbaru/Judul, load-more, dan detail internal.
+
+4. ARTIKEL EDITORIAL YANG DIPERLUAS
+- berita-panduan-parfum.html: 704 kata pada area artikel.
+- berita-checklist-domain.html: 681 kata pada area artikel.
+- berita-brief-website.html: 769 kata pada area artikel.
+
+5. VALIDASI STATIS
+- Referensi asset/link lokal diperiksa: 1221; rusak: 0.
+- Duplicate HTML ID: 0.
+- aria-controls tanpa target: 0.
+- href kosong: 0.
+- Inline event handler yang melanggar CSP: 0.
+- Inline style attribute yang melanggar CSP: 0.
+- Unit JavaScript diperiksa sintaks dengan Node: 142; error: 0.
+- JSON-LD diperiksa: 22; invalid: 0.
+- Inline script ter-cover hash CSP: 156; hash hilang: 0.
+- Inline style block ter-cover hash CSP: 92; hash hilang: 0.
+- Required field data berita kosong: 0.
+- Viral score di luar 0–100: 0.
+- Gambar terverifikasi: 67; error: 0.
+- Video terverifikasi: 2; error: 0.
+
+6. VALIDASI RUNTIME BROWSER HEADLESS
+- Halaman diuji: 23/23; gagal: 0.
+- Runtime exception saat load: 0.
+- Menu mobile: lulus buka/tutup + backdrop.
+- Submenu: lulus buka/tutup.
+- Dialog konsultasi: lulus buka/tutup.
+- Quick contact: lulus buka/tutup.
+- berita.html: lulus render 30 → load-more 60 → filter Pantauan Tren 30, 3 kontrol filter/sort, score meter aktif.
+- berita-detail.html: lulus render judul, 4 blok analisis, integritas/provenance, dan bacaan terkait.
+- Tombol terinventarisasi: 402.
+- Tombol aktif yang dieksekusi pada exhaustive safety-click: 398.
+- Tombol yang disabled oleh state runtime saat sweep: 4 (berasal dari Service Finder pada index.html dan layanan.html).
+- Exception sinkron dari exhaustive button sweep: 0.
+- Error async dari exhaustive button sweep: 0.
+
+7. INTEGRITAS PERUBAHAN
+- File asli yang tetap identik byte-for-byte: 74.
+- File asli yang berubah karena revisi: 24.
+- Asset baru memusatkan data/runtime berita agar 1.046 item tidak diduplikasi dalam beberapa HTML.
+- _headers CSP diperbarui agar seluruh inline script/style yang masih ada tetap sah di bawah kebijakan hash ketat.
+
+STATUS: LULUS VALIDASI — 0 ISSUE PADA VALIDATOR STATIS DAN 0 FAILURE PADA UJI RUNTIME BROWSER.
