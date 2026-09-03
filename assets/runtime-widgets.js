@@ -1688,7 +1688,7 @@
     const articleUrl = (id, first) => {
       if (first?.matches("article[data-widget='news-filter']")) return canonical.split("#")[0];
       const href = first?.querySelector("a.card-link[href]")?.getAttribute("href");
-      if (href) return new URL(href, canonical).href;
+      if (href) { try { return new URL(href, canonical || 'https://standalone.digdaya.invalid/').href; } catch { return href; } }
       return `${canonical.split("#")[0]}#${encodeURIComponent(id)}`;
     };
     const articleInfo = (id) => {

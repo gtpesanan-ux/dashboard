@@ -324,18 +324,14 @@
 
   const initYears = () => qsa("[data-year]").forEach((node) => { node.textContent = String(new Date().getFullYear()); });
 
-  const safeInit = (name, fn) => {
-    try { fn(); } catch (error) { console.error(`Digdaya ${name} initialization failed`, error); }
-  };
-  safeInit("navigation", initNavigation);
-  safeInit("active-navigation", initActiveNavigation);
-  safeInit("scroll-ui", initScrollUI);
-  safeInit("reveal-motion", initRevealMotion);
-  safeInit("faq-motion", initFaqMotion);
-  safeInit("dialogs", initDialogs);
-  safeInit("image-viewer", initImageViewer);
-  safeInit("years", initYears);
-  document.documentElement.dataset.digdayaSiteRuntime = "ready";
+  initActiveNavigation();
+  initNavigation();
+  initScrollUI();
+  initRevealMotion();
+  initFaqMotion();
+  initDialogs();
+  initImageViewer();
+  initYears();
 
   window.DigdayaUI = Object.freeze({
     openInquiry: (options = {}) => {
