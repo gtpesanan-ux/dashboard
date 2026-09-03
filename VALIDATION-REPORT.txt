@@ -1,70 +1,57 @@
 PT DIGDAYA INOVASI NUSANTARA — REVISION & VALIDATION REPORT
+Revisi: PT7 Home Expansion
 Tanggal revisi: 2026-09-03 (Asia/Jakarta)
 
 1. RUANG LINGKUP AUDIT
-- Arsip asli: 98 file.
-- Seluruh file asli dibaca sebagai byte dan dihitung SHA-256 sebelum/selama audit.
-- 23 halaman HTML dianalisis untuk struktur, navigasi, tombol, dialog, form, asset, script, style, dan CSP.
-- 67 gambar diverifikasi decode-integrity.
-- 2 video MP4 diverifikasi dengan ffprobe.
+- Paket sumber PT(7).zip diverifikasi CRC ZIP: tidak ada member rusak.
+- 110 file sumber dibaca penuh sebagai byte sebelum perubahan; total sumber yang dibaca: 16.135.383 byte.
+- Seluruh file sumber dihitung SHA-256 untuk audit perubahan.
+- Paket kerja final memiliki 111 file (termasuk 1 asset CSS baru untuk ekspansi beranda).
+- 23 halaman HTML diperiksa untuk struktur, referensi lokal, ID, aria-controls, script, style, JSON-LD, dan teks status legal sementara.
+- 67 gambar raster diverifikasi decode-integrity.
+- Data newsroom tetap 1.046 item dan tidak dikurangi.
 
-2. AKAR MASALAH INTERAKSI
-- berita.html tidak memuat runtime umum navigation/widgets/dialog/contact yang dimuat oleh 22 halaman HTML lainnya.
-- Runtime umum lama juga memiliki initialisasi berantai; satu kegagalan awal berpotensi menghentikan initialisasi kontrol berikutnya.
-- Perbaikan: runtime umum ditambahkan ke berita.html, dibuat runtime hardening fallback pada seluruh 23 halaman, dan setiap fallback hanya bekerja bila handler utama tidak mengubah state.
-- CSS hardening dipisah sebagai asset eksternal agar kompatibel dengan CSP ketat.
+2. PERUBAHAN YANG DIMINTA PADA BERANDA
+- Featured Campaign: diperluas dari 4 menjadi 12 kartu visual.
+- Company Profile Film: video company profile tetap dipertahankan tanpa perubahan pada sumber video.
+- Promo Visual Gallery: ditambahkan 15 kartu visual promo berbasis asset lokal yang sudah ada di paket.
+- Corporate Newsroom: ditampilkan 1 artikel utama + 5 artikel ringkas, serta tombol “Lihat selengkapnya” menuju berita.html.
+- Dua artikel newsroom tambahan yang memakai berita-detail.html telah dicocokkan dengan ID yang benar-benar ada di assets/news-data.js.
+- Seluruh perubahan beranda memakai link internal dan asset lokal; tidak menambah dependensi CDN atau library pihak ketiga.
 
-3. PERBAIKAN NEWSROOM
-- Berita aktual yang dipertahankan: 46.
-- Pantauan Tren baru: 1.000.
-- Total data newsroom: 1.046 item, 1.046 ID unik.
-- Basis Pantauan Tren: 25 kueri tren publik × 40 sudut editorial; snapshot Indonesia 2026-09-03.
-- Pantauan Tren diberi label eksplisit sebagai non-verified editorial context, bukan laporan kejadian yang otomatis terverifikasi.
-- Setiap item memiliki: judul, tanggal, kategori, sumber/provenance, ringkasan, konteks, dampak, viral score, viral tier, alasan potensi viral, dan poin yang perlu dipantau.
-- Placeholder ringkasan lama tersisa: 0.
-- Kategori data newsroom: 15.
-- Halaman berita memiliki filter Jenis, Kategori, pencarian, sort Potensi Viral/Terbaru/Judul, load-more, dan detail internal.
+3. PENGHAPUSAN BLOK STATUS LEGAL SEMENTARA
+- Blok footer legal sementara yang sebelumnya ditandai class u-legal-status dihapus dari 23/23 file HTML.
+- Pencarian ulang seluruh paket untuk seluruh potongan kalimat pada blok lama: 0 kecocokan.
+- Pada 22 HTML selain index.html, diff terhadap paket sumber menunjukkan tepat satu penghapusan baris status tersebut dan tidak ada perubahan lain.
 
-4. ARTIKEL EDITORIAL YANG DIPERLUAS
-- berita-panduan-parfum.html: 704 kata pada area artikel.
-- berita-checklist-domain.html: 681 kata pada area artikel.
-- berita-brief-website.html: 769 kata pada area artikel.
-
-5. VALIDASI STATIS
-- Referensi asset/link lokal diperiksa: 1221; rusak: 0.
+4. VALIDASI STATIS FINAL
+- Halaman HTML: 23.
+- Referensi href/src/poster/srcset lokal yang diperiksa: 1.678; referensi rusak: 0.
 - Duplicate HTML ID: 0.
 - aria-controls tanpa target: 0.
-- href kosong: 0.
-- Inline event handler yang melanggar CSP: 0.
-- Inline style attribute yang melanggar CSP: 0.
-- Unit JavaScript diperiksa sintaks dengan Node: 142; error: 0.
+- Inline event handler: 0.
+- Inline style attribute: 0.
 - JSON-LD diperiksa: 22; invalid: 0.
-- Inline script ter-cover hash CSP: 156; hash hilang: 0.
-- Inline style block ter-cover hash CSP: 92; hash hilang: 0.
-- Required field data berita kosong: 0.
-- Viral score di luar 0–100: 0.
-- Gambar terverifikasi: 67; error: 0.
-- Video terverifikasi: 2; error: 0.
+- JavaScript: 8 file eksternal + 134 unit inline = 142 unit diperiksa sintaks dengan Node; error: 0.
+- CSS eksternal: 3 file diperiksa parser; error: 0.
+- CSP: inline script tanpa hash yang sesuai: 0; inline style block tanpa hash yang sesuai: 0.
+- Gambar raster diverifikasi: 67; decode error: 0.
+- Blok status legal sementara tersisa: 0.
 
-6. VALIDASI RUNTIME BROWSER HEADLESS
-- Halaman diuji: 23/23; gagal: 0.
-- Runtime exception saat load: 0.
-- Menu mobile: lulus buka/tutup + backdrop.
-- Submenu: lulus buka/tutup.
-- Dialog konsultasi: lulus buka/tutup.
-- Quick contact: lulus buka/tutup.
-- berita.html: lulus render 30 → load-more 60 → filter Pantauan Tren 30, 3 kontrol filter/sort, score meter aktif.
-- berita-detail.html: lulus render judul, 4 blok analisis, integritas/provenance, dan bacaan terkait.
-- Tombol terinventarisasi: 402.
-- Tombol aktif yang dieksekusi pada exhaustive safety-click: 398.
-- Tombol yang disabled oleh state runtime saat sweep: 4 (berasal dari Service Finder pada index.html dan layanan.html).
-- Exception sinkron dari exhaustive button sweep: 0.
-- Error async dari exhaustive button sweep: 0.
+5. VALIDASI RESPONSIVE BERANDA
+- Chromium DOM/render check dilakukan pada viewport 390×844, 768×1024, dan 1440×900.
+- Jumlah ter-render konsisten: campaign 12, promo 15, news mini 5, tombol selengkapnya 1.
+- Lebar dokumen sama dengan lebar viewport pada ketiga ukuran: tidak ada horizontal overflow pada document root.
+- Grid promo: 2 kolom pada 390 px, 3 kolom pada 768 px, dan 4 kolom pada 1440 px.
+- Tombol “Lihat selengkapnya” melebar penuh pada mobile dan kembali ke ukuran konten pada viewport lebih besar.
+- Video company profile, kontrol campaign, menu, dialog, dan runtime lama tidak dihapus atau ditulis ulang.
 
-7. INTEGRITAS PERUBAHAN
-- File asli yang tetap identik byte-for-byte: 74.
-- File asli yang berubah karena revisi: 24.
-- Asset baru memusatkan data/runtime berita agar 1.046 item tidak diduplikasi dalam beberapa HTML.
-- _headers CSP diperbarui agar seluruh inline script/style yang masih ada tetap sah di bawah kebijakan hash ketat.
+6. INTEGRITAS PERUBAHAN
+- File HTML yang berubah: 23/23 karena penghapusan teks status; index.html juga menerima ekspansi campaign, promo, dan newsroom.
+- Asset baru: assets/rev8-home-expansion.css.
+- CSS ekspansi dibuat eksternal agar tidak mengubah hash CSP untuk style inline yang sudah ada.
+- _headers tidak perlu diubah karena style-src sudah mengizinkan asset self dan hash inline lama tetap valid.
+- Seluruh asset gambar/video lama tetap dipertahankan.
+- Tidak ada file sumber yang dihapus.
 
-STATUS: LULUS VALIDASI — 0 ISSUE PADA VALIDATOR STATIS DAN 0 FAILURE PADA UJI RUNTIME BROWSER.
+STATUS: LULUS VALIDASI STATIS — 0 ISSUE. RESPONSIVE STRUCTURE CHECK BERANDA — LULUS PADA 390 / 768 / 1440 PX.

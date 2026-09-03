@@ -1,0 +1,835 @@
+{
+  "passes": 69,
+  "total": 69,
+  "failures": [],
+  "details": [
+    {
+      "file": "404.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "404.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "404.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "berita-brief-website.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "berita-brief-website.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "berita-brief-website.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "berita-checklist-domain.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "berita-checklist-domain.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "berita-checklist-domain.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "berita-detail.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "berita-detail.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "berita-detail.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "berita-panduan-parfum.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "berita-panduan-parfum.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "berita-panduan-parfum.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "berita.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "berita.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "berita.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "index.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "index.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "index.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "jasa-pembuatan-website.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "jasa-pembuatan-website.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "jasa-pembuatan-website.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "jual-beli-domain.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "jual-beli-domain.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "jual-beli-domain.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "keamanan.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "keamanan.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "keamanan.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "kebijakan-privasi.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "kebijakan-privasi.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "kebijakan-privasi.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "kebijakan-transaksi.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "kebijakan-transaksi.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "kebijakan-transaksi.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "kemitraan.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "kemitraan.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "kemitraan.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "kontak.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "kontak.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "kontak.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "layanan.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "layanan.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "layanan.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "parfum-designer.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "parfum-designer.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "parfum-designer.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "parfum-lokal.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "parfum-lokal.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "parfum-lokal.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "parfum-niche.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "parfum-niche.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "parfum-niche.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "parfum-timur-tengah.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "parfum-timur-tengah.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "parfum-timur-tengah.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "pengaduan.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "pengaduan.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "pengaduan.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "syarat-ketentuan.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "syarat-ketentuan.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "syarat-ketentuan.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "tentang-kami.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "tentang-kami.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "tentang-kami.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    },
+    {
+      "file": "top-up-game.html",
+      "viewport": [
+        390,
+        844
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 390,
+      "innerWidth": 390,
+      "broken": 0
+    },
+    {
+      "file": "top-up-game.html",
+      "viewport": [
+        768,
+        1024
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 768,
+      "innerWidth": 768,
+      "broken": 0
+    },
+    {
+      "file": "top-up-game.html",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "ok": true,
+      "imgs": 2,
+      "scrollWidth": 1440,
+      "innerWidth": 1440,
+      "broken": 0
+    }
+  ]
+}

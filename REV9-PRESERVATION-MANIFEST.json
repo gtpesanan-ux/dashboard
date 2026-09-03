@@ -1,0 +1,162 @@
+{
+  "revision": "REV9-PRESERVATION",
+  "baseline": "PT_Digdaya_FINAL_REV8.zip",
+  "mode": "PRESERVATION-FIRST / ZERO-DELETION / ZERO-REGRESSION",
+  "changes": [
+    "Externalized byte-identical shared CSS/JS blocks for caching and maintainability.",
+    "Preserved all existing user-facing content, pages, features, assets, interactions, newsroom data, video, forms and navigation.",
+    "Added 180x180 Apple touch icon derived from existing brand logo.",
+    "Added additive Apache/cPanel .htaccess compatibility for existing security/cache/404 policy.",
+    "Added deployment checklist for intentionally unresolved production origin and inquiry backend."
+  ],
+  "html_patch": [
+    {
+      "file": "404.html",
+      "bytes_before": 328382,
+      "bytes_after": 38225,
+      "saved": 290157
+    },
+    {
+      "file": "berita-brief-website.html",
+      "bytes_before": 335879,
+      "bytes_after": 45722,
+      "saved": 290157
+    },
+    {
+      "file": "berita-checklist-domain.html",
+      "bytes_before": 335017,
+      "bytes_after": 44860,
+      "saved": 290157
+    },
+    {
+      "file": "berita-detail.html",
+      "bytes_before": 326214,
+      "bytes_after": 36057,
+      "saved": 290157
+    },
+    {
+      "file": "berita-panduan-parfum.html",
+      "bytes_before": 335133,
+      "bytes_after": 44976,
+      "saved": 290157
+    },
+    {
+      "file": "berita.html",
+      "bytes_before": 249817,
+      "bytes_after": 48172,
+      "saved": 201645
+    },
+    {
+      "file": "index.html",
+      "bytes_before": 361267,
+      "bytes_after": 71110,
+      "saved": 290157
+    },
+    {
+      "file": "jasa-pembuatan-website.html",
+      "bytes_before": 346333,
+      "bytes_after": 56176,
+      "saved": 290157
+    },
+    {
+      "file": "jual-beli-domain.html",
+      "bytes_before": 341676,
+      "bytes_after": 51519,
+      "saved": 290157
+    },
+    {
+      "file": "keamanan.html",
+      "bytes_before": 335589,
+      "bytes_after": 45432,
+      "saved": 290157
+    },
+    {
+      "file": "kebijakan-privasi.html",
+      "bytes_before": 334590,
+      "bytes_after": 44433,
+      "saved": 290157
+    },
+    {
+      "file": "kebijakan-transaksi.html",
+      "bytes_before": 336624,
+      "bytes_after": 46467,
+      "saved": 290157
+    },
+    {
+      "file": "kemitraan.html",
+      "bytes_before": 333590,
+      "bytes_after": 43433,
+      "saved": 290157
+    },
+    {
+      "file": "kontak.html",
+      "bytes_before": 333418,
+      "bytes_after": 43261,
+      "saved": 290157
+    },
+    {
+      "file": "layanan.html",
+      "bytes_before": 340973,
+      "bytes_after": 50816,
+      "saved": 290157
+    },
+    {
+      "file": "parfum-designer.html",
+      "bytes_before": 350486,
+      "bytes_after": 60329,
+      "saved": 290157
+    },
+    {
+      "file": "parfum-lokal.html",
+      "bytes_before": 351132,
+      "bytes_after": 60975,
+      "saved": 290157
+    },
+    {
+      "file": "parfum-niche.html",
+      "bytes_before": 349786,
+      "bytes_after": 59629,
+      "saved": 290157
+    },
+    {
+      "file": "parfum-timur-tengah.html",
+      "bytes_before": 351454,
+      "bytes_after": 61297,
+      "saved": 290157
+    },
+    {
+      "file": "pengaduan.html",
+      "bytes_before": 334794,
+      "bytes_after": 44637,
+      "saved": 290157
+    },
+    {
+      "file": "syarat-ketentuan.html",
+      "bytes_before": 333711,
+      "bytes_after": 43554,
+      "saved": 290157
+    },
+    {
+      "file": "tentang-kami.html",
+      "bytes_before": 340833,
+      "bytes_after": 50676,
+      "saved": 290157
+    },
+    {
+      "file": "top-up-game.html",
+      "bytes_before": 339613,
+      "bytes_after": 49456,
+      "saved": 290157
+    }
+  ],
+  "new_assets": [
+    "premium-v3.css",
+    "revision-v7.css",
+    "runtime-core-v8.css",
+    "runtime-newsroom-core-v8.css",
+    "runtime-site-v8.js",
+    "runtime-ultimate-v4.js",
+    "ultimate-v4.css",
+    "apple-touch-icon.png"
+  ]
+}

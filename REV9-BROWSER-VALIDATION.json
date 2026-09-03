@@ -1,0 +1,87 @@
+{
+  "revision": "REV9-PRESERVATION",
+  "render_validation": {
+    "mobile": {
+      "tests": 23,
+      "errors": [],
+      "missing_local": [],
+      "overflow": [],
+      "broken_images": [],
+      "missing_main_or_skip": []
+    },
+    "tablet": {
+      "tests": 23,
+      "errors": [],
+      "missing_local": [],
+      "overflow": [],
+      "broken_images": [],
+      "missing_main_or_skip": []
+    },
+    "desktop": {
+      "tests": 23,
+      "errors": [],
+      "missing_local": [],
+      "overflow": [],
+      "broken_images": []
+    },
+    "total_viewport_page_tests": 69
+  },
+  "generic_mobile_interactions": {
+    "tests": 23,
+    "passed": 23,
+    "failures": []
+  },
+  "deep_functional_interactions": {
+    "tests": 8,
+    "passed": 8,
+    "cases": [
+      {
+        "case": "service-finder",
+        "file": "index.html",
+        "pass": true
+      },
+      {
+        "case": "scent-finder",
+        "file": "parfum-lokal.html",
+        "pass": true
+      },
+      {
+        "case": "topup-request-builder",
+        "file": "top-up-game.html",
+        "pass": true
+      },
+      {
+        "case": "website-scope-builder",
+        "file": "jasa-pembuatan-website.html",
+        "pass": true
+      },
+      {
+        "case": "domain-brief-builder",
+        "file": "jual-beli-domain.html",
+        "pass": true
+      },
+      {
+        "case": "newsroom-search-filter-loadmore",
+        "file": "berita.html",
+        "pass": true
+      },
+      {
+        "case": "company-profile-video",
+        "file": "index.html",
+        "pass": true
+      },
+      {
+        "case": "inquiry-whatsapp-fallback",
+        "file": "kontak.html",
+        "pass": true
+      }
+    ]
+  },
+  "selected_visual_geometry_comparison": {
+    "views": 12,
+    "mismatches": []
+  },
+  "notes": [
+    "Browser validation was performed in an isolated sandbox with local assets routed from the package itself. External destinations such as WhatsApp were not navigated; their generated URLs and UI state were validated instead."
+  ]
+}

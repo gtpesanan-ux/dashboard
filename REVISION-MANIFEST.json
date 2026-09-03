@@ -1,5 +1,5 @@
 {
-  "revision": "PT6-ultra-revision-2026-09-03",
+  "revision": "PT7-home-expansion-2026-09-03",
   "news_existing": 46,
   "news_added_trend_briefs": 1000,
   "news_total": 1046,
@@ -14,9 +14,10 @@
     "assets/newsroom-runtime.js",
     "assets/news-detail-runtime.js",
     "assets/newsroom-enhance.css",
-    "assets/runtime-hardening.css"
+    "assets/runtime-hardening.css",
+    "assets/rev8-home-expansion.css"
   ],
-  "interaction_fix": "berita.html now loads the common navigation/widgets/dialog/contact runtimes that were missing; all pages also load a defensive hardening fallback.",
+  "interaction_fix": "berita.html now loads the common navigation/widgets/dialog/contact runtimes that were missing; all pages also load a defensive hardening fallback. Home expansion reuses the existing campaign scroller and existing local navigation; no existing runtime feature was removed.",
   "static_articles_expanded": [
     "berita-panduan-parfum.html",
     "berita-checklist-domain.html",
@@ -27,5 +28,16 @@
   "trend_snapshot": "2026-09-03",
   "integrity_note": "1.000 tambahan diberi label Pantauan Tren; bukan 1.000 laporan kejadian terverifikasi. 46 entri lama tetap berstatus berita aktual.",
   "validation_report": "VALIDATION-REPORT.txt",
-  "validation_status": "PASS — static validator 0 issue; runtime browser 23/23 pages, 0 failure."
+  "validation_status": "PASS — current static validator 0 issue; responsive Chromium DOM/render check at 390, 768, and 1440 px showed 0 document overflow.",
+  "parent_revision": "PT6-ultra-revision-2026-09-03",
+  "home_expansion": {
+    "featured_campaign_cards": 12,
+    "company_profile_video_preserved": true,
+    "promo_visual_cards_added": 15,
+    "home_newsroom_lead_cards": 1,
+    "home_newsroom_mini_articles": 5,
+    "home_newsroom_more_button": true,
+    "legal_status_blocks_removed_from_html": 23,
+    "legal_status_text_remaining": 0
+  }
 }

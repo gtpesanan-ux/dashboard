@@ -1,0 +1,997 @@
+{
+  "policy": "Preserve all pixel dimensions. WebP q52-86 by visual type; branded DN imagery q64+; text/diagram q82; logos q86. Compatibility-critical favicon/apple-touch kept PNG losslessly optimized; OG social assets kept JPEG q72.",
+  "asset_changes": [
+    {
+      "old": "brand-promo-05.webp",
+      "new": "brand-promo-05.webp",
+      "old_bytes": 80718,
+      "new_bytes": 40008,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "news-teknologi-3.webp",
+      "new": "news-teknologi-3.webp",
+      "old_bytes": 59962,
+      "new_bytes": 38880,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "visual-website-2.webp",
+      "new": "visual-website-2.webp",
+      "old_bytes": 44162,
+      "new_bytes": 29656,
+      "mode": "webp-q56"
+    },
+    {
+      "old": "news-kesehatan-3.webp",
+      "new": "news-kesehatan-3.webp",
+      "old_bytes": 40496,
+      "new_bytes": 25896,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "apple-touch-icon.png",
+      "new": "apple-touch-icon.png",
+      "old_bytes": 27112,
+      "new_bytes": 27112,
+      "mode": "png-lossless"
+    },
+    {
+      "old": "news-nasional-2.webp",
+      "new": "news-nasional-2.webp",
+      "old_bytes": 50164,
+      "new_bytes": 32992,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "digdaya-monogram-512.png",
+      "new": "digdaya-monogram-512.webp",
+      "old_bytes": 167746,
+      "new_bytes": 71768,
+      "mode": "webp-q86"
+    },
+    {
+      "old": "digdaya-monogram-tile-512.webp",
+      "new": "digdaya-monogram-tile-512.webp",
+      "old_bytes": 18598,
+      "new_bytes": 10858,
+      "mode": "webp-q86"
+    },
+    {
+      "old": "brand-campaign-11.webp",
+      "new": "brand-campaign-11.webp",
+      "old_bytes": 57464,
+      "new_bytes": 32278,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "visual-about-2.webp",
+      "new": "visual-about-2.webp",
+      "old_bytes": 54044,
+      "new_bytes": 36038,
+      "mode": "webp-q56"
+    },
+    {
+      "old": "brand-campaign-02.webp",
+      "new": "brand-campaign-02.webp",
+      "old_bytes": 92368,
+      "new_bytes": 43306,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "news-pariwisata-2.webp",
+      "new": "news-pariwisata-2.webp",
+      "old_bytes": 46952,
+      "new_bytes": 31008,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "brand-promo-09.webp",
+      "new": "brand-promo-09.webp",
+      "old_bytes": 73268,
+      "new_bytes": 35736,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "visual-flow-fragrance.webp",
+      "new": "visual-flow-fragrance.webp",
+      "old_bytes": 21528,
+      "new_bytes": 16260,
+      "mode": "webp-q82"
+    },
+    {
+      "old": "brand-campaign-01.webp",
+      "new": "brand-campaign-01.webp",
+      "old_bytes": 127404,
+      "new_bytes": 63224,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "visual-flow-domain.webp",
+      "new": "visual-flow-domain.webp",
+      "old_bytes": 19620,
+      "new_bytes": 14866,
+      "mode": "webp-q82"
+    },
+    {
+      "old": "brand-campaign-07.webp",
+      "new": "brand-campaign-07.webp",
+      "old_bytes": 53612,
+      "new_bytes": 25858,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "news-bisnis-1.webp",
+      "new": "news-bisnis-1.webp",
+      "old_bytes": 47950,
+      "new_bytes": 32002,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "news-teknologi-1.webp",
+      "new": "news-teknologi-1.webp",
+      "old_bytes": 54416,
+      "new_bytes": 35202,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "brand-promo-15.webp",
+      "new": "brand-promo-15.webp",
+      "old_bytes": 60816,
+      "new_bytes": 35290,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "visual-topup-2.webp",
+      "new": "visual-topup-2.webp",
+      "old_bytes": 33230,
+      "new_bytes": 22678,
+      "mode": "webp-q56"
+    },
+    {
+      "old": "news-digital-3.webp",
+      "new": "news-digital-3.webp",
+      "old_bytes": 52700,
+      "new_bytes": 34280,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "news-pendidikan-2.webp",
+      "new": "news-pendidikan-2.webp",
+      "old_bytes": 50390,
+      "new_bytes": 33082,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "brand-campaign-04.webp",
+      "new": "brand-campaign-04.webp",
+      "old_bytes": 122484,
+      "new_bytes": 60968,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "news-kesehatan-2.webp",
+      "new": "news-kesehatan-2.webp",
+      "old_bytes": 66318,
+      "new_bytes": 44018,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "parfum-designer-editorial.webp",
+      "new": "parfum-designer-editorial.webp",
+      "old_bytes": 71296,
+      "new_bytes": 55536,
+      "mode": "webp-q54"
+    },
+    {
+      "old": "brand-campaign-06.webp",
+      "new": "brand-campaign-06.webp",
+      "old_bytes": 76346,
+      "new_bytes": 37072,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "visual-topup-1.webp",
+      "new": "visual-topup-1.webp",
+      "old_bytes": 49034,
+      "new_bytes": 33072,
+      "mode": "webp-q56"
+    },
+    {
+      "old": "digdaya-logo-white-1024.png",
+      "new": "digdaya-logo-white-1024.webp",
+      "old_bytes": 264749,
+      "new_bytes": 142570,
+      "mode": "webp-q86"
+    },
+    {
+      "old": "news-bisnis-3.webp",
+      "new": "news-bisnis-3.webp",
+      "old_bytes": 47876,
+      "new_bytes": 30170,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "news-ekonomi-1.webp",
+      "new": "news-ekonomi-1.webp",
+      "old_bytes": 54838,
+      "new_bytes": 35034,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "favicon.png",
+      "new": "favicon.png",
+      "old_bytes": 10488,
+      "new_bytes": 10424,
+      "mode": "png-lossless"
+    },
+    {
+      "old": "news-nasional-1.webp",
+      "new": "news-nasional-1.webp",
+      "old_bytes": 46542,
+      "new_bytes": 29760,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "visual-flow-security.webp",
+      "new": "visual-flow-security.webp",
+      "old_bytes": 20684,
+      "new_bytes": 15248,
+      "mode": "webp-q82"
+    },
+    {
+      "old": "news-nasional-3.webp",
+      "new": "news-nasional-3.webp",
+      "old_bytes": 41444,
+      "new_bytes": 25590,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "visual-security-1-clean.webp",
+      "new": "visual-security-1-clean.webp",
+      "old_bytes": 73912,
+      "new_bytes": 34038,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "og-website.jpg",
+      "new": "og-website.jpg",
+      "old_bytes": 117501,
+      "new_bytes": 72841,
+      "mode": "jpeg-q72"
+    },
+    {
+      "old": "domain-editorial.webp",
+      "new": "domain-editorial.webp",
+      "old_bytes": 66148,
+      "new_bytes": 50818,
+      "mode": "webp-q54"
+    },
+    {
+      "old": "brand-promo-14.webp",
+      "new": "brand-promo-14.webp",
+      "old_bytes": 57600,
+      "new_bytes": 32830,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "brand-campaign-08.webp",
+      "new": "brand-campaign-08.webp",
+      "old_bytes": 69062,
+      "new_bytes": 34342,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "corporate-home-hero.webp",
+      "new": "corporate-home-hero.webp",
+      "old_bytes": 67158,
+      "new_bytes": 49434,
+      "mode": "webp-q54"
+    },
+    {
+      "old": "topup-game-editorial.webp",
+      "new": "topup-game-editorial.webp",
+      "old_bytes": 45334,
+      "new_bytes": 35400,
+      "mode": "webp-q54"
+    },
+    {
+      "old": "news-ekonomi-2.webp",
+      "new": "news-ekonomi-2.webp",
+      "old_bytes": 47374,
+      "new_bytes": 30396,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "og-domain-branded.jpg",
+      "new": "og-domain-branded.jpg",
+      "old_bytes": 128089,
+      "new_bytes": 72646,
+      "mode": "jpeg-q72"
+    },
+    {
+      "old": "visual-contact-1.webp",
+      "new": "visual-contact-1.webp",
+      "old_bytes": 46362,
+      "new_bytes": 31150,
+      "mode": "webp-q56"
+    },
+    {
+      "old": "brand-promo-12.webp",
+      "new": "brand-promo-12.webp",
+      "old_bytes": 60156,
+      "new_bytes": 34836,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "og-topup.jpg",
+      "new": "og-topup.jpg",
+      "old_bytes": 88668,
+      "new_bytes": 54173,
+      "mode": "jpeg-q72"
+    },
+    {
+      "old": "visual-partnership-1.webp",
+      "new": "visual-partnership-1.webp",
+      "old_bytes": 42922,
+      "new_bytes": 28118,
+      "mode": "webp-q56"
+    },
+    {
+      "old": "brand-promo-10.webp",
+      "new": "brand-promo-10.webp",
+      "old_bytes": 91604,
+      "new_bytes": 46106,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "digdaya-logo-navy-1024.png",
+      "new": "digdaya-logo-navy-1024.webp",
+      "old_bytes": 265196,
+      "new_bytes": 142588,
+      "mode": "webp-q86"
+    },
+    {
+      "old": "og-parfum-branded.jpg",
+      "new": "og-parfum-branded.jpg",
+      "old_bytes": 172041,
+      "new_bytes": 99685,
+      "mode": "jpeg-q72"
+    },
+    {
+      "old": "news-lingkungan-3.webp",
+      "new": "news-lingkungan-3.webp",
+      "old_bytes": 48826,
+      "new_bytes": 31870,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "brand-promo-03.webp",
+      "new": "brand-promo-03.webp",
+      "old_bytes": 127018,
+      "new_bytes": 62850,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "news-pariwisata-3.webp",
+      "new": "news-pariwisata-3.webp",
+      "old_bytes": 71028,
+      "new_bytes": 45520,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "news-pariwisata-1.webp",
+      "new": "news-pariwisata-1.webp",
+      "old_bytes": 58572,
+      "new_bytes": 37316,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "og-domain.jpg",
+      "new": "og-domain.jpg",
+      "old_bytes": 107397,
+      "new_bytes": 65361,
+      "mode": "jpeg-q72"
+    },
+    {
+      "old": "brand-campaign-03.webp",
+      "new": "brand-campaign-03.webp",
+      "old_bytes": 79898,
+      "new_bytes": 39966,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "brand-campaign-05.webp",
+      "new": "brand-campaign-05.webp",
+      "old_bytes": 72028,
+      "new_bytes": 34244,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "digdaya-logo-gold-1024.png",
+      "new": "digdaya-logo-gold-1024.webp",
+      "old_bytes": 265199,
+      "new_bytes": 142592,
+      "mode": "webp-q86"
+    },
+    {
+      "old": "digdaya-digital-operations.webp",
+      "new": "digdaya-digital-operations.webp",
+      "old_bytes": 84666,
+      "new_bytes": 68422,
+      "mode": "webp-q58"
+    },
+    {
+      "old": "visual-website-1.webp",
+      "new": "visual-website-1.webp",
+      "old_bytes": 60614,
+      "new_bytes": 42682,
+      "mode": "webp-q56"
+    },
+    {
+      "old": "visual-domain-2.webp",
+      "new": "visual-domain-2.webp",
+      "old_bytes": 50522,
+      "new_bytes": 34934,
+      "mode": "webp-q56"
+    },
+    {
+      "old": "news-lingkungan-1.webp",
+      "new": "news-lingkungan-1.webp",
+      "old_bytes": 46648,
+      "new_bytes": 30154,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "news-teknologi-2.webp",
+      "new": "news-teknologi-2.webp",
+      "old_bytes": 52822,
+      "new_bytes": 34980,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "parfum-timur-tengah-editorial.webp",
+      "new": "parfum-timur-tengah-editorial.webp",
+      "old_bytes": 83018,
+      "new_bytes": 62708,
+      "mode": "webp-q54"
+    },
+    {
+      "old": "og-parfum.jpg",
+      "new": "og-parfum.jpg",
+      "old_bytes": 162262,
+      "new_bytes": 97370,
+      "mode": "jpeg-q72"
+    },
+    {
+      "old": "brand-promo-13.webp",
+      "new": "brand-promo-13.webp",
+      "old_bytes": 70196,
+      "new_bytes": 34894,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "news-budaya-2.webp",
+      "new": "news-budaya-2.webp",
+      "old_bytes": 45802,
+      "new_bytes": 29126,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "website-studio-editorial.webp",
+      "new": "website-studio-editorial.webp",
+      "old_bytes": 63730,
+      "new_bytes": 49468,
+      "mode": "webp-q54"
+    },
+    {
+      "old": "parfum-niche-editorial.webp",
+      "new": "parfum-niche-editorial.webp",
+      "old_bytes": 112094,
+      "new_bytes": 87308,
+      "mode": "webp-q54"
+    },
+    {
+      "old": "news-budaya-1.webp",
+      "new": "news-budaya-1.webp",
+      "old_bytes": 76076,
+      "new_bytes": 48820,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "news-olahraga-1.webp",
+      "new": "news-olahraga-1.webp",
+      "old_bytes": 49992,
+      "new_bytes": 32412,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "og-home.jpg",
+      "new": "og-home.jpg",
+      "old_bytes": 106665,
+      "new_bytes": 63811,
+      "mode": "jpeg-q72"
+    },
+    {
+      "old": "digdaya-fragrance-operations.webp",
+      "new": "digdaya-fragrance-operations.webp",
+      "old_bytes": 84422,
+      "new_bytes": 70242,
+      "mode": "webp-q58"
+    },
+    {
+      "old": "news-lingkungan-2.webp",
+      "new": "news-lingkungan-2.webp",
+      "old_bytes": 73174,
+      "new_bytes": 47152,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "visual-about-1.webp",
+      "new": "visual-about-1.webp",
+      "old_bytes": 46676,
+      "new_bytes": 31684,
+      "mode": "webp-q56"
+    },
+    {
+      "old": "brand-promo-04.webp",
+      "new": "brand-promo-04.webp",
+      "old_bytes": 90714,
+      "new_bytes": 43016,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "news-fragrance-1.webp",
+      "new": "news-fragrance-1.webp",
+      "old_bytes": 79432,
+      "new_bytes": 52050,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "news-bisnis-2.webp",
+      "new": "news-bisnis-2.webp",
+      "old_bytes": 56286,
+      "new_bytes": 35318,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "brand-promo-11.webp",
+      "new": "brand-promo-11.webp",
+      "old_bytes": 56402,
+      "new_bytes": 31750,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "brand-promo-06.webp",
+      "new": "brand-promo-06.webp",
+      "old_bytes": 121782,
+      "new_bytes": 60650,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "visual-topup-1-clean.webp",
+      "new": "visual-topup-1-clean.webp",
+      "old_bytes": 56812,
+      "new_bytes": 25856,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "og-topup-branded.jpg",
+      "new": "og-topup-branded.jpg",
+      "old_bytes": 110907,
+      "new_bytes": 63287,
+      "mode": "jpeg-q72"
+    },
+    {
+      "old": "digdaya-logo-256.webp",
+      "new": "digdaya-logo-256.webp",
+      "old_bytes": 6232,
+      "new_bytes": 7144,
+      "mode": "webp-q86"
+    },
+    {
+      "old": "news-pendidikan-3.webp",
+      "new": "news-pendidikan-3.webp",
+      "old_bytes": 48784,
+      "new_bytes": 31310,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "news-pendidikan-1.webp",
+      "new": "news-pendidikan-1.webp",
+      "old_bytes": 44756,
+      "new_bytes": 28276,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "news-budaya-3.webp",
+      "new": "news-budaya-3.webp",
+      "old_bytes": 55948,
+      "new_bytes": 36874,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "visual-domain-1.webp",
+      "new": "visual-domain-1.webp",
+      "old_bytes": 49518,
+      "new_bytes": 34314,
+      "mode": "webp-q56"
+    },
+    {
+      "old": "brand-campaign-09.webp",
+      "new": "brand-campaign-09.webp",
+      "old_bytes": 56748,
+      "new_bytes": 31742,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "news-ekonomi-3.webp",
+      "new": "news-ekonomi-3.webp",
+      "old_bytes": 49090,
+      "new_bytes": 32606,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "corporate-news-editorial.webp",
+      "new": "corporate-news-editorial.webp",
+      "old_bytes": 59270,
+      "new_bytes": 45072,
+      "mode": "webp-q54"
+    },
+    {
+      "old": "visual-domain-1-clean.webp",
+      "new": "visual-domain-1-clean.webp",
+      "old_bytes": 75890,
+      "new_bytes": 35066,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "brand-promo-01.webp",
+      "new": "brand-promo-01.webp",
+      "old_bytes": 71592,
+      "new_bytes": 34210,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "news-fragrance-3.webp",
+      "new": "news-fragrance-3.webp",
+      "old_bytes": 73314,
+      "new_bytes": 48348,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "brand-promo-02.webp",
+      "new": "brand-promo-02.webp",
+      "old_bytes": 71934,
+      "new_bytes": 34322,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "brand-promo-08.webp",
+      "new": "brand-promo-08.webp",
+      "old_bytes": 76472,
+      "new_bytes": 37070,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "news-kesehatan-1.webp",
+      "new": "news-kesehatan-1.webp",
+      "old_bytes": 44060,
+      "new_bytes": 28938,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "og-home-branded.jpg",
+      "new": "og-home-branded.jpg",
+      "old_bytes": 141957,
+      "new_bytes": 81688,
+      "mode": "jpeg-q72"
+    },
+    {
+      "old": "brand-campaign-10.webp",
+      "new": "brand-campaign-10.webp",
+      "old_bytes": 69398,
+      "new_bytes": 40012,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "parfum-lokal-editorial.webp",
+      "new": "parfum-lokal-editorial.webp",
+      "old_bytes": 115984,
+      "new_bytes": 87722,
+      "mode": "webp-q54"
+    },
+    {
+      "old": "visual-flow-website.webp",
+      "new": "visual-flow-website.webp",
+      "old_bytes": 20194,
+      "new_bytes": 14916,
+      "mode": "webp-q82"
+    },
+    {
+      "old": "digdaya-logo-transparent-1024.png",
+      "new": "digdaya-logo-transparent-1024.webp",
+      "old_bytes": 869901,
+      "new_bytes": 319866,
+      "mode": "webp-q86"
+    },
+    {
+      "old": "visual-security-1.webp",
+      "new": "visual-security-1.webp",
+      "old_bytes": 49524,
+      "new_bytes": 34212,
+      "mode": "webp-q56"
+    },
+    {
+      "old": "news-fragrance-2.webp",
+      "new": "news-fragrance-2.webp",
+      "old_bytes": 52532,
+      "new_bytes": 34242,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "news-olahraga-2.webp",
+      "new": "news-olahraga-2.webp",
+      "old_bytes": 52002,
+      "new_bytes": 32756,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "news-olahraga-3.webp",
+      "new": "news-olahraga-3.webp",
+      "old_bytes": 45826,
+      "new_bytes": 29928,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "news-digital-1.webp",
+      "new": "news-digital-1.webp",
+      "old_bytes": 47880,
+      "new_bytes": 31914,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "news-digital-2.webp",
+      "new": "news-digital-2.webp",
+      "old_bytes": 56102,
+      "new_bytes": 35598,
+      "mode": "webp-q52"
+    },
+    {
+      "old": "visual-flow-topup.webp",
+      "new": "visual-flow-topup.webp",
+      "old_bytes": 19374,
+      "new_bytes": 14246,
+      "mode": "webp-q82"
+    },
+    {
+      "old": "og-website-branded.jpg",
+      "new": "og-website-branded.jpg",
+      "old_bytes": 134991,
+      "new_bytes": 78496,
+      "mode": "jpeg-q72"
+    },
+    {
+      "old": "visual-topup-2-clean.webp",
+      "new": "visual-topup-2-clean.webp",
+      "old_bytes": 57550,
+      "new_bytes": 25490,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "visual-newsroom-1.webp",
+      "new": "visual-newsroom-1.webp",
+      "old_bytes": 42388,
+      "new_bytes": 27616,
+      "mode": "webp-q56"
+    },
+    {
+      "old": "brand-campaign-12.webp",
+      "new": "brand-campaign-12.webp",
+      "old_bytes": 60906,
+      "new_bytes": 36030,
+      "mode": "webp-q64"
+    },
+    {
+      "old": "logo-cv-multi-usaha-mandiri.png",
+      "new": "logo-cv-multi-usaha-mandiri.webp",
+      "old_bytes": 83003,
+      "new_bytes": 167022,
+      "mode": "webp-q86"
+    },
+    {
+      "old": "validation-evidence/PT10_live_news_card.png",
+      "new": "validation-evidence/PT10_live_news_card.webp",
+      "old_bytes": 144276,
+      "new_bytes": 29566,
+      "mode": "webp-q70"
+    },
+    {
+      "old": "validation-evidence/PT10_promo_section.png",
+      "new": "validation-evidence/PT10_promo_section.webp",
+      "old_bytes": 135246,
+      "new_bytes": 20790,
+      "mode": "webp-q70"
+    },
+    {
+      "old": "validation-evidence/PT10_isolated_berita-detail_390.png",
+      "new": "validation-evidence/PT10_isolated_berita-detail_390.webp",
+      "old_bytes": 396881,
+      "new_bytes": 124638,
+      "mode": "webp-q70"
+    },
+    {
+      "old": "validation-evidence/PT10_campaign_section.png",
+      "new": "validation-evidence/PT10_campaign_section.webp",
+      "old_bytes": 162225,
+      "new_bytes": 20170,
+      "mode": "webp-q70"
+    }
+  ],
+  "html_stats": [
+    {
+      "file": "404.html",
+      "old_bytes": 697965,
+      "new_bytes": 768266,
+      "embedded_replaced": 7,
+      "mime_converted": 1
+    },
+    {
+      "file": "berita-brief-website.html",
+      "old_bytes": 728350,
+      "new_bytes": 784671,
+      "embedded_replaced": 8,
+      "mime_converted": 1
+    },
+    {
+      "file": "berita-checklist-domain.html",
+      "old_bytes": 783864,
+      "new_bytes": 802581,
+      "embedded_replaced": 8,
+      "mime_converted": 1
+    },
+    {
+      "file": "berita-detail.html",
+      "old_bytes": 5144944,
+      "new_bytes": 4319973,
+      "embedded_replaced": 43,
+      "mime_converted": 1
+    },
+    {
+      "file": "berita-panduan-parfum.html",
+      "old_bytes": 849666,
+      "new_bytes": 868679,
+      "embedded_replaced": 8,
+      "mime_converted": 1
+    },
+    {
+      "file": "berita.html",
+      "old_bytes": 5826390,
+      "new_bytes": 4862271,
+      "embedded_replaced": 50,
+      "mime_converted": 1
+    },
+    {
+      "file": "index.html",
+      "old_bytes": 7989515,
+      "new_bytes": 6433425,
+      "embedded_replaced": 49,
+      "mime_converted": 2
+    },
+    {
+      "file": "jasa-pembuatan-website.html",
+      "old_bytes": 803415,
+      "new_bytes": 827296,
+      "embedded_replaced": 8,
+      "mime_converted": 1
+    },
+    {
+      "file": "jual-beli-domain.html",
+      "old_bytes": 804780,
+      "new_bytes": 802337,
+      "embedded_replaced": 8,
+      "mime_converted": 1
+    },
+    {
+      "file": "keamanan.html",
+      "old_bytes": 752808,
+      "new_bytes": 753597,
+      "embedded_replaced": 8,
+      "mime_converted": 1
+    },
+    {
+      "file": "kebijakan-privasi.html",
+      "old_bytes": 723477,
+      "new_bytes": 731514,
+      "embedded_replaced": 7,
+      "mime_converted": 1
+    },
+    {
+      "file": "kebijakan-transaksi.html",
+      "old_bytes": 708367,
+      "new_bytes": 783048,
+      "embedded_replaced": 7,
+      "mime_converted": 1
+    },
+    {
+      "file": "kemitraan.html",
+      "old_bytes": 758950,
+      "new_bytes": 947084,
+      "embedded_replaced": 9,
+      "mime_converted": 2
+    },
+    {
+      "file": "kontak.html",
+      "old_bytes": 648779,
+      "new_bytes": 722592,
+      "embedded_replaced": 7,
+      "mime_converted": 1
+    },
+    {
+      "file": "layanan.html",
+      "old_bytes": 757944,
+      "new_bytes": 829005,
+      "embedded_replaced": 7,
+      "mime_converted": 1
+    },
+    {
+      "file": "parfum-designer.html",
+      "old_bytes": 1638288,
+      "new_bytes": 1488137,
+      "embedded_replaced": 15,
+      "mime_converted": 1
+    },
+    {
+      "file": "parfum-lokal.html",
+      "old_bytes": 1723078,
+      "new_bytes": 1561903,
+      "embedded_replaced": 15,
+      "mime_converted": 1
+    },
+    {
+      "file": "parfum-niche.html",
+      "old_bytes": 1657988,
+      "new_bytes": 1516101,
+      "embedded_replaced": 15,
+      "mime_converted": 1
+    },
+    {
+      "file": "parfum-timur-tengah.html",
+      "old_bytes": 1646724,
+      "new_bytes": 1493733,
+      "embedded_replaced": 15,
+      "mime_converted": 1
+    },
+    {
+      "file": "pengaduan.html",
+      "old_bytes": 650248,
+      "new_bytes": 724061,
+      "embedded_replaced": 7,
+      "mime_converted": 1
+    },
+    {
+      "file": "syarat-ketentuan.html",
+      "old_bytes": 669584,
+      "new_bytes": 735941,
+      "embedded_replaced": 7,
+      "mime_converted": 1
+    },
+    {
+      "file": "tentang-kami.html",
+      "old_bytes": 3969156,
+      "new_bytes": 4134218,
+      "embedded_replaced": 10,
+      "mime_converted": 2
+    },
+    {
+      "file": "top-up-game.html",
+      "old_bytes": 710628,
+      "new_bytes": 734141,
+      "embedded_replaced": 8,
+      "mime_converted": 1
+    }
+  ],
+  "asset_old_bytes": 9020746,
+  "asset_new_bytes": 5332000,
+  "asset_reduction_pct": 40.89
+}

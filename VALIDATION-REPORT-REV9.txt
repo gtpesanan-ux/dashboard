@@ -1,0 +1,64 @@
+PT DIGDAYA INOVASI NUSANTARA — REV9 PRESERVATION VALIDATION REPORT
+
+MODE
+PRESERVATION-FIRST / ZERO-DELETION / ZERO-REGRESSION
+
+BASELINE
+PT_Digdaya_FINAL_REV8.zip
+SHA-256 baseline: 920ceea1297657efcb0f057ee465fcbd2cd53b624ee576aff49b81eb1f6de845
+
+PRESERVATION CHECK
+- Baseline files missing: 0
+- Existing non-HTML baseline files changed unexpectedly: 0
+- User-facing DOM/content signatures changed: 0
+- HTML pages retained: 23/23
+- Newsroom data retained: assets/news-data.js byte-identical
+- Company profile videos retained: 2/2 byte-identical
+- Existing images/media retained: yes
+
+STATIC VALIDATION
+- Status: PASS
+- Missing local references: 0
+- Broken internal fragments: 0
+- Duplicate IDs: 0
+- JSON-LD syntax errors: 0
+- JavaScript syntax errors: 0
+- CSS parse errors: 0
+- CSP executable inline script hash gaps: 0
+- CSP inline style hash gaps: 0
+- Raster images decoded successfully: 68
+- Video files validated: 2
+
+BROWSER RENDER VALIDATION
+- Mobile 390x844: 23/23 pages passed; errors=0; overflow=0; broken images=0
+- Tablet 768x1024: 23/23 pages passed; errors=0; overflow=0; broken images=0
+- Desktop 1440x1000: 23/23 pages passed; errors=0; overflow=0; broken images=0
+- Total page/viewport render tests: 69 / 69 passed
+
+INTERACTION REGRESSION
+- Generic mobile interaction suites: 23/23 passed
+  Tested hamburger navigation, inquiry dialog where a visible opener exists, and quick-contact panel across all 23 pages.
+- Deep functional cases: 8/8 passed
+  Service finder; scent finder; top-up request builder; website scope builder; domain brief builder; newsroom search/filter/load-more; company profile video; inquiry WhatsApp fallback.
+- Newsroom load-more verified: 30 -> 60 items from a 1,046-item local dataset.
+- Inquiry fallback verified without sending network data: no API POST when endpoint is intentionally unset; WhatsApp fallback becomes available.
+
+VISUAL PRESERVATION
+- Selected mobile/desktop geometry comparisons: 12 views checked; geometry mismatches: 0
+- Homepage key visual renders matched baseline exactly in tested mobile and desktop screenshots.
+- No redesign, section deletion, feature deletion, content reduction, or asset replacement was performed.
+
+PERFORMANCE / MAINTAINABILITY REFACTOR
+- Total HTML before: 7,726,311 bytes
+- Total HTML after: 1,141,212 bytes
+- Repeated inline HTML code removed from page payloads: 6,585,099 bytes (85.23%)
+- Shared CSS/JS is now cacheable as external same-origin assets while preserving rendered output and behavior.
+
+ADDITIVE PRODUCTION HARDENING
+- Apple touch icon added from existing Digdaya brand logo.
+- .htaccess compatibility layer added for Apache/cPanel while preserving existing _headers and _redirects.
+- Compression, cache-control, 404 handling, and existing security header policy represented for Apache/cPanel hosts.
+- Deployment checklist added; permanent production origin and real inquiry API were NOT fabricated.
+
+RESULT
+PASS — package is ready for final ZIP packaging, subject to final ZIP CRC/hash validation.

@@ -1,0 +1,17 @@
+PT DIGDAYA — IMAGE OPTIMIZATION REV11
+
+Policy:
+- Pixel dimensions preserved (no visual downscale).
+- Content/news/editorial imagery re-encoded as WebP with aggressive but readability-safe quality.
+- Branded campaign/promo/clean visuals use higher quality to preserve DN/logo legibility.
+- Text-heavy flow diagrams and logo assets use higher quality.
+- favicon.png + apple-touch-icon.png remain PNG for browser/iOS compatibility.
+- OG social images remain JPEG for broad social crawler compatibility, but are recompressed.
+
+Asset image reduction: 40.89%
+Browser render validation: 69/69 PASS (390px, 768px, 1440px across 23 HTML)
+Inline image decode: PASS
+External raster decode: PASS
+Final image file counts: {'.png': 2, '.jpg': 10, '.jpeg': 0, '.webp': 107, '.gif': 0}
+
+No CSS/JS/content/section was removed or redesigned.

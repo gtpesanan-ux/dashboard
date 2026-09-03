@@ -1,0 +1,32 @@
+{
+  "revision": "REV10-SELF-CONTAINED-VISUAL-PRESERVATION",
+  "baseline": "PT_Digdaya_FINAL_REV9_PRESERVATION.zip",
+  "mode": "PRESERVATION-FIRST / ZERO-DELETION / ZERO-REGRESSION",
+  "html_count": 23,
+  "policy_embedded_in_every_html": true,
+  "runtime_dependency": "CSS/JS embedded in every HTML; no stylesheet or script-src dependency",
+  "visual_changes": [
+    "Original images retained in assets; additive branded campaign/promo derivatives added.",
+    "Obvious composite visuals replaced in presentation with clean derivatives while original sources remain preserved.",
+    "Branded social share cards added while original OG images remain preserved as secondary metadata.",
+    "Service-flow explanatory visuals added without fake clients, partners, metrics or affiliations.",
+    "Newsroom visual labeling distinguishes Berita Aktual illustrations from Pantauan Tren and adds Digdaya brand signature.",
+    "Static page images, icons, and video media are embedded as data URIs so each HTML can render standalone; original media paths are retained in data-original-* attributes.",
+    "Newsroom dynamic image bank is embedded once per newsroom HTML and resolved at runtime.",
+    "Campaign image cards receive a restrained on-image Digdaya monogram overlay outside the object-fit raster crop, so branding stays visible on mobile and desktop.",
+    "Compact footer/news microcopy and standalone CTA touch targets were hardened for mobile legibility/tap size without changing the visual identity.",
+    "The full Indonesian ATURAN ABSOLUT preservation policy is embedded as a source comment in every HTML for future conversations/editors."
+  ],
+  "preserved_external_source_files": true,
+  "final_release_gate": "10/10 on defined measurable sandbox acceptance gates",
+  "browser_render_cases": "69/69 PASS (23 HTML x 390/768/1440)",
+  "generic_mobile_interaction_pages": "23/23 PASS",
+  "functional_deep_tests": "8/8 PASS",
+  "static_validation_checks": "24/24 PASS",
+  "accessibility_mobile_audit": "23/23 pages: no visible leaf text <9.5px, no non-inline controls <24px under audit rules, no unlabeled visible buttons/links",
+  "csp_meta_runtime_samples": "5/5 PASS",
+  "campaign_cards": 12,
+  "promo_cards": 15,
+  "newsroom_items": 1046,
+  "note": "A true original vector logo was not available in the baseline; no fake vector master was fabricated. Existing raster logo is preserved, with additive high-resolution/transparent/monochrome derivatives for practical use."
+}

@@ -1,0 +1,11 @@
+PT DIGDAYA INOVASI NUSANTARA — DEPLOYMENT CHECKLIST
+
+This package intentionally does not invent a permanent production origin or backend endpoint. Before public launch:
+1. Confirm the permanent HTTPS origin/domain.
+2. Replace {{ORIGIN}} in sitemap-template.xml, rename the result to sitemap.xml, and add the absolute sitemap URL to robots.txt.
+3. Convert relative canonical/structured-data URLs to the permanent absolute origin if desired for production SEO.
+4. Add absolute og:url values after the permanent origin is confirmed.
+5. Configure the inquiry backend endpoint only when a real server/API is available; the current WhatsApp fallback remains preserved.
+6. Verify the host actually applies either _headers/_redirects or .htaccess, depending on platform.
+7. Confirm the server returns HTTP 404 for missing pages while displaying 404.html.
+8. Re-run browser, link, CSP, image, structured-data, and responsive validation after deployment.
