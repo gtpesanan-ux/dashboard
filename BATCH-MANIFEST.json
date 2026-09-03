@@ -1,54 +1,54 @@
 {
-  "source_total_website_files": 209,
-  "reconstructed_total_website_files": 209,
-  "missing": [],
-  "extra": [],
-  "changed": [],
-  "html_files": 37,
-  "html_changed": [],
-  "dashboard_matches": [],
-  "max_batch_file_count": 37,
-  "batch_counts": [
+  "source": "latest PT.zip",
+  "policy": "packaging-only; HTML/content bytes unchanged",
+  "batches": [
     {
       "folder": "01_ROOT_BATCH_1",
+      "target": "repository root /",
       "files": 26,
       "bytes": 16429981
     },
     {
       "folder": "02_ROOT_BATCH_2",
+      "target": "repository root /",
       "files": 23,
       "bytes": 16429806
     },
     {
       "folder": "03_ROOT_BATCH_3",
+      "target": "repository root /",
       "files": 25,
       "bytes": 16429943
     },
     {
       "folder": "04_ASSET_BATCH_1",
+      "target": "repository /assets/",
       "files": 8,
       "bytes": 2023206
     },
     {
       "folder": "05_ASSET_BATCH_2",
+      "target": "repository /assets/",
       "files": 21,
       "bytes": 2023575
     },
     {
       "folder": "06_ASSET_BATCH_3",
+      "target": "repository /assets/",
       "files": 32,
       "bytes": 2023710
     },
     {
       "folder": "07_ASSET_BATCH_4",
+      "target": "repository /assets/",
       "files": 37,
       "bytes": 2022398
     },
     {
       "folder": "08_ASSET_BATCH_5",
+      "target": "repository /assets/",
       "files": 37,
       "bytes": 2022546
     }
-  ],
-  "reconstruction_pass": true
+  ]
 }

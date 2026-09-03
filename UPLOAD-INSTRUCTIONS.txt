@@ -1,19 +1,18 @@
-PT DIGDAYA — GITHUB UPLOAD INSTRUCTIONS
+PT DIGDAYA — GITHUB WEB UPLOAD PACKAGE
 
-IMPORTANT
-1. Upload/commit the CONTENTS of ROOT_FILES/ to the repository root.
-2. Upload/commit the CONTENTS of ASSETS_BATCH_1/assets/ into the repository folder /assets/.
-3. Upload/commit the CONTENTS of ASSETS_BATCH_2/assets/ into the SAME repository folder /assets/.
-4. Do not rename asset files or HTML files.
-5. There is NO dashboard.html in this package. Do not create one unless the site owner explicitly requests it in the future.
-6. SEO canonical origin in this build is https://panel.diracgroup.store. If the production domain changes, update canonical/OG URLs, sitemap.xml and robots.txt before indexing.
+Paket ini HANYA mengubah pembagian folder upload. Isi HTML, aset, dan file website tidak diedit.
 
-CURRENT COUNTS
-- ROOT_FILES direct + nested files: 74
-- HTML pages: 37
-- Indexable HTML pages: 35
-- Asset batch 1: 67 files
-- Asset batch 2: 68 files
-- Total assets: 135 files
+Urutan upload yang disarankan:
+1. Upload isi 01_ROOT_BATCH_1 ke ROOT repository, lalu commit.
+2. Upload isi 02_ROOT_BATCH_2 ke ROOT repository, lalu commit.
+3. Upload isi 03_ROOT_BATCH_3 ke ROOT repository, lalu commit.
+4. Upload isi folder assets di 04_ASSET_BATCH_1 ke folder /assets repository, lalu commit.
+5. Lakukan hal yang sama untuk 05_ASSET_BATCH_2, 06_ASSET_BATCH_3, 07_ASSET_BATCH_4, dan 08_ASSET_BATCH_5.
 
-The two asset batches are packaging-only. When deployed, both batches merge back into a single /assets/ directory so existing paths remain unchanged.
+PENTING:
+- JANGAN upload nama folder batch sebagai bagian dari URL website. Yang digabung adalah ISINYA.
+- Semua ROOT_BATCH bermuara ke root repository.
+- Semua ASSET_BATCH/assets bermuara ke satu folder repository: /assets/.
+- Tidak ada dashboard.html dan tidak dibuat dashboard.html.
+- Jangan rename file ketika upload.
+- Jika GitHub menolak banyak file dalam satu commit, commit satu batch per langkah sesuai urutan di atas.
