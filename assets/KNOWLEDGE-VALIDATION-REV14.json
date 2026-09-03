@@ -1,0 +1,14 @@
+{
+  "release": "REV14_KNOWLEDGE_1000",
+  "baseline": "latest PT.zip",
+  "knowledge_entries": 1000,
+  "categories": 20,
+  "angles": 5,
+  "dashboard_html_created": false,
+  "modified_files": [
+    "pengetahuan.html",
+    "_headers",
+    ".htaccess"
+  ],
+  "preservation_note": "No existing HTML section, asset, article, feature, or baseline file removed."
+}

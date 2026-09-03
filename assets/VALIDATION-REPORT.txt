@@ -1,0 +1,57 @@
+PT DIGDAYA INOVASI NUSANTARA — REVISION & VALIDATION REPORT
+Revisi: PT7 Home Expansion
+Tanggal revisi: 2026-09-03 (Asia/Jakarta)
+
+1. RUANG LINGKUP AUDIT
+- Paket sumber PT(7).zip diverifikasi CRC ZIP: tidak ada member rusak.
+- 110 file sumber dibaca penuh sebagai byte sebelum perubahan; total sumber yang dibaca: 16.135.383 byte.
+- Seluruh file sumber dihitung SHA-256 untuk audit perubahan.
+- Paket kerja final memiliki 111 file (termasuk 1 asset CSS baru untuk ekspansi beranda).
+- 23 halaman HTML diperiksa untuk struktur, referensi lokal, ID, aria-controls, script, style, JSON-LD, dan teks status legal sementara.
+- 67 gambar raster diverifikasi decode-integrity.
+- Data newsroom tetap 1.046 item dan tidak dikurangi.
+
+2. PERUBAHAN YANG DIMINTA PADA BERANDA
+- Featured Campaign: diperluas dari 4 menjadi 12 kartu visual.
+- Company Profile Film: video company profile tetap dipertahankan tanpa perubahan pada sumber video.
+- Promo Visual Gallery: ditambahkan 15 kartu visual promo berbasis asset lokal yang sudah ada di paket.
+- Corporate Newsroom: ditampilkan 1 artikel utama + 5 artikel ringkas, serta tombol “Lihat selengkapnya” menuju berita.html.
+- Dua artikel newsroom tambahan yang memakai berita-detail.html telah dicocokkan dengan ID yang benar-benar ada di assets/news-data.js.
+- Seluruh perubahan beranda memakai link internal dan asset lokal; tidak menambah dependensi CDN atau library pihak ketiga.
+
+3. PENGHAPUSAN BLOK STATUS LEGAL SEMENTARA
+- Blok footer legal sementara yang sebelumnya ditandai class u-legal-status dihapus dari 23/23 file HTML.
+- Pencarian ulang seluruh paket untuk seluruh potongan kalimat pada blok lama: 0 kecocokan.
+- Pada 22 HTML selain index.html, diff terhadap paket sumber menunjukkan tepat satu penghapusan baris status tersebut dan tidak ada perubahan lain.
+
+4. VALIDASI STATIS FINAL
+- Halaman HTML: 23.
+- Referensi href/src/poster/srcset lokal yang diperiksa: 1.678; referensi rusak: 0.
+- Duplicate HTML ID: 0.
+- aria-controls tanpa target: 0.
+- Inline event handler: 0.
+- Inline style attribute: 0.
+- JSON-LD diperiksa: 22; invalid: 0.
+- JavaScript: 8 file eksternal + 134 unit inline = 142 unit diperiksa sintaks dengan Node; error: 0.
+- CSS eksternal: 3 file diperiksa parser; error: 0.
+- CSP: inline script tanpa hash yang sesuai: 0; inline style block tanpa hash yang sesuai: 0.
+- Gambar raster diverifikasi: 67; decode error: 0.
+- Blok status legal sementara tersisa: 0.
+
+5. VALIDASI RESPONSIVE BERANDA
+- Chromium DOM/render check dilakukan pada viewport 390×844, 768×1024, dan 1440×900.
+- Jumlah ter-render konsisten: campaign 12, promo 15, news mini 5, tombol selengkapnya 1.
+- Lebar dokumen sama dengan lebar viewport pada ketiga ukuran: tidak ada horizontal overflow pada document root.
+- Grid promo: 2 kolom pada 390 px, 3 kolom pada 768 px, dan 4 kolom pada 1440 px.
+- Tombol “Lihat selengkapnya” melebar penuh pada mobile dan kembali ke ukuran konten pada viewport lebih besar.
+- Video company profile, kontrol campaign, menu, dialog, dan runtime lama tidak dihapus atau ditulis ulang.
+
+6. INTEGRITAS PERUBAHAN
+- File HTML yang berubah: 23/23 karena penghapusan teks status; index.html juga menerima ekspansi campaign, promo, dan newsroom.
+- Asset baru: assets/rev8-home-expansion.css.
+- CSS ekspansi dibuat eksternal agar tidak mengubah hash CSP untuk style inline yang sudah ada.
+- _headers tidak perlu diubah karena style-src sudah mengizinkan asset self dan hash inline lama tetap valid.
+- Seluruh asset gambar/video lama tetap dipertahankan.
+- Tidak ada file sumber yang dihapus.
+
+STATUS: LULUS VALIDASI STATIS — 0 ISSUE. RESPONSIVE STRUCTURE CHECK BERANDA — LULUS PADA 390 / 768 / 1440 PX.

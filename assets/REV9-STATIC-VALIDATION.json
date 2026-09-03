@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [],
+  "info": {
+    "baseline_files": 111,
+    "final_files": 125,
+    "new_files": [
+      ".htaccess",
+      "DEPLOYMENT-CHECKLIST.txt",
+      "REV9-BROWSER-VALIDATION.json",
+      "REV9-PRESERVATION-MANIFEST.json",
+      "REV9-STATIC-VALIDATION.json",
+      "VALIDATION-REPORT-REV9.txt",
+      "assets/apple-touch-icon.png",
+      "assets/premium-v3.css",
+      "assets/revision-v7.css",
+      "assets/runtime-core-v8.css",
+      "assets/runtime-newsroom-core-v8.css",
+      "assets/runtime-site-v8.js",
+      "assets/runtime-ultimate-v4.js",
+      "assets/ultimate-v4.css"
+    ],
+    "html_pages": 23,
+    "missing_local_refs": 0,
+    "broken_fragments": 0,
+    "remaining_inline_style_blocks": 0,
+    "remaining_inline_executable_scripts": 23,
+    "external_js_files": 10,
+    "css_files": 8,
+    "decoded_images": 68,
+    "video_files": 2,
+    "total_html_bytes_baseline": 7726311,
+    "total_html_bytes_final": 1141212,
+    "html_reduction_bytes": 6585099,
+    "html_reduction_percent": 85.23
+  }
+}

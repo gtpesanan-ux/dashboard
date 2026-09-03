@@ -1,0 +1,71 @@
+PT DIGDAYA INOVASI NUSANTARA — VALIDATION REPORT REV13
+Generated: 2026-09-03T09:16:53
+
+PRESERVATION / BASELINE
+- Baseline files: 185
+- Baseline files missing after patch: 0
+- Original asset files changed: 0
+- Current HTML pages: 34
+- New HTML pages: 11
+- dashboard.html: NOT PRESENT
+
+STATIC VALIDATION
+- Missing local refs: 0
+- Missing fragments: 0
+- Duplicate IDs: 0
+- External operational CSS/JS: 0
+- JSON-LD errors: 0
+- Inline JS syntax errors: 0
+- Embedded image decode errors: 0
+- Asset image decode errors: 0
+- Video validation errors: 0
+- Absolute maintenance policy embedded: 34/34 HTML
+- Footer precision CSS embedded: 34/34 HTML
+- Professional text-motion runtime embedded: 34/34 HTML
+
+REAL CHROMIUM RENDER VALIDATION
+- Mobile 390x844: 34/34 PASS
+- Tablet 768x1024: 34/34 PASS
+- Desktop 1440x1000: 34/34 PASS
+- Total final browser renders: 102/102 PASS
+- Horizontal overflow failures: 0
+- Broken-image pages: 0
+- Console-error pages: 0
+- Page-exception pages: 0
+- Footer social-icon count failures: 0
+- Footer Trust Center duplicate/missing failures: 0
+- Mobile menu failures: 0
+
+FUNCTIONAL REGRESSION
+- Service Finder: PASS
+- Scent Finder: PASS
+- Website Scope Builder: PASS
+- Domain Brief Checker: PASS
+- Top-up Request Wizard: PASS
+- Inquiry dialog: PASS
+- Company-profile video source: PASS
+- FAQ details: PASS
+- New navigation paths: PASS
+- Newsroom search: PASS
+- Newsroom load-more: PASS (30 -> 60)
+- Newsroom dataset status: Menampilkan 60 dari 1046 item. Total basis data 1046.
+
+NEW ADDITIVE CONTENT
+- pengetahuan.html
+- cara-mendirikan-pt.html
+- cara-mendirikan-cv.html
+- portfolio.html
+- case-study-digdaya.html
+- website-audit.html
+- website-maintenance.html
+- domain-discovery.html
+- scent-finder.html
+- faq.html
+- trust-center.html
+
+NOTES
+- No existing baseline file was deleted.
+- Existing 135 asset files were preserved byte-for-byte.
+- No dashboard.html was created.
+- New legal/business knowledge pages are framed as general orientation and direct readers to official AHU/OSS sources; they do not substitute for individualized legal advice.
+- No fake client, testimonial, result statistic, partner, award, or legal registration number was added.
