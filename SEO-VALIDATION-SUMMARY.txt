@@ -1,0 +1,39 @@
+SEO VALIDATION SUMMARY — PT Digdaya Inovasi Nusantara
+Build date: 2026-09-03
+Canonical origin: https://panel.diracgroup.store
+
+SEO release gates:
+- HTML pages: 37
+- Indexable pages: 35
+- noindex utility/dynamic templates: 2 (404.html, berita-detail.html)
+- Unique title tags: PASS
+- Unique meta descriptions: PASS
+- Exactly one H1 per HTML: PASS
+- Absolute canonicals: PASS
+- robots index/noindex alignment: PASS
+- Open Graph metadata: PASS
+- Twitter Card metadata: PASS
+- JSON-LD parse: PASS
+- Stale cloned structured data: 0
+- Unverified author label in structured data: 0
+- Sitemap XML parse and indexable URL parity: PASS
+- robots.txt sitemap declaration: PASS
+- Local HTML links/fragments: PASS
+- Asset references: PASS
+- CSP inline script/style hash completeness: PASS
+- Baseline files missing: 0
+- Original assets modified by this SEO patch: 0
+- dashboard.html: NOT PRESENT / NOT CREATED
+
+Chromium rendering smoke test on exact final HTML:
+- 37 pages x 3 viewports (390, 768, 1440) = 111 renders
+- Fatal render errors: 0
+- Horizontal overflow: 0
+- Console error pages: 0
+- JavaScript page-error pages: 0
+- H1 failures: 0
+
+Notes:
+- The sandbox blocks navigation to local HTTP/HTTPS origins. Therefore the final browser regression used Chromium set_content on the exact final HTML bytes; local asset existence was validated separately and all 135 existing asset files remain present and byte-identical to the input package.
+- CSP was validated by recomputing SHA-256 hashes of every inline script/style in all 37 HTML files and comparing them to the final _headers policy.
+- Ranking position cannot be guaranteed by an HTML build. After production deployment, Google Search Console submission, crawl/indexing, authority, editorial backlinks, competition, engagement, and ongoing content quality still influence search performance.
