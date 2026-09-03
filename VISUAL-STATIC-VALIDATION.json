@@ -1,0 +1,21 @@
+{
+  "revised_images": 100,
+  "dimensions_preserved": true,
+  "unique_hashes": 100,
+  "face_detector_candidates": 0,
+  "manual_visible_faces": 0,
+  "raster_decode_pass": 115,
+  "raster_total": 115,
+  "video_pass": 2,
+  "video_total": 2,
+  "missing_local_asset_attributes": [],
+  "missing_html_links": [],
+  "missing_fragments": [],
+  "duplicate_ids": [],
+  "jsonld_errors": [],
+  "embedded_image_base64_errors": [],
+  "non_image_html_identical": 37,
+  "non_image_html_total": 37,
+  "dashboard_html_exists": false,
+  "pass": true
+}

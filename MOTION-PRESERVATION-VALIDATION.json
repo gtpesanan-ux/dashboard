@@ -1,0 +1,381 @@
+{
+  "summary": {
+    "html_baseline_count": 37,
+    "html_content_preserved": 37,
+    "asset_baseline_count": 135,
+    "asset_byte_changes": 0
+  },
+  "rows": [
+    {
+      "file": "404.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "berita-brief-website.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "berita-checklist-domain.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "berita-detail.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "berita-panduan-parfum.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "berita.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "cara-membuat-nib-oss.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "cara-mendirikan-cv.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "cara-mendirikan-pt.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "case-study-digdaya.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "domain-discovery.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "faq.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "index.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "jasa-pembuatan-website.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "jual-beli-domain.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "keamanan.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "kebijakan-privasi.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "kebijakan-transaksi.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "kemitraan.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "kontak.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "layanan.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "parfum-designer.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "parfum-lokal.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "parfum-niche.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "parfum-timur-tengah.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "pengaduan.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "pengetahuan.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "perbedaan-pt-dan-cv.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "portfolio.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "pt-perorangan.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "scent-finder.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "syarat-ketentuan.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "tentang-kami.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "top-up-game.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "trust-center.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "website-audit.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    },
+    {
+      "file": "website-maintenance.html",
+      "text": true,
+      "hrefs": true,
+      "imgs": true,
+      "ids": true,
+      "forms": true,
+      "tags": true,
+      "all": true
+    }
+  ],
+  "asset_bad": []
+}

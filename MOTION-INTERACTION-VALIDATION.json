@@ -1,0 +1,40 @@
+{
+  "index_desktop": {
+    "console": [],
+    "pageerrors": [],
+    "campaign_before": "2 dari 12",
+    "campaign_after": "4 dari 12",
+    "tilt": {
+      "rx": "0.65deg",
+      "ry": "0.96deg",
+      "tf": "matrix3d(0.999983, 2.29848e-05, -0.00582633, 4.85527e-06, 0, 0.999992, 0.00394495, -3.28746e-06, 0.00582637, -0.00394489, 0.999975, -0.000833313, 0, -2.08643, 0, 1)"
+    },
+    "overflow": 0
+  },
+  "reduced_motion": [
+    {
+      "file": "index.html",
+      "h1Opacity": "1",
+      "hiddenMotion": 0,
+      "progressDisplay": "none",
+      "errors": [],
+      "overflow": 0
+    },
+    {
+      "file": "layanan.html",
+      "h1Opacity": "1",
+      "hiddenMotion": 0,
+      "progressDisplay": "none",
+      "errors": [],
+      "overflow": 0
+    },
+    {
+      "file": "pengetahuan.html",
+      "h1Opacity": "1",
+      "hiddenMotion": 0,
+      "progressDisplay": "none",
+      "errors": [],
+      "overflow": 0
+    }
+  ]
+}

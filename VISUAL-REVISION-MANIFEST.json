@@ -1,0 +1,71 @@
+{
+  "baseline": "PT.zip terakhir sebagai single source of truth",
+  "scope": "revisi seluruh visual yang sebelumnya berwajah, tumpang tindih/double exposure, atau terlihat terlalu sintetis/AI-like; tidak mengubah fungsi/teks/struktur di luar embedded image payload",
+  "revised_visual_count": 100,
+  "all_revised_paths_preserved": true,
+  "all_dimensions_preserved": true,
+  "unique_revised_file_hashes": 100,
+  "exact_duplicate_revised_images": 0,
+  "face_policy": {
+    "visible_faces_allowed": false,
+    "face_detector_candidate_files": 0,
+    "manual_contact_sheet_review_visible_faces": 0
+  },
+  "composition_policy": {
+    "single_scene_only": true,
+    "double_exposure": false,
+    "collage_or_picture_in_picture": false,
+    "official_logo_overlay_exception": true
+  },
+  "visual_finish": {
+    "synthetic_readable_screen_text_sanitized_or_avoided": true,
+    "subtle_photographic_grain": true,
+    "restrained_color_grade": true,
+    "no_neon_ai_gradient_added": true
+  },
+  "html": {
+    "total": 37,
+    "non_image_content_identical_to_baseline": 37,
+    "embedded_image_refs_updated": 136
+  },
+  "assets": {
+    "total": 135,
+    "raster_decode_pass": 115,
+    "raster_total": 115,
+    "video_pass": 2,
+    "video_total": 2
+  },
+  "dashboard_html_exists": false,
+  "source_mapping": {
+    "topup_real": 11,
+    "gen_office": 0,
+    "old_desk_c": 7,
+    "gen_fragrance": 0,
+    "old_corporate_news": 9,
+    "old_desk_b": 0,
+    "old_desk_a": 11,
+    "old_perfume_niche": 6,
+    "old_contact": 7,
+    "gen_web": 11,
+    "old_perfume_a": 4,
+    "gen_dual": 0,
+    "gen_security": 0,
+    "domain_detail": 0,
+    "old_perfume_b": 4,
+    "old_perfume_c": 3,
+    "gen_domain": 0,
+    "security_detail": 0,
+    "topup_detail": 0,
+    "old_perfume_middle": 5,
+    "old_desk_e": 7,
+    "digital_detail": 1,
+    "old_desk_f": 0,
+    "old_security": 4,
+    "office_detail": 0,
+    "gen_topup": 0,
+    "contact_detail": 0,
+    "old_desk_d": 0,
+    "old_corporate_home": 10,
+    "gen_contact": 0
+  }
+}

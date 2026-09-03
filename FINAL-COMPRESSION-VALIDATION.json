@@ -1,0 +1,102 @@
+{
+  "baseline_logical_files": 220,
+  "final_logical_files": 220,
+  "missing_logical_files": [],
+  "extra_logical_files": [],
+  "dashboard_exists": false,
+  "external_raster_count": 119,
+  "external_decode_errors": [],
+  "dimension_regressions": [],
+  "embedded_image_refs": 450,
+  "embedded_decode_errors": [],
+  "broken_asset_refs": [],
+  "broken_html_links": [],
+  "broken_fragments": [],
+  "duplicate_ids": {
+    "berita.html": [
+      "brief-website",
+      "checklist-domain",
+      "panduan-memilih-parfum"
+    ],
+    "berita-panduan-parfum.html": [
+      "panduan-memilih-parfum"
+    ],
+    "berita-brief-website.html": [
+      "brief-website"
+    ],
+    "berita-checklist-domain.html": [
+      "checklist-domain"
+    ]
+  },
+  "jsonld_errors": [],
+  "js_inline_blocks_checked": 342,
+  "js_syntax_failures": 0,
+  "browser_visual_validation": {
+    "total": 111,
+    "pass": 111,
+    "fatal": 0,
+    "overflow": 0,
+    "broken_image_pages": 0
+  },
+  "csp_validation": [
+    {
+      "kind": "_headers",
+      "script_exact": true,
+      "style_exact": true,
+      "script_count": 74,
+      "style_count": 13,
+      "computed_script_count": 74,
+      "computed_style_count": 13
+    },
+    {
+      "kind": ".htaccess",
+      "script_exact": true,
+      "style_exact": true,
+      "script_count": 74,
+      "style_count": 13,
+      "computed_script_count": 74,
+      "computed_style_count": 13
+    }
+  ],
+  "outside_compression_min_ssim": 0.9853502403227626,
+  "inside_compression_min_ssim": 0.9913162327309101,
+  "critical_assets_lossy_count": 0,
+  "baseline_html_bytes": 49970763,
+  "final_html_bytes": 42834531,
+  "html_saved_bytes": 7136232,
+  "baseline_zip_bytes": 34092893,
+  "pass": true,
+  "duplicate_ids_baseline": {
+    "berita.html": [
+      "brief-website",
+      "checklist-domain",
+      "panduan-memilih-parfum"
+    ],
+    "berita-panduan-parfum.html": [
+      "panduan-memilih-parfum"
+    ],
+    "berita-brief-website.html": [
+      "brief-website"
+    ],
+    "berita-checklist-domain.html": [
+      "checklist-domain"
+    ]
+  },
+  "duplicate_ids_final": {
+    "berita.html": [
+      "brief-website",
+      "checklist-domain",
+      "panduan-memilih-parfum"
+    ],
+    "berita-panduan-parfum.html": [
+      "panduan-memilih-parfum"
+    ],
+    "berita-brief-website.html": [
+      "brief-website"
+    ],
+    "berita-checklist-domain.html": [
+      "checklist-domain"
+    ]
+  },
+  "duplicate_id_regression": false
+}

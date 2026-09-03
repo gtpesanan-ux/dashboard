@@ -1,0 +1,13 @@
+{
+  "method": "Chromium headless via Playwright page.set_content because direct file/http navigation is blocked by sandbox administrator policy; exact final HTML bytes rendered",
+  "viewports": [
+    "390x844",
+    "768x1024",
+    "1440x1000"
+  ],
+  "renders_total": 111,
+  "renders_pass": 111,
+  "renders_fail": 0,
+  "horizontal_overflow_failures": 0,
+  "browser_pass": true
+}

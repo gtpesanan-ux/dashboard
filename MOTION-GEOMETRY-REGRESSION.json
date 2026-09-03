@@ -1,0 +1,612 @@
+[
+  {
+    "file": "index.html",
+    "viewport": "mobile",
+    "base": {
+      "header": {
+        "ow": 390,
+        "oh": 88,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 390,
+        "oh": 18022,
+        "ot": 88,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 390,
+        "oh": 2445,
+        "ot": 18111,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 372,
+        "oh": 900,
+        "ot": 14,
+        "ol": 9
+      },
+      "scrollHeight": 20555,
+      "scrollWidth": 390
+    },
+    "new": {
+      "header": {
+        "ow": 390,
+        "oh": 88,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 390,
+        "oh": 18022,
+        "ot": 88,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 390,
+        "oh": 2445,
+        "ot": 18111,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 372,
+        "oh": 900,
+        "ot": 14,
+        "ol": 9
+      },
+      "scrollHeight": 20555,
+      "scrollWidth": 390
+    },
+    "same": true
+  },
+  {
+    "file": "index.html",
+    "viewport": "desktop",
+    "base": {
+      "header": {
+        "ow": 1440,
+        "oh": 99,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 1440,
+        "oh": 13870,
+        "ot": 99,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 1440,
+        "oh": 1655,
+        "ot": 13970,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 1180,
+        "oh": 760,
+        "ot": 24,
+        "ol": 130
+      },
+      "scrollHeight": 15625,
+      "scrollWidth": 1440
+    },
+    "new": {
+      "header": {
+        "ow": 1440,
+        "oh": 99,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 1440,
+        "oh": 13870,
+        "ot": 99,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 1440,
+        "oh": 1655,
+        "ot": 13970,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 1180,
+        "oh": 760,
+        "ot": 24,
+        "ol": 130
+      },
+      "scrollHeight": 15625,
+      "scrollWidth": 1440
+    },
+    "same": true
+  },
+  {
+    "file": "layanan.html",
+    "viewport": "mobile",
+    "base": {
+      "header": {
+        "ow": 390,
+        "oh": 88,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 390,
+        "oh": 7432,
+        "ot": 144,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 390,
+        "oh": 2445,
+        "ot": 7576,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 372,
+        "oh": 761,
+        "ot": 14,
+        "ol": 9
+      },
+      "scrollHeight": 10020,
+      "scrollWidth": 390
+    },
+    "new": {
+      "header": {
+        "ow": 390,
+        "oh": 88,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 390,
+        "oh": 7432,
+        "ot": 144,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 390,
+        "oh": 2445,
+        "ot": 7576,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 372,
+        "oh": 761,
+        "ot": 14,
+        "ol": 9
+      },
+      "scrollHeight": 10020,
+      "scrollWidth": 390
+    },
+    "same": true
+  },
+  {
+    "file": "layanan.html",
+    "viewport": "desktop",
+    "base": {
+      "header": {
+        "ow": 1440,
+        "oh": 99,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 1440,
+        "oh": 5544,
+        "ot": 155,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 1440,
+        "oh": 1655,
+        "ot": 5699,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 1180,
+        "oh": 760,
+        "ot": 24,
+        "ol": 130
+      },
+      "scrollHeight": 7354,
+      "scrollWidth": 1440
+    },
+    "new": {
+      "header": {
+        "ow": 1440,
+        "oh": 99,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 1440,
+        "oh": 5544,
+        "ot": 155,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 1440,
+        "oh": 1655,
+        "ot": 5699,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 1180,
+        "oh": 760,
+        "ot": 24,
+        "ol": 130
+      },
+      "scrollHeight": 7354,
+      "scrollWidth": 1440
+    },
+    "same": true
+  },
+  {
+    "file": "kontak.html",
+    "viewport": "mobile",
+    "base": {
+      "header": {
+        "ow": 390,
+        "oh": 88,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 390,
+        "oh": 4827,
+        "ot": 144,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 390,
+        "oh": 2445,
+        "ot": 4971,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 372,
+        "oh": 726,
+        "ot": 14,
+        "ol": 9
+      },
+      "scrollHeight": 7416,
+      "scrollWidth": 390
+    },
+    "new": {
+      "header": {
+        "ow": 390,
+        "oh": 88,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 390,
+        "oh": 4827,
+        "ot": 144,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 390,
+        "oh": 2445,
+        "ot": 4971,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 372,
+        "oh": 726,
+        "ot": 14,
+        "ol": 9
+      },
+      "scrollHeight": 7416,
+      "scrollWidth": 390
+    },
+    "same": true
+  },
+  {
+    "file": "kontak.html",
+    "viewport": "desktop",
+    "base": {
+      "header": {
+        "ow": 1440,
+        "oh": 99,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 1440,
+        "oh": 3832,
+        "ot": 155,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 1440,
+        "oh": 1655,
+        "ot": 3987,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 1180,
+        "oh": 760,
+        "ot": 24,
+        "ol": 130
+      },
+      "scrollHeight": 5642,
+      "scrollWidth": 1440
+    },
+    "new": {
+      "header": {
+        "ow": 1440,
+        "oh": 99,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 1440,
+        "oh": 3832,
+        "ot": 155,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 1440,
+        "oh": 1655,
+        "ot": 3987,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 1180,
+        "oh": 760,
+        "ot": 24,
+        "ol": 130
+      },
+      "scrollHeight": 5642,
+      "scrollWidth": 1440
+    },
+    "same": true
+  },
+  {
+    "file": "pengetahuan.html",
+    "viewport": "mobile",
+    "base": {
+      "header": {
+        "ow": 390,
+        "oh": 88,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 390,
+        "oh": 14122,
+        "ot": 144,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 390,
+        "oh": 2445,
+        "ot": 14266,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 372,
+        "oh": 828,
+        "ot": 14,
+        "ol": 9
+      },
+      "scrollHeight": 16711,
+      "scrollWidth": 390
+    },
+    "new": {
+      "header": {
+        "ow": 390,
+        "oh": 88,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 390,
+        "oh": 14122,
+        "ot": 144,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 390,
+        "oh": 2445,
+        "ot": 14266,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 372,
+        "oh": 828,
+        "ot": 14,
+        "ol": 9
+      },
+      "scrollHeight": 16711,
+      "scrollWidth": 390
+    },
+    "same": true
+  },
+  {
+    "file": "pengetahuan.html",
+    "viewport": "desktop",
+    "base": {
+      "header": {
+        "ow": 1440,
+        "oh": 99,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 1440,
+        "oh": 8071,
+        "ot": 155,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 1440,
+        "oh": 1655,
+        "ot": 8226,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 1180,
+        "oh": 833,
+        "ot": 24,
+        "ol": 130
+      },
+      "scrollHeight": 9881,
+      "scrollWidth": 1440
+    },
+    "new": {
+      "header": {
+        "ow": 1440,
+        "oh": 99,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 1440,
+        "oh": 8071,
+        "ot": 155,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 1440,
+        "oh": 1655,
+        "ot": 8226,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 1180,
+        "oh": 833,
+        "ot": 24,
+        "ol": 130
+      },
+      "scrollHeight": 9881,
+      "scrollWidth": 1440
+    },
+    "same": true
+  },
+  {
+    "file": "cara-mendirikan-pt.html",
+    "viewport": "mobile",
+    "base": {
+      "header": {
+        "ow": 390,
+        "oh": 88,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 390,
+        "oh": 11460,
+        "ot": 144,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 390,
+        "oh": 2445,
+        "ot": 11604,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 372,
+        "oh": 706,
+        "ot": 14,
+        "ol": 9
+      },
+      "scrollHeight": 14048,
+      "scrollWidth": 390
+    },
+    "new": {
+      "header": {
+        "ow": 390,
+        "oh": 88,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 390,
+        "oh": 11460,
+        "ot": 144,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 390,
+        "oh": 2445,
+        "ot": 11604,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 372,
+        "oh": 706,
+        "ot": 14,
+        "ol": 9
+      },
+      "scrollHeight": 14048,
+      "scrollWidth": 390
+    },
+    "same": true
+  },
+  {
+    "file": "cara-mendirikan-pt.html",
+    "viewport": "desktop",
+    "base": {
+      "header": {
+        "ow": 1440,
+        "oh": 99,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 1440,
+        "oh": 8630,
+        "ot": 155,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 1440,
+        "oh": 1655,
+        "ot": 8786,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 1180,
+        "oh": 760,
+        "ot": 24,
+        "ol": 130
+      },
+      "scrollHeight": 10441,
+      "scrollWidth": 1440
+    },
+    "new": {
+      "header": {
+        "ow": 1440,
+        "oh": 99,
+        "ot": 0,
+        "ol": 0
+      },
+      "main": {
+        "ow": 1440,
+        "oh": 8630,
+        "ot": 155,
+        "ol": 0
+      },
+      "footer": {
+        "ow": 1440,
+        "oh": 1655,
+        "ot": 8786,
+        "ol": 0
+      },
+      "hero": {
+        "ow": 1180,
+        "oh": 760,
+        "ot": 24,
+        "ol": 130
+      },
+      "scrollHeight": 10441,
+      "scrollWidth": 1440
+    },
+    "same": true
+  }
+]

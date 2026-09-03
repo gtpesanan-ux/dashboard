@@ -1,0 +1,13 @@
+{
+  "visual_static_pass": true,
+  "browser_pass": true,
+  "overall_requested_visual_gate_pass": true,
+  "requested_visual_gate": {
+    "no_visible_faces": true,
+    "no_double_exposure_or_collage": true,
+    "no_exact_duplicate_revised_assets": true,
+    "single_scene_composition": true,
+    "dimensions_preserved": true,
+    "non_image_html_preserved": true
+  }
+}

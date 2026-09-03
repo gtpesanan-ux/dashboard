@@ -1,0 +1,27 @@
+{
+  "summary": {
+    "html_count": 37,
+    "dashboard_html_exists": false,
+    "duplicate_id_pages": 0,
+    "missing_local_refs": 0,
+    "motion_tag_failures": 0,
+    "unique_inline_javascript_blocks": 16,
+    "javascript_syntax_errors": 0,
+    "jsonld_blocks": 58,
+    "jsonld_errors": 0,
+    "embedded_image_refs": 450,
+    "unique_embedded_images": 98,
+    "embedded_image_decode_errors": 0,
+    "asset_images": 115,
+    "asset_image_decode_errors": 0
+  },
+  "issues": {
+    "duplicate_ids": [],
+    "missing_local_refs": [],
+    "motion_tag": []
+  },
+  "js_bad": [],
+  "jsonld_bad": [],
+  "embedded_bad": [],
+  "asset_bad": []
+}

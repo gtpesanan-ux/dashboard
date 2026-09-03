@@ -1,0 +1,34 @@
+PT DIGDAYA — MOTION V15 VALIDATION SUMMARY
+
+preservation_html: 37/37
+assets_byte_unchanged: 135/135
+dashboard_html_exists: False
+duplicate_id_pages: 0
+missing_local_refs: 0
+javascript_syntax_errors: 0
+jsonld_errors: 0
+embedded_images_decode: 98/98
+asset_images_decode: 115/115
+browser_representative_renders: 18
+browser_fatal: 0
+browser_console_error_pages: 0
+browser_page_error_pages: 0
+browser_overflow_pages: 0
+motion_ready_failures: 0
+menu_failures: 0
+card_reveal_failures: 0
+geometry_regression_comparisons: 10
+geometry_exact_matches: 10
+campaign_active_transition: True
+pointer_tilt_activated: True
+reduced_motion_pages_tested: 3
+reduced_motion_hidden_failures: 0
+csp_missing_hashes_headers: 0
+csp_missing_hashes_htaccess: 0
+
+Scope:
+- Motion upgrade only; existing content and functionality preserved.
+- No image source bytes replaced. Image presentation improved through crop isolation, subtle photographic grading, reveal, parallax, and overlap containment.
+- Browser testing used Chromium with representative pages at 390px, 768px, and 1440px.
+- All 37 HTML were statically validated and contain the same V15 motion layer.
+- Offscreen loading=lazy images are not treated as browser failures; every unique embedded image and every packaged raster image was decoded separately.

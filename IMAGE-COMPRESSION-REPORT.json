@@ -1,0 +1,2197 @@
+{
+  "summary": {
+    "unique_payloads_considered": 119,
+    "unique_payloads_optimized": 104,
+    "unique_original_bytes": 6029582,
+    "unique_optimized_bytes": 4556510,
+    "unique_saved_bytes": 1473072,
+    "external_files_changed": 101,
+    "html_files_with_image_payload_changes": 37,
+    "embedded_image_references_validated": 450,
+    "inline_style_script_integrity_pass": true,
+    "non_image_html_structure_integrity_pass": true,
+    "raster_decode_pass": true,
+    "embedded_decode_pass": true,
+    "minimum_ssim_among_lossy_optimized": 0.9853502403227626,
+    "critical_assets_lossy_count": 0,
+    "block_fail": [],
+    "structural_fail": [],
+    "decode_fail": [],
+    "embedded_fail": [],
+    "changed_html": [
+      [
+        "kontak.html",
+        3
+      ],
+      [
+        "website-maintenance.html",
+        2
+      ],
+      [
+        "syarat-ketentuan.html",
+        3
+      ],
+      [
+        "kebijakan-transaksi.html",
+        3
+      ],
+      [
+        "keamanan.html",
+        3
+      ],
+      [
+        "pengaduan.html",
+        3
+      ],
+      [
+        "jasa-pembuatan-website.html",
+        3
+      ],
+      [
+        "cara-mendirikan-pt.html",
+        3
+      ],
+      [
+        "berita.html",
+        9
+      ],
+      [
+        "parfum-niche.html",
+        10
+      ],
+      [
+        "pt-perorangan.html",
+        2
+      ],
+      [
+        "parfum-timur-tengah.html",
+        10
+      ],
+      [
+        "scent-finder.html",
+        2
+      ],
+      [
+        "parfum-designer.html",
+        10
+      ],
+      [
+        "trust-center.html",
+        2
+      ],
+      [
+        "berita-detail.html",
+        2
+      ],
+      [
+        "404.html",
+        3
+      ],
+      [
+        "case-study-digdaya.html",
+        2
+      ],
+      [
+        "kemitraan.html",
+        4
+      ],
+      [
+        "index.html",
+        43
+      ],
+      [
+        "pengetahuan.html",
+        3
+      ],
+      [
+        "domain-discovery.html",
+        2
+      ],
+      [
+        "faq.html",
+        2
+      ],
+      [
+        "website-audit.html",
+        2
+      ],
+      [
+        "kebijakan-privasi.html",
+        3
+      ],
+      [
+        "berita-panduan-parfum.html",
+        4
+      ],
+      [
+        "cara-mendirikan-cv.html",
+        3
+      ],
+      [
+        "parfum-lokal.html",
+        10
+      ],
+      [
+        "berita-brief-website.html",
+        4
+      ],
+      [
+        "cara-membuat-nib-oss.html",
+        2
+      ],
+      [
+        "layanan.html",
+        3
+      ],
+      [
+        "portfolio.html",
+        2
+      ],
+      [
+        "tentang-kami.html",
+        5
+      ],
+      [
+        "jual-beli-domain.html",
+        3
+      ],
+      [
+        "berita-checklist-domain.html",
+        4
+      ],
+      [
+        "perbedaan-pt-dan-cv.html",
+        2
+      ],
+      [
+        "top-up-game.html",
+        3
+      ]
+    ]
+  },
+  "images": [
+    {
+      "sha_old": "ba6d7502f0240e209c48688ca967fa68ffd7a548c0b2466ac151d409314c16b2",
+      "mime": "webp",
+      "names": [
+        "visual-flow-fragrance.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 4,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 16260,
+      "new_bytes": 16260,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "critical-kept"
+    },
+    {
+      "sha_old": "c16949cdf5aa7be24e1dcd71f62cf87a8dd816d767644863fa59e65e2843e701",
+      "mime": "webp",
+      "names": [
+        "visual-flow-domain.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 14866,
+      "new_bytes": 14866,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "critical-kept"
+    },
+    {
+      "sha_old": "053f72e144eed0833f061937c1b2691abca9fae740da7f87fb7760e5a84fef6d",
+      "mime": "webp",
+      "names": [
+        "visual-flow-security.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 15248,
+      "new_bytes": 15248,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "critical-kept"
+    },
+    {
+      "sha_old": "24c20a100ebb1cd22761cae9284fe72fc8a32c0c25c170fd3cb8b3f9269bb86f",
+      "mime": "webp",
+      "names": [
+        "visual-flow-website.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 14916,
+      "new_bytes": 14916,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "critical-kept"
+    },
+    {
+      "sha_old": "5dd965d4b38b433685057b82b8844c539892dbbe75e74fcad2b5815d73e6516a",
+      "mime": "webp",
+      "names": [
+        "visual-flow-topup.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 14246,
+      "new_bytes": 14246,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "critical-kept"
+    },
+    {
+      "sha_old": "b0c7c3ce4ce7ca4be0a7c5f7556efdc3b449a3cc3637b97e26e7320f1193cc91",
+      "mime": "png",
+      "names": [
+        "apple-touch-icon.png"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 37,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 27112,
+      "new_bytes": 27112,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "no-benefit"
+    },
+    {
+      "sha_old": "aece329cf2d612a0d1836d2074bc0d77c81bc697a5dfcdb294630294726d627b",
+      "mime": "webp",
+      "names": [
+        "digdaya-logo-gold-1024.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 142592,
+      "new_bytes": 142592,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "critical-kept"
+    },
+    {
+      "sha_old": "0e38518bbd8849ac93d53a5b318d9e94a4c2934881bde8dfbb01f5fe613b82b3",
+      "mime": "webp",
+      "names": [
+        "digdaya-monogram-tile-512.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 3,
+      "old_bytes": 10858,
+      "new_bytes": 10858,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "critical-kept"
+    },
+    {
+      "sha_old": "b37b1dad21e58d93c31454b73aefb1f20713aa8163b693d4c60521b7b659d05a",
+      "mime": "webp",
+      "names": [
+        "digdaya-logo-transparent-1024.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 319866,
+      "new_bytes": 319866,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "critical-kept"
+    },
+    {
+      "sha_old": "3b3d92419fdcdfd79316c2358deb2ae5ce2c6910d5717b539f03249c52e8366c",
+      "mime": "png",
+      "names": [
+        "favicon.png"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 37,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 10424,
+      "new_bytes": 10424,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "no-benefit"
+    },
+    {
+      "sha_old": "9882b047974b6cbacf877e7044ed051498fd87a5cfc3b4409844881b47770a04",
+      "mime": "webp",
+      "names": [
+        "digdaya-monogram-512.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 71768,
+      "new_bytes": 71768,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "critical-kept"
+    },
+    {
+      "sha_old": "0d78221af0914ecf75753922d1242abd578b4c71fc2948cfabbcb2457fd93366",
+      "mime": "webp",
+      "names": [
+        "digdaya-logo-white-1024.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 142570,
+      "new_bytes": 142570,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "critical-kept"
+    },
+    {
+      "sha_old": "6f4bf04709dbb5c1f5f34557dd3afc273cd0e2db2a7278f88501020d32cffd9c",
+      "mime": "webp",
+      "names": [
+        "digdaya-logo-256.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 77,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 7144,
+      "new_bytes": 7144,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "critical-kept"
+    },
+    {
+      "sha_old": "b637008a2bf9480365b03560bcf2b93ff472c80b465b3e3543826642254211fe",
+      "mime": "webp",
+      "names": [
+        "logo-cv-multi-usaha-mandiri.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 40,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 167022,
+      "new_bytes": 99124,
+      "saved_bytes": 67898,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": "lossless",
+      "reason": "lossless-webp"
+    },
+    {
+      "sha_old": "3296dbc783010946b06ecf0d3e5c531c84931fa887a09d2da6220d2b100ee774",
+      "mime": "webp",
+      "names": [
+        "digdaya-logo-navy-1024.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 142588,
+      "new_bytes": 142588,
+      "saved_bytes": 0,
+      "class": "critical",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "critical-kept"
+    },
+    {
+      "sha_old": "f5d35735636942ad8a3f11db0733daa64207a188f3f2e874d21610217f021112",
+      "mime": "webp",
+      "names": [
+        "visual-website-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 2,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 27158,
+      "new_bytes": 17918,
+      "saved_bytes": 9240,
+      "class": "photo",
+      "ssim": 0.989403725076239,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "f3388547ff38140173a940846bf1c71b72ba3de97edcb855ec1ce62f32b8cd07",
+      "mime": "webp",
+      "names": [
+        "visual-about-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 2,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 27336,
+      "new_bytes": 17824,
+      "saved_bytes": 9512,
+      "class": "photo",
+      "ssim": 0.9897089220182286,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "00b1e224605d58d764ad7308b3c6cf436db208d391235a34465885f25fca3568",
+      "mime": "webp",
+      "names": [
+        "visual-topup-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 28836,
+      "new_bytes": 19190,
+      "saved_bytes": 9646,
+      "class": "photo",
+      "ssim": 0.9893048628974989,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "1afa1c3bbeaabd055890506544ec6bb8ac4fd65d858458817ecafa72f25e68a1",
+      "mime": "webp",
+      "names": [
+        "parfum-designer-editorial.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 8,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 70424,
+      "new_bytes": 45530,
+      "saved_bytes": 24894,
+      "class": "photo",
+      "ssim": 0.9909348031675714,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "6d3314570d9164fc239004ef7d533d2e0fc7095172c2f85e772a4d341d831f27",
+      "mime": "webp",
+      "names": [
+        "visual-topup-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 28342,
+      "new_bytes": 18568,
+      "saved_bytes": 9774,
+      "class": "photo",
+      "ssim": 0.9891672019853279,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "f648ecbea85e4ef8870e6a214e40b97c5062ebe3dad50b4d6903bfe0d153d741",
+      "mime": "webp",
+      "names": [
+        "visual-security-1-clean.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 5,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 26500,
+      "new_bytes": 17570,
+      "saved_bytes": 8930,
+      "class": "photo",
+      "ssim": 0.9896869819896967,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "bf71d7f3189b1ed3f27f848cfdc95e4545409b7a5db74ae0b4a930991c6441a2",
+      "mime": "jpeg",
+      "names": [
+        "og-website.jpg"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 2,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 122249,
+      "new_bytes": 98779,
+      "saved_bytes": 23470,
+      "class": "branded",
+      "ssim": 0.9931438371524149,
+      "quality": 76,
+      "reason": "optimized-jpeg"
+    },
+    {
+      "sha_old": "1cfa77ff41d8e91d393b137ffb366aa650aafe949f33926fbb7ccc74ac9e8059",
+      "mime": "webp",
+      "names": [
+        "topup-game-editorial.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 40276,
+      "new_bytes": 27514,
+      "saved_bytes": 12762,
+      "class": "photo",
+      "ssim": 0.9920822068017232,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "29fcebed82de46f8341cf8eee759645897e30d803cb21f4729e7d5aa89495478",
+      "mime": "webp",
+      "names": [
+        "visual-contact-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 4,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 29414,
+      "new_bytes": 19332,
+      "saved_bytes": 10082,
+      "class": "photo",
+      "ssim": 0.9872563932872651,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "f004a2b946fa69b8af3cb8819952cbcb28ebd57280a63303adf9860e565008ab",
+      "mime": "jpeg",
+      "names": [
+        "og-topup.jpg"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 112061,
+      "new_bytes": 89382,
+      "saved_bytes": 22679,
+      "class": "branded",
+      "ssim": 0.9936037541905474,
+      "quality": 76,
+      "reason": "optimized-jpeg"
+    },
+    {
+      "sha_old": "ee6ce2f4f69c19222c6e01566b8e0acb55527f5180adc601c40818f36ee8142a",
+      "mime": "webp",
+      "names": [
+        "visual-partnership-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 2,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 41606,
+      "new_bytes": 26284,
+      "saved_bytes": 15322,
+      "class": "photo",
+      "ssim": 0.9858603034742823,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "18b03f1357a52f62af74e7a7a037a01771a5e741dfca7ffc3bd6ef83640fe347",
+      "mime": "webp",
+      "names": [
+        "visual-website-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 2,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 40144,
+      "new_bytes": 25026,
+      "saved_bytes": 15118,
+      "class": "photo",
+      "ssim": 0.9866480952797154,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "41df345566fdef91d408148c0fc738971527b54dc5eda902a70819ee0f70fbb2",
+      "mime": "webp",
+      "names": [
+        "visual-domain-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 2,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 41756,
+      "new_bytes": 25536,
+      "saved_bytes": 16220,
+      "class": "photo",
+      "ssim": 0.985996384983151,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "2b6a1a0de055cc0784ba3184547efe9e75dee020d04877298b70da962c13affa",
+      "mime": "webp",
+      "names": [
+        "parfum-timur-tengah-editorial.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 7,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 77194,
+      "new_bytes": 49732,
+      "saved_bytes": 27462,
+      "class": "photo",
+      "ssim": 0.9907871644037319,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "826a70c7eca7e457311b067e9865c567db9c308ff11da465807a11da60515569",
+      "mime": "webp",
+      "names": [
+        "website-studio-editorial.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 5,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 62164,
+      "new_bytes": 38460,
+      "saved_bytes": 23704,
+      "class": "photo",
+      "ssim": 0.9911851585841086,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "d13110b0052e045b222abbd61b1a3bda2101da94944488d2864702e7ffae86ab",
+      "mime": "webp",
+      "names": [
+        "parfum-niche-editorial.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 9,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 89100,
+      "new_bytes": 58268,
+      "saved_bytes": 30832,
+      "class": "photo",
+      "ssim": 0.9914782266178381,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "b7966afca5553fcd41d225017cccad08c49914589a707dc525c19ad9248c6109",
+      "mime": "webp",
+      "names": [
+        "visual-about-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 2,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 42300,
+      "new_bytes": 26650,
+      "saved_bytes": 15650,
+      "class": "photo",
+      "ssim": 0.9862218585096134,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "c066393fd07e4be61fc308ec4bd2fff3645d27f781590d9e22808c9f0d3a08c1",
+      "mime": "webp",
+      "names": [
+        "visual-topup-1-clean.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 28158,
+      "new_bytes": 18194,
+      "saved_bytes": 9964,
+      "class": "photo",
+      "ssim": 0.9891650616699907,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "b94eee91eb2fc288376d5e6ebedc172490d0c96038ac03f741529e2a4d6934ce",
+      "mime": "webp",
+      "names": [
+        "visual-domain-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 26464,
+      "new_bytes": 17292,
+      "saved_bytes": 9172,
+      "class": "photo",
+      "ssim": 0.9890297443735805,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "e6d88e937eeb7dfcd808f423eb8a48b656fca42eae456aa1e69405ef3627f76c",
+      "mime": "webp",
+      "names": [
+        "visual-domain-1-clean.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 3,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 24240,
+      "new_bytes": 16174,
+      "saved_bytes": 8066,
+      "class": "photo",
+      "ssim": 0.9894127701718557,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "a3c5024bdfd61baaec6102fc9f18ad2c1472840a91b4fc7e81e64212c54e3705",
+      "mime": "webp",
+      "names": [
+        "parfum-lokal-editorial.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 7,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 77108,
+      "new_bytes": 50074,
+      "saved_bytes": 27034,
+      "class": "photo",
+      "ssim": 0.9913742790439463,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "1a99ac271fe6648017b89a2f56c69d7fc9cbf946bd5e425311d47f9bb14ecb46",
+      "mime": "webp",
+      "names": [
+        "visual-security-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 25158,
+      "new_bytes": 16518,
+      "saved_bytes": 8640,
+      "class": "photo",
+      "ssim": 0.9891909816084727,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "43ae60499af3d05d2f1dde5bf9071f176b612bedcc1748389ef2ba8fb94abb51",
+      "mime": "jpeg",
+      "names": [
+        "og-website-branded.jpg"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 125259,
+      "new_bytes": 101250,
+      "saved_bytes": 24009,
+      "class": "branded",
+      "ssim": 0.9932869139884952,
+      "quality": 76,
+      "reason": "optimized-jpeg"
+    },
+    {
+      "sha_old": "3b7b28225e5a79316a403070a8b4d6053b0366d468f01740beb90a490005fe77",
+      "mime": "webp",
+      "names": [
+        "visual-topup-2-clean.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 35480,
+      "new_bytes": 22414,
+      "saved_bytes": 13066,
+      "class": "photo",
+      "ssim": 0.9866397374435175,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "7f16b2612237a2e9126b0af6954ed8c974b4dcb67cd094508b28fd910645293d",
+      "mime": "webp",
+      "names": [
+        "visual-newsroom-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 2,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 25418,
+      "new_bytes": 16516,
+      "saved_bytes": 8902,
+      "class": "photo",
+      "ssim": 0.9895225179107248,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "be49e9b4d4a27ac3e4d77bdfde8bd7b65321339eb4d5eb26a0af3145c66b74e5",
+      "mime": "webp",
+      "names": [
+        "news-kesehatan-3.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 31208,
+      "new_bytes": 20266,
+      "saved_bytes": 10942,
+      "class": "photo",
+      "ssim": 0.9874833209460951,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "c789f48eb41c18a9a7d19336a58b58368b55c8e2020ed647c0d046a579f572b4",
+      "mime": "webp",
+      "names": [
+        "news-bisnis-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 4,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 36624,
+      "new_bytes": 23706,
+      "saved_bytes": 12918,
+      "class": "photo",
+      "ssim": 0.9869486486667632,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "f308a0df5ad9a51fad45cb23d27920c0767db45608504854cd595abcb0822159",
+      "mime": "webp",
+      "names": [
+        "brand-promo-15.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 34156,
+      "new_bytes": 26364,
+      "saved_bytes": 7792,
+      "class": "branded",
+      "ssim": 0.9910614826634595,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "0bacc3e8964cd562d20dd80378e8434a5c6036ca2d69df29ee70c92ab36af7cd",
+      "mime": "webp",
+      "names": [
+        "news-digital-3.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 30074,
+      "new_bytes": 19768,
+      "saved_bytes": 10306,
+      "class": "photo",
+      "ssim": 0.9875156893175279,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "8b198b1fb6b35957ce77ec84ed0a9c59cf1f80c2ccf55ac1894b18f9677176bb",
+      "mime": "webp",
+      "names": [
+        "news-kesehatan-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 27372,
+      "new_bytes": 18006,
+      "saved_bytes": 9366,
+      "class": "photo",
+      "ssim": 0.989365986963388,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "f061fe23e9d16da6a38ae590295c680f44f253ce3360f4b62388b53eac5ad3e6",
+      "mime": "webp",
+      "names": [
+        "news-bisnis-3.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 31336,
+      "new_bytes": 20374,
+      "saved_bytes": 10962,
+      "class": "photo",
+      "ssim": 0.9872486464726231,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "5b7147103d6740911d2d3c372816576548d23053b927a9f239a8f204aace8c04",
+      "mime": "webp",
+      "names": [
+        "news-ekonomi-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 27348,
+      "new_bytes": 17916,
+      "saved_bytes": 9432,
+      "class": "photo",
+      "ssim": 0.9896156465137615,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "7d2b610f27e90f9fbc58e01159b165b223126d61752f63e9cc035d2b3e596bc9",
+      "mime": "webp",
+      "names": [
+        "domain-editorial.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 5,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 40194,
+      "new_bytes": 26090,
+      "saved_bytes": 14104,
+      "class": "photo",
+      "ssim": 0.9918209805803101,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "8a435c65631aa50bc766978a08ffd629cdd425a7cbf3717a947218bbf5f6cfd1",
+      "mime": "webp",
+      "names": [
+        "brand-promo-14.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 26492,
+      "new_bytes": 20274,
+      "saved_bytes": 6218,
+      "class": "branded",
+      "ssim": 0.9922263192256068,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "2184f8e95745007a1992c02ce380ea931c42294c7a89952b2c8a9d407945c067",
+      "mime": "webp",
+      "names": [
+        "corporate-home-hero.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 4,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 57484,
+      "new_bytes": 36390,
+      "saved_bytes": 21094,
+      "class": "photo",
+      "ssim": 0.9898727665865019,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "00930b470b60798722a90330f9c42b23e7c11767defa7e4f9bf54a910035ef56",
+      "mime": "webp",
+      "names": [
+        "news-ekonomi-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 36880,
+      "new_bytes": 23652,
+      "saved_bytes": 13228,
+      "class": "photo",
+      "ssim": 0.9868457303291777,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "4e3895ac4e3b6aba4189080a3cbebc52b36ededc6ee7af8d4d1fc06c6a37b87c",
+      "mime": "webp",
+      "names": [
+        "digdaya-digital-operations.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 5,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 63006,
+      "new_bytes": 39070,
+      "saved_bytes": 23936,
+      "class": "photo",
+      "ssim": 0.9905894894741993,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "253c1a32a08e02f0a4ca0b653a19e96a70478444bbaf6857132ffdd50af7105e",
+      "mime": "webp",
+      "names": [
+        "news-budaya-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 57634,
+      "new_bytes": 36020,
+      "saved_bytes": 21614,
+      "class": "photo",
+      "ssim": 0.9869998043181005,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "b7a77ea6b89153e23eb4166f477add1eadf33bcb7d07d468f077d684f4d6e0fc",
+      "mime": "webp",
+      "names": [
+        "news-budaya-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 47350,
+      "new_bytes": 30428,
+      "saved_bytes": 16922,
+      "class": "photo",
+      "ssim": 0.9870892067960114,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "4d4eccadf35e3b04db3dcd9726024243f7d296739fdf9d08843fe9afe442a597",
+      "mime": "webp",
+      "names": [
+        "digdaya-fragrance-operations.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 8,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 76568,
+      "new_bytes": 50330,
+      "saved_bytes": 26238,
+      "class": "photo",
+      "ssim": 0.991056584271012,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "6c89f26fc99c5680153f5bf4192a1422ca2c377d7451499b422a0cbf06cb53d1",
+      "mime": "webp",
+      "names": [
+        "news-fragrance-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 2,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 58342,
+      "new_bytes": 36840,
+      "saved_bytes": 21502,
+      "class": "photo",
+      "ssim": 0.9863031648252104,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "1708ee922feea579df902c1714d6233d8d1b8396a52453d8c00ada9f1ccca2c5",
+      "mime": "webp",
+      "names": [
+        "news-bisnis-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 36612,
+      "new_bytes": 23484,
+      "saved_bytes": 13128,
+      "class": "photo",
+      "ssim": 0.9869071347629088,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "7cc44018b14bcfe69a5edce2f2f51d0ebea9b5697ac706dbba870e63d5b56de0",
+      "mime": "webp",
+      "names": [
+        "news-budaya-3.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 48642,
+      "new_bytes": 31162,
+      "saved_bytes": 17480,
+      "class": "photo",
+      "ssim": 0.9866823770494182,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "162e8a71d2a3ce57b1fd986a90dc44e8621158fbb42ebc1e067a6638dc182bb1",
+      "mime": "webp",
+      "names": [
+        "news-ekonomi-3.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 39430,
+      "new_bytes": 23844,
+      "saved_bytes": 15586,
+      "class": "photo",
+      "ssim": 0.9867321765850867,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "9821bafa69cb58d9b6b6b2952e71fc884bec1665e2af66f04df4430f083ebad7",
+      "mime": "webp",
+      "names": [
+        "corporate-news-editorial.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 5,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 38732,
+      "new_bytes": 25388,
+      "saved_bytes": 13344,
+      "class": "photo",
+      "ssim": 0.9918148120275891,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "c83c2b87b04b8fb5c2d54e61eb1716feeb256d8ba47ac077cc5379827f48c86f",
+      "mime": "webp",
+      "names": [
+        "news-fragrance-3.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 2,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 54920,
+      "new_bytes": 34184,
+      "saved_bytes": 20736,
+      "class": "photo",
+      "ssim": 0.9867192472227717,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "16cf7a6ca0559da40668b188e8192a060f2ec3ed0e9f7e48a40c87aa2ae99d0c",
+      "mime": "webp",
+      "names": [
+        "news-kesehatan-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 42240,
+      "new_bytes": 27110,
+      "saved_bytes": 15130,
+      "class": "photo",
+      "ssim": 0.9859019263646028,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "b590f512b3c3a7bd80618c468d89973ac2a9980d5f1a5e97f6b66ab2879e87a7",
+      "mime": "webp",
+      "names": [
+        "news-fragrance-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 2,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 47018,
+      "new_bytes": 30174,
+      "saved_bytes": 16844,
+      "class": "photo",
+      "ssim": 0.9866337600176718,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "05efafe63857555806fbf5ad3ce68013055b45025c5344122cd4f91c9533226b",
+      "mime": "webp",
+      "names": [
+        "news-digital-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 35922,
+      "new_bytes": 23004,
+      "saved_bytes": 12918,
+      "class": "photo",
+      "ssim": 0.9870725186424323,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "06fdc460b8427002ff35836098bc2867d2a62bd62c7735131a05d2282e1994bb",
+      "mime": "webp",
+      "names": [
+        "news-digital-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 26220,
+      "new_bytes": 17218,
+      "saved_bytes": 9002,
+      "class": "photo",
+      "ssim": 0.9891191799661592,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "7cf68444064c17d9de180c4e349d679c65e569c53fe23324710e36414343a6f3",
+      "mime": "webp",
+      "names": [
+        "news-teknologi-3.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 26812,
+      "new_bytes": 17134,
+      "saved_bytes": 9678,
+      "class": "photo",
+      "ssim": 0.9894147745755262,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "5293c9e2612cf88f5dd1d2ee9297bfb37ba2432804c657fa98dd731a386e4882",
+      "mime": "webp",
+      "names": [
+        "news-nasional-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 35360,
+      "new_bytes": 22370,
+      "saved_bytes": 12990,
+      "class": "photo",
+      "ssim": 0.9864740202629092,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "f456edb3f1acd7daa25168858a8042f86729dd704ea0334a8441a3db51e83321",
+      "mime": "webp",
+      "names": [
+        "news-pariwisata-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 31174,
+      "new_bytes": 20078,
+      "saved_bytes": 11096,
+      "class": "photo",
+      "ssim": 0.9871143425970366,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "ee1a83a8e333a67f335643129da5ebf0a2ff704678fabe3e8871d2af40c77448",
+      "mime": "webp",
+      "names": [
+        "news-teknologi-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 41340,
+      "new_bytes": 25440,
+      "saved_bytes": 15900,
+      "class": "photo",
+      "ssim": 0.9872616808490623,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "5d47ef0b844ae5ff6b41df0475a791ac4cb53e9e565e85abbe5bcd018089a469",
+      "mime": "webp",
+      "names": [
+        "news-pendidikan-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 26050,
+      "new_bytes": 16966,
+      "saved_bytes": 9084,
+      "class": "photo",
+      "ssim": 0.9891842774883162,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "bdac28c14101362759cc4e35464e9ae558e1588ab0395cda7f7414398a6acb3f",
+      "mime": "webp",
+      "names": [
+        "news-nasional-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 26796,
+      "new_bytes": 17650,
+      "saved_bytes": 9146,
+      "class": "photo",
+      "ssim": 0.9891069026393865,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "5b0d0639d964d3496084c4856502ebb02d58dad3de1688a13a0127097a3ee266",
+      "mime": "webp",
+      "names": [
+        "news-nasional-3.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 40554,
+      "new_bytes": 25924,
+      "saved_bytes": 14630,
+      "class": "photo",
+      "ssim": 0.9853502403227626,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "7dfb923670ab7c9c05dd64b449cdb2091e67eb5d2d447d18fb2c83f0ebade92e",
+      "mime": "jpeg",
+      "names": [
+        "og-domain-branded.jpg"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 103719,
+      "new_bytes": 82699,
+      "saved_bytes": 21020,
+      "class": "branded",
+      "ssim": 0.9933037739008016,
+      "quality": 76,
+      "reason": "optimized-jpeg"
+    },
+    {
+      "sha_old": "6dddca1a68d510b12f750c13970af67e749a1776c15cd88e2390f154ffbc963e",
+      "mime": "jpeg",
+      "names": [
+        "og-parfum-branded.jpg"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 160491,
+      "new_bytes": 127953,
+      "saved_bytes": 32538,
+      "class": "branded",
+      "ssim": 0.9953985551040958,
+      "quality": 76,
+      "reason": "optimized-jpeg"
+    },
+    {
+      "sha_old": "0cc0e2024d2f3d06d5e70a0542f4c2059fb8416616149055aa7285f905c3d6f1",
+      "mime": "webp",
+      "names": [
+        "news-lingkungan-3.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 24764,
+      "new_bytes": 16118,
+      "saved_bytes": 8646,
+      "class": "photo",
+      "ssim": 0.9888100798118679,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "99389a87ae1d173a244b6ae81befcedd66ff381513aceee743cd4b9cbdef69e9",
+      "mime": "webp",
+      "names": [
+        "news-pariwisata-3.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 26864,
+      "new_bytes": 17606,
+      "saved_bytes": 9258,
+      "class": "photo",
+      "ssim": 0.9888056471493913,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "7022e9dd8d050b2a4cb322825412806f27ce7f12516c311bc4a3a13c89b5d61c",
+      "mime": "webp",
+      "names": [
+        "news-pariwisata-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 39498,
+      "new_bytes": 24950,
+      "saved_bytes": 14548,
+      "class": "photo",
+      "ssim": 0.9865320742472222,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "12f34ef0c7a70ab6f7ca746f0ad0e8a9ac2ae611111466a400f12d7eeea98018",
+      "mime": "jpeg",
+      "names": [
+        "og-domain.jpg"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 2,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 104158,
+      "new_bytes": 82932,
+      "saved_bytes": 21226,
+      "class": "branded",
+      "ssim": 0.9933831771945644,
+      "quality": 76,
+      "reason": "optimized-jpeg"
+    },
+    {
+      "sha_old": "260d87498ee35b0e5906df705f5991c562339371f58647a9f41f902604c15923",
+      "mime": "webp",
+      "names": [
+        "news-lingkungan-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 39442,
+      "new_bytes": 24328,
+      "saved_bytes": 15114,
+      "class": "photo",
+      "ssim": 0.986658357928126,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "0740ee1ed1cd1c7c436b803714ce6641603140c3b18b4d8a681bc1a959f1941d",
+      "mime": "webp",
+      "names": [
+        "news-teknologi-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 26514,
+      "new_bytes": 17354,
+      "saved_bytes": 9160,
+      "class": "photo",
+      "ssim": 0.9893184901760282,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "0e382370f5418fe08abb883b6a29de8403210f68e188b96afcafa70be785a250",
+      "mime": "jpeg",
+      "names": [
+        "og-parfum.jpg"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 157993,
+      "new_bytes": 125742,
+      "saved_bytes": 32251,
+      "class": "branded",
+      "ssim": 0.9951321014330008,
+      "quality": 76,
+      "reason": "optimized-jpeg"
+    },
+    {
+      "sha_old": "9ee1dfcd4bb0e71914c1096f60c9a61a738f5dae2f532e5e265cb5dde03b58c9",
+      "mime": "webp",
+      "names": [
+        "news-olahraga-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 27104,
+      "new_bytes": 17546,
+      "saved_bytes": 9558,
+      "class": "photo",
+      "ssim": 0.9889029567146411,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "413bb23b5b163c58b9e7d7d39664e14cce593864a588df683ec9f270c1283815",
+      "mime": "jpeg",
+      "names": [
+        "og-home.jpg"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 126929,
+      "new_bytes": 101088,
+      "saved_bytes": 25841,
+      "class": "branded",
+      "ssim": 0.9928759309884426,
+      "quality": 76,
+      "reason": "optimized-jpeg"
+    },
+    {
+      "sha_old": "ceda6ebe8fdfec724d14b71fec8d04ed14c0e6d6bf456d4f614b8ad022615532",
+      "mime": "webp",
+      "names": [
+        "news-lingkungan-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 41470,
+      "new_bytes": 26294,
+      "saved_bytes": 15176,
+      "class": "photo",
+      "ssim": 0.985935098742742,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "42252afb806cc614ed7a9ffd0146201a695a7e85ac58830ea5804ff3e88f2df8",
+      "mime": "jpeg",
+      "names": [
+        "og-topup-branded.jpg"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 113194,
+      "new_bytes": 90145,
+      "saved_bytes": 23049,
+      "class": "branded",
+      "ssim": 0.9934721034665687,
+      "quality": 76,
+      "reason": "optimized-jpeg"
+    },
+    {
+      "sha_old": "9522eadf409ae6c336d10cdde22671816af1aa124ecaaf6ae774bb6fceab945a",
+      "mime": "webp",
+      "names": [
+        "news-pendidikan-3.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 26352,
+      "new_bytes": 17086,
+      "saved_bytes": 9266,
+      "class": "photo",
+      "ssim": 0.9893540192510685,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "2c81edf750e5eed8a9b8bdbc6040dd0023d12be61c2f27c9de55c5c678349a3f",
+      "mime": "webp",
+      "names": [
+        "news-pendidikan-1.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 35458,
+      "new_bytes": 22584,
+      "saved_bytes": 12874,
+      "class": "photo",
+      "ssim": 0.9867133188337136,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "20a3a8cd0cc81c63c9348323f66422587b928a8008ac1955daa0142a43b3e05e",
+      "mime": "jpeg",
+      "names": [
+        "og-home-branded.jpg"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 127923,
+      "new_bytes": 102048,
+      "saved_bytes": 25875,
+      "class": "branded",
+      "ssim": 0.9930585097365539,
+      "quality": 76,
+      "reason": "optimized-jpeg"
+    },
+    {
+      "sha_old": "d2b3e9cdf9fe99723beb06628eb9aeefe87c6e6dce564405ca932ae38d311254",
+      "mime": "webp",
+      "names": [
+        "news-olahraga-2.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 28092,
+      "new_bytes": 18324,
+      "saved_bytes": 9768,
+      "class": "photo",
+      "ssim": 0.9887885161279069,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "c82a1f1dd3b5d089a5eb5a44303354acf42a5a9f326a4d163369ef9fa0bf5f01",
+      "mime": "webp",
+      "names": [
+        "news-olahraga-3.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 0,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 27304,
+      "new_bytes": 18250,
+      "saved_bytes": 9054,
+      "class": "photo",
+      "ssim": 0.9894155472731881,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "deca8ae01d699785063bbed345b7a9d3706a560b30a7965c5ceb5d69f30a0bb3",
+      "mime": "webp",
+      "names": [
+        "brand-promo-05.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 57688,
+      "new_bytes": 44386,
+      "saved_bytes": 13302,
+      "class": "branded",
+      "ssim": 0.991856047401037,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "33ee342959dd63977ae5f69e5c4fc1b443648ea6d22686f4bf30355ce2d2b9a5",
+      "mime": "webp",
+      "names": [
+        "brand-campaign-11.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 29340,
+      "new_bytes": 22658,
+      "saved_bytes": 6682,
+      "class": "branded",
+      "ssim": 0.9927421531117332,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "12a47c53693613120f7273cf73cd262606813fb503f7a2cd567b4c35e8c79ec0",
+      "mime": "webp",
+      "names": [
+        "brand-campaign-02.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 55510,
+      "new_bytes": 42110,
+      "saved_bytes": 13400,
+      "class": "branded",
+      "ssim": 0.9908036444516416,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "ffe1a7ddc21ff8ab1134a0c8b8c3400142ed7bfb9b0ba93e8f723c7825272390",
+      "mime": "webp",
+      "names": [
+        "brand-promo-09.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 27134,
+      "new_bytes": 20708,
+      "saved_bytes": 6426,
+      "class": "branded",
+      "ssim": 0.9926244672659688,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "bca7fead62b8dba02d348e2c92490f5dba2c9ba222bc156ae22ffdc8e578f481",
+      "mime": "webp",
+      "names": [
+        "brand-campaign-01.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 50922,
+      "new_bytes": 38914,
+      "saved_bytes": 12008,
+      "class": "branded",
+      "ssim": 0.9909723413226363,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "fa79993013cadab152ba69cddf11ad30e7044ef8aaa741574102f9660a29de9f",
+      "mime": "webp",
+      "names": [
+        "brand-promo-07.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 31254,
+      "new_bytes": 23946,
+      "saved_bytes": 7308,
+      "class": "branded",
+      "ssim": 0.9919606626189358,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "36e6609e16e7bd6f807842aa30d3076e43c54c00779bbd1053c501b4c26bf13f",
+      "mime": "webp",
+      "names": [
+        "brand-campaign-04.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 55940,
+      "new_bytes": 43440,
+      "saved_bytes": 12500,
+      "class": "branded",
+      "ssim": 0.9919024249801583,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "a94b00bd89def45706e60819a81203edc471d7f99add73ebbe244e9db843f56c",
+      "mime": "webp",
+      "names": [
+        "brand-campaign-06.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 40972,
+      "new_bytes": 30018,
+      "saved_bytes": 10954,
+      "class": "branded",
+      "ssim": 0.9902843083708244,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "1f427827ef3911586913ca3987f2a8b2e728c41a141d6b660d4c99a74e00e7dc",
+      "mime": "webp",
+      "names": [
+        "brand-campaign-08.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 27782,
+      "new_bytes": 21522,
+      "saved_bytes": 6260,
+      "class": "branded",
+      "ssim": 0.9924145035206609,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "309011729888d6eae73d91fbc0cd891f9db573f7a9996eb63918a4637e01151a",
+      "mime": "webp",
+      "names": [
+        "brand-promo-12.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 30292,
+      "new_bytes": 23522,
+      "saved_bytes": 6770,
+      "class": "branded",
+      "ssim": 0.9923754833947492,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "a02d30ada78619925b638631b26a8ff575c48366d502da5859d8af686b48e525",
+      "mime": "webp",
+      "names": [
+        "brand-promo-10.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 49854,
+      "new_bytes": 37854,
+      "saved_bytes": 12000,
+      "class": "branded",
+      "ssim": 0.9910373399646687,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "6523142beb63a1a1eea8bec97bd40211bb56d6a5dfbf31313607babd438f37f3",
+      "mime": "webp",
+      "names": [
+        "brand-promo-03.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 48588,
+      "new_bytes": 36038,
+      "saved_bytes": 12550,
+      "class": "branded",
+      "ssim": 0.9911667163483534,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "8ab11a0ceba81abc88e21b3fb4776fd9f612084d911269ec037af4693055f1b5",
+      "mime": "webp",
+      "names": [
+        "brand-campaign-03.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 63428,
+      "new_bytes": 48306,
+      "saved_bytes": 15122,
+      "class": "branded",
+      "ssim": 0.9916229744960677,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "3d88b42a9b2dbda428b0ad857e9990cf756d3f41153b95291b01479c0c87c4db",
+      "mime": "webp",
+      "names": [
+        "brand-campaign-05.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 28322,
+      "new_bytes": 21950,
+      "saved_bytes": 6372,
+      "class": "branded",
+      "ssim": 0.9923881330876415,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "295b342a3ddcb06fa3ff359d4056830fe67ab275c324faaa9ec56a009541da58",
+      "mime": "webp",
+      "names": [
+        "brand-promo-13.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 29132,
+      "new_bytes": 22812,
+      "saved_bytes": 6320,
+      "class": "branded",
+      "ssim": 0.9925167674803038,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "2f9225719ba023bf4697bad78247b28bbf784b2f1d4308e93955103c141729ef",
+      "mime": "webp",
+      "names": [
+        "brand-promo-04.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 54320,
+      "new_bytes": 40950,
+      "saved_bytes": 13370,
+      "class": "branded",
+      "ssim": 0.9910415033175257,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "3ee127eb052e82b53f18c98196ffdb750e2e9a158213dd7ad3589bcf7ff25570",
+      "mime": "webp",
+      "names": [
+        "brand-promo-11.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 41006,
+      "new_bytes": 31158,
+      "saved_bytes": 9848,
+      "class": "branded",
+      "ssim": 0.9897977460828251,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "12d7c361bf66d29c40c17af944f76033c2fcf449d41796691ef3b085b001545d",
+      "mime": "webp",
+      "names": [
+        "brand-promo-06.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 65136,
+      "new_bytes": 49988,
+      "saved_bytes": 15148,
+      "class": "branded",
+      "ssim": 0.9920238351409856,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "202e280bd3b1e3db16363c1096944f830a3f7f1cbff247096a28017ab8b05520",
+      "mime": "webp",
+      "names": [
+        "brand-campaign-07.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 29300,
+      "new_bytes": 22452,
+      "saved_bytes": 6848,
+      "class": "branded",
+      "ssim": 0.991520707925006,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "f6bae870303ac6eaa515283d79b4c8a561c95366acdddfbedfd9c6dfa112774a",
+      "mime": "webp",
+      "names": [
+        "brand-campaign-09.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 42314,
+      "new_bytes": 32228,
+      "saved_bytes": 10086,
+      "class": "branded",
+      "ssim": 0.9899329548878655,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "a653d51197f32d95e3af811c7ac4bf7e87073f3b2e7d378a397ead37c78e7b38",
+      "mime": "webp",
+      "names": [
+        "brand-promo-01.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 2,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 43860,
+      "new_bytes": 32312,
+      "saved_bytes": 11548,
+      "class": "branded",
+      "ssim": 0.9902685774284367,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "94cb0f5b86e50bf7c82c957b783777512483693b3e15e0979b23a8821496f2cf",
+      "mime": "webp",
+      "names": [
+        "brand-promo-02.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 26948,
+      "new_bytes": 20998,
+      "saved_bytes": 5950,
+      "class": "branded",
+      "ssim": 0.9925061782384557,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "6ebafec620a8a479a5c99ca761c553c6bff5760ca71eb20038227bafc0fd8b35",
+      "mime": "webp",
+      "names": [
+        "brand-promo-08.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 29292,
+      "new_bytes": 22596,
+      "saved_bytes": 6696,
+      "class": "branded",
+      "ssim": 0.9928069756139978,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "ae7d4ebf7d6d1f84e7f0ac0bbc03988709f732df356ba0f8447317288b20e412",
+      "mime": "webp",
+      "names": [
+        "brand-campaign-10.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 28510,
+      "new_bytes": 21752,
+      "saved_bytes": 6758,
+      "class": "branded",
+      "ssim": 0.9924863101662514,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "2821d6829c2e41b2be71728cf87ad1fa6459bcf2c42346bc51c5502346555494",
+      "mime": "webp",
+      "names": [
+        "brand-campaign-12.webp"
+      ],
+      "external_count": 1,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 34284,
+      "new_bytes": 26082,
+      "saved_bytes": 8202,
+      "class": "branded",
+      "ssim": 0.9914915430665602,
+      "quality": 62,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "1e85ec81b9800b4c443d39caca0d0926089a3ac201120db1ceb45b93789480b8",
+      "mime": "gif",
+      "names": [
+        "embedded-photo"
+      ],
+      "external_count": 0,
+      "outside_html_refs": 37,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 34,
+      "new_bytes": 34,
+      "saved_bytes": 0,
+      "class": "photo",
+      "ssim": 1.0,
+      "quality": null,
+      "reason": "animated/keep"
+    },
+    {
+      "sha_old": "5c526bb5969a8fbba95f5d903908b4f799091a41c8af5e786ef8f2a3a389a211",
+      "mime": "webp",
+      "names": [
+        "embedded-photo"
+      ],
+      "external_count": 0,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 31684,
+      "new_bytes": 27970,
+      "saved_bytes": 3714,
+      "class": "photo",
+      "ssim": 0.9911757264439159,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "85ac2a5732496456db8ac7fd5d5c242c4bc60c497fd30e2678e5ee3f41ed44b2",
+      "mime": "webp",
+      "names": [
+        "embedded-photo"
+      ],
+      "external_count": 0,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 2,
+      "old_bytes": 31914,
+      "new_bytes": 29418,
+      "saved_bytes": 2496,
+      "class": "photo",
+      "ssim": 0.9934066009167607,
+      "quality": 48,
+      "reason": "optimized-webp"
+    },
+    {
+      "sha_old": "7fe989c4dc81647abaf39aee25f42af16c38eaba95f03622e5cb428ca6a0ff9b",
+      "mime": "webp",
+      "names": [
+        "embedded-photo"
+      ],
+      "external_count": 0,
+      "outside_html_refs": 1,
+      "inside_style_script_refs_untouched": 0,
+      "old_bytes": 36038,
+      "new_bytes": 31140,
+      "saved_bytes": 4898,
+      "class": "photo",
+      "ssim": 0.991680128918191,
+      "quality": 48,
+      "reason": "optimized-webp"
+    }
+  ]
+}
