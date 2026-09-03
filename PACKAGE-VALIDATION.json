@@ -1,0 +1,34 @@
+{
+  "input_zip": "PT.zip (latest baseline)",
+  "baseline_file_count": 201,
+  "current_file_count": 211,
+  "baseline_missing_after_seo_patch": [],
+  "original_asset_count": 135,
+  "original_assets_changed": [],
+  "current_html_count": 37,
+  "indexable_html_count": 35,
+  "dashboard_html_in_package": [],
+  "asset_batch_1_count": 67,
+  "asset_batch_2_count": 68,
+  "seo_static_validation_errors": 0,
+  "browser_render_count": 111,
+  "browser_render_failures": 0,
+  "canonical_origin": "https://panel.diracgroup.store",
+  "new_seo_pages": [
+    "pt-perorangan.html",
+    "perbedaan-pt-dan-cv.html",
+    "cara-membuat-nib-oss.html"
+  ],
+  "priority_pillar": "cara-mendirikan-pt.html",
+  "priority_keywords": [
+    "cara membuat PT",
+    "cara mendirikan PT",
+    "cara membangun PT",
+    "syarat mendirikan PT",
+    "biaya mendirikan PT",
+    "PT Perorangan",
+    "perbedaan PT dan CV",
+    "cara membuat NIB",
+    "cara mendirikan CV"
+  ]
+}

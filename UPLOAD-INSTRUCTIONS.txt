@@ -1,0 +1,19 @@
+PT DIGDAYA — GITHUB UPLOAD INSTRUCTIONS
+
+IMPORTANT
+1. Upload/commit the CONTENTS of ROOT_FILES/ to the repository root.
+2. Upload/commit the CONTENTS of ASSETS_BATCH_1/assets/ into the repository folder /assets/.
+3. Upload/commit the CONTENTS of ASSETS_BATCH_2/assets/ into the SAME repository folder /assets/.
+4. Do not rename asset files or HTML files.
+5. There is NO dashboard.html in this package. Do not create one unless the site owner explicitly requests it in the future.
+6. SEO canonical origin in this build is https://panel.diracgroup.store. If the production domain changes, update canonical/OG URLs, sitemap.xml and robots.txt before indexing.
+
+CURRENT COUNTS
+- ROOT_FILES direct + nested files: 74
+- HTML pages: 37
+- Indexable HTML pages: 35
+- Asset batch 1: 67 files
+- Asset batch 2: 68 files
+- Total assets: 135 files
+
+The two asset batches are packaging-only. When deployed, both batches merge back into a single /assets/ directory so existing paths remain unchanged.
