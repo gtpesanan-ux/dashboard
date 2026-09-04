@@ -40,12 +40,7 @@
   if(flow.length){if(reduced){flow.forEach(x=>x.classList.add('is-line-visible'))}else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-line-visible');io.unobserve(e.target)}}),{threshold:.45});flow.forEach(x=>io.observe(x));}}
 
   // Same-origin navigation fallback for browsers without cross-document View Transition.
-  qsa('a[href]').forEach(a=>a.addEventListener('click',e=>{
-    if(reduced||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download'))return;
-    const raw=a.getAttribute('href')||'';if(!raw||raw.startsWith('#')||raw.startsWith('mailto:')||raw.startsWith('tel:')||raw.startsWith('javascript:'))return;
-    let u;try{u=new URL(raw,location.href)}catch{return}if(u.origin!==location.origin||u.pathname===location.pathname&&u.search===location.search)return;
-    e.preventDefault();document.documentElement.classList.add('is-page-leaving');setTimeout(()=>location.href=u.href,190);
-  }));
+  // Native anchor navigation intentionally preserved for iOS/Safari reliability.
 
   qsa('[data-dig-video][data-fallback-src]').forEach(v=>{v.addEventListener('error',()=>{if(v.dataset.fallbackTried)return;v.dataset.fallbackTried='1';v.src=v.dataset.fallbackSrc;v.load();},{once:false});});
 

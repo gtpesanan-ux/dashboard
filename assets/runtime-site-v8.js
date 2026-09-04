@@ -9,7 +9,7 @@
   const qs = (selector, scope = document) => scope.querySelector(selector);
   const qsa = (selector, scope = document) => [...scope.querySelectorAll(selector)];
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const mobileMedia = window.matchMedia("(max-width: 1040px)");
+  const mobileMedia = window.matchMedia("(max-width: 1180px)");
 
   const iconMarkup = (name, size = 20) => {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");

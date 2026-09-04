@@ -1,0 +1,234 @@
+
+/* DIGDAYA MOTION + INTERFACE SYSTEM V16 — editorial, responsive, collision-safe. */
+:root{
+  --dig-m-ease:cubic-bezier(.16,1,.3,1);
+  --dig-m-ease-soft:cubic-bezier(.22,.61,.36,1);
+  --dig-m-fast:260ms;
+  --dig-m-base:610ms;
+  --dig-m-slow:860ms;
+  --dig-m-gold:#b88334;
+  --dig-m-navy:#082f5b;
+}
+html.dig-motion-v16{scroll-behavior:smooth}
+html.dig-motion-v16 body{--dig-scroll-progress:0}
+
+/* Opaque header: content never bleeds through while scrolling. */
+.site-header{
+  background:#fbf9f4!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+  border-bottom-color:rgba(8,47,91,.11)!important;
+}
+.site-header.is-scrolled{box-shadow:0 12px 34px rgba(8,47,91,.09)!important}
+
+/* The existing progress node is reused; V16 never creates a duplicate. */
+.reading-progress{
+  width:100%!important;
+  height:2px!important;
+  transform:scaleX(var(--dig-scroll-progress,0));
+  transform-origin:left center;
+  background:linear-gradient(90deg,#9c6b27,#d6ae67 62%,#ead3a6)!important;
+  box-shadow:0 0 9px rgba(184,131,52,.15);
+}
+
+/* Child choreography replaces duplicate wrapper animation without removing the reveal. */
+html.dig-motion-v16 .hero-copy.reveal,
+html.dig-motion-v16 .section-head.reveal,
+html.dig-motion-v16 .dig-pro-intro.reveal{
+  opacity:1!important;
+  transform:none!important;
+  clip-path:none!important;
+  filter:none!important;
+  transition:none!important;
+}
+
+html.dig-motion-v16-ready .dig-m-heading,
+html.dig-motion-v16-ready .dig-m-standard{
+  opacity:.001;
+  transform:translate3d(0,var(--dig-m-y,16px),0);
+  clip-path:inset(0 0 22% 0);
+  transition:opacity var(--dig-m-base) ease,transform var(--dig-m-slow) var(--dig-m-ease),clip-path var(--dig-m-slow) var(--dig-m-ease);
+  transition-delay:var(--dig-m-delay,0ms);
+}
+html.dig-motion-v16-ready .dig-m-heading{--dig-m-y:.92em;clip-path:inset(0 0 100% 0);transform-origin:left bottom}
+html.dig-motion-v16-ready .dig-m-heading.is-dig-in,
+html.dig-motion-v16-ready .dig-m-standard.is-dig-in{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+
+/* Restrained physical depth. Domain-deck cards retain their original choreography. */
+.dig-m-card:not(.u-domain-card){
+  --dig-card-rx:0deg;
+  --dig-card-ry:0deg;
+  --dig-card-lift:0px;
+  position:relative;
+  transform-style:preserve-3d;
+  backface-visibility:hidden;
+}
+html.dig-motion-v16-ready .dig-m-card:not(.u-domain-card){
+  opacity:.001;
+  transform:perspective(1400px) translate3d(0,22px,0) scale(.986);
+  transition:opacity .48s ease,transform .76s var(--dig-m-ease),box-shadow .38s ease,border-color .38s ease,filter .38s ease;
+  transition-delay:var(--dig-m-delay,0ms);
+}
+html.dig-motion-v16-ready .dig-m-card.is-dig-in:not(.u-domain-card){
+  opacity:1;
+  transform:perspective(1400px) translate3d(0,var(--dig-card-lift),0) rotateX(var(--dig-card-rx)) rotateY(var(--dig-card-ry)) scale(1);
+}
+@media (hover:hover) and (pointer:fine){
+  html.dig-motion-v16-ready .dig-m-card.is-dig-in:not(.u-domain-card):hover{--dig-card-lift:-4px;box-shadow:0 18px 44px rgba(8,47,91,.105)}
+  .dig-m-card .card-link svg,.dig-m-card .card-link span[aria-hidden="true"]{transition:transform .34s var(--dig-m-ease)}
+  .dig-m-card:hover .card-link svg,.dig-m-card:hover .card-link span[aria-hidden="true"]{transform:translateX(4px)}
+}
+
+/* Media reveal keeps positioned captions and interface layers intact. */
+.dig-m-media{overflow:hidden;isolation:isolate;--dig-m-radius:1.25rem}
+.dig-m-media.dig-m-needs-pos{position:relative}
+.dig-m-media>img,.dig-m-media img.dig-m-img{display:block;backface-visibility:hidden;transform-origin:center center}
+html.dig-motion-v16-ready .dig-m-media:not(.hero-picture):not(.dig-hero-alt-media)>img,
+html.dig-motion-v16-ready .dig-m-media:not(.hero-picture):not(.dig-hero-alt-media) img.dig-m-img{
+  clip-path:inset(0 8% 0 0 round var(--dig-m-radius));
+  transform:translate3d(0,var(--dig-media-shift,8px),0) scale(1.035);
+  filter:saturate(.92) contrast(1.025) brightness(.995);
+  transition:clip-path .9s var(--dig-m-ease),transform 1.04s var(--dig-m-ease),filter .7s ease;
+}
+html.dig-motion-v16-ready .dig-m-media.is-dig-in:not(.hero-picture):not(.dig-hero-alt-media)>img,
+html.dig-motion-v16-ready .dig-m-media.is-dig-in:not(.hero-picture):not(.dig-hero-alt-media) img.dig-m-img{
+  clip-path:inset(0 0 0 0 round var(--dig-m-radius));
+  transform:translate3d(0,var(--dig-parallax,0px),0) scale(var(--dig-media-scale,1.025));
+  filter:saturate(.97) contrast(1.02) brightness(1);
+}
+.dig-m-media>.dig-photo-sheen{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(105deg,rgba(250,247,241,.56),rgba(228,202,152,.18) 43%,rgba(8,47,91,.045) 70%,transparent 80%);transform-origin:right center;transform:scaleX(1);transition:transform .94s var(--dig-m-ease);mix-blend-mode:soft-light}
+.dig-m-media.is-dig-in>.dig-photo-sheen{transform:scaleX(0)}
+.dig-m-media>.dig-photo-grain{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.055;background:radial-gradient(circle at 16% 24%,rgba(255,255,255,.22) 0 1px,transparent 1.4px) 0 0/8px 8px;mix-blend-mode:soft-light}
+.dig-m-media>figcaption,
+.dig-m-media>.dig-news-art-layer,
+.dig-m-media>.dig-static-illustration-label,
+.dig-m-media>.u-motion-card-copy,
+.dig-m-media>.dig-campaign-copy,
+.dig-m-media>.dig-promo-copy{z-index:2}
+@media (hover:hover) and (pointer:fine){
+  .dig-m-media.is-dig-in:not(.hero-picture):not(.dig-hero-alt-media):hover>img,
+  .dig-m-media.is-dig-in:not(.hero-picture):not(.dig-hero-alt-media):hover img.dig-m-img{--dig-media-scale:1.045;filter:saturate(1) contrast(1.025) brightness(1.01)}
+}
+
+/* Preserve coverflow and make the centered editorial image legible. */
+[data-dig-scroll-track]>.is-cover-active.dig-m-card{--dig-card-lift:-2px}
+[data-dig-scroll-track]>.is-cover-active.dig-m-media>img{--dig-media-scale:1.035;filter:saturate(1) contrast(1.025)}
+[data-dig-scroll-track]>.is-cover-prev.dig-m-media>img,
+[data-dig-scroll-track]>.is-cover-next.dig-m-media>img{--dig-media-scale:1.02;filter:saturate(.9) contrast(1.015)}
+[data-dig-scroll-track]>.is-cover-far.dig-m-media>img{filter:saturate(.8) contrast(1.01)}
+[data-dig-scroll-track]{scroll-behavior:smooth}
+
+/* Editorial surfaces replace generic glass/SaaS styling. */
+.hero-copy{background:rgba(251,249,244,.965)!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important;box-shadow:0 22px 64px rgba(7,37,70,.16)!important}
+.card{border-radius:1.08rem!important;box-shadow:0 1px 0 rgba(255,255,255,.82) inset,0 7px 24px rgba(8,47,91,.035)!important}
+.card-topline .card-number,.card-topline .card-code{
+  width:auto!important;
+  min-width:1.8rem!important;
+  height:auto!important;
+  min-height:0!important;
+  padding:.34rem 0 .18rem!important;
+  border-top:1px solid currentColor;
+  border-radius:0!important;
+  background:transparent!important;
+  color:var(--dig-m-gold)!important;
+  letter-spacing:.12em;
+}
+.icon-tile{background:var(--paper-2)!important;box-shadow:none!important}
+.accent-card .icon-tile{background:rgba(255,255,255,.085)!important}
+
+.button,.menu-button,.quick-contact-option,.social-contact{transition:transform .32s var(--dig-m-ease),box-shadow .32s ease,border-color .32s ease,background-color .32s ease,color .32s ease!important}
+.footer-main{grid-template-columns:minmax(16rem,1.25fr) repeat(4,minmax(8rem,.62fr))!important;gap:clamp(1.25rem,2.7vw,2.7rem)!important}
+@media (hover:hover) and (pointer:fine){
+  .button:hover{transform:translateY(-2px)}
+  .menu-button:hover,.social-contact[href]:hover{transform:translateY(-2px)}
+}
+
+/* Dense but readable information architecture. */
+@media(min-width:1181px){
+  .main-nav{gap:0!important}
+  .main-nav>a{padding:.6rem .54rem!important;font-size:.79rem!important}
+  .nav-group-row>.nav-parent{padding:.6rem .24rem .6rem .5rem!important;font-size:.79rem!important}
+  .nav-toggle{width:2rem!important;height:2rem!important}
+  .header-cta{margin-left:.25rem!important;padding-inline:.8rem!important}
+  .nav-flyout{width:16.5rem}
+}
+@media(max-width:1180px){
+  .header-inner{grid-template-columns:minmax(0,1fr) auto!important}
+  .header-inner>.brand{grid-column:1!important;max-width:none}
+  .header-inner>.menu-button{display:inline-grid!important;grid-column:2!important}
+  .header-inner>.main-nav{grid-column:auto!important}
+  .js .main-nav{display:none!important;position:fixed!important;z-index:120!important;top:calc(var(--u-header) + .5rem)!important;right:.75rem!important;left:.75rem!important;width:auto!important;max-height:calc(100dvh - var(--u-header) - 1.25rem)!important;overflow:auto!important;padding:.75rem!important;border:1px solid var(--line)!important;border-radius:1rem!important;background:#fff!important;box-shadow:0 28px 70px rgba(8,47,91,.18)!important}
+  .js .main-nav.is-open{display:grid!important;align-content:start}
+  .nav-group-row{width:100%}
+  .nav-group-row>.nav-parent{min-height:2.85rem;display:flex;flex:1 1 auto;align-items:center;padding:.7rem .8rem!important}
+  .nav-toggle{width:2.85rem!important;height:2.85rem!important}
+  .nav-flyout{position:static!important;inset:auto!important;width:auto!important;margin:0!important;padding:.15rem 0 .35rem .75rem!important;border:0!important;background:transparent!important;box-shadow:none!important;transform:none!important}
+  .nav-group.is-open .nav-flyout{visibility:visible!important;opacity:1!important;pointer-events:auto!important;transform:none!important}
+  .nav-flyout a{min-height:2.65rem;display:flex;align-items:center;padding:.52rem .78rem!important}
+  .main-nav>.nav-group,.main-nav>a,.main-nav>.header-cta{opacity:0;transform:translateY(-6px)}
+  .main-nav.is-open>.nav-group,.main-nav.is-open>a,.main-nav.is-open>.header-cta{opacity:1;transform:none;transition:opacity .3s ease,transform .42s var(--dig-m-ease);transition-delay:calc(var(--dig-nav-i,0) * 34ms)}
+  .footer-main{grid-template-columns:minmax(15rem,1.2fr) repeat(2,minmax(0,1fr))!important}
+}
+body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;pointer-events:none!important;transform:translateY(10px)}
+
+/* Support hub uses real actions and clear states, not decorative dashboard boxes. */
+.support-intent-grid .card{display:flex;flex-direction:column}
+.support-intent-grid .card .card-link,.support-intent-grid .card .button{margin-top:auto;align-self:flex-start}
+.support-din-panel{display:grid;grid-template-columns:minmax(0,.9fr) minmax(19rem,1.1fr);gap:clamp(1rem,4vw,4rem);align-items:center}
+.support-din-form{padding:clamp(1.2rem,3vw,2rem);border-top:3px solid var(--gold);background:#fff}
+.support-din-form label{display:block;color:var(--navy);font-weight:800}
+.support-din-form input{width:100%;margin-top:.55rem;text-transform:uppercase;letter-spacing:.08em}
+.support-din-form .status-message{min-height:1.5rem;margin:.55rem 0 0}
+.support-notice{border-left:3px solid var(--gold);padding-left:1rem}
+.dig-browser-workflow{display:grid;gap:0;margin:0;padding:1.15rem;align-content:center;list-style:none}
+.dig-browser-workflow li{display:grid;grid-template-columns:2.1rem 1fr;gap:.1rem .75rem;padding:.75rem 0;border-top:1px solid rgba(8,47,91,.16)}
+.dig-browser-workflow li:first-child{border-top:0}
+.dig-browser-workflow span{grid-row:1/3;color:var(--gold);font-size:.69rem;font-weight:850;letter-spacing:.1em}
+.dig-browser-workflow strong{color:var(--navy);font-size:.88rem;line-height:1.3}
+.dig-browser-workflow small{color:var(--ink-soft);font-size:.72rem;line-height:1.45}
+.footer-legal-links{display:flex;flex-wrap:wrap;gap:.45rem 1rem}
+.footer-legal-links a{color:inherit;font-size:.72rem;font-weight:700;text-decoration-thickness:1px}
+
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:dig-v16-page-out .22s var(--dig-m-ease) both}
+::view-transition-new(root){animation:dig-v16-page-in .4s var(--dig-m-ease) both}
+@keyframes dig-v16-page-out{to{opacity:0;transform:translate3d(0,-4px,0) scale(.999);filter:blur(.7px)}}
+@keyframes dig-v16-page-in{from{opacity:0;transform:translate3d(0,8px,0) scale(.999);filter:blur(1px)}to{opacity:1;transform:none;filter:none}}
+
+@media(max-width:760px){
+  .shell{width:min(100% - 24px,var(--shell))!important}
+  .section{padding-block:clamp(2.85rem,11vw,3.5rem)!important}
+  .section-head{gap:1rem!important;margin-bottom:1.45rem!important}
+  .editorial-media{min-height:clamp(280px,75vw,360px)!important}
+  .grid-2>.card,.grid-3>.card,.grid-4>.card,.card-grid>.card,.services-grid>.card,.support-intent-grid>.card{min-height:0!important;padding:1.08rem!important;border-radius:1rem!important}
+  .choice-card,.service-card,.article-card,.dig-pro-card{min-height:0!important;border-radius:1rem!important}
+  .card-topline{min-height:2.85rem!important;margin-bottom:.85rem!important}
+  .card-topline .icon-tile{width:2.85rem!important;height:2.85rem!important;border-radius:.82rem!important}
+  .card-topline .icon-tile .icon-svg{width:1.35rem!important;height:1.35rem!important}
+  .card h3{font-size:1.08rem!important;line-height:1.28!important}
+  .card>p{margin-top:.58rem!important;font-size:.95rem!important;line-height:1.58!important}
+  .card-link{min-height:44px!important;align-items:center!important;margin-top:.68rem!important;font-size:.83rem!important}
+  .hero-copy{width:calc(100% - 1rem)!important;padding:1.05rem!important}
+  .hero-index{margin-top:.85rem!important}
+  .dig-m-media>.dig-photo-grain{opacity:.035}
+  html.dig-motion-v16-ready .dig-m-card:not(.u-domain-card){transform:translate3d(0,15px,0) scale(.994)}
+  html.dig-motion-v16-ready .dig-m-card.is-dig-in:not(.u-domain-card){transform:none}
+  .support-din-panel{grid-template-columns:1fr}
+  .footer-main{grid-template-columns:1fr!important;gap:1.8rem!important}
+  .footer-main>:last-child{grid-column:auto!important}
+  .footer-legal-links{gap:.55rem .9rem}
+  .brand-copy strong{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;line-height:1.12!important}
+  .quick-contact{right:max(.6rem,env(safe-area-inset-right))!important;bottom:max(.65rem,env(safe-area-inset-bottom))!important}
+  .quick-contact .wa-float{width:3.15rem!important;height:3.15rem!important;border-width:2px!important;box-shadow:0 12px 30px rgba(3,26,18,.24)!important}
+}
+@media(max-width:380px){
+  .header-inner>.brand img{width:42px!important;height:42px!important}
+  .header-inner>.brand strong{font-size:.66rem!important;letter-spacing:.01em!important;max-width:24ch}
+  .menu-button{width:3rem!important;height:3rem!important;min-width:3rem!important}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  .reading-progress{display:none!important}
+  .dig-m-heading,.dig-m-standard,.dig-m-card,.dig-m-media,.dig-m-media>img,.dig-m-media img,.dig-photo-sheen,.dig-photo-grain,[data-dig-scroll-track]>*{opacity:1!important;transform:none!important;clip-path:none!important;filter:none!important;transition:none!important;animation:none!important}
+  .dig-photo-sheen,.dig-photo-grain{display:none!important}
+}

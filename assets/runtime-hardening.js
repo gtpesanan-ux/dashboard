@@ -1,7 +1,7 @@
 (() => {
   "use strict";
   const qs=(s,r=document)=>r.querySelector(s), qsa=(s,r=document)=>Array.from(r.querySelectorAll(s));
-  const mobile=()=>matchMedia?.("(max-width: 1040px)")?.matches ?? innerWidth<=1040;
+  const mobile=()=>matchMedia?.("(max-width: 1180px)")?.matches ?? innerWidth<=1180;
   const once=(el,key)=>{if(!el||el.dataset[key]==="1")return false;el.dataset[key]="1";return true;};
 
   // Fallback navigation only acts when earlier handlers did not change state.
