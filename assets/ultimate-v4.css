@@ -16,11 +16,11 @@ html.is-page-leaving body{opacity:0;transform:translateY(-5px);transition:opacit
 .header-inner>.brand .brand-copy{min-width:0}.header-inner>.brand strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
 .header-inner>.menu-button,.header-inner>.main-nav{grid-column:3}
 main{position:relative;z-index:0}
-[data-motion="slide-left"]{opacity:0!important;transform:translate3d(-2.4rem,0,0)!important}
-[data-motion="slide-right"]{opacity:0!important;transform:translate3d(2.4rem,0,0)!important}
-[data-motion="slide-left"].is-visible,[data-motion="slide-right"].is-visible{opacity:1!important;transform:translate3d(0,0,0)!important}
-.reveal[data-motion="media"]{clip-path:inset(0 8% 0 0 round 1rem);transform:translate3d(0,1rem,0) scale(.985)}
-.reveal[data-motion="media"].is-visible{clip-path:inset(0 0 0 0 round 1rem);transform:none}
+.motion-ready [data-motion="slide-left"]{opacity:0!important;transform:translate3d(-2.4rem,0,0)!important}
+.motion-ready [data-motion="slide-right"]{opacity:0!important;transform:translate3d(2.4rem,0,0)!important}
+.motion-ready [data-motion="slide-left"].is-visible,.motion-ready [data-motion="slide-right"].is-visible{opacity:1!important;transform:translate3d(0,0,0)!important}
+.motion-ready .reveal[data-motion="media"]:not(.dig-m-media){clip-path:inset(0 8% 0 0 round 1rem);transform:translate3d(0,1rem,0) scale(.985)}
+.motion-ready .reveal[data-motion="media"]:not(.dig-m-media).is-visible{clip-path:inset(0 0 0 0 round 1rem);transform:none}
 
 /* Hero story becomes a real layered card deck while preserving original copy. */
 [data-dig-hero]{perspective:1100px;transform-style:preserve-3d}

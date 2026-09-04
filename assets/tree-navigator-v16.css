@@ -8,7 +8,7 @@
 .dv-tree-nav:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(135deg,rgba(229,196,124,.10),transparent 38%,rgba(8,47,91,.035));z-index:-2}
 .dv-tree-hover-pill,.dv-tree-selected-pill{position:absolute;left:.65rem;top:.65rem;width:calc(100% - 1.3rem);height:2.25rem;border-radius:.7rem;pointer-events:none;opacity:0;transform:translate3d(0,0,0);transition:transform .42s cubic-bezier(.22,1,.36,1),height .42s cubic-bezier(.22,1,.36,1),width .42s cubic-bezier(.22,1,.36,1),opacity .18s ease;background:rgba(8,47,91,.065);z-index:-1}
 .dv-tree-selected-pill{background:linear-gradient(90deg,rgba(229,196,124,.17),rgba(8,47,91,.055));box-shadow:inset 2px 0 0 var(--gold);z-index:-1}
-.dv-tree-lines{position:absolute;left:1.55rem;top:2.65rem;width:1.65rem;overflow:visible;pointer-events:none;z-index:0;color:rgba(8,47,91,.18)}
+.dv-tree-lines{position:absolute;left:1.55rem;top:2.65rem;width:1.65rem;overflow:visible;pointer-events:none;z-index:0;color:rgba(8,47,91,.18);transition:opacity .18s ease}
 .dv-tree-lines .dv-tree-active-path{stroke:var(--gold);stroke-width:1.55;stroke-linecap:round;fill:none;filter:drop-shadow(0 0 4px rgba(131,85,14,.16))}
 .dv-tree-lines .dv-tree-base-path{stroke:currentColor;stroke-width:1;stroke-linecap:round;fill:none}
 .dv-tree-group{position:relative;z-index:1}
@@ -44,6 +44,5 @@
 .dv-tree-preview-actions .button:hover{background:#fff;color:var(--navy)}
 .dv-tree-preview-note{font-size:.74rem;color:rgba(255,255,255,.58)}
 .dv-tree-announce{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-@media (max-width:760px){.dv-tree-layout{grid-template-columns:1fr}.dv-tree-preview{min-height:15rem}.dv-tree-nav{padding:.62rem .55rem}.dv-tree-hover-pill,.dv-tree-selected-pill{left:.55rem;width:calc(100% - 1.1rem)}}
-@media (prefers-reduced-motion:reduce){.dv-tree-hover-pill,.dv-tree-selected-pill,.dv-tree-collapse,.dv-tree-chevron,.dv-tree-section-toggle,.dv-tree-folder-toggle,.dv-tree-item{transition:none!important}.dv-tree-lines .dv-tree-active-path{filter:none}}
-
+@media (max-width:760px){.dv-tree-layout{grid-template-columns:1fr;align-items:start}.dv-tree-preview{min-height:15rem}.dv-tree-nav{padding:.62rem .55rem;min-height:0}.dv-tree-hover-pill,.dv-tree-selected-pill{left:.55rem;width:calc(100% - 1.1rem)}}
+@media (prefers-reduced-motion:reduce){.dv-tree-lines,.dv-tree-hover-pill,.dv-tree-selected-pill,.dv-tree-collapse,.dv-tree-chevron,.dv-tree-section-toggle,.dv-tree-folder-toggle,.dv-tree-item{transition:none!important}.dv-tree-lines .dv-tree-active-path{filter:none}}

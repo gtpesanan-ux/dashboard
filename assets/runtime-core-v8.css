@@ -877,7 +877,7 @@ body.menu-open {
   transition: none;
 }
 
-.motion-ready .reveal {
+.motion-ready .reveal:not(.dig-m-media) {
   --motion-delay: 0ms;
   opacity: 0;
   transform: translate3d(0, 1.5rem, 0);
@@ -888,7 +888,7 @@ body.menu-open {
   will-change: opacity, transform;
 }
 
-.motion-ready .reveal.is-visible {
+.motion-ready .reveal:not(.dig-m-media).is-visible {
   opacity: 1;
   transform: none;
 }
@@ -909,13 +909,13 @@ body.menu-open {
   transform: translate3d(0, .75rem, 0) scale(.97);
 }
 
-.motion-ready .reveal[data-motion="media"] {
+.motion-ready .reveal[data-motion="media"]:not(.dig-m-media) {
   opacity: 1;
   clip-path: inset(0 0 100% 0 round var(--radius));
   transform: scale(1.018);
 }
 
-.motion-ready .reveal[data-motion="media"].is-visible {
+.motion-ready .reveal[data-motion="media"]:not(.dig-m-media).is-visible {
   clip-path: inset(0 0 0 0 round var(--radius));
   transform: none;
 }
@@ -934,7 +934,7 @@ body.menu-open {
   will-change: auto;
 }
 
-.motion-ready .hero-copy[data-motion="hero"] > * {
+.motion-ready .hero-copy[data-motion="hero"] > :not(.dig-m-heading):not(.dig-m-standard) {
   opacity: 0;
   transform: translate3d(0, 1rem, 0);
   transition:
@@ -942,16 +942,16 @@ body.menu-open {
     transform var(--motion-editorial) var(--ease-enter);
 }
 
-.motion-ready .hero-copy[data-motion="hero"].is-visible > * {
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :not(.dig-m-heading):not(.dig-m-standard) {
   opacity: 1;
   transform: none;
 }
 
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(1) { transition-delay: 30ms; }
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(2) { transition-delay: 100ms; }
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(3) { transition-delay: 180ms; }
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(4) { transition-delay: 260ms; }
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(5) { transition-delay: 340ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(1):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 30ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(2):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 100ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(3):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 180ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(4):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 260ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(5):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 340ms; }
 
 .motion-ready .reveal-group {
   opacity: 1;
@@ -2301,7 +2301,7 @@ html:not(.js) .faq details[open] summary::after {
 @media (prefers-reduced-motion: reduce) {
   .motion-ready .reveal,
   .motion-ready .reveal[data-motion],
-  .motion-ready .hero-copy[data-motion="hero"] > *,
+  .motion-ready .hero-copy[data-motion="hero"] > :not(.dig-m-heading):not(.dig-m-standard),
   .motion-ready .reveal-group > * {
     opacity: 1 !important;
     clip-path: none !important;
@@ -2400,4 +2400,3 @@ html:not(.js) .faq details[open] summary::after {
 @media(max-width:760px){.quick-contact{right:max(.75rem,env(safe-area-inset-right));bottom:max(.8rem,env(safe-area-inset-bottom))}.quick-contact .wa-float{width:3.55rem;height:3.55rem}.site-footer{padding-bottom:calc(5.2rem + max(1rem,env(safe-area-inset-bottom)))!important}.toast-region{bottom:calc(5rem + max(1rem,env(safe-area-inset-bottom)))!important}.footer-contact-us{grid-template-columns:1fr}.social-contact-list{justify-content:flex-start}.quick-contact-panel{width:min(21.5rem,calc(100vw - 1.5rem))}}
 @media(prefers-reduced-motion:reduce){.quick-contact .wa-float,.quick-contact-option,.social-contact{transition:none!important}.quick-contact .wa-float:hover,.quick-contact-option[href]:hover,.social-contact[href]:hover{transform:none!important}}
 @media print{.quick-contact,.footer-contact-us{display:none!important}}
-
