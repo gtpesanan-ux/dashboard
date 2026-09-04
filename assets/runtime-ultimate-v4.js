@@ -37,7 +37,7 @@
 
   // Timeline / process progression.
   const flow=qsa('.u-flowline>div');
-  if(flow.length){if(reduced){flow.forEach(x=>x.classList.add('is-line-visible'))}else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-line-visible');io.unobserve(e.target)}}),{threshold:.45});flow.forEach(x=>io.observe(x));}}
+  if(flow.length){if(reduced||!('IntersectionObserver'in window)){flow.forEach(x=>x.classList.add('is-line-visible'))}else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-line-visible');io.unobserve(e.target)}}),{threshold:.45});flow.forEach(x=>io.observe(x));}}
 
   // Same-origin navigation fallback for browsers without cross-document View Transition.
   // Native anchor navigation intentionally preserved for iOS/Safari reliability.

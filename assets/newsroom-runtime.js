@@ -1,21 +1,210 @@
 (() => {
   "use strict";
-  const DATA=Array.isArray(globalThis.DigdayaNewsData)?globalThis.DigdayaNewsData:[];
-  const root=document.querySelector('[data-live-news]'); if(!root) return;
-  const q=(s,r=root)=>r.querySelector(s), grid=q('[data-live-news-grid]'), more=q('[data-live-news-more]'), retry=q('[data-live-news-retry]'), search=q('[data-live-news-search]'), total=q('[data-live-news-total]'), state=q('[data-live-news-state]'), progress=q('[data-live-news-progress]'), status=q('[data-live-news-status]');
-  let visible=30, kind='all', category='all', sort='viral';
-  const prefixes={Olahraga:'olahraga',Pendidikan:'pendidikan',Pariwisata:'pariwisata',Digital:'digital',Fragrance:'fragrance',Humaniora:'budaya',Nasional:'nasional',Lingkungan:'lingkungan',Ekonomi:'ekonomi',Bisnis:'bisnis',Daerah:'nasional',Pembangunan:'ekonomi',Budaya:'budaya',Energi:'ekonomi',Kesehatan:'kesehatan',Teknologi:'teknologi',Internasional:'nasional',Hiburan:'budaya'};
-  const hash=s=>Array.from(String(s)).reduce((a,c)=>((a<<5)-a+c.charCodeAt(0))|0,0);
-  const imageFor=item=>{const pre=prefixes[item.category]||'nasional';const p=`assets/news-${pre}-${Math.abs(hash(item.title))%3+1}.webp`;return p;};
-  const fmt=d=>{try{return new Intl.DateTimeFormat('id-ID',{dateStyle:'medium',timeStyle:'short',timeZone:'Asia/Jakarta'}).format(new Date(d))+' WIB'}catch{return d}};
-  const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-  const controls=document.createElement('div'); controls.className='live-news-controls'; controls.innerHTML='<label>Jenis <select data-live-kind><option value="all">Semua</option><option value="news">Berita aktual</option><option value="trend-brief">Pantauan tren</option></select></label><label>Kategori <select data-live-category><option value="all">Semua kategori</option></select></label><label>Urutkan <select data-live-sort><option value="viral">Potensi viral</option><option value="newest">Terbaru</option><option value="title">Judul A–Z</option></select></label>';
-  const toolbar=q('.live-news-toolbar'); toolbar?.insertAdjacentElement('afterend',controls);
-  const catSel=controls.querySelector('[data-live-category]'); [...new Set(DATA.map(x=>x.category))].sort((a,b)=>a.localeCompare(b,'id')).forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;catSel.append(o)});
-  const list=()=>{const needle=norm(search?.value);let arr=DATA.filter(x=>(kind==='all'||x.kind===kind)&&(category==='all'||x.category===category)&&(!needle||norm([x.title,x.summary,x.keywords,x.context,x.angle].join(' ')).includes(needle)));arr=[...arr];if(sort==='viral')arr.sort((a,b)=>(b.viralScore||0)-(a.viralScore||0)||new Date(b.date)-new Date(a.date));else if(sort==='newest')arr.sort((a,b)=>new Date(b.date)-new Date(a.date));else arr.sort((a,b)=>a.title.localeCompare(b.title,'id'));return arr};
-  const card=(item,i)=>{const a=document.createElement('article');a.className='live-news-card';a.dataset.kind=item.kind;a.dataset.score=String(item.viralScore||0);const f=document.createElement('figure');f.className='live-news-visual';f.dataset.seq=String(i+1).padStart(4,'0');f.dataset.category=item.category;const img=document.createElement('img');img.src=imageFor(item);img.alt=`Visual editorial lokal kategori ${item.category}`;img.loading=i<6?'eager':'lazy';img.decoding='async';img.width=1200;img.height=675;f.append(img);const b=document.createElement('div');b.className='live-news-card-body';const meta=document.createElement('div');meta.className='live-news-source';const c=document.createElement('b');c.textContent=item.category;const type=document.createElement('span');type.className='news-kind-badge '+(item.kind==='news'?'is-news':'is-trend');type.textContent=item.kind==='news'?'Berita aktual':'Pantauan tren';const tm=document.createElement('span');tm.textContent=`${item.source} · ${fmt(item.date)}`;meta.append(c,type,tm);const viral=document.createElement('div');viral.className='viral-meter';viral.innerHTML=`<span>Potensi viral</span><strong>${item.viralScore||0}/100 · ${item.viralTier||'Pantauan'}</strong>`;const meter=document.createElement('progress');meter.max=100;meter.value=Math.max(0,Math.min(100,item.viralScore||0));meter.setAttribute('aria-label',`Skor potensi viral ${meter.value} dari 100`);viral.append(meter);const h=document.createElement('h3');h.textContent=item.title;const p=document.createElement('p');p.textContent=item.summary;const link=document.createElement('a');link.href=`berita-detail.html?id=${encodeURIComponent(item.id)}`;link.textContent='Baca analisis lengkap →';link.setAttribute('aria-label',`Baca analisis lengkap: ${item.title}`);b.append(meta,viral,h,p,link);a.append(f,b);return a};
-  let renderedCount=0,renderKey='';
-  const render=(append=false)=>{const arr=list(),show=arr.slice(0,visible),key=`${kind}|${category}|${sort}|${norm(search?.value)}`;const canAppend=append&&key===renderKey&&show.length>=renderedCount;if(!canAppend){grid.replaceChildren();renderedCount=0}if(!show.length){const e=document.createElement('div');e.className='live-news-empty';e.textContent='Tidak ada item yang cocok dengan filter ini.';grid.append(e)}else if(show.length>renderedCount){const frag=document.createDocumentFragment();show.slice(renderedCount).forEach((x,i)=>frag.append(card(x,renderedCount+i)));grid.append(frag)}renderedCount=show.length;renderKey=key;total.textContent=`${DATA.length.toLocaleString('id-ID')} item newsroom`;state.textContent='Snapshot lokal · peta potensi viral';state.classList.remove('is-loading');state.classList.add('is-local');status.textContent=`Menampilkan ${show.length} dari ${arr.length} item. Total basis data ${DATA.length}.`;progress.value=100;more.hidden=show.length>=arr.length;more.textContent=`Muat 30 lagi (${Math.max(0,arr.length-show.length)} tersisa)`;retry.textContent='Reset tampilan';};
-  const kindSel=controls.querySelector('[data-live-kind]'),sortSel=controls.querySelector('[data-live-sort]');let timer=0;search?.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(()=>{visible=30;render()},120)});more?.addEventListener('click',()=>{visible+=30;render(true)});retry?.addEventListener('click',()=>{visible=30;kind='all';category='all';sort='viral';if(search)search.value='';kindSel.value='all';catSel.value='all';sortSel.value='viral';render()});kindSel.addEventListener('change',e=>{kind=e.target.value;visible=30;render()});catSel.addEventListener('change',e=>{category=e.target.value;visible=30;render()});sortSel.addEventListener('change',e=>{sort=e.target.value;visible=30;render()});
+
+  const DATA = Array.isArray(globalThis.DigdayaNewsData) ? globalThis.DigdayaNewsData : [];
+  const root = document.querySelector("[data-live-news]");
+  if (!root) return;
+
+  const q = (selector, scope = root) => scope.querySelector(selector);
+  const grid = q("[data-live-news-grid]");
+  const more = q("[data-live-news-more]");
+  const retry = q("[data-live-news-retry]");
+  const search = q("[data-live-news-search]");
+  const total = q("[data-live-news-total]");
+  const state = q("[data-live-news-state]");
+  const progress = q("[data-live-news-progress]");
+  const status = q("[data-live-news-status]");
+  if (!grid) return;
+
+  let visible = 30;
+  let kind = "all";
+  let category = "all";
+  let sort = "newest";
+
+  const visualPools = {
+    Olahraga: "olahraga",
+    Pendidikan: "pendidikan",
+    Pariwisata: "pariwisata",
+    Digital: "digital",
+    Fragrance: "fragrance",
+    Humaniora: "budaya",
+    Nasional: "nasional",
+    Lingkungan: "lingkungan",
+    Ekonomi: "ekonomi",
+    Bisnis: "bisnis",
+    Daerah: "nasional",
+    Pembangunan: "ekonomi",
+    Budaya: "budaya",
+    Energi: "ekonomi",
+    Kesehatan: "kesehatan",
+    Teknologi: "teknologi",
+    Internasional: "nasional",
+    Hiburan: "budaya"
+  };
+
+  const hash = value => Array.from(String(value)).reduce((sum, char) => ((sum << 5) - sum + char.charCodeAt(0)) | 0, 0);
+  const imageFor = item => {
+    const pool = visualPools[item.category] || "nasional";
+    const index = Math.abs(hash(`${item.category}|${item.id}`)) % 3 + 1;
+    return `assets/news-${pool}-${index}.webp`;
+  };
+  const imageDisclosure = category => `Ilustrasi kategori ${category}; bukan dokumentasi peristiwa.`;
+  const normalise = value => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("id");
+  const timeValue = item => {
+    const parsed = Date.parse(item.date || "");
+    return Number.isFinite(parsed) ? parsed : 0;
+  };
+  const formatStoredDate = item => {
+    if (!item.date) return "Tanggal tidak tersedia";
+    try {
+      const dateOnly = /^\d{4}-\d{2}-\d{2}$/.test(item.date);
+      const value = new Intl.DateTimeFormat("id-ID", dateOnly
+        ? { dateStyle: "long", timeZone: "Asia/Jakarta" }
+        : { dateStyle: "medium", timeStyle: "short", timeZone: "Asia/Jakarta" }
+      ).format(new Date(item.date));
+      return `${value}${dateOnly ? "" : " WIB"} · tanggal dari dataset lama`;
+    } catch {
+      return `${item.date} · tanggal dari dataset lama`;
+    }
+  };
+  const kindLabel = item => item.kind === "title-archive"
+    ? "Arsip judul — verifikasi tertunda"
+    : "Pantauan kueri — bukan fakta";
+
+  const controls = document.createElement("div");
+  controls.className = "live-news-controls";
+  controls.innerHTML = '<label>Jenis <select data-live-kind><option value="all">Semua catatan</option><option value="title-archive">Arsip judul</option><option value="query-monitor">Pantauan kueri</option></select></label><label>Kategori <select data-live-category><option value="all">Semua kategori</option></select></label><label>Urutkan <select data-live-sort><option value="newest">Tanggal dataset terbaru</option><option value="title">Judul A–Z</option></select></label>';
+  q(".live-news-toolbar")?.insertAdjacentElement("afterend", controls);
+
+  const categorySelect = controls.querySelector("[data-live-category]");
+  [...new Set(DATA.map(item => item.category))]
+    .sort((a, b) => a.localeCompare(b, "id"))
+    .forEach(value => {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = value;
+      categorySelect.append(option);
+    });
+
+  const list = () => {
+    const needle = normalise(search?.value);
+    const filtered = DATA.filter(item => {
+      const haystack = [item.title, item.originalTitle, item.query, item.summary, item.keywords, item.statusLabel].join(" ");
+      return (kind === "all" || item.kind === kind)
+        && (category === "all" || item.category === category)
+        && (!needle || normalise(haystack).includes(needle));
+    });
+    return [...filtered].sort(sort === "title"
+      ? (a, b) => a.title.localeCompare(b.title, "id")
+      : (a, b) => timeValue(b) - timeValue(a) || a.title.localeCompare(b.title, "id"));
+  };
+
+  const card = (item, index) => {
+    const article = document.createElement("article");
+    article.className = "live-news-card";
+    article.dataset.kind = item.kind;
+
+    const figure = document.createElement("figure");
+    figure.className = "live-news-visual";
+    figure.dataset.seq = String(index + 1).padStart(4, "0");
+    figure.dataset.category = item.category;
+    const disclosure = imageDisclosure(item.category);
+    const image = document.createElement("img");
+    image.src = imageFor(item);
+    image.alt = disclosure;
+    image.loading = index < 6 ? "eager" : "lazy";
+    image.decoding = "async";
+    image.width = 1200;
+    image.height = 675;
+    const caption = document.createElement("figcaption");
+    caption.textContent = disclosure;
+    figure.append(image, caption);
+
+    const body = document.createElement("div");
+    body.className = "live-news-card-body";
+    const meta = document.createElement("div");
+    meta.className = "live-news-source";
+    const categoryName = document.createElement("b");
+    categoryName.textContent = item.category;
+    const type = document.createElement("span");
+    type.className = `news-kind-badge ${item.kind === "title-archive" ? "is-news" : "is-trend"}`;
+    type.textContent = kindLabel(item);
+    const time = document.createElement("span");
+    time.textContent = formatStoredDate(item);
+    meta.append(categoryName, type, time);
+
+    const heading = document.createElement("h3");
+    heading.textContent = item.title;
+    const summary = document.createElement("p");
+    summary.textContent = item.summary;
+    const link = document.createElement("a");
+    link.href = `berita-detail.html?id=${encodeURIComponent(item.id)}`;
+    link.textContent = item.kind === "title-archive" ? "Lihat status verifikasi →" : "Lihat batas penggunaan →";
+    link.setAttribute("aria-label", `${link.textContent.replace(" →", "")}: ${item.title}`);
+    body.append(meta, heading, summary, link);
+    article.append(figure, body);
+    return article;
+  };
+
+  let renderedCount = 0;
+  let renderKey = "";
+  const render = (append = false) => {
+    const items = list();
+    const shown = items.slice(0, visible);
+    const key = `${kind}|${category}|${sort}|${normalise(search?.value)}`;
+    const canAppend = append && key === renderKey && shown.length >= renderedCount;
+    if (!canAppend) {
+      grid.replaceChildren();
+      renderedCount = 0;
+    }
+    if (!shown.length) {
+      const empty = document.createElement("div");
+      empty.className = "live-news-empty";
+      empty.textContent = "Tidak ada catatan yang cocok dengan filter ini.";
+      grid.append(empty);
+    } else if (shown.length > renderedCount) {
+      const fragment = document.createDocumentFragment();
+      shown.slice(renderedCount).forEach((item, index) => fragment.append(card(item, renderedCount + index)));
+      grid.append(fragment);
+    }
+    renderedCount = shown.length;
+    renderKey = key;
+    if (total) total.textContent = `${DATA.length.toLocaleString("id-ID")} catatan newsroom`;
+    if (state) {
+      state.textContent = "Arsip lokal · bukan berita terverifikasi";
+      state.classList.remove("is-loading");
+      state.classList.add("is-local");
+    }
+    if (status) status.textContent = `Menampilkan ${shown.length} dari ${items.length} catatan. Basis data terdiri dari 46 arsip judul dan 25 pantauan kueri.`;
+    if (progress) progress.value = 100;
+    if (more) {
+      more.hidden = shown.length >= items.length;
+      more.textContent = `Muat 30 catatan lagi (${Math.max(0, items.length - shown.length)} tersisa)`;
+    }
+    if (retry) retry.textContent = "Reset tampilan";
+  };
+
+  const kindSelect = controls.querySelector("[data-live-kind]");
+  const sortSelect = controls.querySelector("[data-live-sort]");
+  let timer = 0;
+  search?.addEventListener("input", () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { visible = 30; render(); }, 120);
+  });
+  more?.addEventListener("click", () => { visible += 30; render(true); });
+  retry?.addEventListener("click", () => {
+    visible = 30;
+    kind = "all";
+    category = "all";
+    sort = "newest";
+    if (search) search.value = "";
+    kindSelect.value = "all";
+    categorySelect.value = "all";
+    sortSelect.value = "newest";
+    render();
+  });
+  kindSelect.addEventListener("change", event => { kind = event.target.value; visible = 30; render(); });
+  categorySelect.addEventListener("change", event => { category = event.target.value; visible = 30; render(); });
+  sortSelect.addEventListener("change", event => { sort = event.target.value; visible = 30; render(); });
   render();
 })();
