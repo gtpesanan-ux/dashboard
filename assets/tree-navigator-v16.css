@@ -1,0 +1,49 @@
+
+
+/* 21st.dev-inspired Animated Tree Navigator — adapted to the existing static HTML architecture.
+   Preservation-first: no React/Tailwind/shadcn migration, no external dependency, no existing section removed. */
+.dv-tree-section{position:relative;overflow:hidden}
+.dv-tree-layout{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);gap:1.15rem;align-items:stretch;margin-top:1.4rem}
+.dv-tree-nav{position:relative;border:1px solid var(--line);border-radius:calc(var(--radius) * .9);background:rgba(255,255,255,.74);box-shadow:var(--shadow-soft);padding:.7rem .65rem .75rem;min-height:100%;isolation:isolate}
+.dv-tree-nav:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(135deg,rgba(229,196,124,.10),transparent 38%,rgba(8,47,91,.035));z-index:-2}
+.dv-tree-hover-pill,.dv-tree-selected-pill{position:absolute;left:.65rem;top:.65rem;width:calc(100% - 1.3rem);height:2.25rem;border-radius:.7rem;pointer-events:none;opacity:0;transform:translate3d(0,0,0);transition:transform .42s cubic-bezier(.22,1,.36,1),height .42s cubic-bezier(.22,1,.36,1),width .42s cubic-bezier(.22,1,.36,1),opacity .18s ease;background:rgba(8,47,91,.065);z-index:-1}
+.dv-tree-selected-pill{background:linear-gradient(90deg,rgba(229,196,124,.17),rgba(8,47,91,.055));box-shadow:inset 2px 0 0 var(--gold);z-index:-1}
+.dv-tree-lines{position:absolute;left:1.55rem;top:2.65rem;width:1.65rem;overflow:visible;pointer-events:none;z-index:0;color:rgba(8,47,91,.18)}
+.dv-tree-lines .dv-tree-active-path{stroke:var(--gold);stroke-width:1.55;stroke-linecap:round;fill:none;filter:drop-shadow(0 0 4px rgba(131,85,14,.16))}
+.dv-tree-lines .dv-tree-base-path{stroke:currentColor;stroke-width:1;stroke-linecap:round;fill:none}
+.dv-tree-group{position:relative;z-index:1}
+.dv-tree-section-toggle,.dv-tree-folder-toggle,.dv-tree-item{position:relative;width:100%;min-height:2.25rem;display:flex;align-items:center;gap:.62rem;border:0;background:transparent;color:var(--ink-soft);font:inherit;text-align:left;border-radius:.7rem;padding:.48rem .65rem;outline:none;cursor:pointer;transition:color .18s ease,background-color .18s ease,transform .2s ease;z-index:2}
+.dv-tree-section-toggle{min-height:2rem;padding:.42rem .52rem;margin:.08rem 0 .16rem;color:var(--navy);font-size:.72rem;font-weight:800;letter-spacing:.10em;text-transform:uppercase}
+.dv-tree-section-toggle:hover,.dv-tree-section-toggle:focus-visible,.dv-tree-folder-toggle:hover,.dv-tree-folder-toggle:focus-visible,.dv-tree-item:hover,.dv-tree-item:focus-visible{color:var(--navy)}
+.dv-tree-section-toggle:focus-visible,.dv-tree-folder-toggle:focus-visible,.dv-tree-item:focus-visible{box-shadow:0 0 0 2px rgba(12,77,155,.22),0 0 0 4px rgba(255,255,255,.9)}
+.dv-tree-item[aria-selected="true"]{color:var(--navy);font-weight:750}
+.dv-tree-item[disabled],.dv-tree-folder-toggle[disabled]{opacity:.42;cursor:not-allowed}
+.dv-tree-icon{width:1rem;height:1rem;flex:0 0 auto;color:currentColor;opacity:.8}
+.dv-tree-item[aria-selected="true"] .dv-tree-icon{color:var(--gold);opacity:1}
+.dv-tree-label{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.2}
+.dv-tree-badge{margin-left:auto;padding:.16rem .42rem;border-radius:.4rem;background:rgba(12,77,155,.09);color:var(--blue);font-size:.60rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.dv-tree-chevron{width:.86rem;height:.86rem;margin-left:auto;transition:transform .28s cubic-bezier(.22,1,.36,1);opacity:.7}
+.dv-tree-section-toggle[aria-expanded="false"] .dv-tree-chevron,.dv-tree-folder-toggle[aria-expanded="false"] .dv-tree-chevron{transform:rotate(-90deg)}
+.dv-tree-collapse{display:grid;grid-template-rows:1fr;opacity:1;transition:grid-template-rows .34s cubic-bezier(.22,1,.36,1),opacity .24s ease}
+.dv-tree-collapse[aria-hidden="true"]{grid-template-rows:0fr;opacity:0;pointer-events:none}
+.dv-tree-collapse-inner{overflow:hidden}
+.dv-tree-list{position:relative;padding-left:1.55rem;display:flex;flex-direction:column;gap:.10rem}
+.dv-tree-folder{display:flex;flex-direction:column;gap:.08rem}
+.dv-tree-folder>.dv-tree-collapse>.dv-tree-collapse-inner>.dv-tree-list{padding-left:1.1rem}
+.dv-tree-preview{position:relative;border-radius:calc(var(--radius) * .9);background:var(--navy);color:#fff;padding:clamp(1.15rem,2.2vw,1.75rem);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:19rem}
+.dv-tree-preview:before{content:"";position:absolute;inset:auto -12% -32% 28%;height:78%;background:radial-gradient(circle at 40% 40%,rgba(229,196,124,.18),transparent 65%);pointer-events:none}
+.dv-tree-preview:after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.12);border-radius:inherit;pointer-events:none}
+.dv-tree-preview-content{position:relative;z-index:1}
+.dv-tree-preview .eyebrow{color:var(--gold-light)}
+.dv-tree-preview h3{color:#fff;margin:.25rem 0 .65rem;font-family:var(--font-display);font-size:clamp(1.8rem,3.4vw,3rem);line-height:1.02;max-width:14ch}
+.dv-tree-preview p{color:rgba(255,255,255,.78);max-width:58ch}
+.dv-tree-preview-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.dv-tree-preview-meta span{display:inline-flex;align-items:center;min-height:1.9rem;padding:.34rem .62rem;border:1px solid rgba(255,255,255,.16);border-radius:999px;color:rgba(255,255,255,.82);font-size:.72rem}
+.dv-tree-preview-actions{position:relative;z-index:1;margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.65rem;align-items:center}
+.dv-tree-preview-actions .button{background:var(--paper);color:var(--navy);border-color:var(--paper)}
+.dv-tree-preview-actions .button:hover{background:#fff;color:var(--navy)}
+.dv-tree-preview-note{font-size:.74rem;color:rgba(255,255,255,.58)}
+.dv-tree-announce{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:760px){.dv-tree-layout{grid-template-columns:1fr}.dv-tree-preview{min-height:15rem}.dv-tree-nav{padding:.62rem .55rem}.dv-tree-hover-pill,.dv-tree-selected-pill{left:.55rem;width:calc(100% - 1.1rem)}}
+@media (prefers-reduced-motion:reduce){.dv-tree-hover-pill,.dv-tree-selected-pill,.dv-tree-collapse,.dv-tree-chevron,.dv-tree-section-toggle,.dv-tree-folder-toggle,.dv-tree-item{transition:none!important}.dv-tree-lines .dv-tree-active-path{filter:none}}
+

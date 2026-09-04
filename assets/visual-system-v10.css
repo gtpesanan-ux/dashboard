@@ -1,0 +1,30 @@
+
+/* REV10 visual system: brand-specific, restrained, additive. */
+.dig-visual-proof{padding-top:clamp(2.8rem,6vw,5.5rem);padding-bottom:clamp(2.8rem,6vw,5.5rem)}
+.dig-visual-proof .dig-proof-head{max-width:54rem;margin-bottom:1.35rem}
+.dig-visual-proof .dig-proof-head h2{margin:.35rem 0 .55rem;color:var(--navy);font-family:var(--font-display);font-size:clamp(2rem,4.2vw,4rem);font-weight:500;line-height:1.02;letter-spacing:-.025em}
+.dig-visual-proof .dig-proof-head p{max-width:58rem;margin:0;color:var(--ink-soft);line-height:1.75}
+.dig-proof-figure{margin:0;border-top:1px solid rgba(8,47,91,.14);border-bottom:1px solid rgba(8,47,91,.14);padding:1.1rem 0}
+.dig-proof-figure img{display:block;width:100%;height:auto;border-radius:clamp(1rem,2.4vw,1.7rem)}
+.dig-proof-figure figcaption{margin-top:.7rem;color:var(--ink-soft);font-size:.78rem;line-height:1.55}
+.live-news-visual,.news-detail-visual{position:relative;overflow:hidden}
+.dig-news-art-layer{position:absolute;inset:auto 0 0 0;z-index:2;padding:.85rem 1rem;color:#fff;background:linear-gradient(180deg,rgba(8,47,91,0),rgba(8,47,91,.88));pointer-events:none}
+.dig-news-art-layer.is-news{padding:.55rem .75rem;background:linear-gradient(180deg,rgba(8,47,91,0),rgba(8,47,91,.64))}
+.dig-news-art-top{display:flex;align-items:center;gap:.5rem;margin-bottom:.28rem;font-size:.62rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.dig-news-mark{display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:.55rem;background:rgba(255,255,255,.94);overflow:hidden;flex:0 0 auto}
+.dig-news-mark img{width:100%;height:100%;object-fit:cover;filter:none!important;transform:none!important}
+.dig-news-art-layer strong{display:block;max-width:42ch;font-size:.78rem;line-height:1.35;text-wrap:balance}
+.live-news-card[data-kind="trend-brief"] .live-news-visual>img{filter:saturate(.72) contrast(.96)}
+.news-detail-visual.is-trend>img{filter:saturate(.72) contrast(.96)}
+.dig-static-illustration-label{position:absolute;left:.8rem;bottom:.8rem;z-index:3;padding:.38rem .55rem;border-radius:.45rem;background:rgba(8,47,91,.78);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:700px){.dig-visual-proof{padding-top:2.5rem;padding-bottom:2.5rem}.dig-news-art-layer{padding:.65rem .7rem}.dig-news-art-layer strong{font-size:.7rem}.dig-news-mark{width:1.7rem;height:1.7rem}}
+
+/* REV10 accessibility hardening: preserve visual language while keeping compact text/controls legible and tappable. */
+.site-footer small{font-size:.625rem}
+.news-kind-badge{font-size:max(.625rem,10px)}
+.card-link{display:inline-flex;align-items:center;min-height:24px;padding-block:.06rem}
+.site-footer a{min-height:24px}
+.live-news-section article a{min-height:24px}
+@media (max-width:520px){.site-footer a:not(.button):not(.footer-social-link):not(.footer-contact-channel){display:inline-flex;align-items:center}}
+
+.dig-campaign-copy a{display:inline-flex;align-items:center;min-height:24px}
