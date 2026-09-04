@@ -3162,6 +3162,374 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 }
 
 </style>
+<style data-inline-from="assets/revision-v17.css" id="digdaya-revision-v17-style">
+/* DIGDAYA REVISION V17 — reference footer, measured menu motion, media fit. */
+:root{
+  --dig-v17-footer:#0a365f;
+  --dig-v17-footer-deep:#06294e;
+  --dig-v17-wave-accent:#e8dabd;
+  --dig-v17-menu-ease:cubic-bezier(.25,.1,.25,1);
+}
+
+/* Reference footer: asymmetric double wave, navy brand mapping, vertical contact rail. */
+.site-footer{
+  position:relative!important;
+  display:flex;
+  flex-direction:column;
+  margin-top:25px;
+  overflow:visible!important;
+  isolation:isolate;
+  background:linear-gradient(145deg,var(--dig-v17-footer-deep) 0%,var(--dig-v17-footer) 70%,#0b4b70 125%)!important;
+}
+.site-footer-wave{
+  position:absolute;
+  z-index:2;
+  top:-25px;
+  right:0;
+  left:0;
+  width:100%;
+  height:25px;
+  overflow:hidden;
+  pointer-events:none;
+}
+.site-footer-wave svg{display:block;width:100%;height:100%}
+.site-footer-wave-accent{fill:var(--dig-v17-wave-accent)}
+.site-footer-wave-main{fill:var(--dig-v17-footer-deep)}
+.site-footer>.footer-main{order:1}
+.site-footer>.footer-contact-us{order:2}
+.site-footer>.dig-footer-manifesto{order:3}
+.site-footer>.footer-bottom{order:4}
+.site-footer>.site-footer-wave{order:0}
+.site-footer>:not(.site-footer-wave):not(.site-footer-contact-rail){position:relative;z-index:1}
+.site-footer-contact-rail{
+  position:absolute;
+  z-index:4;
+  top:76px;
+  right:max(4px,env(safe-area-inset-right));
+  width:44px;
+  height:160px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.94);
+  border-radius:999px;
+  background:transparent;
+  color:#fff;
+  text-decoration:none;
+  box-shadow:none;
+  transition:border-color .25s ease,background-color .25s ease;
+}
+.site-footer-contact-rail span{
+  display:block;
+  white-space:nowrap;
+  transform:rotate(-90deg);
+  font-size:1rem;
+  font-weight:650;
+  line-height:1;
+}
+.site-footer-contact-rail:hover,
+.site-footer-contact-rail:focus-visible{border-color:#fff;background:rgba(255,255,255,.08);color:#fff}
+.site-footer-contact-rail:focus-visible{outline:3px solid var(--dig-v17-wave-accent);outline-offset:3px}
+.site-footer .footer-family img{padding:0!important;background:transparent!important}
+
+/* Watermark-like text labels sit directly on imagery; no independent color tile. */
+.news-detail-visual::after,
+.live-news-visual::before,
+.live-news-visual::after{
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:rgba(255,255,255,.58)!important;
+  text-shadow:0 1px 3px rgba(3,20,35,.52)!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+
+@media (min-width:761px){
+  .site-footer-contact-rail{display:none}
+  .site-footer>.footer-main{padding-top:clamp(4.8rem,7vw,6.5rem)!important}
+  .site-footer>.footer-contact-us{margin-top:0!important}
+}
+
+@media (max-width:760px){
+  .site-footer{padding-bottom:calc(2.8rem + env(safe-area-inset-bottom))!important}
+  .site-footer .shell{width:min(calc(100% - 32px),var(--shell))!important}
+  .site-footer-contact-rail{top:14px;right:max(4px,env(safe-area-inset-right));width:42px;height:160px}
+  .site-footer>.footer-main{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    column-gap:36px!important;
+    row-gap:32px!important;
+    padding:76px 0 32px!important;
+  }
+  .site-footer .footer-brand{grid-column:1/-1;padding-right:34px}
+  .site-footer .footer-brand>.brand{align-items:center;gap:.75rem;color:#fff}
+  .site-footer .footer-brand>.brand img{width:48px;height:48px;border-radius:0;background:transparent}
+  .site-footer .footer-brand .brand-copy strong{
+    color:#fff!important;
+    font-size:1.5rem!important;
+    font-weight:700;
+    line-height:1.2!important;
+    letter-spacing:0!important;
+    text-transform:none;
+  }
+  .site-footer .footer-brand .brand-copy small{margin-top:.35rem;color:rgba(255,255,255,.68);font-size:.68rem}
+  .site-footer .footer-brand>p{margin:1.35rem 0 0;color:rgba(255,255,255,.78);font-size:1rem;line-height:1.62}
+  .site-footer .footer-family{align-items:flex-start;margin-top:1.5rem;padding-top:1.25rem}
+  .site-footer .footer-family img{width:4.5rem;height:auto;border-radius:0!important}
+  .site-footer .footer-family span{font-size:.8rem;line-height:1.55}
+  .site-footer .footer-main>div:not(.footer-brand){min-width:0}
+  .site-footer .footer-title{
+    margin:0 0 18px!important;
+    color:#fff!important;
+    font-size:1.5rem!important;
+    font-weight:700!important;
+    line-height:1.2!important;
+    letter-spacing:0!important;
+    text-transform:none!important;
+  }
+  .site-footer .footer-links{gap:13px!important}
+  .site-footer .footer-links a{
+    min-height:24px!important;
+    color:rgba(255,255,255,.92)!important;
+    font-size:1rem!important;
+    font-weight:400!important;
+    line-height:24px!important;
+  }
+  .site-footer>.footer-contact-us{
+    grid-template-columns:1fr!important;
+    gap:1.4rem!important;
+    margin-top:0!important;
+    padding:32px 0!important;
+  }
+  .site-footer .footer-contact-copy>.footer-title{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .site-footer .footer-contact-copy h3{max-width:15ch;margin:0;color:#fff;font-family:var(--font-body);font-size:1.5rem;line-height:1.2;font-weight:700}
+  .site-footer .footer-contact-copy>p:not(.footer-title){margin-top:1rem;color:rgba(255,255,255,.78);font-size:1rem;line-height:1.62}
+  .site-footer .footer-contact-channels{display:grid!important;grid-template-columns:1fr!important;gap:.7rem!important;margin-top:1.25rem}
+  .site-footer .footer-contact-channel{min-height:48px;padding:.65rem .8rem;border-color:rgba(255,255,255,.34);border-radius:999px;background:transparent;font-size:.78rem}
+  .site-footer .footer-contact-channel small{margin-left:auto;color:rgba(255,255,255,.68)}
+  .site-footer .social-contact-list{max-width:none!important;margin:0!important;justify-content:flex-start!important;gap:.7rem!important}
+  .site-footer .social-contact{width:48px!important;height:48px!important;flex-basis:48px!important;border-radius:50%!important;background:transparent!important}
+  .site-footer>.dig-footer-manifesto{margin-bottom:0;padding:32px 0!important;border-top:1px solid rgba(255,255,255,.13);border-bottom:1px solid rgba(255,255,255,.13)}
+  .site-footer .dig-footer-manifesto small{font-size:.7rem}
+  .site-footer .dig-footer-manifesto strong{max-width:20ch;font-size:clamp(2rem,9vw,3rem);line-height:1.02}
+  .site-footer>.footer-bottom{padding:24px 0 0!important}
+}
+
+/* Video-matched navigation: 250 ms vertical reveal, static rows, no scrim/fade. */
+.dig-menu-morph{width:26px;height:26px;display:grid;place-items:center;grid-area:1/1}
+.dig-menu-morph svg{display:block;width:26px;height:26px;overflow:visible}
+.dig-menu-morph path{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;vector-effect:non-scaling-stroke;transform-box:view-box;transform-origin:24px 24px}
+.menu-button>.menu-icon,.menu-button>.close-icon{display:none!important}
+.menu-button[aria-expanded="true"]{
+  border-color:var(--line)!important;
+  background:var(--white)!important;
+  color:var(--navy)!important;
+}
+
+@keyframes dig-v17-menu-top-open{
+  0%{transform:translateY(0) rotate(0) scaleX(1)}
+  46%{transform:translateY(4px) rotate(20deg) scaleX(1.47)}
+  100%{transform:translateY(8px) rotate(45deg) scaleX(.82)}
+}
+@keyframes dig-v17-menu-middle-open{
+  0%{transform:scaleX(1)}
+  42%{transform:scaleX(1.4)}
+  100%{transform:scaleX(0)}
+}
+@keyframes dig-v17-menu-bottom-open{
+  0%{transform:translateY(0) rotate(0) scaleX(1)}
+  46%{transform:translateY(-4px) rotate(-20deg) scaleX(1.47)}
+  100%{transform:translateY(-8px) rotate(-45deg) scaleX(.82)}
+}
+@keyframes dig-v17-menu-top-close{
+  0%{transform:translateY(8px) rotate(45deg) scaleX(.82)}
+  58%{transform:translateY(3px) rotate(14deg) scaleX(1.28)}
+  100%{transform:none}
+}
+@keyframes dig-v17-menu-middle-close{
+  0%{transform:scaleX(0)}
+  58%{transform:scaleX(1.28)}
+  100%{transform:scaleX(1)}
+}
+@keyframes dig-v17-menu-bottom-close{
+  0%{transform:translateY(-8px) rotate(-45deg) scaleX(.82)}
+  58%{transform:translateY(-3px) rotate(-14deg) scaleX(1.28)}
+  100%{transform:none}
+}
+.menu-button[aria-expanded="true"] .dig-menu-morph-top{transform:translateY(8px) rotate(45deg) scaleX(.82)}
+.menu-button[aria-expanded="true"] .dig-menu-morph-middle{transform:scaleX(0)}
+.menu-button[aria-expanded="true"] .dig-menu-morph-bottom{transform:translateY(-8px) rotate(-45deg) scaleX(.82)}
+.menu-button.dig-menu-opening .dig-menu-morph-top{animation:dig-v17-menu-top-open 400ms ease-in-out both}
+.menu-button.dig-menu-opening .dig-menu-morph-middle{animation:dig-v17-menu-middle-open 400ms ease-in-out both}
+.menu-button.dig-menu-opening .dig-menu-morph-bottom{animation:dig-v17-menu-bottom-open 400ms ease-in-out both}
+.menu-button.dig-menu-closing .dig-menu-morph-top{animation:dig-v17-menu-top-close 330ms ease-out both}
+.menu-button.dig-menu-closing .dig-menu-morph-middle{animation:dig-v17-menu-middle-close 330ms ease-out both}
+.menu-button.dig-menu-closing .dig-menu-morph-bottom{animation:dig-v17-menu-bottom-close 330ms ease-out both}
+
+@media (max-width:1180px){
+  .js .main-nav{
+    display:grid!important;
+    position:fixed!important;
+    z-index:120!important;
+    top:var(--dig-v17-header-height,var(--u-header))!important;
+    right:0!important;
+    left:0!important;
+    width:100%!important;
+    max-height:calc(100dvh - var(--dig-v17-header-height,var(--u-header)))!important;
+    align-content:start;
+    overflow-x:hidden!important;
+    overflow-y:auto!important;
+    padding:0 clamp(12px,4vw,28px) .45rem!important;
+    border:0!important;
+    border-top:1px solid rgba(8,47,91,.1)!important;
+    border-radius:0!important;
+    background:#fff!important;
+    box-shadow:0 20px 26px -18px rgba(4,27,48,.26)!important;
+    opacity:1!important;
+    visibility:hidden;
+    pointer-events:none;
+    clip-path:inset(0 0 100% 0);
+    contain:layout paint;
+    will-change:clip-path;
+    transition:clip-path 250ms var(--dig-v17-menu-ease),visibility 0s linear 250ms!important;
+  }
+  .js .main-nav.is-open{
+    display:grid!important;
+    visibility:visible;
+    pointer-events:auto;
+    clip-path:inset(0 0 0 0);
+    transition:clip-path 250ms var(--dig-v17-menu-ease),visibility 0s linear 0s!important;
+  }
+  .main-nav>.mobile-nav-head{display:none!important}
+  .main-nav>.header-cta{display:none!important}
+  .main-nav>.nav-group,.main-nav>a,.main-nav>.header-cta,
+  .main-nav.is-open>.nav-group,.main-nav.is-open>a,.main-nav.is-open>.header-cta{
+    opacity:1!important;
+    transform:none!important;
+    transition:none!important;
+  }
+  .main-nav>a,.main-nav .nav-group-row{
+    min-height:46px;
+    border-bottom:1px solid rgba(8,47,91,.11);
+    border-radius:0!important;
+  }
+  .main-nav>a,.main-nav .nav-parent{
+    display:flex!important;
+    align-items:center;
+    padding:.68rem 0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    color:#1d3543;
+    font-size:.72rem!important;
+    font-weight:760!important;
+    letter-spacing:.035em;
+    text-transform:uppercase;
+  }
+  .main-nav .nav-toggle{width:46px!important;height:46px!important;border-radius:0!important}
+  .main-nav .nav-toggle .icon-svg{transform:rotate(-90deg);transition:transform 190ms ease!important}
+  .main-nav .nav-group.is-open .nav-toggle .icon-svg{transform:rotate(0)}
+  .main-nav .nav-flyout,.main-nav .nav-flyout[hidden]{
+    position:static!important;
+    inset:auto!important;
+    display:grid!important;
+    width:auto!important;
+    max-height:0;
+    margin:0!important;
+    padding:0 0 0 1rem!important;
+    overflow:hidden!important;
+    border:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    visibility:hidden;
+    opacity:1!important;
+    pointer-events:none!important;
+    transform:none!important;
+    transition:max-height 250ms var(--dig-v17-menu-ease),visibility 0s linear 250ms!important;
+  }
+  .main-nav .nav-group.is-open .nav-flyout{
+    max-height:30rem;
+    visibility:visible;
+    pointer-events:auto!important;
+    transition:max-height 250ms var(--dig-v17-menu-ease),visibility 0s linear 0s!important;
+  }
+  .main-nav .nav-flyout a{
+    min-height:44px!important;
+    padding:.65rem .2rem!important;
+    border-bottom:1px solid rgba(8,47,91,.075);
+    border-radius:0!important;
+    opacity:1!important;
+    transform:none!important;
+    transition:color .18s ease,background-color .18s ease!important;
+  }
+  .nav-backdrop{background:transparent!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+}
+
+/* Image geometry: match 16:9 source media instead of forcing portrait crops. */
+.editorial-media{min-height:0!important;aspect-ratio:16/9;align-self:center}
+.editorial-media>img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}
+.dig-pro-media img{aspect-ratio:16/9!important;object-fit:cover!important}
+.news-detail-visual{margin:0!important;aspect-ratio:16/9!important}
+.live-news-card:nth-child(7n+1) .live-news-visual{aspect-ratio:16/9!important;min-height:0!important}
+.article-card figure{aspect-ratio:16/9;overflow:hidden}
+.article-card img{width:100%!important;height:100%!important;object-fit:cover!important}
+.dig-scent-item,.u-motion-card,.dig-promo-card{min-height:0!important;aspect-ratio:16/9}
+.dig-scent-item{margin:0!important}
+.dig-campaign img,.dig-scent-item img,.u-motion-card img,.dig-promo-card img,.dig-news-lead img{object-fit:cover!important;object-position:center!important}
+.dig-news-mini img{height:auto!important;min-height:0!important;aspect-ratio:16/9;object-fit:cover!important;align-self:start}
+.u-device::before{background-size:contain!important;background-repeat:no-repeat!important;background-color:#edf1f3}
+.mosaic{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:none!important}
+.mosaic figure,.mosaic figure:first-child{grid-row:auto!important;aspect-ratio:16/9}
+.mosaic img{width:100%!important;height:100%!important;object-fit:cover!important}
+html.dig-motion-v16-ready .editorial-media.is-dig-in>img,
+html.dig-motion-v16-ready .dig-campaign.is-dig-in>img,
+html.dig-motion-v16-ready .dig-scent-item.is-dig-in>img,
+html.dig-motion-v16-ready .u-motion-card.is-dig-in>img,
+html.dig-motion-v16-ready .dig-promo-card.is-dig-in>img,
+html.dig-motion-v16-ready .news-detail-visual.is-dig-in>img,
+html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
+
+/* Home hero mobile order: picture -> controls -> copy; the image remains in view. */
+@media (max-width:760px){
+  [data-dig-home-hero]{grid-template-rows:auto auto auto!important}
+  [data-dig-home-hero]>.hero-picture{
+    order:1;
+    grid-row:1;
+    width:100%;
+    height:auto!important;
+    aspect-ratio:16/9;
+  }
+  [data-dig-home-hero]>.dig-hero-alt-media{grid-row:1;height:auto!important;aspect-ratio:16/9}
+  [data-dig-home-hero]>.dig-hero-console{
+    order:2;
+    grid-row:2;
+    z-index:4!important;
+    width:calc(100% - 24px)!important;
+    margin:-1.8rem auto 0!important;
+  }
+  [data-dig-home-hero]>.hero-copy{order:3;grid-row:3}
+  [data-dig-home-hero] .dig-hero-tab{min-width:44px;min-height:44px;padding:.65rem .8rem}
+  .hero-frame:not([data-dig-home-hero])>.hero-picture{height:auto!important;aspect-ratio:16/9}
+  .hero-frame:not([data-dig-home-hero])>.dig-hero-alt-media{height:auto!important;aspect-ratio:16/9}
+  .dig-promo-grid{grid-template-columns:1fr!important}
+  .dig-promo-card,.dig-promo-card-wide{grid-column:auto!important;min-height:0!important;aspect-ratio:16/9}
+  .dig-campaign{min-height:360px!important}
+  .dig-news-lead{min-height:clamp(320px,88vw,430px)!important}
+  .mosaic{grid-template-columns:1fr!important}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .menu-button .dig-menu-morph path{animation:none!important;transition:none!important}
+  .js .main-nav,.js .main-nav.is-open{transition:none!important}
+  .main-nav .nav-flyout,.main-nav .nav-flyout[hidden],.main-nav .nav-group.is-open .nav-flyout{transition:none!important}
+  .main-nav .nav-toggle .icon-svg{transition:none!important}
+}
+
+@media print{
+  .site-footer-wave,.site-footer-contact-rail{display:none!important}
+  .site-footer{margin-top:0;overflow:hidden!important}
+}
+</style>
 </head>
 <body data-page-style="service" id="top">
 <svg aria-hidden="true" class="icon-sprite" focusable="false">
@@ -3327,7 +3695,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 <header class="site-header" data-nosnippet="">
 <div class="shell header-inner">
 <a aria-label="Beranda PT Digdaya Inovasi Nusantara" class="brand" href="index.html"><img alt="" data-original-src="assets/digdaya-logo-256.webp" src="assets/digdaya-logo-256.webp" height="256" width="256"/><span class="brand-copy"><strong>PT Digdaya Inovasi Nusantara</strong><small>Connecting products, powering innovation</small></span></a>
-<button aria-controls="main-nav" aria-expanded="false" aria-label="Buka menu utama" class="menu-button" type="button"><span class="menu-icon"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-menu"></use></svg></span><span class="close-icon" hidden=""><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></span></button>
+<button aria-controls="main-nav" aria-expanded="false" aria-label="Buka menu utama" class="menu-button" type="button"><span class="menu-icon"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-menu"></use></svg></span><span class="close-icon" hidden=""><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></span><span aria-hidden="true" class="dig-menu-morph"><svg focusable="false" viewBox="0 0 48 48"><path class="dig-menu-morph-top" d="M15 16H33"></path><path class="dig-menu-morph-middle" d="M15 24H33"></path><path class="dig-menu-morph-bottom" d="M15 32H33"></path></svg></span></button>
 <nav aria-label="Navigasi utama" class="main-nav" id="main-nav">
 <div class="mobile-nav-head"><span class="mobile-nav-title">Menu utama</span><button aria-label="Tutup menu" class="icon-button nav-close" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></button></div>
 <a href="index.html">Beranda</a>
@@ -3408,10 +3776,9 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 <section aria-labelledby="u-topup-title" class="section"><div class="shell"><div class="section-head reveal" data-motion="slide-left"><div><p class="kicker">Secure flow</p><h2 id="u-topup-title">Alur yang singkat, informasi yang tetap terkontrol.</h2></div><p class="lede">Interaksi divisualisasikan sebagai tahapan layanan; password, OTP, PIN, dan kode pemulihan tetap tidak pernah diminta.</p></div><div class="u-flowline"><div><strong>Pilih kebutuhan</strong><p class="fine">Tentukan jenis permintaan.</p></div><div><strong>Isi identitas tujuan</strong><p class="fine">Gunakan data yang memang diperlukan.</p></div><div><strong>Tinjau kembali</strong><p class="fine">Periksa sebelum dikirim.</p></div><div><strong>Konfirmasi</strong><p class="fine">Lanjutkan melalui kanal yang tersedia.</p></div></div></div></section>
 </main>
 <footer class="site-footer" data-nosnippet="">
-<div aria-label="Pernyataan PT Digdaya Inovasi Nusantara" class="shell dig-footer-manifesto">
-<small>PT Digdaya Inovasi Nusantara</small>
-<strong>Kepercayaan dibangun melalui layanan yang jelas, komunikasi yang bertanggung jawab, dan pengalaman yang konsisten.</strong>
-</div>
+<div aria-hidden="true" class="site-footer-wave"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 393 25"><path class="site-footer-wave-accent" d="M0 21 C118 23 165 18 198 6 C226 -2 282 -1 315 3 C350 7 377 13 393 16 V25 H0 Z"></path><path class="site-footer-wave-main" d="M0 21 C88 26 158 25 200 16 C229 11 247 0 283 0 C325 0 360 8 393 21 V25 H0 Z"></path></svg></div>
+<a class="site-footer-contact-rail" href="#footer-contact-details"><span>Hubungi kami</span></a>
+
 <div class="shell footer-main">
 <div class="footer-brand">
 <a class="brand" href="index.html"><img alt="" data-original-src="assets/digdaya-logo-256.webp" src="assets/digdaya-logo-256.webp" height="256" width="256"/><span class="brand-copy"><strong>PT Digdaya Inovasi Nusantara</strong><small>Connecting products, powering innovation</small></span></a>
@@ -3423,7 +3790,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 <div><p class="footer-title">Perusahaan</p><nav aria-label="Perusahaan di footer" class="footer-links"><a href="tentang-kami.html">Tentang Kami</a><a href="portfolio.html">Portfolio</a><a href="case-study-digdaya.html">Case Study</a><a href="kemitraan.html">Kemitraan</a></nav></div>
 <div><p class="footer-title">Dukungan</p><nav aria-label="Dukungan di footer" class="footer-links"><a href="dukungan.html">Pusat Dukungan</a><a href="faq.html">FAQ</a><a href="trust-center.html">Trust Center</a><a href="keamanan.html">Keamanan</a><a href="pengaduan.html">Pengaduan</a><a href="kontak.html">Kontak</a></nav></div>
 </div>
-<div aria-label="Hubungi PT Digdaya Inovasi Nusantara" class="shell footer-contact-us">
+<div aria-label="Hubungi PT Digdaya Inovasi Nusantara" class="shell footer-contact-us" id="footer-contact-details">
 <div class="footer-contact-copy">
 <p class="footer-title">Hubungi Kami</p>
 <h3>Tim Digdaya siap membantu kebutuhan Anda.</h3>
@@ -3444,6 +3811,10 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 <a aria-label="Kirim email ke companydirac@gmail.com" class="social-contact" href="mailto:companydirac@gmail.com" title="Email"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="13" rx="2" stroke="currentColor" stroke-width="1.8" width="17" x="3.5" y="5.5"></rect><path d="m5 7 7 5.2L19 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a>
 <span aria-disabled="true" aria-label="Facebook" class="social-contact" title="Facebook"><span class="brand-text">f</span></span>
 </div>
+</div>
+<div aria-label="Pernyataan PT Digdaya Inovasi Nusantara" class="shell dig-footer-manifesto">
+<small>PT Digdaya Inovasi Nusantara</small>
+<strong>Kepercayaan dibangun melalui layanan yang jelas, komunikasi yang bertanggung jawab, dan pengalaman yang konsisten.</strong>
 </div>
 <div class="shell footer-bottom"><span>© 2026 Digdaya Inovasi Nusantara.</span><nav aria-label="Dokumen legal" class="footer-legal-links"><a href="kebijakan-privasi.html">Privasi</a><a href="syarat-ketentuan.html">Syarat</a><a href="kebijakan-transaksi.html">Transaksi</a><a href="#top">Kembali ke atas</a></nav><span>Gunakan kanal resmi situs ini untuk komunikasi layanan.</span></div>
 </footer>
@@ -6150,6 +6521,48 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 
 window.addEventListener("pageshow",()=>document.documentElement.classList.remove("is-page-leaving"));
 
+</script>
+<script data-inline-from="assets/js/revision-v17.js" id="digdaya-revision-v17-script">
+/* DIGDAYA REVISION V17 — replay measured menu-icon morph without changing nav semantics. */
+(() => {
+  'use strict';
+
+  const init = () => {
+    const root = document.documentElement;
+    const header = document.querySelector('.site-header');
+    const syncHeaderHeight = () => {
+      if (!header) return;
+      root.style.setProperty('--dig-v17-header-height', `${Math.ceil(header.getBoundingClientRect().height)}px`);
+    };
+    syncHeaderHeight();
+    if ('ResizeObserver' in window && header) {
+      new ResizeObserver(syncHeaderHeight).observe(header);
+    } else {
+      window.addEventListener('resize', syncHeaderHeight, { passive: true });
+    }
+
+    document.querySelectorAll('.menu-button[aria-controls="main-nav"]').forEach((button) => {
+      let cleanupTimer = 0;
+      const observer = new MutationObserver(() => {
+        const opening = button.getAttribute('aria-expanded') === 'true';
+        window.clearTimeout(cleanupTimer);
+        button.classList.remove('dig-menu-opening', 'dig-menu-closing');
+        void button.offsetWidth;
+        button.classList.add(opening ? 'dig-menu-opening' : 'dig-menu-closing');
+        cleanupTimer = window.setTimeout(() => {
+          button.classList.remove('dig-menu-opening', 'dig-menu-closing');
+        }, opening ? 410 : 340);
+      });
+      observer.observe(button, { attributes: true, attributeFilter: ['aria-expanded'] });
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+})();
 </script>
 </body>
 </html>
