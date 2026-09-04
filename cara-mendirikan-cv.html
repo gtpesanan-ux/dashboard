@@ -3178,7 +3178,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
   --dig-v17-menu-ease:cubic-bezier(.25,.1,.25,1);
 }
 
-/* Reference footer: asymmetric double wave, navy brand mapping, vertical contact rail. */
+/* Reference footer: asymmetric double wave and navy brand mapping. */
 .site-footer{
   position:relative!important;
   display:flex;
@@ -3207,35 +3207,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 .site-footer>.dig-footer-manifesto{order:3}
 .site-footer>.footer-bottom{order:4}
 .site-footer>.site-footer-wave{order:0}
-.site-footer>:not(.site-footer-wave):not(.site-footer-contact-rail){position:relative;z-index:1}
-.site-footer-contact-rail{
-  position:absolute;
-  z-index:4;
-  top:76px;
-  right:max(4px,env(safe-area-inset-right));
-  width:44px;
-  height:160px;
-  display:grid;
-  place-items:center;
-  border:1px solid rgba(255,255,255,.94);
-  border-radius:999px;
-  background:transparent;
-  color:#fff;
-  text-decoration:none;
-  box-shadow:none;
-  transition:border-color .25s ease,background-color .25s ease;
-}
-.site-footer-contact-rail span{
-  display:block;
-  white-space:nowrap;
-  transform:rotate(-90deg);
-  font-size:1rem;
-  font-weight:650;
-  line-height:1;
-}
-.site-footer-contact-rail:hover,
-.site-footer-contact-rail:focus-visible{border-color:#fff;background:rgba(255,255,255,.08);color:#fff}
-.site-footer-contact-rail:focus-visible{outline:3px solid var(--dig-v17-wave-accent);outline-offset:3px}
+.site-footer>:not(.site-footer-wave){position:relative;z-index:1}
 .site-footer .footer-family img{padding:0!important;background:transparent!important}
 
 /* Watermark-like text labels sit directly on imagery; no independent color tile. */
@@ -3253,7 +3225,6 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 }
 
 @media (min-width:761px){
-  .site-footer-contact-rail{display:none}
   .site-footer>.footer-main{padding-top:clamp(4.8rem,7vw,6.5rem)!important}
   .site-footer>.footer-contact-us{margin-top:0!important}
 }
@@ -3261,14 +3232,13 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 @media (max-width:760px){
   .site-footer{padding-bottom:calc(2.8rem + env(safe-area-inset-bottom))!important}
   .site-footer .shell{width:min(calc(100% - 32px),var(--shell))!important}
-  .site-footer-contact-rail{top:14px;right:max(4px,env(safe-area-inset-right));width:42px;height:160px}
   .site-footer>.footer-main{
     grid-template-columns:repeat(2,minmax(0,1fr))!important;
     column-gap:36px!important;
     row-gap:32px!important;
     padding:76px 0 32px!important;
   }
-  .site-footer .footer-brand{grid-column:1/-1;padding-right:34px}
+  .site-footer .footer-brand{grid-column:1/-1;padding-right:0}
   .site-footer .footer-brand>.brand{align-items:center;gap:.75rem;color:#fff}
   .site-footer .footer-brand>.brand img{width:48px;height:48px;border-radius:0;background:transparent}
   .site-footer .footer-brand .brand-copy strong{
@@ -3533,8 +3503,158 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 }
 
 @media print{
-  .site-footer-wave,.site-footer-contact-rail{display:none!important}
+  .site-footer-wave{display:none!important}
   .site-footer{margin-top:0;overflow:hidden!important}
+}
+</style>
+<style data-inline-from="assets/revision-v18.css" id="digdaya-revision-v18-style">
+/* DIGDAYA REVISION V18 — corrected mobile menu geometry and non-overlapping home hero. */
+:root{
+  --dig-v18-menu-ease:cubic-bezier(.25,.1,.25,1);
+  --dig-v18-menu-icon-ease:cubic-bezier(.22,.78,.2,1);
+}
+
+/*
+ * The V17 SVG-path transform used one shared view-box origin for all three
+ * strokes. On WebKit that pivot produced a chevron instead of a complete X.
+ * These three compositor-friendly CSS bars keep every pivot local and stable.
+ */
+.dig-menu-morph{
+  position:relative;
+  width:26px;
+  height:26px;
+  display:block;
+  grid-area:1/1;
+}
+.dig-menu-morph::before,
+.dig-menu-morph::after,
+.dig-menu-morph>svg{
+  position:absolute;
+  top:calc(50% - .75px);
+  left:6px;
+  width:14px;
+  height:1.5px;
+  margin:0;
+  border:0;
+  border-radius:999px;
+  background:currentColor;
+  color:inherit;
+  transform-origin:50% 50%;
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+}
+.dig-menu-morph::before,
+.dig-menu-morph::after{content:""}
+.dig-menu-morph::before{transform:translate3d(0,-5.5px,0)}
+.dig-menu-morph::after{transform:translate3d(0,5.5px,0)}
+.dig-menu-morph>svg{
+  display:block;
+  overflow:hidden;
+  transform:translateZ(0);
+}
+.dig-menu-morph path{display:none!important;animation:none!important;transition:none!important}
+
+@keyframes dig-v18-menu-top-open{
+  0%{transform:translate3d(0,-5.5px,0) rotate(0deg) scaleX(1)}
+  44%{transform:translate3d(0,-2px,0) rotate(21deg) scaleX(1.18)}
+  78%{transform:translate3d(0,0,0) rotate(48deg) scaleX(1.42)}
+  100%{transform:translate3d(0,0,0) rotate(45deg) scaleX(1.47)}
+}
+@keyframes dig-v18-menu-middle-open{
+  0%{opacity:1;transform:translateZ(0) rotate(0deg) scaleX(1)}
+  44%{opacity:.78;transform:translateZ(0) rotate(-18deg) scaleX(.8)}
+  78%{opacity:.22;transform:translateZ(0) rotate(-82deg) scaleX(.26)}
+  100%{opacity:0;transform:translateZ(0) rotate(-90deg) scaleX(0)}
+}
+@keyframes dig-v18-menu-bottom-open{
+  0%{transform:translate3d(0,5.5px,0) rotate(0deg) scaleX(1)}
+  44%{transform:translate3d(0,2px,0) rotate(-21deg) scaleX(1.18)}
+  78%{transform:translate3d(0,0,0) rotate(-48deg) scaleX(1.42)}
+  100%{transform:translate3d(0,0,0) rotate(-45deg) scaleX(1.47)}
+}
+@keyframes dig-v18-menu-top-close{
+  0%{transform:translate3d(0,0,0) rotate(45deg) scaleX(1.47)}
+  56%{transform:translate3d(0,-2px,0) rotate(18deg) scaleX(1.18)}
+  100%{transform:translate3d(0,-5.5px,0) rotate(0deg) scaleX(1)}
+}
+@keyframes dig-v18-menu-middle-close{
+  0%{opacity:0;transform:translateZ(0) rotate(-90deg) scaleX(0)}
+  56%{opacity:.78;transform:translateZ(0) rotate(-18deg) scaleX(.82)}
+  100%{opacity:1;transform:translateZ(0) rotate(0deg) scaleX(1)}
+}
+@keyframes dig-v18-menu-bottom-close{
+  0%{transform:translate3d(0,0,0) rotate(-45deg) scaleX(1.47)}
+  56%{transform:translate3d(0,2px,0) rotate(-18deg) scaleX(1.18)}
+  100%{transform:translate3d(0,5.5px,0) rotate(0deg) scaleX(1)}
+}
+
+.menu-button[aria-expanded="true"] .dig-menu-morph::before{transform:translateZ(0) rotate(45deg) scaleX(1.47)}
+.menu-button[aria-expanded="true"] .dig-menu-morph>svg{opacity:0;transform:translateZ(0) rotate(-90deg) scaleX(0)}
+.menu-button[aria-expanded="true"] .dig-menu-morph::after{transform:translateZ(0) rotate(-45deg) scaleX(1.47)}
+.menu-button.dig-menu-opening .dig-menu-morph::before{animation:dig-v18-menu-top-open 280ms var(--dig-v18-menu-icon-ease) both}
+.menu-button.dig-menu-opening .dig-menu-morph>svg{animation:dig-v18-menu-middle-open 280ms var(--dig-v18-menu-icon-ease) both}
+.menu-button.dig-menu-opening .dig-menu-morph::after{animation:dig-v18-menu-bottom-open 280ms var(--dig-v18-menu-icon-ease) both}
+.menu-button.dig-menu-closing .dig-menu-morph::before{animation:dig-v18-menu-top-close 330ms ease-out both}
+.menu-button.dig-menu-closing .dig-menu-morph>svg{animation:dig-v18-menu-middle-close 330ms ease-out both}
+.menu-button.dig-menu-closing .dig-menu-morph::after{animation:dig-v18-menu-bottom-close 330ms ease-out both}
+
+@media (max-width:1180px){
+  .js .main-nav{
+    bottom:auto!important;
+    height:auto!important;
+    min-height:0!important;
+    -webkit-clip-path:inset(0 0 100% 0);
+    clip-path:inset(0 0 100% 0);
+    contain:none!important;
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
+    transform:translate3d(0,0,0);
+    transform-origin:top center;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    will-change:clip-path;
+    transition:-webkit-clip-path 200ms var(--dig-v18-menu-ease),clip-path 200ms var(--dig-v18-menu-ease),visibility 0s linear 200ms!important;
+  }
+  .js .main-nav.is-open{
+    -webkit-clip-path:inset(0 0 0 0);
+    clip-path:inset(0 0 0 0);
+    transition:-webkit-clip-path 200ms var(--dig-v18-menu-ease),clip-path 200ms var(--dig-v18-menu-ease),visibility 0s linear 0s!important;
+  }
+}
+
+/* Home mobile flow: image, accessible story controls, then copy — never overlap. */
+@media (max-width:760px){
+  [data-dig-home-hero]{
+    grid-template-rows:auto auto auto!important;
+    gap:.78rem!important;
+  }
+  [data-dig-home-hero]>.dig-hero-console{
+    position:relative!important;
+    right:auto!important;
+    bottom:auto!important;
+    order:2;
+    grid-row:2;
+    z-index:2!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+  }
+  [data-dig-home-hero]>.dig-hero-console::before,
+  [data-dig-home-hero]>.dig-hero-console::after{content:none!important}
+  [data-dig-home-hero]>.hero-copy{
+    order:3;
+    grid-row:3;
+    width:100%!important;
+    margin:0!important;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .menu-button .dig-menu-morph::before,
+  .menu-button .dig-menu-morph::after,
+  .menu-button .dig-menu-morph>svg{animation:none!important;transition:none!important}
+  .js .main-nav,
+  .js .main-nav.is-open{transition:none!important}
 }
 </style>
 </head>
@@ -3775,8 +3895,6 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 </main>
 <footer class="site-footer" data-nosnippet="">
 <div aria-hidden="true" class="site-footer-wave"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 393 25"><path class="site-footer-wave-accent" d="M0 21 C118 23 165 18 198 6 C226 -2 282 -1 315 3 C350 7 377 13 393 16 V25 H0 Z"></path><path class="site-footer-wave-main" d="M0 21 C88 26 158 25 200 16 C229 11 247 0 283 0 C325 0 360 8 393 21 V25 H0 Z"></path></svg></div>
-<a class="site-footer-contact-rail" href="#footer-contact-details"><span>Hubungi kami</span></a>
-
 <div class="shell footer-main">
 <div class="footer-brand">
 <a class="brand" href="index.html"><img alt="" data-original-src="assets/digdaya-logo-256.webp" src="assets/digdaya-logo-256.webp" height="256" width="256"/><span class="brand-copy"><strong>PT Digdaya Inovasi Nusantara</strong><small>Connecting products, powering innovation</small></span></a>
@@ -3999,7 +4117,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
       closeGroups();
       if (restoreFocus && wasOpen) menuButton.focus();
     };
-    const openMenu = () => {
+    const openMenu = (focusFirstItem = false) => {
       navigation.classList.add("is-open");
       navigation.setAttribute("aria-hidden", "false");
       menuButton.setAttribute("aria-expanded", "true");
@@ -4008,10 +4126,10 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
       document.body.classList.add("menu-open");
       if (backdrop) backdrop.hidden = false;
       setInert(inertTargets, true);
-      requestAnimationFrame(() => getFocusable(navigation)[0]?.focus());
+      if (focusFirstItem) requestAnimationFrame(() => getFocusable(navigation)[0]?.focus());
     };
 
-    menuButton.addEventListener("click", () => navigation.classList.contains("is-open") ? closeMenu(true) : openMenu());
+    menuButton.addEventListener("click", (event) => navigation.classList.contains("is-open") ? closeMenu(true) : openMenu(event.detail === 0));
     navigationClose?.addEventListener("click", () => closeMenu(true));
     backdrop?.addEventListener("click", () => closeMenu(true));
     navigation.addEventListener("click", (event) => {
@@ -6545,11 +6663,10 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
         const opening = button.getAttribute('aria-expanded') === 'true';
         window.clearTimeout(cleanupTimer);
         button.classList.remove('dig-menu-opening', 'dig-menu-closing');
-        void button.offsetWidth;
         button.classList.add(opening ? 'dig-menu-opening' : 'dig-menu-closing');
         cleanupTimer = window.setTimeout(() => {
           button.classList.remove('dig-menu-opening', 'dig-menu-closing');
-        }, opening ? 410 : 340);
+        }, opening ? 300 : 340);
       });
       observer.observe(button, { attributes: true, attributeFilter: ['aria-expanded'] });
     });
