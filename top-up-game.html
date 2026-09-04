@@ -937,7 +937,7 @@ body.menu-open {
   transition: none;
 }
 
-.motion-ready .reveal {
+.motion-ready .reveal:not(.dig-m-media) {
   --motion-delay: 0ms;
   opacity: 0;
   transform: translate3d(0, 1.5rem, 0);
@@ -948,7 +948,7 @@ body.menu-open {
   will-change: opacity, transform;
 }
 
-.motion-ready .reveal.is-visible {
+.motion-ready .reveal:not(.dig-m-media).is-visible {
   opacity: 1;
   transform: none;
 }
@@ -969,13 +969,13 @@ body.menu-open {
   transform: translate3d(0, .75rem, 0) scale(.97);
 }
 
-.motion-ready .reveal[data-motion="media"] {
+.motion-ready .reveal[data-motion="media"]:not(.dig-m-media) {
   opacity: 1;
   clip-path: inset(0 0 100% 0 round var(--radius));
   transform: scale(1.018);
 }
 
-.motion-ready .reveal[data-motion="media"].is-visible {
+.motion-ready .reveal[data-motion="media"]:not(.dig-m-media).is-visible {
   clip-path: inset(0 0 0 0 round var(--radius));
   transform: none;
 }
@@ -994,7 +994,7 @@ body.menu-open {
   will-change: auto;
 }
 
-.motion-ready .hero-copy[data-motion="hero"] > * {
+.motion-ready .hero-copy[data-motion="hero"] > :not(.dig-m-heading):not(.dig-m-standard) {
   opacity: 0;
   transform: translate3d(0, 1rem, 0);
   transition:
@@ -1002,16 +1002,16 @@ body.menu-open {
     transform var(--motion-editorial) var(--ease-enter);
 }
 
-.motion-ready .hero-copy[data-motion="hero"].is-visible > * {
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :not(.dig-m-heading):not(.dig-m-standard) {
   opacity: 1;
   transform: none;
 }
 
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(1) { transition-delay: 30ms; }
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(2) { transition-delay: 100ms; }
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(3) { transition-delay: 180ms; }
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(4) { transition-delay: 260ms; }
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(5) { transition-delay: 340ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(1):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 30ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(2):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 100ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(3):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 180ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(4):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 260ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(5):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 340ms; }
 
 .motion-ready .reveal-group {
   opacity: 1;
@@ -2361,7 +2361,7 @@ html:not(.js) .faq details[open] summary::after {
 @media (prefers-reduced-motion: reduce) {
   .motion-ready .reveal,
   .motion-ready .reveal[data-motion],
-  .motion-ready .hero-copy[data-motion="hero"] > *,
+  .motion-ready .hero-copy[data-motion="hero"] > :not(.dig-m-heading):not(.dig-m-standard),
   .motion-ready .reveal-group > * {
     opacity: 1 !important;
     clip-path: none !important;
@@ -2461,7 +2461,6 @@ html:not(.js) .faq details[open] summary::after {
 @media(prefers-reduced-motion:reduce){.quick-contact .wa-float,.quick-contact-option,.social-contact{transition:none!important}.quick-contact .wa-float:hover,.quick-contact-option[href]:hover,.social-contact[href]:hover{transform:none!important}}
 @media print{.quick-contact,.footer-contact-us{display:none!important}}
 
-
 </style>
 <link href="https://panel.diracgroup.store/top-up-game.html" rel="canonical"/>
 <meta content="id_ID" property="og:locale"/>
@@ -2469,16 +2468,16 @@ html:not(.js) .faq details[open] summary::after {
 <meta content="PT Digdaya Inovasi Nusantara" property="og:site_name"/>
 <meta content="Top Up Game: Panduan Data ID, Server &amp; Keamanan Transaksi | Digdaya" property="og:title"/>
 <meta content="Panduan top up game dengan data tujuan yang tepat: game, User ID, server bila diperlukan, produk, verifikasi, keamanan, dan konfirmasi sebelum transaksi." property="og:description"/>
-<meta content="https://panel.diracgroup.store/assets/og-topup-branded.jpg" property="og:image"/><meta content="Visual Top up dimulai dari data tujuan yang benar. — PT Digdaya Inovasi Nusantara" property="og:image:alt"/>
-<meta content="1200" property="og:image:width"/>
-<meta content="630" property="og:image:height"/>
+<meta property="og:image" content="https://panel.diracgroup.store/assets/og-topup-branded.jpg"/><meta property="og:image:alt" content="Pratinjau layanan top up Digdaya"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta content="image/jpeg" property="og:image:type"/>
 
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Top Up Game: Panduan Data ID, Server &amp; Keamanan Transaksi | Digdaya" name="twitter:title"/>
 <meta content="Panduan top up game dengan data tujuan yang tepat: game, User ID, server bila diperlukan, produk, verifikasi, keamanan, dan konfirmasi sebelum transaksi." name="twitter:description"/>
-<meta content="https://panel.diracgroup.store/assets/og-topup-branded.jpg" name="twitter:image"/>
-<meta content="Layanan permintaan top up game Digdaya" name="twitter:image:alt"/>
+<meta name="twitter:image" content="https://panel.diracgroup.store/assets/og-topup-branded.jpg"/>
+<meta name="twitter:image:alt" content="Pratinjau layanan top up Digdaya"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"./top-up-game.html#webpage","url":"./top-up-game.html","name":"Top Up Game | Permintaan Aman dan Terarah | Digdaya","description":"Ajukan kebutuhan top up game dengan game, ID tujuan, server, dan produk yang tepat. Ketersediaan serta rincian dikonfirmasi sebelum transaksi.","isPartOf":{"@id":"./#website"},"about":{"@id":"./#organization"},"inLanguage":"id-ID","breadcrumb":{"@id":"./top-up-game.html#breadcrumb"},"primaryImageOfPage":{"@id":"./top-up-game.html#primaryimage"},"mainEntity":{"@id":"./top-up-game.html#service"}},{"@type":"Service","@id":"./top-up-game.html#service","name":"Permintaan top up game","description":"Ajukan kebutuhan top up game dengan game, ID tujuan, server, dan produk yang tepat. Ketersediaan serta rincian dikonfirmasi sebelum transaksi.","serviceType":"Layanan permintaan top up game","url":"./top-up-game.html","provider":{"@type":"Brand","@id":"./#organization","name":"PT Digdaya Inovasi Nusantara","url":"./"}},{"@type":"BreadcrumbList","@id":"./top-up-game.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Beranda","item":"./"},{"@type":"ListItem","position":2,"name":"Layanan","item":"./layanan.html"},{"@type":"ListItem","position":3,"name":"Top Up Game"}]},{"@type":"ImageObject","@id":"./top-up-game.html#primaryimage","url":"./assets/gaming-service-v16.webp","contentUrl":"./assets/gaming-service-v16.webp","caption":"Layanan permintaan top up game Digdaya"}]}</script>
 <style data-inline-from="assets/premium-v3.css">
 /* digdaya-premium-v3: additive corporate art direction */
@@ -2797,11 +2796,11 @@ html.is-page-leaving body{opacity:0;transform:translateY(-5px);transition:opacit
 .header-inner>.brand .brand-copy{min-width:0}.header-inner>.brand strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
 .header-inner>.menu-button,.header-inner>.main-nav{grid-column:3}
 main{position:relative;z-index:0}
-[data-motion="slide-left"]{opacity:0!important;transform:translate3d(-2.4rem,0,0)!important}
-[data-motion="slide-right"]{opacity:0!important;transform:translate3d(2.4rem,0,0)!important}
-[data-motion="slide-left"].is-visible,[data-motion="slide-right"].is-visible{opacity:1!important;transform:translate3d(0,0,0)!important}
-.reveal[data-motion="media"]{clip-path:inset(0 8% 0 0 round 1rem);transform:translate3d(0,1rem,0) scale(.985)}
-.reveal[data-motion="media"].is-visible{clip-path:inset(0 0 0 0 round 1rem);transform:none}
+.motion-ready [data-motion="slide-left"]{opacity:0!important;transform:translate3d(-2.4rem,0,0)!important}
+.motion-ready [data-motion="slide-right"]{opacity:0!important;transform:translate3d(2.4rem,0,0)!important}
+.motion-ready [data-motion="slide-left"].is-visible,.motion-ready [data-motion="slide-right"].is-visible{opacity:1!important;transform:translate3d(0,0,0)!important}
+.motion-ready .reveal[data-motion="media"]:not(.dig-m-media){clip-path:inset(0 8% 0 0 round 1rem);transform:translate3d(0,1rem,0) scale(.985)}
+.motion-ready .reveal[data-motion="media"]:not(.dig-m-media).is-visible{clip-path:inset(0 0 0 0 round 1rem);transform:none}
 
 /* Hero story becomes a real layered card deck while preserving original copy. */
 [data-dig-hero]{perspective:1100px;transform-style:preserve-3d}
@@ -2893,7 +2892,7 @@ main{position:relative;z-index:0}
 .dig-news-mark{display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:.55rem;background:rgba(255,255,255,.94);overflow:hidden;flex:0 0 auto}
 .dig-news-mark img{width:100%;height:100%;object-fit:cover;filter:none!important;transform:none!important}
 .dig-news-art-layer strong{display:block;max-width:42ch;font-size:.78rem;line-height:1.35;text-wrap:balance}
-.live-news-card[data-kind="trend-brief"] .live-news-visual>img{filter:saturate(.72) contrast(.96)}
+.live-news-card[data-kind="query-monitor"] .live-news-visual>img{filter:saturate(.72) contrast(.96)}
 .news-detail-visual.is-trend>img{filter:saturate(.72) contrast(.96)}
 .dig-static-illustration-label{position:absolute;left:.8rem;bottom:.8rem;z-index:3;padding:.38rem .55rem;border-radius:.45rem;background:rgba(8,47,91,.78);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 @media(max-width:700px){.dig-visual-proof{padding-top:2.5rem;padding-bottom:2.5rem}.dig-news-art-layer{padding:.65rem .7rem}.dig-news-art-layer strong{font-size:.7rem}.dig-news-mark{width:1.7rem;height:1.7rem}}
@@ -3021,9 +3020,10 @@ html.dig-motion-v16-ready .dig-m-media.is-dig-in:not(.hero-picture):not(.dig-her
   transform:translate3d(0,var(--dig-parallax,0px),0) scale(var(--dig-media-scale,1.025));
   filter:saturate(.97) contrast(1.02) brightness(1);
 }
-.dig-m-media>.dig-photo-sheen{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(105deg,rgba(250,247,241,.56),rgba(228,202,152,.18) 43%,rgba(8,47,91,.045) 70%,transparent 80%);transform-origin:right center;transform:scaleX(1);transition:transform .94s var(--dig-m-ease);mix-blend-mode:soft-light}
-.dig-m-media.is-dig-in>.dig-photo-sheen{transform:scaleX(0)}
-.dig-m-media>.dig-photo-grain{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.055;background:radial-gradient(circle at 16% 24%,rgba(255,255,255,.22) 0 1px,transparent 1.4px) 0 0/8px 8px;mix-blend-mode:soft-light}
+.dig-photo-picture-layers{position:absolute;inset:0;z-index:1;overflow:hidden;border-radius:inherit;pointer-events:none}
+.dig-m-media>.dig-photo-sheen,.dig-photo-picture-layers>.dig-photo-sheen{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(105deg,rgba(250,247,241,.56),rgba(228,202,152,.18) 43%,rgba(8,47,91,.045) 70%,transparent 80%);transform-origin:right center;transform:scaleX(1);transition:transform .94s var(--dig-m-ease);mix-blend-mode:soft-light}
+.dig-m-media.is-dig-in>.dig-photo-sheen,.dig-m-media.is-dig-in+.dig-photo-picture-layers>.dig-photo-sheen{transform:scaleX(0)}
+.dig-m-media>.dig-photo-grain,.dig-photo-picture-layers>.dig-photo-grain{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.055;background:radial-gradient(circle at 16% 24%,rgba(255,255,255,.22) 0 1px,transparent 1.4px) 0 0/8px 8px;mix-blend-mode:soft-light}
 .dig-m-media>figcaption,
 .dig-m-media>.dig-news-art-layer,
 .dig-m-media>.dig-static-illustration-label,
@@ -3117,8 +3117,10 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 @view-transition{navigation:auto}
 ::view-transition-old(root){animation:dig-v16-page-out .22s var(--dig-m-ease) both}
 ::view-transition-new(root){animation:dig-v16-page-in .4s var(--dig-m-ease) both}
-@keyframes dig-v16-page-out{to{opacity:0;transform:translate3d(0,-4px,0) scale(.999);filter:blur(.7px)}}
-@keyframes dig-v16-page-in{from{opacity:0;transform:translate3d(0,8px,0) scale(.999);filter:blur(1px)}to{opacity:1;transform:none;filter:none}}
+::view-transition-group(site-header){animation:none!important}
+::view-transition-old(site-header),::view-transition-new(site-header){animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
+@keyframes dig-v16-page-out{to{opacity:0;transform:translate3d(0,-4px,0) scale(.999)}}
+@keyframes dig-v16-page-in{from{opacity:0;transform:translate3d(0,8px,0) scale(.999)}to{opacity:1;transform:none}}
 
 @media(max-width:760px){
   .shell{width:min(100% - 24px,var(--shell))!important}
@@ -3135,7 +3137,8 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
   .card-link{min-height:44px!important;align-items:center!important;margin-top:.68rem!important;font-size:.83rem!important}
   .hero-copy{width:calc(100% - 1rem)!important;padding:1.05rem!important}
   .hero-index{margin-top:.85rem!important}
-  .dig-m-media>.dig-photo-grain{opacity:.035}
+  .hero-frame>.dig-photo-picture-layers{right:0;bottom:auto;left:0;height:clamp(245px,62vw,350px);border-radius:1.15rem}
+  .dig-m-media>.dig-photo-grain,.dig-photo-picture-layers>.dig-photo-grain{opacity:.035}
   html.dig-motion-v16-ready .dig-m-card:not(.u-domain-card){transform:translate3d(0,15px,0) scale(.994)}
   html.dig-motion-v16-ready .dig-m-card.is-dig-in:not(.u-domain-card){transform:none}
   .support-din-panel{grid-template-columns:1fr}
@@ -3480,7 +3483,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 </div>
 <button aria-controls="quick-contact-panel" aria-expanded="false" aria-label="Buka pilihan WhatsApp dan email" class="wa-float" data-contact-toggle="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 24 24"><circle cx="12" cy="11.5" fill="none" r="8.1" stroke="currentColor" stroke-width="1.8"></circle><path d="M7.2 19.2 8 16.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><path d="M9.1 7.5c.35-.38.8-.35 1.08.05l.8 1.16c.2.3.18.68-.05.95l-.55.65c-.15.18-.13.43.02.62.74.9 1.54 1.69 2.43 2.42.19.15.45.16.63.01l.67-.55c.27-.22.66-.24.95-.03l1.13.82c.39.28.42.74.04 1.08l-.66.59c-.56.5-1.35.64-2.04.36a10.7 10.7 0 0 1-5.2-3.66 10.5 10.5 0 0 1-1.45-2.57c-.27-.7-.12-1.48.39-2.03l.61-.65Z" fill="currentColor"></path></svg></button>
 </div>
-<script data-inline-from="assets/runtime-site-v8.js">
+<script data-inline-from="assets/js/runtime-site-v8.js">
 
 (() => {
   "use strict";
@@ -3839,7 +3842,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 
   
 </script>
-<script data-inline-from="assets/runtime-widgets.js">
+<script data-inline-from="assets/js/runtime-widgets.js">
 
 (() => {
   "use strict";
@@ -5747,7 +5750,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 
   
 </script>
-<script data-inline-from="assets/runtime-premium.js">
+<script data-inline-from="assets/js/runtime-premium.js">
 (() => {
   "use strict";
   const qsa = (selector, root = document) => Array.from(root.querySelectorAll(selector));
@@ -5815,7 +5818,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
   initScrollers();
 })();
 </script>
-<script data-inline-from="assets/runtime-contact.js">
+<script data-inline-from="assets/js/runtime-contact.js">
 
 (() => {
   "use strict";
@@ -5834,7 +5837,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 })();
 
 </script>
-<script data-inline-from="assets/runtime-ultimate-v4.js">
+<script data-inline-from="assets/js/runtime-ultimate-v4.js">
 
 (() => {
   "use strict";
@@ -5874,7 +5877,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 
   // Timeline / process progression.
   const flow=qsa('.u-flowline>div');
-  if(flow.length){if(reduced){flow.forEach(x=>x.classList.add('is-line-visible'))}else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-line-visible');io.unobserve(e.target)}}),{threshold:.45});flow.forEach(x=>io.observe(x));}}
+  if(flow.length){if(reduced||!('IntersectionObserver'in window)){flow.forEach(x=>x.classList.add('is-line-visible'))}else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-line-visible');io.unobserve(e.target)}}),{threshold:.45});flow.forEach(x=>io.observe(x));}}
 
   // Same-origin navigation fallback for browsers without cross-document View Transition.
   // Native anchor navigation intentionally preserved for iOS/Safari reliability.
@@ -5886,7 +5889,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 })();
 
 </script>
-<script data-inline-from="assets/runtime-hardening.js">
+<script data-inline-from="assets/js/runtime-hardening.js">
 (() => {
   "use strict";
   const qs=(s,r=document)=>r.querySelector(s), qsa=(s,r=document)=>Array.from(r.querySelectorAll(s));
@@ -5926,9 +5929,35 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
   document.documentElement.dataset.digdayaHardening='ready';
 })();
 </script>
-<script data-inline-from="assets/text-motion-v13.js" id="digdaya-rev13-text-motion">
+<script data-inline-from="assets/js/text-motion-v13.js" id="digdaya-rev13-text-motion">
 
-(()=>{const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;const nodes=[...document.querySelectorAll('main .kicker, main h1, main section h2')];nodes.forEach(el=>{el.classList.add('dig-motion-text');if(el.matches('.kicker'))el.classList.add('dig-motion-kicker');else if(el.tagName==='H1')el.classList.add('dig-motion-h1');else el.classList.add('dig-motion-h2')});if(reduce||!('IntersectionObserver'in window)){nodes.forEach(el=>el.classList.add('is-visible'));return;}const io=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}},{threshold:.12,rootMargin:'0px 0px -6% 0px'});nodes.forEach(el=>io.observe(el));})();
+(() => {
+  const bootFallback = () => {
+    if (document.documentElement.classList.contains('dig-motion-v16-ready')) return;
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false;
+    const nodes = [...document.querySelectorAll('main .kicker, main h1, main section h2')];
+    nodes.forEach((el) => {
+      el.classList.add('dig-motion-text');
+      if (el.matches('.kicker')) el.classList.add('dig-motion-kicker');
+      else if (el.tagName === 'H1') el.classList.add('dig-motion-h1');
+      else el.classList.add('dig-motion-h2');
+    });
+    if (reduce || !('IntersectionObserver' in window)) {
+      nodes.forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    }, {threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    nodes.forEach((el) => io.observe(el));
+  };
+  const defer = window.requestAnimationFrame?.bind(window) || ((callback) => window.setTimeout(callback, 0));
+  defer(bootFallback);
+})();
 
 </script>
 
@@ -5937,7 +5966,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 
 
 
-<script data-inline-from="assets/motion-v16.js" id="digdaya-motion-v16-script">
+<script data-inline-from="assets/js/motion-v16.js" id="digdaya-motion-v16-script">
 
 (()=>{
   "use strict";
@@ -5981,12 +6010,22 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
       if(getComputedStyle(el).position==="static")el.classList.add("dig-m-needs-pos");
       const img=el.matches("img")?el:el.querySelector("img");
       img?.classList.add("dig-m-img");
-      if(img&&el!==img&&!el.querySelector(":scope > .dig-photo-sheen")){
-        const sheen=d.createElement("span");sheen.className="dig-photo-sheen";sheen.setAttribute("aria-hidden","true");
-        if(img.parentElement===el)img.insertAdjacentElement("afterend",sheen);else el.prepend(sheen);
-      }
-      if(img&&el!==img&&!el.querySelector(":scope > .dig-photo-grain")){
-        const grain=d.createElement("span");grain.className="dig-photo-grain";grain.setAttribute("aria-hidden","true");el.append(grain);
+      if(img&&el!==img&&el.tagName==="PICTURE"){
+        const sibling=el.nextElementSibling;
+        if(!sibling?.classList.contains("dig-photo-picture-layers")){
+          const layers=d.createElement("span");layers.className="dig-photo-picture-layers";layers.setAttribute("aria-hidden","true");
+          const sheen=d.createElement("span");sheen.className="dig-photo-sheen";
+          const grain=d.createElement("span");grain.className="dig-photo-grain";
+          layers.append(sheen,grain);el.insertAdjacentElement("afterend",layers);
+        }
+      }else if(img&&el!==img){
+        if(!el.querySelector(":scope > .dig-photo-sheen")){
+          const sheen=d.createElement("span");sheen.className="dig-photo-sheen";sheen.setAttribute("aria-hidden","true");
+          if(img.parentElement===el)img.insertAdjacentElement("afterend",sheen);else el.prepend(sheen);
+        }
+        if(!el.querySelector(":scope > .dig-photo-grain")){
+          const grain=d.createElement("span");grain.className="dig-photo-grain";grain.setAttribute("aria-hidden","true");el.append(grain);
+        }
       }
     });
     [...includeRoot(standardSelector),...qsa(standardSelector,scope)].forEach(el=>el.classList.add("dig-m-standard"));
@@ -6107,7 +6146,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 
 </script>
 
-<script data-inline-from="assets/native-navigation-safety-v1.js" data-native-navigation-safety="v1">
+<script data-inline-from="assets/js/native-navigation-safety-v1.js" data-native-navigation-safety="v1">
 
 window.addEventListener("pageshow",()=>document.documentElement.classList.remove("is-page-leaving"));
 

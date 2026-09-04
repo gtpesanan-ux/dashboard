@@ -21,4 +21,4 @@ Kelompok utama yang dikeluarkan:
 - runtime-site.js lama setelah seluruh halaman memakai runtime-site-v8.js
 - og-domain/home/parfum/topup/website.jpg lama; referensinya diganti foto V16 realistis
 
-Enam gambar news-digital dan news-pariwisata TIDAK dikeluarkan. Keduanya dipertahankan sebagai fallback kontrak kategori yang sudah didukung runtime meskipun belum muncul pada 1.046 baris data saat ini.
+Enam gambar news-digital dan news-pariwisata TIDAK dikeluarkan. Keduanya dipertahankan sebagai fallback kontrak kategori yang didukung runtime; dataset aman saat ini berisi 71 catatan terbingkai.

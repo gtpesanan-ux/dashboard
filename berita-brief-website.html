@@ -48,10 +48,10 @@ ATURAN ABSOLUT — WAJIB DIPATUHI PADA SETIAP REVISI BERIKUTNYA:
 -->
 <script>document.documentElement.classList.replace("no-js","js")</script>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<title>Cara Membuat Brief Website yang Efektif: Checklist Lengkap | Digdaya</title>
+<title>Cara Menyusun Brief Website yang Efektif | Digdaya</title>
 <meta content="https://panel.diracgroup.store/berita-brief-website.html" property="og:url"/>
 <meta content="brief website, tujuan website, ruang lingkup website, konten website, fitur website" name="keywords"/>
-<meta content="Panduan membuat brief website yang efektif: tujuan, pengguna, struktur halaman, konten, fitur, revisi, anggaran, serah terima, dan maintenance." name="description"/>
+<meta content="Panduan menyusun brief website: tujuan, pengguna, struktur halaman, konten, fitur, revisi, anggaran, serah terima, dan pemeliharaan." name="description"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/>
 <meta content="#f8f5ef" name="theme-color"/>
 <meta content="light" name="color-scheme"/>
@@ -937,7 +937,7 @@ body.menu-open {
   transition: none;
 }
 
-.motion-ready .reveal {
+.motion-ready .reveal:not(.dig-m-media) {
   --motion-delay: 0ms;
   opacity: 0;
   transform: translate3d(0, 1.5rem, 0);
@@ -948,7 +948,7 @@ body.menu-open {
   will-change: opacity, transform;
 }
 
-.motion-ready .reveal.is-visible {
+.motion-ready .reveal:not(.dig-m-media).is-visible {
   opacity: 1;
   transform: none;
 }
@@ -969,13 +969,13 @@ body.menu-open {
   transform: translate3d(0, .75rem, 0) scale(.97);
 }
 
-.motion-ready .reveal[data-motion="media"] {
+.motion-ready .reveal[data-motion="media"]:not(.dig-m-media) {
   opacity: 1;
   clip-path: inset(0 0 100% 0 round var(--radius));
   transform: scale(1.018);
 }
 
-.motion-ready .reveal[data-motion="media"].is-visible {
+.motion-ready .reveal[data-motion="media"]:not(.dig-m-media).is-visible {
   clip-path: inset(0 0 0 0 round var(--radius));
   transform: none;
 }
@@ -994,7 +994,7 @@ body.menu-open {
   will-change: auto;
 }
 
-.motion-ready .hero-copy[data-motion="hero"] > * {
+.motion-ready .hero-copy[data-motion="hero"] > :not(.dig-m-heading):not(.dig-m-standard) {
   opacity: 0;
   transform: translate3d(0, 1rem, 0);
   transition:
@@ -1002,16 +1002,16 @@ body.menu-open {
     transform var(--motion-editorial) var(--ease-enter);
 }
 
-.motion-ready .hero-copy[data-motion="hero"].is-visible > * {
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :not(.dig-m-heading):not(.dig-m-standard) {
   opacity: 1;
   transform: none;
 }
 
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(1) { transition-delay: 30ms; }
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(2) { transition-delay: 100ms; }
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(3) { transition-delay: 180ms; }
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(4) { transition-delay: 260ms; }
-.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(5) { transition-delay: 340ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(1):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 30ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(2):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 100ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(3):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 180ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(4):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 260ms; }
+.motion-ready .hero-copy[data-motion="hero"].is-visible > :nth-child(5):not(.dig-m-heading):not(.dig-m-standard) { transition-delay: 340ms; }
 
 .motion-ready .reveal-group {
   opacity: 1;
@@ -2361,7 +2361,7 @@ html:not(.js) .faq details[open] summary::after {
 @media (prefers-reduced-motion: reduce) {
   .motion-ready .reveal,
   .motion-ready .reveal[data-motion],
-  .motion-ready .hero-copy[data-motion="hero"] > *,
+  .motion-ready .hero-copy[data-motion="hero"] > :not(.dig-m-heading):not(.dig-m-standard),
   .motion-ready .reveal-group > * {
     opacity: 1 !important;
     clip-path: none !important;
@@ -2461,24 +2461,23 @@ html:not(.js) .faq details[open] summary::after {
 @media(prefers-reduced-motion:reduce){.quick-contact .wa-float,.quick-contact-option,.social-contact{transition:none!important}.quick-contact .wa-float:hover,.quick-contact-option[href]:hover,.social-contact[href]:hover{transform:none!important}}
 @media print{.quick-contact,.footer-contact-us{display:none!important}}
 
-
 </style>
 <link href="https://panel.diracgroup.store/berita-brief-website.html" rel="canonical"/>
 <meta content="id_ID" property="og:locale"/>
 <meta content="article" property="og:type"/>
 <meta content="PT Digdaya Inovasi Nusantara" property="og:site_name"/>
-<meta content="Cara Membuat Brief Website yang Efektif: Checklist Lengkap | Digdaya" property="og:title"/>
-<meta content="Panduan membuat brief website yang efektif: tujuan, pengguna, struktur halaman, konten, fitur, revisi, anggaran, serah terima, dan maintenance." property="og:description"/>
-<meta content="https://panel.diracgroup.store/assets/og-website-branded.jpg" property="og:image"/><meta content="Visual Cara Menyusun Brief Website yang Efektif — PT Digdaya Inovasi Nusantara" property="og:image:alt"/>
-<meta content="1200" property="og:image:width"/>
-<meta content="630" property="og:image:height"/>
+<meta content="Cara Menyusun Brief Website yang Efektif | Digdaya" property="og:title"/>
+<meta content="Panduan menyusun brief website: tujuan, pengguna, struktur halaman, konten, fitur, revisi, anggaran, serah terima, dan pemeliharaan." property="og:description"/>
+<meta property="og:image" content="https://panel.diracgroup.store/assets/og-website-branded.jpg"/><meta property="og:image:alt" content="Pratinjau layanan website Digdaya"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
 <meta content="image/jpeg" property="og:image:type"/>
 
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Cara Membuat Brief Website yang Efektif: Checklist Lengkap | Digdaya" name="twitter:title"/>
-<meta content="Panduan membuat brief website yang efektif: tujuan, pengguna, struktur halaman, konten, fitur, revisi, anggaran, serah terima, dan maintenance." name="twitter:description"/>
-<meta content="https://panel.diracgroup.store/assets/og-website-branded.jpg" name="twitter:image"/>
-<meta content="Panduan menyusun brief website yang efektif" name="twitter:image:alt"/>
+<meta content="Cara Menyusun Brief Website yang Efektif | Digdaya" name="twitter:title"/>
+<meta content="Panduan menyusun brief website: tujuan, pengguna, struktur halaman, konten, fitur, revisi, anggaran, serah terima, dan pemeliharaan." name="twitter:description"/>
+<meta name="twitter:image" content="https://panel.diracgroup.store/assets/og-website-branded.jpg"/>
+<meta name="twitter:image:alt" content="Pratinjau layanan website Digdaya"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://panel.diracgroup.store/berita-brief-website.html#webpage","url":"https://panel.diracgroup.store/berita-brief-website.html","name":"Cara Menyusun Brief Website yang Efektif | Digdaya","description":"Susun tujuan, pengguna, konten, fitur, ruang lingkup, revisi, serah terima, dan pemeliharaan sebelum proyek website dimulai.","isPartOf":{"@id":"https://panel.diracgroup.store/#website"},"about":{"@id":"https://panel.diracgroup.store/#organization"},"inLanguage":"id-ID","breadcrumb":{"@id":"https://panel.diracgroup.store/berita-brief-website.html#breadcrumb"},"primaryImageOfPage":{"@id":"https://panel.diracgroup.store/berita-brief-website.html#primaryimage"},"mainEntity":{"@id":"https://panel.diracgroup.store/berita-brief-website.html#article"}},{"@type":"BlogPosting","@id":"https://panel.diracgroup.store/berita-brief-website.html#article","url":"https://panel.diracgroup.store/berita-brief-website.html","headline":"Cara Menyusun Brief Website yang Efektif","description":"Susun tujuan, pengguna, konten, fitur, ruang lingkup, revisi, serah terima, dan pemeliharaan sebelum proyek website dimulai.","image":["https://panel.diracgroup.store/assets/og-website-branded.jpg"],"articleSection":"Studio","inLanguage":"id-ID","mainEntityOfPage":{"@id":"https://panel.diracgroup.store/berita-brief-website.html#webpage"},"author":{"@id":"https://panel.diracgroup.store/#organization"},"publisher":{"@id":"https://panel.diracgroup.store/#organization"}},{"@type":"BreadcrumbList","@id":"https://panel.diracgroup.store/berita-brief-website.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Beranda","item":"https://panel.diracgroup.store/"},{"@type":"ListItem","position":2,"name":"Berita & Wawasan","item":"https://panel.diracgroup.store/berita.html"},{"@type":"ListItem","position":3,"name":"Cara Menyusun Brief Website yang Efektif"}]},{"@type":"ImageObject","@id":"https://panel.diracgroup.store/berita-brief-website.html#primaryimage","url":"https://panel.diracgroup.store/assets/og-website-branded.jpg","contentUrl":"https://panel.diracgroup.store/assets/og-website-branded.jpg","caption":"Panduan menyusun brief website yang efektif"}]}</script>
 <style data-inline-from="assets/premium-v3.css">
 /* digdaya-premium-v3: additive corporate art direction */
@@ -2797,11 +2796,11 @@ html.is-page-leaving body{opacity:0;transform:translateY(-5px);transition:opacit
 .header-inner>.brand .brand-copy{min-width:0}.header-inner>.brand strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
 .header-inner>.menu-button,.header-inner>.main-nav{grid-column:3}
 main{position:relative;z-index:0}
-[data-motion="slide-left"]{opacity:0!important;transform:translate3d(-2.4rem,0,0)!important}
-[data-motion="slide-right"]{opacity:0!important;transform:translate3d(2.4rem,0,0)!important}
-[data-motion="slide-left"].is-visible,[data-motion="slide-right"].is-visible{opacity:1!important;transform:translate3d(0,0,0)!important}
-.reveal[data-motion="media"]{clip-path:inset(0 8% 0 0 round 1rem);transform:translate3d(0,1rem,0) scale(.985)}
-.reveal[data-motion="media"].is-visible{clip-path:inset(0 0 0 0 round 1rem);transform:none}
+.motion-ready [data-motion="slide-left"]{opacity:0!important;transform:translate3d(-2.4rem,0,0)!important}
+.motion-ready [data-motion="slide-right"]{opacity:0!important;transform:translate3d(2.4rem,0,0)!important}
+.motion-ready [data-motion="slide-left"].is-visible,.motion-ready [data-motion="slide-right"].is-visible{opacity:1!important;transform:translate3d(0,0,0)!important}
+.motion-ready .reveal[data-motion="media"]:not(.dig-m-media){clip-path:inset(0 8% 0 0 round 1rem);transform:translate3d(0,1rem,0) scale(.985)}
+.motion-ready .reveal[data-motion="media"]:not(.dig-m-media).is-visible{clip-path:inset(0 0 0 0 round 1rem);transform:none}
 
 /* Hero story becomes a real layered card deck while preserving original copy. */
 [data-dig-hero]{perspective:1100px;transform-style:preserve-3d}
@@ -2893,7 +2892,7 @@ main{position:relative;z-index:0}
 .dig-news-mark{display:inline-grid;place-items:center;width:2rem;height:2rem;border-radius:.55rem;background:rgba(255,255,255,.94);overflow:hidden;flex:0 0 auto}
 .dig-news-mark img{width:100%;height:100%;object-fit:cover;filter:none!important;transform:none!important}
 .dig-news-art-layer strong{display:block;max-width:42ch;font-size:.78rem;line-height:1.35;text-wrap:balance}
-.live-news-card[data-kind="trend-brief"] .live-news-visual>img{filter:saturate(.72) contrast(.96)}
+.live-news-card[data-kind="query-monitor"] .live-news-visual>img{filter:saturate(.72) contrast(.96)}
 .news-detail-visual.is-trend>img{filter:saturate(.72) contrast(.96)}
 .dig-static-illustration-label{position:absolute;left:.8rem;bottom:.8rem;z-index:3;padding:.38rem .55rem;border-radius:.45rem;background:rgba(8,47,91,.78);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
 @media(max-width:700px){.dig-visual-proof{padding-top:2.5rem;padding-bottom:2.5rem}.dig-news-art-layer{padding:.65rem .7rem}.dig-news-art-layer strong{font-size:.7rem}.dig-news-mark{width:1.7rem;height:1.7rem}}
@@ -3021,9 +3020,10 @@ html.dig-motion-v16-ready .dig-m-media.is-dig-in:not(.hero-picture):not(.dig-her
   transform:translate3d(0,var(--dig-parallax,0px),0) scale(var(--dig-media-scale,1.025));
   filter:saturate(.97) contrast(1.02) brightness(1);
 }
-.dig-m-media>.dig-photo-sheen{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(105deg,rgba(250,247,241,.56),rgba(228,202,152,.18) 43%,rgba(8,47,91,.045) 70%,transparent 80%);transform-origin:right center;transform:scaleX(1);transition:transform .94s var(--dig-m-ease);mix-blend-mode:soft-light}
-.dig-m-media.is-dig-in>.dig-photo-sheen{transform:scaleX(0)}
-.dig-m-media>.dig-photo-grain{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.055;background:radial-gradient(circle at 16% 24%,rgba(255,255,255,.22) 0 1px,transparent 1.4px) 0 0/8px 8px;mix-blend-mode:soft-light}
+.dig-photo-picture-layers{position:absolute;inset:0;z-index:1;overflow:hidden;border-radius:inherit;pointer-events:none}
+.dig-m-media>.dig-photo-sheen,.dig-photo-picture-layers>.dig-photo-sheen{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(105deg,rgba(250,247,241,.56),rgba(228,202,152,.18) 43%,rgba(8,47,91,.045) 70%,transparent 80%);transform-origin:right center;transform:scaleX(1);transition:transform .94s var(--dig-m-ease);mix-blend-mode:soft-light}
+.dig-m-media.is-dig-in>.dig-photo-sheen,.dig-m-media.is-dig-in+.dig-photo-picture-layers>.dig-photo-sheen{transform:scaleX(0)}
+.dig-m-media>.dig-photo-grain,.dig-photo-picture-layers>.dig-photo-grain{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.055;background:radial-gradient(circle at 16% 24%,rgba(255,255,255,.22) 0 1px,transparent 1.4px) 0 0/8px 8px;mix-blend-mode:soft-light}
 .dig-m-media>figcaption,
 .dig-m-media>.dig-news-art-layer,
 .dig-m-media>.dig-static-illustration-label,
@@ -3117,8 +3117,10 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 @view-transition{navigation:auto}
 ::view-transition-old(root){animation:dig-v16-page-out .22s var(--dig-m-ease) both}
 ::view-transition-new(root){animation:dig-v16-page-in .4s var(--dig-m-ease) both}
-@keyframes dig-v16-page-out{to{opacity:0;transform:translate3d(0,-4px,0) scale(.999);filter:blur(.7px)}}
-@keyframes dig-v16-page-in{from{opacity:0;transform:translate3d(0,8px,0) scale(.999);filter:blur(1px)}to{opacity:1;transform:none;filter:none}}
+::view-transition-group(site-header){animation:none!important}
+::view-transition-old(site-header),::view-transition-new(site-header){animation:none!important;opacity:1!important;transform:none!important;filter:none!important}
+@keyframes dig-v16-page-out{to{opacity:0;transform:translate3d(0,-4px,0) scale(.999)}}
+@keyframes dig-v16-page-in{from{opacity:0;transform:translate3d(0,8px,0) scale(.999)}to{opacity:1;transform:none}}
 
 @media(max-width:760px){
   .shell{width:min(100% - 24px,var(--shell))!important}
@@ -3135,7 +3137,8 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
   .card-link{min-height:44px!important;align-items:center!important;margin-top:.68rem!important;font-size:.83rem!important}
   .hero-copy{width:calc(100% - 1rem)!important;padding:1.05rem!important}
   .hero-index{margin-top:.85rem!important}
-  .dig-m-media>.dig-photo-grain{opacity:.035}
+  .hero-frame>.dig-photo-picture-layers{right:0;bottom:auto;left:0;height:clamp(245px,62vw,350px);border-radius:1.15rem}
+  .dig-m-media>.dig-photo-grain,.dig-photo-picture-layers>.dig-photo-grain{opacity:.035}
   html.dig-motion-v16-ready .dig-m-card:not(.u-domain-card){transform:translate3d(0,15px,0) scale(.994)}
   html.dig-motion-v16-ready .dig-m-card.is-dig-in:not(.u-domain-card){transform:none}
   .support-din-panel{grid-template-columns:1fr}
@@ -3372,8 +3375,8 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 <nav aria-label="Breadcrumb" class="breadcrumb"><div class="shell"><ol><li><a href="index.html">Beranda</a></li><li><a href="berita.html">Berita &amp; Wawasan</a></li><li><span aria-current="page">Cara Menyusun Brief Website yang Efektif</span></li></ol></div></nav>
 <main id="main">
 <article data-article-id="brief-website" data-category="website" data-keywords="website brief konten fitur desain scope" data-title="Cara Menyusun Brief Website yang Efektif" data-widget="news-filter" id="brief-website">
-<header aria-labelledby="page-title" class="hero"><div class="shell hero-frame"><picture class="hero-picture position-left"><img alt="Ilustrasi penyusunan brief website" data-original-src="assets/website-studio-v16.webp" decoding="async" fetchpriority="high" src="assets/website-studio-v16.webp" height="675" width="1200"/></picture><div class="hero-copy reveal" data-motion="hero"><p class="kicker overline-rule">Wawasan · Studio</p><h1 id="page-title">Cara Menyusun Brief Website yang Efektif</h1><p class="lede">Susun tujuan, pengguna, konten, fitur, ruang lingkup, revisi, serah terima, dan pemeliharaan sebelum proyek website dimulai.</p><div class="actions"><a class="button" href="#article-content">Mulai membaca</a><a class="button button-ghost" href="berita.html">Semua artikel</a></div><ul aria-label="Informasi artikel" class="hero-index"><li>Panduan</li><li>Praktis</li><li>Terarah</li></ul></div></div></header>
-<p aria-live="polite" class="sr-only" data-news-status="" role="status"></p><section class="section paper" id="article-content"><div class="shell article-body"><aside class="article-meta reveal" data-motion="fade"><p class="article-byline">Oleh <strong>PT Digdaya Inovasi Nusantara</strong></p><p>Panduan editorial</p><div class="actions"><button aria-label="Salin tautan Cara Menyusun Brief Website yang Efektif" class="button button-ghost" data-copy-article="brief-website" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-copy"></use></svg> <span data-copy-label="">Salin tautan</span></button><button aria-label="Bagikan Cara Menyusun Brief Website yang Efektif" class="button button-ghost" data-share-article="brief-website" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-share"></use></svg> Bagikan</button></div></aside><div class="prose reveal" data-motion="fade"><p class="kicker">Brief Website yang Berguna</p><h2>Desain yang matang membutuhkan keputusan sebelum layar pertama dibuat.</h2><p>Brief website bukan daftar warna dan contoh tampilan. Brief adalah dokumen singkat yang menjawab alasan website dibangun, siapa yang akan menggunakannya, informasi apa yang dibutuhkan, dan tindakan apa yang diharapkan setelah pengunjung memahami isi.</p><p>Mulailah dari satu tujuan utama. Company profile dapat bertujuan membantu calon mitra memahami kapasitas perusahaan. Landing page dapat fokus pada satu penawaran. Katalog dapat membantu pengguna menelusuri kategori dan mengirim permintaan. Tujuan yang jelas mencegah halaman dipenuhi bagian yang tidak memiliki fungsi.</p><img alt="Ruang kerja digital untuk menyiapkan brief website" data-lightbox="" data-original-src="assets/brand-campaign-11.webp" decoding="async" loading="lazy" src="assets/brand-campaign-11.webp" height="675" width="1200"/><h3>Petakan pengguna dan konten</h3><p>Tuliskan dua atau tiga kelompok pengguna utama, pertanyaan mereka, dan informasi yang perlu tersedia untuk menjawab pertanyaan itu. Kumpulkan logo, profil, deskripsi layanan, foto, data kontak, dokumen pendukung, dan ketentuan penggunaan. Tandai materi yang sudah final dan yang masih perlu ditulis.</p><h3>Pisahkan kebutuhan wajib dan pengembangan</h3><p>Buat dua daftar. Daftar pertama berisi kebutuhan yang harus tersedia ketika website diluncurkan. Daftar kedua berisi fitur yang dapat dikembangkan setelah penggunaan awal memberi data yang cukup. Cara ini membantu menjaga ruang lingkup, anggaran, dan target waktu tetap realistis.</p><p>Tutup brief dengan batas proyek: jumlah halaman, fungsi, integrasi, perangkat yang diprioritaskan, kebutuhan aksesibilitas, pihak penyedia konten, jumlah putaran revisi, target waktu, serah terima, akses akun, pemeliharaan, dan kriteria penerimaan. Seluruh rincian baru berlaku setelah disepakati oleh pihak terkait.</p><h3>Tentukan hasil yang ingin diukur</h3><p>Tujuan yang baik dapat diterjemahkan menjadi indikator. Website profil perusahaan mungkin mengutamakan keterbacaan layanan, permintaan kontak, atau akses dokumen. Katalog mungkin mengutamakan kemudahan menemukan kategori dan mengirim pertanyaan. Portal layanan mungkin mengutamakan penyelesaian tugas pengguna. Indikator tidak harus selalu berupa angka penjualan; yang penting, tim mengetahui perilaku apa yang menunjukkan bahwa website membantu pengguna.</p><h3>Buat peta halaman sebelum membahas visual</h3><p>Susun daftar halaman dan hubungan antarkonten. Untuk setiap halaman, tulis tujuan, audiens, pesan utama, tindakan yang diharapkan, dan materi yang dibutuhkan. Peta sederhana ini membantu menemukan duplikasi, halaman yang tidak memiliki fungsi, serta informasi yang belum tersedia. Struktur yang jelas juga memudahkan pembuatan navigasi, breadcrumb, dan tautan internal.</p><h3>Pisahkan kebutuhan fungsional dan nonfungsional</h3><p>Kebutuhan fungsional menjelaskan apa yang dapat dilakukan pengguna, misalnya mengirim formulir, mencari artikel, memfilter katalog, atau mengunduh dokumen. Kebutuhan nonfungsional menjelaskan kualitas yang diharapkan, seperti kecepatan, responsivitas, aksesibilitas, keamanan, pencadangan, kompatibilitas browser, dan kemudahan pemeliharaan. Dua kelompok ini perlu dicatat karena proyek dapat terlihat selesai secara visual tetapi belum siap digunakan bila kualitas teknisnya tidak diuji.</p><h3>Definisikan data, privasi, dan keamanan sejak awal</h3><p>Jika website menerima formulir, tentukan data apa yang benar-benar diperlukan, tujuan pengumpulan, masa penyimpanan, siapa yang dapat mengakses, dan bagaimana pengguna memperoleh penjelasan. Hindari meminta password, OTP, atau informasi yang tidak dibutuhkan. Untuk akun admin, tentukan mekanisme akses dan pemulihan yang aman. Untuk integrasi pihak ketiga, catat layanan yang digunakan serta dampaknya terhadap privasi, biaya, dan ketergantungan teknis.</p><h3>Tuliskan standar aksesibilitas dan perangkat</h3><p>Brief sebaiknya menyebutkan perangkat yang diprioritaskan, tetapi desain tetap perlu responsif. Cantumkan kebutuhan keyboard, kontras, label formulir, teks alternatif gambar, struktur heading, ukuran target sentuh, dan perilaku saat JavaScript tidak tersedia bila relevan. Aksesibilitas bukan lapisan dekorasi di akhir proyek; keputusan struktur dan komponen sejak awal akan menentukan kualitas hasil.</p><h3>Jelaskan alur revisi dan kriteria penerimaan</h3><p>Tentukan siapa yang memberi keputusan akhir, bagaimana komentar dikumpulkan, berapa putaran revisi yang termasuk ruang lingkup, dan perubahan apa yang dianggap sebagai permintaan baru. Kriteria penerimaan dapat berupa daftar yang dapat diperiksa: seluruh halaman utama tersedia, formulir diuji, tautan tidak putus, tampilan mobile stabil, metadata dasar terpasang, akses admin diserahkan, dan cadangan tersedia. Kriteria yang konkret mengurangi perbedaan persepsi mengenai arti “selesai”.</p><h3>Rencanakan serah terima dan pemeliharaan</h3><p>Serah terima tidak cukup dengan mengirim file. Catat domain, hosting, repository, akun layanan, lisensi, konfigurasi, jadwal pembaruan, prosedur pencadangan, dan kontak dukungan. Pisahkan akun milik klien dari akun teknis pengembang. Tentukan pula siapa yang memperbarui konten, siapa yang menangani gangguan, dan bagaimana perubahan besar akan dikelola setelah masa proyek berakhir.</p><h3>Checklist brief final</h3><ul><li>Tujuan utama dan indikator keberhasilan.</li><li>Kelompok pengguna dan kebutuhan informasinya.</li><li>Peta halaman, konten, dan pemilik setiap materi.</li><li>Fitur wajib, fitur tahap berikutnya, dan integrasi.</li><li>Kebutuhan performa, mobile, aksesibilitas, keamanan, dan privasi.</li><li>Ruang lingkup desain, jumlah revisi, jadwal, dan penanggung jawab keputusan.</li><li>Kriteria penerimaan, serah terima, dokumentasi, dan pemeliharaan.</li></ul><p>Brief yang lengkap tidak berarti proyek tidak boleh berubah. Brief justru menyediakan garis dasar sehingga perubahan dapat dinilai secara sadar: apakah menambah manfaat, biaya, risiko, atau waktu. Dengan demikian, diskusi desain tetap fleksibel tanpa kehilangan kendali terhadap tujuan proyek.</p><a class="card-link" href="jasa-pembuatan-website.html">Lanjut ke jasa website <svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-arrow-right"></use></svg></a></div></div></section>
+<header aria-labelledby="page-title" class="hero"><div class="shell hero-frame"><picture class="hero-picture position-left"><img alt="Ilustrasi penyusunan brief website" data-original-src="assets/website-studio-v16.webp" decoding="async" fetchpriority="high" src="assets/website-studio-v16.webp" height="675" width="1200"/></picture><div class="hero-copy reveal" data-motion="hero"><p class="kicker overline-rule">Wawasan · Situs web</p><h1 id="page-title">Cara Menyusun Brief Website yang Efektif</h1><p class="lede">Susun tujuan, pengguna, konten, fitur, ruang lingkup, revisi, serah terima, dan pemeliharaan sebelum proyek website dimulai.</p><div class="actions"><a class="button" href="#article-content">Mulai membaca</a><a class="button button-ghost" href="berita.html">Semua artikel</a></div><ul aria-label="Informasi artikel" class="hero-index"><li>Panduan</li><li>Praktis</li><li>Terarah</li></ul></div></div></header>
+<p aria-live="polite" class="sr-only" data-news-status="" role="status"></p><section class="section paper" id="article-content"><div class="shell article-body"><aside class="article-meta reveal" data-motion="fade"><p class="article-byline">Oleh <strong>PT Digdaya Inovasi Nusantara</strong></p><p>Panduan editorial</p><div class="actions"><button aria-label="Salin tautan Cara Menyusun Brief Website yang Efektif" class="button button-ghost" data-copy-article="brief-website" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-copy"></use></svg> <span data-copy-label="">Salin tautan</span></button><button aria-label="Bagikan Cara Menyusun Brief Website yang Efektif" class="button button-ghost" data-share-article="brief-website" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-share"></use></svg> Bagikan</button></div></aside><div class="prose reveal" data-motion="fade"><p class="kicker">Brief Website yang Berguna</p><h2>Desain yang matang membutuhkan keputusan sebelum layar pertama dibuat.</h2><p>Ringkasan kebutuhan situs web (brief) bukan daftar warna dan contoh tampilan. Dokumen ini menjawab alasan website dibangun, siapa yang akan menggunakannya, informasi apa yang dibutuhkan, dan tindakan apa yang diharapkan setelah pengunjung memahami isi.</p><p>Mulailah dari satu tujuan utama. Situs profil perusahaan dapat bertujuan membantu calon mitra memahami kapasitas perusahaan. Halaman arahan (landing page) dapat berfokus pada satu penawaran. Katalog dapat membantu pengguna menelusuri kategori dan mengirim permintaan. Tujuan yang jelas mencegah halaman dipenuhi bagian yang tidak memiliki fungsi.</p><img alt="Ruang kerja digital untuk menyiapkan brief website" data-lightbox="" data-original-src="assets/brand-campaign-11.webp" decoding="async" loading="lazy" src="assets/brand-campaign-11.webp" height="675" width="1200"/><h3>Petakan pengguna dan konten</h3><p>Tuliskan dua atau tiga kelompok pengguna utama, pertanyaan mereka, dan informasi yang perlu tersedia untuk menjawab pertanyaan itu. Kumpulkan logo, profil, deskripsi layanan, foto, data kontak, dokumen pendukung, dan ketentuan penggunaan. Tandai materi yang sudah final dan yang masih perlu ditulis.</p><h3>Pisahkan kebutuhan wajib dan pengembangan</h3><p>Buat dua daftar. Daftar pertama berisi kebutuhan yang harus tersedia ketika website diluncurkan. Daftar kedua berisi fitur yang dapat dikembangkan setelah penggunaan awal memberi data yang cukup. Cara ini membantu menjaga ruang lingkup, anggaran, dan target waktu tetap realistis.</p><p>Tutup brief dengan batas proyek: jumlah halaman, fungsi, integrasi, perangkat yang diprioritaskan, kebutuhan aksesibilitas, pihak penyedia konten, jumlah putaran revisi, target waktu, serah terima, akses akun, pemeliharaan, dan kriteria penerimaan. Seluruh rincian baru berlaku setelah disepakati oleh pihak terkait.</p><h3>Tentukan hasil yang ingin diukur</h3><p>Tujuan yang baik dapat diterjemahkan menjadi indikator. Website profil perusahaan mungkin mengutamakan keterbacaan layanan, permintaan kontak, atau akses dokumen. Katalog mungkin mengutamakan kemudahan menemukan kategori dan mengirim pertanyaan. Portal layanan mungkin mengutamakan penyelesaian tugas pengguna. Indikator tidak harus selalu berupa angka penjualan; yang penting, tim mengetahui perilaku apa yang menunjukkan bahwa website membantu pengguna.</p><h3>Buat peta halaman sebelum membahas visual</h3><p>Susun daftar halaman dan hubungan antarkonten. Untuk setiap halaman, tulis tujuan, audiens, pesan utama, tindakan yang diharapkan, dan materi yang dibutuhkan. Peta sederhana ini membantu menemukan duplikasi, halaman yang tidak memiliki fungsi, serta informasi yang belum tersedia. Struktur yang jelas juga memudahkan pembuatan navigasi, jejak navigasi (breadcrumb), dan tautan internal.</p><h3>Pisahkan kebutuhan fungsional dan nonfungsional</h3><p>Kebutuhan fungsional menjelaskan apa yang dapat dilakukan pengguna, misalnya mengirim formulir, mencari artikel, memfilter katalog, atau mengunduh dokumen. Kebutuhan nonfungsional menjelaskan kualitas yang diharapkan, seperti kecepatan, responsivitas, aksesibilitas, keamanan, pencadangan, kompatibilitas peramban (browser), dan kemudahan pemeliharaan. Dua kelompok ini perlu dicatat karena proyek dapat terlihat selesai secara visual tetapi belum siap digunakan bila kualitas teknisnya tidak diuji.</p><h3>Definisikan data, privasi, dan keamanan sejak awal</h3><p>Jika situs menerima formulir kontak atau konsultasi, tentukan data yang benar-benar diperlukan dan jangan meminta kata sandi, OTP, PIN, CVV, atau data lain yang tidak diperlukan untuk menangani permintaan. Dokumentasikan tujuan dan dasar pemrosesan, informasi kepada subjek data, masa penyimpanan, hak pengguna, pihak yang dapat mengakses, pengamanan, serta prosedur penghapusan sesuai peran dan ketentuan yang berlaku. Untuk akun administrator, gunakan mekanisme akses dan pemulihan yang aman. Untuk integrasi pihak ketiga, catat layanan yang digunakan serta dampaknya terhadap privasi, biaya, dan ketergantungan teknis.</p><h3>Tuliskan standar aksesibilitas dan perangkat</h3><p>Brief sebaiknya menyebutkan perangkat yang diprioritaskan, tetapi desain tetap perlu responsif. Cantumkan kebutuhan keyboard, kontras, label formulir, teks alternatif gambar, struktur judul bertingkat (heading), ukuran target sentuh, dan perilaku saat JavaScript tidak tersedia bila relevan. Aksesibilitas bukan lapisan dekorasi di akhir proyek; keputusan struktur dan komponen sejak awal akan menentukan kualitas hasil.</p><h3>Jelaskan alur revisi dan kriteria penerimaan</h3><p>Tentukan siapa yang memberi keputusan akhir, bagaimana komentar dikumpulkan, berapa putaran revisi yang termasuk ruang lingkup, dan perubahan apa yang dianggap sebagai permintaan baru. Kriteria penerimaan dapat berupa daftar yang dapat diperiksa: seluruh halaman utama tersedia, formulir diuji, tautan tidak putus, tampilan perangkat seluler stabil, metadata dasar terpasang, akses administrator diserahkan, serta cadangan dibuat dan uji pemulihan berhasil. Kriteria yang konkret mengurangi perbedaan persepsi mengenai arti “selesai”.</p><h3>Rencanakan serah terima dan pemeliharaan</h3><p>Serah terima tidak cukup dengan mengirim file. Catat domain, hosting, repositori kode, akun layanan, lisensi, konfigurasi, jadwal pembaruan, prosedur pencadangan, dan kontak dukungan. Pisahkan akun milik klien dari akun teknis pengembang. Tentukan pula siapa yang memperbarui konten, siapa yang menangani gangguan, dan bagaimana perubahan besar akan dikelola setelah masa proyek berakhir.</p><h3>Daftar periksa ringkasan akhir</h3><ul><li>Tujuan utama dan indikator keberhasilan.</li><li>Kelompok pengguna dan kebutuhan informasinya.</li><li>Peta halaman, konten, dan pemilik setiap materi.</li><li>Fitur wajib, fitur tahap berikutnya, dan integrasi.</li><li>Kebutuhan kinerja, perangkat seluler, aksesibilitas, keamanan, dan privasi.</li><li>Ruang lingkup desain, jumlah revisi, jadwal, dan penanggung jawab keputusan.</li><li>Kriteria penerimaan, serah terima, dokumentasi, dan pemeliharaan.</li></ul><p>Ringkasan kebutuhan yang lengkap tidak berarti proyek tidak boleh berubah. Dokumen ini menyediakan garis dasar sehingga perubahan dapat dinilai secara sadar: apakah menambah manfaat, biaya, risiko, atau waktu. Dengan demikian, diskusi desain tetap fleksibel tanpa kehilangan kendali terhadap tujuan proyek.</p><a class="card-link" href="jasa-pembuatan-website.html">Lanjut ke jasa website <svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-arrow-right"></use></svg></a></div></div></section>
 </article>
 <section class="section soft"><div class="shell editorial-split"><figure class="editorial-media reveal" data-lightbox="" data-motion="media"><img alt="Ruang kerja Digdaya untuk meninjau informasi dan kebutuhan" data-original-src="assets/website-studio-v16.webp" decoding="async" loading="lazy" src="assets/website-studio-v16.webp" height="675" width="1200"/><figcaption>Informasi pada artikel menjadi titik awal; rincian yang berubah tetap perlu dikonfirmasi.</figcaption></figure><div class="editorial-copy reveal" data-motion="slide-right"><p class="kicker">Langkah berikutnya</p><h2>Bawa konteks ke percakapan.</h2><p>Sampaikan tujuan dan pertanyaan tanpa mengirim kredensial atau data sensitif.</p><div class="actions"><button class="button" data-inquiry-message="Saya membaca Cara Menyusun Brief Website yang Efektif dan ingin berkonsultasi tentang: " data-inquiry-service="Konsultasi umum" data-open-inquiry="" type="button">Ajukan pertanyaan</button><a class="button button-ghost" href="berita.html">Baca wawasan lain</a></div></div></div></section>
 </main>
@@ -3453,7 +3456,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 </div>
 <button aria-controls="quick-contact-panel" aria-expanded="false" aria-label="Buka pilihan WhatsApp dan email" class="wa-float" data-contact-toggle="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 24 24"><circle cx="12" cy="11.5" fill="none" r="8.1" stroke="currentColor" stroke-width="1.8"></circle><path d="M7.2 19.2 8 16.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><path d="M9.1 7.5c.35-.38.8-.35 1.08.05l.8 1.16c.2.3.18.68-.05.95l-.55.65c-.15.18-.13.43.02.62.74.9 1.54 1.69 2.43 2.42.19.15.45.16.63.01l.67-.55c.27-.22.66-.24.95-.03l1.13.82c.39.28.42.74.04 1.08l-.66.59c-.56.5-1.35.64-2.04.36a10.7 10.7 0 0 1-5.2-3.66 10.5 10.5 0 0 1-1.45-2.57c-.27-.7-.12-1.48.39-2.03l.61-.65Z" fill="currentColor"></path></svg></button>
 </div>
-<script data-inline-from="assets/runtime-site-v8.js">
+<script data-inline-from="assets/js/runtime-site-v8.js">
 
 (() => {
   "use strict";
@@ -3812,7 +3815,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 
   
 </script>
-<script data-inline-from="assets/runtime-widgets.js">
+<script data-inline-from="assets/js/runtime-widgets.js">
 
 (() => {
   "use strict";
@@ -5720,7 +5723,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 
   
 </script>
-<script data-inline-from="assets/runtime-premium.js">
+<script data-inline-from="assets/js/runtime-premium.js">
 (() => {
   "use strict";
   const qsa = (selector, root = document) => Array.from(root.querySelectorAll(selector));
@@ -5788,7 +5791,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
   initScrollers();
 })();
 </script>
-<script data-inline-from="assets/runtime-contact.js">
+<script data-inline-from="assets/js/runtime-contact.js">
 
 (() => {
   "use strict";
@@ -5807,7 +5810,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 })();
 
 </script>
-<script data-inline-from="assets/runtime-ultimate-v4.js">
+<script data-inline-from="assets/js/runtime-ultimate-v4.js">
 
 (() => {
   "use strict";
@@ -5847,7 +5850,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 
   // Timeline / process progression.
   const flow=qsa('.u-flowline>div');
-  if(flow.length){if(reduced){flow.forEach(x=>x.classList.add('is-line-visible'))}else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-line-visible');io.unobserve(e.target)}}),{threshold:.45});flow.forEach(x=>io.observe(x));}}
+  if(flow.length){if(reduced||!('IntersectionObserver'in window)){flow.forEach(x=>x.classList.add('is-line-visible'))}else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-line-visible');io.unobserve(e.target)}}),{threshold:.45});flow.forEach(x=>io.observe(x));}}
 
   // Same-origin navigation fallback for browsers without cross-document View Transition.
   // Native anchor navigation intentionally preserved for iOS/Safari reliability.
@@ -5859,7 +5862,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 })();
 
 </script>
-<script data-inline-from="assets/runtime-hardening.js">
+<script data-inline-from="assets/js/runtime-hardening.js">
 (() => {
   "use strict";
   const qs=(s,r=document)=>r.querySelector(s), qsa=(s,r=document)=>Array.from(r.querySelectorAll(s));
@@ -5899,9 +5902,35 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
   document.documentElement.dataset.digdayaHardening='ready';
 })();
 </script>
-<script data-inline-from="assets/text-motion-v13.js" id="digdaya-rev13-text-motion">
+<script data-inline-from="assets/js/text-motion-v13.js" id="digdaya-rev13-text-motion">
 
-(()=>{const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;const nodes=[...document.querySelectorAll('main .kicker, main h1, main section h2')];nodes.forEach(el=>{el.classList.add('dig-motion-text');if(el.matches('.kicker'))el.classList.add('dig-motion-kicker');else if(el.tagName==='H1')el.classList.add('dig-motion-h1');else el.classList.add('dig-motion-h2')});if(reduce||!('IntersectionObserver'in window)){nodes.forEach(el=>el.classList.add('is-visible'));return;}const io=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}},{threshold:.12,rootMargin:'0px 0px -6% 0px'});nodes.forEach(el=>io.observe(el));})();
+(() => {
+  const bootFallback = () => {
+    if (document.documentElement.classList.contains('dig-motion-v16-ready')) return;
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches ?? false;
+    const nodes = [...document.querySelectorAll('main .kicker, main h1, main section h2')];
+    nodes.forEach((el) => {
+      el.classList.add('dig-motion-text');
+      if (el.matches('.kicker')) el.classList.add('dig-motion-kicker');
+      else if (el.tagName === 'H1') el.classList.add('dig-motion-h1');
+      else el.classList.add('dig-motion-h2');
+    });
+    if (reduce || !('IntersectionObserver' in window)) {
+      nodes.forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    }, {threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    nodes.forEach((el) => io.observe(el));
+  };
+  const defer = window.requestAnimationFrame?.bind(window) || ((callback) => window.setTimeout(callback, 0));
+  defer(bootFallback);
+})();
 
 </script>
 
@@ -5910,7 +5939,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 
 
 
-<script data-inline-from="assets/motion-v16.js" id="digdaya-motion-v16-script">
+<script data-inline-from="assets/js/motion-v16.js" id="digdaya-motion-v16-script">
 
 (()=>{
   "use strict";
@@ -5954,12 +5983,22 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
       if(getComputedStyle(el).position==="static")el.classList.add("dig-m-needs-pos");
       const img=el.matches("img")?el:el.querySelector("img");
       img?.classList.add("dig-m-img");
-      if(img&&el!==img&&!el.querySelector(":scope > .dig-photo-sheen")){
-        const sheen=d.createElement("span");sheen.className="dig-photo-sheen";sheen.setAttribute("aria-hidden","true");
-        if(img.parentElement===el)img.insertAdjacentElement("afterend",sheen);else el.prepend(sheen);
-      }
-      if(img&&el!==img&&!el.querySelector(":scope > .dig-photo-grain")){
-        const grain=d.createElement("span");grain.className="dig-photo-grain";grain.setAttribute("aria-hidden","true");el.append(grain);
+      if(img&&el!==img&&el.tagName==="PICTURE"){
+        const sibling=el.nextElementSibling;
+        if(!sibling?.classList.contains("dig-photo-picture-layers")){
+          const layers=d.createElement("span");layers.className="dig-photo-picture-layers";layers.setAttribute("aria-hidden","true");
+          const sheen=d.createElement("span");sheen.className="dig-photo-sheen";
+          const grain=d.createElement("span");grain.className="dig-photo-grain";
+          layers.append(sheen,grain);el.insertAdjacentElement("afterend",layers);
+        }
+      }else if(img&&el!==img){
+        if(!el.querySelector(":scope > .dig-photo-sheen")){
+          const sheen=d.createElement("span");sheen.className="dig-photo-sheen";sheen.setAttribute("aria-hidden","true");
+          if(img.parentElement===el)img.insertAdjacentElement("afterend",sheen);else el.prepend(sheen);
+        }
+        if(!el.querySelector(":scope > .dig-photo-grain")){
+          const grain=d.createElement("span");grain.className="dig-photo-grain";grain.setAttribute("aria-hidden","true");el.append(grain);
+        }
       }
     });
     [...includeRoot(standardSelector),...qsa(standardSelector,scope)].forEach(el=>el.classList.add("dig-m-standard"));
@@ -6080,7 +6119,7 @@ body.menu-open .quick-contact{opacity:0!important;visibility:hidden!important;po
 
 </script>
 
-<script data-inline-from="assets/native-navigation-safety-v1.js" data-native-navigation-safety="v1">
+<script data-inline-from="assets/js/native-navigation-safety-v1.js" data-native-navigation-safety="v1">
 
 window.addEventListener("pageshow",()=>document.documentElement.classList.remove("is-page-leaving"));
 
