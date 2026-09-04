@@ -1,0 +1,820 @@
+{
+  "release": "PT Digdaya Inovasi Nusantara V16 — Final HTML Inline",
+  "generated_at_utc": "2026-09-04T08:15:19.321Z",
+  "hash_algorithm": "SHA-256",
+  "scope_note": "Every deploy file is read as raw bytes. This manifest intentionally excludes only itself to avoid a recursive hash.",
+  "files_hashed": 162,
+  "bytes_hashed": 30773598,
+  "files": [
+    {
+      "path": ".htaccess",
+      "bytes": 5237,
+      "sha256": "3c0cc613f61eaac7ecee9bc95f87285ed77a01430dcaaa3decf41fdef3346bb3"
+    },
+    {
+      "path": "404.html",
+      "bytes": 377344,
+      "sha256": "93fc7c2e55a57ee6811b0e393f03d149569b4e94812450fffdacd4eb657c2a9b"
+    },
+    {
+      "path": "IMAGE-PLAN-V16.md",
+      "bytes": 5520,
+      "sha256": "342aaf22aa10cc6a0d1ce277b8b9052753aed9afd97d9a5ae87bfc33d0ae606d"
+    },
+    {
+      "path": "LICENSE-cormorant-garamond.txt",
+      "bytes": 4504,
+      "sha256": "732f37009943e7f4378cf37113c9bcc4716af002a8583511aa91ed5d37683e73"
+    },
+    {
+      "path": "LICENSE-plus-jakarta-sans.txt",
+      "bytes": 4534,
+      "sha256": "e07fd1167c2aaaa6fb965dd66e1e73b13c9c95b76b2d648b6e938780f30b37af"
+    },
+    {
+      "path": "README-V16.txt",
+      "bytes": 3010,
+      "sha256": "5fb0cb683cbfe9adbb6eac49b2879d55f116f86665a71a65095e575d62e8d149"
+    },
+    {
+      "path": "SUPERSEDED-ASSETS-V16.txt",
+      "bytes": 1346,
+      "sha256": "cf3438ee488429cd0c023ba798d23865b513c3f3bff66537eed5639b75684418"
+    },
+    {
+      "path": "VALIDATION-V16.json",
+      "bytes": 4237,
+      "sha256": "7690ca54e187b2d753eec69c162773ad7767697ddc22cca3a1c4ce040bd90863"
+    },
+    {
+      "path": "_headers",
+      "bytes": 4470,
+      "sha256": "34f7fecf9e0f98eaedbe30841c1b50da5ab4b7df484c35efe771705dfc680dc6"
+    },
+    {
+      "path": "_redirects",
+      "bytes": 17,
+      "sha256": "443d908dacc5e01ea8a63a18cafb04b896636e9b6a9a04de2e6927cc212ef34e"
+    },
+    {
+      "path": "assets/apple-touch-icon.png",
+      "bytes": 27112,
+      "sha256": "b0c7c3ce4ce7ca4be0a7c5f7556efdc3b449a3cc3637b97e26e7320f1193cc91"
+    },
+    {
+      "path": "assets/brand-campaign-01.webp",
+      "bytes": 47156,
+      "sha256": "bac6a8148d98144ab407430724a1f7d6e9587d08bcb0b7bc1c9ce11df39b14ca"
+    },
+    {
+      "path": "assets/brand-campaign-02.webp",
+      "bytes": 46434,
+      "sha256": "074588e4e4eb92ead579a3d41ff9e363ef6a011ab001cd9b62b79d2dcede792b"
+    },
+    {
+      "path": "assets/brand-campaign-03.webp",
+      "bytes": 27600,
+      "sha256": "6976d43b137c00e0767c724e1c4e2983a64eb22f1f5e4ae51ecbf40b827d8128"
+    },
+    {
+      "path": "assets/brand-campaign-06.webp",
+      "bytes": 41864,
+      "sha256": "709f4e195a4c06fba3e1524842b82b48a825535c7f6c87fd9c6a727211b7f4d7"
+    },
+    {
+      "path": "assets/brand-campaign-09.webp",
+      "bytes": 48258,
+      "sha256": "6795afacda55e486a84a298ca7c622797c90d053ea97719d2e20738f682c0ced"
+    },
+    {
+      "path": "assets/brand-campaign-11.webp",
+      "bytes": 39814,
+      "sha256": "aa000d59715002d875efea7cfcc0c63820c4d79a52ad229334048534cd576f48"
+    },
+    {
+      "path": "assets/brand-promo-01.webp",
+      "bytes": 24044,
+      "sha256": "cf216ecfb96dd8f9fd74bdc9a5a12c4e58f3f9cafc7b362374f4774d0abe3062"
+    },
+    {
+      "path": "assets/brand-promo-03.webp",
+      "bytes": 28406,
+      "sha256": "920b2cc7f3f3695f1076a589d30c94c822a0598726e706be12e694b4f2423e60"
+    },
+    {
+      "path": "assets/brand-promo-04.webp",
+      "bytes": 65116,
+      "sha256": "186ce2cee1f3f8b06e6c94e6454d1bb6015d0fb2c4041ab0867b80b26194bfc3"
+    },
+    {
+      "path": "assets/brand-promo-05.webp",
+      "bytes": 30864,
+      "sha256": "4d847ef5388f30e91af67591277f8c27778db35001a4697fcdf3aca41f46dcbc"
+    },
+    {
+      "path": "assets/brand-promo-06.webp",
+      "bytes": 47232,
+      "sha256": "7288d8e6c8eb377fef75e037e2f75b967c84830b7febc7d48277953789216022"
+    },
+    {
+      "path": "assets/brand-promo-08.webp",
+      "bytes": 28502,
+      "sha256": "2b5377989159769d725482228532088b4ed1de871762d5eaab4c4d3a58a2873e"
+    },
+    {
+      "path": "assets/brand-promo-10.webp",
+      "bytes": 70982,
+      "sha256": "e3d41052b20a2e1d41ff46784830abe69becd39b02913f83d0621912149ce873"
+    },
+    {
+      "path": "assets/brand-promo-14.webp",
+      "bytes": 34580,
+      "sha256": "55f9dd13a7f00f41d066db1d81712c555281116916ec5a3a46f6496fe86049aa"
+    },
+    {
+      "path": "assets/company-profile-digdaya-ultimate.mp4",
+      "bytes": 1474100,
+      "sha256": "0519865f9aa195777fbfdf79e3e681e9bac5c4ed0ed7810c1d199b636a69da06"
+    },
+    {
+      "path": "assets/company-profile-digdaya.mp4",
+      "bytes": 840873,
+      "sha256": "1ae7ecdce519e164cbe47b853fc1257acd3debaad769a0c0f96880b09dfcb03f"
+    },
+    {
+      "path": "assets/corporate-home-v16.webp",
+      "bytes": 75252,
+      "sha256": "3df9df32329897db3f49076e1f2e50eb28254712cd9b97815f53c5dab684d42d"
+    },
+    {
+      "path": "assets/customer-support-v16.webp",
+      "bytes": 40834,
+      "sha256": "945d3b2eebd6cec5c7a2673630646d9fc1731348b96d4efeccda37a9d740b7d6"
+    },
+    {
+      "path": "assets/digdaya-logo-256.webp",
+      "bytes": 7144,
+      "sha256": "6f4bf04709dbb5c1f5f34557dd3afc273cd0e2db2a7278f88501020d32cffd9c"
+    },
+    {
+      "path": "assets/digdaya-logo-transparent-1024.webp",
+      "bytes": 319866,
+      "sha256": "b37b1dad21e58d93c31454b73aefb1f20713aa8163b693d4c60521b7b659d05a"
+    },
+    {
+      "path": "assets/digdaya-monogram-tile-512.webp",
+      "bytes": 10858,
+      "sha256": "0e38518bbd8849ac93d53a5b318d9e94a4c2934881bde8dfbb01f5fe613b82b3"
+    },
+    {
+      "path": "assets/digital-operations-v16.webp",
+      "bytes": 49560,
+      "sha256": "5ff2b02e8a3b8e7b222ab8cf7b631d2b523238c8d41dca529462795aa76b1423"
+    },
+    {
+      "path": "assets/domain-strategy-v16.webp",
+      "bytes": 53176,
+      "sha256": "0dd1b34b1d31519d6dad90592848a0b1c4a27b340aec291858c2f0b08ace7aa2"
+    },
+    {
+      "path": "assets/favicon.png",
+      "bytes": 10424,
+      "sha256": "3b3d92419fdcdfd79316c2358deb2ae5ce2c6910d5717b539f03249c52e8366c"
+    },
+    {
+      "path": "assets/fragrance-workshop-v16.webp",
+      "bytes": 70540,
+      "sha256": "6473aa09eb9fe51d5616046bcd19be717fe6d052cd458b7fa4501c54c766f281"
+    },
+    {
+      "path": "assets/gaming-service-v16.webp",
+      "bytes": 49364,
+      "sha256": "d4278d673c42f380f352660a664c631026f6e6bbdfb7e115557290ea160047e1"
+    },
+    {
+      "path": "assets/knowledge-library-runtime.js",
+      "bytes": 1099397,
+      "sha256": "a0d2689c7d37bffa0514b0ae658005544c5f74c9f1eed11e237259a3f232b157"
+    },
+    {
+      "path": "assets/legal-cv-registration-v16.webp",
+      "bytes": 46808,
+      "sha256": "5411e8cc3c3a9aa45e8ba9d65dbfc8255b91fb5f40e137227fc1fbfd1965a33d"
+    },
+    {
+      "path": "assets/legal-nib-oss-v16.webp",
+      "bytes": 45590,
+      "sha256": "44b12a456f7cfd4f69a8444b9120cf48ea53e51a4ca94bac3c7c115e1057d769"
+    },
+    {
+      "path": "assets/legal-pt-documents-v16.webp",
+      "bytes": 35568,
+      "sha256": "e654c7817160b2ccc6b2fd2e049578a304fd539fe9ba419d0818ddad859969f3"
+    },
+    {
+      "path": "assets/logo-cv-multi-usaha-mandiri.webp",
+      "bytes": 99124,
+      "sha256": "2122af602b75bc074b5abc1e857141da3800a33e05f4ccb27a1b17c052853c51"
+    },
+    {
+      "path": "assets/motion-v16.css",
+      "bytes": 14911,
+      "sha256": "5ebabb793021866406a5120d51a6f695c6df668a3f37c38b0efd5ff9b5abe5a0"
+    },
+    {
+      "path": "assets/motion-v16.js",
+      "bytes": 9744,
+      "sha256": "15fa055a35ca0f31935a84a165794723d4a42752e14495c4d94398606b60e863"
+    },
+    {
+      "path": "assets/native-navigation-safety-v1.js",
+      "bytes": 103,
+      "sha256": "965fec9650ac18a000c1db71dc8f8337070a18a357120b0c1bee7ead7b1307da"
+    },
+    {
+      "path": "assets/news-bisnis-1.webp",
+      "bytes": 48932,
+      "sha256": "63fa8d82b351cc3d7a77055641adaf5fe5d31fd4348257ebea1765da33616613"
+    },
+    {
+      "path": "assets/news-bisnis-2.webp",
+      "bytes": 35762,
+      "sha256": "9494969c3971bafc7354e45df539e5a03aac00f9eef7b91d8789641cc3bea752"
+    },
+    {
+      "path": "assets/news-bisnis-3.webp",
+      "bytes": 69618,
+      "sha256": "9998e325a1145c7f4768e9a5ccbb0fbb342c4569b61c10957b0d218cf468a5e7"
+    },
+    {
+      "path": "assets/news-budaya-1.webp",
+      "bytes": 60566,
+      "sha256": "18857400c4d81782cb3e4f374060750f9d9280a2972acd62f107baf7617e2e39"
+    },
+    {
+      "path": "assets/news-budaya-2.webp",
+      "bytes": 89756,
+      "sha256": "9b8cc2338e3259cdd227690efec0491df976d6f6501fabe84bafd704d42cea96"
+    },
+    {
+      "path": "assets/news-budaya-3.webp",
+      "bytes": 74138,
+      "sha256": "3df191ec114b4f6d9dbaa70d2c84c573b7463697d9cd99ddd52ba57dfaf83bc3"
+    },
+    {
+      "path": "assets/news-data.js",
+      "bytes": 1929414,
+      "sha256": "9c942439a3f29c820436345a1fcf17651d6e7d6dd39dd84df25160c88d75affa"
+    },
+    {
+      "path": "assets/news-detail-runtime.js",
+      "bytes": 5328,
+      "sha256": "9117fcf65d3977bb70cbf412c040b63fe25a476edc510a1cbbcd0922cb43abf6"
+    },
+    {
+      "path": "assets/news-digital-1.webp",
+      "bytes": 49560,
+      "sha256": "5ff2b02e8a3b8e7b222ab8cf7b631d2b523238c8d41dca529462795aa76b1423"
+    },
+    {
+      "path": "assets/news-digital-2.webp",
+      "bytes": 56152,
+      "sha256": "01c6177f93e1ce1d519f841722f63db01ce3bd18ccdaeb03eb2bb16b7c4fa63c"
+    },
+    {
+      "path": "assets/news-digital-3.webp",
+      "bytes": 53176,
+      "sha256": "0dd1b34b1d31519d6dad90592848a0b1c4a27b340aec291858c2f0b08ace7aa2"
+    },
+    {
+      "path": "assets/news-ekonomi-1.webp",
+      "bytes": 54204,
+      "sha256": "07075533a77530e20092e6b7624b5a57ead045c3c08d13ad3a2dd4c8225d7653"
+    },
+    {
+      "path": "assets/news-ekonomi-2.webp",
+      "bytes": 69618,
+      "sha256": "9998e325a1145c7f4768e9a5ccbb0fbb342c4569b61c10957b0d218cf468a5e7"
+    },
+    {
+      "path": "assets/news-ekonomi-3.webp",
+      "bytes": 17348,
+      "sha256": "426b69f57b24e531b37db51d5121ba33d1ac1754dcf3cefe170d6cfb0e2a0563"
+    },
+    {
+      "path": "assets/news-fragrance-1.webp",
+      "bytes": 41198,
+      "sha256": "e30b04a4dabe73c8e2ec73b9fbf1a76f122d4cde3662db5b1c3c6230a9529bb5"
+    },
+    {
+      "path": "assets/news-fragrance-2.webp",
+      "bytes": 26916,
+      "sha256": "952f151736698503974d827a2410fe5a22bd8c54e62bdf8b4696aabcf1d4ac6f"
+    },
+    {
+      "path": "assets/news-fragrance-3.webp",
+      "bytes": 78566,
+      "sha256": "ca4ee5a4534ef35b52d774f6c9d7019a5b594b7a8cc018ecee4b45c9ce64fd8a"
+    },
+    {
+      "path": "assets/news-kesehatan-1.webp",
+      "bytes": 18832,
+      "sha256": "99dec3ca6070a20e172803bd1dcc7c99230c2bf0d4f60490c258cf0bedfe9e74"
+    },
+    {
+      "path": "assets/news-kesehatan-2.webp",
+      "bytes": 59152,
+      "sha256": "06354fcd6962e2f0790d70dee47e280d747f7a94df3ec104dea91a4b18dce372"
+    },
+    {
+      "path": "assets/news-kesehatan-3.webp",
+      "bytes": 58746,
+      "sha256": "71e9d1f38f7d7a7b33bc42eded9ec0664f0d0aff7fccecc10461088b63ef00c6"
+    },
+    {
+      "path": "assets/news-lingkungan-1.webp",
+      "bytes": 56536,
+      "sha256": "920159dae834260645aacbc889418a0cdcf05ba102fb6ac69aa40e145a15a29b"
+    },
+    {
+      "path": "assets/news-lingkungan-2.webp",
+      "bytes": 145312,
+      "sha256": "a1473ec4389e8192203924a8838b618eafe715f3cb4117312af7999fa0984280"
+    },
+    {
+      "path": "assets/news-lingkungan-3.webp",
+      "bytes": 40932,
+      "sha256": "93e7f4e9a3bc23eeea2e4e239ad68e5d753a2d3c55fe1df26530819bd65a0d1f"
+    },
+    {
+      "path": "assets/news-nasional-1.webp",
+      "bytes": 60830,
+      "sha256": "e168d49021f56a781a3945a377d23aa578a32743229ff2dfba16a0eb15dbbb17"
+    },
+    {
+      "path": "assets/news-nasional-2.webp",
+      "bytes": 42588,
+      "sha256": "7272ac511bebb757dafd0e070bf3b8db4a54ab98cc3133f976adb1b37ba1a1dc"
+    },
+    {
+      "path": "assets/news-nasional-3.webp",
+      "bytes": 116774,
+      "sha256": "a9a936bd113ae9d2049f34d865ce92a92e29f005cffa71aa500ede63bb7f7a6c"
+    },
+    {
+      "path": "assets/news-olahraga-1.webp",
+      "bytes": 71694,
+      "sha256": "4551651a7fe033f6dded04a94038d6ae54c6a478dbfbe016f53276375f87003a"
+    },
+    {
+      "path": "assets/news-olahraga-2.webp",
+      "bytes": 124128,
+      "sha256": "1287e708189ec7c4ee026d8a75cc9ea2c2a01b260491cad5443c1c46378ba924"
+    },
+    {
+      "path": "assets/news-olahraga-3.webp",
+      "bytes": 123786,
+      "sha256": "49dd407c2a7ca7abff90a968318ddbfb20cfab80cee860f1061eadc3227a43a7"
+    },
+    {
+      "path": "assets/news-pariwisata-1.webp",
+      "bytes": 90398,
+      "sha256": "cd35fe2bb8ed0ea5378270b3dadef143385c4da34ca7566b3bfe65b1475beec3"
+    },
+    {
+      "path": "assets/news-pariwisata-2.webp",
+      "bytes": 89756,
+      "sha256": "9b8cc2338e3259cdd227690efec0491df976d6f6501fabe84bafd704d42cea96"
+    },
+    {
+      "path": "assets/news-pariwisata-3.webp",
+      "bytes": 145170,
+      "sha256": "5048140e59925f52eee55b78cfdaf3fffe0d128f0a6253fc3355e112f781c1ec"
+    },
+    {
+      "path": "assets/news-pendidikan-1.webp",
+      "bytes": 70176,
+      "sha256": "4869ce2d545c8e60d82f0f5570b5eedb18d2c0647ab203146aaa304cfe560eb8"
+    },
+    {
+      "path": "assets/news-pendidikan-2.webp",
+      "bytes": 72248,
+      "sha256": "fb0df5500c64a0696691362498fff578d0350453a61f812e0182e925c617df65"
+    },
+    {
+      "path": "assets/news-pendidikan-3.webp",
+      "bytes": 76406,
+      "sha256": "2c1db26e25538434262fc73cf505f4f27a93cbadba867e08ed3d69e3001119ec"
+    },
+    {
+      "path": "assets/news-teknologi-1.webp",
+      "bytes": 51286,
+      "sha256": "81a6a60c9c358ef55b52ec06b8f4a291046569634068eda55c0160e7bdc3d840"
+    },
+    {
+      "path": "assets/news-teknologi-2.webp",
+      "bytes": 55998,
+      "sha256": "37b188a5d0a2d55cb0e4537aaa145deb8c1db2c7dcf467ea2a68c76f3a33fc87"
+    },
+    {
+      "path": "assets/news-teknologi-3.webp",
+      "bytes": 54026,
+      "sha256": "f3ed77c55760cc13fdad489c5df98a78233efcc73b6d3a7ca6cefb22139b1521"
+    },
+    {
+      "path": "assets/news-visual-runtime-v16.js",
+      "bytes": 2603,
+      "sha256": "4f52ec16c7af2d540698df87985c03b597f1699ce54cae7e1dec6a07e28a82b4"
+    },
+    {
+      "path": "assets/newsroom-enhance.css",
+      "bytes": 2181,
+      "sha256": "4c1c6de9ac3f7efc3ca0317f2c97d16dd0417445f7e9c4ca62d4f7d54fc6e274"
+    },
+    {
+      "path": "assets/newsroom-runtime.js",
+      "bytes": 6602,
+      "sha256": "49fc49c3b60c023f9b6da7678565ff00581681f4d2b6f5e1608dcc5dbbd4d0fd"
+    },
+    {
+      "path": "assets/og-domain-branded.jpg",
+      "bytes": 98748,
+      "sha256": "670cdfd977661ca56c8cb410ae653d3da0ba3e77e1c3daf662c7827dcb0549ef"
+    },
+    {
+      "path": "assets/og-home-branded.jpg",
+      "bytes": 123071,
+      "sha256": "07793bfa100f17c9b2803b50ab23579e1f86a9c0df16c950bfff117e8e7793ec"
+    },
+    {
+      "path": "assets/og-parfum-branded.jpg",
+      "bytes": 121268,
+      "sha256": "f9506e57704a773b0c9bdd6dad43ecfecfbca0c5a376d9d9f2ce6d2b05dca000"
+    },
+    {
+      "path": "assets/og-topup-branded.jpg",
+      "bytes": 98365,
+      "sha256": "2ceba8058a9b78fe9915f4d4ed3dfd22f42ebfc1c7375c28cc8bf2e4fc15efc1"
+    },
+    {
+      "path": "assets/og-website-branded.jpg",
+      "bytes": 92649,
+      "sha256": "a45abac87fad66e188e1c22297494050ae25c924d1ea328d17627b282161094e"
+    },
+    {
+      "path": "assets/parfum-designer-v16.webp",
+      "bytes": 52980,
+      "sha256": "adadf7fe1b31565e41c7a69f507d4b66df2ce748fa10e9b85749c584be6bbd3f"
+    },
+    {
+      "path": "assets/parfum-lokal-v16.webp",
+      "bytes": 90530,
+      "sha256": "81baa9e2766531631012b0acc705282e75417c4d19206c894bf9fe5a40e4d00a"
+    },
+    {
+      "path": "assets/parfum-niche-v16.webp",
+      "bytes": 63496,
+      "sha256": "bc87a7bb25ff4aa935485133baf5e3c165ec5797c51bd4ea8d40f782026c1a56"
+    },
+    {
+      "path": "assets/parfum-timur-tengah-v16.webp",
+      "bytes": 78566,
+      "sha256": "ca4ee5a4534ef35b52d774f6c9d7019a5b594b7a8cc018ecee4b45c9ce64fd8a"
+    },
+    {
+      "path": "assets/partnership-workshop-v16.webp",
+      "bytes": 69618,
+      "sha256": "9998e325a1145c7f4768e9a5ccbb0fbb342c4569b61c10957b0d218cf468a5e7"
+    },
+    {
+      "path": "assets/polish-v13.css",
+      "bytes": 5739,
+      "sha256": "c10ea960018e9deaf0157c02abd414e794fba42eab1b7f33ad9eaae229bf9643"
+    },
+    {
+      "path": "assets/premium-v3.css",
+      "bytes": 13991,
+      "sha256": "d6944b1863d788d23f362286e17b55b5179155679c59e1fd17ec52f2aa9c4acb"
+    },
+    {
+      "path": "assets/rev8-home-expansion.css",
+      "bytes": 3117,
+      "sha256": "b230d93018adef8241d2024261cb699bdbf7ccff2e83831f1886f08bbc8bcdc3"
+    },
+    {
+      "path": "assets/revision-v7.css",
+      "bytes": 10554,
+      "sha256": "794d49141601b6e3b607fa1d069713d719e5af05ad8ffe1f1ddea475ee545c86"
+    },
+    {
+      "path": "assets/runtime-contact.js",
+      "bytes": 1086,
+      "sha256": "409dd44e0f9a4ec2a13aa6296aeca7f9ec56cb52a09df636c2909945d0574a15"
+    },
+    {
+      "path": "assets/runtime-core-v8.css",
+      "bytes": 154128,
+      "sha256": "bcbf65e80024ee53aa087b7fd7078e7987606b2a6b39fb9fd81c9f5e772e08c1"
+    },
+    {
+      "path": "assets/runtime-hardening.css",
+      "bytes": 181,
+      "sha256": "f0484c55e91fec9102a57b7f66d865df469b49e64c67b814d429c57da943be14"
+    },
+    {
+      "path": "assets/runtime-hardening.js",
+      "bytes": 3737,
+      "sha256": "f16096ccd8216a0239e49663333bb4a2de72d041b418d281e9accbbed1e15570"
+    },
+    {
+      "path": "assets/runtime-newsroom-core-v8.css",
+      "bytes": 159177,
+      "sha256": "b4b01a6ae10e23bfc746fe53c82db5e32b70d3217191c189dd93baf28191aaee"
+    },
+    {
+      "path": "assets/runtime-premium.js",
+      "bytes": 3003,
+      "sha256": "c1f4a73076e2fe54b59c174e68955954ad328417707b24fbcdfbb96cd88250a7"
+    },
+    {
+      "path": "assets/runtime-site-v8.js",
+      "bytes": 15118,
+      "sha256": "c55260d0cee1a28334f791d992c548e722166265b1fde37c4d41e67a5d7d8e99"
+    },
+    {
+      "path": "assets/runtime-ultimate-v4.js",
+      "bytes": 4925,
+      "sha256": "d9f91c705ec88660646ed9dbe21e0de564d16d70251e4bc4073ae8b0edf402f8"
+    },
+    {
+      "path": "assets/runtime-widgets.js",
+      "bytes": 74783,
+      "sha256": "e6d4f930f54d30d6c959898bee584716ca3b4295de61a5d9233882d4b40723b1"
+    },
+    {
+      "path": "assets/security-verification-v16.webp",
+      "bytes": 53266,
+      "sha256": "8726ed08207d7a717753e0c98ea1d1ea93a33e659154af054183513ea561aef1"
+    },
+    {
+      "path": "assets/text-motion-v13.js",
+      "bytes": 748,
+      "sha256": "6fbd0536ea00f8a9eecf6dbf4aeb00161a8527bdb2ecfd4e8a7898a37e0fb3e7"
+    },
+    {
+      "path": "assets/tree-navigator-v16.css",
+      "bytes": 6425,
+      "sha256": "90e9c0427bf253917495d656e7aa2f80a7f74094f97e6ca84954304b3229614c"
+    },
+    {
+      "path": "assets/tree-navigator-v16.js",
+      "bytes": 8114,
+      "sha256": "00bede42cda76367df179cc0cfe14a19dc20d006adff0df677497f85075c2c0e"
+    },
+    {
+      "path": "assets/ultimate-v4.css",
+      "bytes": 12704,
+      "sha256": "7275e861b372a5acef91b6e3db0dbac31d1b09819d6bb3d35320f07b11301c76"
+    },
+    {
+      "path": "assets/visual-flow-domain.webp",
+      "bytes": 14866,
+      "sha256": "c16949cdf5aa7be24e1dcd71f62cf87a8dd816d767644863fa59e65e2843e701"
+    },
+    {
+      "path": "assets/visual-flow-fragrance.webp",
+      "bytes": 16260,
+      "sha256": "ba6d7502f0240e209c48688ca967fa68ffd7a548c0b2466ac151d409314c16b2"
+    },
+    {
+      "path": "assets/visual-flow-security.webp",
+      "bytes": 15248,
+      "sha256": "053f72e144eed0833f061937c1b2691abca9fae740da7f87fb7760e5a84fef6d"
+    },
+    {
+      "path": "assets/visual-flow-topup.webp",
+      "bytes": 14246,
+      "sha256": "5dd965d4b38b433685057b82b8844c539892dbbe75e74fcad2b5815d73e6516a"
+    },
+    {
+      "path": "assets/visual-flow-website.webp",
+      "bytes": 14916,
+      "sha256": "24c20a100ebb1cd22761cae9284fe72fc8a32c0c25c170fd3cb8b3f9269bb86f"
+    },
+    {
+      "path": "assets/visual-system-v10.css",
+      "bytes": 3004,
+      "sha256": "aeffccf99484ea1e2e3a1cf1b65b084755e8e8d0b156d0987252459c98a0c0e0"
+    },
+    {
+      "path": "assets/visual-theme-services.webp",
+      "bytes": 44868,
+      "sha256": "a66e7864f74dd5fa089089ac9444da290dd48a58a99c16d19376e7152610a95d"
+    },
+    {
+      "path": "assets/visual-topup-2-clean.webp",
+      "bytes": 76870,
+      "sha256": "e4cf9c24228cbbbf9c07c635bbc0d411c47500c5dd244a5d9604cac8173d7d8b"
+    },
+    {
+      "path": "assets/website-studio-v16.webp",
+      "bytes": 43562,
+      "sha256": "4b2833137e336861847c517a12d87a3808dc8c19d5d76baed421819be511906e"
+    },
+    {
+      "path": "berita-brief-website.html",
+      "bytes": 384533,
+      "sha256": "149284b3418aabb37239e7a6dbb2452153cec335b83e39c3bab7c3cf1953c615"
+    },
+    {
+      "path": "berita-checklist-domain.html",
+      "bytes": 383723,
+      "sha256": "09774bc21ea5cc20116a42f078795965b24ffb9f065657fa3d78bd95cbadda9c"
+    },
+    {
+      "path": "berita-detail.html",
+      "bytes": 2314616,
+      "sha256": "e9a847f4dd9d7840c24f09b4270a3896be5d68be7f07df0cd4f781895d191cd5"
+    },
+    {
+      "path": "berita-panduan-parfum.html",
+      "bytes": 383806,
+      "sha256": "5bbc193a8fe77e373f9d5964cdc45210b2e6a8408986cb6781cefa845dbb3f70"
+    },
+    {
+      "path": "berita.html",
+      "bytes": 2332925,
+      "sha256": "3e68eeb311558a290941aa89dc6c8787a3f83a3b981c48f2b2fa3c1991eda78e"
+    },
+    {
+      "path": "cara-membuat-nib-oss.html",
+      "bytes": 379260,
+      "sha256": "6d83ef979a4494ea0a5f064be2809a600f9e79095e12d424dd7ea0b7ef7f3f56"
+    },
+    {
+      "path": "cara-mendirikan-cv.html",
+      "bytes": 381800,
+      "sha256": "2ba78dbe44b82d8d9a83b7d99a283bb0cc09d9a79c7d18715aca5992f6bdd2b4"
+    },
+    {
+      "path": "cara-mendirikan-pt.html",
+      "bytes": 389051,
+      "sha256": "5f28005b1e4f69e1a146f102f6021e5bea274e7cc966ea0aea01f7636d17d926"
+    },
+    {
+      "path": "case-study-digdaya.html",
+      "bytes": 377813,
+      "sha256": "eddd97f7291c5b6e0d54cbfdcf23e3867a1ef66dc7eba464976f13bfa30c47b2"
+    },
+    {
+      "path": "domain-discovery.html",
+      "bytes": 376701,
+      "sha256": "254b865f2646ec3609603d691bdae4527dcf40a9f4a617311e1fa72b2080a968"
+    },
+    {
+      "path": "dukungan.html",
+      "bytes": 380685,
+      "sha256": "3b0acb11c1cb9a2b9b9d3323286f5360f73da9764cd9e465979ebd5ee47063f4"
+    },
+    {
+      "path": "faq.html",
+      "bytes": 376917,
+      "sha256": "06dacefd49b954be4ada3b84020cf4d952b044a18eaa18930707c81bd9912bbc"
+    },
+    {
+      "path": "index.html",
+      "bytes": 416571,
+      "sha256": "3610a0a76be881e64a55a7e30826b5e1bfd61a53fe7b1ccea832cc1c1f4cb58a"
+    },
+    {
+      "path": "jasa-pembuatan-website.html",
+      "bytes": 396845,
+      "sha256": "81f2a9482bee2a4bdd70d912c27eaa1b2f57d1d0170f3099286a15e107d0c1d7"
+    },
+    {
+      "path": "jual-beli-domain.html",
+      "bytes": 391195,
+      "sha256": "5de942e9c90bc93c63c67f671fb74777c2197894bd8d8907ad22f254ad5690cc"
+    },
+    {
+      "path": "keamanan.html",
+      "bytes": 384890,
+      "sha256": "0645d26d90917749f69695553ed413488c7ff98f9e3fab519a09e560dcdc98ba"
+    },
+    {
+      "path": "kebijakan-privasi.html",
+      "bytes": 382867,
+      "sha256": "aebf7a75d3fee84d43d50c36e064118045f3cd5badca8b286e44056adbc504a7"
+    },
+    {
+      "path": "kebijakan-transaksi.html",
+      "bytes": 384923,
+      "sha256": "0fcaaef3082a176456db817d794d0d761f0a68c482fe535b49ead0d2c9a66cd7"
+    },
+    {
+      "path": "kemitraan.html",
+      "bytes": 382064,
+      "sha256": "498ac3904dd61876aca4adefbf94419ce1c9e169d58d5b629395025175eb1582"
+    },
+    {
+      "path": "kontak.html",
+      "bytes": 381801,
+      "sha256": "084ab509f104b80822e3c3b4ed8121e42cd093067fed508e8c7850d90e3954c4"
+    },
+    {
+      "path": "layanan.html",
+      "bytes": 417468,
+      "sha256": "b70d4f945a3a6c5d8dc37ad65fc146f8ba3c4a965797249f6eeaeecc4ae7088f"
+    },
+    {
+      "path": "parfum-designer.html",
+      "bytes": 400145,
+      "sha256": "379d39ba78895ba6ccc4f2174946e5a7eee63e2b02481d27c85bb203d22f1ecd"
+    },
+    {
+      "path": "parfum-lokal.html",
+      "bytes": 400794,
+      "sha256": "31fdc03c718ef019c146df46b2e1ada98118e930c346ee5a2f42e53cbf2b14c5"
+    },
+    {
+      "path": "parfum-niche.html",
+      "bytes": 399464,
+      "sha256": "1df7ee861c1a18c56e18a20701daff3a6c0b81abc405f3c754478012f2603635"
+    },
+    {
+      "path": "parfum-timur-tengah.html",
+      "bytes": 401156,
+      "sha256": "0406cc02de041c0a936b96ec0ca3c82ea37fd39a6953237745abf98174de1735"
+    },
+    {
+      "path": "pengaduan.html",
+      "bytes": 383329,
+      "sha256": "70c70bbbcecb5ba1b799739cc8e817177baed9c4b76520350f1f069d9c66217d"
+    },
+    {
+      "path": "pengetahuan.html",
+      "bytes": 1513706,
+      "sha256": "1727a7600e08b875ce7e8d40b4835b05ece51a9b313a27ea8156c944185c4776"
+    },
+    {
+      "path": "perbedaan-pt-dan-cv.html",
+      "bytes": 379245,
+      "sha256": "f53e4b7d9e783c90c221e3c975f05177062e2a3da4101924ec8bf0a62db537a4"
+    },
+    {
+      "path": "portfolio.html",
+      "bytes": 376682,
+      "sha256": "c47ed11b24307ad3cb516e2351a8d474670f2e92e088249b38317b660ea7085b"
+    },
+    {
+      "path": "pt-perorangan.html",
+      "bytes": 379828,
+      "sha256": "e004e0f5b41788fd2cd7cc1f210f961903d8fdf890d580f9c2a0981cb9aa0638"
+    },
+    {
+      "path": "scent-finder.html",
+      "bytes": 390083,
+      "sha256": "02096e7031dcce06a1f58cdc9483fc866bd65c000bffe3bfd0bbd1a42add3c8b"
+    },
+    {
+      "path": "sitemap-template.xml",
+      "bytes": 12354,
+      "sha256": "2a2b47ed7826ac4576ed0b176d40bd0b519b0a6f6ad22bf6ac445341b326c3e2"
+    },
+    {
+      "path": "sitemap.xml",
+      "bytes": 12354,
+      "sha256": "2a2b47ed7826ac4576ed0b176d40bd0b519b0a6f6ad22bf6ac445341b326c3e2"
+    },
+    {
+      "path": "syarat-ketentuan.html",
+      "bytes": 381875,
+      "sha256": "9252ce820f528e1dd09787bb31eaefd85ff7a5e8d75c365654ddae928b3d3620"
+    },
+    {
+      "path": "tentang-kami.html",
+      "bytes": 389040,
+      "sha256": "32a4641dbc63714746341d3f4dddd21e5c4250f61ce2b8ec732cebeed93c601a"
+    },
+    {
+      "path": "top-up-game.html",
+      "bytes": 389271,
+      "sha256": "88aa2ff2f26d5cc2bd5b170b582fb5c73747e6a2594bcee0bf0953f722d36a33"
+    },
+    {
+      "path": "trust-center.html",
+      "bytes": 376892,
+      "sha256": "d8af1561e92cdb81925831e2bdd0e2fc58faf49d6517b4d70a6444827335abe3"
+    },
+    {
+      "path": "website-audit.html",
+      "bytes": 377902,
+      "sha256": "dd98c028fb6be5c5992f3a6ae22a099dfa31c0ed3f6d95f005b9f2e31f7988ec"
+    },
+    {
+      "path": "website-maintenance.html",
+      "bytes": 377266,
+      "sha256": "8b218fa42ccc3d02f3b9b00bda761ab75ad2f02f7d40467ab9b918d3371abd05"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "release": "PT Digdaya Inovasi Nusantara V16 — Final HTML Inline",
+  "validated_at_utc": "2026-09-04T08:13:22Z",
+  "status": "PASS",
+  "status_scope": "Objective final-package gates for HTML/CSS/JS inlining, byte preservation, parsing, references, media decoding, CSP integrity, HTTP delivery, and archive integrity.",
+  "scope": {
+    "deploy_files": 163,
+    "html_files": 38,
+    "indexable_pages": 36,
+    "noindex_pages": [
+      "404.html",
+      "berita-detail.html"
+    ],
+    "news_records": 1046,
+    "media_files": 86
+  },
+  "self_contained_css_js_gate": {
+    "source_stylesheet_references_found": 308,
+    "stylesheet_blocks_embedded": 308,
+    "remaining_link_rel_stylesheet": 0,
+    "source_script_src_references_found": 351,
+    "javascript_blocks_embedded": 351,
+    "remaining_script_src": 0,
+    "css_order_preserved_per_page": true,
+    "javascript_order_preserved_per_page": true,
+    "embedded_css_matches_source_bytes": true,
+    "embedded_javascript_matches_source_bytes": true,
+    "non_css_js_html_byte_parity_after_normalizing_the_required_embedding": true,
+    "css_relative_url_rewrites": {
+      "count": 38,
+      "source": "url(\"website-studio-v16.webp\")",
+      "final": "url(\"assets/website-studio-v16.webp\")",
+      "target_exists": true
+    },
+    "preserved_external_css_js_copies": "Retained under assets as source copies only; no HTML runtime dependency remains."
+  },
+  "html_accessibility_and_reference_gate": {
+    "parse_errors": 0,
+    "duplicate_ids": 0,
+    "main_elements_per_page": 1,
+    "nonempty_h1_per_page": 1,
+    "aria_idrefs_checked": 923,
+    "broken_aria_idrefs": 0,
+    "local_references_checked": 3843,
+    "broken_local_references": 0,
+    "fragments_checked": 1023,
+    "broken_fragments": 0,
+    "utf8_meta_within_first_1024_bytes": "38/38"
+  },
+  "javascript_json_and_csp_gate": {
+    "source_javascript_syntax": "15/15",
+    "inline_executable_javascript_blocks": 389,
+    "unique_inline_executable_javascript_blocks": 16,
+    "unique_inline_executable_javascript_syntax": "16/16",
+    "json_ld_parse": "37/37",
+    "unique_csp_script_hashes_including_json_ld": 53,
+    "unique_csp_style_hashes": 14,
+    "csp_policy_bytes": 3985,
+    "headers_and_htaccess_policy_equal": true,
+    "script_unsafe_inline_used": false,
+    "all_final_inline_block_hashes_authorized": true
+  },
+  "images_and_video_gate": {
+    "static_img_tags": 304,
+    "local_file_images_with_exact_intrinsic_dimensions": "266/266",
+    "raster_full_decode": "84/84",
+    "mp4_stream_probe": "2/2",
+    "missing_media_references": 0,
+    "inline_photo_or_video_data_uris": 0,
+    "note": "Images and video remain relative files under assets; only CSS and JavaScript are embedded by design."
+  },
+  "http_delivery_gate": {
+    "local_http_files_requested": 163,
+    "http_200": "163/163",
+    "response_bytes_equal_disk_bytes": "163/163"
+  },
+  "sitemap_gate": {
+    "sitemap_entries": 36,
+    "sitemap_template_byte_identical": true,
+    "sitemap_sha256": "2a2b47ed7826ac4576ed0b176d40bd0b519b0a6f6ad22bf6ac445341b326c3e2"
+  },
+  "payload": {
+    "source_total_html_bytes": 2214041,
+    "final_total_html_bytes": 19694476,
+    "intentional_html_byte_increase": 17480435,
+    "reason": "Every page now contains its operational CSS and JavaScript as explicitly required."
+  },
+  "preservation": {
+    "source_asset_files_retained": 113,
+    "preserved_non_html_files_byte_checked": 120,
+    "pages_sections_text_forms_media_and_navigation_removed": 0
+  },
+  "limitations": {
+    "production_host_deployment_performed": false,
+    "live_backend_submission_tested": false,
+    "final_local_browser_render": "Not claimed; the execution environment did not provide a downloadable local browser engine.",
+    "render_confidence_basis": "All final embedded operational blocks are byte-equal to the supplied source CSS/JS, original per-page order is preserved, non-CSS/JS HTML is byte-equal after normalization, all local targets exist, and the canonical inline deployment renders successfully.",
+    "single_file_preview_note": "CSS and JavaScript now work without external .css/.js requests. Images and video still require the sibling assets folder, as specified by this build."
+  },
+  "issues": []
+}
