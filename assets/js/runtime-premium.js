@@ -10,22 +10,14 @@
     const panels = qsa("[data-dig-hero-panel]", hero);
     const media = qsa("[data-dig-hero-image]");
     let active = 0;
-    let timer = null;
     const setActive = (index) => {
       active = (index + tabs.length) % tabs.length;
       tabs.forEach((tab, i) => tab.setAttribute("aria-pressed", i === active ? "true" : "false"));
       panels.forEach((panel, i) => panel.classList.toggle("is-active", i === active));
       media.forEach((image) => image.classList.toggle("is-active", Number(image.dataset.digHeroImage) === active));
     };
-    const stop = () => { if (timer) window.clearInterval(timer); timer = null; };
-    const start = () => { if (!reducedMotion && tabs.length > 1 && !timer) timer = window.setInterval(() => setActive(active + 1), 8000); };
-    tabs.forEach((tab, i) => tab.addEventListener("click", () => { stop(); setActive(i); start(); }));
-    hero.addEventListener("pointerenter", stop);
-    hero.addEventListener("pointerleave", start);
-    hero.addEventListener("focusin", stop);
-    hero.addEventListener("focusout", start);
+    tabs.forEach((tab, i) => tab.addEventListener("click", () => setActive(i)));
     setActive(0);
-    start();
   };
 
   const initVideo = () => {
