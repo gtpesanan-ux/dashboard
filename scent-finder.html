@@ -3657,6 +3657,325 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
   .js .main-nav.is-open{transition:none!important}
 }
 </style>
+<style data-inline-from="assets/revision-v19.css" id="digdaya-revision-v19-style">
+/* DIGDAYA REVISION V19 — iOS menu lock, editorial promo grid, contact icons, section curve. */
+:root{
+  --dig-v19-whatsapp:#075e54;
+  --dig-v19-curve:#f8f5ef;
+  --dig-v19-menu-open:340ms;
+  --dig-v19-menu-close:300ms;
+  --dig-v19-menu-reveal:300ms;
+  --dig-v19-menu-ease:cubic-bezier(.25,.1,.25,1);
+  --dig-v19-menu-icon-ease:cubic-bezier(.2,.72,.2,1);
+}
+
+/* Recognizable vector contact marks; no font/emoji rendering variance. */
+.quick-contact-badge{
+  color:var(--dig-v19-whatsapp)!important;
+}
+.quick-contact-badge.email{
+  color:var(--navy)!important;
+}
+.quick-contact-badge .quick-contact-brand-icon{
+  display:block;
+  width:1.34rem;
+  height:1.34rem;
+  flex:0 0 auto;
+}
+.quick-contact-chevron{
+  display:grid;
+  place-items:center;
+  width:1.35rem;
+  height:1.35rem;
+}
+.quick-contact-chevron .icon-svg{
+  display:block;
+  width:1.05rem;
+  height:1.05rem;
+}
+.quick-contact .wa-float{
+  background:var(--dig-v19-whatsapp)!important;
+}
+.quick-contact .wa-float:hover{
+  background:#064c45!important;
+}
+
+/*
+ * Symmetric, unclipped hamburger-to-close morph. The two outer bars move and
+ * rotate together; the middle bar only fades, so no intermediate arrow shape
+ * can appear on WebKit and the settled X always keeps both full diagonals.
+ */
+.dig-menu-morph{
+  position:relative!important;
+  display:block!important;
+  width:26px!important;
+  height:26px!important;
+  overflow:visible!important;
+  contain:none!important;
+  isolation:isolate;
+  transform:translateZ(0);
+}
+.dig-menu-morph::before,
+.dig-menu-morph::after{
+  content:""!important;
+  position:absolute!important;
+  z-index:2;
+  top:50%!important;
+  left:50%!important;
+  width:18px!important;
+  height:2px!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:999px!important;
+  background:currentColor!important;
+  transform-origin:50% 50%!important;
+  backface-visibility:hidden;
+  will-change:transform;
+}
+.dig-menu-morph::before{transform:translate3d(-50%,-6px,0) rotate(0deg)}
+.dig-menu-morph::after{transform:translate3d(-50%,6px,0) rotate(0deg)}
+.dig-menu-morph>svg{
+  position:absolute!important;
+  z-index:1;
+  inset:0!important;
+  display:block!important;
+  width:26px!important;
+  height:26px!important;
+  margin:0!important;
+  overflow:visible!important;
+  background-color:transparent!important;
+  background-image:linear-gradient(to right,currentColor,currentColor)!important;
+  background-position:50% 50%!important;
+  background-repeat:no-repeat!important;
+  background-size:18px 2px!important;
+  color:inherit!important;
+  opacity:1;
+  transform:none;
+  transform-origin:50% 50%!important;
+  backface-visibility:hidden;
+  will-change:opacity,transform;
+}
+
+@keyframes dig-v19-menu-top-open{
+  0%{transform:translate3d(-50%,-6px,0) rotate(0deg)}
+  58%{transform:translate3d(-50%,-1px,0) rotate(20deg)}
+  84%{transform:translate3d(-50%,0,0) rotate(48deg)}
+  100%{transform:translate3d(-50%,0,0) rotate(45deg)}
+}
+@keyframes dig-v19-menu-middle-open{
+  0%{opacity:1;transform:scaleX(1)}
+  45%{opacity:1;transform:scaleX(1.08)}
+  82%{opacity:.08;transform:scaleX(.18)}
+  100%{opacity:0;transform:scaleX(0)}
+}
+@keyframes dig-v19-menu-bottom-open{
+  0%{transform:translate3d(-50%,6px,0) rotate(0deg)}
+  58%{transform:translate3d(-50%,1px,0) rotate(-20deg)}
+  84%{transform:translate3d(-50%,0,0) rotate(-48deg)}
+  100%{transform:translate3d(-50%,0,0) rotate(-45deg)}
+}
+@keyframes dig-v19-menu-top-close{
+  0%{transform:translate3d(-50%,0,0) rotate(45deg)}
+  32%{transform:translate3d(-50%,0,0) rotate(48deg)}
+  100%{transform:translate3d(-50%,-6px,0) rotate(0deg)}
+}
+@keyframes dig-v19-menu-middle-close{
+  0%{opacity:0;transform:scaleX(0)}
+  55%{opacity:.72;transform:scaleX(.78)}
+  82%{opacity:1;transform:scaleX(1.06)}
+  100%{opacity:1;transform:scaleX(1)}
+}
+@keyframes dig-v19-menu-bottom-close{
+  0%{transform:translate3d(-50%,0,0) rotate(-45deg)}
+  32%{transform:translate3d(-50%,0,0) rotate(-48deg)}
+  100%{transform:translate3d(-50%,6px,0) rotate(0deg)}
+}
+
+.menu-button[aria-expanded="true"] .dig-menu-morph::before{
+  transform:translate3d(-50%,0,0) rotate(45deg);
+}
+.menu-button[aria-expanded="true"] .dig-menu-morph>svg{
+  visibility:hidden!important;
+  opacity:0;
+  transform:scaleX(0);
+}
+.menu-button[aria-expanded="true"] .dig-menu-morph::after{
+  transform:translate3d(-50%,0,0) rotate(-45deg);
+}
+.menu-button.dig-menu-opening .dig-menu-morph::before{
+  animation:dig-v19-menu-top-open var(--dig-v19-menu-open) var(--dig-v19-menu-icon-ease) both!important;
+}
+.menu-button.dig-menu-opening .dig-menu-morph>svg{
+  visibility:visible!important;
+  animation:dig-v19-menu-middle-open var(--dig-v19-menu-open) var(--dig-v19-menu-icon-ease) both!important;
+}
+.menu-button.dig-menu-opening .dig-menu-morph::after{
+  animation:dig-v19-menu-bottom-open var(--dig-v19-menu-open) var(--dig-v19-menu-icon-ease) both!important;
+}
+.menu-button.dig-menu-closing .dig-menu-morph::before{
+  animation:dig-v19-menu-top-close var(--dig-v19-menu-close) ease-out both!important;
+}
+.menu-button.dig-menu-closing .dig-menu-morph>svg{
+  visibility:visible!important;
+  animation:dig-v19-menu-middle-close var(--dig-v19-menu-close) ease-out both!important;
+}
+.menu-button.dig-menu-closing .dig-menu-morph::after{
+  animation:dig-v19-menu-bottom-close var(--dig-v19-menu-close) ease-out both!important;
+}
+
+/* One intentional, non-footer transition: navy corporate story into ivory services. */
+.dig-manifesto .dig-section-curve{
+  position:absolute;
+  z-index:0;
+  right:0;
+  bottom:-1px;
+  left:0;
+  width:100%;
+  height:clamp(3.25rem,7vw,6rem);
+  color:var(--dig-v19-curve);
+  pointer-events:none;
+}
+.dig-manifesto .dig-section-curve svg{
+  display:block;
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+.dig-manifesto .dig-section-curve path{fill:currentColor}
+.dig-manifesto .dig-manifesto-grid{
+  z-index:1;
+  padding-bottom:clamp(1.25rem,2.8vw,2.5rem);
+}
+
+/* Restore the compact mixed editorial grid that V17 accidentally flattened. */
+.dig-promo-showcase .dig-promo-card{
+  min-height:270px!important;
+  aspect-ratio:auto!important;
+}
+.dig-promo-showcase .dig-promo-card-wide{
+  min-height:270px!important;
+  aspect-ratio:16/9!important;
+}
+.dig-promo-showcase .dig-promo-card img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+.dig-promo-showcase .dig-promo-card:not(.dig-promo-card-wide) img{
+  right:0!important;
+  bottom:auto!important;
+  left:0!important;
+  height:auto!important;
+  aspect-ratio:16/9;
+}
+.dig-promo-showcase .dig-promo-card:not(.dig-promo-card-wide)::after{
+  background:linear-gradient(180deg,rgba(3,20,35,0) 0 52%,rgba(3,20,35,.18) 58%,rgba(6,31,56,.98) 68%)!important;
+}
+.dig-promo-showcase .dig-promo-card:not(.dig-promo-card-wide)>span{
+  position:relative;
+  z-index:1;
+  margin-top:auto;
+  background:#061f38;
+}
+
+@media (max-width:1180px){
+  /*
+   * Lock the actual root scroller on iOS. BODY must stay overflow-visible so
+   * the sticky header does not acquire a new overflow ancestor and disappear.
+   */
+  html.dig-nav-lock{
+    overflow:hidden!important;
+    overscroll-behavior:none!important;
+    scrollbar-gutter:stable;
+  }
+  html.dig-nav-lock body.menu-open{
+    overflow:visible!important;
+    overscroll-behavior:none!important;
+  }
+  html.dig-nav-lock .site-header{
+    position:sticky!important;
+    top:0!important;
+    z-index:130!important;
+    transform:translateZ(0);
+  }
+  html.dig-nav-lock .nav-backdrop:not([hidden]){
+    touch-action:none;
+    overscroll-behavior:none;
+  }
+  html.dig-nav-lock .main-nav{
+    touch-action:pan-y;
+    overscroll-behavior-x:none!important;
+    overscroll-behavior-y:contain!important;
+    padding-bottom:max(.45rem,env(safe-area-inset-bottom))!important;
+  }
+  .js .main-nav{
+    visibility:hidden!important;
+    pointer-events:none!important;
+    -webkit-clip-path:inset(0 0 100% 0)!important;
+    clip-path:inset(0 0 100% 0)!important;
+    transition:-webkit-clip-path var(--dig-v19-menu-reveal) var(--dig-v19-menu-ease),clip-path var(--dig-v19-menu-reveal) var(--dig-v19-menu-ease),visibility 0s linear var(--dig-v19-menu-reveal)!important;
+  }
+  .js .main-nav.is-open{
+    visibility:visible!important;
+    pointer-events:auto!important;
+    -webkit-clip-path:inset(0 0 0 0)!important;
+    clip-path:inset(0 0 0 0)!important;
+    transition:-webkit-clip-path var(--dig-v19-menu-reveal) var(--dig-v19-menu-ease),clip-path var(--dig-v19-menu-reveal) var(--dig-v19-menu-ease),visibility 0s linear 0s!important;
+  }
+  .main-nav>a[aria-current="page"]{
+    background:transparent!important;
+    box-shadow:none!important;
+    color:var(--navy)!important;
+  }
+}
+
+@media (max-width:760px){
+  .dig-promo-showcase .dig-promo-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:.7rem!important;
+  }
+  .dig-promo-showcase .dig-promo-card{
+    grid-column:span 1!important;
+    min-height:0!important;
+    aspect-ratio:1/1!important;
+  }
+  .dig-promo-showcase .dig-promo-card-wide{
+    grid-column:1/-1!important;
+    min-height:0!important;
+    aspect-ratio:16/9!important;
+  }
+}
+
+@media (max-width:430px){
+  .dig-promo-showcase .dig-promo-card:not(.dig-promo-card-wide){
+    aspect-ratio:4/5!important;
+  }
+}
+
+@media (max-width:340px){
+  .dig-promo-showcase .dig-promo-card:not(.dig-promo-card-wide){
+    aspect-ratio:3/4!important;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .menu-button .dig-menu-morph::before,
+  .menu-button .dig-menu-morph::after,
+  .menu-button .dig-menu-morph>svg,
+  .quick-contact .wa-float,
+  .quick-contact-option{transition:none!important}
+  .menu-button .dig-menu-morph::before,
+  .menu-button .dig-menu-morph::after,
+  .menu-button .dig-menu-morph>svg{animation:none!important}
+  .js .main-nav,
+  .js .main-nav.is-open{transition:none!important}
+}
+
+@media print{
+  .dig-section-curve{display:none!important}
+}
+</style>
 </head>
 <body data-page-style="service" id="top">
 <svg aria-hidden="true" class="icon-sprite" focusable="false">
@@ -3816,6 +4135,13 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <path d="M10.5 3.5c.45 3.55 2.45 5.55 6 6-3.55.45-5.55 2.45-6 6-.45-3.55-2.45-5.55-6-6 3.55-.45 5.55-2.45 6-6Z"></path>
 <path d="M17.5 14.5c.22 1.77 1.23 2.78 3 3-1.77.22-2.78 1.23-3 3-.22-1.77-1.23-2.78-3-3 1.77-.22 2.78-1.23 3-3Z"></path>
 </symbol>
+<symbol id="icon-whatsapp-brand" viewbox="0 0 16 16">
+<path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" fill="currentColor"></path>
+</symbol>
+<symbol fill="none" id="icon-email" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+<rect height="13" rx="2" width="17" x="3.5" y="5.5"></rect>
+<path d="m5 7 7 5.2L19 7"></path>
+</symbol>
 </svg>
 <a class="skip-link" href="#main">Lewati ke konten utama</a>
 <div aria-hidden="true" class="reading-progress"></div>
@@ -3921,7 +4247,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <span aria-disabled="true" aria-label="Instagram" class="social-contact" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="15" rx="4" stroke="currentColor" stroke-width="1.8" width="15" x="4.5" y="4.5"></rect><circle cx="12" cy="12" fill="none" r="3.4" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.1" cy="6.9" fill="currentColor" r="1"></circle></svg></span>
 <a aria-label="Buka profil LinkedIn" class="social-contact" href="https://www.linkedin.com/in/achmad-zaenuddin-7285ba433" rel="noopener noreferrer" target="_blank" title="LinkedIn"><span class="brand-text">in</span></a>
 <span aria-disabled="true" aria-label="Threads" class="social-contact" title="Threads"><span class="brand-text">@</span></span>
-<button aria-label="Buka pilihan WhatsApp" class="social-contact" data-contact-open="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 24 24"><circle cx="12" cy="11.5" fill="none" r="8.1" stroke="currentColor" stroke-width="1.8"></circle><path d="M7.2 19.2 8 16.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><path d="M9.1 7.5c.35-.38.8-.35 1.08.05l.8 1.16c.2.3.18.68-.05.95l-.55.65c-.15.18-.13.43.02.62.74.9 1.54 1.69 2.43 2.42.19.15.45.16.63.01l.67-.55c.27-.22.66-.24.95-.03l1.13.82c.39.28.42.74.04 1.08l-.66.59c-.56.5-1.35.64-2.04.36a10.7 10.7 0 0 1-5.2-3.66 10.5 10.5 0 0 1-1.45-2.57c-.27-.7-.12-1.48.39-2.03l.61-.65Z" fill="currentColor"></path></svg></button>
+<button aria-label="Buka pilihan WhatsApp" class="social-contact" data-contact-open="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
 <span aria-disabled="true" aria-label="Telegram" class="social-contact" title="Telegram"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m3.5 11.1 16.4-6.4-3 14.6-5.1-4-2.9 2.7.4-4.3 7.8-6.5-9.7 5.1-3.9-1.2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.6"></path></svg></span>
 <a aria-label="Kirim email ke companydirac@gmail.com" class="social-contact" href="mailto:companydirac@gmail.com" title="Email"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="13" rx="2" stroke="currentColor" stroke-width="1.8" width="17" x="3.5" y="5.5"></rect><path d="m5 7 7 5.2L19 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a>
 <span aria-disabled="true" aria-label="Facebook" class="social-contact" title="Facebook"><span class="brand-text">f</span></span>
@@ -3961,13 +4287,13 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div class="quick-contact-panel" data-quick-contact-panel="" hidden="" id="quick-contact-panel">
 <div class="quick-contact-panel-head"><span><strong>Hubungi Digdaya</strong><small>Pilih kanal yang ingin digunakan.</small></span><button aria-label="Tutup pilihan kontak" class="icon-button" data-contact-close="" type="button"><svg aria-hidden="true" class="icon-svg" height="20" viewbox="0 0 24 24" width="20"><use href="#icon-close"></use></svg></button></div>
 <div class="quick-contact-options">
-<a class="quick-contact-option" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge">WA</span><span class="quick-contact-copy"><strong>WhatsApp Utama</strong><small>0878-9252-3968</small></span><span aria-hidden="true" class="quick-contact-chevron">↗</span></a>
-<a class="quick-contact-option" href="https://wa.me/62882009257589?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge">WA</span><span class="quick-contact-copy"><strong>WhatsApp Backup 1</strong><small>+62 882-0092-57589</small></span><span aria-hidden="true" class="quick-contact-chevron">↗</span></a>
-<a class="quick-contact-option" href="https://wa.me/6288991926199?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge">WA</span><span class="quick-contact-copy"><strong>WhatsApp Backup 2</strong><small>+62 889-9192-6199</small></span><span aria-hidden="true" class="quick-contact-chevron">↗</span></a>
-<a class="quick-contact-option" href="mailto:companydirac@gmail.com?subject=Konsultasi%20PT%20Digdaya%20Inovasi%20Nusantara"><span class="quick-contact-badge email">@</span><span class="quick-contact-copy"><strong>Email</strong><small>companydirac@gmail.com</small></span><span aria-hidden="true" class="quick-contact-chevron">↗</span></a>
+<a class="quick-contact-option" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></span><span class="quick-contact-copy"><strong>WhatsApp Utama</strong><small>0878-9252-3968</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
+<a class="quick-contact-option" href="https://wa.me/62882009257589?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></span><span class="quick-contact-copy"><strong>WhatsApp Backup 1</strong><small>+62 882-0092-57589</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
+<a class="quick-contact-option" href="https://wa.me/6288991926199?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></span><span class="quick-contact-copy"><strong>WhatsApp Backup 2</strong><small>+62 889-9192-6199</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
+<a class="quick-contact-option" href="mailto:companydirac@gmail.com?subject=Konsultasi%20PT%20Digdaya%20Inovasi%20Nusantara"><span class="quick-contact-badge email"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 24 24"><use href="#icon-email"></use></svg></span><span class="quick-contact-copy"><strong>Email</strong><small>companydirac@gmail.com</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
 </div>
 </div>
-<button aria-controls="quick-contact-panel" aria-expanded="false" aria-label="Buka pilihan WhatsApp dan email" class="wa-float" data-contact-toggle="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 24 24"><circle cx="12" cy="11.5" fill="none" r="8.1" stroke="currentColor" stroke-width="1.8"></circle><path d="M7.2 19.2 8 16.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path><path d="M9.1 7.5c.35-.38.8-.35 1.08.05l.8 1.16c.2.3.18.68-.05.95l-.55.65c-.15.18-.13.43.02.62.74.9 1.54 1.69 2.43 2.42.19.15.45.16.63.01l.67-.55c.27-.22.66-.24.95-.03l1.13.82c.39.28.42.74.04 1.08l-.66.59c-.56.5-1.35.64-2.04.36a10.7 10.7 0 0 1-5.2-3.66 10.5 10.5 0 0 1-1.45-2.57c-.27-.7-.12-1.48.39-2.03l.61-.65Z" fill="currentColor"></path></svg></button>
+<button aria-controls="quick-contact-panel" aria-expanded="false" aria-label="Buka pilihan WhatsApp dan email" class="wa-float" data-contact-toggle="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
 </div>
 <script data-inline-from="assets/js/runtime-site-v8.js">
 
@@ -6249,22 +6575,14 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
     const panels = qsa("[data-dig-hero-panel]", hero);
     const media = qsa("[data-dig-hero-image]");
     let active = 0;
-    let timer = null;
     const setActive = (index) => {
       active = (index + tabs.length) % tabs.length;
       tabs.forEach((tab, i) => tab.setAttribute("aria-pressed", i === active ? "true" : "false"));
       panels.forEach((panel, i) => panel.classList.toggle("is-active", i === active));
       media.forEach((image) => image.classList.toggle("is-active", Number(image.dataset.digHeroImage) === active));
     };
-    const stop = () => { if (timer) window.clearInterval(timer); timer = null; };
-    const start = () => { if (!reducedMotion && tabs.length > 1 && !timer) timer = window.setInterval(() => setActive(active + 1), 8000); };
-    tabs.forEach((tab, i) => tab.addEventListener("click", () => { stop(); setActive(i); start(); }));
-    hero.addEventListener("pointerenter", stop);
-    hero.addEventListener("pointerleave", start);
-    hero.addEventListener("focusin", stop);
-    hero.addEventListener("focusout", start);
+    tabs.forEach((tab, i) => tab.addEventListener("click", () => setActive(i)));
     setActive(0);
-    start();
   };
 
   const initVideo = () => {
@@ -6349,7 +6667,8 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
       media.forEach((img)=>img.dataset.deckState=Number(img.dataset.digHeroImage)===active?'active':'idle');
     };
     const mo=new MutationObserver(decorate);tabs.forEach(t=>mo.observe(t,{attributes:true,attributeFilter:['aria-pressed']}));decorate();
-    hero.setAttribute('tabindex','0');hero.setAttribute('role','region');hero.setAttribute('aria-roledescription','carousel');hero.querySelector('.dig-hero-console>div:last-child')?.setAttribute('aria-live','polite');
+    tabs.forEach((tab,i)=>{const title=panels[i]?.querySelector('strong')?.textContent.trim()||'Cerita';tab.setAttribute('aria-label',`${title}, cerita ${i+1} dari ${tabs.length}`);});
+    hero.setAttribute('tabindex','0');hero.setAttribute('role','region');hero.setAttribute('aria-roledescription','carousel');hero.querySelector('.dig-hero-console>div:last-child')?.setAttribute('aria-live','off');
     hero.addEventListener('keydown',e=>{if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;e.preventDefault();const active=Math.max(0,tabs.findIndex(t=>t.getAttribute('aria-pressed')==='true'));const next=(active+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;tabs[next]?.click();tabs[next]?.focus({preventScroll:true});});
     let sx=0,sy=0;hero.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse')return;sx=e.clientX;sy=e.clientY},{passive:true});hero.addEventListener('pointerup',e=>{if(!sx)return;const dx=e.clientX-sx,dy=e.clientY-sy;sx=0;if(Math.abs(dx)<45||Math.abs(dx)<Math.abs(dy))return;const active=Math.max(0,tabs.findIndex(t=>t.getAttribute('aria-pressed')==='true'));tabs[(active+(dx<0?1:-1)+tabs.length)%tabs.length]?.click();},{passive:true});
   }
@@ -6373,7 +6692,6 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
   // Make disabled future social channels explicit to assistive tech, without fake links.
   qsa('.social-contact[aria-disabled="true"]').forEach(el=>{el.setAttribute('tabindex','0');el.setAttribute('aria-description','Kanal ini belum tersedia.');});
 })();
-
 </script>
 <script data-inline-from="assets/js/runtime-hardening.js">
 (() => {
@@ -6665,10 +6983,39 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
         button.classList.add(opening ? 'dig-menu-opening' : 'dig-menu-closing');
         cleanupTimer = window.setTimeout(() => {
           button.classList.remove('dig-menu-opening', 'dig-menu-closing');
-        }, opening ? 300 : 340);
+        }, opening ? 360 : 320);
       });
       observer.observe(button, { attributes: true, attributeFilter: ['aria-expanded'] });
     });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init, { once: true });
+  } else {
+    init();
+  }
+})();
+</script>
+<script data-inline-from="assets/js/revision-v19.js" id="digdaya-revision-v19-script">
+/* DIGDAYA REVISION V19 — keep the root scroll lock and sticky header in sync. */
+(() => {
+  'use strict';
+
+  const init = () => {
+    const root = document.documentElement;
+    const body = document.body;
+    if (!body) return;
+
+    const syncNavigationLock = () => {
+      root.classList.toggle('dig-nav-lock', body.classList.contains('menu-open'));
+    };
+
+    new MutationObserver(syncNavigationLock).observe(body, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+    window.addEventListener('pageshow', syncNavigationLock);
+    syncNavigationLock();
   };
 
   if (document.readyState === 'loading') {
