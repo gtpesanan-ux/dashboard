@@ -37,7 +37,7 @@
     'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), details > summary, [tabindex]:not([tabindex="-1"])',
     scope,
   ).filter((element) => {
-    if (element.hidden || element.closest("[hidden],[inert]") || element.getAttribute("aria-hidden") === "true") return false;
+    if (element.hidden || element.closest('[hidden],[inert],[aria-hidden="true"]')) return false;
     const style = getComputedStyle(element);
     if (style.display === "none" || style.visibility === "hidden") return false;
     const rect = element.getBoundingClientRect();
@@ -78,17 +78,24 @@
     const closeIcon = qs(".close-icon", menuButton);
     const inertTargets = [qs(".skip-link"), qs(".brand", header), qs(".breadcrumb"), qs("main"), qs(".site-footer"), qs(".wa-float")];
     const groups = qsa(".nav-group", navigation);
+    let menuFocusToken = 0;
 
     const closeGroup = (group, restoreFocus = false) => {
       const toggle = qs(".nav-toggle", group);
       const flyout = qs(".nav-flyout", group);
       if (!toggle || !flyout) return;
       const label = qs(".nav-parent", group)?.textContent.trim() || "navigasi";
+      if (restoreFocus || flyout.contains(document.activeElement)) {
+        try {
+          toggle.focus({ preventScroll: true });
+        } catch {
+          toggle.focus();
+        }
+      }
       group.classList.remove("is-open");
       toggle.setAttribute("aria-expanded", "false");
       toggle.setAttribute("aria-label", `Buka submenu ${label}`);
       flyout.hidden = true;
-      if (restoreFocus) toggle.focus();
     };
     const closeGroups = (except = null) => groups.forEach((group) => { if (group !== except) closeGroup(group); });
     const openGroup = (group) => {
@@ -132,7 +139,15 @@
       if (closeIcon) closeIcon.hidden = !open;
     };
     const closeMenu = (restoreFocus = false) => {
+      menuFocusToken += 1;
       const wasOpen = navigation.classList.contains("is-open");
+      if ((restoreFocus && wasOpen) || navigation.contains(document.activeElement)) {
+        try {
+          menuButton.focus({ preventScroll: true });
+        } catch {
+          menuButton.focus();
+        }
+      }
       navigation.classList.remove("is-open");
       navigation.setAttribute("aria-hidden", mobileMedia.matches ? "true" : "false");
       menuButton.setAttribute("aria-expanded", "false");
@@ -142,9 +157,9 @@
       if (backdrop) backdrop.hidden = true;
       setInert(inertTargets, false);
       closeGroups();
-      if (restoreFocus && wasOpen) menuButton.focus();
     };
     const openMenu = (focusFirstItem = false) => {
+      const focusToken = ++menuFocusToken;
       navigation.classList.add("is-open");
       navigation.setAttribute("aria-hidden", "false");
       menuButton.setAttribute("aria-expanded", "true");
@@ -153,7 +168,34 @@
       document.body.classList.add("menu-open");
       if (backdrop) backdrop.hidden = false;
       setInert(inertTargets, true);
-      if (focusFirstItem) requestAnimationFrame(() => getFocusable(navigation)[0]?.focus());
+      if (focusFirstItem) {
+        requestAnimationFrame(() => {
+          const focusFirst = () => {
+            if (focusToken !== menuFocusToken || !navigation.classList.contains("is-open") || menuButton.getAttribute("aria-expanded") !== "true") return;
+            getFocusable(navigation)[0]?.focus();
+          };
+          if (reduceMotion.matches || !navigation.classList.contains("dig-v21-nav-animating")) {
+            focusFirst();
+            return;
+          }
+
+          let fallbackTimer = 0;
+          const cleanup = () => {
+            navigation.removeEventListener("transitionend", onRevealEnd);
+            window.clearTimeout(fallbackTimer);
+          };
+          const onRevealEnd = (event) => {
+            if (event.target !== navigation || !["clip-path", "-webkit-clip-path"].includes(event.propertyName)) return;
+            cleanup();
+            focusFirst();
+          };
+          navigation.addEventListener("transitionend", onRevealEnd);
+          fallbackTimer = window.setTimeout(() => {
+            cleanup();
+            focusFirst();
+          }, 480);
+        });
+      }
     };
 
     menuButton.addEventListener("click", (event) => navigation.classList.contains("is-open") ? closeMenu(true) : openMenu(event.detail === 0));
