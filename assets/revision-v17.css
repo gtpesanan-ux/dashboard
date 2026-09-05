@@ -6,7 +6,7 @@
   --dig-v17-menu-ease:cubic-bezier(.25,.1,.25,1);
 }
 
-/* Reference footer: asymmetric double wave, navy brand mapping, vertical contact rail. */
+/* Reference footer: asymmetric double wave and navy brand mapping. */
 .site-footer{
   position:relative!important;
   display:flex;
@@ -35,35 +35,7 @@
 .site-footer>.dig-footer-manifesto{order:3}
 .site-footer>.footer-bottom{order:4}
 .site-footer>.site-footer-wave{order:0}
-.site-footer>:not(.site-footer-wave):not(.site-footer-contact-rail){position:relative;z-index:1}
-.site-footer-contact-rail{
-  position:absolute;
-  z-index:4;
-  top:76px;
-  right:max(4px,env(safe-area-inset-right));
-  width:44px;
-  height:160px;
-  display:grid;
-  place-items:center;
-  border:1px solid rgba(255,255,255,.94);
-  border-radius:999px;
-  background:transparent;
-  color:#fff;
-  text-decoration:none;
-  box-shadow:none;
-  transition:border-color .25s ease,background-color .25s ease;
-}
-.site-footer-contact-rail span{
-  display:block;
-  white-space:nowrap;
-  transform:rotate(-90deg);
-  font-size:1rem;
-  font-weight:650;
-  line-height:1;
-}
-.site-footer-contact-rail:hover,
-.site-footer-contact-rail:focus-visible{border-color:#fff;background:rgba(255,255,255,.08);color:#fff}
-.site-footer-contact-rail:focus-visible{outline:3px solid var(--dig-v17-wave-accent);outline-offset:3px}
+.site-footer>:not(.site-footer-wave){position:relative;z-index:1}
 .site-footer .footer-family img{padding:0!important;background:transparent!important}
 
 /* Watermark-like text labels sit directly on imagery; no independent color tile. */
@@ -81,7 +53,6 @@
 }
 
 @media (min-width:761px){
-  .site-footer-contact-rail{display:none}
   .site-footer>.footer-main{padding-top:clamp(4.8rem,7vw,6.5rem)!important}
   .site-footer>.footer-contact-us{margin-top:0!important}
 }
@@ -89,14 +60,13 @@
 @media (max-width:760px){
   .site-footer{padding-bottom:calc(2.8rem + env(safe-area-inset-bottom))!important}
   .site-footer .shell{width:min(calc(100% - 32px),var(--shell))!important}
-  .site-footer-contact-rail{top:14px;right:max(4px,env(safe-area-inset-right));width:42px;height:160px}
   .site-footer>.footer-main{
     grid-template-columns:repeat(2,minmax(0,1fr))!important;
     column-gap:36px!important;
     row-gap:32px!important;
     padding:76px 0 32px!important;
   }
-  .site-footer .footer-brand{grid-column:1/-1;padding-right:34px}
+  .site-footer .footer-brand{grid-column:1/-1;padding-right:0}
   .site-footer .footer-brand>.brand{align-items:center;gap:.75rem;color:#fff}
   .site-footer .footer-brand>.brand img{width:48px;height:48px;border-radius:0;background:transparent}
   .site-footer .footer-brand .brand-copy strong{
@@ -361,6 +331,6 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 }
 
 @media print{
-  .site-footer-wave,.site-footer-contact-rail{display:none!important}
+  .site-footer-wave{display:none!important}
   .site-footer{margin-top:0;overflow:hidden!important}
 }
