@@ -1,0 +1,317 @@
+/* DIGDAYA REVISION V19 — iOS menu lock, editorial promo grid, contact icons, section curve. */
+:root{
+  --dig-v19-whatsapp:#075e54;
+  --dig-v19-curve:#f8f5ef;
+  --dig-v19-menu-open:340ms;
+  --dig-v19-menu-close:300ms;
+  --dig-v19-menu-reveal:300ms;
+  --dig-v19-menu-ease:cubic-bezier(.25,.1,.25,1);
+  --dig-v19-menu-icon-ease:cubic-bezier(.2,.72,.2,1);
+}
+
+/* Recognizable vector contact marks; no font/emoji rendering variance. */
+.quick-contact-badge{
+  color:var(--dig-v19-whatsapp)!important;
+}
+.quick-contact-badge.email{
+  color:var(--navy)!important;
+}
+.quick-contact-badge .quick-contact-brand-icon{
+  display:block;
+  width:1.34rem;
+  height:1.34rem;
+  flex:0 0 auto;
+}
+.quick-contact-chevron{
+  display:grid;
+  place-items:center;
+  width:1.35rem;
+  height:1.35rem;
+}
+.quick-contact-chevron .icon-svg{
+  display:block;
+  width:1.05rem;
+  height:1.05rem;
+}
+.quick-contact .wa-float{
+  background:var(--dig-v19-whatsapp)!important;
+}
+.quick-contact .wa-float:hover{
+  background:#064c45!important;
+}
+
+/*
+ * Symmetric, unclipped hamburger-to-close morph. The two outer bars move and
+ * rotate together; the middle bar only fades, so no intermediate arrow shape
+ * can appear on WebKit and the settled X always keeps both full diagonals.
+ */
+.dig-menu-morph{
+  position:relative!important;
+  display:block!important;
+  width:26px!important;
+  height:26px!important;
+  overflow:visible!important;
+  contain:none!important;
+  isolation:isolate;
+  transform:translateZ(0);
+}
+.dig-menu-morph::before,
+.dig-menu-morph::after{
+  content:""!important;
+  position:absolute!important;
+  z-index:2;
+  top:50%!important;
+  left:50%!important;
+  width:18px!important;
+  height:2px!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:999px!important;
+  background:currentColor!important;
+  transform-origin:50% 50%!important;
+  backface-visibility:hidden;
+  will-change:transform;
+}
+.dig-menu-morph::before{transform:translate3d(-50%,-6px,0) rotate(0deg)}
+.dig-menu-morph::after{transform:translate3d(-50%,6px,0) rotate(0deg)}
+.dig-menu-morph>svg{
+  position:absolute!important;
+  z-index:1;
+  inset:0!important;
+  display:block!important;
+  width:26px!important;
+  height:26px!important;
+  margin:0!important;
+  overflow:visible!important;
+  background-color:transparent!important;
+  background-image:linear-gradient(to right,currentColor,currentColor)!important;
+  background-position:50% 50%!important;
+  background-repeat:no-repeat!important;
+  background-size:18px 2px!important;
+  color:inherit!important;
+  opacity:1;
+  transform:none;
+  transform-origin:50% 50%!important;
+  backface-visibility:hidden;
+  will-change:opacity,transform;
+}
+
+@keyframes dig-v19-menu-top-open{
+  0%{transform:translate3d(-50%,-6px,0) rotate(0deg)}
+  58%{transform:translate3d(-50%,-1px,0) rotate(20deg)}
+  84%{transform:translate3d(-50%,0,0) rotate(48deg)}
+  100%{transform:translate3d(-50%,0,0) rotate(45deg)}
+}
+@keyframes dig-v19-menu-middle-open{
+  0%{opacity:1;transform:scaleX(1)}
+  45%{opacity:1;transform:scaleX(1.08)}
+  82%{opacity:.08;transform:scaleX(.18)}
+  100%{opacity:0;transform:scaleX(0)}
+}
+@keyframes dig-v19-menu-bottom-open{
+  0%{transform:translate3d(-50%,6px,0) rotate(0deg)}
+  58%{transform:translate3d(-50%,1px,0) rotate(-20deg)}
+  84%{transform:translate3d(-50%,0,0) rotate(-48deg)}
+  100%{transform:translate3d(-50%,0,0) rotate(-45deg)}
+}
+@keyframes dig-v19-menu-top-close{
+  0%{transform:translate3d(-50%,0,0) rotate(45deg)}
+  32%{transform:translate3d(-50%,0,0) rotate(48deg)}
+  100%{transform:translate3d(-50%,-6px,0) rotate(0deg)}
+}
+@keyframes dig-v19-menu-middle-close{
+  0%{opacity:0;transform:scaleX(0)}
+  55%{opacity:.72;transform:scaleX(.78)}
+  82%{opacity:1;transform:scaleX(1.06)}
+  100%{opacity:1;transform:scaleX(1)}
+}
+@keyframes dig-v19-menu-bottom-close{
+  0%{transform:translate3d(-50%,0,0) rotate(-45deg)}
+  32%{transform:translate3d(-50%,0,0) rotate(-48deg)}
+  100%{transform:translate3d(-50%,6px,0) rotate(0deg)}
+}
+
+.menu-button[aria-expanded="true"] .dig-menu-morph::before{
+  transform:translate3d(-50%,0,0) rotate(45deg);
+}
+.menu-button[aria-expanded="true"] .dig-menu-morph>svg{
+  visibility:hidden!important;
+  opacity:0;
+  transform:scaleX(0);
+}
+.menu-button[aria-expanded="true"] .dig-menu-morph::after{
+  transform:translate3d(-50%,0,0) rotate(-45deg);
+}
+.menu-button.dig-menu-opening .dig-menu-morph::before{
+  animation:dig-v19-menu-top-open var(--dig-v19-menu-open) var(--dig-v19-menu-icon-ease) both!important;
+}
+.menu-button.dig-menu-opening .dig-menu-morph>svg{
+  visibility:visible!important;
+  animation:dig-v19-menu-middle-open var(--dig-v19-menu-open) var(--dig-v19-menu-icon-ease) both!important;
+}
+.menu-button.dig-menu-opening .dig-menu-morph::after{
+  animation:dig-v19-menu-bottom-open var(--dig-v19-menu-open) var(--dig-v19-menu-icon-ease) both!important;
+}
+.menu-button.dig-menu-closing .dig-menu-morph::before{
+  animation:dig-v19-menu-top-close var(--dig-v19-menu-close) ease-out both!important;
+}
+.menu-button.dig-menu-closing .dig-menu-morph>svg{
+  visibility:visible!important;
+  animation:dig-v19-menu-middle-close var(--dig-v19-menu-close) ease-out both!important;
+}
+.menu-button.dig-menu-closing .dig-menu-morph::after{
+  animation:dig-v19-menu-bottom-close var(--dig-v19-menu-close) ease-out both!important;
+}
+
+/* One intentional, non-footer transition: navy corporate story into ivory services. */
+.dig-manifesto .dig-section-curve{
+  position:absolute;
+  z-index:0;
+  right:0;
+  bottom:-1px;
+  left:0;
+  width:100%;
+  height:clamp(3.25rem,7vw,6rem);
+  color:var(--dig-v19-curve);
+  pointer-events:none;
+}
+.dig-manifesto .dig-section-curve svg{
+  display:block;
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+.dig-manifesto .dig-section-curve path{fill:currentColor}
+.dig-manifesto .dig-manifesto-grid{
+  z-index:1;
+  padding-bottom:clamp(1.25rem,2.8vw,2.5rem);
+}
+
+/* Restore the compact mixed editorial grid that V17 accidentally flattened. */
+.dig-promo-showcase .dig-promo-card{
+  min-height:270px!important;
+  aspect-ratio:auto!important;
+}
+.dig-promo-showcase .dig-promo-card-wide{
+  min-height:270px!important;
+  aspect-ratio:16/9!important;
+}
+.dig-promo-showcase .dig-promo-card img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+.dig-promo-showcase .dig-promo-card:not(.dig-promo-card-wide) img{
+  right:0!important;
+  bottom:auto!important;
+  left:0!important;
+  height:auto!important;
+  aspect-ratio:16/9;
+}
+.dig-promo-showcase .dig-promo-card:not(.dig-promo-card-wide)::after{
+  background:linear-gradient(180deg,rgba(3,20,35,0) 0 52%,rgba(3,20,35,.18) 58%,rgba(6,31,56,.98) 68%)!important;
+}
+.dig-promo-showcase .dig-promo-card:not(.dig-promo-card-wide)>span{
+  position:relative;
+  z-index:1;
+  margin-top:auto;
+  background:#061f38;
+}
+
+@media (max-width:1180px){
+  /*
+   * Lock the actual root scroller on iOS. BODY must stay overflow-visible so
+   * the sticky header does not acquire a new overflow ancestor and disappear.
+   */
+  html.dig-nav-lock{
+    overflow:hidden!important;
+    overscroll-behavior:none!important;
+    scrollbar-gutter:stable;
+  }
+  html.dig-nav-lock body.menu-open{
+    overflow:visible!important;
+    overscroll-behavior:none!important;
+  }
+  html.dig-nav-lock .site-header{
+    position:sticky!important;
+    top:0!important;
+    z-index:130!important;
+    transform:translateZ(0);
+  }
+  html.dig-nav-lock .nav-backdrop:not([hidden]){
+    touch-action:none;
+    overscroll-behavior:none;
+  }
+  html.dig-nav-lock .main-nav{
+    touch-action:pan-y;
+    overscroll-behavior-x:none!important;
+    overscroll-behavior-y:contain!important;
+    padding-bottom:max(.45rem,env(safe-area-inset-bottom))!important;
+  }
+  .js .main-nav{
+    visibility:hidden!important;
+    pointer-events:none!important;
+    -webkit-clip-path:inset(0 0 100% 0)!important;
+    clip-path:inset(0 0 100% 0)!important;
+    transition:-webkit-clip-path var(--dig-v19-menu-reveal) var(--dig-v19-menu-ease),clip-path var(--dig-v19-menu-reveal) var(--dig-v19-menu-ease),visibility 0s linear var(--dig-v19-menu-reveal)!important;
+  }
+  .js .main-nav.is-open{
+    visibility:visible!important;
+    pointer-events:auto!important;
+    -webkit-clip-path:inset(0 0 0 0)!important;
+    clip-path:inset(0 0 0 0)!important;
+    transition:-webkit-clip-path var(--dig-v19-menu-reveal) var(--dig-v19-menu-ease),clip-path var(--dig-v19-menu-reveal) var(--dig-v19-menu-ease),visibility 0s linear 0s!important;
+  }
+  .main-nav>a[aria-current="page"]{
+    background:transparent!important;
+    box-shadow:none!important;
+    color:var(--navy)!important;
+  }
+}
+
+@media (max-width:760px){
+  .dig-promo-showcase .dig-promo-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:.7rem!important;
+  }
+  .dig-promo-showcase .dig-promo-card{
+    grid-column:span 1!important;
+    min-height:0!important;
+    aspect-ratio:1/1!important;
+  }
+  .dig-promo-showcase .dig-promo-card-wide{
+    grid-column:1/-1!important;
+    min-height:0!important;
+    aspect-ratio:16/9!important;
+  }
+}
+
+@media (max-width:430px){
+  .dig-promo-showcase .dig-promo-card:not(.dig-promo-card-wide){
+    aspect-ratio:4/5!important;
+  }
+}
+
+@media (max-width:340px){
+  .dig-promo-showcase .dig-promo-card:not(.dig-promo-card-wide){
+    aspect-ratio:3/4!important;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .menu-button .dig-menu-morph::before,
+  .menu-button .dig-menu-morph::after,
+  .menu-button .dig-menu-morph>svg,
+  .quick-contact .wa-float,
+  .quick-contact-option{transition:none!important}
+  .menu-button .dig-menu-morph::before,
+  .menu-button .dig-menu-morph::after,
+  .menu-button .dig-menu-morph>svg{animation:none!important}
+  .js .main-nav,
+  .js .main-nav.is-open{transition:none!important}
+}
+
+@media print{
+  .dig-section-curve{display:none!important}
+}

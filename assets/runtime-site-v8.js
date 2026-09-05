@@ -144,7 +144,7 @@
       closeGroups();
       if (restoreFocus && wasOpen) menuButton.focus();
     };
-    const openMenu = () => {
+    const openMenu = (focusFirstItem = false) => {
       navigation.classList.add("is-open");
       navigation.setAttribute("aria-hidden", "false");
       menuButton.setAttribute("aria-expanded", "true");
@@ -153,10 +153,10 @@
       document.body.classList.add("menu-open");
       if (backdrop) backdrop.hidden = false;
       setInert(inertTargets, true);
-      requestAnimationFrame(() => getFocusable(navigation)[0]?.focus());
+      if (focusFirstItem) requestAnimationFrame(() => getFocusable(navigation)[0]?.focus());
     };
 
-    menuButton.addEventListener("click", () => navigation.classList.contains("is-open") ? closeMenu(true) : openMenu());
+    menuButton.addEventListener("click", (event) => navigation.classList.contains("is-open") ? closeMenu(true) : openMenu(event.detail === 0));
     navigationClose?.addEventListener("click", () => closeMenu(true));
     backdrop?.addEventListener("click", () => closeMenu(true));
     navigation.addEventListener("click", (event) => {

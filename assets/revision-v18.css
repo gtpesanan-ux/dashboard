@@ -1,0 +1,148 @@
+/* DIGDAYA REVISION V18 — corrected mobile menu geometry and non-overlapping home hero. */
+:root{
+  --dig-v18-menu-ease:cubic-bezier(.25,.1,.25,1);
+  --dig-v18-menu-icon-ease:cubic-bezier(.22,.78,.2,1);
+}
+
+/*
+ * The V17 SVG-path transform used one shared view-box origin for all three
+ * strokes. On WebKit that pivot produced a chevron instead of a complete X.
+ * These three compositor-friendly CSS bars keep every pivot local and stable.
+ */
+.dig-menu-morph{
+  position:relative;
+  width:26px;
+  height:26px;
+  display:block;
+  grid-area:1/1;
+}
+.dig-menu-morph::before,
+.dig-menu-morph::after,
+.dig-menu-morph>svg{
+  position:absolute;
+  top:calc(50% - .75px);
+  left:6px;
+  width:14px;
+  height:1.5px;
+  margin:0;
+  border:0;
+  border-radius:999px;
+  background:currentColor;
+  color:inherit;
+  transform-origin:50% 50%;
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+}
+.dig-menu-morph::before,
+.dig-menu-morph::after{content:""}
+.dig-menu-morph::before{transform:translate3d(0,-5.5px,0)}
+.dig-menu-morph::after{transform:translate3d(0,5.5px,0)}
+.dig-menu-morph>svg{
+  display:block;
+  overflow:hidden;
+  transform:translateZ(0);
+}
+.dig-menu-morph path{display:none!important;animation:none!important;transition:none!important}
+
+@keyframes dig-v18-menu-top-open{
+  0%{transform:translate3d(0,-5.5px,0) rotate(0deg) scaleX(1)}
+  44%{transform:translate3d(0,-2px,0) rotate(21deg) scaleX(1.18)}
+  78%{transform:translate3d(0,0,0) rotate(48deg) scaleX(1.42)}
+  100%{transform:translate3d(0,0,0) rotate(45deg) scaleX(1.47)}
+}
+@keyframes dig-v18-menu-middle-open{
+  0%{opacity:1;transform:translateZ(0) rotate(0deg) scaleX(1)}
+  44%{opacity:.78;transform:translateZ(0) rotate(-18deg) scaleX(.8)}
+  78%{opacity:.22;transform:translateZ(0) rotate(-82deg) scaleX(.26)}
+  100%{opacity:0;transform:translateZ(0) rotate(-90deg) scaleX(0)}
+}
+@keyframes dig-v18-menu-bottom-open{
+  0%{transform:translate3d(0,5.5px,0) rotate(0deg) scaleX(1)}
+  44%{transform:translate3d(0,2px,0) rotate(-21deg) scaleX(1.18)}
+  78%{transform:translate3d(0,0,0) rotate(-48deg) scaleX(1.42)}
+  100%{transform:translate3d(0,0,0) rotate(-45deg) scaleX(1.47)}
+}
+@keyframes dig-v18-menu-top-close{
+  0%{transform:translate3d(0,0,0) rotate(45deg) scaleX(1.47)}
+  56%{transform:translate3d(0,-2px,0) rotate(18deg) scaleX(1.18)}
+  100%{transform:translate3d(0,-5.5px,0) rotate(0deg) scaleX(1)}
+}
+@keyframes dig-v18-menu-middle-close{
+  0%{opacity:0;transform:translateZ(0) rotate(-90deg) scaleX(0)}
+  56%{opacity:.78;transform:translateZ(0) rotate(-18deg) scaleX(.82)}
+  100%{opacity:1;transform:translateZ(0) rotate(0deg) scaleX(1)}
+}
+@keyframes dig-v18-menu-bottom-close{
+  0%{transform:translate3d(0,0,0) rotate(-45deg) scaleX(1.47)}
+  56%{transform:translate3d(0,2px,0) rotate(-18deg) scaleX(1.18)}
+  100%{transform:translate3d(0,5.5px,0) rotate(0deg) scaleX(1)}
+}
+
+.menu-button[aria-expanded="true"] .dig-menu-morph::before{transform:translateZ(0) rotate(45deg) scaleX(1.47)}
+.menu-button[aria-expanded="true"] .dig-menu-morph>svg{opacity:0;transform:translateZ(0) rotate(-90deg) scaleX(0)}
+.menu-button[aria-expanded="true"] .dig-menu-morph::after{transform:translateZ(0) rotate(-45deg) scaleX(1.47)}
+.menu-button.dig-menu-opening .dig-menu-morph::before{animation:dig-v18-menu-top-open 280ms var(--dig-v18-menu-icon-ease) both}
+.menu-button.dig-menu-opening .dig-menu-morph>svg{animation:dig-v18-menu-middle-open 280ms var(--dig-v18-menu-icon-ease) both}
+.menu-button.dig-menu-opening .dig-menu-morph::after{animation:dig-v18-menu-bottom-open 280ms var(--dig-v18-menu-icon-ease) both}
+.menu-button.dig-menu-closing .dig-menu-morph::before{animation:dig-v18-menu-top-close 330ms ease-out both}
+.menu-button.dig-menu-closing .dig-menu-morph>svg{animation:dig-v18-menu-middle-close 330ms ease-out both}
+.menu-button.dig-menu-closing .dig-menu-morph::after{animation:dig-v18-menu-bottom-close 330ms ease-out both}
+
+@media (max-width:1180px){
+  .js .main-nav{
+    bottom:auto!important;
+    height:auto!important;
+    min-height:0!important;
+    -webkit-clip-path:inset(0 0 100% 0);
+    clip-path:inset(0 0 100% 0);
+    contain:none!important;
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
+    transform:translate3d(0,0,0);
+    transform-origin:top center;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    will-change:clip-path;
+    transition:-webkit-clip-path 200ms var(--dig-v18-menu-ease),clip-path 200ms var(--dig-v18-menu-ease),visibility 0s linear 200ms!important;
+  }
+  .js .main-nav.is-open{
+    -webkit-clip-path:inset(0 0 0 0);
+    clip-path:inset(0 0 0 0);
+    transition:-webkit-clip-path 200ms var(--dig-v18-menu-ease),clip-path 200ms var(--dig-v18-menu-ease),visibility 0s linear 0s!important;
+  }
+}
+
+/* Home mobile flow: image, accessible story controls, then copy — never overlap. */
+@media (max-width:760px){
+  [data-dig-home-hero]{
+    grid-template-rows:auto auto auto!important;
+    gap:.78rem!important;
+  }
+  [data-dig-home-hero]>.dig-hero-console{
+    position:relative!important;
+    right:auto!important;
+    bottom:auto!important;
+    order:2;
+    grid-row:2;
+    z-index:2!important;
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+  }
+  [data-dig-home-hero]>.dig-hero-console::before,
+  [data-dig-home-hero]>.dig-hero-console::after{content:none!important}
+  [data-dig-home-hero]>.hero-copy{
+    order:3;
+    grid-row:3;
+    width:100%!important;
+    margin:0!important;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .menu-button .dig-menu-morph::before,
+  .menu-button .dig-menu-morph::after,
+  .menu-button .dig-menu-morph>svg{animation:none!important;transition:none!important}
+  .js .main-nav,
+  .js .main-nav.is-open{transition:none!important}
+}

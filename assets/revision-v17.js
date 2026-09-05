@@ -22,11 +22,10 @@
         const opening = button.getAttribute('aria-expanded') === 'true';
         window.clearTimeout(cleanupTimer);
         button.classList.remove('dig-menu-opening', 'dig-menu-closing');
-        void button.offsetWidth;
         button.classList.add(opening ? 'dig-menu-opening' : 'dig-menu-closing');
         cleanupTimer = window.setTimeout(() => {
           button.classList.remove('dig-menu-opening', 'dig-menu-closing');
-        }, opening ? 410 : 340);
+        }, opening ? 360 : 320);
       });
       observer.observe(button, { attributes: true, attributeFilter: ['aria-expanded'] });
     });
