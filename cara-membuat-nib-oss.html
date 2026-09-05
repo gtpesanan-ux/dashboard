@@ -5288,48 +5288,111 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
   .article-source-panel{box-shadow:none;break-inside:avoid}
 }
 </style>
+<style id="digdaya-revision-v22-style">
+/* V22: continuous section surfaces and precise social icon geometry. */
+:root{
+  --dig-v22-curve-height:clamp(24px,4vw,52px);
+  --dig-v22-ease:cubic-bezier(.22,1,.36,1);
+}
+/* The wave overlaps the preceding section itself, never a body-coloured gap.
+   The first 88px of the footer share the exact SVG fill across the full width. */
+.site-footer{
+  margin-top:0!important;
+  background:linear-gradient(180deg,var(--dig-v17-footer-deep) 0px,var(--dig-v17-footer-deep) 88px,var(--dig-v17-footer) 72%,#0b4b70 125%)!important;
+}
+.site-footer-wave{
+  top:calc(1px - var(--dig-v22-curve-height));
+  height:var(--dig-v22-curve-height);
+  background:transparent;
+  line-height:0;
+}
+.site-footer-wave svg{position:relative;left:-6%;width:112%;height:100%}
+.site-footer-wave-main{fill:var(--dig-v17-footer-deep)}
 
-<style id="digdaya-footer-polish-v1">
-/* Footer-only polish: seamless organic wave and balanced social-icon geometry. */
-.site-footer{margin-top:0!important}
-.site-footer .site-footer-wave-accent{fill:transparent!important}
+/* Only explicitly selected content boundaries receive a contour. */
+[data-v22-surface]{position:relative;--dig-v22-surface:var(--paper)}
+[data-v22-surface="paper"]{--dig-v22-surface:var(--white)}
+[data-v22-surface="soft"]{--dig-v22-surface:var(--paper-2)}
+.interactive-section[data-v22-surface]{
+  --dig-v22-surface:#f4f0e8;
+  background-color:#f4f0e8;
+  background-image:linear-gradient(180deg,#f4f0e8 0px,#f4f0e8 72px,rgba(244,240,232,0) 190px),radial-gradient(circle at 12% 8%,rgba(229,196,124,.18),transparent 28rem),linear-gradient(180deg,#f4f0e8,#f8f5ef);
+}
+.dig-v22-divider{
+  position:absolute;inset:auto 0 auto;top:calc(1px - var(--dig-v22-curve-height));
+  z-index:1;height:var(--dig-v22-curve-height);overflow:hidden;
+  pointer-events:none;line-height:0;
+}
+.dig-v22-divider svg{position:relative;left:-6%;display:block;width:112%;height:100%}
+.dig-v22-divider-fill{fill:var(--dig-v22-surface)}
+.dig-v22-divider-line{fill:none;stroke:var(--gold);stroke-width:1;opacity:.32;vector-effect:non-scaling-stroke}
+.dig-v22-divider--rule{top:0;left:var(--dig-v22-rule-inset,16px);right:var(--dig-v22-rule-inset,16px);height:18px}
+.dig-v22-divider--rule svg{left:0;width:100%}
+.news-detail-summary{position:relative}
+.news-detail-summary>.dig-v22-divider--rule{top:-16px;left:0;right:0}
+
+/* A fixed four-column rhythm at every breakpoint; no font glyph substitutes. */
 .site-footer .social-contact-list{
-  display:grid!important;
-  grid-template-columns:repeat(8,30px)!important;
-  grid-auto-rows:58px!important;
-  column-gap:4px!important;
-  row-gap:12px!important;
-  width:max-content!important;
-  max-width:100%!important;
-  margin:0 0 0 auto!important;
-  justify-content:end!important;
-  justify-items:center!important;
-  align-items:center!important;
-  align-content:start!important;
+  display:grid!important;grid-template-columns:repeat(4,48px);
+  grid-auto-rows:48px;gap:12px!important;align-items:center!important;
+  justify-content:start!important;width:max-content!important;max-width:100%!important;
+  margin:0!important;padding:0!important;
 }
-.site-footer .social-contact{grid-column:span 2;flex:none!important;margin:0!important}
-.site-footer .social-contact[aria-label="Email"]{grid-column:2/span 2}
-.site-footer .social-contact[aria-label="Facebook"]{grid-column:4/span 2}
-.site-footer .social-contact[aria-label="TikTok"]{grid-column:6/span 2}
-@media(max-width:760px){
-  .site-footer .social-contact-list{
-    grid-template-columns:repeat(8,26px)!important;
-    grid-auto-rows:48px!important;
-    column-gap:4px!important;
-    row-gap:12px!important;
-    width:max-content!important;
-    max-width:100%!important;
-    margin:0 auto!important;
-    justify-content:center!important;
-    justify-self:center!important;
-  }
-  .site-footer .social-contact{
-    width:48px!important;
-    height:48px!important;
-    flex-basis:auto!important;
-    border-radius:50%!important;
-  }
+.site-footer .social-contact{
+  box-sizing:border-box!important;display:grid!important;place-items:center!important;
+  width:48px!important;height:48px!important;min-width:48px;min-height:48px;
+  flex-basis:48px!important;padding:0!important;margin:0!important;
+  border:1px solid rgba(255,255,255,.28);border-radius:50%!important;
+  color:#fff;background:transparent!important;line-height:1;
 }
+.site-footer .social-contact[aria-disabled="true"]{display:none!important}
+.site-footer .social-contact svg{display:block;flex:none;width:24px!important;height:24px!important;margin:0;overflow:visible}
+.site-footer .social-contact[aria-label="Instagram"] svg{width:29px!important;height:29px!important}
+.site-footer .social-contact[aria-label="Threads"] svg{width:21px!important;height:21px!important}
+.site-footer .social-contact[title="LinkedIn"] svg{width:22px!important;height:22px!important}
+.site-footer .social-contact[title="Email"] svg{width:27px!important;height:27px!important}
+.site-footer .social-contact .wa-brand-mark{width:25px!important;height:25px!important}
+.site-footer .social-contact:focus-visible{outline:2px solid #e5c47c;outline-offset:5px}
+.dig-v22-contact-dialog{width:min(480px,calc(100% - 32px));max-height:calc(100dvh - 40px)}
+.dig-v22-contact-options{display:grid;gap:12px;padding:8px 20px 20px}
+.dig-v22-contact-options .button{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 16px;min-height:56px;width:100%;text-align:left;border-radius:12px;box-shadow:none!important}
+.dig-v22-contact-options small{font:inherit;font-size:.82rem;font-weight:500}
+.dig-v22-contact-dialog .icon-button{min-width:44px;min-height:44px}
+@media(min-width:761px){
+  .site-footer .social-contact-list{grid-template-columns:repeat(4,52px);grid-auto-rows:52px;gap:14px!important}
+  .site-footer .social-contact{width:52px!important;height:52px!important;flex-basis:52px!important}
+}
+@media(hover:hover) and (pointer:fine){
+  .site-footer .social-contact svg{transition:translate .38s var(--dig-v22-ease)}
+  .site-footer a.social-contact:hover svg,.site-footer button.social-contact:hover svg{translate:0 -1px}
+}
+
+/* Additive choreography: existing hero, reveal, carousel and menu motion stays.
+   Only decorative SVGs move, so hit areas and layout remain stable. */
+@media(prefers-reduced-motion:no-preference){
+  .dig-v22-motion-ready .site-footer-wave svg,
+  .dig-v22-motion-ready .dig-v22-divider:not(.dig-v22-divider--rule) svg{
+    animation:dig-v22-wave-drift 22s ease-in-out infinite alternate;
+    animation-play-state:paused;
+  }
+  .dig-v22-motion-ready .site-footer-wave.is-v22-active svg,
+  .dig-v22-motion-ready .dig-v22-divider.is-v22-active:not(.dig-v22-divider--rule) svg{animation-play-state:running}
+  .dig-v22-motion-ready .dig-v22-divider.is-v22-seen .dig-v22-divider-line{animation:dig-v22-contour-trace 1.5s var(--dig-v22-ease) both}
+  .dig-v22-motion-ready .social-contact-list.is-v22-seen .social-contact:not([aria-disabled="true"]) svg{
+    animation:dig-v22-icon-arrive .62s var(--dig-v22-ease) both;
+    animation-delay:var(--dig-v22-icon-delay,0ms);
+  }
+  .social-contact:nth-child(2){--dig-v22-icon-delay:45ms}
+  .social-contact:nth-child(3){--dig-v22-icon-delay:90ms}
+  .social-contact:nth-child(4){--dig-v22-icon-delay:135ms}
+  .social-contact:nth-child(6){--dig-v22-icon-delay:180ms}
+  .social-contact:nth-child(7){--dig-v22-icon-delay:225ms}
+  .social-contact:nth-child(8){--dig-v22-icon-delay:270ms}
+}
+@keyframes dig-v22-wave-drift{from{transform:translate3d(-1.6%,0,0)}to{transform:translate3d(1.6%,0,0)}}
+@keyframes dig-v22-contour-trace{from{stroke-dasharray:1;stroke-dashoffset:1}to{stroke-dasharray:1;stroke-dashoffset:0}}
+@keyframes dig-v22-icon-arrive{from{opacity:.35;transform:translate3d(0,7px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@media print{.dig-v22-divider{display:none!important}}
 </style>
 </head>
 <body data-page-style="service" id="top">
@@ -5550,7 +5613,9 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <button aria-label="Tutup menu" class="nav-backdrop" hidden="" tabindex="-1" type="button"></button><noscript><div class="no-script-banner"><div class="shell"><strong>Mode tanpa JavaScript.</strong> Konten tetap dapat dibaca; untuk konsultasi gunakan <a href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi.">WhatsApp</a> atau buka <a href="layanan.html">daftar layanan</a>.</div></div></noscript>
 <nav aria-label="Breadcrumb" class="breadcrumb"><div class="shell"><ol><li><a href="index.html">Beranda</a></li><li><a href="pengetahuan.html">Pusat Pengetahuan</a></li><li><span aria-current="page">Cara Membuat NIB di OSS</span></li></ol></div></nav>
 <main id="main"><section aria-labelledby="new-article-title" class="hero"><div class="shell hero-frame"><picture class="hero-picture position-left"><img alt="Ilustrasi editorial dokumen dan perangkat kerja untuk pendirian perusahaan" data-original-src="assets/legal-nib-oss-v16.webp" decoding="async" fetchpriority="high" src="assets/legal-nib-oss-v16.webp" height="675" width="1200"/></picture><div class="hero-copy"><p class="kicker">NIB &amp; OSS</p><h1 id="new-article-title">Cara membuat NIB di OSS: mulai dari data usaha yang benar, bukan dari klik formulir.</h1><p class="lede">Nomor Induk Berusaha (NIB) adalah identitas resmi untuk memulai atau menjalankan usaha di Indonesia. OSS menyediakan panduan pembuatan NIB, tetapi kualitas hasil tetap bergantung pada ketepatan data pelaku usaha, kegiatan usaha, lokasi, dan pilihan yang Anda masukkan.</p><div class="hero-actions"><a class="button" href="#panduan">Baca panduan</a><a class="button button-ghost" href="pengetahuan.html">Kembali ke Pengetahuan</a></div></div></div></section><div id="panduan"><section aria-labelledby="nib-answer" class="section paper"><div class="shell"><div class="dig-pro-intro reveal"><p class="kicker">Jawaban singkat</p><h2 id="nib-answer">Bagaimana cara membuat NIB?</h2><p class="lede">Daftar atau masuk ke OSS Indonesia menggunakan hak akses yang sesuai, pastikan data pelaku usaha benar, pilih menu pengelolaan NIB, lengkapi kegiatan usaha dan data proyek sesuai kebutuhan, periksa hasil perizinan berbasis risiko, lalu simpan NIB serta dokumen pendukung yang diterbitkan sistem.</p></div><div class="dig-pro-grid"><div class="dig-pro-card reveal"><strong>1. Siapkan akun OSS</strong><p>Gunakan akun dan jenis pelaku usaha yang sesuai. Jangan meminjam identitas orang lain untuk mengisi data usaha.</p></div><div class="dig-pro-card reveal"><strong>2. Periksa profil</strong><p>Pastikan nama, identitas, kontak, alamat, dan data badan usaha—jika menggunakan badan usaha—sudah benar.</p></div><div class="dig-pro-card reveal"><strong>3. Tentukan kegiatan</strong><p>Petakan kegiatan usaha yang benar-benar dijalankan. Pemilihan KBLI memengaruhi proses perizinan dan kewajiban berikutnya.</p></div><div class="dig-pro-card reveal"><strong>4. Lengkapi data usaha/proyek</strong><p>Isi lokasi, skala, dan data yang diminta sistem sesuai kondisi nyata, bukan berdasarkan pilihan yang paling mudah.</p></div><div class="dig-pro-card reveal"><strong>5. Tinjau perizinan berbasis risiko</strong><p>OSS mengelompokkan kegiatan berdasarkan tingkat risiko. NIB dapat disertai kewajiban atau dokumen lain sesuai kegiatan.</p></div><div class="dig-pro-card reveal"><strong>6. Simpan hasil</strong><p>Unduh NIB dan dokumen yang tersedia, lalu pastikan data pada dokumen sesuai dengan usaha yang dijalankan.</p></div></div></div></section>
-<section aria-labelledby="nib-errors" class="section soft"><div class="shell"><div class="dig-pro-intro reveal"><p class="kicker">Kesalahan umum</p><h2 id="nib-errors">NIB bukan sekadar nomor yang harus cepat keluar.</h2></div><div class="dig-pro-grid"><div class="dig-pro-card reveal"><strong>KBLI dipilih asal mirip</strong><p>Istilah yang terdengar mirip belum tentu menggambarkan aktivitas usaha. Gunakan aktivitas nyata sebagai dasar pembahasan.</p></div><div class="dig-pro-card reveal"><strong>Alamat tidak konsisten</strong><p>Perbedaan alamat antar dokumen dapat menimbulkan koreksi dan kebingungan saat proses lanjutan.</p></div><div class="dig-pro-card reveal"><strong>Menganggap NIB adalah semua izin</strong><p>NIB adalah identitas usaha, tetapi kewajiban lain dapat tetap muncul berdasarkan sektor dan tingkat risiko.</p></div><div class="dig-pro-card reveal"><strong>Tidak menyimpan dokumen</strong><p>Setelah proses selesai, simpan NIB serta dokumen perizinan dengan versi dan tanggal yang jelas.</p></div></div><div class="dig-pro-action-row"><a class="button" href="cara-mendirikan-pt.html">Panduan PT</a><a class="button button-ghost" href="cara-mendirikan-cv.html">Panduan CV</a></div></div></section>
+<section aria-labelledby="nib-errors" class="section soft" data-v22-surface="soft">
+<div class="dig-v22-divider dig-v22-divider--wave" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 1440 64"><path class="dig-v22-divider-fill" d="M0 30 C240 4 420 60 680 28 S1150 0 1440 24 V64 H0 Z"></path><path class="dig-v22-divider-line" pathLength="1" d="M0 30 C240 4 420 60 680 28 S1150 0 1440 24"></path></svg></div>
+<div class="shell"><div class="dig-pro-intro reveal"><p class="kicker">Kesalahan umum</p><h2 id="nib-errors">NIB bukan sekadar nomor yang harus cepat keluar.</h2></div><div class="dig-pro-grid"><div class="dig-pro-card reveal"><strong>KBLI dipilih asal mirip</strong><p>Istilah yang terdengar mirip belum tentu menggambarkan aktivitas usaha. Gunakan aktivitas nyata sebagai dasar pembahasan.</p></div><div class="dig-pro-card reveal"><strong>Alamat tidak konsisten</strong><p>Perbedaan alamat antar dokumen dapat menimbulkan koreksi dan kebingungan saat proses lanjutan.</p></div><div class="dig-pro-card reveal"><strong>Menganggap NIB adalah semua izin</strong><p>NIB adalah identitas usaha, tetapi kewajiban lain dapat tetap muncul berdasarkan sektor dan tingkat risiko.</p></div><div class="dig-pro-card reveal"><strong>Tidak menyimpan dokumen</strong><p>Setelah proses selesai, simpan NIB serta dokumen perizinan dengan versi dan tanggal yang jelas.</p></div></div><div class="dig-pro-action-row"><a class="button" href="cara-mendirikan-pt.html">Panduan PT</a><a class="button button-ghost" href="cara-mendirikan-cv.html">Panduan CV</a></div></div></section>
 <section aria-labelledby="nib-source" class="section paper"><div class="shell"><p class="dig-pro-status">Ditinjau 3 September 2026</p><h2 id="nib-source">Gunakan OSS Indonesia sebagai rujukan proses terbaru.</h2><p>Antarmuka, persyaratan, dan alur OSS dapat berubah. Selalu periksa panduan resmi sebelum memproses data usaha.</p><div class="dig-pro-source-list"><a href="https://oss.go.id/" rel="noopener noreferrer" target="_blank">OSS Indonesia ↗</a><a href="https://oss.go.id/id/panduan/676a8758cde449ca8bf75911" rel="noopener noreferrer" target="_blank">OSS — Panduan Pembuatan NIB ↗</a></div></div></section></div></main>
 <footer class="site-footer" data-nosnippet="">
 <div aria-hidden="true" class="site-footer-wave"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 393 25"><path class="site-footer-wave-accent" d="M0 21 C118 23 165 18 198 6 C226 -2 282 -1 315 3 C350 7 377 13 393 16 V25 H0 Z"></path><path class="site-footer-wave-main" d="M0 21 C88 26 158 25 200 16 C229 11 247 0 283 0 C325 0 360 8 393 21 V25 H0 Z"></path></svg></div>
@@ -5579,8 +5644,8 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 </div>
 <div aria-label="Kanal kontak dan sosial" class="social-contact-list">
 <span aria-label="Instagram" class="social-contact" role="img" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="15" rx="4" stroke="currentColor" stroke-width="1.8" width="15" x="4.5" y="4.5"></rect><circle cx="12" cy="12" fill="none" r="3.4" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.1" cy="6.9" fill="currentColor" r="1"></circle></svg></span>
-<a aria-label="Buka profil LinkedIn" class="social-contact" href="https://www.linkedin.com/in/achmad-zaenuddin-7285ba433" rel="noopener noreferrer" target="_blank" title="LinkedIn"><span class="brand-text">in</span></a>
-<span aria-label="Threads" class="social-contact" role="img" title="Threads"><span class="brand-text">@</span></span>
+<a aria-label="Buka profil LinkedIn" class="social-contact" href="https://www.linkedin.com/in/achmad-zaenuddin-7285ba433" rel="noopener noreferrer" target="_blank" title="LinkedIn"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path fill="currentColor" d="M5.37 3.5a1.88 1.88 0 1 1 0 3.76 1.88 1.88 0 0 1 0-3.76ZM3.75 8.8H7V20H3.75V8.8Zm5.25 0h3.12v1.53h.05c.43-.82 1.5-1.69 3.09-1.69 3.3 0 3.91 2.18 3.91 5.01V20h-3.25v-5.63c0-1.34-.02-3.07-1.87-3.07-1.88 0-2.17 1.46-2.17 2.97V20H9V8.8Z"></path></svg></a>
+<span aria-label="Threads" class="social-contact" role="img" title="Threads"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path fill="currentColor" d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"></path></svg></span>
 <button aria-label="Buka pilihan WhatsApp" class="social-contact" data-contact-open="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
 <span aria-disabled="true" aria-label="Telegram" class="social-contact" title="Telegram"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m3.5 11.1 16.4-6.4-3 14.6-5.1-4-2.9 2.7.4-4.3 7.8-6.5-9.7 5.1-3.9-1.2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.6"></path></svg></span>
 <a aria-label="Kirim email ke companydirac@gmail.com" class="social-contact" href="mailto:companydirac@gmail.com" title="Email"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="13" rx="2" stroke="currentColor" stroke-width="1.8" width="17" x="3.5" y="5.5"></rect><path d="m5 7 7 5.2L19 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a>
@@ -9244,6 +9309,102 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
   } else {
     refresh();
   }
+})();
+</script>
+<script id="digdaya-revision-v22-script">
+/* V22: viewport-driven decorative motion; no navigation or data side effects. */
+(()=>{
+  'use strict';
+  const root=document.documentElement;
+  if(root.dataset.digV22Ready)return;
+  root.dataset.digV22Ready='true';
+  const nodes=Array.from(document.querySelectorAll('.dig-v22-divider,.site-footer-wave,.social-contact-list'));
+  const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const visible=new Set();
+  /* V16 initially clips headings by 100%. Their IntersectionObserver can
+     therefore receive an empty intersection forever. Measure their unchanged
+     layout boxes to trigger the original reveal, preserving its full mask,
+     timing, easing and stagger. Only headings still awaiting reveal are read. */
+  const pendingHeadings=new Set();
+  let headingFrame=0;
+  const revealHeadings=()=>{
+    headingFrame=0;
+    if(document.hidden)return;
+    pendingHeadings.forEach(heading=>{
+      if(!heading.isConnected||heading.classList.contains('is-dig-in')){pendingHeadings.delete(heading);return}
+      const box=heading.getBoundingClientRect();
+      if(motion.matches||(box.width>0&&box.height>0&&box.top<window.innerHeight*.94&&box.bottom>0)){
+        heading.classList.add('is-dig-in');
+        pendingHeadings.delete(heading);
+      }
+    });
+  };
+  const queueHeadings=()=>{if(pendingHeadings.size&&!headingFrame)headingFrame=requestAnimationFrame(revealHeadings)};
+  const collectHeadings=()=>{
+    document.querySelectorAll('main .dig-m-heading:not(.is-dig-in)').forEach(heading=>pendingHeadings.add(heading));
+    queueHeadings();
+  };
+  const sync=()=>{
+    root.classList.toggle('dig-v22-motion-ready',!motion.matches);
+    nodes.forEach(node=>node.classList.toggle('is-v22-active',visible.has(node)&&!document.hidden&&!motion.matches));
+    queueHeadings();
+  };
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){visible.add(entry.target);entry.target.classList.add('is-v22-seen')}
+        else visible.delete(entry.target);
+      });
+      sync();
+    },{threshold:0,rootMargin:'40px 0px'});
+    nodes.forEach(node=>observer.observe(node));
+  }else{
+    nodes.forEach(node=>node.classList.add('is-v22-seen'));
+  }
+  document.addEventListener('visibilitychange',sync);
+  window.addEventListener('pageshow',sync);
+  window.addEventListener('scroll',queueHeadings,{passive:true});
+  window.addEventListener('resize',queueHeadings,{passive:true});
+  window.addEventListener('pageshow',collectHeadings);
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',collectHeadings,{once:true});
+  collectHeadings();
+  /* The floating contact panel intentionally hides near the footer (V21).
+     Reuse its existing WhatsApp destinations in a native modal for the footer
+     trigger so that collision protection cannot immediately close the picker. */
+  const footerTrigger=document.querySelector('.site-footer [data-contact-open]');
+  const channels=Array.from(document.querySelectorAll('.site-footer .footer-contact-channel[href^="https://wa.me/"]'));
+  if(footerTrigger&&channels.length){
+    let picker=null;
+    footerTrigger.setAttribute('aria-haspopup','dialog');
+    footerTrigger.addEventListener('click',event=>{
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      if(!picker){
+        picker=document.createElement('dialog');
+        picker.className='ui-dialog dig-v22-contact-dialog';
+        picker.setAttribute('aria-label','Pilih WhatsApp Digdaya');
+        const head=document.createElement('div');head.className='dialog-head';
+        const title=document.createElement('h2');title.textContent='Pilih WhatsApp';
+        const close=document.createElement('button');close.type='button';close.className='icon-button';
+        close.setAttribute('aria-label','Tutup pilihan WhatsApp');close.textContent='×';
+        const options=document.createElement('div');options.className='dig-v22-contact-options';
+        channels.forEach(channel=>{const link=channel.cloneNode(true);link.className='button button-ghost';link.removeAttribute('id');options.append(link)});
+        head.append(title,close);picker.append(head,options);document.body.append(picker);
+        close.addEventListener('click',()=>picker.close());
+        picker.addEventListener('close',()=>footerTrigger.focus({preventScroll:true}));
+        picker.addEventListener('click',e=>{
+          if(e.target!==picker)return;
+          const r=picker.getBoundingClientRect();
+          if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)picker.close();
+        });
+      }
+      if(typeof picker.showModal==='function'){if(!picker.open)picker.showModal()}
+      else channels[0].focus();
+    },{capture:true});
+  }
+  if(motion.addEventListener)motion.addEventListener('change',sync);
+  else if(motion.addListener)motion.addListener(sync);
+  sync();
 })();
 </script>
 </body>
