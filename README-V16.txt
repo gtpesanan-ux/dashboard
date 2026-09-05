@@ -1,4 +1,7 @@
-PT DIGDAYA INOVASI NUSANTARA — RELEASE FINAL
+CATATAN RIWAYAT V16 — DIGANTIKAN OLEH README-V21.txt
+Dokumen ini dipertahankan untuk audit historis dan tidak menggambarkan konten, ukuran, atau validasi paket aktif.
+
+PT DIGDAYA INOVASI NUSANTARA — RELEASE V16 (HISTORIS)
 Tanggal: 2026-09-04
 
 Paket ini adalah situs statis siap unggah. Letakkan seluruh isi folder PT pada document root hosting; tidak ada tahap build dan tidak ada ketergantungan CSS/JavaScript eksternal saat runtime.

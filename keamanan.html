@@ -4260,6 +4260,1027 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
   .quick-contact{display:none!important}
 }
 </style>
+<style data-inline-from="assets/revision-v21-menu.css" id="digdaya-revision-v21-menu-style">
+/*
+ * DIGDAYA V21 — resilient mobile navigation
+ *
+ * This file is intentionally additive.  The V21 controller adds the
+ * dig-v21-* state classes after the legacy navigation runtime has finished,
+ * so existing desktop navigation and no-JavaScript behaviour remain intact.
+ */
+:root{
+  --dig-v21-menu-duration:300ms;
+  --dig-v21-menu-ease:cubic-bezier(.22,.76,.24,1);
+  --dig-v21-icon-duration:280ms;
+  --dig-v21-subnav-duration:240ms;
+  --dig-v21-subnav-ease:cubic-bezier(.22,.72,.2,1);
+}
+
+/*
+ * Use reversible transitions for the three menu bars.  The former keyframes
+ * restarted at their first frame after a rapid second tap; transitions begin
+ * at the currently painted value and therefore reverse without a jump.
+ */
+.menu-button .dig-menu-morph::before,
+.menu-button .dig-menu-morph::after,
+.menu-button.dig-menu-opening .dig-menu-morph::before,
+.menu-button.dig-menu-opening .dig-menu-morph::after,
+.menu-button.dig-menu-closing .dig-menu-morph::before,
+.menu-button.dig-menu-closing .dig-menu-morph::after{
+  animation:none!important;
+  will-change:auto!important;
+  transition:transform var(--dig-v21-icon-duration) var(--dig-v21-menu-ease)!important;
+}
+.menu-button .dig-menu-morph>svg,
+.menu-button[aria-expanded="true"] .dig-menu-morph>svg,
+.menu-button.dig-menu-opening .dig-menu-morph>svg,
+.menu-button.dig-menu-closing .dig-menu-morph>svg{
+  animation:none!important;
+  visibility:visible!important;
+  will-change:auto!important;
+  transition:opacity 160ms ease,transform var(--dig-v21-icon-duration) var(--dig-v21-menu-ease)!important;
+}
+
+@media (max-width:1180px){
+  /*
+   * A transformed sticky ancestor changes the containing block of a fixed
+   * descendant in WebKit.  Keep the panel fixed to the visual viewport.
+   */
+  html.dig-nav-lock .site-header{
+    transform:none!important;
+  }
+
+  /* Keep header controls clear of a landscape iPhone notch. */
+  .site-header .header-inner{
+    padding-left:max(0px,env(safe-area-inset-left,0px))!important;
+    padding-right:max(0px,env(safe-area-inset-right,0px))!important;
+  }
+
+  .js .main-nav{
+    max-height:calc(100vh - var(--dig-v17-header-height,var(--u-header)))!important;
+    padding-right:max(clamp(12px,4vw,28px),env(safe-area-inset-right,0px))!important;
+    padding-bottom:max(.45rem,env(safe-area-inset-bottom,0px))!important;
+    padding-left:max(clamp(12px,4vw,28px),env(safe-area-inset-left,0px))!important;
+    transition:-webkit-clip-path var(--dig-v21-menu-duration) var(--dig-v21-menu-ease),clip-path var(--dig-v21-menu-duration) var(--dig-v21-menu-ease),visibility 0s linear var(--dig-v21-menu-duration)!important;
+  }
+  .js .main-nav.is-open{
+    transition:-webkit-clip-path var(--dig-v21-menu-duration) var(--dig-v21-menu-ease),clip-path var(--dig-v21-menu-duration) var(--dig-v21-menu-ease),visibility 0s linear 0s!important;
+  }
+  @supports (height:100dvh){
+    .js .main-nav{
+      max-height:calc(100dvh - var(--dig-v17-header-height,var(--u-header)))!important;
+    }
+  }
+
+  /* Promote only while the reveal is moving; retire the layer afterwards. */
+  .js .main-nav.dig-v21-nav-animating{
+    contain:none!important;
+    transform:translate3d(0,0,0)!important;
+    will-change:clip-path!important;
+  }
+  .js .main-nav.is-open.dig-v21-nav-arming{
+    -webkit-clip-path:inset(0 0 0 0)!important;
+    clip-path:inset(0 0 0 0)!important;
+    transition:none!important;
+  }
+  .js .main-nav.is-open.dig-v21-nav-settled{
+    -webkit-clip-path:none!important;
+    clip-path:none!important;
+    -webkit-backface-visibility:visible!important;
+    backface-visibility:visible!important;
+    contain:none!important;
+    transform:none!important;
+    transition:none!important;
+    will-change:auto!important;
+  }
+  .js .main-nav:not(.is-open).dig-v21-nav-idle{
+    -webkit-backface-visibility:visible!important;
+    backface-visibility:visible!important;
+    contain:none!important;
+    transform:none!important;
+    transition:none!important;
+    will-change:auto!important;
+  }
+
+  /*
+   * Mobile flyouts use a measured pixel height supplied by the V21 runtime.
+   * This replaces the arbitrary 30rem ceiling, which clipped long labels and
+   * gave each submenu a different apparent speed.
+   */
+  .main-nav .nav-flyout,
+  .main-nav .nav-flyout[hidden],
+  .main-nav .nav-group.is-open .nav-flyout{
+    max-height:none!important;
+    height:0;
+    overflow:hidden!important;
+    visibility:hidden;
+    pointer-events:none!important;
+    transition:height var(--dig-v21-subnav-duration) var(--dig-v21-subnav-ease),visibility 0s linear var(--dig-v21-subnav-duration)!important;
+  }
+  .main-nav .nav-group .nav-flyout.dig-v21-subnav-open{
+    height:auto!important;
+    overflow:visible!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    transition:none!important;
+  }
+  .main-nav .nav-group .nav-flyout.dig-v21-subnav-animating,
+  .main-nav .nav-group .nav-flyout.dig-v21-subnav-animating[hidden]{
+    display:grid!important;
+    overflow:hidden!important;
+    visibility:visible!important;
+    pointer-events:none!important;
+    transition:height var(--dig-v21-subnav-duration) var(--dig-v21-subnav-ease)!important;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .menu-button.menu-button .dig-menu-morph::before,
+  .menu-button.menu-button .dig-menu-morph::after,
+  .menu-button.menu-button .dig-menu-morph>svg,
+  .js .main-nav,
+  .js .main-nav.is-open,
+  .js .main-nav.dig-v21-nav-animating,
+  .main-nav .nav-flyout,
+  .main-nav .nav-flyout[hidden],
+  .main-nav .nav-group.is-open .nav-flyout,
+  .main-nav .nav-group .nav-flyout.dig-v21-subnav-open,
+  .main-nav .nav-group .nav-flyout.dig-v21-subnav-animating,
+  .main-nav .nav-group .nav-flyout.dig-v21-subnav-animating[hidden]{
+    animation:none!important;
+    transition:none!important;
+  }
+}
+</style>
+<style data-inline-from="assets/revision-v21-ui.css" id="digdaya-revision-v21-ui-style">
+/*
+ * DIGDAYA REVISION V21 — newsroom and detail-page UI hardening.
+ *
+ * This file is intentionally additive. It fixes the browser-default figure
+ * margin, keeps media geometry predictable, removes duplicate artwork copy,
+ * improves article hierarchy, and provides explicit collision/reduced-motion
+ * states for the V21 runtime.
+ */
+
+:root{
+  --dig-v21-border:rgba(8,47,91,.14);
+  --dig-v21-border-strong:rgba(8,47,91,.24);
+  --dig-v21-paper:#fff;
+  --dig-v21-paper-soft:#f7f3eb;
+  --dig-v21-shadow:0 14px 36px rgba(8,47,91,.075);
+  --dig-v21-shadow-raised:0 20px 48px rgba(8,47,91,.12);
+  --dig-v21-ease:cubic-bezier(.22,.72,.24,1);
+}
+
+/* ---------- Newsroom toolbar and compact filters ---------- */
+
+.live-news-toolbar{
+  isolation:isolate;
+}
+
+.live-news-search:focus-within{
+  border-color:rgba(16,87,166,.6)!important;
+  box-shadow:0 0 0 3px rgba(16,87,166,.13);
+}
+
+.live-news-search input{
+  min-width:0;
+  min-height:44px;
+  font-size:max(1rem,16px);
+}
+
+.live-news-filter-panel{
+  margin:-.25rem 0 1.1rem;
+}
+
+.live-news-filter-summary{
+  display:none;
+}
+
+.live-news-controls{
+  margin:0!important;
+  padding:.75rem!important;
+  border-color:var(--dig-v21-border)!important;
+  box-shadow:0 8px 24px rgba(8,47,91,.045);
+}
+
+.live-news-controls label{
+  flex:1 1 10.5rem;
+  min-width:0!important;
+}
+
+.live-news-controls select{
+  width:100%;
+  min-height:44px!important;
+  border-color:var(--dig-v21-border)!important;
+  font-size:max(.82rem,16px)!important;
+}
+
+.live-news-controls select:focus-visible,
+.live-news-filter-summary:focus-visible{
+  outline:3px solid rgba(16,87,166,.34);
+  outline-offset:2px;
+}
+
+/* The loading indicator has no purpose after the local render completes. */
+.live-news-progress[hidden],
+.live-news-progress[value="100"],
+.live-news-progress[data-v21-complete="true"]{
+  display:none!important;
+}
+
+/* ---------- Newsroom media and card hierarchy ---------- */
+
+.live-news-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:clamp(.9rem,2vw,1.25rem)!important;
+  align-items:stretch;
+}
+
+.live-news-card{
+  border-color:var(--dig-v21-border)!important;
+  border-radius:1.05rem!important;
+  box-shadow:var(--dig-v21-shadow)!important;
+}
+
+/* Reset the user-agent 1em 40px figure margin that created white side bands. */
+.live-news-visual,
+.news-detail-visual{
+  margin:0!important;
+}
+
+.live-news-visual{
+  width:100%;
+  min-width:0;
+  aspect-ratio:16/9!important;
+  border-radius:0;
+  background:#dce4e8!important;
+}
+
+.live-news-visual>img,
+.news-detail-visual>img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+
+/*
+ * The category, sequence, title and disclosure were previously rendered in
+ * several overlapping layers. Keep metadata in the card body and retain one
+ * quiet, unboxed disclosure directly on the image.
+ */
+.live-news-visual::before,
+.live-news-visual::after,
+.news-detail-visual::after,
+.live-news-visual>.dig-news-art-layer,
+.news-detail-visual>.dig-news-art-layer{
+  content:none!important;
+  display:none!important;
+}
+
+.live-news-visual>figcaption,
+.news-detail-visual>figcaption{
+  position:absolute!important;
+  z-index:3;
+  right:.7rem!important;
+  bottom:.55rem!important;
+  left:auto!important;
+  width:auto!important;
+  max-width:min(78%,34rem);
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:rgba(255,255,255,.92)!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+  font-size:clamp(.72rem,1.1vw,.8rem)!important;
+  font-weight:700;
+  line-height:1.35;
+  letter-spacing:.01em;
+  text-align:right;
+  text-shadow:-1px -1px 2px rgba(3,20,35,.88),1px -1px 2px rgba(3,20,35,.88),-1px 1px 2px rgba(3,20,35,.88),1px 1px 4px rgba(3,20,35,.92);
+  pointer-events:none;
+}
+
+/* Watermark/disclosure text belongs to the image itself: no pills, panels,
+ * blur containers, or independent fill. Preserve legibility on mixed crops. */
+.editorial-media>figcaption,
+.mosaic figure>figcaption{
+  right:.75rem!important;
+  bottom:.65rem!important;
+  left:.75rem!important;
+  width:auto!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  color:rgba(255,255,255,.92)!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+  font-size:clamp(.72rem,1.1vw,.8rem)!important;
+  font-weight:700;
+  line-height:1.35;
+  text-align:right;
+  text-shadow:-1px -1px 2px rgba(3,20,35,.88),1px -1px 2px rgba(3,20,35,.88),-1px 1px 2px rgba(3,20,35,.88),1px 1px 4px rgba(3,20,35,.92);
+}
+
+.live-news-card-body{
+  min-width:0;
+  padding:clamp(1rem,2vw,1.25rem)!important;
+}
+
+.live-news-source{
+  gap:.38rem .5rem!important;
+  margin-bottom:.72rem!important;
+  line-height:1.4;
+}
+
+.live-news-source>b{
+  font-size:.69rem;
+}
+
+.live-news-source>span:last-child{
+  flex:1 0 100%;
+  color:#677982;
+  font-size:.69rem;
+}
+
+.news-kind-badge{
+  align-items:center;
+  min-height:1.55rem;
+  padding:.2rem .48rem!important;
+  font-size:max(.625rem,10px)!important;
+  line-height:1.25;
+}
+
+.live-news-card h3{
+  margin:0!important;
+  color:var(--navy)!important;
+  font-family:var(--font-body)!important;
+  font-size:clamp(1.08rem,1.7vw,1.3rem)!important;
+  font-weight:780;
+  line-height:1.32!important;
+  letter-spacing:-.012em;
+  text-wrap:pretty;
+}
+
+.live-news-card-body>p{
+  display:-webkit-box;
+  margin:.72rem 0 1.05rem!important;
+  overflow:hidden;
+  color:#53666f!important;
+  font-size:.84rem!important;
+  line-height:1.65!important;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:4;
+}
+
+.live-news-card-body>a{
+  min-height:44px!important;
+  margin-top:auto!important;
+  align-items:center;
+  font-size:.79rem!important;
+}
+
+.live-news-card-body>a:focus-visible,
+.news-detail-actions .button:focus-visible,
+.news-detail-related-list a:focus-visible,
+.news-detail-nav a:focus-visible{
+  outline:3px solid rgba(16,87,166,.34);
+  outline-offset:3px;
+  border-radius:.35rem;
+}
+
+/* A restrained lead card creates hierarchy without producing a tall image. */
+@media (min-width:1081px){
+  .live-news-card:nth-child(7n+1){
+    grid-column:1/-1!important;
+    display:grid!important;
+    grid-template-columns:minmax(19rem,.92fr) minmax(0,1.08fr)!important;
+  }
+
+  .live-news-card:nth-child(7n+1) .live-news-visual{
+    min-height:20rem!important;
+    aspect-ratio:auto!important;
+  }
+
+  .live-news-card:nth-child(7n+1) .live-news-card-body{
+    justify-content:center;
+    padding:clamp(1.35rem,3.2vw,2.5rem)!important;
+  }
+
+  .live-news-card:nth-child(7n+1) h3{
+    max-width:24ch;
+    font-size:clamp(1.55rem,2.6vw,2.25rem)!important;
+    line-height:1.18!important;
+  }
+
+  .live-news-card:nth-child(7n+1) .live-news-card-body>p{
+    max-width:62ch;
+    font-size:.92rem!important;
+    -webkit-line-clamp:3;
+  }
+}
+
+@media (hover:hover) and (pointer:fine){
+  .live-news-card:hover{
+    transform:translateY(-3px);
+    border-color:var(--dig-v21-border-strong)!important;
+    box-shadow:var(--dig-v21-shadow-raised)!important;
+  }
+}
+
+/* ---------- Detail typography, source, actions and sections ---------- */
+
+.news-detail{
+  padding:clamp(2.1rem,5vw,4.6rem) 0 clamp(4.5rem,8vw,7rem)!important;
+}
+
+.news-detail-shell{
+  grid-template-columns:minmax(0,1fr) minmax(18rem,23rem)!important;
+  gap:clamp(1.5rem,4vw,4rem)!important;
+}
+
+.news-detail-main{
+  max-width:52rem;
+}
+
+.news-detail-meta{
+  gap:.48rem .78rem!important;
+  margin-bottom:1rem!important;
+  font-size:.78rem!important;
+  line-height:1.55;
+}
+
+.news-detail-meta>[data-detail-source]{
+  max-width:100%;
+  overflow-wrap:anywhere;
+}
+
+.news-detail-meta>[data-detail-source].has-source{
+  flex-basis:100%;
+}
+
+.news-detail-meta>[data-detail-source] a{
+  color:var(--blue);
+  font-weight:800;
+  text-decoration-thickness:1px;
+  text-underline-offset:.18em;
+}
+
+.news-detail-meta>[data-detail-source].is-source-missing{
+  color:#6b7479;
+}
+
+.news-detail-title{
+  max-width:21ch!important;
+  font-size:clamp(2.35rem,5.2vw,4.85rem)!important;
+  line-height:1.01!important;
+  letter-spacing:-.032em!important;
+  text-wrap:balance;
+}
+
+.news-detail-summary{
+  margin-top:clamp(1.35rem,3vw,2rem)!important;
+  padding:clamp(1.15rem,2.6vw,1.75rem)!important;
+  border:1px solid var(--dig-v21-border)!important;
+  border-left:4px solid var(--gold)!important;
+  border-radius:0 .95rem .95rem 0;
+  background:var(--dig-v21-paper)!important;
+  box-shadow:0 10px 28px rgba(8,47,91,.055)!important;
+}
+
+.news-detail-summary h2{
+  margin:0 0 .6rem!important;
+  color:var(--navy);
+  font-family:var(--font-body)!important;
+  font-size:1rem!important;
+  font-weight:820;
+  letter-spacing:.01em;
+}
+
+.news-detail-summary p{
+  max-width:70ch;
+  color:#40555f!important;
+  font-size:clamp(1rem,1.7vw,1.1rem)!important;
+  line-height:1.75!important;
+}
+
+.news-detail-integrity{
+  margin-top:1rem!important;
+  padding:1rem 1.1rem!important;
+  border-color:rgba(151,101,18,.25)!important;
+  border-radius:.85rem!important;
+  background:#fff8e8!important;
+  color:#4d5d64!important;
+  font-size:.86rem!important;
+  line-height:1.65;
+}
+
+.news-detail-analysis{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:.9rem!important;
+  margin-top:1.35rem!important;
+}
+
+.news-detail-analysis>article{
+  min-width:0;
+  padding:1.15rem 1.2rem!important;
+  border-color:var(--dig-v21-border)!important;
+  border-radius:.9rem!important;
+  box-shadow:0 8px 24px rgba(8,47,91,.04);
+}
+
+.news-detail-analysis>article[data-v21-section="provenance"],
+.news-detail-analysis>article:nth-child(n+3){
+  grid-column:1/-1;
+}
+
+.news-detail-analysis h2,
+.news-detail-related>h2{
+  margin:0 0 .55rem!important;
+  color:var(--navy)!important;
+  font-family:var(--font-body)!important;
+  font-size:1rem!important;
+  font-weight:820!important;
+  line-height:1.3!important;
+}
+
+.news-detail-analysis p,
+.news-detail-analysis li{
+  color:#50636c!important;
+  font-size:.88rem;
+  line-height:1.7!important;
+}
+
+.news-detail-analysis ul{
+  margin:.2rem 0 0;
+  padding-left:1.15rem;
+}
+
+.news-detail-analysis li+li{
+  margin-top:.45rem;
+}
+
+.news-detail-actions{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:.65rem!important;
+  margin-top:1.25rem!important;
+  padding-top:1.25rem;
+  border-top:1px solid var(--dig-v21-border);
+}
+
+.news-detail-actions .button{
+  width:100%;
+  min-height:46px;
+  justify-content:center;
+  text-align:center;
+}
+
+.news-detail-side{
+  top:6.75rem!important;
+}
+
+.news-detail-visual{
+  width:100%;
+  aspect-ratio:16/9!important;
+  border:1px solid var(--dig-v21-border);
+  border-radius:1rem!important;
+  background:#dce4e8!important;
+  box-shadow:var(--dig-v21-shadow)!important;
+}
+
+.news-detail-related{
+  margin-top:1.75rem!important;
+}
+
+.news-detail-related-list{
+  gap:.6rem!important;
+}
+
+.news-detail-related-list a{
+  min-height:56px;
+  padding:.9rem 1rem!important;
+  border-color:var(--dig-v21-border)!important;
+  transition:border-color .2s ease,background-color .2s ease,transform .2s var(--dig-v21-ease);
+}
+
+.news-detail-related-list a:hover{
+  border-color:var(--dig-v21-border-strong)!important;
+  background:#fbfcfc!important;
+}
+
+.news-detail-nav{
+  margin-top:1.15rem!important;
+}
+
+.news-detail-nav .button{
+  min-height:44px;
+}
+
+/* ---------- Floating contact collision states ---------- */
+
+.quick-contact{
+  will-change:opacity,transform;
+}
+
+.quick-contact.dig-v21-collision,
+.quick-contact.dig-v21-keyboard{
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  /* Keep the measured fixed-button rectangle stable while it fades out. */
+  transform:none!important;
+}
+
+.quick-contact.dig-v21-collision .quick-contact-panel,
+.quick-contact.dig-v21-keyboard .quick-contact-panel{
+  pointer-events:none!important;
+}
+
+/* ---------- Responsive composition ---------- */
+
+@media (max-width:1080px){
+  .live-news-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+
+  .live-news-card:nth-child(7n+1){
+    grid-column:1/-1!important;
+    display:grid!important;
+    grid-template-columns:minmax(16rem,.9fr) minmax(0,1.1fr)!important;
+  }
+
+  .live-news-card:nth-child(7n+1) .live-news-visual{
+    min-height:17rem!important;
+    aspect-ratio:auto!important;
+  }
+}
+
+@media (max-width:820px){
+  .news-detail-shell{
+    grid-template-columns:1fr!important;
+  }
+
+  .news-detail-side{
+    position:static!important;
+    order:initial;
+    width:100%;
+  }
+
+  .news-detail-visual{
+    max-height:none;
+  }
+}
+
+@media (max-width:720px){
+  .live-news-toolbar{
+    position:relative!important;
+    top:auto!important;
+    grid-template-columns:1fr!important;
+    gap:.48rem!important;
+    margin-bottom:.65rem!important;
+    padding:.5rem!important;
+    border-radius:.85rem!important;
+    box-shadow:0 8px 22px rgba(8,47,91,.065)!important;
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+  }
+
+  .live-news-search{
+    min-height:46px!important;
+  }
+
+  .live-news-meta{
+    justify-content:flex-start!important;
+    gap:.35rem!important;
+  }
+
+  .live-news-meta .live-news-pill{
+    min-height:1.9rem;
+    padding:.34rem .55rem!important;
+  }
+
+  .live-news-meta .live-news-pill:nth-child(n+2){
+    display:none!important;
+  }
+
+  .live-news-filter-panel{
+    margin:0 0 .85rem;
+    border:1px solid var(--dig-v21-border);
+    border-radius:.85rem;
+    background:var(--dig-v21-paper);
+    box-shadow:0 8px 22px rgba(8,47,91,.05);
+    overflow:hidden;
+  }
+
+  .live-news-filter-summary{
+    display:flex;
+    min-height:48px;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    padding:.7rem .8rem;
+    color:var(--navy);
+    font-size:.79rem;
+    font-weight:830;
+    cursor:pointer;
+    list-style:none;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  .live-news-filter-summary::-webkit-details-marker{
+    display:none;
+  }
+
+  .live-news-filter-summary::after{
+    content:"+";
+    flex:0 0 auto;
+    color:var(--gold);
+    font-size:1.15rem;
+    font-weight:500;
+    line-height:1;
+  }
+
+  .live-news-filter-panel[open]>.live-news-filter-summary::after{
+    content:"−";
+  }
+
+  .live-news-filter-summary small{
+    margin-left:auto;
+    color:#64767f;
+    font-size:.67rem;
+    font-weight:700;
+  }
+
+  .live-news-controls{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:.6rem!important;
+    padding:.15rem .7rem .75rem!important;
+    border:0!important;
+    border-top:1px solid rgba(8,47,91,.08)!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+  }
+
+  .live-news-controls label{
+    display:grid!important;
+    grid-template-columns:minmax(5.8rem,.36fr) minmax(0,.64fr);
+    align-items:center;
+    gap:.65rem!important;
+    min-width:0!important;
+  }
+
+  .live-news-controls select{
+    min-width:0;
+    min-height:44px!important;
+  }
+
+  .live-news-grid{
+    grid-template-columns:1fr!important;
+    gap:.9rem!important;
+  }
+
+  .live-news-card:nth-child(7n+1){
+    grid-column:auto!important;
+    display:flex!important;
+    grid-template-columns:none!important;
+  }
+
+  .live-news-card:nth-child(7n+1) .live-news-visual{
+    min-height:0!important;
+    aspect-ratio:16/9!important;
+  }
+
+  .live-news-card h3,
+  .live-news-card:nth-child(7n+1) h3{
+    max-width:none;
+    font-size:clamp(1.08rem,5vw,1.28rem)!important;
+    line-height:1.3!important;
+  }
+
+  .live-news-card-body{
+    padding:.95rem!important;
+  }
+
+  .live-news-card-body>p,
+  .live-news-card:nth-child(7n+1) .live-news-card-body>p{
+    font-size:.83rem!important;
+    -webkit-line-clamp:3;
+  }
+
+  .news-detail-main{
+    max-width:none;
+  }
+
+  .news-detail-title{
+    max-width:none!important;
+    font-size:clamp(2.15rem,10.5vw,3.6rem)!important;
+    line-height:1.02!important;
+  }
+
+  .news-detail-analysis{
+    grid-template-columns:1fr!important;
+  }
+
+  .news-detail-analysis>article{
+    grid-column:auto!important;
+  }
+
+  .news-detail-actions{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .news-detail-actions>:first-child{
+    grid-column:1/-1;
+  }
+}
+
+@media (max-width:430px){
+  .live-news-section .shell,
+  .news-detail .shell{
+    width:min(calc(100% - 28px),var(--shell))!important;
+  }
+
+  .live-news-controls label{
+    grid-template-columns:1fr;
+    gap:.3rem!important;
+  }
+
+  .news-detail-meta{
+    display:grid!important;
+    grid-template-columns:1fr;
+    gap:.32rem!important;
+  }
+
+  .news-detail-summary{
+    padding:1rem!important;
+  }
+
+  .news-detail-actions{
+    grid-template-columns:1fr;
+  }
+
+  .news-detail-actions>:first-child{
+    grid-column:auto;
+  }
+
+  .news-detail-actions .button,
+  .news-detail-nav .button{
+    width:100%;
+  }
+
+  .news-detail-nav{
+    display:grid!important;
+    grid-template-columns:1fr;
+  }
+}
+
+/* ---------- Motion and platform accessibility ---------- */
+
+@media (prefers-reduced-motion:reduce){
+  .live-news-card,
+  .live-news-card *,
+  .live-news-filter-panel,
+  .live-news-filter-summary,
+  .news-detail-related-list a,
+  .news-detail-visual>img,
+  .live-news-visual>img,
+  .quick-contact{
+    animation:none!important;
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+
+  .live-news-card,
+  .live-news-card:hover,
+  .live-news-card:hover .live-news-visual>img,
+  .news-detail-visual>img,
+  .live-news-visual>img{
+    clip-path:none!important;
+    transform:none!important;
+  }
+}
+
+@media (forced-colors:active){
+  .live-news-card,
+  .live-news-toolbar,
+  .live-news-filter-panel,
+  .news-detail-summary,
+  .news-detail-integrity,
+  .news-detail-analysis>article{
+    border:1px solid CanvasText!important;
+    box-shadow:none!important;
+  }
+
+  .live-news-visual>figcaption,
+  .news-detail-visual>figcaption{
+    padding:.15rem!important;
+    color:Canvas!important;
+    background:CanvasText!important;
+    text-shadow:none!important;
+  }
+}
+
+@media print{
+  .live-news-filter-panel,
+  .live-news-toolbar,
+  .live-news-progress,
+  .live-news-actions,
+  .news-detail-actions,
+  .quick-contact{
+    display:none!important;
+  }
+
+  .live-news-grid,
+  .news-detail-analysis{
+    grid-template-columns:1fr!important;
+  }
+
+  .live-news-card,
+  .news-detail-summary,
+  .news-detail-analysis>article{
+    break-inside:avoid;
+    box-shadow:none!important;
+  }
+}
+</style>
+<style data-inline-from="assets/revision-v21-content.css" id="digdaya-revision-v21-content-style">
+/* DIGDAYA REVISION V21 — source transparency and long-form reading polish. */
+.article-review-meta{
+  margin:.45rem 0 0;
+  color:var(--ink-soft);
+  font-size:.76rem;
+  line-height:1.55;
+}
+.article-source-panel{
+  margin:2rem 0 1.6rem;
+  padding:clamp(1rem,3vw,1.4rem);
+  border:1px solid rgba(8,47,91,.14);
+  border-left:3px solid var(--gold);
+  border-radius:1rem;
+  background:#fff;
+  box-shadow:0 12px 34px rgba(8,47,91,.055);
+}
+.article-source-panel h3{
+  margin:0 0 .55rem;
+  color:var(--navy);
+  font:800 .78rem/1.3 var(--font-body);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.article-source-panel p{
+  margin:0 0 .7rem;
+  color:var(--ink-soft);
+  font-size:.84rem;
+  line-height:1.7;
+}
+.article-source-panel ul{
+  display:grid;
+  gap:.55rem;
+  margin:0;
+  padding-left:1.15rem;
+}
+.article-source-panel a{
+  color:var(--blue);
+  font-weight:760;
+  text-underline-offset:.18em;
+}
+.article-source-panel small{
+  display:block;
+  margin-top:.75rem;
+  color:#61727a;
+  line-height:1.6;
+}
+
+/* The scorecards communicate auditable facts, not vanity metrics. */
+.knowledge-stats strong[id]{font-variant-numeric:tabular-nums}
+.knowledge-review-line{
+  display:block;
+  margin-top:.45rem;
+  color:#667981;
+  font-size:.72rem;
+  line-height:1.55;
+}
+
+@media (max-width:620px){
+  .article-source-panel{margin-block:1.5rem 1.25rem}
+  .article-meta .actions{display:grid;grid-template-columns:1fr}
+  .article-meta .actions .button{width:100%;justify-content:center}
+}
+
+@media print{
+  .article-source-panel{box-shadow:none;break-inside:avoid}
+}
+</style>
 </head>
 <body data-page-style="corporate" id="top">
 <svg aria-hidden="true" class="icon-sprite" focusable="false">
@@ -4479,7 +5500,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <button aria-label="Tutup menu" class="nav-backdrop" hidden="" tabindex="-1" type="button"></button><noscript><div class="no-script-banner"><div class="shell"><strong>Mode tanpa JavaScript.</strong> Konten tetap dapat dibaca; untuk konsultasi gunakan <a href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi.">WhatsApp</a> atau buka <a href="layanan.html">daftar layanan</a>.</div></div></noscript>
 <nav aria-label="Breadcrumb" class="breadcrumb"><div class="shell"><ol><li><a href="index.html">Beranda</a></li><li><a href="dukungan.html">Dukungan</a></li><li><span aria-current="page">Keamanan</span></li></ol></div></nav>
 <main id="main">
-<section aria-labelledby="page-title" class="hero"><div class="shell hero-frame"><picture class="hero-picture position-left"><img alt="Ruang operasi digital dengan fokus pada pemeriksaan keamanan" data-original-src="assets/security-verification-v16.webp" decoding="async" fetchpriority="high" src="assets/security-verification-v16.webp" height="675" width="1200"/></picture><div class="hero-copy reveal" data-motion="hero"><p class="kicker overline-rule">Keamanan dan anti-penipuan</p><h1 id="page-title">Verifikasi sebelum mengirim data atau pembayaran.</h1><p class="lede">Kanal yang tersedia pada website ini adalah WhatsApp 0878-9252-3968. Bila menerima pesan yang mengatasnamakan Digdaya dari kanal lain, hentikan proses dan lakukan verifikasi.</p><div class="actions"><a class="button" data-inquiry-wa="" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20memverifikasi%20komunikasi%20atau%20permintaan%20pembayaran%20yang%20saya%20terima." rel="noopener noreferrer" target="_blank">Verifikasi melalui WhatsApp</a><a class="button button-ghost" href="#tanda-bahaya">Kenali tanda bahaya</a></div><ul aria-label="Langkah keamanan" class="hero-index"><li>Hentikan</li><li>Periksa</li><li>Verifikasi</li><li>Simpan bukti</li></ul></div></div></section><section aria-labelledby="rev10-security-visual-title" class="section dig-visual-proof" data-rev10-visual-proof="true"><div class="shell"><div class="dig-proof-head"><p class="kicker">Visual alur</p><h2 id="rev10-security-visual-title">Visual alur verifikasi</h2><p>Kanal, data tujuan, pembayaran, lalu konfirmasi.</p></div><figure class="dig-proof-figure"><img alt="Visual alur verifikasi PT Digdaya Inovasi Nusantara" data-original-src="assets/visual-flow-security.webp" decoding="async" loading="lazy" src="assets/visual-flow-security.webp" height="520" width="1200"/><figcaption>Visual ini memperjelas urutan pemeriksaan yang sudah dijelaskan pada halaman keamanan.</figcaption></figure></div></section>
+<section aria-labelledby="page-title" class="hero"><div class="shell hero-frame"><picture class="hero-picture position-left"><img alt="Ruang operasi digital dengan fokus pada pemeriksaan keamanan" data-original-src="assets/security-verification-v16.webp" decoding="async" fetchpriority="high" src="assets/security-verification-v16.webp" height="675" width="1200"/></picture><div class="hero-copy reveal" data-motion="hero"><p class="kicker overline-rule">Keamanan dan anti-penipuan</p><h1 id="page-title">Verifikasi sebelum mengirim data atau pembayaran.</h1><p class="lede">Kanal WhatsApp yang dicantumkan pada website ini adalah Utama 0878-9252-3968, Backup 1 +62 882-0092-57589, dan Backup 2 +62 889-9192-6199. Gunakan nomor Utama sebagai jalur pemeriksaan pertama; bila menerima pesan dari nomor lain, hentikan proses dan cocokkan kembali melalui kanal yang tercantum pada website ini.</p><div class="actions"><a class="button" data-inquiry-wa="" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20memverifikasi%20komunikasi%20atau%20permintaan%20pembayaran%20yang%20saya%20terima." rel="noopener noreferrer" target="_blank">Verifikasi melalui WhatsApp</a><a class="button button-ghost" href="#tanda-bahaya">Kenali tanda bahaya</a></div><ul aria-label="Langkah keamanan" class="hero-index"><li>Hentikan</li><li>Periksa</li><li>Verifikasi</li><li>Simpan bukti</li></ul></div></div></section><section aria-labelledby="rev10-security-visual-title" class="section dig-visual-proof" data-rev10-visual-proof="true"><div class="shell"><div class="dig-proof-head"><p class="kicker">Visual alur</p><h2 id="rev10-security-visual-title">Visual alur verifikasi</h2><p>Kanal, data tujuan, pembayaran, lalu konfirmasi.</p></div><figure class="dig-proof-figure"><img alt="Visual alur verifikasi PT Digdaya Inovasi Nusantara" data-original-src="assets/visual-flow-security.webp" decoding="async" loading="lazy" src="assets/visual-flow-security.webp" height="520" width="1200"/><figcaption>Visual ini memperjelas urutan pemeriksaan yang sudah dijelaskan pada halaman keamanan.</figcaption></figure></div></section>
 <section aria-labelledby="danger-title" class="section" id="tanda-bahaya"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Tanda bahaya</p><h2 id="danger-title">Waspadai permintaan yang melewati batas wajar.</h2></div><p class="lede">Satu tanda belum selalu membuktikan penipuan, tetapi cukup untuk menghentikan proses dan melakukan pemeriksaan.</p></div><div class="grid-4"><article class="card reveal" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-lock"></use></svg></span><span aria-hidden="true" class="card-number">01</span></div><h3>Kode rahasia</h3><p>Meminta password, OTP, PIN, CVV, atau kode pemulihan.</p></article><article class="card reveal" data-delay="1" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-clock"></use></svg></span><span aria-hidden="true" class="card-number">02</span></div><h3>Tekanan waktu</h3><p>Mendesak pembayaran tanpa memberi ruang memeriksa rincian.</p></article><article class="card reveal" data-delay="2" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-check-circle"></use></svg></span><span aria-hidden="true" class="card-number">03</span></div><h3>Janji tanpa pemeriksaan</h3><p>Menjamin stok, domain, harga, hasil, atau refund sebelum memeriksa transaksi.</p></article><article class="card accent-card reveal" data-delay="3" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-key-transfer"></use></svg></span><span aria-hidden="true" class="card-number">04</span></div><h3>Kanal berubah</h3><p>Mengirim rekening, nomor, atau tautan berbeda tanpa konfirmasi.</p></article><article class="card reveal" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-monitor-check"></use></svg></span><span aria-hidden="true" class="card-number">05</span></div><h3>Kendali jarak jauh</h3><p>Meminta instalasi aplikasi remote access tanpa alasan dan pembatasan yang jelas.</p></article><article class="card reveal" data-delay="1" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-lock"></use></svg></span><span aria-hidden="true" class="card-number">06</span></div><h3>Akses berlebihan</h3><p>Meminta akun utama ketika peran atau akses terbatas sebenarnya cukup.</p></article><article class="card reveal" data-delay="2" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-landmark"></use></svg></span><span aria-hidden="true" class="card-number">07</span></div><h3>Entitas tidak jelas</h3><p>Mengaku mewakili PT atau CV tetapi tidak dapat menyebut pihak transaksi.</p></article><article class="card reveal" data-delay="3" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-file-badge"></use></svg></span><span aria-hidden="true" class="card-number">08</span></div><h3>Logo sebagai bukti</h3><p>Menggunakan logo untuk mengaku mitra resmi tanpa dokumen.</p></article></div></div></section>
 <section aria-labelledby="verify-title" class="section paper"><div class="shell editorial-split"><figure class="editorial-media reveal" data-motion="media"><img alt="Pemeriksaan akses dan perangkat pada proses pengembangan website" data-original-src="assets/security-verification-v16.webp" decoding="async" loading="lazy" src="assets/security-verification-v16.webp" height="675" width="1200"/><figcaption>Keamanan yang baik membatasi akses dan mencatat setiap penyerahan.</figcaption></figure><div class="editorial-copy reveal" data-motion="slide-right"><p class="kicker">Sebelum membayar</p><h2 id="verify-title">Tujuh pemeriksaan yang dapat dilakukan siapa pun.</h2><ol class="feature-list"><li><span>01</span><div><strong>Cocokkan nomor</strong><br/><span class="fine">Gunakan nomor pada website.</span></div></li><li><span>02</span><div><strong>Pastikan entitas</strong><br/><span class="fine">Periksa pihak pada dokumen transaksi.</span></div></li><li><span>03</span><div><strong>Periksa rincian</strong><br/><span class="fine">Cocokkan produk, ruang lingkup, nominal, dan biaya.</span></div></li><li><span>04</span><div><strong>Verifikasi pembayaran</strong><br/><span class="fine">Pastikan tujuan sebelum transfer.</span></div></li><li><span>05</span><div><strong>Simpan bukti</strong><br/><span class="fine">Simpan konfirmasi, invoice, dan referensi.</span></div></li><li><span>06</span><div><strong>Jaga kode</strong><br/><span class="fine">Jangan pernah membagikan kode keamanan.</span></div></li><li><span>07</span><div><strong>Tanyakan bila ragu</strong><br/><span class="fine">Hentikan proses sampai verifikasi selesai.</span></div></li></ol></div></div></section>
 <section aria-labelledby="category-safe-title" class="section soft"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Per kategori</p><h2 id="category-safe-title">Setiap layanan memiliki titik rawan berbeda.</h2></div></div><div class="grid-4"><article class="card reveal" data-motion="rise"><h3>Parfum</h3><p>Konfirmasikan produk, ukuran, konsentrasi, kondisi, harga, dan stok. Visual editorial bukan bukti ketersediaan.</p></article><article class="card reveal" data-delay="1" data-motion="rise"><h3>Domain</h3><p>Jangan berikan password registrar atau OTP. Gunakan transfer resmi, akses terbatas, dan verifikasi kepemilikan.</p></article><article class="card reveal" data-delay="2" data-motion="rise"><h3>Website</h3><p>Utamakan akun terpisah, role-based access, backup, dan serah terima terdokumentasi.</p></article><article class="card accent-card reveal" data-delay="3" data-motion="rise"><h3>Top up game</h3><p>Data yang diperlukan adalah game, User ID, server, dan produk. Password, OTP, email login, dan kode pemulihan tidak diperlukan.</p></article></div></div></section>
@@ -4544,7 +5565,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <label class="choice-card"><input aria-describedby="inquiry-consent-note" name="consent" required="" type="checkbox" value="true"/><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-shield-check"></use></svg></span><strong>Saya menyetujui penggunaan data untuk menangani permintaan ini.</strong></label><p class="fine" id="inquiry-consent-note">Pelajari <a href="kebijakan-privasi.html">Kebijakan Privasi</a> sebelum memberi persetujuan.</p>
 <p aria-live="polite" class="status-message" data-form-status="" data-inquiry-status="" role="status"></p>
 <div class="dialog-actions"><button class="button" type="submit">Kirim permintaan</button><a class="button button-ghost" data-inquiry-wa="" hidden="" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank">Lanjut via WhatsApp</a><button class="button button-ghost" data-close-dialog="" data-close-inquiry="" type="button">Batal</button></div>
-<div class="tool-result" data-inquiry-success="" hidden="" tabindex="-1"><h3>Permintaan tersimpan</h3><p>Simpan kode referensi: <strong data-inquiry-reference=""></strong></p></div>
+<div class="tool-result" data-inquiry-success="" hidden="" tabindex="-1"><h3>Permintaan diterima</h3><p>Ikuti petunjuk tindak lanjut yang ditampilkan: <strong data-inquiry-reference=""></strong></p></div>
 </form>
 </div>
 </dialog>
@@ -4602,7 +5623,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
     'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), details > summary, [tabindex]:not([tabindex="-1"])',
     scope,
   ).filter((element) => {
-    if (element.hidden || element.closest("[hidden],[inert]") || element.getAttribute("aria-hidden") === "true") return false;
+    if (element.hidden || element.closest('[hidden],[inert],[aria-hidden="true"]')) return false;
     const style = getComputedStyle(element);
     if (style.display === "none" || style.visibility === "hidden") return false;
     const rect = element.getBoundingClientRect();
@@ -4643,17 +5664,24 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
     const closeIcon = qs(".close-icon", menuButton);
     const inertTargets = [qs(".skip-link"), qs(".brand", header), qs(".breadcrumb"), qs("main"), qs(".site-footer"), qs(".wa-float")];
     const groups = qsa(".nav-group", navigation);
+    let menuFocusToken = 0;
 
     const closeGroup = (group, restoreFocus = false) => {
       const toggle = qs(".nav-toggle", group);
       const flyout = qs(".nav-flyout", group);
       if (!toggle || !flyout) return;
       const label = qs(".nav-parent", group)?.textContent.trim() || "navigasi";
+      if (restoreFocus || flyout.contains(document.activeElement)) {
+        try {
+          toggle.focus({ preventScroll: true });
+        } catch {
+          toggle.focus();
+        }
+      }
       group.classList.remove("is-open");
       toggle.setAttribute("aria-expanded", "false");
       toggle.setAttribute("aria-label", `Buka submenu ${label}`);
       flyout.hidden = true;
-      if (restoreFocus) toggle.focus();
     };
     const closeGroups = (except = null) => groups.forEach((group) => { if (group !== except) closeGroup(group); });
     const openGroup = (group) => {
@@ -4697,7 +5725,15 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
       if (closeIcon) closeIcon.hidden = !open;
     };
     const closeMenu = (restoreFocus = false) => {
+      menuFocusToken += 1;
       const wasOpen = navigation.classList.contains("is-open");
+      if ((restoreFocus && wasOpen) || navigation.contains(document.activeElement)) {
+        try {
+          menuButton.focus({ preventScroll: true });
+        } catch {
+          menuButton.focus();
+        }
+      }
       navigation.classList.remove("is-open");
       navigation.setAttribute("aria-hidden", mobileMedia.matches ? "true" : "false");
       menuButton.setAttribute("aria-expanded", "false");
@@ -4707,9 +5743,9 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
       if (backdrop) backdrop.hidden = true;
       setInert(inertTargets, false);
       closeGroups();
-      if (restoreFocus && wasOpen) menuButton.focus();
     };
     const openMenu = (focusFirstItem = false) => {
+      const focusToken = ++menuFocusToken;
       navigation.classList.add("is-open");
       navigation.setAttribute("aria-hidden", "false");
       menuButton.setAttribute("aria-expanded", "true");
@@ -4718,7 +5754,34 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
       document.body.classList.add("menu-open");
       if (backdrop) backdrop.hidden = false;
       setInert(inertTargets, true);
-      if (focusFirstItem) requestAnimationFrame(() => getFocusable(navigation)[0]?.focus());
+      if (focusFirstItem) {
+        requestAnimationFrame(() => {
+          const focusFirst = () => {
+            if (focusToken !== menuFocusToken || !navigation.classList.contains("is-open") || menuButton.getAttribute("aria-expanded") !== "true") return;
+            getFocusable(navigation)[0]?.focus();
+          };
+          if (reduceMotion.matches || !navigation.classList.contains("dig-v21-nav-animating")) {
+            focusFirst();
+            return;
+          }
+
+          let fallbackTimer = 0;
+          const cleanup = () => {
+            navigation.removeEventListener("transitionend", onRevealEnd);
+            window.clearTimeout(fallbackTimer);
+          };
+          const onRevealEnd = (event) => {
+            if (event.target !== navigation || !["clip-path", "-webkit-clip-path"].includes(event.propertyName)) return;
+            cleanup();
+            focusFirst();
+          };
+          navigation.addEventListener("transitionend", onRevealEnd);
+          fallbackTimer = window.setTimeout(() => {
+            cleanup();
+            focusFirst();
+          }, 480);
+        });
+      }
     };
 
     menuButton.addEventListener("click", (event) => navigation.classList.contains("is-open") ? closeMenu(true) : openMenu(event.detail === 0));
@@ -5310,13 +6373,13 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 
   const inquiryStatusMessage = (result) => {
     if (result.ok) {
-      return `Permintaan tersimpan. Kode referensi: ${result.reference || "DIN-TERKIRIM"}.`;
+      return "Pesan diterima oleh endpoint yang dikonfigurasi. Simpan bukti konfirmasi dari kanal tersebut.";
     }
     if (result.code === "WA_ONLY") {
       return `${result.error} Gunakan tombol WhatsApp untuk melanjutkan.`;
     }
     if (result.code === "TIMEOUT" || result.code === "NETWORK_ERROR") {
-      return `${result.error} Permintaan belum dipastikan tersimpan; Anda dapat melanjutkan melalui WhatsApp.`;
+      return `${result.error} Belum ada konfirmasi penerimaan; Anda dapat melanjutkan melalui WhatsApp.`;
     }
     if (result.status === 429) {
       return "Terlalu banyak permintaan. Tunggu beberapa menit sebelum mencoba kembali, atau gunakan WhatsApp.";
@@ -7351,6 +8414,788 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
     document.addEventListener('DOMContentLoaded', init, { once: true });
   } else {
     init();
+  }
+})();
+</script>
+<script data-inline-from="assets/js/revision-v21-menu.js" id="digdaya-revision-v21-menu-script">
+/* DIGDAYA V21 — idempotent mobile-menu state repair. */
+(function () {
+  "use strict";
+
+  var doc = document;
+  var root = doc.documentElement;
+  var MOBILE_QUERY = "(max-width: 1180px)";
+  var REDUCED_QUERY = "(prefers-reduced-motion: reduce)";
+
+  function boot() {
+    if (root.getAttribute("data-dig-v21-menu") === "ready") return;
+
+    var menuButton = doc.querySelector(".menu-button[aria-controls='main-nav']");
+    var navigation = doc.getElementById("main-nav");
+    if (!menuButton || !navigation) return;
+
+    root.setAttribute("data-dig-v21-menu", "ready");
+
+    var backdrop = doc.querySelector(".nav-backdrop");
+    var mobileMedia = window.matchMedia(MOBILE_QUERY);
+    var reducedMedia = window.matchMedia(REDUCED_QUERY);
+    var groups = Array.prototype.slice.call(navigation.querySelectorAll(".nav-group"));
+    var navTimer = 0;
+    var subnavState = new WeakMap();
+
+    function isMobile() {
+      return mobileMedia.matches;
+    }
+
+    function prefersReducedMotion() {
+      return reducedMedia.matches;
+    }
+
+    function focusWithoutScroll(element) {
+      if (!element || typeof element.focus !== "function") return;
+      try {
+        element.focus({ preventScroll: true });
+      } catch (error) {
+        element.focus();
+      }
+    }
+
+    function setExpandedLabel(toggle, expanded) {
+      if (!toggle) return;
+      var group = toggle.closest(".nav-group");
+      var parent = group ? group.querySelector(".nav-parent") : null;
+      var label = parent && parent.textContent.trim() ? parent.textContent.trim() : "navigasi";
+      toggle.setAttribute("aria-label", (expanded ? "Tutup submenu " : "Buka submenu ") + label);
+    }
+
+    function clearSubnavTimer(flyout) {
+      var state = subnavState.get(flyout);
+      if (state && state.timer) window.clearTimeout(state.timer);
+      if (state && state.onEnd) flyout.removeEventListener("transitionend", state.onEnd);
+      return state ? state.token + 1 : 1;
+    }
+
+    function clearSubnavInlineStyles(flyout) {
+      flyout.style.removeProperty("height");
+      flyout.style.removeProperty("--dig-v21-subnav-duration");
+    }
+
+    function releaseSubnav(group) {
+      var toggle = group.querySelector(".nav-toggle");
+      var flyout = group.querySelector(".nav-flyout");
+      if (!toggle || !flyout) return;
+
+      clearSubnavTimer(flyout);
+      subnavState.delete(flyout);
+      flyout.classList.remove("dig-v21-subnav-open", "dig-v21-subnav-animating");
+      flyout.removeAttribute("aria-hidden");
+      flyout.removeAttribute("inert");
+      clearSubnavInlineStyles(flyout);
+    }
+
+    function settleSubnav(group, expanded) {
+      var toggle = group.querySelector(".nav-toggle");
+      var flyout = group.querySelector(".nav-flyout");
+      if (!toggle || !flyout) return;
+
+      clearSubnavTimer(flyout);
+      subnavState.delete(flyout);
+      clearSubnavInlineStyles(flyout);
+      flyout.classList.remove("dig-v21-subnav-animating");
+      setExpandedLabel(toggle, expanded);
+
+      if (expanded) {
+        flyout.hidden = false;
+        flyout.removeAttribute("aria-hidden");
+        flyout.removeAttribute("inert");
+        flyout.classList.add("dig-v21-subnav-open");
+      } else {
+        flyout.classList.remove("dig-v21-subnav-open");
+        flyout.setAttribute("aria-hidden", "true");
+        flyout.setAttribute("inert", "");
+        flyout.hidden = true;
+      }
+    }
+
+    function animateSubnav(group, expanded) {
+      var toggle = group.querySelector(".nav-toggle");
+      var flyout = group.querySelector(".nav-flyout");
+      if (!toggle || !flyout) return;
+
+      if (!isMobile()) {
+        releaseSubnav(group);
+        return;
+      }
+
+      if (expanded &&
+          flyout.classList.contains("dig-v21-subnav-open") &&
+          !flyout.classList.contains("dig-v21-subnav-animating") &&
+          !flyout.hidden) return;
+      if (!expanded &&
+          !flyout.classList.contains("dig-v21-subnav-open") &&
+          !flyout.classList.contains("dig-v21-subnav-animating") &&
+          flyout.hidden) return;
+
+      if (!expanded && flyout.contains(doc.activeElement)) {
+        focusWithoutScroll(toggle);
+      }
+
+      var token = clearSubnavTimer(flyout);
+      /* Legacy closeGroup() sets hidden first; expose it before measuring the
+       * still-stable V21 open class so WebKit returns the painted height. */
+      flyout.hidden = false;
+      var from = flyout.getBoundingClientRect().height;
+
+      flyout.classList.remove("dig-v21-subnav-open");
+      flyout.classList.add("dig-v21-subnav-animating");
+      /* Links remain outside the accessibility/tab sequence until the
+       * opening reveal is fully painted; closing links are disabled first. */
+      flyout.setAttribute("aria-hidden", "true");
+      flyout.setAttribute("inert", "");
+      setExpandedLabel(toggle, expanded);
+
+      flyout.style.setProperty("height", Math.max(0, from) + "px", "important");
+      /* Flush the current frame so a rapid reversal starts where it is drawn. */
+      void flyout.offsetHeight;
+
+      var target = expanded ? flyout.scrollHeight : 0;
+      var fullDistance = Math.max(flyout.scrollHeight, from, 1);
+      var remaining = Math.abs(target - from) / fullDistance;
+      var duration = prefersReducedMotion() ? 0 : Math.round(Math.max(110, 240 * remaining));
+
+      function finish() {
+        var activeState = subnavState.get(flyout);
+        if (!activeState || activeState.token !== token) return;
+        flyout.removeEventListener("transitionend", activeState.onEnd);
+        window.clearTimeout(activeState.timer);
+        subnavState.delete(flyout);
+        settleSubnav(group, expanded && toggle.getAttribute("aria-expanded") === "true");
+      }
+
+      function onEnd(event) {
+        if (event.target === flyout && event.propertyName === "height") finish();
+      }
+
+      if (duration === 0 || Math.abs(target - from) < 1) {
+        settleSubnav(group, expanded);
+        return;
+      }
+
+      flyout.style.setProperty("--dig-v21-subnav-duration", duration + "ms");
+      flyout.addEventListener("transitionend", onEnd);
+      var timer = window.setTimeout(finish, duration + 90);
+      subnavState.set(flyout, { token: token, timer: timer, onEnd: onEnd });
+
+      window.requestAnimationFrame(function () {
+        var activeState = subnavState.get(flyout);
+        if (!activeState || activeState.token !== token) return;
+        flyout.style.setProperty("height", target + "px", "important");
+      });
+    }
+
+    function syncSubnavs(animate) {
+      groups.forEach(function (group) {
+        var toggle = group.querySelector(".nav-toggle");
+        if (!toggle) return;
+        var expanded = toggle.getAttribute("aria-expanded") === "true";
+        if (!isMobile()) releaseSubnav(group);
+        else if (animate) animateSubnav(group, expanded);
+        else settleSubnav(group, expanded);
+      });
+    }
+
+    function clearNavTimer() {
+      if (navTimer) window.clearTimeout(navTimer);
+      navTimer = 0;
+    }
+
+    function settleNavigation(expanded) {
+      clearNavTimer();
+      navigation.classList.remove("dig-v21-nav-animating", "dig-v21-nav-arming", "dig-v21-nav-idle", "dig-v21-nav-settled");
+      navigation.classList.add(expanded ? "dig-v21-nav-settled" : "dig-v21-nav-idle");
+      if (!expanded) navigation.scrollTop = 0;
+    }
+
+    function armNavigation() {
+      if (!isMobile()) return;
+      clearNavTimer();
+
+      /* Moving from the settled `none` clip to inset(0) must be atomic;
+       * otherwise WebKit treats it as a discrete transition before close. */
+      if (navigation.classList.contains("is-open") &&
+          navigation.classList.contains("dig-v21-nav-settled")) {
+        navigation.classList.add("dig-v21-nav-arming");
+        navigation.classList.remove("dig-v21-nav-settled", "dig-v21-nav-idle");
+        void window.getComputedStyle(navigation).clipPath;
+        navigation.classList.remove("dig-v21-nav-arming");
+        void window.getComputedStyle(navigation).clipPath;
+      }
+
+      navigation.classList.remove("dig-v21-nav-settled", "dig-v21-nav-idle");
+      navigation.classList.add("dig-v21-nav-animating");
+      /* Materialise inset(0) before legacy code removes .is-open. */
+      void window.getComputedStyle(navigation).clipPath;
+    }
+
+    function onNavigationStateChange() {
+      var expanded = menuButton.getAttribute("aria-expanded") === "true";
+
+      if (!expanded && navigation.contains(doc.activeElement)) {
+        focusWithoutScroll(menuButton);
+      }
+
+      if (navigation.classList.contains(expanded ? "dig-v21-nav-settled" : "dig-v21-nav-idle") &&
+          navigation.classList.contains("is-open") === expanded) return;
+
+      if (!isMobile() || prefersReducedMotion()) {
+        settleNavigation(expanded);
+        return;
+      }
+
+      navigation.classList.remove("dig-v21-nav-settled", "dig-v21-nav-idle");
+      navigation.classList.add("dig-v21-nav-animating");
+      clearNavTimer();
+      navTimer = window.setTimeout(function () {
+        settleNavigation(menuButton.getAttribute("aria-expanded") === "true");
+      }, 390);
+    }
+
+    function resetFromPageCache() {
+      var focusedInside = navigation.contains(doc.activeElement);
+
+      /* Never hide the focused subtree: move focus before restoring the
+       * closed BFCache snapshot so VoiceOver/Safari retain a valid target. */
+      if (focusedInside) focusWithoutScroll(menuButton);
+
+      clearNavTimer();
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Buka menu utama");
+      menuButton.classList.remove("dig-menu-opening", "dig-menu-closing");
+      navigation.classList.remove("is-open", "dig-v21-nav-animating", "dig-v21-nav-arming", "dig-v21-nav-settled");
+      navigation.classList.add("dig-v21-nav-idle");
+      navigation.scrollTop = 0;
+      if (isMobile()) navigation.setAttribute("aria-hidden", "true");
+      else navigation.removeAttribute("aria-hidden");
+
+      doc.body.classList.remove("menu-open");
+      root.classList.remove("dig-nav-lock");
+      if (backdrop) backdrop.hidden = true;
+
+      [".skip-link", ".site-header .brand", ".breadcrumb", "main", ".site-footer", ".wa-float"].forEach(function (selector) {
+        var element = doc.querySelector(selector);
+        if (element) element.removeAttribute("inert");
+      });
+
+      groups.forEach(function (group) {
+        var toggle = group.querySelector(".nav-toggle");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
+        group.classList.remove("is-open");
+        settleSubnav(group, false);
+      });
+
+      var menuIcon = menuButton.querySelector(".menu-icon");
+      var closeIcon = menuButton.querySelector(".close-icon");
+      if (menuIcon) menuIcon.hidden = false;
+      if (closeIcon) closeIcon.hidden = true;
+    }
+
+    /* Arm every known close path before the legacy runtime changes .is-open. */
+    menuButton.addEventListener("click", armNavigation, true);
+    navigation.addEventListener("click", function (event) {
+      if (event.target.closest("a[href], .nav-close")) armNavigation();
+    }, true);
+    if (backdrop) backdrop.addEventListener("click", armNavigation, true);
+    doc.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" &&
+          menuButton.getAttribute("aria-expanded") === "true" &&
+          !navigation.querySelector(".nav-group.is-open")) {
+        armNavigation();
+      }
+    }, true);
+
+    navigation.addEventListener("transitionend", function (event) {
+      if (event.target !== navigation) return;
+      if (event.propertyName !== "clip-path" && event.propertyName !== "-webkit-clip-path") return;
+      if (!navigation.classList.contains("dig-v21-nav-animating")) return;
+      settleNavigation(menuButton.getAttribute("aria-expanded") === "true");
+    });
+
+    var stateObserver = new MutationObserver(function (records) {
+      records.forEach(function (record) {
+        if (record.target === menuButton) {
+          onNavigationStateChange();
+          return;
+        }
+
+        var toggle = record.target;
+        var group = toggle.closest(".nav-group");
+        if (group) animateSubnav(group, toggle.getAttribute("aria-expanded") === "true");
+      });
+    });
+
+    stateObserver.observe(menuButton, { attributes: true, attributeFilter: ["aria-expanded"] });
+    groups.forEach(function (group) {
+      var toggle = group.querySelector(".nav-toggle");
+      if (toggle) stateObserver.observe(toggle, { attributes: true, attributeFilter: ["aria-expanded"] });
+    });
+
+    function onViewportChange() {
+      if (isMobile()) {
+        settleNavigation(menuButton.getAttribute("aria-expanded") === "true");
+        syncSubnavs(false);
+      } else {
+        clearNavTimer();
+        navigation.classList.remove("dig-v21-nav-animating", "dig-v21-nav-arming", "dig-v21-nav-idle", "dig-v21-nav-settled");
+        syncSubnavs(false);
+      }
+    }
+
+    if (typeof mobileMedia.addEventListener === "function") {
+      mobileMedia.addEventListener("change", onViewportChange);
+      reducedMedia.addEventListener("change", onViewportChange);
+    } else {
+      mobileMedia.addListener(onViewportChange);
+      reducedMedia.addListener(onViewportChange);
+    }
+
+    window.addEventListener("pageshow", function (event) {
+      if (event.persisted || navigation.classList.contains("is-open") || doc.body.classList.contains("menu-open")) {
+        resetFromPageCache();
+      }
+    });
+
+    settleNavigation(menuButton.getAttribute("aria-expanded") === "true");
+    syncSubnavs(false);
+  }
+
+  if (doc.readyState === "loading") {
+    doc.addEventListener("DOMContentLoaded", boot, { once: true });
+  } else {
+    boot();
+  }
+}());
+</script>
+<script data-inline-from="assets/js/revision-v21-ui.js" id="digdaya-revision-v21-ui-script">
+/* DIGDAYA REVISION V21 — idempotent newsroom/detail UI runtime. */
+(() => {
+  'use strict';
+
+  const GLOBAL_KEY = '__digdayaRevisionV21Ui';
+  const VERSION = '21.0.0';
+  const existing = globalThis[GLOBAL_KEY];
+
+  if (existing && existing.version === VERSION) {
+    if (typeof existing.refresh === 'function') existing.refresh();
+    return;
+  }
+
+  const runtime = {
+    version: VERSION,
+    refresh: null,
+    observers: [],
+    cleanups: [],
+    cardIndex: 0,
+  };
+  globalThis[GLOBAL_KEY] = runtime;
+
+  const q = (selector, scope = document) => scope.querySelector(selector);
+  const qsa = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+  const compactMedia = window.matchMedia('(max-width: 720px)');
+
+  const makeUniqueId = (prefix) => {
+    let id = `${prefix}-${++runtime.cardIndex}`;
+    while (document.getElementById(id)) id = `${prefix}-${++runtime.cardIndex}`;
+    return id;
+  };
+
+  const normalise = (value) => String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLocaleLowerCase('id')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+
+  const enhanceFigure = (figure) => {
+    if (!(figure instanceof HTMLElement)) return;
+
+    qsa(':scope > .dig-news-art-layer', figure).forEach((layer) => {
+      layer.hidden = true;
+      layer.setAttribute('aria-hidden', 'true');
+    });
+
+    const image = q(':scope > img', figure);
+    const caption = q(':scope > figcaption', figure);
+    if (image && caption && caption.textContent.trim()) {
+      /* The visible figcaption already communicates the illustrative nature. */
+      image.alt = '';
+      image.setAttribute('aria-hidden', 'true');
+    }
+
+    figure.dataset.v21Figure = 'true';
+  };
+
+  const enhanceCard = (card) => {
+    if (!(card instanceof HTMLElement)) return;
+
+    const heading = q('h3', card);
+    if (heading) {
+      if (!heading.id) heading.id = makeUniqueId('news-card-title');
+      card.setAttribute('aria-labelledby', heading.id);
+    }
+
+    const figure = q('.live-news-visual', card);
+    if (figure) enhanceFigure(figure);
+    card.dataset.v21Card = 'true';
+  };
+
+  const enhanceCards = (scope = document) => {
+    if (scope instanceof Element && scope.matches('.live-news-card')) enhanceCard(scope);
+    qsa('.live-news-card', scope).forEach(enhanceCard);
+  };
+
+  const updateFilterSummary = (panel) => {
+    const summaryMeta = q('[data-v21-filter-meta]', panel);
+    const controls = q('.live-news-controls', panel);
+    if (!summaryMeta || !controls) return;
+
+    const selects = qsa('select', controls);
+    const active = selects.filter((select) => select.value && select.value !== 'all').length;
+    summaryMeta.textContent = active ? `${active} filter aktif` : `${selects.length} pilihan`;
+  };
+
+  const syncFilterMode = (panel, forceCompactReset = false) => {
+    if (!(panel instanceof HTMLDetailsElement)) return;
+
+    if (!compactMedia.matches) {
+      panel.open = true;
+      panel.dataset.v21Compact = 'false';
+      return;
+    }
+
+    const enteringCompact = panel.dataset.v21Compact !== 'true';
+    panel.dataset.v21Compact = 'true';
+    if (enteringCompact || forceCompactReset) panel.open = false;
+  };
+
+  const enhanceFilters = () => {
+    const controls = q('.live-news-controls');
+    if (!controls) return;
+
+    let panel = controls.closest('.live-news-filter-panel');
+    if (!panel) {
+      panel = document.createElement('details');
+      panel.className = 'live-news-filter-panel';
+      panel.dataset.v21Filters = 'true';
+
+      const summary = document.createElement('summary');
+      summary.className = 'live-news-filter-summary';
+
+      const label = document.createElement('span');
+      label.textContent = 'Filter dan urutkan';
+      const meta = document.createElement('small');
+      meta.dataset.v21FilterMeta = '';
+      summary.append(label, meta);
+
+      if (!controls.id) controls.id = makeUniqueId('newsroom-filters');
+      summary.setAttribute('aria-controls', controls.id);
+
+      controls.before(panel);
+      panel.append(summary, controls);
+
+      controls.addEventListener('change', () => updateFilterSummary(panel));
+      const reset = q('[data-live-news-retry]');
+      if (reset) {
+        reset.addEventListener('click', () => {
+          window.requestAnimationFrame(() => updateFilterSummary(panel));
+        });
+      }
+    }
+
+    updateFilterSummary(panel);
+    syncFilterMode(panel);
+  };
+
+  const finishNewsroomProgress = () => {
+    const progress = q('[data-live-news-progress]');
+    if (!(progress instanceof HTMLProgressElement)) return;
+
+    const complete = Number(progress.max) > 0 && Number(progress.value) >= Number(progress.max);
+    progress.dataset.v21Complete = String(complete);
+    progress.hidden = complete;
+
+    if (complete) {
+      progress.setAttribute('aria-hidden', 'true');
+      progress.setAttribute('aria-label', 'Pemuatan wawasan selesai');
+    } else {
+      progress.removeAttribute('aria-hidden');
+      progress.setAttribute('aria-label', 'Progres pemuatan wawasan');
+    }
+  };
+
+  const sectionName = (headingText) => {
+    const value = normalise(headingText);
+    if (value.includes('langkah') || value.includes('pemeriksaan') || value.includes('verifikasi')) return 'verification';
+    if (value.includes('asal') || value.includes('provenance')) return 'provenance';
+    if (value.includes('batas')) return 'limits';
+    if (value.includes('status')) return 'status';
+    return value || 'section';
+  };
+
+  const enhanceDetail = () => {
+    const main = q('.news-detail-main');
+    if (!main) return;
+
+    const analysis = q('.news-detail-analysis', main);
+    if (analysis) {
+      qsa(':scope > article', analysis).forEach((section) => {
+        const heading = q('h2', section);
+        if (!heading) return;
+        if (!heading.id) heading.id = makeUniqueId(`news-detail-${sectionName(heading.textContent)}`);
+        section.dataset.v21Section = sectionName(heading.textContent);
+        section.setAttribute('aria-labelledby', heading.id);
+      });
+
+      /* The source runtime owns document order: content, integrity, actions.
+       * Preserve that trust-first sequence instead of reparenting controls. */
+    }
+
+    qsa('.news-detail-actions,.news-detail-nav,.live-news-actions', main).forEach((zone) => {
+      zone.dataset.contactCollisionZone = '';
+    });
+
+    const figure = q('.news-detail-visual');
+    if (figure) enhanceFigure(figure);
+
+    main.dataset.v21Detail = 'true';
+  };
+
+  const enhanceNewsroom = () => {
+    enhanceFilters();
+    finishNewsroomProgress();
+    enhanceCards();
+  };
+
+  const initProgressObserver = () => {
+    const progress = q('[data-live-news-progress]');
+    if (!progress || progress.dataset.v21ProgressObserver === 'true') return;
+    progress.dataset.v21ProgressObserver = 'true';
+
+    const observer = new MutationObserver(finishNewsroomProgress);
+    observer.observe(progress, { attributes: true, attributeFilter: ['value', 'max'] });
+    runtime.observers.push(observer);
+  };
+
+  const initDynamicNewsObserver = () => {
+    const newsroom = q('[data-live-news]');
+    if (!newsroom || newsroom.dataset.v21Observer === 'true') return;
+    newsroom.dataset.v21Observer = 'true';
+
+    let frame = 0;
+    const schedule = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        enhanceNewsroom();
+      });
+    };
+
+    const observer = new MutationObserver((records) => {
+      let needsRefresh = false;
+      records.forEach((record) => {
+        record.addedNodes.forEach((node) => {
+          if (!(node instanceof Element)) return;
+          if (node.matches('.live-news-card')) enhanceCard(node);
+          enhanceCards(node);
+          if (node.matches('.live-news-controls') || q('.live-news-controls', node)) needsRefresh = true;
+        });
+      });
+      finishNewsroomProgress();
+      if (needsRefresh) schedule();
+    });
+    observer.observe(newsroom, { childList: true, subtree: true });
+    runtime.observers.push(observer);
+  };
+
+  const initContactSafety = () => {
+    const contact = q('[data-quick-contact]');
+    if (!contact || contact.dataset.v21ContactSafety === 'true') return;
+    contact.dataset.v21ContactSafety = 'true';
+
+    const toggle = q('[data-contact-toggle]', contact);
+    const panel = q('[data-quick-contact-panel]', contact);
+    if (!toggle) return;
+
+    const zoneSelector = [
+      '.site-footer',
+      '[data-contact-collision-zone]',
+      '.news-detail-analysis > article',
+      '.news-detail-related-list > a',
+      '.live-news-card-body > a',
+    ].join(',');
+
+    let frame = 0;
+    let ownCollision = false;
+    let keyboardOpen = false;
+
+    const overlaps = (a, b, pad = 10) => (
+      a.left < b.right + pad
+      && a.right > b.left - pad
+      && a.top < b.bottom + pad
+      && a.bottom > b.top - pad
+    );
+
+    const closePanel = () => {
+      if (panel) panel.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+    };
+
+    const moveFocusOutsideContact = () => {
+      const target = document.body.classList.contains('menu-open')
+        ? q('.menu-button')
+        : q('.site-header .brand') || q('.skip-link');
+      if (!target || typeof target.focus !== 'function') return;
+      try {
+        target.focus({ preventScroll: true });
+      } catch (error) {
+        target.focus();
+      }
+    };
+
+    const syncA11yState = () => {
+      const hiddenBySite = contact.classList.contains('dig-footer-collision')
+        || document.body.classList.contains('menu-open');
+      const hidden = ownCollision || keyboardOpen || hiddenBySite;
+
+      if (hidden) {
+        if (contact.contains(document.activeElement)) moveFocusOutsideContact();
+        closePanel();
+      }
+      contact.toggleAttribute('inert', hidden);
+      if (hidden) contact.setAttribute('aria-hidden', 'true');
+      else contact.removeAttribute('aria-hidden');
+    };
+
+    const measure = () => {
+      frame = 0;
+
+      const visualViewport = window.visualViewport;
+      keyboardOpen = Boolean(
+        visualViewport
+        && visualViewport.height > 0
+        && visualViewport.height < window.innerHeight * .66
+      );
+
+      const contactRects = [toggle.getBoundingClientRect()];
+      if (panel && !panel.hidden && panel.getClientRects().length) {
+        contactRects.push(panel.getBoundingClientRect());
+      }
+      let nextCollision = false;
+
+      if (contactRects.some((rect) => rect.width > 0 && rect.height > 0)) {
+        const zones = qsa(zoneSelector).filter((zone) => !contact.contains(zone));
+        nextCollision = zones.some((zone) => {
+          if (!zone.getClientRects().length) return false;
+          const zoneRect = zone.getBoundingClientRect();
+          return contactRects.some((rect) => rect.width > 0 && rect.height > 0 && overlaps(rect, zoneRect));
+        });
+      }
+
+      ownCollision = nextCollision;
+      contact.classList.toggle('dig-v21-collision', ownCollision);
+      contact.classList.toggle('dig-v21-keyboard', keyboardOpen);
+      syncA11yState();
+    };
+
+    const schedule = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(measure);
+    };
+
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule, { passive: true });
+    window.addEventListener('orientationchange', schedule, { passive: true });
+    window.addEventListener('pageshow', schedule);
+    document.addEventListener('visibilitychange', schedule);
+    document.addEventListener('focusin', schedule);
+    document.addEventListener('focusout', schedule);
+
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', schedule, { passive: true });
+      window.visualViewport.addEventListener('scroll', schedule, { passive: true });
+    }
+
+    const contactObserver = new MutationObserver(schedule);
+    contactObserver.observe(contact, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+    runtime.observers.push(contactObserver);
+
+    const bodyObserver = new MutationObserver(schedule);
+    bodyObserver.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+    runtime.observers.push(bodyObserver);
+
+    const main = q('main');
+    if (main) {
+      const contentObserver = new MutationObserver(schedule);
+      contentObserver.observe(main, { childList: true, subtree: true });
+      runtime.observers.push(contentObserver);
+    }
+
+    if ('ResizeObserver' in window) {
+      const resizeObserver = new ResizeObserver(schedule);
+      resizeObserver.observe(toggle);
+      const detailMain = q('.news-detail-main');
+      if (detailMain) resizeObserver.observe(detailMain);
+      runtime.observers.push(resizeObserver);
+    }
+
+    runtime.cleanups.push(() => {
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+      window.removeEventListener('orientationchange', schedule);
+      window.removeEventListener('pageshow', schedule);
+      document.removeEventListener('visibilitychange', schedule);
+      document.removeEventListener('focusin', schedule);
+      document.removeEventListener('focusout', schedule);
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', schedule);
+        window.visualViewport.removeEventListener('scroll', schedule);
+      }
+    });
+
+    schedule();
+  };
+
+  const refresh = () => {
+    enhanceNewsroom();
+    enhanceDetail();
+    initProgressObserver();
+    initDynamicNewsObserver();
+    initContactSafety();
+    document.documentElement.classList.add('dig-v21-ui-ready');
+  };
+  runtime.refresh = refresh;
+
+  const onCompactChange = () => {
+    qsa('.live-news-filter-panel').forEach((panel) => syncFilterMode(panel, true));
+  };
+
+  if (typeof compactMedia.addEventListener === 'function') {
+    compactMedia.addEventListener('change', onCompactChange);
+    runtime.cleanups.push(() => compactMedia.removeEventListener('change', onCompactChange));
+  } else if (typeof compactMedia.addListener === 'function') {
+    compactMedia.addListener(onCompactChange);
+    runtime.cleanups.push(() => compactMedia.removeListener(onCompactChange));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', refresh, { once: true });
+  } else {
+    refresh();
   }
 })();
 </script>
