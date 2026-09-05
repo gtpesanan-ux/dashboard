@@ -5281,6 +5281,49 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
   .article-source-panel{box-shadow:none;break-inside:avoid}
 }
 </style>
+
+<style id="digdaya-footer-polish-v1">
+/* Footer-only polish: seamless organic wave and balanced social-icon geometry. */
+.site-footer{margin-top:0!important}
+.site-footer .site-footer-wave-accent{fill:transparent!important}
+.site-footer .social-contact-list{
+  display:grid!important;
+  grid-template-columns:repeat(8,30px)!important;
+  grid-auto-rows:58px!important;
+  column-gap:4px!important;
+  row-gap:12px!important;
+  width:max-content!important;
+  max-width:100%!important;
+  margin:0 0 0 auto!important;
+  justify-content:end!important;
+  justify-items:center!important;
+  align-items:center!important;
+  align-content:start!important;
+}
+.site-footer .social-contact{grid-column:span 2;flex:none!important;margin:0!important}
+.site-footer .social-contact[aria-label="Email"]{grid-column:2/span 2}
+.site-footer .social-contact[aria-label="Facebook"]{grid-column:4/span 2}
+.site-footer .social-contact[aria-label="TikTok"]{grid-column:6/span 2}
+@media(max-width:760px){
+  .site-footer .social-contact-list{
+    grid-template-columns:repeat(8,26px)!important;
+    grid-auto-rows:48px!important;
+    column-gap:4px!important;
+    row-gap:12px!important;
+    width:max-content!important;
+    max-width:100%!important;
+    margin:0 auto!important;
+    justify-content:center!important;
+    justify-self:center!important;
+  }
+  .site-footer .social-contact{
+    width:48px!important;
+    height:48px!important;
+    flex-basis:auto!important;
+    border-radius:50%!important;
+  }
+}
+</style>
 </head>
 <body data-page-style="corporate" id="top">
 <svg aria-hidden="true" class="icon-sprite" focusable="false">
@@ -5552,14 +5595,14 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 </div>
 </div>
 <div aria-label="Kanal kontak dan sosial" class="social-contact-list">
-<a aria-label="Instagram" class="social-contact" href="" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="15" rx="4" stroke="currentColor" stroke-width="1.8" width="15" x="4.5" y="4.5"></rect><circle cx="12" cy="12" fill="none" r="3.4" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.1" cy="6.9" fill="currentColor" r="1"></circle></svg></a>
+<span aria-label="Instagram" class="social-contact" role="img" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="15" rx="4" stroke="currentColor" stroke-width="1.8" width="15" x="4.5" y="4.5"></rect><circle cx="12" cy="12" fill="none" r="3.4" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.1" cy="6.9" fill="currentColor" r="1"></circle></svg></span>
 <a aria-label="Buka profil LinkedIn" class="social-contact" href="https://www.linkedin.com/in/achmad-zaenuddin-7285ba433" rel="noopener noreferrer" target="_blank" title="LinkedIn"><span class="brand-text">in</span></a>
-<a aria-label="Threads" class="social-contact" href="" title="Threads"><span class="brand-text">@</span></a>
+<span aria-label="Threads" class="social-contact" role="img" title="Threads"><span class="brand-text">@</span></span>
 <button aria-label="Buka pilihan WhatsApp" class="social-contact" data-contact-open="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
 <span aria-disabled="true" aria-label="Telegram" class="social-contact" title="Telegram"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m3.5 11.1 16.4-6.4-3 14.6-5.1-4-2.9 2.7.4-4.3 7.8-6.5-9.7 5.1-3.9-1.2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.6"></path></svg></span>
 <a aria-label="Kirim email ke companydirac@gmail.com" class="social-contact" href="mailto:companydirac@gmail.com" title="Email"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="13" rx="2" stroke="currentColor" stroke-width="1.8" width="17" x="3.5" y="5.5"></rect><path d="m5 7 7 5.2L19 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a>
-<a aria-label="Facebook" class="social-contact" href="" title="Facebook"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13.7 21v-7.8h2.6l.4-3h-3V8.3c0-.9.3-1.5 1.6-1.5H17V4.1c-.7-.1-1.5-.2-2.4-.2-2.4 0-4 1.5-4 4.1v2.2H8v3h2.6V21h3.1Z" fill="currentColor"></path></svg></a>
-<a aria-label="TikTok" class="social-contact" href="" title="TikTok"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M15.2 3.4c.4 2 1.6 3.3 3.8 3.6v3c-1.4 0-2.7-.4-3.8-1.1v5.6a5.4 5.4 0 1 1-4.7-5.4v3.1a2.4 2.4 0 1 0 1.7 2.3V3.4h3Z" fill="currentColor"></path></svg></a>
+<span aria-label="Facebook" class="social-contact" role="img" title="Facebook"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13.7 21v-7.8h2.6l.4-3h-3V8.3c0-.9.3-1.5 1.6-1.5H17V4.1c-.7-.1-1.5-.2-2.4-.2-2.4 0-4 1.5-4 4.1v2.2H8v3h2.6V21h3.1Z" fill="currentColor"></path></svg></span>
+<span aria-label="TikTok" class="social-contact" role="img" title="TikTok"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M15.2 3.4c.4 2 1.6 3.3 3.8 3.6v3c-1.4 0-2.7-.4-3.8-1.1v5.6a5.4 5.4 0 1 1-4.7-5.4v3.1a2.4 2.4 0 1 0 1.7 2.3V3.4h3Z" fill="currentColor"></path></svg></span>
 </div>
 </div>
 <div aria-label="Pernyataan PT Digdaya Inovasi Nusantara" class="shell dig-footer-manifesto">
