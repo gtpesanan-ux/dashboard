@@ -386,13 +386,13 @@
 
   const inquiryStatusMessage = (result) => {
     if (result.ok) {
-      return `Permintaan tersimpan. Kode referensi: ${result.reference || "DIN-TERKIRIM"}.`;
+      return "Pesan diterima oleh endpoint yang dikonfigurasi. Simpan bukti konfirmasi dari kanal tersebut.";
     }
     if (result.code === "WA_ONLY") {
       return `${result.error} Gunakan tombol WhatsApp untuk melanjutkan.`;
     }
     if (result.code === "TIMEOUT" || result.code === "NETWORK_ERROR") {
-      return `${result.error} Permintaan belum dipastikan tersimpan; Anda dapat melanjutkan melalui WhatsApp.`;
+      return `${result.error} Belum ada konfirmasi penerimaan; Anda dapat melanjutkan melalui WhatsApp.`;
     }
     if (result.status === 429) {
       return "Terlalu banyak permintaan. Tunggu beberapa menit sebelum mencoba kembali, atau gunakan WhatsApp.";

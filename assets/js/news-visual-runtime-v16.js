@@ -6,7 +6,7 @@
     const text = String(value || "").replace(/\s+/g, " ").trim();
     return text.length > limit ? `${text.slice(0, limit - 1).trimEnd()}…` : text;
   };
-  const disclosure = category => `Ilustrasi kategori ${category}; bukan dokumentasi peristiwa.`;
+  const disclosure = category => `Ilustrasi editorial untuk topik ${category}; bukan dokumentasi sumber.`;
   const makeMark = () => {
     const mark = document.createElement("span");
     mark.className = "dig-news-mark";
@@ -37,13 +37,13 @@
   const ensureDisclosure = (figure, category) => {
     const text = disclosure(category);
     const image = figure.querySelector("img");
-    if (image) image.alt = text;
+    if (image && !image.hasAttribute("alt")) image.alt = text;
     let caption = figure.querySelector("figcaption");
     if (!caption) {
       caption = document.createElement("figcaption");
       figure.append(caption);
     }
-    caption.textContent = text;
+    if (!caption.textContent.trim()) caption.textContent = text;
   };
   const decorateCard = card => {
     if (!card || card.dataset.digVisualDecorated === "1") return;
@@ -67,8 +67,10 @@
     const figure = image.closest("figure") || image.parentElement;
     if (!figure || figure.dataset.digVisualDecorated === "1") return;
     const data = Array.isArray(globalThis.DigdayaNewsData) ? globalThis.DigdayaNewsData : [];
-    const id = new URLSearchParams(location.search).get("id") || "";
-    const item = id ? data.find(entry => entry.id === id) : data[0];
+    const id = document.documentElement.dataset.newsDetailId
+      || new URLSearchParams(location.search).get("id")
+      || "";
+    const item = id ? data.find(entry => entry.id === id) : null;
     if (!item) return;
     figure.classList.add("news-detail-visual");
     if (item.kind !== "title-archive") figure.classList.add("is-trend");
