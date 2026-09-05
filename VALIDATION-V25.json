@@ -1,0 +1,2474 @@
+{
+  "version": "V25",
+  "baseline": "PT-DIGDAYA-V24-ACCOUNT-PORTAL.zip",
+  "baseline_sha256": "347aadd877b0cd6029d495b3adfe87e4cc4d7955a80386b67343c79580655648",
+  "destination": "https://auth.<registrable-domain-derived-from-window.location.hostname>/masuk.html",
+  "manual_origin_configuration": false,
+  "runtime_network_for_domain_resolution": false,
+  "new_runtime_asset_files": [],
+  "removed_runtime_asset_files": [
+    "assets/portal-config.js"
+  ],
+  "static_validation": {
+    "pages": 38,
+    "portal_links": 149,
+    "html_errors": [],
+    "duplicate_ids": [],
+    "missing_local_targets": [],
+    "changed_css": [],
+    "changed_media": [],
+    "changed_prior_scripts": [],
+    "changed_forms": [],
+    "new_asset_files": [],
+    "removed_asset_files": [
+      "assets/portal-config.js"
+    ],
+    "runtime_config_references": [],
+    "hashes": {
+      "404.html": "f830f648cf08ed93d143ab1edf909ba8024413fe3ae3fed43bb659730f1763e9",
+      "berita-brief-website.html": "b365c1071268c295bed13fb056e6bd5278f82eb6e9d23e46878f0a76b058ff12",
+      "berita-checklist-domain.html": "24790887012d7fc869563e9502e6e997ac7b0fc9dc2fb881aa03fe91badc2c00",
+      "berita-detail.html": "78cb683a92c18de6c21f80872e2e27ce9ae9cbf9917654da099443740bb13c64",
+      "berita-panduan-parfum.html": "4cc9afc1205d3f59d24f40bbb8e99f5fe7a18d9d158e9b08ed3215d3ebe3d5bd",
+      "berita.html": "f8cdca7d17c74ca09d02b4842873dd6b76c2c32f7cbad34c5fda9804d02a2d80",
+      "cara-membuat-nib-oss.html": "a7f5e020d3eda660ef109e454530f42ffcbfc9fc52e61059c5ee53cb90ccd1ec",
+      "cara-mendirikan-cv.html": "d91e773ff9276e8544e0255f3fe00b162c6decb1b79e4e2758167d0d25420ef3",
+      "cara-mendirikan-pt.html": "6b4d4765dc72131255ec628ae8a3e4a221437673976cb139c9bb5f0a9772c505",
+      "case-study-digdaya.html": "36ec734971e72b9c37bab9a8e8031b202eefd31a98e5816b653a8774bc0345dc",
+      "domain-discovery.html": "9bafc002e08179d9939be0394cd3dd3de73fb93196ea20e3e1455f499177239c",
+      "dukungan.html": "d1cf889f413e1a6752703ea1088b2661c2957ebfaf060af3c1ea1b4cced95c90",
+      "faq.html": "b88b442eba05e84cdb84b13585b09be22ef0aa5f61534b9e121dab1f913b93e8",
+      "index.html": "f3e27b962eda6a48125b853317882c80a35a81085417bb8a2f79d15de54bace3",
+      "jasa-pembuatan-website.html": "2df22cc89820b5ded83e066323bbc6c27c383754be0eebb1709c695a493952a4",
+      "jual-beli-domain.html": "47229dcc7077ade90cdc06aab57f60066c58079e8381ab07fb1489af568305be",
+      "keamanan.html": "d4932bd92b1fade8a446da045e0017e6311189676c8f98911fb2395cf2878ab0",
+      "kebijakan-privasi.html": "e5ae78a0204d713a0b49f42f32e4d291f203bfe0f1de18d28acdc8a955108368",
+      "kebijakan-transaksi.html": "3045577a72bc08b90cb8048f7e48d6c333763179cd90da5af362c1d4e061f18a",
+      "kemitraan.html": "d3b164bcd9c475debdefc55b25d803e7b75edec08b6c9ebe3903124d40f00262",
+      "kontak.html": "81ab20a951d7b3d6b9cea361ca4354fa0cc20637bbf639ae762cba911a121dfe",
+      "layanan.html": "bcd5ed38b82afda8493edc45ad61733d3a6ac1e7bd11eb3e8010768c7755f08d",
+      "parfum-designer.html": "5313afa321a79770a7b6061a6324cd17c4018cdc121430e18a2662703ab4d0f7",
+      "parfum-lokal.html": "b87f3788380d87294fffa368dfbb1da0a44737bc0fc38c25f61c9b18d3cf4193",
+      "parfum-niche.html": "f424cc0c3e5519fe5d7ab4260be39f0dda9f00d692f06fe1a04556d22ea134f3",
+      "parfum-timur-tengah.html": "6666b44f2d3406b1197a7c690dbf004ecdafbcf98d81348b0154e75dc9acaee3",
+      "pengaduan.html": "fed96d03055a5310a1412ba22b92ecf63592610341e9f504ee062af3acfa1f9b",
+      "pengetahuan.html": "b50489fd6ef7469a8013d7502bdd66f88a73f0212e9806c8dcf2bdbadc24a998",
+      "perbedaan-pt-dan-cv.html": "2b63b760ab701e33be5a4c72d6db700f02a377a506e2b3cd145b100ecf329357",
+      "portfolio.html": "752fe2e5babf09b078f18f45962612923545951487a6735653256b9be22ccb3c",
+      "pt-perorangan.html": "d39dc9c315e75d50e2320ef402b386120b452a46728e4266da67ecc185a76344",
+      "scent-finder.html": "7a37941196d827caed65b0c518b5b7d0d649bdbc97bb775b1239170ba12562bd",
+      "syarat-ketentuan.html": "b65892f2b89e4d78c49cf23ebbed281252b657f29164baefc6d345e6b4b55c06",
+      "tentang-kami.html": "38ad3e1f20af3ced944cfe960851b47bcb1eee7c5eb8041ed460410682efcc71",
+      "top-up-game.html": "15a8ea5ff458019c72b782342c32f6152d1ec5fca49fc1ad996ee2c894789e09",
+      "trust-center.html": "fcf389bb619a2ed9258e6826afab86d3c80eb932891ef64edfa17ca9d883925a",
+      "website-audit.html": "5e81b83c732c604212f51a3e864c567ee2e0a2b6efa0c54c75a9be15e844d1a5",
+      "website-maintenance.html": "a6300837d86a62613aeca238cf42b744a479a19461e376ea26e49afbcbd85547"
+    },
+    "baseline_comparison": {
+      ".htaccess": "changed",
+      "404.html": "changed",
+      "FILE-MANIFEST-V16.json": "unchanged",
+      "FILE-MANIFEST-V17.json": "unchanged",
+      "FILE-MANIFEST-V18.json": "unchanged",
+      "FILE-MANIFEST-V19.json": "unchanged",
+      "FILE-MANIFEST-V20.json": "unchanged",
+      "FILE-MANIFEST-V21.json": "unchanged",
+      "FILE-MANIFEST-V22.json": "unchanged",
+      "FILE-MANIFEST-V23.json": "unchanged",
+      "FILE-MANIFEST-V24.json": "unchanged",
+      "IMAGE-COMPRESSION-MANIFEST-V18.json": "unchanged",
+      "IMAGE-COMPRESSION-MANIFEST-V21.json": "unchanged",
+      "IMAGE-PLAN-V16.md": "unchanged",
+      "IMAGE-WATERMARK-MANIFEST-V17.json": "unchanged",
+      "IMAGE-WATERMARK-MANIFEST-V18.json": "unchanged",
+      "IMAGE-WATERMARK-MANIFEST-V21.json": "unchanged",
+      "LICENSE-cormorant-garamond.txt": "unchanged",
+      "LICENSE-plus-jakarta-sans.txt": "unchanged",
+      "PATCH-NOTES-V17.md": "unchanged",
+      "PATCH-NOTES-V18.md": "unchanged",
+      "PATCH-NOTES-V19.md": "unchanged",
+      "PATCH-NOTES-V20.md": "unchanged",
+      "PATCH-NOTES-V21.md": "unchanged",
+      "README-V16.txt": "unchanged",
+      "README-V21.txt": "unchanged",
+      "README-V22.md": "unchanged",
+      "README-V23.md": "unchanged",
+      "README-V24.md": "unchanged",
+      "SUPERSEDED-ASSETS-V16.txt": "unchanged",
+      "UIUX-AUDIT-V21.md": "unchanged",
+      "VALIDATION-V16.json": "unchanged",
+      "VALIDATION-V17.json": "unchanged",
+      "VALIDATION-V18.json": "unchanged",
+      "VALIDATION-V19.json": "unchanged",
+      "VALIDATION-V20.json": "unchanged",
+      "VALIDATION-V21.json": "unchanged",
+      "VALIDATION-V22.json": "unchanged",
+      "VALIDATION-V23.json": "unchanged",
+      "VALIDATION-V24.json": "unchanged",
+      "_headers": "changed",
+      "_redirects": "unchanged",
+      "assets/apple-touch-icon.png": "unchanged",
+      "assets/brand-campaign-01.webp": "unchanged",
+      "assets/brand-campaign-02.webp": "unchanged",
+      "assets/brand-campaign-03.webp": "unchanged",
+      "assets/brand-campaign-06.webp": "unchanged",
+      "assets/brand-campaign-09.webp": "unchanged",
+      "assets/brand-campaign-11.webp": "unchanged",
+      "assets/brand-promo-01.webp": "unchanged",
+      "assets/brand-promo-03.webp": "unchanged",
+      "assets/brand-promo-04.webp": "unchanged",
+      "assets/brand-promo-05.webp": "unchanged",
+      "assets/brand-promo-06.webp": "unchanged",
+      "assets/brand-promo-08.webp": "unchanged",
+      "assets/brand-promo-10.webp": "unchanged",
+      "assets/brand-promo-14.webp": "unchanged",
+      "assets/company-profile-digdaya-ultimate.mp4": "unchanged",
+      "assets/company-profile-digdaya.mp4": "unchanged",
+      "assets/corporate-home-v16.webp": "unchanged",
+      "assets/customer-support-v16.webp": "unchanged",
+      "assets/digdaya-logo-256.webp": "unchanged",
+      "assets/digdaya-logo-transparent-1024.webp": "unchanged",
+      "assets/digdaya-monogram-tile-512.webp": "unchanged",
+      "assets/digital-operations-v16.webp": "unchanged",
+      "assets/domain-strategy-v16.webp": "unchanged",
+      "assets/favicon.png": "unchanged",
+      "assets/fragrance-workshop-v16.webp": "unchanged",
+      "assets/gaming-service-v16.webp": "unchanged",
+      "assets/js/knowledge-library-runtime.js": "unchanged",
+      "assets/js/motion-v16.js": "unchanged",
+      "assets/js/native-navigation-safety-v1.js": "unchanged",
+      "assets/js/news-data.js": "unchanged",
+      "assets/js/news-detail-runtime.js": "unchanged",
+      "assets/js/news-visual-runtime-v16.js": "unchanged",
+      "assets/js/newsroom-runtime.js": "unchanged",
+      "assets/js/revision-v17.js": "unchanged",
+      "assets/js/revision-v19.js": "unchanged",
+      "assets/js/revision-v20.js": "unchanged",
+      "assets/js/revision-v21-menu.js": "unchanged",
+      "assets/js/revision-v21-ui.js": "unchanged",
+      "assets/js/runtime-contact.js": "unchanged",
+      "assets/js/runtime-hardening.js": "unchanged",
+      "assets/js/runtime-premium.js": "unchanged",
+      "assets/js/runtime-site-v8.js": "unchanged",
+      "assets/js/runtime-ultimate-v4.js": "unchanged",
+      "assets/js/runtime-widgets.js": "unchanged",
+      "assets/js/text-motion-v13.js": "unchanged",
+      "assets/js/tree-navigator-v16.js": "unchanged",
+      "assets/legal-cv-registration-v16.webp": "unchanged",
+      "assets/legal-nib-oss-v16.webp": "unchanged",
+      "assets/legal-pt-documents-v16.webp": "unchanged",
+      "assets/logo-cv-multi-usaha-mandiri.webp": "unchanged",
+      "assets/motion-v16.css": "unchanged",
+      "assets/news-bisnis-1.webp": "unchanged",
+      "assets/news-bisnis-2.webp": "unchanged",
+      "assets/news-bisnis-3.webp": "unchanged",
+      "assets/news-budaya-1.webp": "unchanged",
+      "assets/news-budaya-2.webp": "unchanged",
+      "assets/news-budaya-3.webp": "unchanged",
+      "assets/news-digital-1.webp": "unchanged",
+      "assets/news-digital-2.webp": "unchanged",
+      "assets/news-digital-3.webp": "unchanged",
+      "assets/news-ekonomi-1.webp": "unchanged",
+      "assets/news-ekonomi-2.webp": "unchanged",
+      "assets/news-ekonomi-3.webp": "unchanged",
+      "assets/news-fragrance-1.webp": "unchanged",
+      "assets/news-fragrance-2.webp": "unchanged",
+      "assets/news-fragrance-3.webp": "unchanged",
+      "assets/news-kesehatan-1.webp": "unchanged",
+      "assets/news-kesehatan-2.webp": "unchanged",
+      "assets/news-kesehatan-3.webp": "unchanged",
+      "assets/news-lingkungan-1.webp": "unchanged",
+      "assets/news-lingkungan-2.webp": "unchanged",
+      "assets/news-lingkungan-3.webp": "unchanged",
+      "assets/news-nasional-1.webp": "unchanged",
+      "assets/news-nasional-2.webp": "unchanged",
+      "assets/news-nasional-3.webp": "unchanged",
+      "assets/news-olahraga-1.webp": "unchanged",
+      "assets/news-olahraga-2.webp": "unchanged",
+      "assets/news-olahraga-3.webp": "unchanged",
+      "assets/news-pariwisata-1.webp": "unchanged",
+      "assets/news-pariwisata-2.webp": "unchanged",
+      "assets/news-pariwisata-3.webp": "unchanged",
+      "assets/news-pendidikan-1.webp": "unchanged",
+      "assets/news-pendidikan-2.webp": "unchanged",
+      "assets/news-pendidikan-3.webp": "unchanged",
+      "assets/news-teknologi-1.webp": "unchanged",
+      "assets/news-teknologi-2.webp": "unchanged",
+      "assets/news-teknologi-3.webp": "unchanged",
+      "assets/newsroom-enhance.css": "unchanged",
+      "assets/og-domain-branded.jpg": "unchanged",
+      "assets/og-home-branded.jpg": "unchanged",
+      "assets/og-parfum-branded.jpg": "unchanged",
+      "assets/og-topup-branded.jpg": "unchanged",
+      "assets/og-website-branded.jpg": "unchanged",
+      "assets/parfum-designer-v16.webp": "unchanged",
+      "assets/parfum-lokal-v16.webp": "unchanged",
+      "assets/parfum-niche-v16.webp": "unchanged",
+      "assets/parfum-timur-tengah-v16.webp": "unchanged",
+      "assets/partnership-workshop-v16.webp": "unchanged",
+      "assets/polish-v13.css": "unchanged",
+      "assets/premium-v3.css": "unchanged",
+      "assets/rev8-home-expansion.css": "unchanged",
+      "assets/revision-v17.css": "unchanged",
+      "assets/revision-v18.css": "unchanged",
+      "assets/revision-v19.css": "unchanged",
+      "assets/revision-v20.css": "unchanged",
+      "assets/revision-v21-content.css": "unchanged",
+      "assets/revision-v21-menu.css": "unchanged",
+      "assets/revision-v21-ui.css": "unchanged",
+      "assets/revision-v7.css": "unchanged",
+      "assets/runtime-core-v8.css": "unchanged",
+      "assets/runtime-hardening.css": "unchanged",
+      "assets/runtime-newsroom-core-v8.css": "unchanged",
+      "assets/security-verification-v16.webp": "unchanged",
+      "assets/tree-navigator-v16.css": "unchanged",
+      "assets/ultimate-v4.css": "unchanged",
+      "assets/visual-flow-domain.webp": "unchanged",
+      "assets/visual-flow-fragrance.webp": "unchanged",
+      "assets/visual-flow-security.webp": "unchanged",
+      "assets/visual-flow-topup.webp": "unchanged",
+      "assets/visual-flow-website.webp": "unchanged",
+      "assets/visual-system-v10.css": "unchanged",
+      "assets/visual-theme-services.webp": "unchanged",
+      "assets/visual-topup-2-clean.webp": "unchanged",
+      "assets/website-studio-v16.webp": "unchanged",
+      "berita-brief-website.html": "changed",
+      "berita-checklist-domain.html": "changed",
+      "berita-detail.html": "changed",
+      "berita-panduan-parfum.html": "changed",
+      "berita.html": "changed",
+      "cara-membuat-nib-oss.html": "changed",
+      "cara-mendirikan-cv.html": "changed",
+      "cara-mendirikan-pt.html": "changed",
+      "case-study-digdaya.html": "changed",
+      "domain-discovery.html": "changed",
+      "dukungan.html": "changed",
+      "faq.html": "changed",
+      "index.html": "changed",
+      "jasa-pembuatan-website.html": "changed",
+      "jual-beli-domain.html": "changed",
+      "keamanan.html": "changed",
+      "kebijakan-privasi.html": "changed",
+      "kebijakan-transaksi.html": "changed",
+      "kemitraan.html": "changed",
+      "kontak.html": "changed",
+      "layanan.html": "changed",
+      "parfum-designer.html": "changed",
+      "parfum-lokal.html": "changed",
+      "parfum-niche.html": "changed",
+      "parfum-timur-tengah.html": "changed",
+      "pengaduan.html": "changed",
+      "pengetahuan.html": "changed",
+      "perbedaan-pt-dan-cv.html": "changed",
+      "portfolio.html": "changed",
+      "pt-perorangan.html": "changed",
+      "scent-finder.html": "changed",
+      "sitemap-template.xml": "unchanged",
+      "sitemap.xml": "unchanged",
+      "syarat-ketentuan.html": "changed",
+      "tentang-kami.html": "changed",
+      "top-up-game.html": "changed",
+      "trust-center.html": "changed",
+      "website-audit.html": "changed",
+      "website-maintenance.html": "changed"
+    },
+    "all_script_style_hashes_in_both_csp_policies": true,
+    "new_resolver_source_sha256": "563e538dcdec868d103c2577c7318a161e8066bc30c923d8465e1e8c12adb77c",
+    "executable_unique_blocks": 23
+  },
+  "resolver_validation": {
+    "sourceBytes": 149722,
+    "sourceSha256": "563e538dcdec868d103c2577c7318a161e8066bc30c923d8465e1e8c12adb77c",
+    "implementation": "audit/revision-v25.js actual full inline IIFE in Node VM",
+    "configurationOverrideInjected": "https://attacker.invalid in legacy DIGDAYA_PORTAL_CONFIG.origin for every case; ignored",
+    "caseCount": 50,
+    "casesPassed": 50,
+    "interactionCount": 12,
+    "interactionsPassed": 12,
+    "failedCount": 0,
+    "cases": [
+      {
+        "name": "apex",
+        "source": "https://contoh.com/layanan.html",
+        "expected": "https://auth.contoh.com/masuk.html",
+        "actual": "https://auth.contoh.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "www",
+        "source": "https://www.contoh.com/layanan.html",
+        "expected": "https://auth.contoh.com/masuk.html",
+        "actual": "https://auth.contoh.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "panel",
+        "source": "https://panel.contoh.com/layanan.html",
+        "expected": "https://auth.contoh.com/masuk.html",
+        "actual": "https://auth.contoh.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "deep subdomain",
+        "source": "https://jualan.panel.contoh.com/layanan.html",
+        "expected": "https://auth.contoh.com/masuk.html",
+        "actual": "https://auth.contoh.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "already auth",
+        "source": "https://auth.contoh.com/layanan.html",
+        "expected": "https://auth.contoh.com/masuk.html",
+        "actual": "https://auth.contoh.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "repeated auth",
+        "source": "https://auth.auth.contoh.com/layanan.html",
+        "expected": "https://auth.contoh.com/masuk.html",
+        "actual": "https://auth.contoh.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "new domain automatic",
+        "source": "https://panel.usaha-baru.store/folder/index.html",
+        "expected": "https://auth.usaha-baru.store/masuk.html",
+        "actual": "https://auth.usaha-baru.store/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "co.id apex",
+        "source": "https://contoh.co.id/",
+        "expected": "https://auth.contoh.co.id/masuk.html",
+        "actual": "https://auth.contoh.co.id/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "co.id panel",
+        "source": "https://panel.contoh.co.id/",
+        "expected": "https://auth.contoh.co.id/masuk.html",
+        "actual": "https://auth.contoh.co.id/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "co.uk deep",
+        "source": "https://shop.panel.contoh.co.uk/",
+        "expected": "https://auth.contoh.co.uk/masuk.html",
+        "actual": "https://auth.contoh.co.uk/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "or.id",
+        "source": "https://www.contoh.or.id/",
+        "expected": "https://auth.contoh.or.id/masuk.html",
+        "actual": "https://auth.contoh.or.id/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "com.au",
+        "source": "https://panel.contoh.com.au/",
+        "expected": "https://auth.contoh.com.au/masuk.html",
+        "actual": "https://auth.contoh.com.au/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "k12.ca.us",
+        "source": "https://www.contoh.k12.ca.us/",
+        "expected": "https://auth.contoh.k12.ca.us/masuk.html",
+        "actual": "https://auth.contoh.k12.ca.us/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "ck wildcard",
+        "source": "https://x.a.b.ck/",
+        "expected": "https://auth.a.b.ck/masuk.html",
+        "actual": "https://auth.a.b.ck/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "ck exception",
+        "source": "https://a.www.ck/",
+        "expected": "https://auth.www.ck/masuk.html",
+        "actual": "https://auth.www.ck/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "jp wildcard",
+        "source": "https://x.a.b.kawasaki.jp/",
+        "expected": "https://auth.a.b.kawasaki.jp/masuk.html",
+        "actual": "https://auth.a.b.kawasaki.jp/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "jp exception",
+        "source": "https://x.city.kawasaki.jp/",
+        "expected": "https://auth.city.kawasaki.jp/masuk.html",
+        "actual": "https://auth.city.kawasaki.jp/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "private github.io",
+        "source": "https://panel.contoh.github.io/",
+        "expected": "https://auth.contoh.github.io/masuk.html",
+        "actual": "https://auth.contoh.github.io/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "private blogspot.com",
+        "source": "https://contoh.blogspot.com/",
+        "expected": "https://auth.contoh.blogspot.com/masuk.html",
+        "actual": "https://auth.contoh.blogspot.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "private pages.dev",
+        "source": "https://preview.contoh.pages.dev/",
+        "expected": "https://auth.contoh.pages.dev/masuk.html",
+        "actual": "https://auth.contoh.pages.dev/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "private appspot.com",
+        "source": "https://panel.contoh.appspot.com/",
+        "expected": "https://auth.contoh.appspot.com/masuk.html",
+        "actual": "https://auth.contoh.appspot.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "unicode domain",
+        "source": "https://panel.bücher.de/",
+        "expected": "https://auth.xn--bcher-kva.de/masuk.html",
+        "actual": "https://auth.xn--bcher-kva.de/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "unicode public suffix",
+        "source": "https://www.食狮.公司.cn/",
+        "expected": "https://auth.xn--85x722f.xn--55qx5d.cn/masuk.html",
+        "actual": "https://auth.xn--85x722f.xn--55qx5d.cn/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "uppercase host",
+        "source": "https://PaNeL.CoNtOh.COM/",
+        "expected": "https://auth.contoh.com/masuk.html",
+        "actual": "https://auth.contoh.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "trailing root dot",
+        "source": "https://panel.contoh.com./",
+        "expected": "https://auth.contoh.com/masuk.html",
+        "actual": "https://auth.contoh.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "http upgraded",
+        "source": "http://panel.contoh.com/",
+        "expected": "https://auth.contoh.com/masuk.html",
+        "actual": "https://auth.contoh.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "port not copied",
+        "source": "https://panel.contoh.com:8443/",
+        "expected": "https://auth.contoh.com/masuk.html",
+        "actual": "https://auth.contoh.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "query ignored",
+        "source": "https://panel.contoh.com/?origin=https://evil.example&next=https://evil.example",
+        "expected": "https://auth.contoh.com/masuk.html",
+        "actual": "https://auth.contoh.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "fragment ignored",
+        "source": "https://panel.contoh.com/#https://evil.example",
+        "expected": "https://auth.contoh.com/masuk.html",
+        "actual": "https://auth.contoh.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "path ignored",
+        "source": "https://panel.contoh.com/nested/folder/parfum.html",
+        "expected": "https://auth.contoh.com/masuk.html",
+        "actual": "https://auth.contoh.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "localhost",
+        "source": "http://localhost:4173/",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "localhost nested",
+        "source": "http://panel.localhost:4173/",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "private local name",
+        "source": "http://terminal.local:4173/",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "IPv4 loopback",
+        "source": "http://127.0.0.1:4173/",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "IPv4 public",
+        "source": "http://203.0.113.42/",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "IPv4 shorthand canonicalized",
+        "source": "http://127.1/",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "IPv6 loopback",
+        "source": "http://[::1]:4173/",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "IPv6 public",
+        "source": "http://[2001:db8::1]/",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "single label",
+        "source": "https://intranet/",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "file",
+        "source": "file:///tmp/PT/index.html",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "about blank",
+        "source": "about:blank",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "data URL",
+        "source": "data:text/html,hello",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "javascript URL",
+        "source": "javascript:alert(1)",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "public suffix only",
+        "source": "https://co.id/",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "private suffix only",
+        "source": "https://github.io/",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "wildcard suffix only",
+        "source": "https://b.ck/",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "jp wildcard suffix only",
+        "source": "https://b.kawasaki.jp/",
+        "expected": null,
+        "actual": null,
+        "mode": "unavailable-context",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "owner label auth: auth.com",
+        "source": "https://auth.com/",
+        "expected": "https://auth.auth.com/masuk.html",
+        "actual": "https://auth.auth.com/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "owner label auth: auth.co.id",
+        "source": "https://auth.co.id/",
+        "expected": "https://auth.auth.co.id/masuk.html",
+        "actual": "https://auth.auth.co.id/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      },
+      {
+        "name": "owner label auth: auth.github.io",
+        "source": "https://auth.github.io/",
+        "expected": "https://auth.auth.github.io/masuk.html",
+        "actual": "https://auth.auth.github.io/masuk.html",
+        "mode": "auth-subdomain",
+        "earlyClickCorrect": true,
+        "syncCorrect": true,
+        "availabilityCorrect": true,
+        "passed": true
+      }
+    ],
+    "interactions": [
+      {
+        "name": "capture click resolves before DOMContentLoaded",
+        "passed": true
+      },
+      {
+        "name": "capture auxclick resolves before DOMContentLoaded",
+        "passed": true
+      },
+      {
+        "name": "capture pointerdown resolves before DOMContentLoaded",
+        "passed": true
+      },
+      {
+        "name": "capture focusin resolves before DOMContentLoaded",
+        "passed": true
+      },
+      {
+        "name": "capture contextmenu resolves before DOMContentLoaded",
+        "passed": true
+      },
+      {
+        "name": "already parsed document synchronizes immediately",
+        "passed": true
+      },
+      {
+        "name": "later inserted account anchor resolves on activation",
+        "passed": true
+      },
+      {
+        "name": "local click prevented with focused explanation",
+        "passed": true
+      },
+      {
+        "name": "local auxclick prevented with focused explanation",
+        "passed": true
+      },
+      {
+        "name": "blocked keyboard activation focuses explanation",
+        "passed": true
+      },
+      {
+        "name": "obsolete manual origin override ignored",
+        "passed": true
+      },
+      {
+        "name": "unrelated click unaffected",
+        "passed": true
+      }
+    ]
+  },
+  "browser_validation": {
+    "layout": {
+      "complete": true,
+      "results": [
+        {
+          "page": ".qa-v25-panel.html",
+          "version": "v25",
+          "viewport": 390,
+          "clientWidth": 375,
+          "scrollWidth": 375,
+          "overflow": false,
+          "footerGap": 0,
+          "footerFill": "rgb(6, 41, 78)",
+          "footerBackground": "linear-gradient(rgb(6, 41, 78) 0px, rgb(6, 41, 78) 88px, rgb(10, 54, 95) 72%, rgb(11, 75, 112) 125%)",
+          "icons": [
+            {
+              "label": "Instagram",
+              "width": 48,
+              "height": 48,
+              "x": 16,
+              "y": 18145.078125
+            },
+            {
+              "label": "Buka profil LinkedIn",
+              "width": 48,
+              "height": 48,
+              "x": 76,
+              "y": 18145.078125
+            },
+            {
+              "label": "Threads",
+              "width": 48,
+              "height": 48,
+              "x": 136,
+              "y": 18145.078125
+            },
+            {
+              "label": "Buka bantuan WhatsApp",
+              "width": 48,
+              "height": 48,
+              "x": 196,
+              "y": 18145.078125
+            },
+            {
+              "label": "Kirim email ke companydirac@gmail.com",
+              "width": 48,
+              "height": 48,
+              "x": 16,
+              "y": 18205.078125
+            },
+            {
+              "label": "Facebook",
+              "width": 48,
+              "height": 48,
+              "x": 76,
+              "y": 18205.078125
+            },
+            {
+              "label": "TikTok",
+              "width": 48,
+              "height": 48,
+              "x": 136,
+              "y": 18205.078125
+            }
+          ],
+          "dividers": [
+            {
+              "target": "layanan",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(248, 245, 239)",
+              "surface": "rgb(248, 245, 239)",
+              "clipped": false
+            },
+            {
+              "target": "finder-title",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "capability-title",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "mulai-dari-tujuan",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(238, 233, 223)",
+              "surface": "rgb(238, 233, 223)",
+              "clipped": false
+            }
+          ],
+          "brokenLoadedImages": [],
+          "whatsappDestinations": [
+            "/6287892523968"
+          ],
+          "faqDuplicateMarkers": 0,
+          "diagramStyles": [],
+          "portalMode": "auth-subdomain",
+          "portalLinks": [
+            "https://auth.example.com/masuk.html",
+            "https://auth.example.com/masuk.html",
+            "https://auth.example.com/masuk.html",
+            "https://auth.example.com/masuk.html",
+            "https://auth.example.com/masuk.html"
+          ],
+          "duplicateTransactionForms": 0,
+          "accountNav": [
+            {
+              "display": "grid",
+              "width": 343.8125,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.example.com/masuk.html"
+            },
+            {
+              "display": "none",
+              "width": 0,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.example.com/masuk.html"
+            }
+          ],
+          "motionReady": true,
+          "v22Ready": true
+        },
+        {
+          "page": ".qa-v25-panel.html",
+          "version": "v25",
+          "viewport": 768,
+          "clientWidth": 753,
+          "scrollWidth": 753,
+          "overflow": false,
+          "footerGap": 0,
+          "footerFill": "rgb(6, 41, 78)",
+          "footerBackground": "linear-gradient(rgb(6, 41, 78) 0px, rgb(6, 41, 78) 88px, rgb(10, 54, 95) 72%, rgb(11, 75, 112) 125%)",
+          "icons": [
+            {
+              "label": "Instagram",
+              "width": 52,
+              "height": 52,
+              "x": 453.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Buka profil LinkedIn",
+              "width": 52,
+              "height": 52,
+              "x": 519.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Threads",
+              "width": 52,
+              "height": 52,
+              "x": 585.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Buka bantuan WhatsApp",
+              "width": 52,
+              "height": 52,
+              "x": 651.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Kirim email ke companydirac@gmail.com",
+              "width": 52,
+              "height": 52,
+              "x": 453.984375,
+              "y": 13798.984375
+            },
+            {
+              "label": "Facebook",
+              "width": 52,
+              "height": 52,
+              "x": 519.984375,
+              "y": 13798.984375
+            },
+            {
+              "label": "TikTok",
+              "width": 52,
+              "height": 52,
+              "x": 585.984375,
+              "y": 13798.984375
+            }
+          ],
+          "dividers": [
+            {
+              "target": "layanan",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(248, 245, 239)",
+              "surface": "rgb(248, 245, 239)",
+              "clipped": false
+            },
+            {
+              "target": "finder-title",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "capability-title",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "mulai-dari-tujuan",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(238, 233, 223)",
+              "surface": "rgb(238, 233, 223)",
+              "clipped": false
+            }
+          ],
+          "brokenLoadedImages": [],
+          "whatsappDestinations": [
+            "/6287892523968"
+          ],
+          "faqDuplicateMarkers": 0,
+          "diagramStyles": [],
+          "portalMode": "auth-subdomain",
+          "portalLinks": [
+            "https://auth.example.com/masuk.html",
+            "https://auth.example.com/masuk.html",
+            "https://auth.example.com/masuk.html",
+            "https://auth.example.com/masuk.html",
+            "https://auth.example.com/masuk.html"
+          ],
+          "duplicateTransactionForms": 0,
+          "accountNav": [
+            {
+              "display": "grid",
+              "width": 697,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.example.com/masuk.html"
+            },
+            {
+              "display": "none",
+              "width": 0,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.example.com/masuk.html"
+            }
+          ],
+          "motionReady": true,
+          "v22Ready": true
+        },
+        {
+          "page": ".qa-v25-panel.html",
+          "version": "v25",
+          "viewport": 1440,
+          "clientWidth": 1425,
+          "scrollWidth": 1425,
+          "overflow": false,
+          "footerGap": 0,
+          "footerFill": "rgb(6, 41, 78)",
+          "footerBackground": "linear-gradient(rgb(6, 41, 78) 0px, rgb(6, 41, 78) 88px, rgb(10, 54, 95) 72%, rgb(11, 75, 112) 125%)",
+          "icons": [
+            {
+              "label": "Instagram",
+              "width": 52,
+              "height": 52,
+              "x": 842.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Buka profil LinkedIn",
+              "width": 52,
+              "height": 52,
+              "x": 908.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Threads",
+              "width": 52,
+              "height": 52,
+              "x": 974.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Buka bantuan WhatsApp",
+              "width": 52,
+              "height": 52,
+              "x": 1040.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Kirim email ke companydirac@gmail.com",
+              "width": 52,
+              "height": 52,
+              "x": 842.3125,
+              "y": 14082.078125
+            },
+            {
+              "label": "Facebook",
+              "width": 52,
+              "height": 52,
+              "x": 908.3125,
+              "y": 14082.078125
+            },
+            {
+              "label": "TikTok",
+              "width": 52,
+              "height": 52,
+              "x": 974.3125,
+              "y": 14082.078125
+            }
+          ],
+          "dividers": [
+            {
+              "target": "layanan",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(248, 245, 239)",
+              "surface": "rgb(248, 245, 239)",
+              "clipped": false
+            },
+            {
+              "target": "finder-title",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "capability-title",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "mulai-dari-tujuan",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(238, 233, 223)",
+              "surface": "rgb(238, 233, 223)",
+              "clipped": false
+            }
+          ],
+          "brokenLoadedImages": [],
+          "whatsappDestinations": [
+            "/6287892523968"
+          ],
+          "faqDuplicateMarkers": 0,
+          "diagramStyles": [],
+          "portalMode": "auth-subdomain",
+          "portalLinks": [
+            "https://auth.example.com/masuk.html",
+            "https://auth.example.com/masuk.html",
+            "https://auth.example.com/masuk.html",
+            "https://auth.example.com/masuk.html",
+            "https://auth.example.com/masuk.html"
+          ],
+          "duplicateTransactionForms": 0,
+          "accountNav": [
+            {
+              "display": "none",
+              "width": 0,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.example.com/masuk.html"
+            },
+            {
+              "display": "grid",
+              "width": 166.390625,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.example.com/masuk.html"
+            }
+          ],
+          "motionReady": true,
+          "v22Ready": true
+        },
+        {
+          "page": ".qa-v25-migrated.html",
+          "version": "v25",
+          "viewport": 390,
+          "clientWidth": 375,
+          "scrollWidth": 375,
+          "overflow": false,
+          "footerGap": 0,
+          "footerFill": "rgb(6, 41, 78)",
+          "footerBackground": "linear-gradient(rgb(6, 41, 78) 0px, rgb(6, 41, 78) 88px, rgb(10, 54, 95) 72%, rgb(11, 75, 112) 125%)",
+          "icons": [
+            {
+              "label": "Instagram",
+              "width": 48,
+              "height": 48,
+              "x": 16,
+              "y": 18145.078125
+            },
+            {
+              "label": "Buka profil LinkedIn",
+              "width": 48,
+              "height": 48,
+              "x": 76,
+              "y": 18145.078125
+            },
+            {
+              "label": "Threads",
+              "width": 48,
+              "height": 48,
+              "x": 136,
+              "y": 18145.078125
+            },
+            {
+              "label": "Buka bantuan WhatsApp",
+              "width": 48,
+              "height": 48,
+              "x": 196,
+              "y": 18145.078125
+            },
+            {
+              "label": "Kirim email ke companydirac@gmail.com",
+              "width": 48,
+              "height": 48,
+              "x": 16,
+              "y": 18205.078125
+            },
+            {
+              "label": "Facebook",
+              "width": 48,
+              "height": 48,
+              "x": 76,
+              "y": 18205.078125
+            },
+            {
+              "label": "TikTok",
+              "width": 48,
+              "height": 48,
+              "x": 136,
+              "y": 18205.078125
+            }
+          ],
+          "dividers": [
+            {
+              "target": "layanan",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(248, 245, 239)",
+              "surface": "rgb(248, 245, 239)",
+              "clipped": false
+            },
+            {
+              "target": "finder-title",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "capability-title",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "mulai-dari-tujuan",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(238, 233, 223)",
+              "surface": "rgb(238, 233, 223)",
+              "clipped": false
+            }
+          ],
+          "brokenLoadedImages": [],
+          "whatsappDestinations": [
+            "/6287892523968"
+          ],
+          "faqDuplicateMarkers": 0,
+          "diagramStyles": [],
+          "portalMode": "auth-subdomain",
+          "portalLinks": [
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html"
+          ],
+          "duplicateTransactionForms": 0,
+          "accountNav": [
+            {
+              "display": "grid",
+              "width": 343.8125,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.usaha-baru.co.id/masuk.html"
+            },
+            {
+              "display": "none",
+              "width": 0,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.usaha-baru.co.id/masuk.html"
+            }
+          ],
+          "motionReady": true,
+          "v22Ready": true
+        },
+        {
+          "page": ".qa-v25-migrated.html",
+          "version": "v25",
+          "viewport": 768,
+          "clientWidth": 753,
+          "scrollWidth": 753,
+          "overflow": false,
+          "footerGap": 0,
+          "footerFill": "rgb(6, 41, 78)",
+          "footerBackground": "linear-gradient(rgb(6, 41, 78) 0px, rgb(6, 41, 78) 88px, rgb(10, 54, 95) 72%, rgb(11, 75, 112) 125%)",
+          "icons": [
+            {
+              "label": "Instagram",
+              "width": 52,
+              "height": 52,
+              "x": 453.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Buka profil LinkedIn",
+              "width": 52,
+              "height": 52,
+              "x": 519.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Threads",
+              "width": 52,
+              "height": 52,
+              "x": 585.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Buka bantuan WhatsApp",
+              "width": 52,
+              "height": 52,
+              "x": 651.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Kirim email ke companydirac@gmail.com",
+              "width": 52,
+              "height": 52,
+              "x": 453.984375,
+              "y": 13798.984375
+            },
+            {
+              "label": "Facebook",
+              "width": 52,
+              "height": 52,
+              "x": 519.984375,
+              "y": 13798.984375
+            },
+            {
+              "label": "TikTok",
+              "width": 52,
+              "height": 52,
+              "x": 585.984375,
+              "y": 13798.984375
+            }
+          ],
+          "dividers": [
+            {
+              "target": "layanan",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(248, 245, 239)",
+              "surface": "rgb(248, 245, 239)",
+              "clipped": false
+            },
+            {
+              "target": "finder-title",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "capability-title",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "mulai-dari-tujuan",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(238, 233, 223)",
+              "surface": "rgb(238, 233, 223)",
+              "clipped": false
+            }
+          ],
+          "brokenLoadedImages": [],
+          "whatsappDestinations": [
+            "/6287892523968"
+          ],
+          "faqDuplicateMarkers": 0,
+          "diagramStyles": [],
+          "portalMode": "auth-subdomain",
+          "portalLinks": [
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html"
+          ],
+          "duplicateTransactionForms": 0,
+          "accountNav": [
+            {
+              "display": "grid",
+              "width": 697,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.usaha-baru.co.id/masuk.html"
+            },
+            {
+              "display": "none",
+              "width": 0,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.usaha-baru.co.id/masuk.html"
+            }
+          ],
+          "motionReady": true,
+          "v22Ready": true
+        },
+        {
+          "page": ".qa-v25-migrated.html",
+          "version": "v25",
+          "viewport": 1440,
+          "clientWidth": 1425,
+          "scrollWidth": 1425,
+          "overflow": false,
+          "footerGap": 0,
+          "footerFill": "rgb(6, 41, 78)",
+          "footerBackground": "linear-gradient(rgb(6, 41, 78) 0px, rgb(6, 41, 78) 88px, rgb(10, 54, 95) 72%, rgb(11, 75, 112) 125%)",
+          "icons": [
+            {
+              "label": "Instagram",
+              "width": 52,
+              "height": 52,
+              "x": 842.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Buka profil LinkedIn",
+              "width": 52,
+              "height": 52,
+              "x": 908.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Threads",
+              "width": 52,
+              "height": 52,
+              "x": 974.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Buka bantuan WhatsApp",
+              "width": 52,
+              "height": 52,
+              "x": 1040.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Kirim email ke companydirac@gmail.com",
+              "width": 52,
+              "height": 52,
+              "x": 842.3125,
+              "y": 14082.078125
+            },
+            {
+              "label": "Facebook",
+              "width": 52,
+              "height": 52,
+              "x": 908.3125,
+              "y": 14082.078125
+            },
+            {
+              "label": "TikTok",
+              "width": 52,
+              "height": 52,
+              "x": 974.3125,
+              "y": 14082.078125
+            }
+          ],
+          "dividers": [
+            {
+              "target": "layanan",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(248, 245, 239)",
+              "surface": "rgb(248, 245, 239)",
+              "clipped": false
+            },
+            {
+              "target": "finder-title",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "capability-title",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "mulai-dari-tujuan",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(238, 233, 223)",
+              "surface": "rgb(238, 233, 223)",
+              "clipped": false
+            }
+          ],
+          "brokenLoadedImages": [],
+          "whatsappDestinations": [
+            "/6287892523968"
+          ],
+          "faqDuplicateMarkers": 0,
+          "diagramStyles": [],
+          "portalMode": "auth-subdomain",
+          "portalLinks": [
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html"
+          ],
+          "duplicateTransactionForms": 0,
+          "accountNav": [
+            {
+              "display": "none",
+              "width": 0,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.usaha-baru.co.id/masuk.html"
+            },
+            {
+              "display": "grid",
+              "width": 166.390625,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.usaha-baru.co.id/masuk.html"
+            }
+          ],
+          "motionReady": true,
+          "v22Ready": true
+        },
+        {
+          "page": ".qa-v25-auth.html",
+          "version": "v25",
+          "viewport": 390,
+          "clientWidth": 375,
+          "scrollWidth": 375,
+          "overflow": false,
+          "footerGap": 0,
+          "footerFill": "rgb(6, 41, 78)",
+          "footerBackground": "linear-gradient(rgb(6, 41, 78) 0px, rgb(6, 41, 78) 88px, rgb(10, 54, 95) 72%, rgb(11, 75, 112) 125%)",
+          "icons": [
+            {
+              "label": "Instagram",
+              "width": 48,
+              "height": 48,
+              "x": 16,
+              "y": 18145.078125
+            },
+            {
+              "label": "Buka profil LinkedIn",
+              "width": 48,
+              "height": 48,
+              "x": 76,
+              "y": 18145.078125
+            },
+            {
+              "label": "Threads",
+              "width": 48,
+              "height": 48,
+              "x": 136,
+              "y": 18145.078125
+            },
+            {
+              "label": "Buka bantuan WhatsApp",
+              "width": 48,
+              "height": 48,
+              "x": 196,
+              "y": 18145.078125
+            },
+            {
+              "label": "Kirim email ke companydirac@gmail.com",
+              "width": 48,
+              "height": 48,
+              "x": 16,
+              "y": 18205.078125
+            },
+            {
+              "label": "Facebook",
+              "width": 48,
+              "height": 48,
+              "x": 76,
+              "y": 18205.078125
+            },
+            {
+              "label": "TikTok",
+              "width": 48,
+              "height": 48,
+              "x": 136,
+              "y": 18205.078125
+            }
+          ],
+          "dividers": [
+            {
+              "target": "layanan",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(248, 245, 239)",
+              "surface": "rgb(248, 245, 239)",
+              "clipped": false
+            },
+            {
+              "target": "finder-title",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "capability-title",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "mulai-dari-tujuan",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(238, 233, 223)",
+              "surface": "rgb(238, 233, 223)",
+              "clipped": false
+            }
+          ],
+          "brokenLoadedImages": [],
+          "whatsappDestinations": [
+            "/6287892523968"
+          ],
+          "faqDuplicateMarkers": 0,
+          "diagramStyles": [],
+          "portalMode": "auth-subdomain",
+          "portalLinks": [
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html"
+          ],
+          "duplicateTransactionForms": 0,
+          "accountNav": [
+            {
+              "display": "grid",
+              "width": 343.8125,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.usaha-baru.co.id/masuk.html"
+            },
+            {
+              "display": "none",
+              "width": 0,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.usaha-baru.co.id/masuk.html"
+            }
+          ],
+          "motionReady": true,
+          "v22Ready": true
+        },
+        {
+          "page": ".qa-v25-auth.html",
+          "version": "v25",
+          "viewport": 768,
+          "clientWidth": 753,
+          "scrollWidth": 753,
+          "overflow": false,
+          "footerGap": 0,
+          "footerFill": "rgb(6, 41, 78)",
+          "footerBackground": "linear-gradient(rgb(6, 41, 78) 0px, rgb(6, 41, 78) 88px, rgb(10, 54, 95) 72%, rgb(11, 75, 112) 125%)",
+          "icons": [
+            {
+              "label": "Instagram",
+              "width": 52,
+              "height": 52,
+              "x": 453.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Buka profil LinkedIn",
+              "width": 52,
+              "height": 52,
+              "x": 519.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Threads",
+              "width": 52,
+              "height": 52,
+              "x": 585.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Buka bantuan WhatsApp",
+              "width": 52,
+              "height": 52,
+              "x": 651.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Kirim email ke companydirac@gmail.com",
+              "width": 52,
+              "height": 52,
+              "x": 453.984375,
+              "y": 13798.984375
+            },
+            {
+              "label": "Facebook",
+              "width": 52,
+              "height": 52,
+              "x": 519.984375,
+              "y": 13798.984375
+            },
+            {
+              "label": "TikTok",
+              "width": 52,
+              "height": 52,
+              "x": 585.984375,
+              "y": 13798.984375
+            }
+          ],
+          "dividers": [
+            {
+              "target": "layanan",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(248, 245, 239)",
+              "surface": "rgb(248, 245, 239)",
+              "clipped": false
+            },
+            {
+              "target": "finder-title",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "capability-title",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "mulai-dari-tujuan",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(238, 233, 223)",
+              "surface": "rgb(238, 233, 223)",
+              "clipped": false
+            }
+          ],
+          "brokenLoadedImages": [],
+          "whatsappDestinations": [
+            "/6287892523968"
+          ],
+          "faqDuplicateMarkers": 0,
+          "diagramStyles": [],
+          "portalMode": "auth-subdomain",
+          "portalLinks": [
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html"
+          ],
+          "duplicateTransactionForms": 0,
+          "accountNav": [
+            {
+              "display": "grid",
+              "width": 697,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.usaha-baru.co.id/masuk.html"
+            },
+            {
+              "display": "none",
+              "width": 0,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.usaha-baru.co.id/masuk.html"
+            }
+          ],
+          "motionReady": true,
+          "v22Ready": true
+        },
+        {
+          "page": ".qa-v25-auth.html",
+          "version": "v25",
+          "viewport": 1440,
+          "clientWidth": 1425,
+          "scrollWidth": 1425,
+          "overflow": false,
+          "footerGap": 0,
+          "footerFill": "rgb(6, 41, 78)",
+          "footerBackground": "linear-gradient(rgb(6, 41, 78) 0px, rgb(6, 41, 78) 88px, rgb(10, 54, 95) 72%, rgb(11, 75, 112) 125%)",
+          "icons": [
+            {
+              "label": "Instagram",
+              "width": 52,
+              "height": 52,
+              "x": 842.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Buka profil LinkedIn",
+              "width": 52,
+              "height": 52,
+              "x": 908.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Threads",
+              "width": 52,
+              "height": 52,
+              "x": 974.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Buka bantuan WhatsApp",
+              "width": 52,
+              "height": 52,
+              "x": 1040.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Kirim email ke companydirac@gmail.com",
+              "width": 52,
+              "height": 52,
+              "x": 842.3125,
+              "y": 14082.078125
+            },
+            {
+              "label": "Facebook",
+              "width": 52,
+              "height": 52,
+              "x": 908.3125,
+              "y": 14082.078125
+            },
+            {
+              "label": "TikTok",
+              "width": 52,
+              "height": 52,
+              "x": 974.3125,
+              "y": 14082.078125
+            }
+          ],
+          "dividers": [
+            {
+              "target": "layanan",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(248, 245, 239)",
+              "surface": "rgb(248, 245, 239)",
+              "clipped": false
+            },
+            {
+              "target": "finder-title",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "capability-title",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "mulai-dari-tujuan",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(238, 233, 223)",
+              "surface": "rgb(238, 233, 223)",
+              "clipped": false
+            }
+          ],
+          "brokenLoadedImages": [],
+          "whatsappDestinations": [
+            "/6287892523968"
+          ],
+          "faqDuplicateMarkers": 0,
+          "diagramStyles": [],
+          "portalMode": "auth-subdomain",
+          "portalLinks": [
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html",
+            "https://auth.usaha-baru.co.id/masuk.html"
+          ],
+          "duplicateTransactionForms": 0,
+          "accountNav": [
+            {
+              "display": "none",
+              "width": 0,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.usaha-baru.co.id/masuk.html"
+            },
+            {
+              "display": "grid",
+              "width": 166.390625,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": "https://auth.usaha-baru.co.id/masuk.html"
+            }
+          ],
+          "motionReady": true,
+          "v22Ready": true
+        },
+        {
+          "page": "index.html",
+          "version": "v25",
+          "viewport": 390,
+          "clientWidth": 375,
+          "scrollWidth": 375,
+          "overflow": false,
+          "footerGap": 0,
+          "footerFill": "rgb(6, 41, 78)",
+          "footerBackground": "linear-gradient(rgb(6, 41, 78) 0px, rgb(6, 41, 78) 88px, rgb(10, 54, 95) 72%, rgb(11, 75, 112) 125%)",
+          "icons": [
+            {
+              "label": "Instagram",
+              "width": 48,
+              "height": 48,
+              "x": 16,
+              "y": 18187.515625
+            },
+            {
+              "label": "Buka profil LinkedIn",
+              "width": 48,
+              "height": 48,
+              "x": 76,
+              "y": 18187.515625
+            },
+            {
+              "label": "Threads",
+              "width": 48,
+              "height": 48,
+              "x": 136,
+              "y": 18187.515625
+            },
+            {
+              "label": "Buka bantuan WhatsApp",
+              "width": 48,
+              "height": 48,
+              "x": 196,
+              "y": 18187.515625
+            },
+            {
+              "label": "Kirim email ke companydirac@gmail.com",
+              "width": 48,
+              "height": 48,
+              "x": 16,
+              "y": 18247.515625
+            },
+            {
+              "label": "Facebook",
+              "width": 48,
+              "height": 48,
+              "x": 76,
+              "y": 18247.515625
+            },
+            {
+              "label": "TikTok",
+              "width": 48,
+              "height": 48,
+              "x": 136,
+              "y": 18247.515625
+            }
+          ],
+          "dividers": [
+            {
+              "target": "layanan",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(248, 245, 239)",
+              "surface": "rgb(248, 245, 239)",
+              "clipped": false
+            },
+            {
+              "target": "finder-title",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "capability-title",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "mulai-dari-tujuan",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(238, 233, 223)",
+              "surface": "rgb(238, 233, 223)",
+              "clipped": false
+            }
+          ],
+          "brokenLoadedImages": [],
+          "whatsappDestinations": [
+            "/6287892523968"
+          ],
+          "faqDuplicateMarkers": 0,
+          "diagramStyles": [],
+          "portalMode": "unavailable-context",
+          "portalLinks": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "duplicateTransactionForms": 0,
+          "accountNav": [
+            {
+              "display": "grid",
+              "width": 343.8125,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": ""
+            },
+            {
+              "display": "none",
+              "width": 0,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": ""
+            }
+          ],
+          "motionReady": true,
+          "v22Ready": true
+        },
+        {
+          "page": "index.html",
+          "version": "v25",
+          "viewport": 768,
+          "clientWidth": 753,
+          "scrollWidth": 753,
+          "overflow": false,
+          "footerGap": 0,
+          "footerFill": "rgb(6, 41, 78)",
+          "footerBackground": "linear-gradient(rgb(6, 41, 78) 0px, rgb(6, 41, 78) 88px, rgb(10, 54, 95) 72%, rgb(11, 75, 112) 125%)",
+          "icons": [
+            {
+              "label": "Instagram",
+              "width": 52,
+              "height": 52,
+              "x": 453.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Buka profil LinkedIn",
+              "width": 52,
+              "height": 52,
+              "x": 519.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Threads",
+              "width": 52,
+              "height": 52,
+              "x": 585.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Buka bantuan WhatsApp",
+              "width": 52,
+              "height": 52,
+              "x": 651.984375,
+              "y": 13732.984375
+            },
+            {
+              "label": "Kirim email ke companydirac@gmail.com",
+              "width": 52,
+              "height": 52,
+              "x": 453.984375,
+              "y": 13798.984375
+            },
+            {
+              "label": "Facebook",
+              "width": 52,
+              "height": 52,
+              "x": 519.984375,
+              "y": 13798.984375
+            },
+            {
+              "label": "TikTok",
+              "width": 52,
+              "height": 52,
+              "x": 585.984375,
+              "y": 13798.984375
+            }
+          ],
+          "dividers": [
+            {
+              "target": "layanan",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(248, 245, 239)",
+              "surface": "rgb(248, 245, 239)",
+              "clipped": false
+            },
+            {
+              "target": "finder-title",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "capability-title",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "mulai-dari-tujuan",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(238, 233, 223)",
+              "surface": "rgb(238, 233, 223)",
+              "clipped": false
+            }
+          ],
+          "brokenLoadedImages": [],
+          "whatsappDestinations": [
+            "/6287892523968"
+          ],
+          "faqDuplicateMarkers": 0,
+          "diagramStyles": [],
+          "portalMode": "unavailable-context",
+          "portalLinks": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "duplicateTransactionForms": 0,
+          "accountNav": [
+            {
+              "display": "grid",
+              "width": 697,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": ""
+            },
+            {
+              "display": "none",
+              "width": 0,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": ""
+            }
+          ],
+          "motionReady": true,
+          "v22Ready": true
+        },
+        {
+          "page": "index.html",
+          "version": "v25",
+          "viewport": 1440,
+          "clientWidth": 1425,
+          "scrollWidth": 1425,
+          "overflow": false,
+          "footerGap": 0,
+          "footerFill": "rgb(6, 41, 78)",
+          "footerBackground": "linear-gradient(rgb(6, 41, 78) 0px, rgb(6, 41, 78) 88px, rgb(10, 54, 95) 72%, rgb(11, 75, 112) 125%)",
+          "icons": [
+            {
+              "label": "Instagram",
+              "width": 52,
+              "height": 52,
+              "x": 842.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Buka profil LinkedIn",
+              "width": 52,
+              "height": 52,
+              "x": 908.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Threads",
+              "width": 52,
+              "height": 52,
+              "x": 974.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Buka bantuan WhatsApp",
+              "width": 52,
+              "height": 52,
+              "x": 1040.3125,
+              "y": 14016.078125
+            },
+            {
+              "label": "Kirim email ke companydirac@gmail.com",
+              "width": 52,
+              "height": 52,
+              "x": 842.3125,
+              "y": 14082.078125
+            },
+            {
+              "label": "Facebook",
+              "width": 52,
+              "height": 52,
+              "x": 908.3125,
+              "y": 14082.078125
+            },
+            {
+              "label": "TikTok",
+              "width": 52,
+              "height": 52,
+              "x": 974.3125,
+              "y": 14082.078125
+            }
+          ],
+          "dividers": [
+            {
+              "target": "layanan",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(248, 245, 239)",
+              "surface": "rgb(248, 245, 239)",
+              "clipped": false
+            },
+            {
+              "target": "finder-title",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "capability-title",
+              "kind": "dig-v22-divider dig-v22-divider--wave",
+              "color": "rgb(255, 255, 255)",
+              "surface": "rgb(255, 255, 255)",
+              "clipped": false
+            },
+            {
+              "target": "mulai-dari-tujuan",
+              "kind": "dig-v22-divider dig-v22-divider--arc",
+              "color": "rgb(238, 233, 223)",
+              "surface": "rgb(238, 233, 223)",
+              "clipped": false
+            }
+          ],
+          "brokenLoadedImages": [],
+          "whatsappDestinations": [
+            "/6287892523968"
+          ],
+          "faqDuplicateMarkers": 0,
+          "diagramStyles": [],
+          "portalMode": "unavailable-context",
+          "portalLinks": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "duplicateTransactionForms": 0,
+          "accountNav": [
+            {
+              "display": "none",
+              "width": 0,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": ""
+            },
+            {
+              "display": "grid",
+              "width": 166.390625,
+              "text": "Masuk / DaftarBelanja & bayar otomatis",
+              "href": ""
+            }
+          ],
+          "motionReady": true,
+          "v22Ready": true
+        }
+      ]
+    },
+    "real_host_csp": {
+      "configScripts": 0,
+      "links": [
+        {
+          "disabled": "true",
+          "href": null
+        },
+        {
+          "disabled": "true",
+          "href": null
+        },
+        {
+          "disabled": "true",
+          "href": null
+        },
+        {
+          "disabled": "true",
+          "href": null
+        },
+        {
+          "disabled": "true",
+          "href": null
+        }
+      ],
+      "mode": "unavailable-context",
+      "noticeHidden": false
+    },
+    "application_logs": [],
+    "simulated_host_fixture_note": "Three fixture pages wrap the exact production resolver body with a window.location.href input for public hostnames. No DNS or backend is exercised.",
+    "mobile_menu_checked": true,
+    "all_logs": [
+      {
+        "level": "error",
+        "message": "Error sending browser metadata to extension: Object",
+        "timestamp": "2026-09-05T10:15:04.769Z",
+        "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+      },
+      {
+        "level": "error",
+        "message": "Error sending browser metadata to extension: Object",
+        "timestamp": "2026-09-05T10:15:18.822Z",
+        "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+      },
+      {
+        "level": "error",
+        "message": "Error sending browser metadata to extension: Object",
+        "timestamp": "2026-09-05T10:15:41.180Z",
+        "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+      },
+      {
+        "level": "error",
+        "message": "Error sending browser metadata to extension: Object",
+        "timestamp": "2026-09-05T10:15:41.182Z",
+        "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+      },
+      {
+        "level": "error",
+        "message": "Error sending browser metadata to extension: Object",
+        "timestamp": "2026-09-05T10:15:41.188Z",
+        "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+      },
+      {
+        "level": "error",
+        "message": "Error sending browser metadata to extension: Object",
+        "timestamp": "2026-09-05T10:15:44.320Z",
+        "url": "chrome-extension://kcdongibgcplmaagnmgpjhpjgmmaaaaa/content-script.bundle.js"
+      }
+    ]
+  },
+  "csp_changes": {
+    ".htaccess": {
+      "removed_script_hash": "'sha256-XlyM1sSX3VCawVlFPkVCVX9StYNm6DxgJorGkm3Xk20='",
+      "added_script_hash": "'sha256-s0sluso8OBwqLc+hqS6R1Ui9j9qm0zGkp6XYx5AF2a8='",
+      "removed_config_cache_rule": true
+    },
+    "_headers": {
+      "removed_script_hash": "'sha256-XlyM1sSX3VCawVlFPkVCVX9StYNm6DxgJorGkm3Xk20='",
+      "added_script_hash": "'sha256-s0sluso8OBwqLc+hqS6R1Ui9j9qm0zGkp6XYx5AF2a8='",
+      "removed_config_cache_rule": true
+    }
+  },
+  "public_suffix_data": {
+    "url": "https://publicsuffix.org/list/public_suffix_list.dat",
+    "version": "2026-09-03_19-51-30_UTC",
+    "raw_bytes": 335681,
+    "raw_sha256": "aef8fb81d63232dabfe6f3506bc17e8bddf2a98e0ae60768609a1592201e6fec",
+    "total_rules": 10321,
+    "embedded_multilabel_rules": 8880,
+    "embedded_bytes": 149722,
+    "includes_private": true,
+    "license": "MPL-2.0"
+  },
+  "limitations": [
+    "Browser tests use Chromium. Physical iPhone/Safari and Firefox were not tested.",
+    "Three browser fixtures supply simulated public hostnames to the unchanged resolver body. No DNS or real portal navigation is simulated as successful.",
+    "The real preview host is terminal.local; the unmodified production resolver correctly disables account links for that local hostname.",
+    "Browser CSP fixtures enforce production script/style directives. Full Apache/CDN header processing is not tested.",
+    "DNS, HTTPS, authentication, registration, and payment backend availability are not tested; the backend is not included.",
+    "No deployment, message, or payment was performed."
+  ]
+}
