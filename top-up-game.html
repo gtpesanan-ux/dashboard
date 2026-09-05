@@ -5387,6 +5387,19 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 @keyframes dig-v22-icon-arrive{from{opacity:.35;transform:translate3d(0,7px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
 @media print{.dig-v22-divider{display:none!important}}
 </style>
+
+<style id="digdaya-revision-v23-style">
+/* V23: one animated FAQ indicator, retaining the no-JS marker. */
+.faq details summary.has-faq-chevron::after,
+.faq details[open] summary.has-faq-chevron::after{content:none;display:none}
+.faq summary.has-faq-chevron .faq-chevron{flex:0 0 22px;align-self:center}
+.faq details summary.has-faq-chevron[data-expanded="true"] .faq-chevron{transform:rotate(180deg)}
+.faq details summary.has-faq-chevron[data-expanded="false"] .faq-chevron{transform:rotate(0deg)}
+/* The original diagram includes its own frame. A second radius clips it. */
+.dig-proof-figure img[src*="visual-flow-"]{height:auto;object-fit:contain;border-radius:0;aspect-ratio:auto}
+/* Match SVG units to the navigation box; keep branches in the row gutter. */
+.dv-tree-lines{left:0;top:0;width:100%;max-width:none;pointer-events:none}
+</style>
 </head>
 <body data-page-style="service" id="top">
 <svg aria-hidden="true" class="icon-sprite" focusable="false">
@@ -5606,13 +5619,13 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <button aria-label="Tutup menu" class="nav-backdrop" hidden="" tabindex="-1" type="button"></button><noscript><div class="no-script-banner"><div class="shell"><strong>Mode tanpa JavaScript.</strong> Konten tetap dapat dibaca; untuk konsultasi gunakan <a href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi.">WhatsApp</a> atau buka <a href="layanan.html">daftar layanan</a>.</div></div></noscript>
 <nav aria-label="Breadcrumb" class="breadcrumb"><div class="shell"><ol><li><a href="index.html">Beranda</a></li><li><a href="layanan.html">Layanan</a></li><li><span aria-current="page">Top Up Game</span></li></ol></div></nav>
 <main id="main">
-<section aria-labelledby="page-title" class="hero"><div class="shell hero-frame"><picture class="hero-picture position-left"><img alt="Visual layanan permintaan top up game Digdaya" data-original-src="assets/gaming-service-v16.webp" decoding="async" fetchpriority="high" src="assets/gaming-service-v16.webp" height="675" width="1200"/></picture><div class="hero-copy reveal" data-motion="hero"><p class="kicker overline-rule">Digdaya Play</p><h1 id="page-title">Top up dimulai dari data tujuan yang benar.</h1><p class="lede">Sampaikan game, identitas tujuan, server bila diperlukan, dan produk yang dicari. Ketersediaan serta rincian dikonfirmasi sebelum transaksi.</p><div class="actions"><a class="button" href="#cara">Lihat cara permintaan</a><a class="button button-ghost" href="https://wa.me/6287892523968?text=Halo%20Digdaya%2C%20saya%20ingin%20menanyakan%20top%20up%20game." rel="noopener noreferrer" target="_blank">Tanyakan top up</a></div><ul aria-label="Tahapan top up" class="hero-index"><li>Game</li><li>ID Tujuan</li><li>Produk</li><li>Konfirmasi</li></ul></div></div></section><section aria-labelledby="rev10-topup-visual-title" class="section dig-visual-proof" data-rev10-visual-proof="true"><div class="shell"><div class="dig-proof-head"><p class="kicker">Visual alur</p><h2 id="rev10-topup-visual-title">Visual alur top up</h2><p>Data tujuan lebih dulu sebelum produk diproses.</p></div><figure class="dig-proof-figure"><img alt="Visual alur top up PT Digdaya Inovasi Nusantara" data-original-src="assets/visual-flow-topup.webp" decoding="async" loading="lazy" src="assets/visual-flow-topup.webp" height="520" width="1200"/><figcaption>Diagram menekankan game, ID/server, produk, dan verifikasi tanpa menampilkan kredensial keamanan.</figcaption></figure></div></section>
+<section aria-labelledby="page-title" class="hero"><div class="shell hero-frame"><picture class="hero-picture position-left"><img alt="Visual layanan permintaan top up game Digdaya" data-original-src="assets/gaming-service-v16.webp" decoding="async" fetchpriority="high" src="assets/gaming-service-v16.webp" height="675" width="1200"/></picture><div class="hero-copy reveal" data-motion="hero"><p class="kicker overline-rule">Digdaya Play</p><h1 id="page-title">Layanan permintaan top up game.</h1><p class="lede">Kirim nama game, User ID, server bila diperlukan, dan produk yang dicari ke WhatsApp utama. Ketersediaan, harga, serta proses dikonfirmasi sebelum transaksi.</p><div class="actions"><a class="button" href="#cara">Lihat cara permintaan</a><a class="button button-ghost" href="https://wa.me/6287892523968?text=Halo%20Digdaya%2C%20saya%20ingin%20menanyakan%20top%20up%20game." rel="noopener noreferrer" target="_blank">Tanyakan top up</a></div><ul aria-label="Tahapan top up" class="hero-index"><li>Game</li><li>ID Tujuan</li><li>Produk</li><li>Konfirmasi</li></ul></div></div></section><section aria-labelledby="rev10-topup-visual-title" class="section dig-visual-proof" data-rev10-visual-proof="true"><div class="shell"><div class="dig-proof-head"><p class="kicker">Visual alur</p><h2 id="rev10-topup-visual-title">Alur permintaan top up</h2><p>Data tujuan lebih dulu sebelum produk diproses.</p></div><figure class="dig-proof-figure"><img alt="Visual alur top up PT Digdaya Inovasi Nusantara" data-original-src="assets/visual-flow-topup.webp" decoding="async" loading="lazy" src="assets/visual-flow-topup.webp" height="520" width="1200"/><figcaption>Periksa game, ID atau server, dan produk sebelum mengonfirmasi permintaan.</figcaption></figure></div></section>
 <section class="section" id="cara"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Data permintaan</p><h2>Empat informasi yang membantu pemeriksaan.</h2></div><p class="lede">Format data berbeda menurut game dan produk. Kirim hanya informasi yang dibutuhkan, tanpa password atau kode keamanan.</p></div><div class="grid-4"><article class="card reveal" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-gamepad"></use></svg></span><span aria-hidden="true" class="card-code">01</span></div><h3>Nama game</h3><p>Tuliskan nama game atau platform dengan jelas untuk menghindari salah konteks.</p></article><article class="card reveal" data-delay="1" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-target"></use></svg></span><span aria-hidden="true" class="card-code">02</span></div><h3>Identitas tujuan</h3><p>Kirim User ID, Player ID, atau identitas publik lain yang memang diperlukan oleh alur top up.</p></article><article class="card reveal" data-delay="2" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-shield-check"></use></svg></span><span aria-hidden="true" class="card-code">03</span></div><h3>Server bila perlu</h3><p>Sertakan server, zone, atau region hanya ketika memang menjadi bagian dari identitas tujuan.</p></article><article class="card accent-card reveal" data-delay="3" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-check-circle"></use></svg></span><span aria-hidden="true" class="card-code">04</span></div><h3>Produk yang dicari</h3><p>Jelaskan nominal atau item yang ingin ditanyakan agar ketersediaan dapat diperiksa.</p></article></div></div></section>
 <section aria-labelledby="topup-request-wizard-title" class="section soft interactive-section" data-widget="topup-request-wizard" id="topup-request-wizard" data-v22-surface="soft">
 <div class="dig-v22-divider dig-v22-divider--wave" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 1440 64"><path class="dig-v22-divider-fill" d="M0 30 C240 4 420 60 680 28 S1150 0 1440 24 V64 H0 Z"></path><path class="dig-v22-divider-line" pathLength="1" d="M0 30 C240 4 420 60 680 28 S1150 0 1440 24"></path></svg></div>
 
 <div class="shell">
-<div class="section-head reveal" data-motion="fade"><div><p class="kicker">Top-up Request Wizard</p><h2 id="topup-request-wizard-title">Siapkan data tujuan tanpa membagikan akses akun.</h2></div><p class="lede">Alat ini hanya menyusun permintaan. Harga, ketersediaan, dan proses dikonfirmasi sebelum transaksi.</p></div>
+<div class="section-head reveal" data-motion="fade"><div><p class="kicker">Formulir permintaan top up</p><h2 id="topup-request-wizard-title">Siapkan data tujuan tanpa membagikan akses akun.</h2></div><p class="lede">Alat ini hanya menyusun permintaan. Harga, ketersediaan, dan proses dikonfirmasi sebelum transaksi.</p></div>
 <div class="tool-panel reveal" data-motion="rise">
 <div class="tool-layout">
 <aside class="tool-sidebar"><p class="kicker">Permintaan aman</p><ol aria-label="Tahapan top up" class="tool-progress"><li data-progress-step="">Tujuan</li><li data-progress-step="">Produk</li><li data-progress-step="">Periksa</li></ol><p class="security-note"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-lock"></use></svg> Jangan pernah mengirim password, OTP, PIN, kode pemulihan, atau akses akun.</p></aside>
@@ -5631,17 +5644,17 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 </div>
 </section>
 <section class="section paper"><div class="shell editorial-split"><figure class="editorial-media reveal" data-lightbox="" data-motion="media"><img alt="Ilustrasi proses pemeriksaan permintaan digital" data-original-src="assets/visual-topup-2-clean.webp" decoding="async" loading="lazy" src="assets/visual-topup-2-clean.webp" height="675" width="1200"/><figcaption>Verifikasi data tujuan dilakukan sebelum transaksi untuk mengurangi risiko salah kirim.</figcaption></figure><div class="editorial-copy reveal" data-motion="slide-right"><p class="kicker">Keamanan akun</p><h2>Password dan OTP tidak diperlukan untuk permintaan top up.</h2><p>Jangan membagikan password, kode OTP, PIN, kode pemulihan, data kartu, atau akses akun. Hentikan percakapan bila ada permintaan data rahasia.</p><ul class="feature-list"><li><span>AMAN</span><div><strong>Gunakan identitas publik</strong><br/><span class="fine">Kirim hanya ID tujuan yang diperlukan oleh produk.</span></div></li><li><span>CEK</span><div><strong>Baca ulang data</strong><br/><span class="fine">Pastikan angka, nama, server, dan produk telah sesuai.</span></div></li><li><span>SIMPAN</span><div><strong>Catat konfirmasi</strong><br/><span class="fine">Simpan informasi transaksi yang telah disepakati.</span></div></li></ul></div></div></section>
-<section class="section soft"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Alur permintaan</p><h2>Singkat, tetapi tetap memiliki titik konfirmasi.</h2></div><p class="lede">Ketersediaan, rincian, nilai, dan estimasi proses dapat berubah sehingga perlu dikonfirmasi pada saat permintaan.</p></div><div class="process"><article><h3>Kirim data</h3><p>Sampaikan game, ID tujuan, server bila perlu, dan produk.</p></article><article><h3>Periksa</h3><p>Data serta ketersediaan ditinjau sebelum transaksi.</p></article><article><h3>Konfirmasi</h3><p>Rincian permintaan dibaca ulang dan disepakati.</p></article><article><h3>Proses</h3><p>Permintaan dijalankan sesuai informasi yang telah dikonfirmasi.</p></article></div></div></section>
+<section class="section soft"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Alur permintaan</p><h2>Empat tahap permintaan top up.</h2></div><p class="lede">Ketersediaan, rincian, nilai, dan estimasi proses dapat berubah sehingga perlu dikonfirmasi pada saat permintaan.</p></div><div class="process"><article><h3>Kirim data</h3><p>Sampaikan game, ID tujuan, server bila perlu, dan produk.</p></article><article><h3>Periksa</h3><p>Data serta ketersediaan ditinjau sebelum transaksi.</p></article><article><h3>Konfirmasi</h3><p>Rincian permintaan dibaca ulang dan disepakati.</p></article><article><h3>Proses</h3><p>Permintaan dijalankan sesuai informasi yang telah dikonfirmasi.</p></article></div></div></section>
 <section class="section"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Pertanyaan umum</p><h2>Sebelum mengirim permintaan.</h2></div></div><div class="faq"><details class="reveal"><summary>Apakah semua game tersedia?</summary><p>Tidak ada daftar ketersediaan tetap pada halaman ini. Kirim nama game dan produk yang dicari untuk diperiksa.</p></details><details class="reveal"><summary>Apakah harus mengirim login akun?</summary><p>Tidak. Jangan pernah mengirim password, OTP, PIN, kode pemulihan, atau akses akun.</p></details><details class="reveal"><summary>Apa yang terjadi bila ID tujuan salah?</summary><p>Data tujuan perlu diperiksa sebelum transaksi. Karena karakter produk digital berbeda-beda, pastikan seluruh informasi tepat sebelum memberi konfirmasi.</p></details></div></div></section>
 <section aria-labelledby="topup-flow-title" class="section soft">
-<div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Transaction Clarity</p><h2 id="topup-flow-title">Empat langkah untuk menjaga permintaan tetap jelas.</h2></div><p class="lede">Alur ini memperkuat wizard yang sudah ada dan tidak mengubah validasi keamanan yang telah berjalan.</p></div><div class="dig-flow"><article class="dig-flow-step reveal" data-motion="rise"><h3>Pilih game</h3><p>Sebutkan game atau layanan yang ingin ditanyakan.</p></article><article class="dig-flow-step reveal" data-delay="1" data-motion="rise"><h3>Siapkan ID tujuan</h3><p>Gunakan ID dan server bila memang dibutuhkan oleh layanan.</p></article><article class="dig-flow-step reveal" data-delay="2" data-motion="rise"><h3>Konfirmasi produk</h3><p>Jenis produk dan rincian permintaan diperiksa sebelum dilanjutkan.</p></article><article class="dig-flow-step reveal" data-delay="3" data-motion="rise"><h3>Jaga kredensial</h3><p>Password, OTP, PIN, CVV, atau kode keamanan tidak pernah diperlukan.</p></article></div></div>
+<div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Pemeriksaan permintaan</p><h2 id="topup-flow-title">Empat langkah untuk menjaga permintaan tetap jelas.</h2></div><p class="lede">Cocokkan game, data tujuan, serta produk, lalu konfirmasikan rincian melalui WhatsApp utama.</p></div><div class="dig-flow"><article class="dig-flow-step reveal" data-motion="rise"><h3>Pilih game</h3><p>Sebutkan game atau layanan yang ingin ditanyakan.</p></article><article class="dig-flow-step reveal" data-delay="1" data-motion="rise"><h3>Siapkan ID tujuan</h3><p>Gunakan ID dan server bila memang dibutuhkan oleh layanan.</p></article><article class="dig-flow-step reveal" data-delay="2" data-motion="rise"><h3>Konfirmasi produk</h3><p>Jenis produk dan rincian permintaan diperiksa sebelum dilanjutkan.</p></article><article class="dig-flow-step reveal" data-delay="3" data-motion="rise"><h3>Jaga kredensial</h3><p>Password, OTP, PIN, CVV, atau kode keamanan tidak pernah diperlukan.</p></article></div></div>
 </section>
-<section class="section-tight"><div class="shell cta-band reveal"><div><p class="kicker">Permintaan top up</p><h2>Siapkan data tujuan sebelum menghubungi kami.</h2><p>Jangan sertakan password, OTP, PIN, atau kode keamanan dalam pesan.</p></div><a class="button button-gold" href="https://wa.me/6287892523968?text=Halo%20Digdaya%2C%20saya%20ingin%20menanyakan%20top%20up%20game." rel="noopener noreferrer" target="_blank">Chat WhatsApp</a></div></section>
+<section class="section-tight"><div class="shell cta-band reveal"><div><p class="kicker">Permintaan top up</p><h2>Kirim permintaan ke WhatsApp utama.</h2><p>Jangan sertakan password, OTP, PIN, atau kode keamanan dalam pesan.</p></div><a class="button button-gold" href="https://wa.me/6287892523968?text=Halo%20Digdaya%2C%20saya%20ingin%20menanyakan%20top%20up%20game." rel="noopener noreferrer" target="_blank">Chat WhatsApp</a></div></section>
 <section aria-labelledby="availability-title" class="section paper" id="availability-readiness" data-v22-surface="paper">
 <div class="dig-v22-divider dig-v22-divider--arc" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 1440 64"><path class="dig-v22-divider-fill" d="M0 34 C390 34 470 3 800 8 S1220 38 1440 28 V64 H0 Z"></path><path class="dig-v22-divider-line" pathLength="1" d="M0 34 C390 34 470 3 800 8 S1220 38 1440 28"></path></svg></div>
 
-<div class="shell"><div class="dig-pro-intro reveal"><p class="kicker">Kesiapan transaksi</p><h2 id="availability-title">Produk baru dianggap tersedia setelah game, ID, server, harga, dan kanal pembayaran dikonfirmasi.</h2><p class="lede">Halaman tidak menampilkan katalog atau harga fiktif. Ketersediaan mengikuti data provider dan konfirmasi pada saat permintaan diproses. Jangan pernah mengirim kata sandi, OTP, PIN, atau kredensial keamanan.</p></div><div class="dig-pro-action-row"><a class="button" href="keamanan.html">Buka panduan keamanan</a><a class="button button-ghost" href="trust-center.html">Buka Trust Center</a></div></div></section>
-<section aria-labelledby="u-topup-title" class="section"><div class="shell"><div class="section-head reveal" data-motion="slide-left"><div><p class="kicker">Secure flow</p><h2 id="u-topup-title">Alur yang singkat, informasi yang tetap terkontrol.</h2></div><p class="lede">Interaksi divisualisasikan sebagai tahapan layanan; password, OTP, PIN, dan kode pemulihan tetap tidak pernah diminta.</p></div><div class="u-flowline"><div><strong>Pilih kebutuhan</strong><p class="fine">Tentukan jenis permintaan.</p></div><div><strong>Isi identitas tujuan</strong><p class="fine">Gunakan data yang memang diperlukan.</p></div><div><strong>Tinjau kembali</strong><p class="fine">Periksa sebelum dikirim.</p></div><div><strong>Konfirmasi</strong><p class="fine">Lanjutkan melalui kanal yang tersedia.</p></div></div></div></section>
+<div class="shell"><div class="dig-pro-intro reveal"><p class="kicker">Kesiapan transaksi</p><h2 id="availability-title">Konfirmasikan produk dan pembayaran sebelum transaksi.</h2><p class="lede">Ketersediaan dan harga mengikuti konfirmasi saat permintaan diproses. Periksa game, ID, server, produk, harga, dan kanal pembayaran. Jangan mengirim password, OTP, PIN, atau kode keamanan.</p></div><div class="dig-pro-action-row"><a class="button" href="keamanan.html">Buka panduan keamanan</a><a class="button button-ghost" href="trust-center.html">Buka Trust Center</a></div></div></section>
+<section aria-labelledby="u-topup-title" class="section"><div class="shell"><div class="section-head reveal" data-motion="slide-left"><div><p class="kicker">Alur konfirmasi</p><h2 id="u-topup-title">Tinjau data sebelum mengirim permintaan.</h2></div><p class="lede">Gunakan data tujuan yang diperlukan untuk top up. Password, OTP, PIN, dan kode pemulihan tidak diperlukan.</p></div><div class="u-flowline"><div><strong>Pilih kebutuhan</strong><p class="fine">Tentukan jenis permintaan.</p></div><div><strong>Isi identitas tujuan</strong><p class="fine">Gunakan data yang memang diperlukan.</p></div><div><strong>Tinjau kembali</strong><p class="fine">Periksa sebelum dikirim.</p></div><div><strong>Konfirmasi</strong><p class="fine">Lanjutkan melalui WhatsApp utama.</p></div></div></div></section>
 </main>
 <footer class="site-footer" data-nosnippet="">
 <div aria-hidden="true" class="site-footer-wave"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 393 25"><path class="site-footer-wave-accent" d="M0 21 C118 23 165 18 198 6 C226 -2 282 -1 315 3 C350 7 377 13 393 16 V25 H0 Z"></path><path class="site-footer-wave-main" d="M0 21 C88 26 158 25 200 16 C229 11 247 0 283 0 C325 0 360 8 393 21 V25 H0 Z"></path></svg></div>
@@ -5660,11 +5673,11 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div class="footer-contact-copy">
 <p class="footer-title">Hubungi Kami</p>
 <h3>Tim Digdaya siap membantu kebutuhan Anda.</h3>
-<p>Gunakan kanal komunikasi berikut untuk konsultasi layanan, kemitraan, informasi transaksi, atau kebutuhan dukungan. Kami mengutamakan komunikasi yang jelas dan dapat ditelusuri.</p>
+<p>Konsultasi, pemesanan, dan tindak lanjut layanan melalui WhatsApp 0878-9252-3968. Email tersedia untuk dokumen dan dukungan.</p>
 <div aria-label="Kanal komunikasi Digdaya" class="footer-contact-channels">
 <a class="footer-contact-channel" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span>WhatsApp Utama</span><small>0878-9252-3968</small></a>
-<a class="footer-contact-channel" href="https://wa.me/62882009257589?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span>Backup 1</span><small>+62 882-0092-57589</small></a>
-<a class="footer-contact-channel" href="https://wa.me/6288991926199?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span>Backup 2</span><small>+62 889-9192-6199</small></a>
+
+
 <a class="footer-contact-channel" href="mailto:companydirac@gmail.com"><span>Email</span><small>companydirac@gmail.com</small></a>
 </div>
 </div>
@@ -5672,7 +5685,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <span aria-label="Instagram" class="social-contact" role="img" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="15" rx="4" stroke="currentColor" stroke-width="1.8" width="15" x="4.5" y="4.5"></rect><circle cx="12" cy="12" fill="none" r="3.4" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.1" cy="6.9" fill="currentColor" r="1"></circle></svg></span>
 <a aria-label="Buka profil LinkedIn" class="social-contact" href="https://www.linkedin.com/in/achmad-zaenuddin-7285ba433" rel="noopener noreferrer" target="_blank" title="LinkedIn"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path fill="currentColor" d="M5.37 3.5a1.88 1.88 0 1 1 0 3.76 1.88 1.88 0 0 1 0-3.76ZM3.75 8.8H7V20H3.75V8.8Zm5.25 0h3.12v1.53h.05c.43-.82 1.5-1.69 3.09-1.69 3.3 0 3.91 2.18 3.91 5.01V20h-3.25v-5.63c0-1.34-.02-3.07-1.87-3.07-1.88 0-2.17 1.46-2.17 2.97V20H9V8.8Z"></path></svg></a>
 <span aria-label="Threads" class="social-contact" role="img" title="Threads"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path fill="currentColor" d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"></path></svg></span>
-<button aria-label="Buka pilihan WhatsApp" class="social-contact" data-contact-open="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
+<button aria-label="Buka konsultasi WhatsApp" class="social-contact" data-contact-open="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
 <span aria-disabled="true" aria-label="Telegram" class="social-contact" title="Telegram"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m3.5 11.1 16.4-6.4-3 14.6-5.1-4-2.9 2.7.4-4.3 7.8-6.5-9.7 5.1-3.9-1.2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.6"></path></svg></span>
 <a aria-label="Kirim email ke companydirac@gmail.com" class="social-contact" href="mailto:companydirac@gmail.com" title="Email"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="13" rx="2" stroke="currentColor" stroke-width="1.8" width="17" x="3.5" y="5.5"></rect><path d="m5 7 7 5.2L19 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a>
 <span aria-label="Facebook" class="social-contact" role="img" title="Facebook"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13.7 21v-7.8h2.6l.4-3h-3V8.3c0-.9.3-1.5 1.6-1.5H17V4.1c-.7-.1-1.5-.2-2.4-.2-2.4 0-4 1.5-4 4.1v2.2H8v3h2.6V21h3.1Z" fill="currentColor"></path></svg></span>
@@ -5689,7 +5702,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div class="dialog-head"><div><p class="kicker">Formulir konsultasi</p><h2 id="inquiry-title">Ceritakan kebutuhan Anda.</h2></div><button aria-label="Tutup formulir" class="icon-button" data-close-dialog="" data-close-inquiry="" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></button></div>
 <div class="dialog-body">
 <p class="lede" data-inquiry-context="">Isi data secukupnya. Kami tidak meminta password, OTP, PIN, CVV, atau kode pemulihan.</p>
-<form action="mailto:companydirac@gmail.com?subject=Permintaan%20layanan%20Digdaya" data-inquiry-form="" enctype="text/plain" method="post" novalidate="">
+<form action="https://wa.me/6287892523968" data-inquiry-form="" method="get" novalidate="">
 <div class="field-grid">
 <div class="field"><label for="inquiry-name">Nama <span aria-hidden="true">*</span></label><input autocomplete="name" id="inquiry-name" maxlength="100" minlength="2" name="name" required="" type="text"/></div>
 <div class="field"><label for="inquiry-whatsapp">Nomor WhatsApp <span aria-hidden="true">*</span></label><input autocomplete="tel" id="inquiry-whatsapp" inputmode="tel" maxlength="24" minlength="8" name="whatsapp" pattern="[0-9+\(\) \-]{8,24}" required="" type="tel"/></div>
@@ -5697,12 +5710,12 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div class="field"><label for="inquiry-company">Perusahaan/organisasi <span class="fine">(opsional)</span></label><input autocomplete="organization" id="inquiry-company" maxlength="120" name="company" type="text"/></div>
 <div class="field"><label for="inquiry-service">Layanan <span aria-hidden="true">*</span></label><select id="inquiry-service" name="service" required=""><option value="Konsultasi umum">Konsultasi umum</option><option value="Parfum">Parfum</option><option value="Beli atau jual domain">Beli atau jual domain</option><option value="Pembuatan website">Pembuatan website</option><option value="Pengembangan website">Pengembangan website</option><option value="Top up game">Top up game</option></select></div>
 <div class="field"><label for="inquiry-budget">Rentang anggaran <span class="fine">(opsional)</span></label><input id="inquiry-budget" maxlength="80" name="budget" placeholder="Contoh: perlu didiskusikan" type="text"/></div>
-<div class="field field--full"><label for="inquiry-message">Kebutuhan <span aria-hidden="true">*</span></label><textarea aria-describedby="inquiry-message-hint" id="inquiry-message" maxlength="2000" minlength="10" name="message" placeholder="Tujuan, konteks, preferensi, dan batasan penting" required="" rows="5"></textarea><span class="field-hint" id="inquiry-message-hint">10–2.000 karakter. Hindari data rahasia.</span></div>
+<div class="field field--full"><label for="inquiry-message">Kebutuhan <span aria-hidden="true">*</span></label><textarea aria-describedby="inquiry-message-hint" id="inquiry-message" maxlength="2000" minlength="10" name="message" placeholder="Tujuan, konteks, preferensi, dan batasan penting" required="" rows="5"></textarea><span class="field-hint" id="inquiry-message-hint">Minimal 10 karakter. Seluruh pesan WhatsApp, termasuk data kontak, maksimal 1.800 karakter. Hindari data rahasia.</span></div>
 </div>
 <div aria-hidden="true" class="field sr-only"><label for="inquiry-website">Website</label><input autocomplete="off" id="inquiry-website" maxlength="200" name="website" tabindex="-1" type="text"/></div>
 <label class="choice-card"><input aria-describedby="inquiry-consent-note" name="consent" required="" type="checkbox" value="true"/><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-shield-check"></use></svg></span><strong>Saya menyetujui penggunaan data untuk menangani permintaan ini.</strong></label><p class="fine" id="inquiry-consent-note">Pelajari <a href="kebijakan-privasi.html">Kebijakan Privasi</a> sebelum memberi persetujuan.</p>
 <p aria-live="polite" class="status-message" data-form-status="" data-inquiry-status="" role="status"></p>
-<div class="dialog-actions"><button class="button" type="submit">Kirim permintaan</button><a class="button button-ghost" data-inquiry-wa="" hidden="" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank">Lanjut via WhatsApp</a><button class="button button-ghost" data-close-dialog="" data-close-inquiry="" type="button">Batal</button></div>
+<div class="dialog-actions"><button class="button" type="submit">Siapkan pesan WhatsApp</button><a class="button button-ghost" data-inquiry-wa="" hidden="" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank">Lanjut via WhatsApp</a><button class="button button-ghost" data-close-dialog="" data-close-inquiry="" type="button">Batal</button></div>
 <div class="tool-result" data-inquiry-success="" hidden="" tabindex="-1"><h3>Pesan siap ditindaklanjuti</h3><p>Lanjutkan melalui kanal yang dipilih dan simpan konfirmasi dari kanal tersebut.</p></div>
 </form>
 </div>
@@ -5711,15 +5724,15 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div aria-atomic="true" aria-live="polite" class="toast-region"></div>
 <div class="quick-contact" data-quick-contact="">
 <div class="quick-contact-panel" data-quick-contact-panel="" hidden="" id="quick-contact-panel">
-<div class="quick-contact-panel-head"><span><strong>Hubungi Digdaya</strong><small>Pilih kanal yang ingin digunakan.</small></span><button aria-label="Tutup pilihan kontak" class="icon-button" data-contact-close="" type="button"><svg aria-hidden="true" class="icon-svg" height="20" viewbox="0 0 24 24" width="20"><use href="#icon-close"></use></svg></button></div>
+<div class="quick-contact-panel-head"><span><strong>Hubungi Digdaya</strong><small>Konsultasi layanan melalui WhatsApp utama.</small></span><button aria-label="Tutup pilihan kontak" class="icon-button" data-contact-close="" type="button"><svg aria-hidden="true" class="icon-svg" height="20" viewbox="0 0 24 24" width="20"><use href="#icon-close"></use></svg></button></div>
 <div class="quick-contact-options">
 <a class="quick-contact-option" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></span><span class="quick-contact-copy"><strong>WhatsApp Utama</strong><small>0878-9252-3968</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
-<a class="quick-contact-option" href="https://wa.me/62882009257589?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></span><span class="quick-contact-copy"><strong>WhatsApp Backup 1</strong><small>+62 882-0092-57589</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
-<a class="quick-contact-option" href="https://wa.me/6288991926199?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></span><span class="quick-contact-copy"><strong>WhatsApp Backup 2</strong><small>+62 889-9192-6199</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
+
+
 <a class="quick-contact-option" href="mailto:companydirac@gmail.com?subject=Konsultasi%20PT%20Digdaya%20Inovasi%20Nusantara"><span class="quick-contact-badge email"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 24 24"><use href="#icon-email"></use></svg></span><span class="quick-contact-copy"><strong>Email</strong><small>companydirac@gmail.com</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
 </div>
 </div>
-<button aria-controls="quick-contact-panel" aria-expanded="false" aria-label="Buka pilihan WhatsApp dan email" class="wa-float" data-contact-toggle="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
+<button aria-controls="quick-contact-panel" aria-expanded="false" aria-label="Buka konsultasi WhatsApp dan email" class="wa-float" data-contact-toggle="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
 </div>
 <script data-inline-from="assets/js/runtime-site-v8.js">
 
@@ -6017,25 +6030,37 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
         chevron.classList.add("faq-chevron");
         summary.append(chevron);
       }
+      summary.classList.add("has-faq-chevron");
+      let intendedOpen = details.open;
       summary.addEventListener("click", (event) => {
-        if (reduceMotion.matches || !("animate" in answer)) return;
+        if (reduceMotion.matches || !("animate" in answer)) {
+          animations.get(details)?.cancel();
+          animations.delete(details);
+          intendedOpen = !details.open;
+          summary.dataset.expanded = String(intendedOpen);
+          answer.style.overflow = "";
+          return;
+        }
         event.preventDefault();
-        animations.get(details)?.cancel();
-        const opening = !details.open;
+        const previous = animations.get(details);
+        const start = details.open ? parseFloat(getComputedStyle(answer).height) || answer.offsetHeight : 0;
+        const startOpacity = details.open ? getComputedStyle(answer).opacity : "0";
+        const opening = previous ? !intendedOpen : !details.open;
+        intendedOpen = opening;
+        previous?.cancel();
         if (opening) details.open = true;
-        const start = opening ? 0 : answer.scrollHeight;
+        summary.dataset.expanded = String(opening);
         const end = opening ? answer.scrollHeight : 0;
         answer.style.overflow = "hidden";
         const animation = answer.animate(
-          [{ height: `${start}px`, opacity: opening ? 0 : 1 }, { height: `${end}px`, opacity: opening ? 1 : 0 }],
+          [{ height: start + "px", opacity: startOpacity }, { height: end + "px", opacity: opening ? 1 : 0 }],
           { duration: 280, easing: "cubic-bezier(.2,.8,.2,1)" },
         );
         animations.set(details, animation);
         animation.finished.then(() => {
-          if (!opening) details.open = false;
-          answer.style.height = "";
+          if (animations.get(details) !== animation) return;
+          details.open = opening;
           answer.style.overflow = "";
-          answer.style.opacity = "";
           animations.delete(details);
         }).catch(() => {});
       });
@@ -6542,6 +6567,12 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 
     const clearValidityState = (event) => {
       const control = event.target;
+      if (form.dataset.whatsappPrepared === "true") {
+        const scope = form.closest("[data-inquiry-dialog],dialog") || form.parentElement || form;
+        showNode(select(form, "[data-inquiry-wa]") || select(scope, "[data-inquiry-wa]"), false);
+        setNodeText(select(form, "[data-inquiry-status],[data-form-status]") || select(scope, "[data-inquiry-status],[data-form-status]"), "Data diubah. Siapkan kembali pesan WhatsApp.");
+        delete form.dataset.whatsappPrepared;
+      }
       if (control?.matches?.("input,select,textarea") && control.checkValidity()) {
         control.removeAttribute("aria-invalid");
       }
@@ -6550,6 +6581,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
     form.addEventListener("change", clearValidityState);
 
     form.addEventListener("digdaya:inquiry-reset", () => {
+      delete form.dataset.whatsappPrepared;
       requestGeneration += 1;
       activeController?.abort();
       activeController = null;
@@ -6655,6 +6687,35 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
         consent: true,
         sourcePath: safeSourcePath(),
       };
+      /* V23: the existing validation, dialog and widget summaries prepare a
+         message for the one sales number. Customers send it in WhatsApp. */
+      const whatsappDraft = [
+        "Halo PT Digdaya Inovasi Nusantara,",
+        "Nama: " + name,
+        "WhatsApp: " + whatsapp,
+        "Layanan: " + service,
+        base.email ? "Email: " + base.email : "",
+        base.company ? "Perusahaan: " + base.company : "",
+        base.budget ? "Anggaran: " + base.budget : "",
+        "Kebutuhan: " + message,
+      ].filter(Boolean).join("\n");
+      const whatsappLink = select(form, "[data-inquiry-wa]")
+        || select(inquiryScope, "[data-inquiry-wa]");
+      if (whatsappLink) {
+        if (Array.from(whatsappDraft).length > MAX_WHATSAPP_LENGTH) {
+          showNode(whatsappLink, false);
+          setNodeText(status, "Ringkas kebutuhan Anda agar seluruh pesan, termasuk data kontak, tidak melebihi 1.800 karakter.");
+          focusNode(messageControl);
+          return;
+        }
+        whatsappLink.href = buildWhatsAppUrl(whatsappDraft);
+        whatsappLink.textContent = "Buka WhatsApp 0878-9252-3968";
+        showNode(whatsappLink, true);
+        form.dataset.whatsappPrepared = "true";
+        setNodeText(status, "Pesan siap. Buka WhatsApp untuk memeriksa isinya, lalu kirim ke 0878-9252-3968.");
+        focusNode(whatsappLink);
+        return;
+      }
       const nextKey = JSON.stringify(base);
       if (!submissionToken || nextKey !== payloadKey) {
         submissionToken = uuidV4();
@@ -9165,6 +9226,10 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
 
     const zoneSelector = [
       '.site-footer',
+      'main form',
+      'main .faq summary',
+      'main .actions',
+      'main .dv-tree-nav',
       '[data-contact-collision-zone]',
       '.news-detail-analysis > article',
       '.news-detail-related-list > a',
@@ -9286,6 +9351,7 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
     if ('ResizeObserver' in window) {
       const resizeObserver = new ResizeObserver(schedule);
       resizeObserver.observe(toggle);
+      if (main) resizeObserver.observe(main);
       const detailMain = q('.news-detail-main');
       if (detailMain) resizeObserver.observe(detailMain);
       runtime.observers.push(resizeObserver);
@@ -9408,9 +9474,9 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
       if(!picker){
         picker=document.createElement('dialog');
         picker.className='ui-dialog dig-v22-contact-dialog';
-        picker.setAttribute('aria-label','Pilih WhatsApp Digdaya');
+        picker.setAttribute('aria-label','Konsultasi WhatsApp Digdaya');
         const head=document.createElement('div');head.className='dialog-head';
-        const title=document.createElement('h2');title.textContent='Pilih WhatsApp';
+        const title=document.createElement('h2');title.textContent='Konsultasi WhatsApp';
         const close=document.createElement('button');close.type='button';close.className='icon-button';
         close.setAttribute('aria-label','Tutup pilihan WhatsApp');close.textContent='×';
         const options=document.createElement('div');options.className='dig-v22-contact-options';

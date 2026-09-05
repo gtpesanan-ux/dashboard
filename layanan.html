@@ -5438,6 +5438,19 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 @keyframes dig-v22-icon-arrive{from{opacity:.35;transform:translate3d(0,7px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
 @media print{.dig-v22-divider{display:none!important}}
 </style>
+
+<style id="digdaya-revision-v23-style">
+/* V23: one animated FAQ indicator, retaining the no-JS marker. */
+.faq details summary.has-faq-chevron::after,
+.faq details[open] summary.has-faq-chevron::after{content:none;display:none}
+.faq summary.has-faq-chevron .faq-chevron{flex:0 0 22px;align-self:center}
+.faq details summary.has-faq-chevron[data-expanded="true"] .faq-chevron{transform:rotate(180deg)}
+.faq details summary.has-faq-chevron[data-expanded="false"] .faq-chevron{transform:rotate(0deg)}
+/* The original diagram includes its own frame. A second radius clips it. */
+.dig-proof-figure img[src*="visual-flow-"]{height:auto;object-fit:contain;border-radius:0;aspect-ratio:auto}
+/* Match SVG units to the navigation box; keep branches in the row gutter. */
+.dv-tree-lines{left:0;top:0;width:100%;max-width:none;pointer-events:none}
+</style>
 </head>
 <body data-page-style="service" id="top">
 <svg aria-hidden="true" class="icon-sprite" focusable="false">
@@ -5664,8 +5677,8 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 </picture>
 <div class="hero-copy reveal" data-motion="hero">
 <p class="kicker overline-rule">Seluruh layanan</p>
-<h1 id="page-title">Pilih jalur yang paling dekat dengan kebutuhan Anda.</h1>
-<p class="lede">PT Digdaya Inovasi Nusantara menghadirkan ruang eksplorasi parfum dan layanan digital melalui alur yang mudah dipahami. Pilih kategori, sampaikan konteks, lalu konfirmasikan rincian sebelum mengambil keputusan.</p>
+<h1 id="page-title">Parfum, domain, website, dan top up game.</h1>
+<p class="lede">Pilih layanan PT Digdaya Inovasi Nusantara sesuai kebutuhan Anda. Seluruh konsultasi dan permintaan layanan dilanjutkan melalui WhatsApp utama: 0878-9252-3968.</p>
 <div class="actions">
 <a class="button" href="#peta-layanan">Jelajahi layanan</a>
 <button class="button button-ghost" data-inquiry-message="Halo PT Digdaya Inovasi Nusantara, saya ingin menyampaikan kebutuhan dan meminta arahan layanan yang relevan." data-inquiry-service="Konsultasi umum" data-open-inquiry="" type="button">Konsultasi umum</button>
@@ -5677,8 +5690,8 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <section aria-labelledby="peta-title" class="section" id="peta-layanan">
 <div class="shell">
 <div class="section-head reveal" data-motion="fade">
-<div><p class="kicker">Peta layanan</p><h2 id="peta-title">Tujuh jalur, satu standar komunikasi yang jelas.</h2></div>
-<p class="lede">Merek, ukuran, harga, stok, hasil pemeriksaan, waktu proses, dan ruang lingkup dikonfirmasi berdasarkan transaksi masing-masing.</p>
+<div><p class="kicker">Peta layanan</p><h2 id="peta-title">Tujuh layanan utama, satu WhatsApp konsultasi.</h2></div>
+<p class="lede">Pilih kategori untuk melihat penjelasan, lalu hubungi WhatsApp utama. Rincian produk, harga, ketersediaan, waktu, dan ruang lingkup dikonfirmasi sesuai kebutuhan.</p>
 </div>
 <div class="grid-4">
 <article class="card reveal" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-perfume-local"></use></svg></span><span aria-hidden="true" class="card-number">01</span></div><h3>Parfum Lokal</h3><p>Eksplorasi karya rumah parfum Indonesia berdasarkan karakter aroma, konteks pemakaian, dan preferensi personal. Detail setiap produk dikonfirmasi sebelum transaksi.</p><a class="card-link" href="parfum-lokal.html">Jelajahi parfum lokal <svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-arrow-right"></use></svg></a></article>
@@ -5698,14 +5711,14 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
   <div class="shell">
     <div class="section-head reveal" data-motion="fade">
       <div><p class="kicker">Navigator layanan</p><h2 id="service-tree-title">Jelajahi layanan melalui struktur yang lebih terarah.</h2></div>
-      <p class="lede">Animasi bercabang memberi gambaran hubungan antar-layanan tanpa mengganti kartu, menu, atau CTA yang sudah ada.</p>
+      <p class="lede">Pilih layanan untuk membaca ringkasannya, lalu buka halaman yang sesuai.</p>
     </div>
     <div class="dv-tree-layout reveal" data-motion="rise" data-dv-tree data-default-id="lokal">
       <nav class="dv-tree-nav" role="tree" aria-orientation="vertical" aria-label="Jelajahi layanan melalui struktur yang lebih terarah.">
         <div class="dv-tree-hover-pill" aria-hidden="true"></div>
         <div class="dv-tree-selected-pill" aria-hidden="true"></div>
         <svg class="dv-tree-lines" aria-hidden="true" width="28" height="10" viewBox="0 0 28 10" fill="none"><path class="dv-tree-base-path"></path><path class="dv-tree-active-path"></path></svg>
-        <div class="dv-tree-group"><button class="dv-tree-section-toggle" type="button" aria-expanded="true"><span>Fragrance</span><svg aria-hidden="true" class="dv-tree-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dv-tree-collapse" aria-hidden="false"><div class="dv-tree-collapse-inner"><div class="dv-tree-list" role="group"><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="lokal" data-tree-label="Parfum Lokal" data-tree-href="parfum-lokal.html" data-tree-desc="Eksplorasi rumah parfum Indonesia berdasarkan karakter aroma dan konteks pemakaian." data-tree-meta="Fragrance • Lokal"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Parfum Lokal</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="niche" data-tree-label="Parfum Niche" data-tree-href="parfum-niche.html" data-tree-desc="Jalur eksplorasi untuk profil aroma yang lebih spesifik dan personal." data-tree-meta="Fragrance • Niche"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Parfum Niche</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="middle" data-tree-label="Parfum Timur Tengah" data-tree-href="parfum-timur-tengah.html" data-tree-desc="Kenali arah oud, amber, musk, resin dan rempah dengan bahasa yang mudah diikuti." data-tree-meta="Fragrance • Middle East"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Parfum Timur Tengah</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="designer" data-tree-label="Parfum Designer" data-tree-href="parfum-designer.html" data-tree-desc="Susun pilihan berdasarkan suasana, gaya dan tujuan pemakaian." data-tree-meta="Fragrance • Designer"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Parfum Designer</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="scent" data-tree-label="Scent Finder" data-tree-href="scent-finder.html" data-tree-desc="Mulai dari mood, keluarga aroma dan konteks pakai bila Anda belum tahu harus memilih dari mana." data-tree-meta="Fragrance • Finder"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Scent Finder</span><span class="dv-tree-badge">Interaktif</span></button></div></div></div></div><div class="dv-tree-group"><button class="dv-tree-section-toggle" type="button" aria-expanded="true"><span>Digital</span><svg aria-hidden="true" class="dv-tree-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dv-tree-collapse" aria-hidden="false"><div class="dv-tree-collapse-inner"><div class="dv-tree-list" role="group"><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="domain" data-tree-label="Jual Beli Domain" data-tree-href="jual-beli-domain.html" data-tree-desc="Jalur untuk kebutuhan pencarian, penawaran, verifikasi dan perpindahan aset domain." data-tree-meta="Digital • Domain"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Jual Beli Domain</span></button><div class="dv-tree-folder" data-tree-folder="web-folder"><button class="dv-tree-folder-toggle" type="button" role="treeitem" aria-expanded="true"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M3.75 6.5h6l1.8 2H20.25v9.75H3.75z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="dv-tree-label">Website</span><svg aria-hidden="true" class="dv-tree-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dv-tree-collapse" aria-hidden="false"><div class="dv-tree-collapse-inner"><div class="dv-tree-list" role="group"><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="website" data-tree-label="Jasa Pembuatan Website" data-tree-href="jasa-pembuatan-website.html" data-tree-desc="Bangun landing page, company profile atau katalog informasi melalui scope yang jelas." data-tree-meta="Digital • Website"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Jasa Pembuatan Website</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="audit" data-tree-label="Website Health Check" data-tree-href="website-audit.html" data-tree-desc="Periksa struktur, responsive behavior, technical hygiene dan basic SEO sebelum menentukan perbaikan." data-tree-meta="Digital • Audit"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Website Health Check</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="care" data-tree-label="Website Care" data-tree-href="website-maintenance.html" data-tree-desc="Pemeliharaan lanjutan untuk website yang sudah berjalan." data-tree-meta="Digital • Maintenance"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Website Care</span></button></div></div></div></div><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="topup" data-tree-label="Top Up Game" data-tree-href="top-up-game.html" data-tree-desc="Siapkan game, ID/server dan produk sebelum konfirmasi transaksi." data-tree-meta="Digital • Play"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Top Up Game</span></button></div></div></div></div><div class="dv-tree-group"><button class="dv-tree-section-toggle" type="button" aria-expanded="true"><span>Business & Trust</span><svg aria-hidden="true" class="dv-tree-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dv-tree-collapse" aria-hidden="false"><div class="dv-tree-collapse-inner"><div class="dv-tree-list" role="group"><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="partner" data-tree-label="Kemitraan" data-tree-href="kemitraan.html" data-tree-desc="Jalur awal untuk produk, pasokan, reseller, aset digital atau kolaborasi teknologi." data-tree-meta="Business • Partnership"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Kemitraan</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="portfolio" data-tree-label="Portfolio" data-tree-href="portfolio.html" data-tree-desc="Lihat pekerjaan internal dan pendekatan yang dapat diperiksa tanpa klaim klien yang tidak terverifikasi." data-tree-meta="Proof • Portfolio"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Portfolio</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="trust" data-tree-label="Trust Center" data-tree-href="trust-center.html" data-tree-desc="Periksa kanal resmi dan prinsip komunikasi yang dapat ditelusuri." data-tree-meta="Trust • Governance"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Trust Center</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="contact" data-tree-label="Kontak" data-tree-href="kontak.html" data-tree-desc="Hubungi Digdaya melalui kanal resmi yang tercantum di website." data-tree-meta="Support • Contact"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Kontak</span></button></div></div></div></div>
+        <div class="dv-tree-group"><button class="dv-tree-section-toggle" type="button" aria-expanded="true"><span>Fragrance</span><svg aria-hidden="true" class="dv-tree-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dv-tree-collapse" aria-hidden="false"><div class="dv-tree-collapse-inner"><div class="dv-tree-list" role="group"><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="lokal" data-tree-label="Parfum Lokal" data-tree-href="parfum-lokal.html" data-tree-desc="Eksplorasi rumah parfum Indonesia berdasarkan karakter aroma dan konteks pemakaian." data-tree-meta="Fragrance • Lokal"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Parfum Lokal</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="niche" data-tree-label="Parfum Niche" data-tree-href="parfum-niche.html" data-tree-desc="Jalur eksplorasi untuk profil aroma yang lebih spesifik dan personal." data-tree-meta="Fragrance • Niche"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Parfum Niche</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="middle" data-tree-label="Parfum Timur Tengah" data-tree-href="parfum-timur-tengah.html" data-tree-desc="Kenali arah oud, amber, musk, resin dan rempah dengan bahasa yang mudah diikuti." data-tree-meta="Fragrance • Middle East"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Parfum Timur Tengah</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="designer" data-tree-label="Parfum Designer" data-tree-href="parfum-designer.html" data-tree-desc="Susun pilihan berdasarkan suasana, gaya dan tujuan pemakaian." data-tree-meta="Fragrance • Designer"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Parfum Designer</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="scent" data-tree-label="Scent Finder" data-tree-href="scent-finder.html" data-tree-desc="Mulai dari mood, keluarga aroma dan konteks pakai bila Anda belum tahu harus memilih dari mana." data-tree-meta="Fragrance • Finder"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Scent Finder</span><span class="dv-tree-badge">Interaktif</span></button></div></div></div></div><div class="dv-tree-group"><button class="dv-tree-section-toggle" type="button" aria-expanded="true"><span>Digital</span><svg aria-hidden="true" class="dv-tree-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dv-tree-collapse" aria-hidden="false"><div class="dv-tree-collapse-inner"><div class="dv-tree-list" role="group"><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="domain" data-tree-label="Jual Beli Domain" data-tree-href="jual-beli-domain.html" data-tree-desc="Jalur untuk kebutuhan pencarian, penawaran, verifikasi dan perpindahan aset domain." data-tree-meta="Digital • Domain"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Jual Beli Domain</span></button><div class="dv-tree-folder" data-tree-folder="web-folder"><button class="dv-tree-folder-toggle" type="button" role="treeitem" aria-expanded="true"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M3.75 6.5h6l1.8 2H20.25v9.75H3.75z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="dv-tree-label">Website</span><svg aria-hidden="true" class="dv-tree-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dv-tree-collapse" aria-hidden="false"><div class="dv-tree-collapse-inner"><div class="dv-tree-list" role="group"><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="website" data-tree-label="Jasa Pembuatan Website" data-tree-href="jasa-pembuatan-website.html" data-tree-desc="Bangun landing page, company profile, atau katalog informasi dengan ruang lingkup yang jelas." data-tree-meta="Digital • Website"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Jasa Pembuatan Website</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="audit" data-tree-label="Website Health Check" data-tree-href="website-audit.html" data-tree-desc="Periksa struktur, tampilan berbagai layar, fungsi, dan dasar SEO sebelum menentukan perbaikan." data-tree-meta="Digital • Audit"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Website Health Check</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="care" data-tree-label="Website Care" data-tree-href="website-maintenance.html" data-tree-desc="Pemeliharaan lanjutan untuk website yang sudah berjalan." data-tree-meta="Digital • Maintenance"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Website Care</span></button></div></div></div></div><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="topup" data-tree-label="Top Up Game" data-tree-href="top-up-game.html" data-tree-desc="Siapkan game, ID/server dan produk sebelum konfirmasi transaksi." data-tree-meta="Digital • Play"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Top Up Game</span></button></div></div></div></div><div class="dv-tree-group"><button class="dv-tree-section-toggle" type="button" aria-expanded="true"><span>Business & Trust</span><svg aria-hidden="true" class="dv-tree-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dv-tree-collapse" aria-hidden="false"><div class="dv-tree-collapse-inner"><div class="dv-tree-list" role="group"><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="partner" data-tree-label="Kemitraan" data-tree-href="kemitraan.html" data-tree-desc="Jalur awal untuk produk, pasokan, reseller, aset digital atau kolaborasi teknologi." data-tree-meta="Business • Partnership"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Kemitraan</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="portfolio" data-tree-label="Portfolio" data-tree-href="portfolio.html" data-tree-desc="Lihat proyek internal Digdaya dan pendekatan pengerjaannya." data-tree-meta="Proof • Portfolio"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Portfolio</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="trust" data-tree-label="Trust Center" data-tree-href="trust-center.html" data-tree-desc="Periksa kanal resmi dan prinsip komunikasi yang dapat ditelusuri." data-tree-meta="Trust • Governance"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Trust Center</span></button><button class="dv-tree-item" type="button" role="treeitem" aria-selected="false" data-tree-id="contact" data-tree-label="Kontak" data-tree-href="kontak.html" data-tree-desc="Hubungi Digdaya melalui kanal resmi yang tercantum di website." data-tree-meta="Support • Contact"><svg aria-hidden="true" class="dv-tree-icon" viewBox="0 0 24 24" fill="none"><path d="M6 3.75h7.5L18 8.25v12H6z" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 3.75v4.5H18" stroke="currentColor" stroke-width="1.5"/></svg><span class="dv-tree-label">Kontak</span></button></div></div></div></div>
       </nav>
       <aside class="dv-tree-preview" aria-live="polite">
         <div class="dv-tree-preview-content">
@@ -5730,7 +5743,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div class="shell">
 <div class="section-head reveal" data-motion="fade">
 <div><p class="kicker">Service Finder</p><h2 id="finder-title">Belum yakin harus mulai dari mana?</h2></div>
-<p class="lede">Dua pilihan singkat membantu menemukan halaman awal. Hasilnya merupakan arahan navigasi, bukan rekomendasi produk atau jaminan hasil.</p>
+<p class="lede">Jawab dua pertanyaan untuk menemukan halaman layanan yang sesuai, lalu kirim kebutuhan Anda melalui WhatsApp utama.</p>
 </div>
 <form action="layanan.html" class="card reveal" data-motion="rise" data-service-form="" method="get" novalidate="">
 <fieldset data-service-step="service">
@@ -5773,23 +5786,23 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <p class="kicker">Arah awal</p>
 <h3 data-service-title="">Layanan yang relevan</h3>
 <p data-service-description="">Pilih kebutuhan untuk menampilkan penjelasan.</p>
-<p class="fine">Hasil ini membantu navigasi dan tidak menyatakan ketersediaan, harga, kecocokan mutlak, atau penerimaan permintaan.</p>
+<p class="fine">Pilihan ini membantu menentukan layanan awal. Rincian permintaan dikonfirmasi melalui WhatsApp utama.</p>
 <div class="actions"><a class="button" data-service-link="" href="layanan.html">Buka halaman layanan</a><a class="button button-ghost" data-service-wa="" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi%20mengenai%20layanan%20yang%20sesuai%20dengan%20kebutuhan%20saya." rel="noopener noreferrer" target="_blank">Kirim hasil ke WhatsApp</a><button class="button button-ghost" data-service-reset="" type="button">Ulangi</button></div>
 </div>
 </div>
 </section>
 <section aria-labelledby="proses-title" class="section">
 <div class="shell editorial-split">
-<figure class="editorial-media reveal" data-motion="media"><img alt="Ilustrasi alur kerja digital Digdaya; layanan lain dijelaskan pada teks halaman" data-original-src="assets/digital-operations-v16.webp" decoding="async" loading="lazy" src="assets/digital-operations-v16.webp" height="675" width="1200"/><figcaption>Setiap percakapan dimulai dari konteks, lalu bergerak menuju konfirmasi yang dapat diperiksa.</figcaption></figure>
+<figure class="editorial-media reveal" data-motion="media"><img alt="Ilustrasi alur kerja digital Digdaya; layanan lain dijelaskan pada teks halaman" data-original-src="assets/digital-operations-v16.webp" decoding="async" loading="lazy" src="assets/digital-operations-v16.webp" height="675" width="1200"/><figcaption>Sampaikan kebutuhan, periksa rincian layanan, lalu sepakati langkah berikutnya.</figcaption></figure>
 <div class="editorial-copy reveal" data-motion="slide-right"><p class="kicker">Alur bersama</p><h2 id="proses-title">Empat langkah sebelum keputusan.</h2><ol class="feature-list"><li><span>01</span><div><strong>Pilih konteks</strong><br/><span class="fine">Tentukan kategori yang paling mendekati kebutuhan.</span></div></li><li><span>02</span><div><strong>Sampaikan rincian</strong><br/><span class="fine">Jelaskan tujuan, preferensi, batasan, dan target bila relevan.</span></div></li><li><span>03</span><div><strong>Konfirmasikan informasi</strong><br/><span class="fine">Periksa ketersediaan, biaya, ruang lingkup, entitas, dan langkah berikutnya.</span></div></li><li><span>04</span><div><strong>Putuskan dengan jelas</strong><br/><span class="fine">Transaksi atau proyek dimulai setelah rincian penting disetujui.</span></div></li></ol></div>
 </div>
 </section>
-<section class="section-tight"><div class="shell cta-band reveal"><div><p class="kicker">Kebutuhan lain</p><h2>Belum menemukan kategori yang tepat?</h2><p>Gunakan konsultasi umum. Permintaan ditinjau tanpa menjanjikan hasil, ketersediaan, atau waktu proses sebelum pemeriksaan.</p></div><button class="button button-gold" data-inquiry-message="Halo PT Digdaya Inovasi Nusantara, kebutuhan saya belum tercantum pada daftar layanan. Saya ingin menjelaskan konteksnya." data-inquiry-service="Konsultasi umum" data-open-inquiry="" type="button">Sampaikan kebutuhan</button></div></section>
+<section class="section-tight"><div class="shell cta-band reveal"><div><p class="kicker">Kebutuhan lain</p><h2>Belum menemukan kategori yang tepat?</h2><p>Kirim kebutuhan Anda melalui WhatsApp utama. Kami akan membahas layanan yang relevan dan rincian yang perlu dikonfirmasi.</p></div><button class="button button-gold" data-inquiry-message="Halo PT Digdaya Inovasi Nusantara, kebutuhan saya belum tercantum pada daftar layanan. Saya ingin menjelaskan konteksnya." data-inquiry-service="Konsultasi umum" data-open-inquiry="" type="button">Sampaikan kebutuhan</button></div></section>
 <section aria-labelledby="support-title" class="section soft" id="layanan-pendamping" data-v22-surface="soft">
 <div class="dig-v22-divider dig-v22-divider--wave" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 1440 64"><path class="dig-v22-divider-fill" d="M0 30 C240 4 420 60 680 28 S1150 0 1440 24 V64 H0 Z"></path><path class="dig-v22-divider-line" pathLength="1" d="M0 30 C240 4 420 60 680 28 S1150 0 1440 24"></path></svg></div>
 
-<div class="shell"><div class="dig-pro-intro reveal"><p class="kicker">Layanan pendamping</p><h2 id="support-title">Empat jalur tambahan untuk kebutuhan yang lebih spesifik.</h2><p class="lede">Tujuh layanan utama tetap menjadi fondasi. Jalur pendamping ini membantu ketika kebutuhan Anda dimulai dari evaluasi, penamaan, pemeliharaan, atau eksplorasi preferensi.</p></div>
-<div class="dig-pro-grid"><div class="dig-pro-card reveal"><strong>Website Health Check</strong><p>Pemeriksaan frontend dan pengalaman pengguna berbasis kondisi website yang sudah ada.</p><a class="card-link" href="website-audit.html">Buka Health Check →</a></div><div class="dig-pro-card reveal"><strong>Website Care</strong><p>Pendampingan perubahan kecil dan pemeliharaan konten tanpa memaksa redesign.</p><a class="card-link" href="website-maintenance.html">Buka Website Care →</a></div><div class="dig-pro-card reveal"><strong>Domain Discovery</strong><p>Brief penamaan dan pemeriksaan awal sebelum masuk ke proses penawaran atau perpindahan.</p><a class="card-link" href="domain-discovery.html">Buka Domain Discovery →</a></div><div class="dig-pro-card reveal"><strong>Scent Finder</strong><p>Alat bantu untuk menerjemahkan suasana dan kebutuhan pemakaian menjadi arah eksplorasi aroma.</p><a class="card-link" href="scent-finder.html">Buka Scent Finder →</a></div></div>
+<div class="shell"><div class="dig-pro-intro reveal"><p class="kicker">Layanan pendamping</p><h2 id="support-title">Empat jalur tambahan untuk kebutuhan yang lebih spesifik.</h2><p class="lede">Gunakan layanan pendamping untuk pemeriksaan website, pemeliharaan, persiapan nama domain, atau panduan preferensi parfum.</p></div>
+<div class="dig-pro-grid"><div class="dig-pro-card reveal"><strong>Website Health Check</strong><p>Pemeriksaan tampilan, fungsi, dan pengalaman pengguna pada website yang sudah berjalan.</p><a class="card-link" href="website-audit.html">Buka Health Check →</a></div><div class="dig-pro-card reveal"><strong>Website Care</strong><p>Pendampingan perubahan kecil dan pemeliharaan konten tanpa memaksa redesign.</p><a class="card-link" href="website-maintenance.html">Buka Website Care →</a></div><div class="dig-pro-card reveal"><strong>Domain Discovery</strong><p>Brief penamaan dan pemeriksaan awal sebelum masuk ke proses penawaran atau perpindahan.</p><a class="card-link" href="domain-discovery.html">Buka Domain Discovery →</a></div><div class="dig-pro-card reveal"><strong>Scent Finder</strong><p>Alat bantu untuk menerjemahkan suasana dan kebutuhan pemakaian menjadi arah eksplorasi aroma.</p><a class="card-link" href="scent-finder.html">Buka Scent Finder →</a></div></div>
 <div class="dig-pro-action-row"><a class="button" href="pengetahuan.html">Buka Pusat Pengetahuan</a><a class="button button-ghost" href="portfolio.html">Lihat Portfolio</a></div></div></section>
 </main>
 <footer class="site-footer" data-nosnippet="">
@@ -5809,11 +5822,11 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div class="footer-contact-copy">
 <p class="footer-title">Hubungi Kami</p>
 <h3>Tim Digdaya siap membantu kebutuhan Anda.</h3>
-<p>Gunakan kanal komunikasi berikut untuk konsultasi layanan, kemitraan, informasi transaksi, atau kebutuhan dukungan. Kami mengutamakan komunikasi yang jelas dan dapat ditelusuri.</p>
+<p>Konsultasi, pemesanan, dan tindak lanjut layanan melalui WhatsApp 0878-9252-3968. Email tersedia untuk dokumen dan dukungan.</p>
 <div aria-label="Kanal komunikasi Digdaya" class="footer-contact-channels">
 <a class="footer-contact-channel" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span>WhatsApp Utama</span><small>0878-9252-3968</small></a>
-<a class="footer-contact-channel" href="https://wa.me/62882009257589?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span>Backup 1</span><small>+62 882-0092-57589</small></a>
-<a class="footer-contact-channel" href="https://wa.me/6288991926199?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span>Backup 2</span><small>+62 889-9192-6199</small></a>
+
+
 <a class="footer-contact-channel" href="mailto:companydirac@gmail.com"><span>Email</span><small>companydirac@gmail.com</small></a>
 </div>
 </div>
@@ -5821,7 +5834,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <span aria-label="Instagram" class="social-contact" role="img" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="15" rx="4" stroke="currentColor" stroke-width="1.8" width="15" x="4.5" y="4.5"></rect><circle cx="12" cy="12" fill="none" r="3.4" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.1" cy="6.9" fill="currentColor" r="1"></circle></svg></span>
 <a aria-label="Buka profil LinkedIn" class="social-contact" href="https://www.linkedin.com/in/achmad-zaenuddin-7285ba433" rel="noopener noreferrer" target="_blank" title="LinkedIn"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path fill="currentColor" d="M5.37 3.5a1.88 1.88 0 1 1 0 3.76 1.88 1.88 0 0 1 0-3.76ZM3.75 8.8H7V20H3.75V8.8Zm5.25 0h3.12v1.53h.05c.43-.82 1.5-1.69 3.09-1.69 3.3 0 3.91 2.18 3.91 5.01V20h-3.25v-5.63c0-1.34-.02-3.07-1.87-3.07-1.88 0-2.17 1.46-2.17 2.97V20H9V8.8Z"></path></svg></a>
 <span aria-label="Threads" class="social-contact" role="img" title="Threads"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path fill="currentColor" d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"></path></svg></span>
-<button aria-label="Buka pilihan WhatsApp" class="social-contact" data-contact-open="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
+<button aria-label="Buka konsultasi WhatsApp" class="social-contact" data-contact-open="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
 <span aria-disabled="true" aria-label="Telegram" class="social-contact" title="Telegram"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m3.5 11.1 16.4-6.4-3 14.6-5.1-4-2.9 2.7.4-4.3 7.8-6.5-9.7 5.1-3.9-1.2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.6"></path></svg></span>
 <a aria-label="Kirim email ke companydirac@gmail.com" class="social-contact" href="mailto:companydirac@gmail.com" title="Email"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="13" rx="2" stroke="currentColor" stroke-width="1.8" width="17" x="3.5" y="5.5"></rect><path d="m5 7 7 5.2L19 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a>
 <span aria-label="Facebook" class="social-contact" role="img" title="Facebook"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13.7 21v-7.8h2.6l.4-3h-3V8.3c0-.9.3-1.5 1.6-1.5H17V4.1c-.7-.1-1.5-.2-2.4-.2-2.4 0-4 1.5-4 4.1v2.2H8v3h2.6V21h3.1Z" fill="currentColor"></path></svg></span>
@@ -5838,7 +5851,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div class="dialog-head"><div><p class="kicker">Formulir konsultasi</p><h2 id="inquiry-title">Ceritakan kebutuhan Anda.</h2></div><button aria-label="Tutup formulir" class="icon-button" data-close-dialog="" data-close-inquiry="" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></button></div>
 <div class="dialog-body">
 <p class="lede" data-inquiry-context="">Isi data secukupnya. Kami tidak meminta password, OTP, PIN, CVV, atau kode pemulihan.</p>
-<form action="mailto:companydirac@gmail.com?subject=Permintaan%20layanan%20Digdaya" data-inquiry-form="" enctype="text/plain" method="post" novalidate="">
+<form action="https://wa.me/6287892523968" data-inquiry-form="" method="get" novalidate="">
 <div class="field-grid">
 <div class="field"><label for="inquiry-name">Nama <span aria-hidden="true">*</span></label><input autocomplete="name" id="inquiry-name" maxlength="100" minlength="2" name="name" required="" type="text"/></div>
 <div class="field"><label for="inquiry-whatsapp">Nomor WhatsApp <span aria-hidden="true">*</span></label><input autocomplete="tel" id="inquiry-whatsapp" inputmode="tel" maxlength="24" minlength="8" name="whatsapp" pattern="[0-9+\(\) \-]{8,24}" required="" type="tel"/></div>
@@ -5846,12 +5859,12 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div class="field"><label for="inquiry-company">Perusahaan/organisasi <span class="fine">(opsional)</span></label><input autocomplete="organization" id="inquiry-company" maxlength="120" name="company" type="text"/></div>
 <div class="field"><label for="inquiry-service">Layanan <span aria-hidden="true">*</span></label><select id="inquiry-service" name="service" required=""><option value="Konsultasi umum">Konsultasi umum</option><option value="Parfum">Parfum</option><option value="Beli atau jual domain">Beli atau jual domain</option><option value="Pembuatan website">Pembuatan website</option><option value="Pengembangan website">Pengembangan website</option><option value="Top up game">Top up game</option></select></div>
 <div class="field"><label for="inquiry-budget">Rentang anggaran <span class="fine">(opsional)</span></label><input id="inquiry-budget" maxlength="80" name="budget" placeholder="Contoh: perlu didiskusikan" type="text"/></div>
-<div class="field field--full"><label for="inquiry-message">Kebutuhan <span aria-hidden="true">*</span></label><textarea aria-describedby="inquiry-message-hint" id="inquiry-message" maxlength="2000" minlength="10" name="message" placeholder="Tujuan, konteks, preferensi, dan batasan penting" required="" rows="5"></textarea><span class="field-hint" id="inquiry-message-hint">10–2.000 karakter. Hindari data rahasia.</span></div>
+<div class="field field--full"><label for="inquiry-message">Kebutuhan <span aria-hidden="true">*</span></label><textarea aria-describedby="inquiry-message-hint" id="inquiry-message" maxlength="2000" minlength="10" name="message" placeholder="Tujuan, konteks, preferensi, dan batasan penting" required="" rows="5"></textarea><span class="field-hint" id="inquiry-message-hint">Minimal 10 karakter. Seluruh pesan WhatsApp, termasuk data kontak, maksimal 1.800 karakter. Hindari data rahasia.</span></div>
 </div>
 <div aria-hidden="true" class="field sr-only"><label for="inquiry-website">Website</label><input autocomplete="off" id="inquiry-website" maxlength="200" name="website" tabindex="-1" type="text"/></div>
 <label class="choice-card"><input aria-describedby="inquiry-consent-note" name="consent" required="" type="checkbox" value="true"/><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-shield-check"></use></svg></span><strong>Saya menyetujui penggunaan data untuk menangani permintaan ini.</strong></label><p class="fine" id="inquiry-consent-note">Pelajari <a href="kebijakan-privasi.html">Kebijakan Privasi</a> sebelum memberi persetujuan.</p>
 <p aria-live="polite" class="status-message" data-form-status="" data-inquiry-status="" role="status"></p>
-<div class="dialog-actions"><button class="button" type="submit">Kirim permintaan</button><a class="button button-ghost" data-inquiry-wa="" hidden="" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank">Lanjut via WhatsApp</a><button class="button button-ghost" data-close-dialog="" data-close-inquiry="" type="button">Batal</button></div>
+<div class="dialog-actions"><button class="button" type="submit">Siapkan pesan WhatsApp</button><a class="button button-ghost" data-inquiry-wa="" hidden="" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank">Lanjut via WhatsApp</a><button class="button button-ghost" data-close-dialog="" data-close-inquiry="" type="button">Batal</button></div>
 <div class="tool-result" data-inquiry-success="" hidden="" tabindex="-1"><h3>Pesan siap ditindaklanjuti</h3><p>Lanjutkan melalui kanal yang dipilih dan simpan konfirmasi dari kanal tersebut.</p></div>
 </form>
 </div>
@@ -5860,15 +5873,15 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div aria-atomic="true" aria-live="polite" class="toast-region"></div>
 <div class="quick-contact" data-quick-contact="">
 <div class="quick-contact-panel" data-quick-contact-panel="" hidden="" id="quick-contact-panel">
-<div class="quick-contact-panel-head"><span><strong>Hubungi Digdaya</strong><small>Pilih kanal yang ingin digunakan.</small></span><button aria-label="Tutup pilihan kontak" class="icon-button" data-contact-close="" type="button"><svg aria-hidden="true" class="icon-svg" height="20" viewbox="0 0 24 24" width="20"><use href="#icon-close"></use></svg></button></div>
+<div class="quick-contact-panel-head"><span><strong>Hubungi Digdaya</strong><small>Konsultasi layanan melalui WhatsApp utama.</small></span><button aria-label="Tutup pilihan kontak" class="icon-button" data-contact-close="" type="button"><svg aria-hidden="true" class="icon-svg" height="20" viewbox="0 0 24 24" width="20"><use href="#icon-close"></use></svg></button></div>
 <div class="quick-contact-options">
 <a class="quick-contact-option" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></span><span class="quick-contact-copy"><strong>WhatsApp Utama</strong><small>0878-9252-3968</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
-<a class="quick-contact-option" href="https://wa.me/62882009257589?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></span><span class="quick-contact-copy"><strong>WhatsApp Backup 1</strong><small>+62 882-0092-57589</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
-<a class="quick-contact-option" href="https://wa.me/6288991926199?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></span><span class="quick-contact-copy"><strong>WhatsApp Backup 2</strong><small>+62 889-9192-6199</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
+
+
 <a class="quick-contact-option" href="mailto:companydirac@gmail.com?subject=Konsultasi%20PT%20Digdaya%20Inovasi%20Nusantara"><span class="quick-contact-badge email"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 24 24"><use href="#icon-email"></use></svg></span><span class="quick-contact-copy"><strong>Email</strong><small>companydirac@gmail.com</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
 </div>
 </div>
-<button aria-controls="quick-contact-panel" aria-expanded="false" aria-label="Buka pilihan WhatsApp dan email" class="wa-float" data-contact-toggle="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
+<button aria-controls="quick-contact-panel" aria-expanded="false" aria-label="Buka konsultasi WhatsApp dan email" class="wa-float" data-contact-toggle="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
 </div>
 <script data-inline-from="assets/js/runtime-site-v8.js">
 
@@ -6166,25 +6179,37 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
         chevron.classList.add("faq-chevron");
         summary.append(chevron);
       }
+      summary.classList.add("has-faq-chevron");
+      let intendedOpen = details.open;
       summary.addEventListener("click", (event) => {
-        if (reduceMotion.matches || !("animate" in answer)) return;
+        if (reduceMotion.matches || !("animate" in answer)) {
+          animations.get(details)?.cancel();
+          animations.delete(details);
+          intendedOpen = !details.open;
+          summary.dataset.expanded = String(intendedOpen);
+          answer.style.overflow = "";
+          return;
+        }
         event.preventDefault();
-        animations.get(details)?.cancel();
-        const opening = !details.open;
+        const previous = animations.get(details);
+        const start = details.open ? parseFloat(getComputedStyle(answer).height) || answer.offsetHeight : 0;
+        const startOpacity = details.open ? getComputedStyle(answer).opacity : "0";
+        const opening = previous ? !intendedOpen : !details.open;
+        intendedOpen = opening;
+        previous?.cancel();
         if (opening) details.open = true;
-        const start = opening ? 0 : answer.scrollHeight;
+        summary.dataset.expanded = String(opening);
         const end = opening ? answer.scrollHeight : 0;
         answer.style.overflow = "hidden";
         const animation = answer.animate(
-          [{ height: `${start}px`, opacity: opening ? 0 : 1 }, { height: `${end}px`, opacity: opening ? 1 : 0 }],
+          [{ height: start + "px", opacity: startOpacity }, { height: end + "px", opacity: opening ? 1 : 0 }],
           { duration: 280, easing: "cubic-bezier(.2,.8,.2,1)" },
         );
         animations.set(details, animation);
         animation.finished.then(() => {
-          if (!opening) details.open = false;
-          answer.style.height = "";
+          if (animations.get(details) !== animation) return;
+          details.open = opening;
           answer.style.overflow = "";
-          answer.style.opacity = "";
           animations.delete(details);
         }).catch(() => {});
       });
@@ -6691,6 +6716,12 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 
     const clearValidityState = (event) => {
       const control = event.target;
+      if (form.dataset.whatsappPrepared === "true") {
+        const scope = form.closest("[data-inquiry-dialog],dialog") || form.parentElement || form;
+        showNode(select(form, "[data-inquiry-wa]") || select(scope, "[data-inquiry-wa]"), false);
+        setNodeText(select(form, "[data-inquiry-status],[data-form-status]") || select(scope, "[data-inquiry-status],[data-form-status]"), "Data diubah. Siapkan kembali pesan WhatsApp.");
+        delete form.dataset.whatsappPrepared;
+      }
       if (control?.matches?.("input,select,textarea") && control.checkValidity()) {
         control.removeAttribute("aria-invalid");
       }
@@ -6699,6 +6730,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
     form.addEventListener("change", clearValidityState);
 
     form.addEventListener("digdaya:inquiry-reset", () => {
+      delete form.dataset.whatsappPrepared;
       requestGeneration += 1;
       activeController?.abort();
       activeController = null;
@@ -6804,6 +6836,35 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
         consent: true,
         sourcePath: safeSourcePath(),
       };
+      /* V23: the existing validation, dialog and widget summaries prepare a
+         message for the one sales number. Customers send it in WhatsApp. */
+      const whatsappDraft = [
+        "Halo PT Digdaya Inovasi Nusantara,",
+        "Nama: " + name,
+        "WhatsApp: " + whatsapp,
+        "Layanan: " + service,
+        base.email ? "Email: " + base.email : "",
+        base.company ? "Perusahaan: " + base.company : "",
+        base.budget ? "Anggaran: " + base.budget : "",
+        "Kebutuhan: " + message,
+      ].filter(Boolean).join("\n");
+      const whatsappLink = select(form, "[data-inquiry-wa]")
+        || select(inquiryScope, "[data-inquiry-wa]");
+      if (whatsappLink) {
+        if (Array.from(whatsappDraft).length > MAX_WHATSAPP_LENGTH) {
+          showNode(whatsappLink, false);
+          setNodeText(status, "Ringkas kebutuhan Anda agar seluruh pesan, termasuk data kontak, tidak melebihi 1.800 karakter.");
+          focusNode(messageControl);
+          return;
+        }
+        whatsappLink.href = buildWhatsAppUrl(whatsappDraft);
+        whatsappLink.textContent = "Buka WhatsApp 0878-9252-3968";
+        showNode(whatsappLink, true);
+        form.dataset.whatsappPrepared = "true";
+        setNodeText(status, "Pesan siap. Buka WhatsApp untuk memeriksa isinya, lalu kirim ke 0878-9252-3968.");
+        focusNode(whatsappLink);
+        return;
+      }
       const nextKey = JSON.stringify(base);
       if (!submissionToken || nextKey !== payloadKey) {
         submissionToken = uuidV4();
@@ -8609,21 +8670,21 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
       return !hiddenParent;
     });
 
-    const groups = () => Array.from(nav.children).filter((el) => el.classList?.contains('dv-tree-group'));
     const isReduced = () => Boolean(reduceMotion.matches);
 
     const movePill = (pill, target, visible = true) => {
       if (!pill || !target) return;
       const nr = nav.getBoundingClientRect();
       const tr = target.getBoundingClientRect();
+      const scale = nr.width / Math.max(1, nav.offsetWidth);
       const ps = getComputedStyle(pill);
       const left = Number.parseFloat(ps.left);
       const top = Number.parseFloat(ps.top);
       const originX = nav.clientLeft + (Number.isFinite(left) ? left : 0);
       const originY = nav.clientTop + (Number.isFinite(top) ? top : 0);
-      pill.style.width = `${tr.width}px`;
-      pill.style.height = `${tr.height}px`;
-      pill.style.transform = `translate3d(${tr.left - nr.left - originX}px,${tr.top - nr.top - originY}px,0)`;
+      pill.style.width = `${tr.width / scale}px`;
+      pill.style.height = `${tr.height / scale}px`;
+      pill.style.transform = `translate3d(${(tr.left - nr.left) / scale - originX}px,${(tr.top - nr.top) / scale - originY}px,0)`;
       pill.style.opacity = visible ? '1' : '0';
     };
 
@@ -8646,38 +8707,52 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
         return;
       }
       svg.style.opacity = '1';
+      // Measure in SVG CSS pixels so zoomed/embedded layouts keep the same geometry.
       const nr = nav.getBoundingClientRect();
+      const scale = nr.width / Math.max(1, nav.offsetWidth);
+      const width = Math.max(1, nav.clientWidth);
+      const height = Math.max(1, nav.scrollHeight);
+      svg.setAttribute('width', String(width));
+      svg.setAttribute('height', String(height));
+      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
       const sr = svg.getBoundingClientRect();
       const centerY = (el) => {
         const rect = el.getBoundingClientRect();
-        return rect.top - sr.top + rect.height / 2;
+        return (rect.top - sr.top + rect.height / 2) / scale;
       };
-      const groupData = groups().map((group) => ({
-        group,
-        items: visibleItems(group),
-      })).filter((entry) => entry.items.length);
-      const allPoints = groupData.flatMap((entry) => entry.items.map(centerY));
-      const last = allPoints.length ? Math.max(...allPoints) : 0;
-      const svgOffset = sr.top - nr.top;
-      const height = Math.ceil(Math.max(1, nav.clientTop + nav.scrollHeight - svgOffset, last + 20));
-      svg.setAttribute('height', String(height));
-      svg.setAttribute('viewBox', `0 0 28 ${height}`);
-      const base = groupData.map(({items: groupItems}) => {
-        const points = groupItems.map(centerY);
-        const first = points[0];
-        const groupLast = points[points.length - 1];
-        let path = `M8 ${Math.max(0, first - 8)} V${Math.max(first, groupLast - 5)}`;
-        points.forEach((y) => { path += ` M8 ${Math.max(0, y - 5)} Q8 ${y} 14 ${y} H27`; });
-        return path;
-      }).join(' ');
+      const isVisible = (el) => el && el.offsetParent !== null
+        && !el.closest('.dv-tree-collapse[aria-hidden="true"]');
+      const listData = [...nav.querySelectorAll('.dv-tree-list')].map((list) => {
+        const rows = [...list.children].map((child) => child.matches('.dv-tree-item')
+          ? child : child.querySelector(':scope > .dv-tree-folder-toggle')).filter(isVisible);
+        if (!rows.length) return null;
+        // The branch finishes in the gutter, four pixels before the moving pill.
+        const stop = Math.min(...rows.map((row) => (row.getBoundingClientRect().left - sr.left) / scale)) - 4;
+        const spine = Math.max(4, stop - 12);
+        return {list, rows, stop, spine, first:centerY(rows[0])};
+      }).filter(Boolean);
+      const branch = (entry, row, includeStem) => {
+        const y = centerY(row);
+        const radius = Math.min(5, (entry.stop - entry.spine) / 2);
+        const start = includeStem ? Math.max(0, entry.first - 8) : Math.max(0, y - radius);
+        return `M${entry.spine} ${start} V${y - radius} Q${entry.spine} ${y} ${entry.spine + radius} ${y} H${entry.stop}`;
+      };
+      const base = listData.map((entry) => entry.rows.map((row, index) =>
+        branch(entry, row, index === entry.rows.length - 1)).join(' ')).join(' ');
       basePath.setAttribute('d', base);
 
-      const selectedGroup = selected?.closest('.dv-tree-group');
-      const selectedEntry = groupData.find((entry) => entry.group === selectedGroup);
-      if (selected && selectedEntry?.items.includes(selected)) {
-        const first = centerY(selectedEntry.items[0]);
-        const sy = centerY(selected);
-        const active = `M8 ${Math.max(0, first - 8)} V${Math.max(first, sy - 5)} Q8 ${sy} 14 ${sy} H27`;
+      const selectedEntry = listData.find((entry) => entry.rows.includes(selected));
+      if (selected && selectedEntry) {
+        const activeBranches = [];
+        let row = selected;
+        let entry = selectedEntry;
+        while (entry && row) {
+          activeBranches.unshift(branch(entry, row, true));
+          const folder = entry.list.closest('.dv-tree-folder');
+          row = folder?.querySelector(':scope > .dv-tree-folder-toggle');
+          entry = row ? listData.find((candidate) => candidate.rows.includes(row)) : null;
+        }
+        const active = activeBranches.join(' ');
         activePath.setAttribute('d', active);
         const length = activePath.getTotalLength?.() || 120;
         activePath.style.strokeDasharray = String(length);
@@ -9599,6 +9674,10 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
 
     const zoneSelector = [
       '.site-footer',
+      'main form',
+      'main .faq summary',
+      'main .actions',
+      'main .dv-tree-nav',
       '[data-contact-collision-zone]',
       '.news-detail-analysis > article',
       '.news-detail-related-list > a',
@@ -9720,6 +9799,7 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
     if ('ResizeObserver' in window) {
       const resizeObserver = new ResizeObserver(schedule);
       resizeObserver.observe(toggle);
+      if (main) resizeObserver.observe(main);
       const detailMain = q('.news-detail-main');
       if (detailMain) resizeObserver.observe(detailMain);
       runtime.observers.push(resizeObserver);
@@ -9842,9 +9922,9 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
       if(!picker){
         picker=document.createElement('dialog');
         picker.className='ui-dialog dig-v22-contact-dialog';
-        picker.setAttribute('aria-label','Pilih WhatsApp Digdaya');
+        picker.setAttribute('aria-label','Konsultasi WhatsApp Digdaya');
         const head=document.createElement('div');head.className='dialog-head';
-        const title=document.createElement('h2');title.textContent='Pilih WhatsApp';
+        const title=document.createElement('h2');title.textContent='Konsultasi WhatsApp';
         const close=document.createElement('button');close.type='button';close.className='icon-button';
         close.setAttribute('aria-label','Tutup pilihan WhatsApp');close.textContent='×';
         const options=document.createElement('div');options.className='dig-v22-contact-options';
