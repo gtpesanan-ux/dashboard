@@ -5624,6 +5624,122 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 @media(max-width:600px){.dig-v24-portal-steps{grid-template-columns:1fr;gap:1.2rem}.dig-v24-portal-steps li{display:grid;grid-template-columns:2.7rem minmax(0,1fr);gap:.75rem}.dig-v24-portal-number{font-size:1.8rem;margin:0}.dig-v24-portal-actions{align-items:stretch;flex-direction:column}.dig-v24-portal-actions>.button{width:100%}}
 
 </style>
+
+<style id="digdaya-revision-v26-style">
+/* V26: native touch behaviour, stable menu geometry and image save deterrents.
+ * Keep the existing reveal, lightbox, scroll and two-finger zoom behaviour. */
+html,
+body,
+.site-header,
+.main-nav,
+main,
+.site-footer,
+dialog,
+button,
+a,
+summary,
+input,
+select,
+textarea,
+[role="button"],
+[data-dig-scroll-track]{
+  touch-action:manipulation;
+}
+
+/* Scope save/drag controls to images and their dedicated visual surfaces. */
+img,
+picture,
+[data-lightbox],
+.editorial-media,
+.hero-picture,
+.live-news-visual,
+.news-detail-visual,
+.dig-hero-alt-media,
+.dig-photo-picture-layers{
+  -webkit-touch-callout:none!important;
+}
+img,
+picture{
+  -webkit-user-drag:none!important;
+  -webkit-user-select:none!important;
+  user-select:none!important;
+}
+
+@media (max-width:1180px){
+  /* A lock must not introduce a different scrollbar reservation. */
+  html,
+  html.dig-nav-lock{
+    scrollbar-gutter:stable;
+  }
+  /* Prevent automatic text inflation from changing the navigation geometry. */
+  .site-header,
+  .main-nav{
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
+  .js .main-nav{
+    left:0!important;
+    right:0!important;
+    width:auto!important;
+    max-width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+  html.dig-nav-lock .main-nav{
+    touch-action:manipulation;
+  }
+  html.dig-nav-lock .nav-backdrop:not([hidden]){
+    /* Block background panning while retaining deliberate pinch zoom. */
+    touch-action:pinch-zoom;
+  }
+  /* Keep editable control text legible at focus without touching radios. */
+  input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="button"]):not([type="submit"]):not([type="reset"]),
+  select,
+  textarea{
+    font-size:max(16px,1rem)!important;
+  }
+}
+
+/* V26: clear navigation for the expanded article collection. */
+.dig-v26-article-pager{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin:2rem 0 1rem;
+}
+.dig-v26-article-pager[hidden]{display:none}
+.dig-v26-article-pager label{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  color:var(--ink,#0b3158);
+  font-weight:700;
+}
+.dig-v26-article-pager select{
+  min-width:7.5rem;
+  min-height:44px;
+  padding:.55rem .85rem;
+  border:1px solid rgba(11,49,88,.2);
+  border-radius:.6rem;
+  background:#fff;
+  color:inherit;
+  font:inherit;
+}
+.dig-v26-article-pager .button:disabled{opacity:.45;cursor:default}
+[data-live-news-grid]{scroll-margin-top:calc(var(--header-height,90px) + 1.5rem)}
+.news-detail-article p{overflow-wrap:break-word}
+@media(max-width:600px){
+  .dig-v26-article-pager{gap:.6rem;justify-content:center}
+  .dig-v26-article-pager label{order:-1;flex-basis:100%;justify-content:center}
+  .dig-v26-article-pager .button{flex:1;padding:.75rem .8rem;min-width:0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+
+</style>
 </head>
 <body data-page-style="corporate" id="top">
 <svg aria-hidden="true" class="icon-sprite" focusable="false">
@@ -5795,7 +5911,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div aria-hidden="true" class="reading-progress"></div>
 <header class="site-header" data-nosnippet="">
 <div class="shell header-inner">
-<a aria-label="Beranda PT Digdaya Inovasi Nusantara" class="brand" href="index.html"><img alt="" data-original-src="assets/digdaya-logo-256.webp" src="assets/digdaya-logo-256.webp" height="256" width="256"/><span class="brand-copy"><strong>PT Digdaya Inovasi Nusantara</strong><small>Connecting products, powering innovation</small></span></a>
+<a aria-label="Beranda PT Digdaya Inovasi Nusantara" class="brand" href="index.html"><img draggable="false" alt="" data-original-src="assets/digdaya-logo-256.webp" src="assets/digdaya-logo-256.webp" height="256" width="256"/><span class="brand-copy"><strong>PT Digdaya Inovasi Nusantara</strong><small>Connecting products, powering innovation</small></span></a>
 <button aria-controls="main-nav" aria-expanded="false" aria-label="Buka menu utama" class="menu-button" type="button"><span class="menu-icon"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-menu"></use></svg></span><span class="close-icon" hidden=""><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></span><span aria-hidden="true" class="dig-menu-morph"><svg focusable="false" viewBox="0 0 48 48"><path class="dig-menu-morph-top" d="M15 16H33"></path><path class="dig-menu-morph-middle" d="M15 24H33"></path><path class="dig-menu-morph-bottom" d="M15 32H33"></path></svg></span></button>
 <nav aria-label="Navigasi utama" class="main-nav" id="main-nav">
 <div class="mobile-nav-head"><span class="mobile-nav-title">Menu utama</span><button aria-label="Tutup menu" class="icon-button nav-close" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></button></div><a class="button dig-v24-account dig-v24-account--mobile" data-customer-portal="" href="#akses-akun" ><span class="dig-v24-account-copy"><strong>Masuk / Daftar</strong><small>Belanja &amp; bayar otomatis</small></span><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -5844,8 +5960,8 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <main id="main">
 <section aria-labelledby="home-title" class="hero">
 <div class="shell hero-frame" data-dig-home-hero="">
-<picture class="hero-picture position-left"><img alt="Presentasi visual ekosistem usaha Digdaya" data-original-src="assets/corporate-home-v16.webp" decoding="async" fetchpriority="high" src="assets/corporate-home-v16.webp" height="675" width="1200"/></picture>
-<div aria-hidden="true" class="dig-hero-alt-media"><img alt="" data-dig-hero-image="1" data-original-src="assets/digital-operations-v16.webp" decoding="async" src="assets/digital-operations-v16.webp" height="675" width="1200"/><img alt="" data-dig-hero-image="2" data-original-src="assets/website-studio-v16.webp" decoding="async" src="assets/website-studio-v16.webp" height="675" width="1200"/></div>
+<picture class="hero-picture position-left"><img draggable="false" alt="Presentasi visual ekosistem usaha Digdaya" data-original-src="assets/corporate-home-v16.webp" decoding="async" fetchpriority="high" src="assets/corporate-home-v16.webp" height="675" width="1200"/></picture>
+<div aria-hidden="true" class="dig-hero-alt-media"><img draggable="false" alt="" data-dig-hero-image="1" data-original-src="assets/digital-operations-v16.webp" decoding="async" src="assets/digital-operations-v16.webp" height="675" width="1200"/><img draggable="false" alt="" data-dig-hero-image="2" data-original-src="assets/website-studio-v16.webp" decoding="async" src="assets/website-studio-v16.webp" height="675" width="1200"/></div>
 <div class="hero-copy reveal" data-motion="hero">
 <p class="kicker overline-rule">PT Digdaya Inovasi Nusantara</p>
 <h1 id="home-title">Parfum dan layanan digital untuk kebutuhan Anda.</h1>
@@ -5944,7 +6060,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 </section>
 <section class="section paper">
 <div class="shell editorial-split">
-<figure class="editorial-media reveal" data-lightbox="" data-motion="media"><img alt="Suasana kurasi parfum dengan botol dan material aroma" data-original-src="assets/fragrance-workshop-v16.webp" decoding="async" loading="lazy" src="assets/fragrance-workshop-v16.webp" height="675" width="1200"/><figcaption>Kurasi parfum dan material aroma untuk membantu proses eksplorasi awal.</figcaption></figure>
+<figure class="editorial-media reveal" data-lightbox="" data-motion="media"><img draggable="false" alt="Suasana kurasi parfum dengan botol dan material aroma" data-original-src="assets/fragrance-workshop-v16.webp" decoding="async" loading="lazy" src="assets/fragrance-workshop-v16.webp" height="675" width="1200"/><figcaption>Kurasi parfum dan material aroma untuk membantu proses eksplorasi awal.</figcaption></figure>
 <div class="editorial-copy reveal" data-motion="slide-right">
 <p class="kicker">Digdaya Fragrance</p><h2>Pilih parfum sesuai karakter dan kebutuhan pemakaian.</h2>
 <p>Catatan atas, tengah, dan dasar menjadi peta awal. Preferensi pribadi, suasana, serta konteks pemakaian menentukan arah berikutnya.</p>
@@ -5957,9 +6073,9 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div class="shell">
 <div class="section-head reveal" data-motion="fade"><div><p class="kicker">Digdaya Digital</p><h2>Siapkan domain, website, dan kebutuhan digital Anda.</h2></div><p class="lede">Pilih kebutuhan domain atau website sesuai tujuan usaha. Untuk top up, periksa game, ID tujuan, dan produk, lalu lanjutkan melalui akun pelanggan.</p></div>
 <div class="mosaic">
-<figure class="reveal"><img alt="Ruang kerja digital untuk perencanaan domain dan website" data-original-src="assets/digital-operations-v16.webp" decoding="async" loading="lazy" src="assets/digital-operations-v16.webp" height="675" width="1200"/><figcaption>Perencanaan digital berangkat dari tujuan usaha dan kebutuhan pengguna.</figcaption></figure>
-<figure class="reveal" data-delay="1"><img alt="Tim Digdaya menyusun strategi nama domain" data-original-src="assets/domain-strategy-v16.webp" decoding="async" loading="lazy" src="assets/domain-strategy-v16.webp" height="675" width="1200"/><figcaption>Nama domain sebagai aset identitas digital.</figcaption></figure>
-<figure class="reveal" data-delay="2"><img alt="Tim Digdaya meninjau rancangan website pada layar" data-original-src="assets/website-studio-v16.webp" decoding="async" loading="lazy" src="assets/website-studio-v16.webp" height="675" width="1200"/><figcaption>Website yang dirancang dari kebutuhan.</figcaption></figure>
+<figure class="reveal"><img draggable="false" alt="Ruang kerja digital untuk perencanaan domain dan website" data-original-src="assets/digital-operations-v16.webp" decoding="async" loading="lazy" src="assets/digital-operations-v16.webp" height="675" width="1200"/><figcaption>Perencanaan digital berangkat dari tujuan usaha dan kebutuhan pengguna.</figcaption></figure>
+<figure class="reveal" data-delay="1"><img draggable="false" alt="Tim Digdaya menyusun strategi nama domain" data-original-src="assets/domain-strategy-v16.webp" decoding="async" loading="lazy" src="assets/domain-strategy-v16.webp" height="675" width="1200"/><figcaption>Nama domain sebagai aset identitas digital.</figcaption></figure>
+<figure class="reveal" data-delay="2"><img draggable="false" alt="Tim Digdaya meninjau rancangan website pada layar" data-original-src="assets/website-studio-v16.webp" decoding="async" loading="lazy" src="assets/website-studio-v16.webp" height="675" width="1200"/><figcaption>Website yang dirancang dari kebutuhan.</figcaption></figure>
 </div>
 <div class="grid-3 spaced-grid">
 <article class="card reveal" data-motion="rise"><h3>Jual Beli Domain</h3><p>Bahas kebutuhan nama, konteks penggunaan, dan alur perpindahan secara terstruktur.</p><a class="card-link" href="jual-beli-domain.html">Pelajari domain <svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-arrow-right"></use></svg></a></article>
@@ -5970,7 +6086,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 </section>
 <section class="section">
 <div class="shell family-panel reveal">
-<div class="family-logos"><div class="logo-tile"><img alt="Logo PT Digdaya Inovasi Nusantara" data-original-src="assets/digdaya-logo-256.webp" decoding="async" loading="lazy" src="assets/digdaya-logo-256.webp" height="256" width="256"/></div><div class="logo-tile cv"><img alt="Logo CV Multi Usaha Mandiri" data-original-src="assets/logo-cv-multi-usaha-mandiri.webp" decoding="async" loading="lazy" src="assets/logo-cv-multi-usaha-mandiri.webp" height="408" width="612"/></div></div>
+<div class="family-logos"><div class="logo-tile"><img draggable="false" alt="Logo PT Digdaya Inovasi Nusantara" data-original-src="assets/digdaya-logo-256.webp" decoding="async" loading="lazy" src="assets/digdaya-logo-256.webp" height="256" width="256"/></div><div class="logo-tile cv"><img draggable="false" alt="Logo CV Multi Usaha Mandiri" data-original-src="assets/logo-cv-multi-usaha-mandiri.webp" decoding="async" loading="lazy" src="assets/logo-cv-multi-usaha-mandiri.webp" height="408" width="612"/></div></div>
 <div class="family-copy"><p class="kicker">Satu keluarga usaha</p><h2>Dua identitas, semangat kerja yang saling menguatkan.</h2><p>PT Digdaya Inovasi Nusantara dan CV Multi Usaha Mandiri diperkenalkan sebagai bagian dari satu keluarga usaha. Penyebutan ini merupakan konteks keluarga usaha dan tidak dimaksudkan sebagai pernyataan hubungan badan hukum.</p><a class="card-link" href="tentang-kami.html">Baca profil perusahaan <svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-arrow-right"></use></svg></a></div>
 </div>
 </section>
@@ -5981,18 +6097,18 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div aria-label="Kontrol campaign" class="dig-scroll-actions"><button aria-label="Campaign sebelumnya" class="dig-scroll-button" data-dig-scroll-prev="" type="button">←</button><button aria-label="Campaign berikutnya" class="dig-scroll-button" data-dig-scroll-next="" type="button">→</button></div>
 </div>
 <div aria-label="Daftar campaign Digdaya" class="dig-campaign-track" data-dig-scroll-track="" tabindex="0">
-<article class="dig-campaign"><img alt="Visual editorial parfum lokal Digdaya" data-original-src="assets/brand-campaign-01.webp" decoding="async" loading="lazy" src="assets/brand-campaign-01.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Fragrance / Lokal</small><h3>Aroma lokal, pilihan lebih personal.</h3><p>Mulai dari karakter aroma, konteks pemakaian, dan preferensi sebelum masuk ke pilihan produk.</p><a href="parfum-lokal.html">Jelajahi parfum lokal →</a></div></article>
-<article class="dig-campaign"><img alt="Visual editorial parfum Timur Tengah Digdaya" data-original-src="assets/brand-campaign-02.webp" decoding="async" loading="lazy" src="assets/brand-campaign-02.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Fragrance / Middle East</small><h3>Karakter intens untuk eksplorasi berbeda.</h3><p>Jelajahi profil aroma Timur Tengah dari arah woody, amber, gourmand, hingga aromatic.</p><a href="parfum-timur-tengah.html">Lihat parfum Timur Tengah →</a></div></article>
-<article class="dig-campaign"><img alt="Visual editorial parfum designer Digdaya" data-original-src="assets/brand-campaign-03.webp" decoding="async" loading="lazy" src="assets/brand-campaign-03.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Fragrance / Designer</small><h3>Kenali profil sebelum menentukan pilihan.</h3><p>Gunakan keluarga aroma dan konteks pemakaian untuk mempersempit eksplorasi parfum designer.</p><a href="parfum-designer.html">Jelajahi designer →</a></div></article>
-<article class="dig-campaign"><img alt="Visual editorial parfum niche Digdaya" data-original-src="assets/parfum-niche-v16.webp" decoding="async" loading="lazy" src="assets/parfum-niche-v16.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Fragrance / Niche</small><h3>Eksplorasi yang lebih spesifik.</h3><p>Bahas karakter, nuansa, dan preferensi lebih rinci untuk menemukan arah parfum niche yang relevan.</p><a href="parfum-niche.html">Jelajahi niche →</a></div></article>
-<article class="dig-campaign"><img alt="Visual editorial domain Digdaya" data-original-src="assets/domain-strategy-v16.webp" decoding="async" loading="lazy" src="assets/domain-strategy-v16.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Digital Identity</small><h3>Nama yang kuat, pengalaman yang utuh.</h3><p>Bahas domain sebagai bagian dari identitas digital yang mudah dikenali dan siap dikembangkan.</p><a href="jual-beli-domain.html">Bahas domain →</a></div></article>
-<article class="dig-campaign"><img alt="Studio perencanaan website Digdaya" data-original-src="assets/brand-campaign-06.webp" decoding="async" loading="lazy" src="assets/brand-campaign-06.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Website / Build</small><h3>Dari brief menuju pengalaman digital.</h3><p>Susun sasaran, konten, halaman, fitur, dan prioritas sebelum pengembangan dimulai.</p><a href="jasa-pembuatan-website.html">Susun website →</a></div></article>
-<article class="dig-campaign"><img alt="Visual layanan top up game Digdaya" data-original-src="assets/gaming-service-v16.webp" decoding="async" loading="lazy" src="assets/gaming-service-v16.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Digital Service</small><h3>Data tujuan lebih dulu.</h3><p>Siapkan game, ID, server bila diperlukan, dan produk tanpa pernah mengirim kredensial keamanan.</p><a href="top-up-game.html">Lihat alur top up →</a></div></article>
-<article class="dig-campaign"><img alt="Visual keamanan komunikasi dan transaksi Digdaya" data-original-src="assets/security-verification-v16.webp" decoding="async" loading="lazy" src="assets/security-verification-v16.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Trust / Security</small><h3>Verifikasi sebelum mengirim.</h3><p>Pastikan kanal, data tujuan, dan informasi pembayaran sesuai sebelum melanjutkan komunikasi atau transaksi.</p><a href="keamanan.html">Buka panduan keamanan →</a></div></article>
-<article class="dig-campaign"><img alt="Visual kolaborasi dan kemitraan Digdaya" data-original-src="assets/brand-campaign-09.webp" decoding="async" loading="lazy" src="assets/brand-campaign-09.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Partnership</small><h3>Kolaborasi dimulai dari ruang lingkup yang jelas.</h3><p>Sampaikan konteks kerja sama, kebutuhan, target, dan bentuk koordinasi yang ingin dibahas.</p><a href="kemitraan.html">Bahas kemitraan →</a></div></article>
-<article class="dig-campaign"><img alt="Visual profil perusahaan PT Digdaya Inovasi Nusantara" data-original-src="assets/corporate-home-v16.webp" decoding="async" loading="lazy" src="assets/corporate-home-v16.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Company</small><h3>Kenali ruang usaha Digdaya.</h3><p>Lihat profil perusahaan, area layanan, prinsip kerja, serta kanal resmi yang digunakan.</p><a href="tentang-kami.html">Baca profil perusahaan →</a></div></article>
-<article class="dig-campaign"><img alt="Visual ruang berita dan wawasan Digdaya" data-original-src="assets/brand-campaign-11.webp" decoding="async" loading="lazy" src="assets/brand-campaign-11.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Newsroom</small><h3>Wawasan untuk keputusan yang lebih jernih.</h3><p>Temukan panduan praktis dan ruang berita internal Digdaya dalam satu halaman.</p><a href="berita.html">Buka newsroom →</a></div></article>
-<article class="dig-campaign"><img alt="Visual kanal kontak resmi Digdaya" data-original-src="assets/customer-support-v16.webp" decoding="async" loading="lazy" src="assets/customer-support-v16.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Contact</small><h3>Mulai dari kanal yang tepat.</h3><p>Beli produk dan layanan melalui akun pelanggan. WhatsApp tersedia untuk bantuan konsultasi; email untuk korespondensi pendukung.</p><a href="kontak.html">Hubungi Digdaya →</a></div></article>
+<article class="dig-campaign"><img draggable="false" alt="Visual editorial parfum lokal Digdaya" data-original-src="assets/brand-campaign-01.webp" decoding="async" loading="lazy" src="assets/brand-campaign-01.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Fragrance / Lokal</small><h3>Aroma lokal, pilihan lebih personal.</h3><p>Mulai dari karakter aroma, konteks pemakaian, dan preferensi sebelum masuk ke pilihan produk.</p><a href="parfum-lokal.html">Jelajahi parfum lokal →</a></div></article>
+<article class="dig-campaign"><img draggable="false" alt="Visual editorial parfum Timur Tengah Digdaya" data-original-src="assets/brand-campaign-02.webp" decoding="async" loading="lazy" src="assets/brand-campaign-02.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Fragrance / Middle East</small><h3>Karakter intens untuk eksplorasi berbeda.</h3><p>Jelajahi profil aroma Timur Tengah dari arah woody, amber, gourmand, hingga aromatic.</p><a href="parfum-timur-tengah.html">Lihat parfum Timur Tengah →</a></div></article>
+<article class="dig-campaign"><img draggable="false" alt="Visual editorial parfum designer Digdaya" data-original-src="assets/brand-campaign-03.webp" decoding="async" loading="lazy" src="assets/brand-campaign-03.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Fragrance / Designer</small><h3>Kenali profil sebelum menentukan pilihan.</h3><p>Gunakan keluarga aroma dan konteks pemakaian untuk mempersempit eksplorasi parfum designer.</p><a href="parfum-designer.html">Jelajahi designer →</a></div></article>
+<article class="dig-campaign"><img draggable="false" alt="Visual editorial parfum niche Digdaya" data-original-src="assets/parfum-niche-v16.webp" decoding="async" loading="lazy" src="assets/parfum-niche-v16.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Fragrance / Niche</small><h3>Eksplorasi yang lebih spesifik.</h3><p>Bahas karakter, nuansa, dan preferensi lebih rinci untuk menemukan arah parfum niche yang relevan.</p><a href="parfum-niche.html">Jelajahi niche →</a></div></article>
+<article class="dig-campaign"><img draggable="false" alt="Visual editorial domain Digdaya" data-original-src="assets/domain-strategy-v16.webp" decoding="async" loading="lazy" src="assets/domain-strategy-v16.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Digital Identity</small><h3>Nama yang kuat, pengalaman yang utuh.</h3><p>Bahas domain sebagai bagian dari identitas digital yang mudah dikenali dan siap dikembangkan.</p><a href="jual-beli-domain.html">Bahas domain →</a></div></article>
+<article class="dig-campaign"><img draggable="false" alt="Studio perencanaan website Digdaya" data-original-src="assets/brand-campaign-06.webp" decoding="async" loading="lazy" src="assets/brand-campaign-06.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Website / Build</small><h3>Dari brief menuju pengalaman digital.</h3><p>Susun sasaran, konten, halaman, fitur, dan prioritas sebelum pengembangan dimulai.</p><a href="jasa-pembuatan-website.html">Susun website →</a></div></article>
+<article class="dig-campaign"><img draggable="false" alt="Visual layanan top up game Digdaya" data-original-src="assets/gaming-service-v16.webp" decoding="async" loading="lazy" src="assets/gaming-service-v16.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Digital Service</small><h3>Data tujuan lebih dulu.</h3><p>Siapkan game, ID, server bila diperlukan, dan produk tanpa pernah mengirim kredensial keamanan.</p><a href="top-up-game.html">Lihat alur top up →</a></div></article>
+<article class="dig-campaign"><img draggable="false" alt="Visual keamanan komunikasi dan transaksi Digdaya" data-original-src="assets/security-verification-v16.webp" decoding="async" loading="lazy" src="assets/security-verification-v16.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Trust / Security</small><h3>Verifikasi sebelum mengirim.</h3><p>Pastikan kanal, data tujuan, dan informasi pembayaran sesuai sebelum melanjutkan komunikasi atau transaksi.</p><a href="keamanan.html">Buka panduan keamanan →</a></div></article>
+<article class="dig-campaign"><img draggable="false" alt="Visual kolaborasi dan kemitraan Digdaya" data-original-src="assets/brand-campaign-09.webp" decoding="async" loading="lazy" src="assets/brand-campaign-09.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Partnership</small><h3>Kolaborasi dimulai dari ruang lingkup yang jelas.</h3><p>Sampaikan konteks kerja sama, kebutuhan, target, dan bentuk koordinasi yang ingin dibahas.</p><a href="kemitraan.html">Bahas kemitraan →</a></div></article>
+<article class="dig-campaign"><img draggable="false" alt="Visual profil perusahaan PT Digdaya Inovasi Nusantara" data-original-src="assets/corporate-home-v16.webp" decoding="async" loading="lazy" src="assets/corporate-home-v16.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Company</small><h3>Kenali ruang usaha Digdaya.</h3><p>Lihat profil perusahaan, area layanan, prinsip kerja, serta kanal resmi yang digunakan.</p><a href="tentang-kami.html">Baca profil perusahaan →</a></div></article>
+<article class="dig-campaign"><img draggable="false" alt="Visual ruang berita dan wawasan Digdaya" data-original-src="assets/brand-campaign-11.webp" decoding="async" loading="lazy" src="assets/brand-campaign-11.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Newsroom</small><h3>Wawasan untuk keputusan yang lebih jernih.</h3><p>Temukan panduan praktis dan ruang berita internal Digdaya dalam satu halaman.</p><a href="berita.html">Buka newsroom →</a></div></article>
+<article class="dig-campaign"><img draggable="false" alt="Visual kanal kontak resmi Digdaya" data-original-src="assets/customer-support-v16.webp" decoding="async" loading="lazy" src="assets/customer-support-v16.webp" height="675" width="1200"/><div class="dig-campaign-copy"><small>Contact</small><h3>Mulai dari kanal yang tepat.</h3><p>Beli produk dan layanan melalui akun pelanggan. WhatsApp tersedia untuk bantuan konsultasi; email untuk korespondensi pendukung.</p><a href="kontak.html">Hubungi Digdaya →</a></div></article>
 </div>
 </div>
 </section>
@@ -6014,21 +6130,21 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <p>15 visual pilihan menghubungkan pengunjung langsung ke layanan, panduan, profil, keamanan, kemitraan, dan kanal komunikasi.</p>
 </div>
 <div class="dig-promo-grid">
-<a class="dig-promo-card dig-promo-card-wide" href="jasa-pembuatan-website.html"><img alt="Promo jasa pembuatan website Digdaya" data-original-src="assets/brand-promo-01.webp" decoding="async" loading="lazy" src="assets/brand-promo-01.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Website</small><strong>Bangun website dari tujuan yang jelas.</strong><em>Lihat layanan →</em></span></a>
-<a class="dig-promo-card" href="jual-beli-domain.html"><img alt="Promo jual beli domain Digdaya" data-original-src="assets/domain-strategy-v16.webp" decoding="async" loading="lazy" src="assets/domain-strategy-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Domain</small><strong>Nama digital yang lebih terarah.</strong><em>Bahas domain →</em></span></a>
-<a class="dig-promo-card" href="parfum-lokal.html"><img alt="Promo parfum lokal Digdaya" data-original-src="assets/brand-promo-03.webp" decoding="async" loading="lazy" src="assets/brand-promo-03.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Fragrance</small><strong>Parfum lokal untuk eksplorasi harian.</strong><em>Jelajahi →</em></span></a>
-<a class="dig-promo-card" href="parfum-timur-tengah.html"><img alt="Promo parfum Timur Tengah Digdaya" data-original-src="assets/brand-promo-04.webp" decoding="async" loading="lazy" src="assets/brand-promo-04.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Middle East</small><strong>Karakter aroma yang lebih intens.</strong><em>Jelajahi →</em></span></a>
-<a class="dig-promo-card" href="parfum-designer.html"><img alt="Promo parfum designer Digdaya" data-original-src="assets/brand-promo-05.webp" decoding="async" loading="lazy" src="assets/brand-promo-05.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Designer</small><strong>Profil populer, pilihan lebih terarah.</strong><em>Jelajahi →</em></span></a>
-<a class="dig-promo-card dig-promo-card-wide" href="parfum-niche.html"><img alt="Promo parfum niche Digdaya" data-original-src="assets/brand-promo-06.webp" decoding="async" loading="lazy" src="assets/brand-promo-06.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Niche</small><strong>Eksplorasi aroma yang lebih spesifik.</strong><em>Lihat pilihan →</em></span></a>
-<a class="dig-promo-card" href="top-up-game.html"><img alt="Promo layanan top up game Digdaya" data-original-src="assets/gaming-service-v16.webp" decoding="async" loading="lazy" src="assets/gaming-service-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Top Up</small><strong>Siapkan data tujuan sebelum transaksi.</strong><em>Lihat alur →</em></span></a>
-<a class="dig-promo-card" href="berita-brief-website.html"><img alt="Promo panduan brief website Digdaya" data-original-src="assets/brand-promo-08.webp" decoding="async" loading="lazy" src="assets/brand-promo-08.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Guide</small><strong>Brief website yang lebih efektif.</strong><em>Baca artikel →</em></span></a>
-<a class="dig-promo-card" href="berita-checklist-domain.html"><img alt="Promo checklist memilih nama domain" data-original-src="assets/domain-strategy-v16.webp" decoding="async" loading="lazy" src="assets/domain-strategy-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Domain Guide</small><strong>Checklist sebelum memilih nama domain.</strong><em>Baca artikel →</em></span></a>
-<a class="dig-promo-card" href="berita-panduan-parfum.html"><img alt="Promo panduan menyusun brief parfum" data-original-src="assets/brand-promo-10.webp" decoding="async" loading="lazy" src="assets/brand-promo-10.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Fragrance Guide</small><strong>Ubah preferensi aroma menjadi brief.</strong><em>Baca artikel →</em></span></a>
-<a class="dig-promo-card dig-promo-card-wide" href="kemitraan.html"><img alt="Promo kemitraan Digdaya" data-original-src="assets/partnership-workshop-v16.webp" decoding="async" loading="lazy" src="assets/partnership-workshop-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Partnership</small><strong>Buka ruang kolaborasi yang terstruktur.</strong><em>Bahas kemitraan →</em></span></a>
-<a class="dig-promo-card" href="tentang-kami.html"><img alt="Promo profil PT Digdaya Inovasi Nusantara" data-original-src="assets/corporate-home-v16.webp" decoding="async" loading="lazy" src="assets/corporate-home-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Company</small><strong>Kenali profil dan ruang usaha Digdaya.</strong><em>Tentang kami →</em></span></a>
-<a class="dig-promo-card" href="keamanan.html"><img alt="Promo keamanan komunikasi Digdaya" data-original-src="assets/security-verification-v16.webp" decoding="async" loading="lazy" src="assets/security-verification-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Security</small><strong>Verifikasi kanal, data, dan pembayaran.</strong><em>Buka keamanan →</em></span></a>
-<a class="dig-promo-card" href="berita.html"><img alt="Promo berita dan wawasan Digdaya" data-original-src="assets/brand-promo-14.webp" decoding="async" loading="lazy" src="assets/brand-promo-14.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Newsroom</small><strong>Berita dan wawasan dalam satu ruang baca.</strong><em>Lihat berita →</em></span></a>
-<a class="dig-promo-card" href="kontak.html"><img alt="Promo kanal kontak resmi Digdaya" data-original-src="assets/customer-support-v16.webp" decoding="async" loading="lazy" src="assets/customer-support-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Contact</small><strong>Gunakan kanal resmi untuk mulai berbicara.</strong><em>Hubungi kami →</em></span></a>
+<a class="dig-promo-card dig-promo-card-wide" href="jasa-pembuatan-website.html"><img draggable="false" alt="Promo jasa pembuatan website Digdaya" data-original-src="assets/brand-promo-01.webp" decoding="async" loading="lazy" src="assets/brand-promo-01.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Website</small><strong>Bangun website dari tujuan yang jelas.</strong><em>Lihat layanan →</em></span></a>
+<a class="dig-promo-card" href="jual-beli-domain.html"><img draggable="false" alt="Promo jual beli domain Digdaya" data-original-src="assets/domain-strategy-v16.webp" decoding="async" loading="lazy" src="assets/domain-strategy-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Domain</small><strong>Nama digital yang lebih terarah.</strong><em>Bahas domain →</em></span></a>
+<a class="dig-promo-card" href="parfum-lokal.html"><img draggable="false" alt="Promo parfum lokal Digdaya" data-original-src="assets/brand-promo-03.webp" decoding="async" loading="lazy" src="assets/brand-promo-03.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Fragrance</small><strong>Parfum lokal untuk eksplorasi harian.</strong><em>Jelajahi →</em></span></a>
+<a class="dig-promo-card" href="parfum-timur-tengah.html"><img draggable="false" alt="Promo parfum Timur Tengah Digdaya" data-original-src="assets/brand-promo-04.webp" decoding="async" loading="lazy" src="assets/brand-promo-04.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Middle East</small><strong>Karakter aroma yang lebih intens.</strong><em>Jelajahi →</em></span></a>
+<a class="dig-promo-card" href="parfum-designer.html"><img draggable="false" alt="Promo parfum designer Digdaya" data-original-src="assets/brand-promo-05.webp" decoding="async" loading="lazy" src="assets/brand-promo-05.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Designer</small><strong>Profil populer, pilihan lebih terarah.</strong><em>Jelajahi →</em></span></a>
+<a class="dig-promo-card dig-promo-card-wide" href="parfum-niche.html"><img draggable="false" alt="Promo parfum niche Digdaya" data-original-src="assets/brand-promo-06.webp" decoding="async" loading="lazy" src="assets/brand-promo-06.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Niche</small><strong>Eksplorasi aroma yang lebih spesifik.</strong><em>Lihat pilihan →</em></span></a>
+<a class="dig-promo-card" href="top-up-game.html"><img draggable="false" alt="Promo layanan top up game Digdaya" data-original-src="assets/gaming-service-v16.webp" decoding="async" loading="lazy" src="assets/gaming-service-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Top Up</small><strong>Siapkan data tujuan sebelum transaksi.</strong><em>Lihat alur →</em></span></a>
+<a class="dig-promo-card" href="berita-brief-website.html"><img draggable="false" alt="Promo panduan brief website Digdaya" data-original-src="assets/brand-promo-08.webp" decoding="async" loading="lazy" src="assets/brand-promo-08.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Guide</small><strong>Brief website yang lebih efektif.</strong><em>Baca artikel →</em></span></a>
+<a class="dig-promo-card" href="berita-checklist-domain.html"><img draggable="false" alt="Promo checklist memilih nama domain" data-original-src="assets/domain-strategy-v16.webp" decoding="async" loading="lazy" src="assets/domain-strategy-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Domain Guide</small><strong>Checklist sebelum memilih nama domain.</strong><em>Baca artikel →</em></span></a>
+<a class="dig-promo-card" href="berita-panduan-parfum.html"><img draggable="false" alt="Promo panduan menyusun brief parfum" data-original-src="assets/brand-promo-10.webp" decoding="async" loading="lazy" src="assets/brand-promo-10.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Fragrance Guide</small><strong>Ubah preferensi aroma menjadi brief.</strong><em>Baca artikel →</em></span></a>
+<a class="dig-promo-card dig-promo-card-wide" href="kemitraan.html"><img draggable="false" alt="Promo kemitraan Digdaya" data-original-src="assets/partnership-workshop-v16.webp" decoding="async" loading="lazy" src="assets/partnership-workshop-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Partnership</small><strong>Buka ruang kolaborasi yang terstruktur.</strong><em>Bahas kemitraan →</em></span></a>
+<a class="dig-promo-card" href="tentang-kami.html"><img draggable="false" alt="Promo profil PT Digdaya Inovasi Nusantara" data-original-src="assets/corporate-home-v16.webp" decoding="async" loading="lazy" src="assets/corporate-home-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Company</small><strong>Kenali profil dan ruang usaha Digdaya.</strong><em>Tentang kami →</em></span></a>
+<a class="dig-promo-card" href="keamanan.html"><img draggable="false" alt="Promo keamanan komunikasi Digdaya" data-original-src="assets/security-verification-v16.webp" decoding="async" loading="lazy" src="assets/security-verification-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Security</small><strong>Verifikasi kanal, data, dan pembayaran.</strong><em>Buka keamanan →</em></span></a>
+<a class="dig-promo-card" href="berita.html"><img draggable="false" alt="Promo berita dan wawasan Digdaya" data-original-src="assets/brand-promo-14.webp" decoding="async" loading="lazy" src="assets/brand-promo-14.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Newsroom</small><strong>Berita dan wawasan dalam satu ruang baca.</strong><em>Lihat berita →</em></span></a>
+<a class="dig-promo-card" href="kontak.html"><img draggable="false" alt="Promo kanal kontak resmi Digdaya" data-original-src="assets/customer-support-v16.webp" decoding="async" loading="lazy" src="assets/customer-support-v16.webp" height="675" width="1200"/><span class="dig-promo-copy"><small>Contact</small><strong>Gunakan kanal resmi untuk mulai berbicara.</strong><em>Hubungi kami →</em></span></a>
 </div>
 </div>
 </div>
@@ -6053,13 +6169,13 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div class="shell">
 <div class="section-head reveal" data-motion="fade"><div><p class="kicker">Corporate Newsroom</p><h2 id="home-news-title">Wawasan yang membantu keputusan menjadi lebih jelas.</h2></div><p class="lede">Baca panduan website, domain, parfum, dan keamanan untuk menyiapkan kebutuhan Anda.</p></div>
 <div class="dig-newsroom">
-<a class="dig-news-lead reveal" data-motion="media" href="berita-brief-website.html"><img alt="Visual editorial perencanaan website" data-original-src="assets/website-studio-v16.webp" decoding="async" loading="lazy" src="assets/website-studio-v16.webp" height="675" width="1200"/><div class="dig-news-lead-copy"><span class="kicker">Website / Brief</span><h3>Cara Menyusun Brief Website yang Efektif</h3><p>Mulai proyek digital dari tujuan, pengguna, struktur, konten, dan batas ruang lingkup yang jelas.</p></div></a>
+<a class="dig-news-lead reveal" data-motion="media" href="berita-brief-website.html"><img draggable="false" alt="Visual editorial perencanaan website" data-original-src="assets/website-studio-v16.webp" decoding="async" loading="lazy" src="assets/website-studio-v16.webp" height="675" width="1200"/><div class="dig-news-lead-copy"><span class="kicker">Website / Brief</span><h3>Cara Menyusun Brief Website yang Efektif</h3><p>Mulai proyek digital dari tujuan, pengguna, struktur, konten, dan batas ruang lingkup yang jelas.</p></div></a>
 <div class="dig-news-list reveal" data-motion="rise">
-<a class="dig-news-mini" href="berita-checklist-domain.html"><img alt="Visual editorial domain" data-original-src="assets/domain-strategy-v16.webp" decoding="async" loading="lazy" src="assets/domain-strategy-v16.webp" height="675" width="1200"/><span><small>Domain</small><strong>Checklist Memilih Nama Domain yang Tepat</strong><span class="fine">Baca artikel →</span></span></a>
-<a class="dig-news-mini" href="berita-panduan-parfum.html"><img alt="Visual editorial fragrance" data-original-src="assets/fragrance-workshop-v16.webp" decoding="async" loading="lazy" src="assets/fragrance-workshop-v16.webp" height="675" width="1200"/><span><small>Fragrance</small><strong>Cara Menyusun Brief Parfum yang Jelas</strong><span class="fine">Baca artikel →</span></span></a>
-<a class="dig-news-mini" href="keamanan.html"><img alt="Pemeriksaan kanal dan data sebelum transaksi digital" data-original-src="assets/security-verification-v16.webp" decoding="async" loading="lazy" src="assets/security-verification-v16.webp" height="675" width="1200"/><span><small>Trust</small><strong>Verifikasi sebelum mengirim data atau pembayaran</strong><span class="fine">Buka keamanan →</span></span></a>
-<a class="dig-news-mini" href="berita-detail.html?id=bnpt-kemendikdasmen-deklarasi-lingkungan-pendidikan-aman-untuk-anak-3c6edca"><img alt="Visual editorial berita pendidikan" data-original-src="assets/news-pendidikan-1.webp" decoding="async" loading="lazy" src="assets/news-pendidikan-1.webp" height="675" width="1200"/><span><small>Pendidikan</small><strong>BNPT-Kemendikdasmen deklarasi lingkungan pendidikan aman untuk anak</strong><span class="fine">Baca berita →</span></span><span class="dig-static-illustration-label">Ilustrasi</span></a>
-<a class="dig-news-mini" href="berita-detail.html?id=harga-minyak-dunia-naik-apa-dampaknya-bagi-indonesia-6c00717"><img alt="Visual editorial berita ekonomi" data-original-src="assets/news-ekonomi-1.webp" decoding="async" loading="lazy" src="assets/news-ekonomi-1.webp" height="675" width="1200"/><span><small>Ekonomi</small><strong>Harga minyak dunia naik, apa dampaknya bagi Indonesia?</strong><span class="fine">Baca berita →</span></span><span class="dig-static-illustration-label">Ilustrasi</span></a>
+<a class="dig-news-mini" href="berita-checklist-domain.html"><img draggable="false" alt="Visual editorial domain" data-original-src="assets/domain-strategy-v16.webp" decoding="async" loading="lazy" src="assets/domain-strategy-v16.webp" height="675" width="1200"/><span><small>Domain</small><strong>Checklist Memilih Nama Domain yang Tepat</strong><span class="fine">Baca artikel →</span></span></a>
+<a class="dig-news-mini" href="berita-panduan-parfum.html"><img draggable="false" alt="Visual editorial fragrance" data-original-src="assets/fragrance-workshop-v16.webp" decoding="async" loading="lazy" src="assets/fragrance-workshop-v16.webp" height="675" width="1200"/><span><small>Fragrance</small><strong>Cara Menyusun Brief Parfum yang Jelas</strong><span class="fine">Baca artikel →</span></span></a>
+<a class="dig-news-mini" href="keamanan.html"><img draggable="false" alt="Pemeriksaan kanal dan data sebelum transaksi digital" data-original-src="assets/security-verification-v16.webp" decoding="async" loading="lazy" src="assets/security-verification-v16.webp" height="675" width="1200"/><span><small>Trust</small><strong>Verifikasi sebelum mengirim data atau pembayaran</strong><span class="fine">Buka keamanan →</span></span></a>
+<a class="dig-news-mini" href="berita-detail.html?id=bnpt-kemendikdasmen-deklarasi-lingkungan-pendidikan-aman-untuk-anak-3c6edca"><img draggable="false" alt="Visual editorial berita pendidikan" data-original-src="assets/news-pendidikan-1.webp" decoding="async" loading="lazy" src="assets/news-pendidikan-1.webp" height="675" width="1200"/><span><small>Pendidikan</small><strong>BNPT-Kemendikdasmen deklarasi lingkungan pendidikan aman untuk anak</strong><span class="fine">Baca berita →</span></span><span class="dig-static-illustration-label">Ilustrasi</span></a>
+<a class="dig-news-mini" href="berita-detail.html?id=harga-minyak-dunia-naik-apa-dampaknya-bagi-indonesia-6c00717"><img draggable="false" alt="Visual editorial berita ekonomi" data-original-src="assets/news-ekonomi-1.webp" decoding="async" loading="lazy" src="assets/news-ekonomi-1.webp" height="675" width="1200"/><span><small>Ekonomi</small><strong>Harga minyak dunia naik, apa dampaknya bagi Indonesia?</strong><span class="fine">Baca berita →</span></span><span class="dig-static-illustration-label">Ilustrasi</span></a>
 </div>
 </div>
 <div class="dig-news-more reveal" data-motion="fade"><a class="button" href="berita.html">Lihat selengkapnya <span aria-hidden="true">→</span></a></div>
@@ -6084,9 +6200,9 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div aria-hidden="true" class="site-footer-wave"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 393 25"><path class="site-footer-wave-accent" d="M0 21 C118 23 165 18 198 6 C226 -2 282 -1 315 3 C350 7 377 13 393 16 V25 H0 Z"></path><path class="site-footer-wave-main" d="M0 21 C88 26 158 25 200 16 C229 11 247 0 283 0 C325 0 360 8 393 21 V25 H0 Z"></path></svg></div>
 <div class="shell footer-main">
 <div class="footer-brand">
-<a class="brand" href="index.html"><img alt="" data-original-src="assets/digdaya-logo-256.webp" src="assets/digdaya-logo-256.webp" height="256" width="256"/><span class="brand-copy"><strong>PT Digdaya Inovasi Nusantara</strong><small>Connecting products, powering innovation</small></span></a>
+<a class="brand" href="index.html"><img draggable="false" alt="" data-original-src="assets/digdaya-logo-256.webp" src="assets/digdaya-logo-256.webp" height="256" width="256"/><span class="brand-copy"><strong>PT Digdaya Inovasi Nusantara</strong><small>Connecting products, powering innovation</small></span></a>
 <p>Parfum, domain, website, dan kebutuhan top up melalui pengalaman layanan yang jelas dan terarah.</p>
-<div class="footer-family"><img alt="Logo CV Multi Usaha Mandiri" data-original-src="assets/logo-cv-multi-usaha-mandiri.webp" decoding="async" loading="lazy" src="assets/logo-cv-multi-usaha-mandiri.webp" height="408" width="612"/><span><strong>CV Multi Usaha Mandiri</strong><br/>Satu keluarga usaha; badan usaha dan pihak transaksi tetap disebut terpisah.</span></div>
+<div class="footer-family"><img draggable="false" alt="Logo CV Multi Usaha Mandiri" data-original-src="assets/logo-cv-multi-usaha-mandiri.webp" decoding="async" loading="lazy" src="assets/logo-cv-multi-usaha-mandiri.webp" height="408" width="612"/><span><strong>CV Multi Usaha Mandiri</strong><br/>Satu keluarga usaha; badan usaha dan pihak transaksi tetap disebut terpisah.</span></div>
 </div>
 <div><p class="footer-title">Layanan</p><nav aria-label="Layanan di footer" class="footer-links"><a href="layanan.html">Semua Layanan</a><a href="parfum-lokal.html">Parfum</a><a href="jual-beli-domain.html">Jual Beli Domain</a><a href="jasa-pembuatan-website.html">Jasa Website</a><a href="top-up-game.html">Top Up Game</a></nav></div>
 <div><p class="footer-title">Wawasan</p><nav aria-label="Wawasan di footer" class="footer-links"><a href="pengetahuan.html">Pusat Pengetahuan</a><a href="berita.html">Berita &amp; Wawasan</a><a href="berita-panduan-parfum.html">Panduan Parfum</a><a href="berita-checklist-domain.html">Checklist Domain</a><a href="berita-brief-website.html">Brief Website</a></nav></div>
@@ -6144,7 +6260,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 </form>
 </div>
 </dialog>
-<dialog aria-labelledby="viewer-title" class="ui-dialog image-viewer" id="image-viewer"><div class="dialog-head"><h2 id="viewer-title">Pratinjau gambar</h2><button aria-label="Tutup pratinjau" class="icon-button" data-close-dialog="" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></button></div><div class="dialog-body"><img alt="Pratinjau visual Digdaya" decoding="async" height="630" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" width="1200"/><p class="fine" data-viewer-caption=""></p></div></dialog>
+<dialog aria-labelledby="viewer-title" class="ui-dialog image-viewer" id="image-viewer"><div class="dialog-head"><h2 id="viewer-title">Pratinjau gambar</h2><button aria-label="Tutup pratinjau" class="icon-button" data-close-dialog="" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></button></div><div class="dialog-body"><img draggable="false" alt="Pratinjau visual Digdaya" decoding="async" height="630" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" width="1200"/><p class="fine" data-viewer-caption=""></p></div></dialog>
 <div aria-atomic="true" aria-live="polite" class="toast-region"></div>
 <div class="quick-contact" data-quick-contact="">
 <div class="quick-contact-panel" data-quick-contact-panel="" hidden="" id="quick-contact-panel">
@@ -6333,7 +6449,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
         requestAnimationFrame(() => {
           const focusFirst = () => {
             if (focusToken !== menuFocusToken || !navigation.classList.contains("is-open") || menuButton.getAttribute("aria-expanded") !== "true") return;
-            getFocusable(navigation)[0]?.focus();
+            getFocusable(navigation)[0]?.focus({ preventScroll: true });
           };
           if (reduceMotion.matches || !navigation.classList.contains("dig-v21-nav-animating")) {
             focusFirst();
@@ -6454,37 +6570,25 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
         chevron.classList.add("faq-chevron");
         summary.append(chevron);
       }
-      summary.classList.add("has-faq-chevron");
-      let intendedOpen = details.open;
       summary.addEventListener("click", (event) => {
-        if (reduceMotion.matches || !("animate" in answer)) {
-          animations.get(details)?.cancel();
-          animations.delete(details);
-          intendedOpen = !details.open;
-          summary.dataset.expanded = String(intendedOpen);
-          answer.style.overflow = "";
-          return;
-        }
+        if (reduceMotion.matches || !("animate" in answer)) return;
         event.preventDefault();
-        const previous = animations.get(details);
-        const start = details.open ? parseFloat(getComputedStyle(answer).height) || answer.offsetHeight : 0;
-        const startOpacity = details.open ? getComputedStyle(answer).opacity : "0";
-        const opening = previous ? !intendedOpen : !details.open;
-        intendedOpen = opening;
-        previous?.cancel();
+        animations.get(details)?.cancel();
+        const opening = !details.open;
         if (opening) details.open = true;
-        summary.dataset.expanded = String(opening);
+        const start = opening ? 0 : answer.scrollHeight;
         const end = opening ? answer.scrollHeight : 0;
         answer.style.overflow = "hidden";
         const animation = answer.animate(
-          [{ height: start + "px", opacity: startOpacity }, { height: end + "px", opacity: opening ? 1 : 0 }],
+          [{ height: `${start}px`, opacity: opening ? 0 : 1 }, { height: `${end}px`, opacity: opening ? 1 : 0 }],
           { duration: 280, easing: "cubic-bezier(.2,.8,.2,1)" },
         );
         animations.set(details, animation);
         animation.finished.then(() => {
-          if (animations.get(details) !== animation) return;
-          details.open = opening;
+          if (!opening) details.open = false;
+          answer.style.height = "";
           answer.style.overflow = "";
+          answer.style.opacity = "";
           animations.delete(details);
         }).catch(() => {});
       });
@@ -6570,6 +6674,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 })();
 
   
+
 </script>
 <script data-inline-from="assets/js/runtime-widgets.js">
 
@@ -9482,7 +9587,7 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
     if (!summaryMeta || !controls) return;
 
     const selects = qsa('select', controls);
-    const active = selects.filter((select) => select.value && select.value !== 'all').length;
+    const active = selects.filter((select) => select.value && select.value !== 'all' && (!select.hasAttribute('data-live-sort') || select.value !== 'newest')).length;
     summaryMeta.textContent = active ? `${active} filter aktif` : `${selects.length} pilihan`;
   };
 
@@ -9650,10 +9755,6 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
 
     const zoneSelector = [
       '.site-footer',
-      'main form',
-      'main .faq summary',
-      'main .actions',
-      'main .dv-tree-nav',
       '[data-contact-collision-zone]',
       '.news-detail-analysis > article',
       '.news-detail-related-list > a',
@@ -9775,7 +9876,6 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
     if ('ResizeObserver' in window) {
       const resizeObserver = new ResizeObserver(schedule);
       resizeObserver.observe(toggle);
-      if (main) resizeObserver.observe(main);
       const detailMain = q('.news-detail-main');
       if (detailMain) resizeObserver.observe(detailMain);
       runtime.observers.push(resizeObserver);
@@ -9826,6 +9926,7 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
     refresh();
   }
 })();
+
 </script>
 <script id="digdaya-revision-v22-script">
 /* V22: viewport-driven decorative motion; no navigation or data side effects. */
@@ -9924,5 +10025,67 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
 })();
 </script>
 
+
+<script id="digdaya-revision-v26-script">
+/* V26: discourage saving images through the normal page interface.
+ * Publicly rendered pixels remain capturable. This is not access control. */
+(function () {
+  "use strict";
+  var doc = document;
+  var root = doc.documentElement;
+  if (root.getAttribute("data-dig-v26-media-guard") === "ready") return;
+  root.setAttribute("data-dig-v26-media-guard", "ready");
+
+  var SURFACES = "[data-lightbox],.editorial-media,.hero-picture,.live-news-visual,.news-detail-visual,.dig-hero-alt-media,.dig-photo-picture-layers,.mosaic figure,.dig-news-lead,.dig-scent-item,.dig-promo-card,.dig-campaign,.image-viewer";
+
+  function prepareImages(scope) {
+    if (!scope || typeof scope.querySelectorAll !== "function") return;
+    if (scope.nodeType === 1 && scope.tagName === "IMG") scope.setAttribute("draggable", "false");
+    scope.querySelectorAll("img").forEach(function (img) {
+      img.setAttribute("draggable", "false");
+    });
+  }
+
+  function isImageInteraction(event) {
+    var target = event.target;
+    if (!target || target.nodeType !== 1) return false;
+    if (target.closest("img,picture")) return true;
+    /* Some existing cards put a gradient/text layer over an image. Restrict
+     * this fallback to the painted image rectangle, not its text caption. */
+    var surface = target.closest(SURFACES);
+    if (!surface || (event.clientX === 0 && event.clientY === 0)) return false;
+    return Array.prototype.some.call(surface.querySelectorAll("img"), function (img) {
+      var box = img.getBoundingClientRect();
+      return box.width > 0 && box.height > 0 &&
+        event.clientX >= box.left && event.clientX <= box.right &&
+        event.clientY >= box.top && event.clientY <= box.bottom;
+    });
+  }
+
+  ["contextmenu", "dragstart"].forEach(function (type) {
+    doc.addEventListener(type, function (event) {
+      if (isImageInteraction(event) && event.cancelable) event.preventDefault();
+    }, true);
+  });
+
+  function boot() {
+    prepareImages(doc);
+    if (!doc.body || typeof MutationObserver !== "function") return;
+    /* New news cards and lightbox images receive the same guard. Observing
+     * child additions only avoids work on every animation/style mutation. */
+    var observer = new MutationObserver(function (records) {
+      records.forEach(function (record) {
+        record.addedNodes.forEach(function (node) {
+          if (node.nodeType === 1) prepareImages(node);
+        });
+      });
+    });
+    observer.observe(doc.body, { childList: true, subtree: true });
+  }
+  if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", boot, { once: true });
+  else boot();
+}());
+
+</script>
 </body>
 </html>

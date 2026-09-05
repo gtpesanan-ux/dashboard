@@ -5590,6 +5590,122 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 @media(max-width:600px){.dig-v24-portal-steps{grid-template-columns:1fr;gap:1.2rem}.dig-v24-portal-steps li{display:grid;grid-template-columns:2.7rem minmax(0,1fr);gap:.75rem}.dig-v24-portal-number{font-size:1.8rem;margin:0}.dig-v24-portal-actions{align-items:stretch;flex-direction:column}.dig-v24-portal-actions>.button{width:100%}}
 
 </style>
+
+<style id="digdaya-revision-v26-style">
+/* V26: native touch behaviour, stable menu geometry and image save deterrents.
+ * Keep the existing reveal, lightbox, scroll and two-finger zoom behaviour. */
+html,
+body,
+.site-header,
+.main-nav,
+main,
+.site-footer,
+dialog,
+button,
+a,
+summary,
+input,
+select,
+textarea,
+[role="button"],
+[data-dig-scroll-track]{
+  touch-action:manipulation;
+}
+
+/* Scope save/drag controls to images and their dedicated visual surfaces. */
+img,
+picture,
+[data-lightbox],
+.editorial-media,
+.hero-picture,
+.live-news-visual,
+.news-detail-visual,
+.dig-hero-alt-media,
+.dig-photo-picture-layers{
+  -webkit-touch-callout:none!important;
+}
+img,
+picture{
+  -webkit-user-drag:none!important;
+  -webkit-user-select:none!important;
+  user-select:none!important;
+}
+
+@media (max-width:1180px){
+  /* A lock must not introduce a different scrollbar reservation. */
+  html,
+  html.dig-nav-lock{
+    scrollbar-gutter:stable;
+  }
+  /* Prevent automatic text inflation from changing the navigation geometry. */
+  .site-header,
+  .main-nav{
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
+  .js .main-nav{
+    left:0!important;
+    right:0!important;
+    width:auto!important;
+    max-width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+  html.dig-nav-lock .main-nav{
+    touch-action:manipulation;
+  }
+  html.dig-nav-lock .nav-backdrop:not([hidden]){
+    /* Block background panning while retaining deliberate pinch zoom. */
+    touch-action:pinch-zoom;
+  }
+  /* Keep editable control text legible at focus without touching radios. */
+  input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="button"]):not([type="submit"]):not([type="reset"]),
+  select,
+  textarea{
+    font-size:max(16px,1rem)!important;
+  }
+}
+
+/* V26: clear navigation for the expanded article collection. */
+.dig-v26-article-pager{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin:2rem 0 1rem;
+}
+.dig-v26-article-pager[hidden]{display:none}
+.dig-v26-article-pager label{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  color:var(--ink,#0b3158);
+  font-weight:700;
+}
+.dig-v26-article-pager select{
+  min-width:7.5rem;
+  min-height:44px;
+  padding:.55rem .85rem;
+  border:1px solid rgba(11,49,88,.2);
+  border-radius:.6rem;
+  background:#fff;
+  color:inherit;
+  font:inherit;
+}
+.dig-v26-article-pager .button:disabled{opacity:.45;cursor:default}
+[data-live-news-grid]{scroll-margin-top:calc(var(--header-height,90px) + 1.5rem)}
+.news-detail-article p{overflow-wrap:break-word}
+@media(max-width:600px){
+  .dig-v26-article-pager{gap:.6rem;justify-content:center}
+  .dig-v26-article-pager label{order:-1;flex-basis:100%;justify-content:center}
+  .dig-v26-article-pager .button{flex:1;padding:.75rem .8rem;min-width:0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+
+</style>
 </head>
 <body data-page-style="corporate" id="top">
 <svg aria-hidden="true" class="icon-sprite" focusable="false">
@@ -5761,7 +5877,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div aria-hidden="true" class="reading-progress"></div>
 <header class="site-header" data-nosnippet="">
 <div class="shell header-inner">
-<a aria-label="Beranda PT Digdaya Inovasi Nusantara" class="brand" href="index.html"><img alt="" data-original-src="assets/digdaya-logo-256.webp" src="assets/digdaya-logo-256.webp" height="256" width="256"/><span class="brand-copy"><strong>PT Digdaya Inovasi Nusantara</strong><small>Connecting products, powering innovation</small></span></a>
+<a aria-label="Beranda PT Digdaya Inovasi Nusantara" class="brand" href="index.html"><img draggable="false" alt="" data-original-src="assets/digdaya-logo-256.webp" src="assets/digdaya-logo-256.webp" height="256" width="256"/><span class="brand-copy"><strong>PT Digdaya Inovasi Nusantara</strong><small>Connecting products, powering innovation</small></span></a>
 <button aria-controls="main-nav" aria-expanded="false" aria-label="Buka menu utama" class="menu-button" type="button"><span class="menu-icon"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-menu"></use></svg></span><span class="close-icon" hidden=""><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></span><span aria-hidden="true" class="dig-menu-morph"><svg focusable="false" viewBox="0 0 48 48"><path class="dig-menu-morph-top" d="M15 16H33"></path><path class="dig-menu-morph-middle" d="M15 24H33"></path><path class="dig-menu-morph-bottom" d="M15 32H33"></path></svg></span></button>
 <nav aria-label="Navigasi utama" class="main-nav" id="main-nav">
 <div class="mobile-nav-head"><span class="mobile-nav-title">Menu utama</span><button aria-label="Tutup menu" class="icon-button nav-close" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></button></div><a class="button dig-v24-account dig-v24-account--mobile" data-customer-portal="" href="#akses-akun" ><span class="dig-v24-account-copy"><strong>Masuk / Daftar</strong><small>Belanja &amp; bayar otomatis</small></span><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -5809,24 +5925,24 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <button aria-label="Tutup menu" class="nav-backdrop" hidden="" tabindex="-1" type="button"></button><noscript><div class="no-script-banner"><div class="shell"><strong>Mode tanpa JavaScript.</strong> Konten tetap dapat dibaca; untuk konsultasi gunakan <a href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi.">WhatsApp</a> atau buka <a href="layanan.html">daftar layanan</a>.</div></div></noscript>
 <nav aria-label="Breadcrumb" class="breadcrumb"><div class="shell"><ol><li><a href="index.html">Beranda</a></li><li><span aria-current="page">Kemitraan</span></li></ol></div></nav>
 <main id="main">
-<section aria-labelledby="page-title" class="hero"><div class="shell hero-frame"><picture class="hero-picture position-left"><img alt="Diskusi tim untuk merancang kolaborasi dan kebutuhan digital" data-original-src="assets/partnership-workshop-v16.webp" decoding="async" fetchpriority="high" src="assets/partnership-workshop-v16.webp" height="675" width="1200"/></picture><div class="hero-copy reveal" data-motion="hero"><p class="kicker overline-rule">Ruang kemitraan</p><h1 id="page-title">Ajukan kerja sama dengan Digdaya.</h1><p class="lede">Sampaikan usulan produk, distribusi, teknologi, atau aset digital melalui WhatsApp utama. Sertakan identitas pihak, tujuan, dan ruang lingkup awal kerja sama.</p><div class="actions"><a class="button" href="#ruang-diskusi">Pelajari ruang diskusi</a><a class="button button-ghost" data-support-link="" href="https://wa.me/6287892523968?text=%5BKEMITRAAN%5D%20Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20mengajukan%20diskusi%20kemitraan.%20Organisasi%20dan%20penawaran%20kami%20adalah%3A%20" target="_blank" rel="noopener noreferrer">Ajukan diskusi</a></div><ul aria-label="Ruang kemitraan" class="hero-index"><li>Produk</li><li>Distribusi</li><li>Digital</li><li>Teknologi</li></ul></div></div></section>
+<section aria-labelledby="page-title" class="hero"><div class="shell hero-frame"><picture class="hero-picture position-left"><img draggable="false" alt="Diskusi tim untuk merancang kolaborasi dan kebutuhan digital" data-original-src="assets/partnership-workshop-v16.webp" decoding="async" fetchpriority="high" src="assets/partnership-workshop-v16.webp" height="675" width="1200"/></picture><div class="hero-copy reveal" data-motion="hero"><p class="kicker overline-rule">Ruang kemitraan</p><h1 id="page-title">Ajukan kerja sama dengan Digdaya.</h1><p class="lede">Sampaikan usulan produk, distribusi, teknologi, atau aset digital melalui WhatsApp utama. Sertakan identitas pihak, tujuan, dan ruang lingkup awal kerja sama.</p><div class="actions"><a class="button" href="#ruang-diskusi">Pelajari ruang diskusi</a><a class="button button-ghost" data-support-link="" href="https://wa.me/6287892523968?text=%5BKEMITRAAN%5D%20Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20mengajukan%20diskusi%20kemitraan.%20Organisasi%20dan%20penawaran%20kami%20adalah%3A%20" target="_blank" rel="noopener noreferrer">Ajukan diskusi</a></div><ul aria-label="Ruang kemitraan" class="hero-index"><li>Produk</li><li>Distribusi</li><li>Digital</li><li>Teknologi</li></ul></div></div></section>
 <section aria-labelledby="ruang-title" class="section" id="ruang-diskusi"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Ruang diskusi</p><h2 id="ruang-title">Empat bidang kerja sama yang dapat dibahas.</h2></div><p class="lede">Pengiriman proposal tidak otomatis berarti penerimaan, penunjukan, eksklusivitas, atau terbentuknya kerja sama.</p></div><div class="grid-4"><article class="card reveal" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-perfume-local"></use></svg></span><span aria-hidden="true" class="card-number">01</span></div><h3>Produk dan pasokan</h3><p>Untuk pemilik merek, produsen, distributor, atau pemasok. Status kepemilikan, kewenangan, legalitas produk, dan syarat distribusi perlu dapat dijelaskan.</p></article><article class="card reveal" data-delay="1" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-handshake"></use></svg></span><span aria-hidden="true" class="card-number">02</span></div><h3>Reseller dan distribusi</h3><p>Untuk pembahasan saluran penjualan, wilayah, alur pemesanan, materi merek, dukungan, serta pembagian tanggung jawab.</p></article><article class="card reveal" data-delay="2" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-domain"></use></svg></span><span aria-hidden="true" class="card-number">03</span></div><h3>Domain dan aset digital</h3><p>Untuk pemilik domain atau pihak berwenang yang membahas penawaran, akuisisi, perantaraan, atau perpindahan aset.</p></article><article class="card accent-card reveal" data-delay="3" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-website"></use></svg></span><span aria-hidden="true" class="card-number">04</span></div><h3>Teknologi dan website</h3><p>Untuk kolaborasi pengembangan, desain, konten, infrastruktur, pemeliharaan, atau keahlian pendukung.</p></article></div></div></section>
 <section aria-labelledby="process-title" class="section paper" data-v22-surface="paper">
 <div class="dig-v22-divider dig-v22-divider--wave" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 1440 64"><path class="dig-v22-divider-fill" d="M0 30 C240 4 420 60 680 28 S1150 0 1440 24 V64 H0 Z"></path><path class="dig-v22-divider-line" pathLength="1" d="M0 30 C240 4 420 60 680 28 S1150 0 1440 24"></path></svg></div>
-<div class="shell editorial-split"><figure class="editorial-media reveal" data-motion="media"><img alt="Tim meninjau dokumen dan ruang lingkup kerja sama digital" data-original-src="assets/partnership-workshop-v16.webp" decoding="async" loading="lazy" src="assets/partnership-workshop-v16.webp" height="675" width="1200"/><figcaption>Kerja sama yang sehat dimulai dari kewenangan, bukti, dan ruang lingkup yang dapat diperiksa.</figcaption></figure><div class="editorial-copy reveal" data-motion="slide-right"><p class="kicker">Proses awal</p><h2 id="process-title">Empat tahap sebelum suatu kerja sama dinyatakan berlaku.</h2><ol class="feature-list"><li><span>01</span><div><strong>Perkenalkan pihak</strong><br/><span class="fine">Nama, badan usaha atau organisasi, peran, dan kewenangan.</span></div></li><li><span>02</span><div><strong>Jelaskan nilai</strong><br/><span class="fine">Produk, jasa, aset, kemampuan, sasaran, dan bentuk usulan.</span></div></li><li><span>03</span><div><strong>Pemeriksaan awal</strong><br/><span class="fine">Kesesuaian, hak, dokumen, risiko, kapasitas, dan kebutuhan operasional.</span></div></li><li><span>04</span><div><strong>Tetapkan tertulis</strong><br/><span class="fine">Pihak, ruang lingkup, hak, kewajiban, biaya, masa berlaku, dan penggunaan merek.</span></div></li></ol></div></div></section>
+<div class="shell editorial-split"><figure class="editorial-media reveal" data-motion="media"><img draggable="false" alt="Tim meninjau dokumen dan ruang lingkup kerja sama digital" data-original-src="assets/partnership-workshop-v16.webp" decoding="async" loading="lazy" src="assets/partnership-workshop-v16.webp" height="675" width="1200"/><figcaption>Kerja sama yang sehat dimulai dari kewenangan, bukti, dan ruang lingkup yang dapat diperiksa.</figcaption></figure><div class="editorial-copy reveal" data-motion="slide-right"><p class="kicker">Proses awal</p><h2 id="process-title">Empat tahap sebelum suatu kerja sama dinyatakan berlaku.</h2><ol class="feature-list"><li><span>01</span><div><strong>Perkenalkan pihak</strong><br/><span class="fine">Nama, badan usaha atau organisasi, peran, dan kewenangan.</span></div></li><li><span>02</span><div><strong>Jelaskan nilai</strong><br/><span class="fine">Produk, jasa, aset, kemampuan, sasaran, dan bentuk usulan.</span></div></li><li><span>03</span><div><strong>Pemeriksaan awal</strong><br/><span class="fine">Kesesuaian, hak, dokumen, risiko, kapasitas, dan kebutuhan operasional.</span></div></li><li><span>04</span><div><strong>Tetapkan tertulis</strong><br/><span class="fine">Pihak, ruang lingkup, hak, kewajiban, biaya, masa berlaku, dan penggunaan merek.</span></div></li></ol></div></div></section>
 <section aria-labelledby="brief-title" class="section"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Brief kemitraan</p><h2 id="brief-title">Siapkan ringkasan usulan kerja sama.</h2></div><p class="lede">Awali pesan dengan KEMITRAAN dan sertakan informasi berikut, lalu kirim melalui WhatsApp utama.</p></div><div class="grid-3"><article class="card reveal" data-motion="rise"><h3>Identitas dan kewenangan</h3><p>Nama pengaju, organisasi, peran, nomor WhatsApp, dan dasar kewenangan untuk berdiskusi.</p></article><article class="card reveal" data-delay="1" data-motion="rise"><h3>Penawaran dan tujuan</h3><p>Kategori kemitraan, nilai utama, sasaran, wilayah, cakupan, dan pengalaman relevan.</p></article><article class="card reveal" data-delay="2" data-motion="rise"><h3>Batas data awal</h3><p>Jangan mengirim identitas, rekening, rahasia dagang, atau kredensial sebelum kanal dan pihak terverifikasi.</p></article></div><div class="actions reveal"><a class="button" data-support-link="" href="https://wa.me/6287892523968?text=%5BKEMITRAAN%5D%20Nama%20pengaju%3A%20%E2%80%A6%20%7C%20Organisasi%3A%20%E2%80%A6%20%7C%20Peran%3A%20%E2%80%A6%20%7C%20Kategori%3A%20%E2%80%A6%20%7C%20Penawaran%3A%20%E2%80%A6%20%7C%20Tujuan%3A%20%E2%80%A6%20%7C%20Cakupan%3A%20%E2%80%A6" target="_blank" rel="noopener noreferrer">Kirim usulan kemitraan</a><a class="button button-ghost" href="kebijakan-privasi.html">Baca Kebijakan Privasi</a></div><p class="fine reveal">Pengiriman ringkasan tidak menciptakan hubungan kemitraan, eksklusivitas, perwakilan, kewajiban pembayaran, atau hak penggunaan logo. Hal-hal tersebut memerlukan persetujuan tertulis.</p></div></section>
 <section aria-labelledby="family-title" class="section soft" data-v22-surface="soft">
 <div class="dig-v22-divider dig-v22-divider--arc" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 1440 64"><path class="dig-v22-divider-fill" d="M0 34 C390 34 470 3 800 8 S1220 38 1440 28 V64 H0 Z"></path><path class="dig-v22-divider-line" pathLength="1" d="M0 34 C390 34 470 3 800 8 S1220 38 1440 28"></path></svg></div>
-<div class="shell family-panel reveal"><div class="family-logos"><div class="logo-tile"><img alt="Logo PT Digdaya Inovasi Nusantara" data-original-src="assets/digdaya-logo-256.webp" decoding="async" loading="lazy" src="assets/digdaya-logo-256.webp" height="256" width="256"/></div><div class="logo-tile cv"><img alt="Logo CV Multi Usaha Mandiri" data-original-src="assets/logo-cv-multi-usaha-mandiri.webp" decoding="async" loading="lazy" src="assets/logo-cv-multi-usaha-mandiri.webp" height="408" width="612"/></div></div><div class="family-copy"><p class="kicker">Identitas pihak</p><h2 id="family-title">Satu keluarga usaha, dua badan usaha.</h2><p>PT Digdaya Inovasi Nusantara dan CV Multi Usaha Mandiri berada dalam satu keluarga usaha, tetapi merupakan badan usaha yang berbeda. Pihak yang terlibat dalam suatu kerja sama harus disebut secara jelas pada korespondensi dan dokumen kerja sama.</p><div class="actions"><a class="card-link" href="tentang-kami.html">Tentang perusahaan <svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-arrow-right"></use></svg></a><a class="card-link" href="syarat-ketentuan.html">Syarat dan Ketentuan <svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-arrow-right"></use></svg></a></div></div></div></section>
+<div class="shell family-panel reveal"><div class="family-logos"><div class="logo-tile"><img draggable="false" alt="Logo PT Digdaya Inovasi Nusantara" data-original-src="assets/digdaya-logo-256.webp" decoding="async" loading="lazy" src="assets/digdaya-logo-256.webp" height="256" width="256"/></div><div class="logo-tile cv"><img draggable="false" alt="Logo CV Multi Usaha Mandiri" data-original-src="assets/logo-cv-multi-usaha-mandiri.webp" decoding="async" loading="lazy" src="assets/logo-cv-multi-usaha-mandiri.webp" height="408" width="612"/></div></div><div class="family-copy"><p class="kicker">Identitas pihak</p><h2 id="family-title">Satu keluarga usaha, dua badan usaha.</h2><p>PT Digdaya Inovasi Nusantara dan CV Multi Usaha Mandiri berada dalam satu keluarga usaha, tetapi merupakan badan usaha yang berbeda. Pihak yang terlibat dalam suatu kerja sama harus disebut secara jelas pada korespondensi dan dokumen kerja sama.</p><div class="actions"><a class="card-link" href="tentang-kami.html">Tentang perusahaan <svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-arrow-right"></use></svg></a><a class="card-link" href="syarat-ketentuan.html">Syarat dan Ketentuan <svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-arrow-right"></use></svg></a></div></div></div></section>
 <section class="section-tight"><div class="shell cta-band reveal"><div><p class="kicker">Mulai dengan ringkasan</p><h2>Bahas usulan kerja sama Anda.</h2><p>Susun ringkasan pihak, kewenangan, penawaran, dan ruang lingkup awal, lalu kirim ke WhatsApp utama.</p></div><a class="button button-gold" data-support-link="" href="https://wa.me/6287892523968?text=%5BKEMITRAAN%5D%20Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20menyampaikan%20ringkasan%20usulan%20kerja%20sama%3A%20" target="_blank" rel="noopener noreferrer">Ajukan diskusi kemitraan</a></div></section>
 </main>
 <footer class="site-footer" data-nosnippet="">
 <div aria-hidden="true" class="site-footer-wave"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 393 25"><path class="site-footer-wave-accent" d="M0 21 C118 23 165 18 198 6 C226 -2 282 -1 315 3 C350 7 377 13 393 16 V25 H0 Z"></path><path class="site-footer-wave-main" d="M0 21 C88 26 158 25 200 16 C229 11 247 0 283 0 C325 0 360 8 393 21 V25 H0 Z"></path></svg></div>
 <div class="shell footer-main">
 <div class="footer-brand">
-<a class="brand" href="index.html"><img alt="" data-original-src="assets/digdaya-logo-256.webp" src="assets/digdaya-logo-256.webp" height="256" width="256"/><span class="brand-copy"><strong>PT Digdaya Inovasi Nusantara</strong><small>Connecting products, powering innovation</small></span></a>
+<a class="brand" href="index.html"><img draggable="false" alt="" data-original-src="assets/digdaya-logo-256.webp" src="assets/digdaya-logo-256.webp" height="256" width="256"/><span class="brand-copy"><strong>PT Digdaya Inovasi Nusantara</strong><small>Connecting products, powering innovation</small></span></a>
 <p>Parfum, domain, website, dan kebutuhan top up melalui pengalaman layanan yang jelas dan terarah.</p>
-<div class="footer-family"><img alt="Logo CV Multi Usaha Mandiri" data-original-src="assets/logo-cv-multi-usaha-mandiri.webp" decoding="async" loading="lazy" src="assets/logo-cv-multi-usaha-mandiri.webp" height="408" width="612"/><span><strong>CV Multi Usaha Mandiri</strong><br/>Satu keluarga usaha; badan usaha dan pihak transaksi tetap disebut terpisah.</span></div>
+<div class="footer-family"><img draggable="false" alt="Logo CV Multi Usaha Mandiri" data-original-src="assets/logo-cv-multi-usaha-mandiri.webp" decoding="async" loading="lazy" src="assets/logo-cv-multi-usaha-mandiri.webp" height="408" width="612"/><span><strong>CV Multi Usaha Mandiri</strong><br/>Satu keluarga usaha; badan usaha dan pihak transaksi tetap disebut terpisah.</span></div>
 </div>
 <div><p class="footer-title">Layanan</p><nav aria-label="Layanan di footer" class="footer-links"><a href="layanan.html">Semua Layanan</a><a href="parfum-lokal.html">Parfum</a><a href="jual-beli-domain.html">Jual Beli Domain</a><a href="jasa-pembuatan-website.html">Jasa Website</a><a href="top-up-game.html">Top Up Game</a></nav></div>
 <div><p class="footer-title">Wawasan</p><nav aria-label="Wawasan di footer" class="footer-links"><a href="pengetahuan.html">Pusat Pengetahuan</a><a href="berita.html">Berita &amp; Wawasan</a><a href="berita-panduan-parfum.html">Panduan Parfum</a><a href="berita-checklist-domain.html">Checklist Domain</a><a href="berita-brief-website.html">Brief Website</a></nav></div>
@@ -5884,7 +6000,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 </form>
 </div>
 </dialog>
-<dialog aria-labelledby="viewer-title" class="ui-dialog image-viewer" id="image-viewer"><div class="dialog-head"><h2 id="viewer-title">Pratinjau gambar</h2><button aria-label="Tutup pratinjau" class="icon-button" data-close-dialog="" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></button></div><div class="dialog-body"><img alt="Pratinjau visual Digdaya" decoding="async" height="630" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" width="1200"/><p class="fine" data-viewer-caption=""></p></div></dialog>
+<dialog aria-labelledby="viewer-title" class="ui-dialog image-viewer" id="image-viewer"><div class="dialog-head"><h2 id="viewer-title">Pratinjau gambar</h2><button aria-label="Tutup pratinjau" class="icon-button" data-close-dialog="" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></button></div><div class="dialog-body"><img draggable="false" alt="Pratinjau visual Digdaya" decoding="async" height="630" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" width="1200"/><p class="fine" data-viewer-caption=""></p></div></dialog>
 <div aria-atomic="true" aria-live="polite" class="toast-region"></div>
 <div class="quick-contact" data-quick-contact="">
 <div class="quick-contact-panel" data-quick-contact-panel="" hidden="" id="quick-contact-panel">
@@ -6073,7 +6189,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
         requestAnimationFrame(() => {
           const focusFirst = () => {
             if (focusToken !== menuFocusToken || !navigation.classList.contains("is-open") || menuButton.getAttribute("aria-expanded") !== "true") return;
-            getFocusable(navigation)[0]?.focus();
+            getFocusable(navigation)[0]?.focus({ preventScroll: true });
           };
           if (reduceMotion.matches || !navigation.classList.contains("dig-v21-nav-animating")) {
             focusFirst();
@@ -6194,37 +6310,25 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
         chevron.classList.add("faq-chevron");
         summary.append(chevron);
       }
-      summary.classList.add("has-faq-chevron");
-      let intendedOpen = details.open;
       summary.addEventListener("click", (event) => {
-        if (reduceMotion.matches || !("animate" in answer)) {
-          animations.get(details)?.cancel();
-          animations.delete(details);
-          intendedOpen = !details.open;
-          summary.dataset.expanded = String(intendedOpen);
-          answer.style.overflow = "";
-          return;
-        }
+        if (reduceMotion.matches || !("animate" in answer)) return;
         event.preventDefault();
-        const previous = animations.get(details);
-        const start = details.open ? parseFloat(getComputedStyle(answer).height) || answer.offsetHeight : 0;
-        const startOpacity = details.open ? getComputedStyle(answer).opacity : "0";
-        const opening = previous ? !intendedOpen : !details.open;
-        intendedOpen = opening;
-        previous?.cancel();
+        animations.get(details)?.cancel();
+        const opening = !details.open;
         if (opening) details.open = true;
-        summary.dataset.expanded = String(opening);
+        const start = opening ? 0 : answer.scrollHeight;
         const end = opening ? answer.scrollHeight : 0;
         answer.style.overflow = "hidden";
         const animation = answer.animate(
-          [{ height: start + "px", opacity: startOpacity }, { height: end + "px", opacity: opening ? 1 : 0 }],
+          [{ height: `${start}px`, opacity: opening ? 0 : 1 }, { height: `${end}px`, opacity: opening ? 1 : 0 }],
           { duration: 280, easing: "cubic-bezier(.2,.8,.2,1)" },
         );
         animations.set(details, animation);
         animation.finished.then(() => {
-          if (animations.get(details) !== animation) return;
-          details.open = opening;
+          if (!opening) details.open = false;
+          answer.style.height = "";
           answer.style.overflow = "";
+          answer.style.opacity = "";
           animations.delete(details);
         }).catch(() => {});
       });
@@ -6310,6 +6414,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 })();
 
   
+
 </script>
 <script data-inline-from="assets/js/runtime-widgets.js">
 
@@ -9222,7 +9327,7 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
     if (!summaryMeta || !controls) return;
 
     const selects = qsa('select', controls);
-    const active = selects.filter((select) => select.value && select.value !== 'all').length;
+    const active = selects.filter((select) => select.value && select.value !== 'all' && (!select.hasAttribute('data-live-sort') || select.value !== 'newest')).length;
     summaryMeta.textContent = active ? `${active} filter aktif` : `${selects.length} pilihan`;
   };
 
@@ -9390,10 +9495,6 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
 
     const zoneSelector = [
       '.site-footer',
-      'main form',
-      'main .faq summary',
-      'main .actions',
-      'main .dv-tree-nav',
       '[data-contact-collision-zone]',
       '.news-detail-analysis > article',
       '.news-detail-related-list > a',
@@ -9515,7 +9616,6 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
     if ('ResizeObserver' in window) {
       const resizeObserver = new ResizeObserver(schedule);
       resizeObserver.observe(toggle);
-      if (main) resizeObserver.observe(main);
       const detailMain = q('.news-detail-main');
       if (detailMain) resizeObserver.observe(detailMain);
       runtime.observers.push(resizeObserver);
@@ -9566,6 +9666,7 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
     refresh();
   }
 })();
+
 </script>
 <script id="digdaya-revision-v22-script">
 /* V22: viewport-driven decorative motion; no navigation or data side effects. */
@@ -9664,5 +9765,67 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
 })();
 </script>
 
+
+<script id="digdaya-revision-v26-script">
+/* V26: discourage saving images through the normal page interface.
+ * Publicly rendered pixels remain capturable. This is not access control. */
+(function () {
+  "use strict";
+  var doc = document;
+  var root = doc.documentElement;
+  if (root.getAttribute("data-dig-v26-media-guard") === "ready") return;
+  root.setAttribute("data-dig-v26-media-guard", "ready");
+
+  var SURFACES = "[data-lightbox],.editorial-media,.hero-picture,.live-news-visual,.news-detail-visual,.dig-hero-alt-media,.dig-photo-picture-layers,.mosaic figure,.dig-news-lead,.dig-scent-item,.dig-promo-card,.dig-campaign,.image-viewer";
+
+  function prepareImages(scope) {
+    if (!scope || typeof scope.querySelectorAll !== "function") return;
+    if (scope.nodeType === 1 && scope.tagName === "IMG") scope.setAttribute("draggable", "false");
+    scope.querySelectorAll("img").forEach(function (img) {
+      img.setAttribute("draggable", "false");
+    });
+  }
+
+  function isImageInteraction(event) {
+    var target = event.target;
+    if (!target || target.nodeType !== 1) return false;
+    if (target.closest("img,picture")) return true;
+    /* Some existing cards put a gradient/text layer over an image. Restrict
+     * this fallback to the painted image rectangle, not its text caption. */
+    var surface = target.closest(SURFACES);
+    if (!surface || (event.clientX === 0 && event.clientY === 0)) return false;
+    return Array.prototype.some.call(surface.querySelectorAll("img"), function (img) {
+      var box = img.getBoundingClientRect();
+      return box.width > 0 && box.height > 0 &&
+        event.clientX >= box.left && event.clientX <= box.right &&
+        event.clientY >= box.top && event.clientY <= box.bottom;
+    });
+  }
+
+  ["contextmenu", "dragstart"].forEach(function (type) {
+    doc.addEventListener(type, function (event) {
+      if (isImageInteraction(event) && event.cancelable) event.preventDefault();
+    }, true);
+  });
+
+  function boot() {
+    prepareImages(doc);
+    if (!doc.body || typeof MutationObserver !== "function") return;
+    /* New news cards and lightbox images receive the same guard. Observing
+     * child additions only avoids work on every animation/style mutation. */
+    var observer = new MutationObserver(function (records) {
+      records.forEach(function (record) {
+        record.addedNodes.forEach(function (node) {
+          if (node.nodeType === 1) prepareImages(node);
+        });
+      });
+    });
+    observer.observe(doc.body, { childList: true, subtree: true });
+  }
+  if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", boot, { once: true });
+  else boot();
+}());
+
+</script>
 </body>
 </html>
