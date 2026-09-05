@@ -3,6 +3,7 @@
 <html class="no-js" data-build="digdaya-v2" lang="id">
 <head>
 <meta charset="utf-8"/>
+<script src="assets/portal-config.js" data-portal-config=""></script>
 <!--
 DIGDAYA ABSOLUTE MAINTENANCE POLICY — PRESERVATION-FIRST / ZERO-DELETION / ZERO-REGRESSION
 This policy is part of the source and must be read before future edits.
@@ -5407,6 +5408,97 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 /* Match SVG units to the navigation box; keep branches in the row gutter. */
 .dv-tree-lines{left:0;top:0;width:100%;max-width:none;pointer-events:none}
 </style>
+
+<style id="digdaya-revision-v24-style">
+/* Load after V23 so deliberate V17 mobile-nav overrides remain scoped. */
+.main-nav > .dig-v24-account {
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 20px;
+  align-items:center;
+  column-gap:.65rem;
+  min-height:48px;
+  border:1px solid rgba(180,146,83,.55)!important;
+  border-radius:.7rem!important;
+  background:#082f5b!important;
+  color:#fff!important;
+  text-decoration:none;
+  text-transform:none!important;
+  letter-spacing:0!important;
+  text-align:left;
+  line-height:1.3;
+  box-shadow:none;
+}
+.main-nav > .dig-v24-account .dig-v24-account-copy {
+  display:grid;
+  gap:.18rem;
+  min-width:0;
+}
+.main-nav > .dig-v24-account strong {
+  color:inherit;
+  font-size:.78rem;
+  line-height:1.25;
+  font-weight:800;
+}
+.main-nav > .dig-v24-account small {
+  display:block;
+  margin:0;
+  color:rgba(255,255,255,.8);
+  font-size:.62rem;
+  line-height:1.4;
+  font-weight:550;
+  letter-spacing:0;
+  text-transform:none;
+}
+.main-nav > .dig-v24-account svg {
+  display:block;
+  width:20px;
+  height:20px;
+  flex:none;
+  transition:transform 220ms var(--dig-v21-menu-ease,cubic-bezier(.22,.76,.24,1));
+}
+.main-nav > .dig-v24-account:focus-visible {
+  outline:3px solid #b49253;
+  outline-offset:3px;
+}
+@media(hover:hover) and (pointer:fine) {
+  .main-nav > .dig-v24-account:hover svg { transform:translateX(3px); }
+}
+@media(max-width:1180px) {
+  .main-nav > .dig-v24-account--mobile {
+    width:100%;
+    margin:.8rem 0 .25rem!important;
+    padding:.85rem 1rem!important;
+  }
+  .main-nav > .dig-v24-account--mobile strong { font-size:.85rem; }
+  .main-nav > .dig-v24-account--mobile small { font-size:.71rem; }
+  .main-nav > .dig-v24-account--desktop { display:none!important; }
+}
+@media(min-width:1181px) {
+  .main-nav > .dig-v24-account--mobile { display:none!important; }
+  .main-nav > .dig-v24-account--desktop {
+    margin-left:.4rem!important;
+    padding:.55rem .7rem!important;
+    white-space:nowrap;
+  }
+  .main-nav > .dig-v24-account--desktop small { font-size:.59rem; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .main-nav > .dig-v24-account svg { transition:none; }
+}
+
+/* Portal entry replaces duplicate public transaction forms. */
+.dig-v24-portal-panel{padding:clamp(1.4rem,3.5vw,3rem)}
+.dig-v24-portal-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2.5vw,2.5rem);list-style:none;margin:0;padding:0}
+.dig-v24-portal-steps li{padding-top:1.1rem;border-top:1px solid var(--line)}
+.dig-v24-portal-number{display:block;font-family:var(--font-display);font-size:2.2rem;color:var(--gold);line-height:1;margin-bottom:.8rem}
+.dig-v24-portal-steps h3{font-size:1.05rem;margin:0 0 .45rem;color:var(--navy)}
+.dig-v24-portal-steps p{font-size:.88rem;line-height:1.65;margin:0;color:var(--ink-soft)}
+.dig-v24-portal-actions{margin-top:1.75rem;display:flex;align-items:center;flex-wrap:wrap;gap:.9rem 1.5rem}
+.dig-v24-portal-actions p{margin:0;font-size:.8rem;color:var(--ink-soft)}
+.dig-v24-portal-actions p a{text-decoration:underline;text-underline-offset:.2em;color:var(--navy)}
+@media(max-width:600px){.dig-v24-portal-steps{grid-template-columns:1fr;gap:1.2rem}.dig-v24-portal-steps li{display:grid;grid-template-columns:2.7rem minmax(0,1fr);gap:.75rem}.dig-v24-portal-number{font-size:1.8rem;margin:0}.dig-v24-portal-actions{align-items:stretch;flex-direction:column}.dig-v24-portal-actions>.button{width:100%}}
+
+</style>
 </head>
 <body data-page-style="service" id="top">
 <svg aria-hidden="true" class="icon-sprite" focusable="false">
@@ -5581,7 +5673,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <a aria-label="Beranda PT Digdaya Inovasi Nusantara" class="brand" href="index.html"><img alt="" data-original-src="assets/digdaya-logo-256.webp" src="assets/digdaya-logo-256.webp" height="256" width="256"/><span class="brand-copy"><strong>PT Digdaya Inovasi Nusantara</strong><small>Connecting products, powering innovation</small></span></a>
 <button aria-controls="main-nav" aria-expanded="false" aria-label="Buka menu utama" class="menu-button" type="button"><span class="menu-icon"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-menu"></use></svg></span><span class="close-icon" hidden=""><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></span><span aria-hidden="true" class="dig-menu-morph"><svg focusable="false" viewBox="0 0 48 48"><path class="dig-menu-morph-top" d="M15 16H33"></path><path class="dig-menu-morph-middle" d="M15 24H33"></path><path class="dig-menu-morph-bottom" d="M15 32H33"></path></svg></span></button>
 <nav aria-label="Navigasi utama" class="main-nav" id="main-nav">
-<div class="mobile-nav-head"><span class="mobile-nav-title">Menu utama</span><button aria-label="Tutup menu" class="icon-button nav-close" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></button></div>
+<div class="mobile-nav-head"><span class="mobile-nav-title">Menu utama</span><button aria-label="Tutup menu" class="icon-button nav-close" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></button></div><a class="button dig-v24-account dig-v24-account--mobile" data-customer-portal="" href="/masuk.html" ><span class="dig-v24-account-copy"><strong>Masuk / Daftar</strong><small>Belanja &amp; bayar otomatis</small></span><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 <a href="index.html">Beranda</a>
 <a href="layanan.html">Layanan</a>
 <div class="nav-group">
@@ -5619,7 +5711,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 </div>
 <div class="nav-flyout" id="nav-dukungan"><a href="dukungan.html">Pusat Dukungan</a><a href="faq.html" aria-current="page">FAQ</a><a href="trust-center.html">Trust Center</a><a href="keamanan.html">Keamanan</a><a href="pengaduan.html">Pengaduan</a><a href="kontak.html">Kontak</a></div>
 </div>
-<button class="button header-cta" data-inquiry-message="Halo PT Digdaya Inovasi Nusantara, saya ingin berkonsultasi mengenai: " data-inquiry-service="Konsultasi umum" data-open-inquiry="" type="button">Konsultasi</button>
+<a class="button header-cta dig-v24-account dig-v24-account--desktop" data-customer-portal="" href="/masuk.html" ><span class="dig-v24-account-copy"><strong>Masuk / Daftar</strong><small>Belanja &amp; bayar otomatis</small></span><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </nav>
 </div>
 </header>
@@ -5628,7 +5720,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <main id="main"><section aria-labelledby="faq-title" class="hero"><div class="shell hero-frame"><picture class="hero-picture position-left"><img alt="Ilustrasi layanan dukungan dan penjelasan Digdaya; identitas orang tidak ditampilkan" data-original-src="assets/customer-support-v16.webp" decoding="async" fetchpriority="high" src="assets/customer-support-v16.webp" height="675" width="1200"/></picture><div class="hero-copy reveal" data-motion="hero"><p class="kicker overline-rule">FAQ</p><h1 id="faq-title">Pertanyaan yang sebaiknya dijawab sebelum Anda harus bertanya lagi.</h1><p class="lede">FAQ merangkum batas layanan, proses, keamanan, domain, website, fragrance, top up, dan komunikasi. Informasi yang bergantung pada stok, provider, harga, regulasi, atau kondisi proyek tetap dikonfirmasi saat permintaan dibuat.</p><div class="actions"><a class="button" href="#faq-main">Lihat FAQ</a><a class="button button-ghost" href="kontak.html">Hubungi Digdaya</a></div></div></div></section>
 <section aria-labelledby="faq-main-title" class="section" id="faq-main" data-v22-surface="base">
 <div class="dig-v22-divider dig-v22-divider--rule" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 1440 18"><path class="dig-v22-divider-line" pathLength="1" d="M0 10 C280 10 370 4 650 7 S1170 13 1440 6"></path></svg></div>
-<div class="shell"><div class="dig-pro-intro reveal"><p class="kicker">Pertanyaan umum</p><h2 id="faq-main-title">Jawaban singkat, dengan batas yang jelas.</h2></div><div class="dig-pro-faq"><details><summary>Apakah semua harga dan stok selalu sama?</summary><p>Tidak. Harga, stok, ketersediaan domain, produk top up, biaya pihak ketiga, dan ruang lingkup proyek dapat berubah. Konfirmasi dilakukan sebelum keputusan atau transaksi.</p></details><details><summary>Apakah Digdaya meminta OTP, password, PIN, atau kredensial akun?</summary><p>Tidak untuk proses konsultasi normal. Jangan mengirim kata sandi, OTP, PIN, private key, kode pemulihan, atau kredensial keamanan melalui formulir maupun WhatsApp.</p></details><details><summary>Apakah Website Health Check sama dengan penetration test?</summary><p>Tidak. Health Check berfokus pada frontend, UX, aksesibilitas dasar, performa hygiene, SEO foundations, dan integrity checks. Pengujian keamanan tingkat server atau penetration testing bukan bagian otomatis dari layanan.</p></details><details><summary>Apakah Domain Discovery menjamin nama dapat dibeli?</summary><p>Tidak. Domain Discovery membantu menyusun naming brief. Status registrasi, harga, kepemilikan, transfer, dan syarat aktual tetap harus diverifikasi.</p></details><details><summary>Apakah Scent Finder menjamin parfum pasti cocok?</summary><p>Tidak. Scent Finder membantu memperjelas preferensi dan konteks pemakaian. Pengalaman aroma tetap dipengaruhi komposisi, kulit, cuaca, pemakaian, dan persepsi personal.</p></details><details><summary>Apakah top up menampilkan semua game dan harga?</summary><p>Hanya data yang benar-benar tersedia dan dapat dikonfirmasi yang boleh ditampilkan atau diberikan. Website tidak membuat katalog, harga, atau status provider fiktif.</p></details><details><summary>Bagaimana jika saya belum tahu layanan yang tepat?</summary><p>Gunakan Service Finder pada halaman Layanan atau konsultasi umum. Mulai dari tujuan dan konteks, bukan dari istilah teknis yang belum tentu Anda butuhkan.</p></details><details><summary>Di mana saya bisa memeriksa kebijakan dan keamanan?</summary><p>Buka Trust Center, Kebijakan Privasi, Kebijakan Transaksi, Syarat &amp; Ketentuan, Keamanan, dan Pengaduan dari footer website.</p></details></div></div></section>
+<div class="shell"><div class="dig-pro-intro reveal"><p class="kicker">Pertanyaan umum</p><h2 id="faq-main-title">Jawaban singkat, dengan batas yang jelas.</h2></div><div class="dig-pro-faq"><details><summary>Apakah semua harga dan stok selalu sama?</summary><p>Tidak. Harga, stok, ketersediaan domain, produk top up, biaya pihak ketiga, dan ruang lingkup proyek dapat berubah. Konfirmasi dilakukan sebelum keputusan atau transaksi.</p></details><details><summary>Apakah Digdaya meminta OTP, password, PIN, atau kredensial akun?</summary><p>Tidak untuk proses konsultasi normal. Jangan mengirim kata sandi, OTP, PIN, private key, kode pemulihan, atau kredensial keamanan melalui formulir maupun WhatsApp.</p></details><details><summary>Apakah Website Health Check sama dengan penetration test?</summary><p>Tidak. Health Check berfokus pada frontend, UX, aksesibilitas dasar, performa hygiene, SEO foundations, dan integrity checks. Pengujian keamanan tingkat server atau penetration testing bukan bagian otomatis dari layanan.</p></details><details><summary>Apakah Domain Discovery menjamin nama dapat dibeli?</summary><p>Tidak. Domain Discovery memberi panduan memilih nama. Layanan domain tersedia melalui akun pelanggan; status registrasi, harga, kepemilikan, transfer, dan syarat aktual perlu diperiksa saat bertransaksi.</p></details><details><summary>Apakah Scent Finder menjamin parfum pasti cocok?</summary><p>Tidak. Scent Finder membantu memperjelas preferensi dan konteks pemakaian. Pengalaman aroma tetap dipengaruhi komposisi, kulit, cuaca, pemakaian, dan persepsi personal.</p></details><details><summary>Apakah top up menampilkan semua game dan harga?</summary><p>Pilihan game, produk, harga, dan ketersediaan ditampilkan melalui akun pelanggan. Masuk atau daftar untuk memeriksa pilihan yang tersedia sebelum membayar.</p></details><details><summary>Bagaimana jika saya belum tahu layanan yang tepat?</summary><p>Gunakan Service Finder pada halaman Layanan atau konsultasi umum. Mulai dari tujuan dan konteks, bukan dari istilah teknis yang belum tentu Anda butuhkan.</p></details><details><summary>Di mana saya bisa memeriksa kebijakan dan keamanan?</summary><p>Buka Trust Center, Kebijakan Privasi, Kebijakan Transaksi, Syarat &amp; Ketentuan, Keamanan, dan Pengaduan dari footer website.</p></details></div></div></section>
 </main>
 <footer class="site-footer" data-nosnippet="">
 <div aria-hidden="true" class="site-footer-wave"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 393 25"><path class="site-footer-wave-accent" d="M0 21 C118 23 165 18 198 6 C226 -2 282 -1 315 3 C350 7 377 13 393 16 V25 H0 Z"></path><path class="site-footer-wave-main" d="M0 21 C88 26 158 25 200 16 C229 11 247 0 283 0 C325 0 360 8 393 21 V25 H0 Z"></path></svg></div>
@@ -5647,8 +5739,8 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div class="footer-contact-copy">
 <p class="footer-title">Hubungi Kami</p>
 <h3>Tim Digdaya siap membantu kebutuhan Anda.</h3>
-<p>Konsultasi, pemesanan, dan tindak lanjut layanan melalui WhatsApp 0878-9252-3968. Email tersedia untuk dokumen dan dukungan.</p>
-<div aria-label="Kanal komunikasi Digdaya" class="footer-contact-channels">
+<p>Pembelian dan pembayaran otomatis melalui akun pelanggan. WhatsApp 0878-9252-3968 tersedia untuk bantuan; email untuk dokumen pendukung.</p>
+<div aria-label="Kanal komunikasi Digdaya" class="footer-contact-channels"><a class="footer-contact-channel" data-customer-portal="" href="/masuk.html" ><span>Masuk / Daftar</span><span>Belanja &amp; bayar otomatis</span></a>
 <a class="footer-contact-channel" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span>WhatsApp Utama</span><small>0878-9252-3968</small></a>
 
 
@@ -5659,7 +5751,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <span aria-label="Instagram" class="social-contact" role="img" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="15" rx="4" stroke="currentColor" stroke-width="1.8" width="15" x="4.5" y="4.5"></rect><circle cx="12" cy="12" fill="none" r="3.4" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.1" cy="6.9" fill="currentColor" r="1"></circle></svg></span>
 <a aria-label="Buka profil LinkedIn" class="social-contact" href="https://www.linkedin.com/in/achmad-zaenuddin-7285ba433" rel="noopener noreferrer" target="_blank" title="LinkedIn"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path fill="currentColor" d="M5.37 3.5a1.88 1.88 0 1 1 0 3.76 1.88 1.88 0 0 1 0-3.76ZM3.75 8.8H7V20H3.75V8.8Zm5.25 0h3.12v1.53h.05c.43-.82 1.5-1.69 3.09-1.69 3.3 0 3.91 2.18 3.91 5.01V20h-3.25v-5.63c0-1.34-.02-3.07-1.87-3.07-1.88 0-2.17 1.46-2.17 2.97V20H9V8.8Z"></path></svg></a>
 <span aria-label="Threads" class="social-contact" role="img" title="Threads"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path fill="currentColor" d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"></path></svg></span>
-<button aria-label="Buka konsultasi WhatsApp" class="social-contact" data-contact-open="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
+<button aria-label="Buka bantuan WhatsApp" class="social-contact" data-contact-open="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
 <span aria-disabled="true" aria-label="Telegram" class="social-contact" title="Telegram"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m3.5 11.1 16.4-6.4-3 14.6-5.1-4-2.9 2.7.4-4.3 7.8-6.5-9.7 5.1-3.9-1.2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.6"></path></svg></span>
 <a aria-label="Kirim email ke companydirac@gmail.com" class="social-contact" href="mailto:companydirac@gmail.com" title="Email"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="13" rx="2" stroke="currentColor" stroke-width="1.8" width="17" x="3.5" y="5.5"></rect><path d="m5 7 7 5.2L19 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a>
 <span aria-label="Facebook" class="social-contact" role="img" title="Facebook"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13.7 21v-7.8h2.6l.4-3h-3V8.3c0-.9.3-1.5 1.6-1.5H17V4.1c-.7-.1-1.5-.2-2.4-.2-2.4 0-4 1.5-4 4.1v2.2H8v3h2.6V21h3.1Z" fill="currentColor"></path></svg></span>
@@ -5698,7 +5790,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div aria-atomic="true" aria-live="polite" class="toast-region"></div>
 <div class="quick-contact" data-quick-contact="">
 <div class="quick-contact-panel" data-quick-contact-panel="" hidden="" id="quick-contact-panel">
-<div class="quick-contact-panel-head"><span><strong>Hubungi Digdaya</strong><small>Konsultasi layanan melalui WhatsApp utama.</small></span><button aria-label="Tutup pilihan kontak" class="icon-button" data-contact-close="" type="button"><svg aria-hidden="true" class="icon-svg" height="20" viewbox="0 0 24 24" width="20"><use href="#icon-close"></use></svg></button></div>
+<div class="quick-contact-panel-head"><span><strong>Hubungi Digdaya</strong><small>Bantuan layanan melalui WhatsApp atau email.</small></span><button aria-label="Tutup pilihan kontak" class="icon-button" data-contact-close="" type="button"><svg aria-hidden="true" class="icon-svg" height="20" viewbox="0 0 24 24" width="20"><use href="#icon-close"></use></svg></button></div>
 <div class="quick-contact-options">
 <a class="quick-contact-option" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></span><span class="quick-contact-copy"><strong>WhatsApp Utama</strong><small>0878-9252-3968</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
 
@@ -5706,7 +5798,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <a class="quick-contact-option" href="mailto:companydirac@gmail.com?subject=Konsultasi%20PT%20Digdaya%20Inovasi%20Nusantara"><span class="quick-contact-badge email"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 24 24"><use href="#icon-email"></use></svg></span><span class="quick-contact-copy"><strong>Email</strong><small>companydirac@gmail.com</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
 </div>
 </div>
-<button aria-controls="quick-contact-panel" aria-expanded="false" aria-label="Buka konsultasi WhatsApp dan email" class="wa-float" data-contact-toggle="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
+<button aria-controls="quick-contact-panel" aria-expanded="false" aria-label="Buka bantuan WhatsApp dan email" class="wa-float" data-contact-toggle="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
 </div>
 <script data-inline-from="assets/js/runtime-site-v8.js">
 
@@ -9448,9 +9540,9 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
       if(!picker){
         picker=document.createElement('dialog');
         picker.className='ui-dialog dig-v22-contact-dialog';
-        picker.setAttribute('aria-label','Konsultasi WhatsApp Digdaya');
+        picker.setAttribute('aria-label','Bantuan WhatsApp Digdaya');
         const head=document.createElement('div');head.className='dialog-head';
-        const title=document.createElement('h2');title.textContent='Konsultasi WhatsApp';
+        const title=document.createElement('h2');title.textContent='Bantuan WhatsApp';
         const close=document.createElement('button');close.type='button';close.className='icon-button';
         close.setAttribute('aria-label','Tutup pilihan WhatsApp');close.textContent='×';
         const options=document.createElement('div');options.className='dig-v22-contact-options';
@@ -9472,6 +9564,35 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
   else if(motion.addListener)motion.addListener(sync);
   sync();
 })();
+</script>
+
+<script id="digdaya-revision-v24-script">
+/* V24: account links use the active host unless the owner configures a portal. */
+(() => {
+  "use strict";
+  const fallback = new URL("/masuk.html", window.location.href);
+  let destination = fallback;
+  let mode = "current-host";
+  const configured = window.DIGDAYA_PORTAL_CONFIG?.origin;
+  if (typeof configured === "string" && configured.trim()) {
+    try {
+      const origin = new URL(configured.trim());
+      if (origin.protocol !== "https:" || origin.username || origin.password
+          || origin.search || origin.hash || origin.pathname !== "/") {
+        throw new TypeError("Portal configuration must contain an HTTPS origin only.");
+      }
+      destination = new URL("/masuk.html", origin.origin);
+      mode = "configured-origin";
+    } catch {
+      mode = "invalid-config-current-host";
+    }
+  }
+  document.querySelectorAll("a[data-customer-portal]").forEach(link => {
+    link.href = destination.href;
+  });
+  document.documentElement.dataset.digV24Portal = mode;
+})();
+
 </script>
 </body>
 </html>

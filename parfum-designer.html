@@ -3,6 +3,7 @@
 <html class="no-js" data-build="digdaya-v2" lang="id">
 <head>
 <meta charset="utf-8"/>
+<script src="assets/portal-config.js" data-portal-config=""></script>
 <!--
 DIGDAYA ABSOLUTE MAINTENANCE POLICY — PRESERVATION-FIRST / ZERO-DELETION / ZERO-REGRESSION
 This policy is part of the source and must be read before future edits.
@@ -5400,6 +5401,97 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 /* Match SVG units to the navigation box; keep branches in the row gutter. */
 .dv-tree-lines{left:0;top:0;width:100%;max-width:none;pointer-events:none}
 </style>
+
+<style id="digdaya-revision-v24-style">
+/* Load after V23 so deliberate V17 mobile-nav overrides remain scoped. */
+.main-nav > .dig-v24-account {
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 20px;
+  align-items:center;
+  column-gap:.65rem;
+  min-height:48px;
+  border:1px solid rgba(180,146,83,.55)!important;
+  border-radius:.7rem!important;
+  background:#082f5b!important;
+  color:#fff!important;
+  text-decoration:none;
+  text-transform:none!important;
+  letter-spacing:0!important;
+  text-align:left;
+  line-height:1.3;
+  box-shadow:none;
+}
+.main-nav > .dig-v24-account .dig-v24-account-copy {
+  display:grid;
+  gap:.18rem;
+  min-width:0;
+}
+.main-nav > .dig-v24-account strong {
+  color:inherit;
+  font-size:.78rem;
+  line-height:1.25;
+  font-weight:800;
+}
+.main-nav > .dig-v24-account small {
+  display:block;
+  margin:0;
+  color:rgba(255,255,255,.8);
+  font-size:.62rem;
+  line-height:1.4;
+  font-weight:550;
+  letter-spacing:0;
+  text-transform:none;
+}
+.main-nav > .dig-v24-account svg {
+  display:block;
+  width:20px;
+  height:20px;
+  flex:none;
+  transition:transform 220ms var(--dig-v21-menu-ease,cubic-bezier(.22,.76,.24,1));
+}
+.main-nav > .dig-v24-account:focus-visible {
+  outline:3px solid #b49253;
+  outline-offset:3px;
+}
+@media(hover:hover) and (pointer:fine) {
+  .main-nav > .dig-v24-account:hover svg { transform:translateX(3px); }
+}
+@media(max-width:1180px) {
+  .main-nav > .dig-v24-account--mobile {
+    width:100%;
+    margin:.8rem 0 .25rem!important;
+    padding:.85rem 1rem!important;
+  }
+  .main-nav > .dig-v24-account--mobile strong { font-size:.85rem; }
+  .main-nav > .dig-v24-account--mobile small { font-size:.71rem; }
+  .main-nav > .dig-v24-account--desktop { display:none!important; }
+}
+@media(min-width:1181px) {
+  .main-nav > .dig-v24-account--mobile { display:none!important; }
+  .main-nav > .dig-v24-account--desktop {
+    margin-left:.4rem!important;
+    padding:.55rem .7rem!important;
+    white-space:nowrap;
+  }
+  .main-nav > .dig-v24-account--desktop small { font-size:.59rem; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .main-nav > .dig-v24-account svg { transition:none; }
+}
+
+/* Portal entry replaces duplicate public transaction forms. */
+.dig-v24-portal-panel{padding:clamp(1.4rem,3.5vw,3rem)}
+.dig-v24-portal-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2.5vw,2.5rem);list-style:none;margin:0;padding:0}
+.dig-v24-portal-steps li{padding-top:1.1rem;border-top:1px solid var(--line)}
+.dig-v24-portal-number{display:block;font-family:var(--font-display);font-size:2.2rem;color:var(--gold);line-height:1;margin-bottom:.8rem}
+.dig-v24-portal-steps h3{font-size:1.05rem;margin:0 0 .45rem;color:var(--navy)}
+.dig-v24-portal-steps p{font-size:.88rem;line-height:1.65;margin:0;color:var(--ink-soft)}
+.dig-v24-portal-actions{margin-top:1.75rem;display:flex;align-items:center;flex-wrap:wrap;gap:.9rem 1.5rem}
+.dig-v24-portal-actions p{margin:0;font-size:.8rem;color:var(--ink-soft)}
+.dig-v24-portal-actions p a{text-decoration:underline;text-underline-offset:.2em;color:var(--navy)}
+@media(max-width:600px){.dig-v24-portal-steps{grid-template-columns:1fr;gap:1.2rem}.dig-v24-portal-steps li{display:grid;grid-template-columns:2.7rem minmax(0,1fr);gap:.75rem}.dig-v24-portal-number{font-size:1.8rem;margin:0}.dig-v24-portal-actions{align-items:stretch;flex-direction:column}.dig-v24-portal-actions>.button{width:100%}}
+
+</style>
 </head>
 <body data-page-style="service" id="top">
 <svg aria-hidden="true" class="icon-sprite" focusable="false">
@@ -5574,7 +5666,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <a aria-label="Beranda PT Digdaya Inovasi Nusantara" class="brand" href="index.html"><img alt="" data-original-src="assets/digdaya-logo-256.webp" src="assets/digdaya-logo-256.webp" height="256" width="256"/><span class="brand-copy"><strong>PT Digdaya Inovasi Nusantara</strong><small>Connecting products, powering innovation</small></span></a>
 <button aria-controls="main-nav" aria-expanded="false" aria-label="Buka menu utama" class="menu-button" type="button"><span class="menu-icon"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-menu"></use></svg></span><span class="close-icon" hidden=""><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></span><span aria-hidden="true" class="dig-menu-morph"><svg focusable="false" viewBox="0 0 48 48"><path class="dig-menu-morph-top" d="M15 16H33"></path><path class="dig-menu-morph-middle" d="M15 24H33"></path><path class="dig-menu-morph-bottom" d="M15 32H33"></path></svg></span></button>
 <nav aria-label="Navigasi utama" class="main-nav" id="main-nav">
-<div class="mobile-nav-head"><span class="mobile-nav-title">Menu utama</span><button aria-label="Tutup menu" class="icon-button nav-close" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></button></div>
+<div class="mobile-nav-head"><span class="mobile-nav-title">Menu utama</span><button aria-label="Tutup menu" class="icon-button nav-close" type="button"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-close"></use></svg></button></div><a class="button dig-v24-account dig-v24-account--mobile" data-customer-portal="" href="/masuk.html" ><span class="dig-v24-account-copy"><strong>Masuk / Daftar</strong><small>Belanja &amp; bayar otomatis</small></span><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 <a href="index.html">Beranda</a>
 <a href="layanan.html">Layanan</a>
 <div class="nav-group has-current">
@@ -5612,14 +5704,14 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 </div>
 <div class="nav-flyout" id="nav-dukungan"><a href="dukungan.html">Pusat Dukungan</a><a href="faq.html">FAQ</a><a href="trust-center.html">Trust Center</a><a href="keamanan.html">Keamanan</a><a href="pengaduan.html">Pengaduan</a><a href="kontak.html">Kontak</a></div>
 </div>
-<button class="button header-cta" data-inquiry-message="Halo PT Digdaya Inovasi Nusantara, saya ingin berkonsultasi mengenai: " data-inquiry-service="Konsultasi umum" data-open-inquiry="" type="button">Konsultasi</button>
+<a class="button header-cta dig-v24-account dig-v24-account--desktop" data-customer-portal="" href="/masuk.html" ><span class="dig-v24-account-copy"><strong>Masuk / Daftar</strong><small>Belanja &amp; bayar otomatis</small></span><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </nav>
 </div>
 </header>
 <button aria-label="Tutup menu" class="nav-backdrop" hidden="" tabindex="-1" type="button"></button><noscript><div class="no-script-banner"><div class="shell"><strong>Mode tanpa JavaScript.</strong> Konten tetap dapat dibaca; untuk konsultasi gunakan <a href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi.">WhatsApp</a> atau buka <a href="layanan.html">daftar layanan</a>.</div></div></noscript>
 <nav aria-label="Breadcrumb" class="breadcrumb"><div class="shell"><ol><li><a href="index.html">Beranda</a></li><li><a href="layanan.html">Layanan</a></li><li><span aria-current="page">Parfum Designer</span></li></ol></div></nav>
 <main id="main">
-<section aria-labelledby="page-title" class="hero"><div class="shell hero-frame"><picture class="hero-picture position-right"><img alt="Tata visual parfum dengan estetika modern" data-original-src="assets/parfum-designer-v16.webp" decoding="async" fetchpriority="high" src="assets/parfum-designer-v16.webp" height="675" width="1200"/></picture><div class="hero-copy reveal" data-motion="hero"><p class="kicker overline-rule">Digdaya Fragrance · Designer</p><h1 id="page-title">Penjualan dan konsultasi parfum designer.</h1><p class="lede">Digdaya merupakan reseller independen parfum designer. Sampaikan merek, karakter aroma, atau kebutuhan pemakaian melalui WhatsApp utama untuk membahas pilihan produk. Merek, varian, ukuran, harga, kondisi, keaslian, notifikasi produk, dan ketersediaan dikonfirmasi per produk sebelum transaksi.</p><div class="actions"><a class="button" href="#gaya">Temukan arah gaya</a><a class="button button-ghost" href="https://wa.me/6287892523968?text=Halo%20Digdaya%2C%20saya%20ingin%20berkonsultasi%20tentang%20parfum%20designer." rel="noopener noreferrer" target="_blank">Konsultasi parfum</a></div><ul aria-label="Konteks pemakaian" class="hero-index"><li>Harian</li><li>Profesional</li><li>Acara</li><li>Hadiah</li></ul></div></div></section><section aria-labelledby="rev10-fragrance-visual-title" class="section dig-visual-proof" data-rev10-visual-proof="true"><div class="shell"><div class="dig-proof-head"><p class="kicker">Visual alur</p><h2 id="rev10-fragrance-visual-title">Alur pemilihan parfum</h2><p>Mulai dari aroma yang disukai, lalu tentukan kebutuhan pemakaian.</p></div><figure class="dig-proof-figure"><img alt="Visual alur kurasi aroma PT Digdaya Inovasi Nusantara" data-original-src="assets/visual-flow-fragrance.webp" decoding="async" loading="lazy" src="assets/visual-flow-fragrance.webp" height="520" width="1200"/><figcaption>Sampaikan preferensi, bandingkan karakter aroma, lalu konfirmasikan rincian produk melalui WhatsApp.</figcaption></figure></div></section>
+<section aria-labelledby="page-title" class="hero"><div class="shell hero-frame"><picture class="hero-picture position-right"><img alt="Tata visual parfum dengan estetika modern" data-original-src="assets/parfum-designer-v16.webp" decoding="async" fetchpriority="high" src="assets/parfum-designer-v16.webp" height="675" width="1200"/></picture><div class="hero-copy reveal" data-motion="hero"><p class="kicker overline-rule">Digdaya Fragrance · Designer</p><h1 id="page-title">Penjualan dan konsultasi parfum designer.</h1><p class="lede">Digdaya merupakan reseller independen parfum designer. Masuk atau daftar untuk memilih produk dan membeli melalui akun pelanggan dengan pembayaran otomatis. Periksa merek, varian, ukuran, harga, kondisi, keaslian, notifikasi produk, dan ketersediaan sebelum membayar.</p><div class="actions"><a class="button" href="#gaya">Temukan arah gaya</a><a class="button button-ghost" data-customer-portal="" href="/masuk.html" >Masuk / Daftar untuk membeli</a></div><ul aria-label="Konteks pemakaian" class="hero-index"><li>Harian</li><li>Profesional</li><li>Acara</li><li>Hadiah</li></ul></div></div></section><section aria-labelledby="rev10-fragrance-visual-title" class="section dig-visual-proof" data-rev10-visual-proof="true"><div class="shell"><div class="dig-proof-head"><p class="kicker">Visual alur</p><h2 id="rev10-fragrance-visual-title">Alur pemilihan parfum</h2><p>Mulai dari aroma yang disukai, lalu tentukan kebutuhan pemakaian.</p></div><figure class="dig-proof-figure"><img alt="Visual alur kurasi aroma PT Digdaya Inovasi Nusantara" data-original-src="assets/visual-flow-fragrance.webp" decoding="async" loading="lazy" src="assets/visual-flow-fragrance.webp" height="520" width="1200"/><figcaption>Sampaikan preferensi, bandingkan karakter aroma, lalu konfirmasikan rincian produk melalui WhatsApp.</figcaption></figure></div></section>
 <section class="section" id="gaya"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Arah gaya</p><h2>Tentukan kesan aroma yang diinginkan.</h2></div><p class="lede">Kategori berikut membantu menyusun bahasa preferensi. Satu aroma dapat melintasi lebih dari satu arah.</p></div><div class="grid-4"><article class="card reveal" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-perfume-designer"></use></svg></span><span aria-hidden="true" class="card-code">01</span></div><h3>Bersih &amp; rapi</h3><p>Nuansa fresh, soapy, musky, citrus, atau aromatic untuk kesan terjaga dan ringan.</p></article><article class="card reveal" data-delay="1" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-target"></use></svg></span><span aria-hidden="true" class="card-code">02</span></div><h3>Hangat &amp; dekat</h3><p>Amber, vanilla, woods, spice, atau tonka dapat memberi kesan nyaman dan membumi.</p></article><article class="card reveal" data-delay="2" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-shield-check"></use></svg></span><span aria-hidden="true" class="card-code">03</span></div><h3>Tegas &amp; terstruktur</h3><p>Woody, leather, aromatic, atau mineral dapat membentuk profil yang lebih tajam.</p></article><article class="card accent-card reveal" data-delay="3" data-motion="rise"><div class="card-topline"><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-check-circle"></use></svg></span><span aria-hidden="true" class="card-code">04</span></div><h3>Cerah &amp; ekspresif</h3><p>Fruity, floral, green, dan citrus dapat menyampaikan energi yang terbuka.</p></article></div></div></section>
 <section aria-labelledby="scent-finder-title" class="section soft interactive-section" data-context="designer" data-widget="scent-finder" id="scent-finder" data-v22-surface="soft">
 <div class="dig-v22-divider dig-v22-divider--wave" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 1440 64"><path class="dig-v22-divider-fill" d="M0 30 C240 4 420 60 680 28 S1150 0 1440 24 V64 H0 Z"></path><path class="dig-v22-divider-line" pathLength="1" d="M0 30 C240 4 420 60 680 28 S1150 0 1440 24"></path></svg></div>
@@ -5639,22 +5731,22 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <fieldset class="tool-step" data-scent-step="avoid" hidden=""><legend class="tool-question"><strong>Apa yang ingin dihindari?</strong></legend><div class="choice-grid"><label class="choice-card"><input name="avoid" type="checkbox" value="terlalu-manis"/><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-perfume-designer"></use></svg></span><strong>Terlalu manis</strong></label><label class="choice-card"><input name="avoid" type="checkbox" value="terlalu-smoky"/><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-perfume-middle-east"></use></svg></span><strong>Terlalu smoky</strong></label><label class="choice-card"><input name="avoid" type="checkbox" value="terlalu-floral"/><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-perfume-niche"></use></svg></span><strong>Terlalu floral</strong></label><label class="choice-card"><input name="avoid" type="checkbox" value="terlalu-rempah"/><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-perfume-middle-east"></use></svg></span><strong>Terlalu rempah</strong></label><label class="choice-card"><input name="avoid" type="checkbox" value="terlalu-musky"/><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-perfume-niche"></use></svg></span><strong>Terlalu musky</strong></label><label class="choice-card"><input name="avoid" type="checkbox" value="terlalu-tegas"/><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-target"></use></svg></span><strong>Terlalu tegas</strong></label><label class="choice-card"><input name="avoid" type="checkbox" value="belum-tahu"/><span aria-hidden="true" class="icon-tile"><svg aria-hidden="true" class="icon-svg" focusable="false" height="24" viewbox="0 0 24 24" width="24"><use href="#icon-search-check"></use></svg></span><strong>Belum tahu</strong></label></div></fieldset>
 <div class="tool-actions"><button class="button button-ghost" data-scent-prev="" hidden="" type="button">Kembali</button><div class="tool-actions-group"><button class="button" data-scent-next="" type="button">Lanjutkan</button><button class="button" data-scent-submit="" hidden="" type="submit">Lihat arah eksplorasi</button></div></div>
 </form>
-<section aria-labelledby="scent-result-title" class="tool-result" data-scent-result="" hidden="" tabindex="-1"><p class="kicker">Ringkasan preferensi</p><h3 id="scent-result-title">Arah yang paling selaras dengan jawaban</h3><div data-scent-summary=""></div><p class="fine">Gunakan ringkasan ini untuk konsultasi. Kecocokan, performa, dan rincian produk perlu dikonfirmasi sebelum membeli.</p><div class="actions"><a class="button" data-scent-wa="" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank">Kirim brief ke WhatsApp</a><button class="button button-ghost" data-scent-reset="" type="button">Ulangi</button></div></section>
+<section aria-labelledby="scent-result-title" class="tool-result" data-scent-result="" hidden="" tabindex="-1"><p class="kicker">Ringkasan preferensi</p><h3 id="scent-result-title">Arah yang paling selaras dengan jawaban</h3><div data-scent-summary=""></div><p class="fine">Gunakan ringkasan ini sebagai panduan memilih parfum di akun pelanggan. Periksa rincian produk sebelum membeli; kecocokan dan pengalaman aroma tetap bersifat personal.</p><div class="actions"><a class="button" data-customer-portal="" href="/masuk.html" >Lanjutkan pilihan di akun</a><button class="button button-ghost" data-scent-reset="" type="button">Ulangi</button></div></section>
 </div>
 </div></div>
-<noscript><p class="security-note">Aktifkan JavaScript untuk memakai alat interaktif atau lanjutkan melalui <a href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi.">WhatsApp</a>.</p></noscript>
+<noscript><p class="security-note">Gunakan panduan interaktif, atau lanjutkan pembelian melalui <a class="button" data-customer-portal="" href="/masuk.html" >Masuk / Daftar untuk membeli</a>.</p></noscript>
 </div>
 </section>
 <section class="section paper"><div class="shell editorial-split"><figure class="editorial-media reveal" data-lightbox="" data-motion="media"><img alt="Komposisi parfum premium untuk membantu penyusunan preferensi" data-original-src="assets/parfum-timur-tengah-v16.webp" decoding="async" loading="lazy" src="assets/parfum-timur-tengah-v16.webp" height="675" width="1200"/><figcaption>Komposisi editorial membantu menyusun preferensi aroma; merek, varian, dan ketersediaan dikonfirmasi sebelum transaksi.</figcaption></figure><div class="editorial-copy reveal" data-motion="slide-right"><p class="kicker">Formula brief</p><h2>Tiga informasi untuk memulai konsultasi.</h2><p>Sampaikan waktu pemakaian, karakter yang diinginkan, dan aroma yang kurang nyaman bagi Anda.</p><ul class="feature-list"><li><span>01</span><div><strong>“Saya akan memakainya untuk…”</strong><br/><span class="fine">Memberi konteks aktivitas dan suasana.</span></div></li><li><span>02</span><div><strong>“Saya ingin terasa…”</strong><br/><span class="fine">Menerjemahkan citra menjadi arah aroma.</span></div></li><li><span>03</span><div><strong>“Saya kurang nyaman dengan…”</strong><br/><span class="fine">Membantu menyaring karakter yang perlu dihindari.</span></div></li></ul></div></div></section>
-<section class="section soft"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Keputusan bertahap</p><h2>Periksa pilihan sebelum membeli.</h2></div><p class="lede">Tentukan momen pemakaian, pilih karakter, lalu konfirmasikan rincian produk melalui WhatsApp utama.</p></div><div class="process"><article><h3>Definisikan momen</h3><p>Harian, profesional, santai, acara, hadiah, atau koleksi.</p></article><article><h3>Pilih karakter</h3><p>Tentukan dua atau tiga kesan utama yang diinginkan.</p></article><article><h3>Saring pilihan</h3><p>Cocokkan informasi produk dengan preferensi dan konteks.</p></article><article><h3>Konfirmasi</h3><p>Periksa rincian dan ketersediaan sebelum transaksi.</p></article></div></div></section>
-<section class="section"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Pertanyaan umum</p><h2>Hal yang perlu dipahami.</h2></div></div><div class="faq"><details class="reveal"><summary>Apakah designer berarti selalu aman untuk semua orang?</summary><p>Tidak. Kecocokan tetap bersifat personal dan dipengaruhi karakter komposisi, intensitas, lingkungan, serta preferensi.</p></details><details class="reveal"><summary>Apakah satu parfum harus dipakai pada satu situasi?</summary><p>Tidak. Kategori situasi hanya membantu memilih; cara penggunaan tetap dapat disesuaikan dengan kebutuhan dan kenyamanan.</p></details><details class="reveal"><summary>Apakah halaman ini menampilkan daftar stok?</summary><p>Tidak. Halaman ini memberi panduan kategori. Rincian produk dan ketersediaan perlu dikonfirmasi melalui WhatsApp.</p></details></div></div></section>
+<section class="section soft"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Keputusan bertahap</p><h2>Periksa pilihan sebelum membeli.</h2></div><p class="lede">Tentukan momen pemakaian, pilih karakter, lalu periksa rincian produk di akun pelanggan sebelum melanjutkan pembayaran.</p></div><div class="process"><article><h3>Definisikan momen</h3><p>Harian, profesional, santai, acara, hadiah, atau koleksi.</p></article><article><h3>Pilih karakter</h3><p>Tentukan dua atau tiga kesan utama yang diinginkan.</p></article><article><h3>Saring pilihan</h3><p>Cocokkan informasi produk dengan preferensi dan konteks.</p></article><article><h3>Konfirmasi</h3><p>Periksa rincian dan ketersediaan sebelum transaksi.</p></article></div></div></section>
+<section class="section"><div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Pertanyaan umum</p><h2>Hal yang perlu dipahami.</h2></div></div><div class="faq"><details class="reveal"><summary>Apakah designer berarti selalu aman untuk semua orang?</summary><p>Tidak. Kecocokan tetap bersifat personal dan dipengaruhi karakter komposisi, intensitas, lingkungan, serta preferensi.</p></details><details class="reveal"><summary>Apakah satu parfum harus dipakai pada satu situasi?</summary><p>Tidak. Kategori situasi hanya membantu memilih; cara penggunaan tetap dapat disesuaikan dengan kebutuhan dan kenyamanan.</p></details><details class="reveal"><summary>Apakah halaman ini menampilkan daftar stok?</summary><p>Tidak. Halaman ini memberi panduan kategori. Untuk melihat pilihan produk, harga, dan ketersediaan, masuk ke akun pelanggan.</p></details></div></div></section>
 <section aria-labelledby="scent-gallery-designer" class="section paper" data-v22-surface="paper">
 <div class="dig-v22-divider dig-v22-divider--arc" aria-hidden="true"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 1440 64"><path class="dig-v22-divider-fill" d="M0 34 C390 34 470 3 800 8 S1220 38 1440 28 V64 H0 Z"></path><path class="dig-v22-divider-line" pathLength="1" d="M0 34 C390 34 470 3 800 8 S1220 38 1440 28"></path></svg></div>
 
-<div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Galeri kategori parfum</p><h2 id="scent-gallery-designer">Kenali empat kategori parfum.</h2></div><p class="lede">Lihat gambaran tiap kategori. Untuk merek, varian, harga, dan stok, hubungi WhatsApp utama.</p></div><div class="dig-scent-strip"><figure class="dig-scent-item reveal" data-motion="media"><img alt="Visual editorial parfum lokal" data-original-src="assets/parfum-lokal-v16.webp" decoding="async" loading="lazy" src="assets/parfum-lokal-v16.webp" height="675" width="1200"/><figcaption class="dig-scent-label"><small>Lokal</small>Karya rumah parfum Indonesia</figcaption></figure><figure class="dig-scent-item reveal" data-delay="1" data-motion="media"><img alt="Ilustrasi editorial parfum designer tanpa merek" data-original-src="assets/parfum-designer-v16.webp" decoding="async" loading="lazy" src="assets/parfum-designer-v16.webp" height="675" width="1200"/><figcaption class="dig-scent-label"><small>Niche</small>Eksplorasi karakter yang lebih spesifik</figcaption></figure><figure class="dig-scent-item reveal" data-delay="2" data-motion="media"><img alt="Visual editorial parfum Timur Tengah" data-original-src="assets/parfum-timur-tengah-v16.webp" decoding="async" loading="lazy" src="assets/parfum-timur-tengah-v16.webp" height="675" width="1200"/><figcaption class="dig-scent-label"><small>Timur Tengah</small>Oud, amber, musk, dan resin</figcaption></figure><figure class="dig-scent-item reveal" data-delay="3" data-motion="media"><img alt="Visual editorial parfum designer" data-original-src="assets/parfum-designer-v16.webp" decoding="async" loading="lazy" src="assets/parfum-designer-v16.webp" height="675" width="1200"/><figcaption class="dig-scent-label"><small>Designer</small>Arah aroma dari lini rumah mode</figcaption></figure></div></div>
+<div class="shell"><div class="section-head reveal" data-motion="fade"><div><p class="kicker">Galeri kategori parfum</p><h2 id="scent-gallery-designer">Kenali empat kategori parfum.</h2></div><p class="lede">Kenali karakter tiap kategori, lalu masuk ke akun pelanggan untuk melihat pilihan produk, harga, dan ketersediaan.</p></div><div class="dig-scent-strip"><figure class="dig-scent-item reveal" data-motion="media"><img alt="Visual editorial parfum lokal" data-original-src="assets/parfum-lokal-v16.webp" decoding="async" loading="lazy" src="assets/parfum-lokal-v16.webp" height="675" width="1200"/><figcaption class="dig-scent-label"><small>Lokal</small>Karya rumah parfum Indonesia</figcaption></figure><figure class="dig-scent-item reveal" data-delay="1" data-motion="media"><img alt="Ilustrasi editorial parfum designer tanpa merek" data-original-src="assets/parfum-designer-v16.webp" decoding="async" loading="lazy" src="assets/parfum-designer-v16.webp" height="675" width="1200"/><figcaption class="dig-scent-label"><small>Niche</small>Eksplorasi karakter yang lebih spesifik</figcaption></figure><figure class="dig-scent-item reveal" data-delay="2" data-motion="media"><img alt="Visual editorial parfum Timur Tengah" data-original-src="assets/parfum-timur-tengah-v16.webp" decoding="async" loading="lazy" src="assets/parfum-timur-tengah-v16.webp" height="675" width="1200"/><figcaption class="dig-scent-label"><small>Timur Tengah</small>Oud, amber, musk, dan resin</figcaption></figure><figure class="dig-scent-item reveal" data-delay="3" data-motion="media"><img alt="Visual editorial parfum designer" data-original-src="assets/parfum-designer-v16.webp" decoding="async" loading="lazy" src="assets/parfum-designer-v16.webp" height="675" width="1200"/><figcaption class="dig-scent-label"><small>Designer</small>Arah aroma dari lini rumah mode</figcaption></figure></div></div>
 </section>
-<section class="section-tight"><div class="shell cta-band reveal"><div><p class="kicker">Konsultasi parfum designer</p><h2>Konsultasikan pilihan parfum designer.</h2><p>Kirim merek atau karakter aroma yang dicari, kebutuhan pemakaian, dan anggaran bila sudah ada ke WhatsApp utama.</p></div><a class="button button-gold" href="https://wa.me/6287892523968?text=Halo%20Digdaya%2C%20saya%20ingin%20berkonsultasi%20tentang%20parfum%20designer." rel="noopener noreferrer" target="_blank">Chat WhatsApp</a></div></section>
-<section aria-labelledby="dedicated-scent-finder-title" class="section-tight"><div class="shell"><p class="kicker">Panduan preferensi aroma</p><h2 id="dedicated-scent-finder-title">Butuh bantuan menentukan karakter aroma?</h2><p>Gunakan Scent Finder untuk merangkum kesan, intensitas, dan kebutuhan pemakaian, lalu lanjutkan konsultasi melalui WhatsApp.</p><a class="button" href="scent-finder.html">Buka Scent Finder</a></div></section><section aria-labelledby="u-fragrance-title" class="section"><div class="shell"><div class="section-head reveal" data-motion="slide-left"><div><p class="kicker">Jelajah karakter aroma</p><h2 id="u-fragrance-title">Bandingkan suasana dan karakter aroma.</h2></div><p class="lede">Geser kartu untuk melihat gambaran suasana, komposisi, dan karakter setiap kategori.</p></div><div class="u-motion-stage" data-dig-scroller=""><div aria-label="Galeri karakter aroma" class="u-motion-track" tabindex="0"><article class="u-motion-card"><img alt="Visual editorial karakter parfum Designer" data-original-src="assets/parfum-designer-v16.webp" decoding="async" loading="lazy" src="assets/parfum-designer-v16.webp" height="675" width="1200"/><div class="u-motion-card-copy"><small>Designer</small><strong>Suasana</strong></div></article><article class="u-motion-card"><img alt="Visual editorial karakter parfum Designer" data-original-src="assets/parfum-designer-v16.webp" decoding="async" loading="lazy" src="assets/parfum-designer-v16.webp" height="675" width="1200"/><div class="u-motion-card-copy"><small>Designer</small><strong>Komposisi</strong></div></article><article class="u-motion-card"><img alt="Visual editorial karakter parfum Designer" data-original-src="assets/parfum-designer-v16.webp" decoding="async" loading="lazy" src="assets/parfum-designer-v16.webp" height="675" width="1200"/><div class="u-motion-card-copy"><small>Designer</small><strong>Karakter</strong></div></article></div></div></div></section>
+<section class="section-tight"><div class="shell cta-band reveal"><div><p class="kicker">Konsultasi parfum designer</p><h2>Konsultasikan pilihan parfum designer.</h2><p>Masuk atau daftar untuk memilih parfum dan menyelesaikan pembelian. Butuh saran aroma? WhatsApp tersedia untuk bantuan konsultasi.</p></div><a class="button button-gold" data-customer-portal="" href="/masuk.html" >Masuk / Daftar untuk membeli</a></div></section>
+<section aria-labelledby="dedicated-scent-finder-title" class="section-tight"><div class="shell"><p class="kicker">Panduan preferensi aroma</p><h2 id="dedicated-scent-finder-title">Butuh bantuan menentukan karakter aroma?</h2><p>Gunakan Scent Finder untuk mengenali kesan, intensitas, dan kebutuhan pemakaian. Setelah menemukan arah pilihan, lanjutkan pembelian melalui akun pelanggan.</p><a class="button" href="scent-finder.html">Buka Scent Finder</a></div></section><section aria-labelledby="u-fragrance-title" class="section"><div class="shell"><div class="section-head reveal" data-motion="slide-left"><div><p class="kicker">Jelajah karakter aroma</p><h2 id="u-fragrance-title">Bandingkan suasana dan karakter aroma.</h2></div><p class="lede">Geser kartu untuk melihat gambaran suasana, komposisi, dan karakter setiap kategori.</p></div><div class="u-motion-stage" data-dig-scroller=""><div aria-label="Galeri karakter aroma" class="u-motion-track" tabindex="0"><article class="u-motion-card"><img alt="Visual editorial karakter parfum Designer" data-original-src="assets/parfum-designer-v16.webp" decoding="async" loading="lazy" src="assets/parfum-designer-v16.webp" height="675" width="1200"/><div class="u-motion-card-copy"><small>Designer</small><strong>Suasana</strong></div></article><article class="u-motion-card"><img alt="Visual editorial karakter parfum Designer" data-original-src="assets/parfum-designer-v16.webp" decoding="async" loading="lazy" src="assets/parfum-designer-v16.webp" height="675" width="1200"/><div class="u-motion-card-copy"><small>Designer</small><strong>Komposisi</strong></div></article><article class="u-motion-card"><img alt="Visual editorial karakter parfum Designer" data-original-src="assets/parfum-designer-v16.webp" decoding="async" loading="lazy" src="assets/parfum-designer-v16.webp" height="675" width="1200"/><div class="u-motion-card-copy"><small>Designer</small><strong>Karakter</strong></div></article></div></div></div></section>
 </main>
 <footer class="site-footer" data-nosnippet="">
 <div aria-hidden="true" class="site-footer-wave"><svg focusable="false" preserveAspectRatio="none" viewBox="0 0 393 25"><path class="site-footer-wave-accent" d="M0 21 C118 23 165 18 198 6 C226 -2 282 -1 315 3 C350 7 377 13 393 16 V25 H0 Z"></path><path class="site-footer-wave-main" d="M0 21 C88 26 158 25 200 16 C229 11 247 0 283 0 C325 0 360 8 393 21 V25 H0 Z"></path></svg></div>
@@ -5673,8 +5765,8 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div class="footer-contact-copy">
 <p class="footer-title">Hubungi Kami</p>
 <h3>Tim Digdaya siap membantu kebutuhan Anda.</h3>
-<p>Konsultasi, pemesanan, dan tindak lanjut layanan melalui WhatsApp 0878-9252-3968. Email tersedia untuk dokumen dan dukungan.</p>
-<div aria-label="Kanal komunikasi Digdaya" class="footer-contact-channels">
+<p>Pembelian dan pembayaran otomatis melalui akun pelanggan. WhatsApp 0878-9252-3968 tersedia untuk bantuan; email untuk dokumen pendukung.</p>
+<div aria-label="Kanal komunikasi Digdaya" class="footer-contact-channels"><a class="footer-contact-channel" data-customer-portal="" href="/masuk.html" ><span>Masuk / Daftar</span><span>Belanja &amp; bayar otomatis</span></a>
 <a class="footer-contact-channel" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span>WhatsApp Utama</span><small>0878-9252-3968</small></a>
 
 
@@ -5685,7 +5777,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <span aria-label="Instagram" class="social-contact" role="img" title="Instagram"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="15" rx="4" stroke="currentColor" stroke-width="1.8" width="15" x="4.5" y="4.5"></rect><circle cx="12" cy="12" fill="none" r="3.4" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.1" cy="6.9" fill="currentColor" r="1"></circle></svg></span>
 <a aria-label="Buka profil LinkedIn" class="social-contact" href="https://www.linkedin.com/in/achmad-zaenuddin-7285ba433" rel="noopener noreferrer" target="_blank" title="LinkedIn"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path fill="currentColor" d="M5.37 3.5a1.88 1.88 0 1 1 0 3.76 1.88 1.88 0 0 1 0-3.76ZM3.75 8.8H7V20H3.75V8.8Zm5.25 0h3.12v1.53h.05c.43-.82 1.5-1.69 3.09-1.69 3.3 0 3.91 2.18 3.91 5.01V20h-3.25v-5.63c0-1.34-.02-3.07-1.87-3.07-1.88 0-2.17 1.46-2.17 2.97V20H9V8.8Z"></path></svg></a>
 <span aria-label="Threads" class="social-contact" role="img" title="Threads"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path fill="currentColor" d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"></path></svg></span>
-<button aria-label="Buka konsultasi WhatsApp" class="social-contact" data-contact-open="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
+<button aria-label="Buka bantuan WhatsApp" class="social-contact" data-contact-open="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
 <span aria-disabled="true" aria-label="Telegram" class="social-contact" title="Telegram"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="m3.5 11.1 16.4-6.4-3 14.6-5.1-4-2.9 2.7.4-4.3 7.8-6.5-9.7 5.1-3.9-1.2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.6"></path></svg></span>
 <a aria-label="Kirim email ke companydirac@gmail.com" class="social-contact" href="mailto:companydirac@gmail.com" title="Email"><svg aria-hidden="true" viewbox="0 0 24 24"><rect fill="none" height="13" rx="2" stroke="currentColor" stroke-width="1.8" width="17" x="3.5" y="5.5"></rect><path d="m5 7 7 5.2L19 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg></a>
 <span aria-label="Facebook" class="social-contact" role="img" title="Facebook"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M13.7 21v-7.8h2.6l.4-3h-3V8.3c0-.9.3-1.5 1.6-1.5H17V4.1c-.7-.1-1.5-.2-2.4-.2-2.4 0-4 1.5-4 4.1v2.2H8v3h2.6V21h3.1Z" fill="currentColor"></path></svg></span>
@@ -5724,7 +5816,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <div aria-atomic="true" aria-live="polite" class="toast-region"></div>
 <div class="quick-contact" data-quick-contact="">
 <div class="quick-contact-panel" data-quick-contact-panel="" hidden="" id="quick-contact-panel">
-<div class="quick-contact-panel-head"><span><strong>Hubungi Digdaya</strong><small>Konsultasi layanan melalui WhatsApp utama.</small></span><button aria-label="Tutup pilihan kontak" class="icon-button" data-contact-close="" type="button"><svg aria-hidden="true" class="icon-svg" height="20" viewbox="0 0 24 24" width="20"><use href="#icon-close"></use></svg></button></div>
+<div class="quick-contact-panel-head"><span><strong>Hubungi Digdaya</strong><small>Bantuan layanan melalui WhatsApp atau email.</small></span><button aria-label="Tutup pilihan kontak" class="icon-button" data-contact-close="" type="button"><svg aria-hidden="true" class="icon-svg" height="20" viewbox="0 0 24 24" width="20"><use href="#icon-close"></use></svg></button></div>
 <div class="quick-contact-options">
 <a class="quick-contact-option" href="https://wa.me/6287892523968?text=Halo%20PT%20Digdaya%20Inovasi%20Nusantara%2C%20saya%20ingin%20berkonsultasi." rel="noopener noreferrer" target="_blank"><span class="quick-contact-badge"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></span><span class="quick-contact-copy"><strong>WhatsApp Utama</strong><small>0878-9252-3968</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
 
@@ -5732,7 +5824,7 @@ html.dig-motion-v16-ready .live-news-visual.is-dig-in>img{--dig-media-scale:1}
 <a class="quick-contact-option" href="mailto:companydirac@gmail.com?subject=Konsultasi%20PT%20Digdaya%20Inovasi%20Nusantara"><span class="quick-contact-badge email"><svg aria-hidden="true" class="quick-contact-brand-icon" focusable="false" viewbox="0 0 24 24"><use href="#icon-email"></use></svg></span><span class="quick-contact-copy"><strong>Email</strong><small>companydirac@gmail.com</small></span><span aria-hidden="true" class="quick-contact-chevron"><svg class="icon-svg" focusable="false" viewbox="0 0 24 24"><use href="#icon-external-link"></use></svg></span></a>
 </div>
 </div>
-<button aria-controls="quick-contact-panel" aria-expanded="false" aria-label="Buka konsultasi WhatsApp dan email" class="wa-float" data-contact-toggle="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
+<button aria-controls="quick-contact-panel" aria-expanded="false" aria-label="Buka bantuan WhatsApp dan email" class="wa-float" data-contact-toggle="" type="button"><svg aria-hidden="true" class="wa-brand-mark" focusable="false" viewbox="0 0 16 16"><use href="#icon-whatsapp-brand"></use></svg></button>
 </div>
 <script data-inline-from="assets/js/runtime-site-v8.js">
 
@@ -9474,9 +9566,9 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
       if(!picker){
         picker=document.createElement('dialog');
         picker.className='ui-dialog dig-v22-contact-dialog';
-        picker.setAttribute('aria-label','Konsultasi WhatsApp Digdaya');
+        picker.setAttribute('aria-label','Bantuan WhatsApp Digdaya');
         const head=document.createElement('div');head.className='dialog-head';
-        const title=document.createElement('h2');title.textContent='Konsultasi WhatsApp';
+        const title=document.createElement('h2');title.textContent='Bantuan WhatsApp';
         const close=document.createElement('button');close.type='button';close.className='icon-button';
         close.setAttribute('aria-label','Tutup pilihan WhatsApp');close.textContent='×';
         const options=document.createElement('div');options.className='dig-v22-contact-options';
@@ -9498,6 +9590,35 @@ window.addEventListener("pageshow",()=>document.documentElement.classList.remove
   else if(motion.addListener)motion.addListener(sync);
   sync();
 })();
+</script>
+
+<script id="digdaya-revision-v24-script">
+/* V24: account links use the active host unless the owner configures a portal. */
+(() => {
+  "use strict";
+  const fallback = new URL("/masuk.html", window.location.href);
+  let destination = fallback;
+  let mode = "current-host";
+  const configured = window.DIGDAYA_PORTAL_CONFIG?.origin;
+  if (typeof configured === "string" && configured.trim()) {
+    try {
+      const origin = new URL(configured.trim());
+      if (origin.protocol !== "https:" || origin.username || origin.password
+          || origin.search || origin.hash || origin.pathname !== "/") {
+        throw new TypeError("Portal configuration must contain an HTTPS origin only.");
+      }
+      destination = new URL("/masuk.html", origin.origin);
+      mode = "configured-origin";
+    } catch {
+      mode = "invalid-config-current-host";
+    }
+  }
+  document.querySelectorAll("a[data-customer-portal]").forEach(link => {
+    link.href = destination.href;
+  });
+  document.documentElement.dataset.digV24Portal = mode;
+})();
+
 </script>
 </body>
 </html>
