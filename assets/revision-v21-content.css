@@ -1,0 +1,66 @@
+/* DIGDAYA REVISION V21 — source transparency and long-form reading polish. */
+.article-review-meta{
+  margin:.45rem 0 0;
+  color:var(--ink-soft);
+  font-size:.76rem;
+  line-height:1.55;
+}
+.article-source-panel{
+  margin:2rem 0 1.6rem;
+  padding:clamp(1rem,3vw,1.4rem);
+  border:1px solid rgba(8,47,91,.14);
+  border-left:3px solid var(--gold);
+  border-radius:1rem;
+  background:#fff;
+  box-shadow:0 12px 34px rgba(8,47,91,.055);
+}
+.article-source-panel h3{
+  margin:0 0 .55rem;
+  color:var(--navy);
+  font:800 .78rem/1.3 var(--font-body);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.article-source-panel p{
+  margin:0 0 .7rem;
+  color:var(--ink-soft);
+  font-size:.84rem;
+  line-height:1.7;
+}
+.article-source-panel ul{
+  display:grid;
+  gap:.55rem;
+  margin:0;
+  padding-left:1.15rem;
+}
+.article-source-panel a{
+  color:var(--blue);
+  font-weight:760;
+  text-underline-offset:.18em;
+}
+.article-source-panel small{
+  display:block;
+  margin-top:.75rem;
+  color:#61727a;
+  line-height:1.6;
+}
+
+/* The scorecards communicate auditable facts, not vanity metrics. */
+.knowledge-stats strong[id]{font-variant-numeric:tabular-nums}
+.knowledge-review-line{
+  display:block;
+  margin-top:.45rem;
+  color:#667981;
+  font-size:.72rem;
+  line-height:1.55;
+}
+
+@media (max-width:620px){
+  .article-source-panel{margin-block:1.5rem 1.25rem}
+  .article-meta .actions{display:grid;grid-template-columns:1fr}
+  .article-meta .actions .button{width:100%;justify-content:center}
+}
+
+@media print{
+  .article-source-panel{box-shadow:none;break-inside:avoid}
+}

@@ -1,0 +1,150 @@
+/*
+ * DIGDAYA V21 — resilient mobile navigation
+ *
+ * This file is intentionally additive.  The V21 controller adds the
+ * dig-v21-* state classes after the legacy navigation runtime has finished,
+ * so existing desktop navigation and no-JavaScript behaviour remain intact.
+ */
+:root{
+  --dig-v21-menu-duration:300ms;
+  --dig-v21-menu-ease:cubic-bezier(.22,.76,.24,1);
+  --dig-v21-icon-duration:280ms;
+  --dig-v21-subnav-duration:240ms;
+  --dig-v21-subnav-ease:cubic-bezier(.22,.72,.2,1);
+}
+
+/*
+ * Use reversible transitions for the three menu bars.  The former keyframes
+ * restarted at their first frame after a rapid second tap; transitions begin
+ * at the currently painted value and therefore reverse without a jump.
+ */
+.menu-button .dig-menu-morph::before,
+.menu-button .dig-menu-morph::after,
+.menu-button.dig-menu-opening .dig-menu-morph::before,
+.menu-button.dig-menu-opening .dig-menu-morph::after,
+.menu-button.dig-menu-closing .dig-menu-morph::before,
+.menu-button.dig-menu-closing .dig-menu-morph::after{
+  animation:none!important;
+  will-change:auto!important;
+  transition:transform var(--dig-v21-icon-duration) var(--dig-v21-menu-ease)!important;
+}
+.menu-button .dig-menu-morph>svg,
+.menu-button[aria-expanded="true"] .dig-menu-morph>svg,
+.menu-button.dig-menu-opening .dig-menu-morph>svg,
+.menu-button.dig-menu-closing .dig-menu-morph>svg{
+  animation:none!important;
+  visibility:visible!important;
+  will-change:auto!important;
+  transition:opacity 160ms ease,transform var(--dig-v21-icon-duration) var(--dig-v21-menu-ease)!important;
+}
+
+@media (max-width:1180px){
+  /*
+   * A transformed sticky ancestor changes the containing block of a fixed
+   * descendant in WebKit.  Keep the panel fixed to the visual viewport.
+   */
+  html.dig-nav-lock .site-header{
+    transform:none!important;
+  }
+
+  /* Keep header controls clear of a landscape iPhone notch. */
+  .site-header .header-inner{
+    padding-left:max(0px,env(safe-area-inset-left,0px))!important;
+    padding-right:max(0px,env(safe-area-inset-right,0px))!important;
+  }
+
+  .js .main-nav{
+    max-height:calc(100vh - var(--dig-v17-header-height,var(--u-header)))!important;
+    padding-right:max(clamp(12px,4vw,28px),env(safe-area-inset-right,0px))!important;
+    padding-bottom:max(.45rem,env(safe-area-inset-bottom,0px))!important;
+    padding-left:max(clamp(12px,4vw,28px),env(safe-area-inset-left,0px))!important;
+    transition:-webkit-clip-path var(--dig-v21-menu-duration) var(--dig-v21-menu-ease),clip-path var(--dig-v21-menu-duration) var(--dig-v21-menu-ease),visibility 0s linear var(--dig-v21-menu-duration)!important;
+  }
+  .js .main-nav.is-open{
+    transition:-webkit-clip-path var(--dig-v21-menu-duration) var(--dig-v21-menu-ease),clip-path var(--dig-v21-menu-duration) var(--dig-v21-menu-ease),visibility 0s linear 0s!important;
+  }
+  @supports (height:100dvh){
+    .js .main-nav{
+      max-height:calc(100dvh - var(--dig-v17-header-height,var(--u-header)))!important;
+    }
+  }
+
+  /* Promote only while the reveal is moving; retire the layer afterwards. */
+  .js .main-nav.dig-v21-nav-animating{
+    contain:none!important;
+    transform:translate3d(0,0,0)!important;
+    will-change:clip-path!important;
+  }
+  .js .main-nav.is-open.dig-v21-nav-arming{
+    -webkit-clip-path:inset(0 0 0 0)!important;
+    clip-path:inset(0 0 0 0)!important;
+    transition:none!important;
+  }
+  .js .main-nav.is-open.dig-v21-nav-settled{
+    -webkit-clip-path:none!important;
+    clip-path:none!important;
+    -webkit-backface-visibility:visible!important;
+    backface-visibility:visible!important;
+    contain:none!important;
+    transform:none!important;
+    transition:none!important;
+    will-change:auto!important;
+  }
+  .js .main-nav:not(.is-open).dig-v21-nav-idle{
+    -webkit-backface-visibility:visible!important;
+    backface-visibility:visible!important;
+    contain:none!important;
+    transform:none!important;
+    transition:none!important;
+    will-change:auto!important;
+  }
+
+  /*
+   * Mobile flyouts use a measured pixel height supplied by the V21 runtime.
+   * This replaces the arbitrary 30rem ceiling, which clipped long labels and
+   * gave each submenu a different apparent speed.
+   */
+  .main-nav .nav-flyout,
+  .main-nav .nav-flyout[hidden],
+  .main-nav .nav-group.is-open .nav-flyout{
+    max-height:none!important;
+    height:0;
+    overflow:hidden!important;
+    visibility:hidden;
+    pointer-events:none!important;
+    transition:height var(--dig-v21-subnav-duration) var(--dig-v21-subnav-ease),visibility 0s linear var(--dig-v21-subnav-duration)!important;
+  }
+  .main-nav .nav-group .nav-flyout.dig-v21-subnav-open{
+    height:auto!important;
+    overflow:visible!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    transition:none!important;
+  }
+  .main-nav .nav-group .nav-flyout.dig-v21-subnav-animating,
+  .main-nav .nav-group .nav-flyout.dig-v21-subnav-animating[hidden]{
+    display:grid!important;
+    overflow:hidden!important;
+    visibility:visible!important;
+    pointer-events:none!important;
+    transition:height var(--dig-v21-subnav-duration) var(--dig-v21-subnav-ease)!important;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .menu-button.menu-button .dig-menu-morph::before,
+  .menu-button.menu-button .dig-menu-morph::after,
+  .menu-button.menu-button .dig-menu-morph>svg,
+  .js .main-nav,
+  .js .main-nav.is-open,
+  .js .main-nav.dig-v21-nav-animating,
+  .main-nav .nav-flyout,
+  .main-nav .nav-flyout[hidden],
+  .main-nav .nav-group.is-open .nav-flyout,
+  .main-nav .nav-group .nav-flyout.dig-v21-subnav-open,
+  .main-nav .nav-group .nav-flyout.dig-v21-subnav-animating,
+  .main-nav .nav-group .nav-flyout.dig-v21-subnav-animating[hidden]{
+    animation:none!important;
+    transition:none!important;
+  }
+}
