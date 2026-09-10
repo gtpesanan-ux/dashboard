@@ -613,10 +613,12 @@
       busy = true;
       if(window.DiracNavigationBusy) window.DiracNavigationBusy.set(true);
       if(anchor){ anchor.setAttribute('aria-busy','true'); anchor.setAttribute('aria-disabled','true'); }
-      var controller = typeof AbortController === 'function' ? new AbortController() : null;
-      var timer = controller ? setTimeout(function(){ controller.abort(); }, 15000) : 0;
+      var controller = null;
+      var timer = 0;
       acquireProof().then(function(proof){
         proofCache = null;
+        controller = typeof AbortController === 'function' ? new AbortController() : null;
+        timer = controller ? setTimeout(function(){ controller.abort(); }, 15000) : 0;
         return fetch(issueUrl.href, {
           method:'POST', mode:'cors', credentials:'include', cache:'no-store', redirect:'error',
           headers:{
