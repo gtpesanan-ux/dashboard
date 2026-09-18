@@ -1,0 +1,54 @@
+{
+  "name": "PT DIRAC INOVASI NUSANTARA",
+  "brand": "PT DIRAC INOVASI NUSANTARA",
+  "language": "id-ID",
+  "description": "Penjualan dan konsultasi parfum serta layanan pembuatan/pengembangan website, domain, dan top up game.",
+  "services": [
+    {
+      "name": "Jual parfum lokal",
+      "category": "Parfum",
+      "url": "parfum-lokal.html"
+    },
+    {
+      "name": "Jual parfum designer",
+      "category": "Parfum",
+      "url": "parfum-designer.html"
+    },
+    {
+      "name": "Jual parfum niche",
+      "category": "Parfum",
+      "url": "parfum-niche.html"
+    },
+    {
+      "name": "Jual parfum Timur Tengah",
+      "category": "Parfum",
+      "url": "parfum-timur-tengah.html"
+    },
+    {
+      "name": "Jasa pembuatan dan pengembangan website",
+      "category": "Website",
+      "url": "jasa-pembuatan-website.html"
+    },
+    {
+      "name": "Jual beli dan konsultasi nama domain",
+      "category": "Domain",
+      "url": "jual-beli-domain.html"
+    },
+    {
+      "name": "Top up game",
+      "category": "Digital",
+      "url": "top-up-game.html"
+    }
+  ],
+  "knowledge": {
+    "news": "berita.html",
+    "knowledge": "pengetahuan.html",
+    "sitemap": "sitemap.html"
+  },
+  "contact": {
+    "email": "companydirac@gmail.com",
+    "telephone": "+62-878-9252-3968"
+  },
+  "updated": "2026-09-18",
+  "urlPolicy": "All first-party URLs are relative to the active deployment origin; no deployment domain is hardcoded."
+}

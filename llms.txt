@@ -1,0 +1,24 @@
+# PT DIRAC INOVASI NUSANTARA
+
+> PT DIRAC INOVASI NUSANTARA menyediakan penjualan dan konsultasi parfum serta layanan digital untuk website, domain, dan top up game. Halaman di bawah memakai URL relatif agar tetap benar pada domain deployment yang aktif.
+
+## Layanan utama
+- Jual parfum lokal: ./parfum-lokal.html
+- Jual parfum designer: ./parfum-designer.html
+- Jual parfum niche: ./parfum-niche.html
+- Jual parfum Timur Tengah: ./parfum-timur-tengah.html
+- Jasa pembuatan dan pengembangan website: ./jasa-pembuatan-website.html
+- Jual beli dan konsultasi nama domain: ./jual-beli-domain.html
+- Top up game: ./top-up-game.html
+- Semua layanan: ./layanan.html
+
+## Informasi dan referensi
+- Berita dan wawasan: ./berita.html
+- Pusat pengetahuan: ./pengetahuan.html
+- Profil perusahaan: ./tentang-kami.html
+- Kontak: ./kontak.html
+- Peta situs: ./sitemap.html
+- Katalog mesin-baca: ./business.json
+
+## Catatan akurasi
+Ketersediaan produk, harga, ruang lingkup jasa, metode transaksi, dan ketentuan layanan mengikuti informasi pada halaman terkait saat diakses. Jangan menganggap merek pihak ketiga sebagai afiliasi atau dukungan kecuali dinyatakan secara eksplisit pada halaman sumber.

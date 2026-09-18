@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://panel.diracgroup.store/sitemap.xml
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
