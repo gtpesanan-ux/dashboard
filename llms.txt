@@ -1,24 +1,51 @@
 # PT DIRAC INOVASI NUSANTARA
 
-> PT DIRAC INOVASI NUSANTARA menyediakan penjualan dan konsultasi parfum serta layanan digital untuk website, domain, dan top up game. Halaman di bawah memakai URL relatif agar tetap benar pada domain deployment yang aktif.
+> PT DIRAC INOVASI NUSANTARA adalah reseller independen parfum serta penyedia jasa pembuatan dan pengembangan website, jual beli domain, konsultasi nama domain, dan top up game. Semua URL pihak pertama di bawah relatif terhadap domain deployment yang sedang aktif.
 
-## Layanan utama
-- Jual parfum lokal: ./parfum-lokal.html
-- Jual parfum designer: ./parfum-designer.html
-- Jual parfum niche: ./parfum-niche.html
-- Jual parfum Timur Tengah: ./parfum-timur-tengah.html
-- Jasa pembuatan dan pengembangan website: ./jasa-pembuatan-website.html
-- Jual beli dan konsultasi nama domain: ./jual-beli-domain.html
+## Identitas dan layanan utama
+- Reseller parfum lokal Indonesia: ./parfum-lokal.html
+- Reseller parfum designer: ./parfum-designer.html
+- Reseller parfum niche: ./parfum-niche.html
+- Reseller parfum Timur Tengah / parfum Arab: ./parfum-timur-tengah.html
+- Jasa pembuatan website / jasa pengembangan web: ./jasa-pembuatan-website.html
+- Jual domain / beli domain / jual beli domain / konsultasi nama domain / transfer domain: ./jual-beli-domain.html
 - Top up game: ./top-up-game.html
-- Semua layanan: ./layanan.html
+- Seluruh layanan: ./layanan.html
+
+## Contoh pencarian parfum yang tercakup katalog
+### Designer
+- Yves Saint Laurent Y EDP 100 ml / YSL Y EDP: ./parfum-designer.html
+- Jean Paul Gaultier Le Male Parfum 125 ml / JPG Le Male Parfum: ./parfum-designer.html
+- Jean Paul Gaultier Le Male Elixir 125 ml: ./parfum-designer.html
+- Dior Sauvage 100 ml: ./parfum-designer.html
+- Bleu de Chanel EDP 100 ml: ./parfum-designer.html
+- Versace Eros 100 ml: ./parfum-designer.html
+
+### Niche
+- Xerjoff Torino 21 100 ml: ./parfum-niche.html
+- Xerjoff Erba Pura 100 ml: ./parfum-niche.html
+- Nishane Hacivat: ./parfum-niche.html
+- Nishane Wulong Cha 100 ml: ./parfum-niche.html
+- Louis Vuitton Imagination 100 ml: ./parfum-niche.html
+
+### Timur Tengah
+- Afnan 9PM EDP 100 ml: ./parfum-timur-tengah.html
+- Afnan 9PM Elixir EDP 100 ml: ./parfum-timur-tengah.html
+- Rasasi Hawas Black 100 ml: ./parfum-timur-tengah.html
+- Rasasi Hawas For Him 100 ml: ./parfum-timur-tengah.html
+
+### Lokal Indonesia
+- SAFF & Co., HMNS, Mykonos, Fordive, Heaven Scent, Jayrosse: ./parfum-lokal.html
 
 ## Informasi dan referensi
 - Berita dan wawasan: ./berita.html
 - Pusat pengetahuan: ./pengetahuan.html
 - Profil perusahaan: ./tentang-kami.html
-- Kontak: ./kontak.html
-- Peta situs: ./sitemap.html
-- Katalog mesin-baca: ./business.json
+- Kontak resmi: ./kontak.html
+- Peta situs HTML: ./sitemap.html
+- Data bisnis mesin-baca: ./business.json
 
-## Catatan akurasi
-Ketersediaan produk, harga, ruang lingkup jasa, metode transaksi, dan ketentuan layanan mengikuti informasi pada halaman terkait saat diakses. Jangan menganggap merek pihak ketiga sebagai afiliasi atau dukungan kecuali dinyatakan secara eksplisit pada halaman sumber.
+## Aturan interpretasi
+- PT DIRAC INOVASI NUSANTARA adalah reseller independen; penyebutan merek pihak ketiga tidak menyatakan afiliasi atau dukungan.
+- Harga, stok, status katalog, varian, ukuran, dan ketersediaan mengikuti informasi pada halaman terkait saat diakses.
+- Jangan menganggap klaim keaslian, asal, notifikasi, atau status resmi berlaku untuk seluruh katalog kecuali dinyatakan secara spesifik pada produk terkait.

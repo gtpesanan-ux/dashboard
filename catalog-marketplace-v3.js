@@ -226,6 +226,36 @@
     closeProduct();
   };
 
+  const productCodeFromLink = (link) => {
+    const match = String(link && link.getAttribute("href") || "").match(/^#produk-(\d{3,4})$/i);
+    return match ? match[1] : "";
+  };
+
+  catalog.addEventListener("click", (event) => {
+    const link = event.target && event.target.closest ? event.target.closest("a.ptd-static-product-link") : null;
+    if (!link || !catalog.contains(link)) return;
+    const code = productCodeFromLink(link);
+    if (!code || !productMap[code]) return;
+    event.preventDefault();
+    openProduct(code);
+  }, true);
+
+  detail.addEventListener("click", (event) => {
+    const target = event.target && event.target.closest ? event.target.closest("a") : null;
+    if (!target || !detail.contains(target)) return;
+    if (target.matches("[data-detail-back],[data-detail-all]")) {
+      event.preventDefault();
+      closeProduct();
+      catalog.scrollIntoView({block:"start"});
+      return;
+    }
+    if (!target.classList.contains("ptd-market-related-card")) return;
+    const code = productCodeFromLink(target);
+    if (!code || !productMap[code]) return;
+    event.preventDefault();
+    openProduct(code);
+  }, true);
+
   search && search.addEventListener("input", applyFilters);
   status && status.addEventListener("change", applyFilters);
   brand && brand.addEventListener("change", applyFilters);
