@@ -112,7 +112,34 @@
   "knowledge": {
     "news": "berita.html",
     "knowledge": "pengetahuan.html",
-    "sitemap": "sitemap.html"
+    "sitemap": "sitemap.html",
+    "guides": [
+      {
+        "title": "Parfum Murah Berkualitas: Cara Membandingkan Harga, Ukuran dan Kebutuhan",
+        "url": "parfum-murah-berkualitas.html"
+      },
+      {
+        "title": "Panduan Reseller Parfum: Memilih Pemasok, Menghitung Margin dan Mengelola Stok",
+        "url": "panduan-reseller-parfum.html"
+      },
+      {
+        "title": "Cara Memilih Parfum: Aroma, Ukuran dan Cara Mencoba Sebelum Membeli",
+        "url": "cara-memilih-parfum.html"
+      },
+      {
+        "title": "Biaya Beli Domain: Hitung Harga Awal, Perpanjangan, dan Layanan Tambahan",
+        "url": "biaya-beli-domain.html"
+      },
+      {
+        "title": "Cara Transfer Domain: Persiapan, Kode Otorisasi, dan Pemeriksaan Akhir",
+        "url": "transfer-domain.html"
+      },
+      {
+        "title": "Contoh Brief Website Usaha: Format Siap Diisi dan Checklist Serah Terima",
+        "url": "brief-website.html"
+      }
+    ],
+    "editorialPolicy": "kebijakan-editorial.html"
   },
   "contact": {
     "email": "companydirac@gmail.com",

@@ -49,3 +49,14 @@
 - PT DIRAC INOVASI NUSANTARA adalah reseller independen; penyebutan merek pihak ketiga tidak menyatakan afiliasi atau dukungan.
 - Harga, stok, status katalog, varian, ukuran, dan ketersediaan mengikuti informasi pada halaman terkait saat diakses.
 - Jangan menganggap klaim keaslian, asal, notifikasi, atau status resmi berlaku untuk seluruh katalog kecuali dinyatakan secara spesifik pada produk terkait.
+
+## Panduan lengkap yang dapat dibaca langsung
+- Parfum Murah Berkualitas: Cara Membandingkan Harga, Ukuran dan Kebutuhan: ./parfum-murah-berkualitas.html
+- Panduan Reseller Parfum: Memilih Pemasok, Menghitung Margin dan Mengelola Stok: ./panduan-reseller-parfum.html
+- Cara Memilih Parfum: Aroma, Ukuran dan Cara Mencoba Sebelum Membeli: ./cara-memilih-parfum.html
+- Biaya Beli Domain: Hitung Harga Awal, Perpanjangan, dan Layanan Tambahan: ./biaya-beli-domain.html
+- Cara Transfer Domain: Persiapan, Kode Otorisasi, dan Pemeriksaan Akhir: ./transfer-domain.html
+- Contoh Brief Website Usaha: Format Siap Diisi dan Checklist Serah Terima: ./brief-website.html
+- Cara membaca panduan dan sumber: ./kebijakan-editorial.html
+
+Panduan berisi informasi umum; contoh biaya bukan penawaran. Rujukan hukum, produk, dan domain perlu diperiksa pada sumber resmi terkait.
