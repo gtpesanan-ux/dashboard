@@ -109,6 +109,17 @@
       "url": "top-up-game.html"
     }
   ],
+  "catalogue": "reseller-parfum.html",
+  "leadership": {
+    "name": "Achmad Zaenuddin",
+    "roles": ["Founder", "Direktur Utama"],
+    "profile": "direktur-founder.html"
+  },
+  "companyPages": {
+    "about": "tentang-kami.html",
+    "partners": "partner.html",
+    "leadership": "direktur-founder.html"
+  },
   "knowledge": {
     "news": "berita.html",
     "knowledge": "pengetahuan.html",
