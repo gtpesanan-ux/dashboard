@@ -3,6 +3,7 @@
 > PT DIRAC INOVASI NUSANTARA adalah reseller independen parfum serta penyedia jasa pembuatan dan pengembangan website, jual beli domain, konsultasi nama domain, dan top up game. Semua URL pihak pertama di bawah relatif terhadap domain deployment yang sedang aktif.
 
 ## Identitas dan layanan utama
+- Reseller parfum: katalog dan cara memesan: ./reseller-parfum.html
 - Reseller parfum lokal Indonesia: ./parfum-lokal.html
 - Reseller parfum designer: ./parfum-designer.html
 - Reseller parfum niche: ./parfum-niche.html
@@ -41,6 +42,8 @@
 - Berita dan wawasan: ./berita.html
 - Pusat pengetahuan: ./pengetahuan.html
 - Profil perusahaan: ./tentang-kami.html
+- Partner dan kolaborasi: ./partner.html
+- Founder dan Direktur Utama — Achmad Zaenuddin: ./direktur-founder.html
 - Kontak resmi: ./kontak.html
 - Peta situs HTML: ./sitemap.html
 - Data bisnis mesin-baca: ./business.json
