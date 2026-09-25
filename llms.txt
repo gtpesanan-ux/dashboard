@@ -1,8 +1,11 @@
+> VERSI PERSIAPAN: nama PT belum final/disahkan; informasi identitas pada berkas ini adalah rancangan.
+
 # PT DIRAC INOVASI NUSANTARA
 
 > PT DIRAC INOVASI NUSANTARA adalah reseller independen parfum serta penyedia jasa pembuatan dan pengembangan website, jual beli domain, konsultasi nama domain, dan top up game. Semua URL pihak pertama di bawah relatif terhadap domain deployment yang sedang aktif.
 
 ## Identitas dan layanan utama
+- Alamat perusahaan: JI. AMD Manunggal III, RT 04/RW 01, Desa Gelang, Kecamatan Tulangan, Kabupaten Sidoarjo, Jawa Timur 61273
 - Reseller parfum: katalog dan cara memesan: ./reseller-parfum.html
 - Reseller parfum lokal Indonesia: ./parfum-lokal.html
 - Reseller parfum designer: ./parfum-designer.html
