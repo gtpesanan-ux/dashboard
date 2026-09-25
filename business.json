@@ -2,8 +2,8 @@
   "name": "PT DIRAC INOVASI NUSANTARA",
   "brand": "PT DIRAC INOVASI NUSANTARA",
   "language": "id-ID",
-  "description": "PT DIRAC INOVASI NUSANTARA adalah reseller independen parfum serta penyedia jasa pembuatan dan pengembangan website, jual beli domain, konsultasi nama domain, dan top up game.",
-  "entityType": "Indonesian company and independent reseller/service provider",
+  "description": "Profil persiapan PT DIRAC INOVASI NUSANTARA untuk reseller parfum dan layanan website, domain, serta top up game. Nama PT belum final/disahkan.",
+  "entityType": "Proposed Indonesian company name (not yet finalized/approved)",
   "searchIntents": [
     "reseller parfum",
     "jual parfum",
@@ -112,7 +112,10 @@
   "catalogue": "reseller-parfum.html",
   "leadership": {
     "name": "Achmad Zaenuddin",
-    "roles": ["Founder", "Direktur Utama"],
+    "roles": [
+      "Founder",
+      "Direktur Utama"
+    ],
     "profile": "direktur-founder.html"
   },
   "companyPages": {
@@ -152,11 +155,13 @@
     ],
     "editorialPolicy": "kebijakan-editorial.html"
   },
+  "address": "JI. AMD Manunggal III, RT 04/RW 01, Desa Gelang, Kecamatan Tulangan, Kabupaten Sidoarjo, Jawa Timur 61273",
   "contact": {
     "email": "companydirac@gmail.com",
     "telephone": "+62-878-9252-3968"
   },
   "trademarkNotice": "Merek pihak ketiga adalah milik pemegang hak masing-masing; penyebutan katalog tidak menyatakan afiliasi atau dukungan.",
-  "updated": "2026-09-19",
-  "urlPolicy": "All first-party URLs are relative to the active deployment origin; no deployment domain is hardcoded."
+  "updated": "2026-09-25",
+  "urlPolicy": "All first-party URLs are relative to the active deployment origin; no deployment domain is hardcoded.",
+  "status": "preparation_name_not_finalized"
 }
