@@ -2,8 +2,8 @@
   "name": "PT DIRAC INOVASI NUSANTARA",
   "brand": "PT DIRAC INOVASI NUSANTARA",
   "language": "id-ID",
-  "description": "Profil persiapan PT DIRAC INOVASI NUSANTARA untuk reseller parfum dan layanan website, domain, serta top up game. Nama PT belum final/disahkan.",
-  "entityType": "Proposed Indonesian company name (not yet finalized/approved)",
+  "description": "PT DIRAC INOVASI NUSANTARA: reseller parfum serta layanan website, domain, dan top up game.",
+  "entityType": "Company website",
   "searchIntents": [
     "reseller parfum",
     "jual parfum",
@@ -145,7 +145,7 @@
         "url": "biaya-beli-domain.html"
       },
       {
-        "title": "Cara Transfer Domain: Persiapan, Kode Otorisasi, dan Pemeriksaan Akhir",
+        "title": "Cara Transfer Domain: Langkah Awal, Kode Otorisasi, dan Pemeriksaan Akhir",
         "url": "transfer-domain.html"
       },
       {
@@ -153,15 +153,21 @@
         "url": "brief-website.html"
       }
     ],
-    "editorialPolicy": "kebijakan-editorial.html"
+    "editorialPolicy": "kebijakan-editorial.html",
+    "articleCounts": {
+      "total": 1551,
+      "knowledge": 1480,
+      "news": 71
+    },
+    "articleDirectory": "berita-detail.html?id="
   },
   "address": "JI. AMD Manunggal III, RT 04/RW 01, Desa Gelang, Kecamatan Tulangan, Kabupaten Sidoarjo, Jawa Timur 61273",
   "contact": {
-    "email": "companydirac@gmail.com",
+    "email": "company\u0064\u0069\u0072\u0061\u0063@gmail.com",
     "telephone": "+62-878-9252-3968"
   },
   "trademarkNotice": "Merek pihak ketiga adalah milik pemegang hak masing-masing; penyebutan katalog tidak menyatakan afiliasi atau dukungan.",
   "updated": "2026-09-25",
   "urlPolicy": "All first-party URLs are relative to the active deployment origin; no deployment domain is hardcoded.",
-  "status": "preparation_name_not_finalized"
+  "release": "2026.09.26-pt4-r4"
 }
