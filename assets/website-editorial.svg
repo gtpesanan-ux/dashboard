@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title">
+<title id="title">Ilustrasi rancangan halaman website</title>
+<rect width="1200" height="675" fill="#0c203f"/>
+<path d="M0 92H1200M0 582H1200M92 0V675M1108 0V675" stroke="#c9b77f" stroke-opacity=".16"/>
+<circle cx="940" cy="320" r="255" fill="none" stroke="#c9b77f" stroke-opacity=".14"/>
+<circle cx="940" cy="320" r="193" fill="none" stroke="#c9b77f" stroke-opacity=".1"/>
+<g fill="none" stroke="#d8c38b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="660" y="160" width="430" height="310" rx="10"/><path d="M660 208H1090M688 184H744M693 246H887M693 268H845M693 314H848V418H693Z"/><rect x="916" y="247" width="136" height="171" rx="4"/></g>
+<text x="850" y="585" text-anchor="middle" fill="#d8c38b" font-family="Arial,sans-serif" font-size="16" letter-spacing="5">WEBSITE</text>
+</svg>
